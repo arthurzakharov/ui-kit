@@ -1,0 +1,12 @@
+.Certifications {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xs);
+  color: var(--rm-ui-certifications-color);
+}
+
+.Icon {
+  height: var(--rm-ui-certifications-size);
+}

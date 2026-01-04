@@ -1,1 +1,3 @@
-export { Button } from './components/button';
+import './styles/variables.css';
+
+export { Certifications } from './components/certifications';
