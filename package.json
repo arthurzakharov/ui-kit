@@ -30,8 +30,8 @@
     "test:coverage": "vitest run --coverage --project=storybook",
     "prepublish": "npm run build",
     "release-patch": "npm run build && npm version patch && git push && git push --tags && npm publish",
-    "chromatic": "npx chromatic --project-token=chpt_6af6a89e1305914",
-    "prepare": "husky"
+    "prepare": "husky",
+    "chromatic": "npx chromatic --project-token=chpt_4f194ac45deb2d0"
   },
   "peerDependencies": {
     "react": "^19.2.3"

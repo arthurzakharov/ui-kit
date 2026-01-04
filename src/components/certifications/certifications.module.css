@@ -3,10 +3,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--rm-ui-padding-xs);
-  color: var(--rm-ui-certifications-color);
+  gap: var(--rm-ui-padding-xs, 8px);
+  color: var(--rm-ui-certifications-color, #b1b4c7);
 }
 
 .Icon {
-  height: var(--rm-ui-certifications-size);
+  height: var(--rm-ui-certifications-size, 20px);
 }
