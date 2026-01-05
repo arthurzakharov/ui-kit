@@ -1,5 +1,5 @@
-import type { MaskExplanation, Precision } from './types';
-import { Time } from './time';
+import type { MaskExplanation, Precision } from '../../types';
+import { Time } from '../time';
 
 export class Converter {
   constructor() {}
