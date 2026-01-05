@@ -1,4 +1,4 @@
-export type Precision = 'month' | 'day';
+export type DatePrecision = 'month' | 'day';
 
 export type MaskExplanationKey = 'd' | 'm' | 'y';
 

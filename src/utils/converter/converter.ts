@@ -1,4 +1,4 @@
-import type { MaskExplanation, Precision } from '@/types';
+import type { MaskExplanation, DatePrecision } from '@/types';
 import { Time } from '@/utils';
 
 export abstract class Converter {
@@ -10,7 +10,7 @@ export abstract class Converter {
     return ['/', 'd', 'm', 'y'];
   }
 
-  public static mask(precision: Precision): string {
+  public static mask(precision: DatePrecision): string {
     return precision === 'day' ? 'TT/MM/JJJJ' : 'MM/JJJJ';
   }
 
@@ -64,6 +64,7 @@ export abstract class Converter {
     };
   }
 
+  /* DD/MM/YYYY is the only allowed and expected format of date string */
   public static get DateSting() {
     return {
       ToDate: (dateString: string): Date | null => {
@@ -85,7 +86,7 @@ export abstract class Converter {
             return date;
           },
           {
-            day: explanations.includes('d') ? NaN : 1,
+            day: NaN,
             month: NaN,
             year: NaN,
           },
@@ -101,10 +102,6 @@ export abstract class Converter {
 
         return localeConvertedDate === [month, day, year].join(separator) ? convertedDate : null;
       },
-      /**
-       * Format date to YYYY/MM/DD format since it is required by BE. Within UI, we use
-       * European format DD/MM/YYYY, so conversion must be done before it's send to BE
-       */
       ToDateStringUSFormat: (dateString: string): string => {
         const [separator] = Converter.maskExplanation();
         const [day, month, year] = dateString.split(separator);
@@ -117,12 +114,12 @@ export abstract class Converter {
       ToMonthStyle: (dateString: string): string => {
         const [separator] = Converter.maskExplanation();
         const [, month, year] = dateString.split(separator);
-        return dateString === '' ? dateString : [month, year].join(separator);
+        return month && year ? [month, year].join(separator) : '';
       },
       ToDayStyle: (dateString: string): string => {
         const [separator] = Converter.maskExplanation();
         const [month, year] = dateString.split(separator);
-        return dateString === '' ? dateString : ['01', month, year].join(separator);
+        return month && year ? ['01', month, year].join(separator) : '';
       },
     };
   }
