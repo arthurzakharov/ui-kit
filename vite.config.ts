@@ -19,6 +19,7 @@ export default defineConfig({
       logLevel: 'warn',
       rollupTypes: false,
       tsconfigPath: './tsconfig.app.json',
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
       exclude: ['**/*.stories.ts', '**/*.stories.tsx'],
     }),
     libInjectCss(),
@@ -30,8 +31,8 @@ export default defineConfig({
     outDir: path.resolve(__dirname, 'dist'),
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
-      name: 'rightmart-ui',
-      fileName: 'rightmart-ui',
+      name: 'ui-kit',
+      fileName: 'ui-kit',
       formats: ['es'],
     },
     rollupOptions: {

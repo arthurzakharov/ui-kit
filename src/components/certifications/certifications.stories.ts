@@ -1,10 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
-import { Certifications as Component } from './certifications';
+import { Certifications as Component } from './certifications.component';
 
 const meta = {
   title: 'Certifications',
   component: Component,
+  args: {
+    icons: ['free', 'gdpr', 'ssl'],
+  },
+  argTypes: {
+    icons: {
+      control: 'object',
+      description: 'Array that define order of icons to show',
+    },
+  },
   parameters: {
     layout: 'centered',
   },
@@ -14,12 +23,27 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Certifications: Story = {
+export const DefaultOrder: Story = {
+  args: {
+    icons: undefined,
+  },
   play: async ({ canvas }) => {
-    const icons = canvas.getByTestId('certifications');
-    await expect(icons.children).toHaveLength(3);
-    await expect(icons.children[0]).toHaveAttribute('data-testid', 'free-icon');
-    await expect(icons.children[1]).toHaveAttribute('data-testid', 'gdpr-icon');
-    await expect(icons.children[2]).toHaveAttribute('data-testid', 'ssl-icon');
+    const icons = canvas.getAllByTestId('icon');
+    await expect(icons).toHaveLength(3);
+    await expect(icons[0]).toHaveAttribute('data-icon', 'free');
+    await expect(icons[1]).toHaveAttribute('data-icon', 'gdpr');
+    await expect(icons[2]).toHaveAttribute('data-icon', 'ssl');
+  },
+};
+
+export const CustomOrder: Story = {
+  args: {
+    icons: ['free', 'ssl'],
+  },
+  play: async ({ canvas }) => {
+    const icons = canvas.getAllByTestId('icon');
+    await expect(icons).toHaveLength(2);
+    await expect(icons[0]).toHaveAttribute('data-icon', 'free');
+    await expect(icons[1]).toHaveAttribute('data-icon', 'ssl');
   },
 };
