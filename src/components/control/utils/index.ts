@@ -1,1 +1,1 @@
-export * from './control.utils';
+export { choiceId, containsHtml, clickHasNode } from './utils';

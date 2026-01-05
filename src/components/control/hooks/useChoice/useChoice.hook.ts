@@ -1,6 +1,6 @@
-import type { ChoiceType, ChoiceValue, InputChangeSource, Interactive } from '../../types';
+import type { ChoiceType, ChoiceValue, InputChangeSource, Interactive } from '@/components/control/types';
 
-export default function useChoice(value: ChoiceValue, id: string, cb: Interactive<ChoiceValue>['onChange']) {
+export const useChoice = (value: ChoiceValue, id: string, cb: Interactive<ChoiceValue>['onChange']) => {
   const type: ChoiceType = typeof value === 'string' ? 'radio' : 'checkbox';
 
   return {
@@ -19,4 +19,4 @@ export default function useChoice(value: ChoiceValue, id: string, cb: Interactiv
       }
     },
   };
-}
+};

@@ -4,7 +4,7 @@ import { Choice } from '../choice';
 import { HiddenInput } from '../hidden-input';
 import { RadioLabel } from '../radio-label';
 import { RadioText } from '../radio-text';
-import useChoice from '../../hooks/useChoice';
+import { useChoice } from '../../hooks/useChoice';
 import { choiceId } from '../../utils';
 import './card-image.css';
 

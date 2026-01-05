@@ -4,7 +4,7 @@ import { Box } from '../box';
 import { Choice } from '../choice';
 import { HiddenInput } from '../hidden-input';
 import { RadioLabel } from '../radio-label';
-import useChoice from '../../hooks/useChoice';
+import { useChoice } from '@/components/control/hooks';
 import { choiceId } from '../../utils';
 import './card-text.css';
 

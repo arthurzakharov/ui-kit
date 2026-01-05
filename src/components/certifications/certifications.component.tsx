@@ -1,8 +1,8 @@
-import type { CertificationsProps } from './certifications.types';
+import type { CertificationsProps } from '@/components/certifications/certifications.types';
 import { FreeIcon } from './icons/free.icon';
 import { GdprIcon } from './icons/gdpr.icon';
 import { SslIcon } from './icons/ssl.icon';
-import cn from './certifications.module.css';
+import cn from '@/components/certifications/certifications.module.css';
 
 export const Certifications = ({ icons = ['free', 'gdpr', 'ssl'] }: CertificationsProps) => (
   <div className={cn.Certifications}>

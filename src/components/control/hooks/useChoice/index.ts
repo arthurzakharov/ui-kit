@@ -1,1 +1,1 @@
-export { default } from './useChoice.hook';
+export { useChoice } from './useChoice.hook';
