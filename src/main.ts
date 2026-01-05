@@ -1,3 +1,3 @@
 import './styles/variables.css';
 
-export { Certifications } from './components/certifications/certifications.component';
+export { Certifications } from './components/certifications';
