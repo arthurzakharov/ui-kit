@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { MONTH } from '../../enums';
-import { Time } from './time';
+import { MONTH } from '@/enums';
+import { Time } from '@/utils';
 
 describe('Time', () => {
   describe('date', () => {

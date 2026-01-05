@@ -22,7 +22,14 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Alliases */
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@story/*": [".storybook/*"]
+    }
   },
   "include": ["src", ".storybook/**/*.ts"]
 }

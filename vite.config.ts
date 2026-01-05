@@ -92,4 +92,10 @@ export default defineConfig({
       },
     ],
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@story': path.resolve(__dirname, '.storybook'),
+    },
+  },
 });

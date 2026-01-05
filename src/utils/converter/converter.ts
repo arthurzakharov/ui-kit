@@ -1,9 +1,7 @@
-import type { MaskExplanation, Precision } from '../../types';
-import { Time } from '../time';
+import type { MaskExplanation, Precision } from '@/types';
+import { Time } from '@/utils';
 
-export class Converter {
-  constructor() {}
-
+export abstract class Converter {
   private static formatNumberWithLeadingZero(number: number): string {
     return String(number).padStart(2, '0');
   }
