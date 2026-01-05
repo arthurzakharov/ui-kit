@@ -57,7 +57,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',
-      exclude: ['./.storybook/**', './**/*.css'],
+      exclude: ['./.storybook/**', './**/index.ts', './**/*.css'],
     },
     projects: [
       {
@@ -68,7 +68,7 @@ export default defineConfig({
           }),
         ],
         test: {
-          name: 'storybook',
+          name: 'story',
           browser: {
             enabled: true,
             headless: true,
@@ -80,6 +80,14 @@ export default defineConfig({
             ],
           },
           setupFiles: ['.storybook/vitest.setup.ts'],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: 'unit',
+          environment: 'node',
+          include: ['src/**/*.test.ts'],
         },
       },
     ],

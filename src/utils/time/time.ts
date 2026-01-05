@@ -1,27 +1,37 @@
-export class Time {
-  constructor() {}
+type TimeFormat = 'utc' | 'local';
 
+export abstract class Time {
   public static date(day: number, month: number, year: number, endDayTime: boolean = false): Date {
     const date = new Date();
     date.setUTCFullYear(year);
     date.setUTCMonth(month);
     date.setUTCDate(day);
-    date.setUTCHours(endDayTime ? 23 : 0);
-    date.setUTCMinutes(endDayTime ? 59 : 0);
-    date.setUTCSeconds(endDayTime ? 59 : 0);
-    date.setUTCMilliseconds(0);
-    return date;
+    return endDayTime ? Time.endOfDay(date, 'utc') : Time.startOfDay(date, 'utc');
   }
 
-  public static startOfDay(date: Date): Date {
+  public static startOfDay(date: Date, timeFormat: TimeFormat = 'local'): Date {
     const tempDate = new Date(date);
-    tempDate.setHours(0, 0, 0, 0);
+    switch (timeFormat) {
+      case 'utc':
+        tempDate.setUTCHours(0, 0, 0, 0);
+        break;
+      case 'local':
+        tempDate.setHours(0, 0, 0, 0);
+        break;
+    }
     return tempDate;
   }
 
-  public static endOfDay(date: Date): Date {
+  public static endOfDay(date: Date, timeFormat: TimeFormat = 'local'): Date {
     const tempDate = new Date(date);
-    tempDate.setHours(23, 59, 59, 0);
+    switch (timeFormat) {
+      case 'utc':
+        tempDate.setUTCHours(23, 59, 59, 0);
+        break;
+      case 'local':
+        tempDate.setHours(23, 59, 59, 0);
+        break;
+    }
     return tempDate;
   }
 }
