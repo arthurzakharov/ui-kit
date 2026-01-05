@@ -1,0 +1,51 @@
+.control-textarea {
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-primary);
+}
+
+.control-textarea:hover {
+  cursor: pointer;
+}
+
+.control-textarea:disabled {
+  opacity: 0.33;
+}
+
+.control-textarea:disabled,
+.control-textarea:-webkit-autofill,
+.control-textarea:-webkit-autofill:hover,
+.control-textarea:-webkit-autofill:focus,
+.control-textarea:-webkit-autofill:active,
+.control-textarea:autofill,
+.control-textarea:autofill:hover,
+.control-textarea:autofill:focus,
+.control-textarea:autofill:active {
+  background: transparent;
+  transition: background 7200s ease-in-out 0s;
+}
+
+.control-textarea:-webkit-autofill {
+  animation-name: autofill-start;
+  animation-duration: 0.1s;
+  -webkit-text-fill-color: var(--rm-ui-grey-500);
+}
+
+.control-textarea:not(:-webkit-autofill) {
+  animation-name: autofill-cancel;
+  animation-duration: 0.1s;
+}
+
+@keyframes autofill-start {
+}
+
+@keyframes autofill-cancel {
+}

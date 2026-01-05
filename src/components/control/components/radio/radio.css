@@ -1,0 +1,26 @@
+.control-radio {
+  display: inline-flex;
+}
+
+.control-radio--horizontal {
+  flex-direction: row;
+  gap: var(--rm-ui-padding-lg);
+}
+
+.control-radio--vertical {
+  flex-direction: column;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.control-radio__label {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.control-radio__label:hover {
+  cursor: pointer;
+}

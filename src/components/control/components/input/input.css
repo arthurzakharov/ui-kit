@@ -1,0 +1,49 @@
+.control-input {
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 0;
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-primary);
+}
+
+.control-input:hover {
+  cursor: pointer;
+}
+
+.control-input:disabled {
+  opacity: 0.33;
+}
+
+.control-input:disabled,
+.control-input:-webkit-autofill,
+.control-input:-webkit-autofill:hover,
+.control-input:-webkit-autofill:focus,
+.control-input:-webkit-autofill:active,
+.control-input:autofill,
+.control-input:autofill:hover,
+.control-input:autofill:focus,
+.control-input:autofill:active {
+  background: transparent;
+  transition: background 7200s ease-in-out 0s;
+}
+
+.control-input:-webkit-autofill {
+  animation-name: autofill-start;
+  animation-duration: 0.1s;
+  -webkit-text-fill-color: var(--rm-ui-color-primary);
+}
+
+.control-input:not(:-webkit-autofill) {
+  animation-name: autofill-cancel;
+  animation-duration: 0.1s;
+}
+
+@keyframes autofill-start {
+}
+
+@keyframes autofill-cancel {
+}

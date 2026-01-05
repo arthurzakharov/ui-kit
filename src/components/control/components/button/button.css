@@ -1,0 +1,74 @@
+.control-button {
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button--sm {
+  border-radius: var(--rm-ui-border-radius-sm);
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+}
+
+.control-button--sm .control-button__text {
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.control-button--md,
+.control-button--lg {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md);
+}
+
+.control-button--md .control-button__text {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.control-button--lg .control-button__text {
+  font-size: var(--rm-ui-font-size-body-large);
+  line-height: var(--rm-ui-line-height-body-large);
+}
+
+.control-button--next {
+  background-color: var(--rm-ui-next-btn-bg);
+}
+
+.control-button--next .control-button__text {
+  color: #ffffff;
+}
+
+.control-button--previous {
+  background-color: transparent;
+}
+
+.control-button--previous .control-button__text {
+  color: var(--rm-ui-color-secondary);
+}
+
+.control-button:hover {
+  cursor: pointer;
+}
+
+.control-button:focus {
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.control-button--full {
+  width: 100%;
+}
+
+.control-button__text {
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+}
+
+.control-button__info {
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: calc(var(--rm-ui-line-height-body-small) - 2px);
+  color: #ffffff;
+}

@@ -30,6 +30,15 @@
   --rm-ui-line-height-hl2: 32px;
   --rm-ui-font-size-hl1: 28px;
   --rm-ui-line-height-hl1: 36px;
+  /* Font Family */
+  --rm-ui-font-family-light: 'Lato Light', sans-serif;
+  --rm-ui-font-family-light-i: 'Lato Light Italic', sans-serif;
+  --rm-ui-font-family-regular: 'Lato Regular', sans-serif;
+  --rm-ui-font-family-regular-i: 'Lato Regular Italic', sans-serif;
+  --rm-ui-font-family-medium: 'Lato Bold', sans-serif;
+  --rm-ui-font-family-medium-i: 'Lato Bold Italic', sans-serif;
+  --rm-ui-font-family-bold: 'Lato Black', sans-serif;
+  --rm-ui-font-family-bold-i: 'Lato Black Italic', sans-serif;
   /* Grey */
   --rm-ui-grey-950: #0a0a0a;
   --rm-ui-grey-900: #171717;
@@ -42,7 +51,20 @@
   --rm-ui-grey-200: #e5e5e5;
   --rm-ui-grey-100: #f5f5f5;
   --rm-ui-grey-50: #fafafa;
+  /* Colors */
+  --rm-ui-color-primary: var(--rm-ui-grey-800);
+  --rm-ui-color-secondary: var(--rm-ui-grey-500);
+  --rm-ui-color-accent-primary: #23bf96;
+  --rm-ui-color-action: #006cff;
+  --rm-ui-color-inverted: #ffffff;
+  --rm-ui-color-error: #dc2626;
+  --rm-ui-color-success: #00b649;
+  --rm-ui-color-focus: #ff8d02;
+  --rm-ui-color-link: #ff8206;
   /* Components */
   --rm-ui-certifications-color: #b1b4c7;
   --rm-ui-certifications-size: 20px;
+  --rm-ui-card-background: #ffffff;
+  --rm-ui-next-btn-bg: #23bf96;
+  --rm-ui-next-btn-bg-hover: #3adbb1;
 }

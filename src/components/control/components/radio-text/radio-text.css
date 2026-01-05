@@ -1,0 +1,35 @@
+.control-radio-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-radio-text--size-md {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.control-radio-text--size-lg {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.control-radio-text--one-line,
+.control-radio-text--one-line .control-radio-text__content {
+  white-space: nowrap;
+}
+
+.control-radio-text__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  color: var(--rm-ui-color-primary);
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.control-radio-text__content--checked {
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+}

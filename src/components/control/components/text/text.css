@@ -1,0 +1,31 @@
+.control-text {
+  box-sizing: border-box;
+  position: relative;
+  flex-grow: 1;
+  height: 58px;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-end;
+}
+
+.control-text:hover {
+  cursor: pointer;
+}
+
+.control-text__label {
+  position: absolute;
+  left: var(--rm-ui-padding-sm);
+  transition: top 0.15s ease-out;
+}
+
+.control-text__label--idle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control-text__label--active {
+  top: var(--rm-ui-padding-xs);
+  transform: translateY(0);
+}

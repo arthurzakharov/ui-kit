@@ -1,0 +1,111 @@
+.control-choice {
+  margin: 1px;
+  position: relative;
+  background-color: var(--rm-ui-card-background);
+  outline-offset: 0;
+  outline: 1px solid transparent;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition:
+    outline-color 0.15s ease-out,
+    background-color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+/* States */
+
+.control-choice--focused:not(.control-choice--disabled) {
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.control-choice--hovered.control-choice--idle {
+  background-color: var(--rm-ui-grey-300);
+}
+
+.control-choice--disabled {
+  opacity: 0.33;
+}
+
+.control-choice--idle {
+  border-color: var(--rm-ui-grey-300);
+}
+
+.control-choice--success {
+  border-color: var(--rm-ui-color-action);
+}
+
+.control-choice--error {
+  border-color: var(--rm-ui-color-error);
+}
+
+/* Radio styles */
+
+.control-choice--radio {
+  border-radius: 100%;
+}
+
+.control-choice--radio.control-choice--checked.control-choice--idle,
+.control-choice--radio.control-choice--checked.control-choice--success {
+  background-color: var(--rm-ui-color-action);
+}
+
+.control-choice--radio.control-choice--checked.control-choice--error {
+  background-color: var(--rm-ui-color-error);
+}
+
+.control-choice--radio .control-choice__mark {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.control-choice--radio.control-choice--checked .control-choice__mark,
+.control-choice--radio.control-choice--hovered .control-choice__mark {
+  background-color: var(--rm-ui-card-background);
+}
+
+/* Checkbox styles */
+
+.control-choice--checkbox {
+  border-radius: 4px;
+}
+
+.control-choice--checkbox.control-choice--checked.control-choice--idle,
+.control-choice--checkbox.control-choice--checked.control-choice--success {
+  background-color: var(--rm-ui-color-action);
+}
+
+.control-choice--checkbox.control-choice--checked.control-choice--error {
+  background-color: var(--rm-ui-color-error);
+}
+
+.control-choice--checkbox .control-choice__mark {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  stroke-width: 3px;
+  stroke: transparent;
+}
+
+.control-choice--checkbox.control-choice--checked .control-choice__mark,
+.control-choice--checkbox.control-choice--hovered .control-choice__mark {
+  stroke: var(--rm-ui-card-background);
+}

@@ -36,7 +36,7 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'clsx', 'usehooks-ts', 'lucide-react'],
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}', {
