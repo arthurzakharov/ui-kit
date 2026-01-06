@@ -4,10 +4,12 @@ type ButtonColor = 'next' | 'previous';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
+type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+
 export interface ButtonProps extends PropsWithChildren {
   color: ButtonColor;
   size: ButtonSize;
-  type: ButtonHTMLAttributes<HTMLButtonElement>['type'];
+  type: ButtonType;
   disabled?: boolean;
   info?: string;
   fullWidth?: boolean;

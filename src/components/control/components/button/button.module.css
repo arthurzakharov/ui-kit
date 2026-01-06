@@ -1,4 +1,4 @@
-.control-button {
+.Button {
   box-sizing: border-box;
   border: none;
   display: flex;
@@ -7,66 +7,66 @@
   justify-content: center;
 }
 
-.control-button--sm {
+.ButtonSizeSm {
   border-radius: var(--rm-ui-border-radius-sm);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
 }
 
-.control-button--sm .control-button__text {
+.ButtonSizeSm .ButtonText {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.control-button--md,
-.control-button--lg {
+.ButtonSizeMd,
+.ButtonSizeLg {
   border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md);
 }
 
-.control-button--md .control-button__text {
+.ButtonSizeMd .ButtonText {
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
 }
 
-.control-button--lg .control-button__text {
+.ButtonSizeLg .ButtonText {
   font-size: var(--rm-ui-font-size-body-large);
   line-height: var(--rm-ui-line-height-body-large);
 }
 
-.control-button--next {
+.ButtonColorNext {
   background-color: var(--rm-ui-next-btn-bg);
 }
 
-.control-button--next .control-button__text {
+.ButtonColorNext .ButtonText {
   color: #ffffff;
 }
 
-.control-button--previous {
+.ButtonColorPrevious {
   background-color: transparent;
 }
 
-.control-button--previous .control-button__text {
+.ButtonColorPrevious .ButtonText {
   color: var(--rm-ui-color-secondary);
 }
 
-.control-button:hover {
+.Button:hover {
   cursor: pointer;
 }
 
-.control-button:focus {
+.Button:focus {
   outline-color: var(--rm-ui-color-focus);
 }
 
-.control-button--full {
+.ButtonFullWidth {
   width: 100%;
 }
 
-.control-button__text {
+.ButtonText {
   font-family: var(--rm-ui-font-family-medium), sans-serif;
 }
 
-.control-button__info {
+.ButtonInfo {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body-small);
   line-height: calc(var(--rm-ui-line-height-body-small) - 2px);

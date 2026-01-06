@@ -1,29 +1,43 @@
-import type { ButtonProps } from './button.types';
+import type { ButtonProps } from '@/components/control/components/button/button.types';
 import clsx from 'clsx';
-import { containsHtml } from '../../utils';
-import './button.css';
+import { containsHtml } from '@/components/control/utils';
+import cn from '@/components/control/components/button/button.module.css';
 
-export const Button = (props: ButtonProps) => (
+export const Button = ({
+  children,
+  color,
+  size,
+  type,
+  disabled = false,
+  info = '',
+  fullWidth = false,
+  onClick,
+  onFocus,
+  onBlur,
+}: ButtonProps) => (
   <button
-    type={props.type}
-    disabled={props.disabled}
-    className={clsx('control-button', {
-      'control-button--sm': props.size === 'sm',
-      'control-button--md': props.size === 'md',
-      'control-button--lg': props.size === 'lg',
-      'control-button--next': props.color === 'next',
-      'control-button--previous': props.color === 'previous',
-      'control-button--full': props.fullWidth,
+    data-testid="button"
+    type={type}
+    disabled={disabled}
+    className={clsx(cn.Button, {
+      [cn.ButtonSizeSm]: size === 'sm',
+      [cn.ButtonSizeMd]: size === 'md',
+      [cn.ButtonSizeLg]: size === 'lg',
+      [cn.ButtonColorNext]: color === 'next',
+      [cn.ButtonColorPrevious]: color === 'previous',
+      [cn.ButtonFullWidth]: fullWidth,
     })}
-    onClick={() => props.onClick?.call(null)}
-    onFocus={() => props.onFocus?.call(null)}
-    onBlur={() => props.onBlur?.call(null)}
+    onClick={() => onClick?.call(null)}
+    onFocus={() => onFocus?.call(null)}
+    onBlur={() => onBlur?.call(null)}
   >
-    <span className="control-button__text">{props.children}</span>
-    {containsHtml(props.info) && props.info ? (
-      <span className="control-button__info" dangerouslySetInnerHTML={{ __html: props.info }} />
+    <span className={cn.ButtonText}>{children}</span>
+    {containsHtml(info) && info ? (
+      <span data-testid="button-info-html" className={cn.ButtonInfo} dangerouslySetInnerHTML={{ __html: info }} />
     ) : (
-      <span className="control-button__info">{props.info}</span>
+      <span data-testid="button-info-text" className={cn.ButtonInfo}>
+        {info}
+      </span>
     )}
   </button>
 );
