@@ -17,21 +17,21 @@ const meta = {
         name: 'string',
         required: true,
       },
-      description: 'ID for input field',
+      description: '<b>id</b> for input field',
     },
     value: {
       type: {
         name: 'string',
         required: true,
       },
-      description: 'Value for input field',
+      description: '<b>value</b> for input field',
     },
     disabled: {
       control: 'boolean',
       table: {
         type: { summary: 'boolean' },
       },
-      description: 'Disables the input field',
+      description: 'Whether input is disabled',
     },
     type: {
       control: 'radio',

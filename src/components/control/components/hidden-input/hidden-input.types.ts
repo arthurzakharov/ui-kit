@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import type { InputChangeSource } from '../../types';
+import type { InputChangeSource } from '@/components/control/types';
 
 export interface HiddenInputProps {
   id: string;
