@@ -1,15 +1,16 @@
-import type { LabelProps } from './label.types';
+import type { LabelProps } from '@/components/control/components/label/label.types';
 import clsx from 'clsx';
-import './label.css';
+import cn from '@/components/control/components/label/label.module.css';
 
 export const Label = ({ children, position = 'idle', state = 'idle' }: LabelProps) => (
   <span
-    className={clsx('control-label', {
-      'control-label--position-idle': position === 'idle',
-      'control-label--position-active': position === 'active',
-      'control-label--state-idle': state === 'idle',
-      'control-label--state-error': state === 'error',
-      'control-label--state-success': state === 'success',
+    data-testid="label"
+    className={clsx(cn.Label, {
+      [cn.LabelPositionIdle]: position === 'idle',
+      [cn.LabelPositionActive]: position === 'active',
+      [cn.LabelStateIdle]: state === 'idle',
+      [cn.LabelStateError]: state === 'error',
+      [cn.LabelStateSuccess]: state === 'success',
     })}
   >
     {children}

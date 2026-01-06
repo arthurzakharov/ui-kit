@@ -5,7 +5,7 @@ import { Input } from '@/components/control/components/input';
 import cn from '@/components/control/components/input/input.module.css';
 
 const meta = {
-  title: 'Control/Input',
+  title: 'Components/Control/Input',
   component: Input,
   parameters: {
     layout: 'centered',
@@ -13,41 +13,69 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     id: {
-      control: 'text',
+      type: {
+        name: 'string',
+        required: true,
+      },
       description: 'ID for input field',
     },
     value: {
-      control: 'text',
+      type: {
+        name: 'string',
+        required: true,
+      },
       description: 'Value for input field',
     },
     disabled: {
       control: 'boolean',
+      table: {
+        type: { summary: 'boolean' },
+      },
       description: 'Disables the input field',
     },
     type: {
-      control: 'select',
+      control: 'radio',
       options: ['text', 'password', 'email'],
-      description: 'The HTML input type. Can be any of HTMLInputTypeAttribute',
+      table: {
+        type: { summary: 'HTMLInputTypeAttribute' },
+      },
+      description: 'The HTML input type',
     },
     onAutofill: {
-      description: 'Callback fired when browser autofills the input. Needs to prevent autofill styling issues',
+      type: {
+        name: 'function',
+      },
+      description: 'On browser autofill the input',
     },
     onAutofillCancel: {
-      description: 'Callback fired when browser autofill is canceled. Needs to prevent autofill styling issues',
+      type: {
+        name: 'function',
+      },
+      description: 'On browser autofill is canceled',
     },
     onChange: {
-      description: 'Callback fired when the input value changes',
+      type: {
+        name: 'function',
+        required: true,
+      },
+      description: 'On input value changes',
     },
     onFocus: {
-      description: 'Callback fired when the input is focused',
+      type: {
+        name: 'function',
+      },
+      description: 'On input is focused',
     },
     onBlur: {
-      description: 'Callback fired when the input is blurred',
+      type: {
+        name: 'function',
+      },
+      description: 'On input is blurred',
     },
   },
   args: {
     id: 'input-default',
-    value: 'Default Value',
+    value: '',
     disabled: false,
     type: 'text',
     onChange: fn(),
@@ -75,9 +103,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const OnlyRequiredKeysPassed: Story = {
+export const Default: Story = {
   args: {
-    value: '',
     disabled: undefined,
     type: undefined,
     onFocus: undefined,
@@ -144,11 +171,11 @@ export const Autofill: Story = {
 
     const animation = (key: string) => new AnimationEvent('animationstart', { animationName: cn[key], bubbles: true });
 
-    await input.dispatchEvent(animation('autofill-start'));
+    input.dispatchEvent(animation('autofill-start'));
     await expect(args.onAutofill).toHaveBeenCalledWith(args.id);
     await expect(args.onAutofill).toHaveBeenCalledOnce();
 
-    await input.dispatchEvent(animation('autofill-cancel'));
+    input.dispatchEvent(animation('autofill-cancel'));
     await expect(args.onAutofillCancel).toHaveBeenCalledWith(args.id);
     await expect(args.onAutofillCancel).toHaveBeenCalledOnce();
   },

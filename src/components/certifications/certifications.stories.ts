@@ -3,7 +3,7 @@ import { expect } from 'storybook/test';
 import { Certifications as Component } from '@/components/certifications';
 
 const meta = {
-  title: 'Certifications',
+  title: 'Components/Certifications',
   component: Component,
   args: {
     icons: ['free', 'gdpr', 'ssl'],
@@ -11,6 +11,9 @@ const meta = {
   argTypes: {
     icons: {
       control: 'object',
+      table: {
+        type: { summary: 'CertificationIcon[]' },
+      },
       description: 'Array that define order of icons to show',
     },
   },
@@ -26,6 +29,11 @@ type Story = StoryObj<typeof meta>;
 export const DefaultOrder: Story = {
   args: {
     icons: undefined,
+  },
+  argTypes: {
+    icons: {
+      control: false,
+    },
   },
   play: async ({ canvas }) => {
     const icons = canvas.getAllByTestId('icon');

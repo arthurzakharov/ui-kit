@@ -1,26 +1,26 @@
-.control-label {
+.Label {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   transition: color 0.15s ease-out;
 }
 
-.control-label--position-idle {
+.LabelPositionIdle {
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
 }
 
-.control-label--position-active {
+.LabelPositionActive {
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.control-label--state-idle {
+.LabelStateIdle {
   color: var(--rm-ui-color-secondary);
 }
 
-.control-label--state-error {
+.LabelStateError {
   color: var(--rm-ui-color-error);
 }
 
-.control-label--state-success {
+.LabelStateSuccess {
   color: var(--rm-ui-color-success);
 }
