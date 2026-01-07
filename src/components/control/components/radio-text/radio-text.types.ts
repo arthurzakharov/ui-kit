@@ -1,8 +1,6 @@
-type RadioTextSize = 'md' | 'lg';
-
 export interface RadioTextProps {
   children: string;
-  size: RadioTextSize;
+  size: 'md' | 'lg';
   checked: boolean;
   oneLine?: boolean;
 }

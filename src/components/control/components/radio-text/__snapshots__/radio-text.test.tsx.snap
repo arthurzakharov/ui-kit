@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RadioText Snapshot > Checked 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="true"
+      data-text="Radio text content"
+    >
+      Radio text content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RadioText Snapshot > DefaultValues 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="false"
+      data-text="Radio text content"
+    >
+      Radio text content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RadioText Snapshot > OneLine 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7 _RadioTextOneLine_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="false"
+      data-text="Radio text content"
+    >
+      Radio text content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RadioText Snapshot > SizeLarge 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeLg_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="false"
+      data-text="Radio text content"
+    >
+      Radio text content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RadioText Snapshot > SizeMedium 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="false"
+      data-text="Radio text content"
+    >
+      Radio text content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RadioText Snapshot > WithHtmlContent 1`] = `
+<div>
+  <div
+    class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+  >
+    <span
+      class="_RadioTextContent_7c88c7"
+      data-checked="false"
+      data-text="Text with <b>bold</b> content"
+    >
+      Text with 
+      <b>
+        bold
+      </b>
+       content
+    </span>
+  </div>
+</div>
+`;

@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
-import type { RadioChoice, ChoiceValue, State } from '../../types';
+import type { RadioChoice, ChoiceValue } from '@/components/control/types';
 
 interface RadioLabelChild {
   focused: boolean;
   hovered: boolean;
   checked: boolean;
-  state?: State;
+  state?: 'idle' | 'error' | 'success';
 }
 
 export interface RadioLabelProps<T extends ChoiceValue> {
@@ -13,6 +13,6 @@ export interface RadioLabelProps<T extends ChoiceValue> {
   value: T;
   choice: RadioChoice;
   choices?: RadioChoice[];
-  state?: State;
+  state?: 'idle' | 'error' | 'success';
   children: (props: RadioLabelChild) => ReactNode;
 }

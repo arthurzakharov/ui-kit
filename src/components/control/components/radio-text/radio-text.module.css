@@ -1,35 +1,38 @@
-.control-radio-text {
+.RadioText {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.control-radio-text--size-md {
+.RadioTextSizeMd {
   font-size: 12px;
   line-height: 14px;
 }
 
-.control-radio-text--size-lg {
+.RadioTextSizeLg {
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
 }
 
-.control-radio-text--one-line,
-.control-radio-text--one-line .control-radio-text__content {
+.RadioTextOneLine,
+.RadioTextOneLine .RadioTextContent {
   white-space: nowrap;
 }
 
-.control-radio-text__content {
+.RadioTextContent {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   color: var(--rm-ui-color-primary);
   text-align: left;
   white-space: pre-wrap;
 }
 
-.control-radio-text__content--checked {
+.RadioTextContent[data-checked='false'] {
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+}
+
+.RadioTextContent[data-checked='true'] {
   font-family: var(--rm-ui-font-family-medium), sans-serif;
 }
