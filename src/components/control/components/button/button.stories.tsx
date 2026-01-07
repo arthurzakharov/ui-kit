@@ -1,117 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn, expect } from 'storybook/test';
+import { expect, fn } from 'storybook/test';
 import { Button } from '@/components/control/components/button';
-import cn from '@/components/control/components/button/button.module.css';
 
 const meta = {
   title: 'Components/Control/Button',
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
   tags: ['autodocs'],
-  argTypes: {
-    children: {
-      description: 'The content of the label',
-      type: {
-        name: 'function',
-        required: true,
-      },
-      table: {
-        type: { summary: 'ReactNode' },
-      },
-    },
-    color: {
-      control: 'radio',
-      options: ['next', 'previous'],
-      type: {
-        name: 'union',
-        value: [],
-        required: true,
-      },
-      table: {
-        type: { summary: 'ButtonColor' },
-      },
-      description: 'Button color schema',
-    },
-    size: {
-      control: 'radio',
-      options: ['sm', 'md', 'lg'],
-      type: {
-        name: 'union',
-        value: [],
-        required: true,
-      },
-      table: {
-        type: { summary: 'ButtonSize' },
-      },
-      description: 'Button size schema',
-    },
-    type: {
-      control: 'radio',
-      options: ['submit', 'reset', 'button', undefined],
-      type: {
-        name: 'union',
-        value: [],
-        required: true,
-      },
-      table: {
-        type: { summary: 'ButtonType' },
-      },
-      description: 'Button type',
-    },
-    disabled: {
-      control: 'boolean',
-      type: {
-        name: 'boolean',
-        required: false,
-      },
-      table: {
-        type: { summary: 'boolean' },
-      },
-      description: 'Whether button is disabled',
-    },
-    info: {
-      control: 'text',
-      type: {
-        name: 'string',
-        required: false,
-      },
-      table: {
-        type: { summary: 'string' },
-      },
-      description: 'Text that is placed under main text',
-    },
-    fullWidth: {
-      control: 'boolean',
-      type: {
-        name: 'boolean',
-        required: false,
-      },
-      table: {
-        type: { summary: 'boolean' },
-      },
-      description: 'Whether button is full width',
-    },
-    onClick: {
-      type: {
-        name: 'function',
-      },
-      description: 'On button is clicked',
-    },
-    onFocus: {
-      type: {
-        name: 'function',
-      },
-      description: 'On button is focused',
-    },
-    onBlur: {
-      type: {
-        name: 'function',
-      },
-      description: 'On button is blurred',
-    },
-  },
   args: {
     color: 'next',
     size: 'md',
@@ -119,15 +16,35 @@ const meta = {
     disabled: false,
     info: '',
     fullWidth: false,
+    children: (
+      <>
+        Custom button with or without <b>info</b>
+      </>
+    ),
     onClick: fn(),
     onFocus: fn(),
     onBlur: fn(),
   },
-  render: (args) => (
-    <Button {...args}>
-      Custom button with or without <b>info</b>
-    </Button>
-  ),
+  argTypes: {
+    color: {
+      control: 'select',
+    },
+    size: {
+      control: 'select',
+    },
+    type: {
+      control: 'select',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    info: {
+      control: 'text',
+    },
+    fullWidth: {
+      control: 'boolean',
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -141,28 +58,77 @@ export const Default: Story = {
     onFocus: undefined,
     onBlur: undefined,
   },
-  play: async ({ canvas }) => {
-    const button = canvas.getByTestId('button');
-    const infoHtml = canvas.queryByTestId('button-info-html');
-    const infoText = canvas.getByTestId('button-info-text');
-    await expect(button).toContainHTML('Custom button with or without <b>info</b>');
-    await expect(button).not.toBeDisabled();
-    await expect(button).not.toHaveClass(cn.ButtonFullWidth);
-    await expect(infoHtml).toBeNull();
-    await expect(infoText).toHaveTextContent('');
+};
+
+export const CustomColor: Story = {
+  args: {
+    color: 'previous',
   },
 };
 
-export const WithInfo: Story = {
+export const CustomSize: Story = {
   args: {
-    type: 'button',
-    info: '100% kostenlos',
-    color: 'next',
-    size: 'md',
+    size: 'lg',
+  },
+};
+
+export const CustomType: Story = {
+  args: {
+    type: 'reset',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  play: async ({ args, canvas, userEvent }) => {
+    const button = await canvas.getByTestId('button');
+    await expect(button).toBeDisabled();
+    await userEvent.click(button);
+    await expect(args.onClick).not.toBeCalled();
+  },
+};
+
+export const Enabled: Story = {
+  args: {
     disabled: false,
-    fullWidth: false,
-    onClick: fn(),
     onFocus: fn(),
-    onBlur: fn(),
+  },
+  play: async ({ args, canvas, userEvent }) => {
+    const button = await canvas.getByTestId('button');
+    await expect(button).not.toBeDisabled();
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalledTimes(1);
+    await expect(args.onClick).toHaveBeenNthCalledWith(1);
+    await expect(args.onFocus).toHaveBeenNthCalledWith(1);
+    await expect(args.onFocus).toHaveBeenNthCalledWith(1);
+    await userEvent.click(document.body);
+    await userEvent.tab();
+    await expect(button).toHaveFocus();
+    await expect(args.onFocus).toHaveBeenNthCalledWith(2);
+    await userEvent.keyboard('[Space]');
+    await expect(args.onClick).toHaveBeenNthCalledWith(2);
+    await userEvent.tab();
+    await expect(button).not.toHaveFocus();
+    await expect(args.onBlur).toHaveBeenNthCalledWith(2);
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+  },
+};
+
+export const WithInfoAsPlainText: Story = {
+  args: {
+    info: '100% kostenlos',
+  },
+};
+
+export const WithInfoAsTagText: Story = {
+  args: {
+    info: '<i>100%</i> kostenlos',
   },
 };

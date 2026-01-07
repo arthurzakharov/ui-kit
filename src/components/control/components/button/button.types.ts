@@ -1,15 +1,9 @@
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
-
-type ButtonColor = 'next' | 'previous';
-
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+import type { PropsWithChildren } from 'react';
 
 export interface ButtonProps extends PropsWithChildren {
-  color: ButtonColor;
-  size: ButtonSize;
-  type: ButtonType;
+  color: 'next' | 'previous';
+  size: 'sm' | 'md' | 'lg';
+  type: 'submit' | 'reset' | 'button';
   disabled?: boolean;
   info?: string;
   fullWidth?: boolean;
