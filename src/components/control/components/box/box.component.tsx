@@ -1,22 +1,25 @@
-import type { BoxProps } from './box.types';
-import clsx from 'clsx';
+import type { BoxProps } from '@/components/control/components/box/box.types';
 import { forwardRef } from 'react';
-import './box.css';
+import clsx from 'clsx';
+import cn from '@/components/control/components/box/box.module.css';
 
-export const Box = forwardRef<HTMLDivElement, BoxProps>(
-  ({ children, className, focused = false, checked = false, state = 'idle', onClick }, ref) => (
+export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
+  const { children, className, focused = false, checked = false, state = 'idle', onClick } = props;
+
+  return (
     <div
+      data-testid="box"
       ref={ref}
-      className={clsx('control-box', className, {
-        'control-box--focused': focused,
-        'control-box--checked': checked,
-        'control-box--idle': state === 'idle',
-        'control-box--error': state === 'error',
-        'control-box--success': state === 'success',
+      className={clsx(cn.Box, className, {
+        [cn.BoxFocused]: focused,
+        [cn.BoxChecked]: checked,
+        [cn.BoxStateIdle]: state === 'idle',
+        [cn.BoxStateError]: state === 'error',
+        [cn.BoxStateSuccess]: state === 'success',
       })}
       onClick={() => onClick?.call(null)}
     >
       {children}
     </div>
-  ),
-);
+  );
+});

@@ -1,0 +1,92 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Box Snapshot > Checked 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxChecked_a85640 _BoxStateIdle_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > Default 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxStateIdle_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > Focused 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxFocused_a85640 _BoxStateIdle_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > StateError 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxStateError_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > StateIdle 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxStateIdle_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > StateSuccess 1`] = `
+<div>
+  <div
+    class="_Box_a85640 _BoxStateSuccess_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Box Snapshot > WithCustomClassName 1`] = `
+<div>
+  <div
+    class="_Box_a85640 xxx _BoxStateIdle_a85640"
+    data-testid="box"
+  >
+    <div
+      style="width: 200px; height: 50px;"
+    />
+  </div>
+</div>
+`;

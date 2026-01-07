@@ -1,4 +1,4 @@
-.control-box {
+.Box {
   flex-basis: 100%;
   box-sizing: border-box;
   display: flex;
@@ -12,25 +12,25 @@
   transition: border-color 0.15s ease-out;
 }
 
-.control-box--idle {
-  border-color: var(--rm-ui-grey-300);
-}
-
-.control-box--focused {
+.BoxFocused {
   border-color: var(--rm-ui-color-focus);
   border-color: -webkit-focus-ring-color;
 }
 
-.control-box--checked {
+.BoxChecked {
   border-color: var(--rm-ui-color-action);
   outline: 2px solid var(--rm-ui-color-action);
   outline-offset: -2px;
 }
 
-.control-box--error {
+.BoxStateIdle {
+  border-color: var(--rm-ui-grey-300);
+}
+
+.BoxStateError {
   border-color: var(--rm-ui-color-error);
 }
 
-.control-box--success {
+.BoxStateSuccess {
   border-color: var(--rm-ui-color-success);
 }
