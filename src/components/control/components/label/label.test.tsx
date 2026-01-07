@@ -5,7 +5,7 @@ import * as stories from '@/components/control/components/label/label.stories';
 
 const { Default, PositionIdle, PositionActive, StateIdle, StateError, StateSuccess } = composeStories(stories);
 
-describe('Button Snapshot', () => {
+describe('Label Snapshot', () => {
   it('Default', async () => {
     const { container } = render(<Default />);
     expect(container).toMatchSnapshot();

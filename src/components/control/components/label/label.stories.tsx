@@ -4,9 +4,6 @@ import { Label } from '@/components/control/components/label';
 const meta = {
   title: 'Components/Control/Label',
   component: Label,
-  parameters: {
-    layout: 'padded',
-  },
   tags: ['autodocs'],
   args: {
     state: 'idle',

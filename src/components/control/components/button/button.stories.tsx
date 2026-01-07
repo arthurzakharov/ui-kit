@@ -5,9 +5,6 @@ import { Button } from '@/components/control/components/button';
 const meta = {
   title: 'Components/Control/Button',
   component: Button,
-  parameters: {
-    layout: 'padded',
-  },
   tags: ['autodocs'],
   args: {
     color: 'next',

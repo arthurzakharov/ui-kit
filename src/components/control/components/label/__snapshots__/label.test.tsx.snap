@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button Snapshot > Default 1`] = `
+exports[`Label Snapshot > Default 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
@@ -13,7 +13,7 @@ exports[`Button Snapshot > Default 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > PositionActive 1`] = `
+exports[`Label Snapshot > PositionActive 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionActive_6bb612 _LabelStateIdle_6bb612"
@@ -26,7 +26,7 @@ exports[`Button Snapshot > PositionActive 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > PositionIdle 1`] = `
+exports[`Label Snapshot > PositionIdle 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
@@ -39,7 +39,7 @@ exports[`Button Snapshot > PositionIdle 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > StateError 1`] = `
+exports[`Label Snapshot > StateError 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateError_6bb612"
@@ -52,7 +52,7 @@ exports[`Button Snapshot > StateError 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > StateIdle 1`] = `
+exports[`Label Snapshot > StateIdle 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
@@ -65,7 +65,7 @@ exports[`Button Snapshot > StateIdle 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > StateSuccess 1`] = `
+exports[`Label Snapshot > StateSuccess 1`] = `
 <div>
   <span
     class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateSuccess_6bb612"

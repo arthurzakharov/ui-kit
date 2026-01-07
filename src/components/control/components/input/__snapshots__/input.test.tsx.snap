@@ -1,0 +1,67 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Input Snapshot > AllKeysPassed 1`] = `
+<div>
+  <input
+    class="_Input_b6cbf5"
+    data-testid="input"
+    id="input-default"
+    name="input-default"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Input Snapshot > Autofill 1`] = `
+<div>
+  <input
+    class="_Input_b6cbf5"
+    data-testid="input"
+    id="input-default"
+    name="input-default"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Input Snapshot > Default 1`] = `
+<div>
+  <input
+    class="_Input_b6cbf5"
+    data-testid="input"
+    id="input-default"
+    name="input-default"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Input Snapshot > Disabled 1`] = `
+<div>
+  <input
+    class="_Input_b6cbf5"
+    data-testid="input"
+    disabled=""
+    id="input-default"
+    name="input-default"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Input Snapshot > Password 1`] = `
+<div>
+  <input
+    class="_Input_b6cbf5"
+    data-testid="input"
+    id="input-default"
+    name="input-default"
+    type="password"
+    value=""
+  />
+</div>
+`;

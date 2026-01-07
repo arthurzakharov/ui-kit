@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HiddenInput Snapshot > Checkbox 1`] = `
+<div>
+  <input
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="test-name"
+    type="checkbox"
+    value="test-value"
+  />
+</div>
+`;
+
+exports[`HiddenInput Snapshot > Checked 1`] = `
+<div>
+  <input
+    checked=""
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="test-name"
+    type="checkbox"
+    value="test-value"
+  />
+</div>
+`;
+
+exports[`HiddenInput Snapshot > Default 1`] = `
+<div>
+  <input
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="test-name"
+    type="checkbox"
+    value="test-value"
+  />
+</div>
+`;
+
+exports[`HiddenInput Snapshot > Disabled 1`] = `
+<div>
+  <input
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    disabled=""
+    id="hidden-input"
+    name="test-name"
+    type="checkbox"
+    value="test-value"
+  />
+</div>
+`;
+
+exports[`HiddenInput Snapshot > NotChecked 1`] = `
+<div>
+  <input
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="test-name"
+    type="checkbox"
+    value="test-value"
+  />
+</div>
+`;
+
+exports[`HiddenInput Snapshot > Radio 1`] = `
+<div>
+  <input
+    class="_HiddenInput_1ed008"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="test-name"
+    type="radio"
+    value="test-value"
+  />
+</div>
+`;

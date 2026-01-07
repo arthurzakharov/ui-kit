@@ -4,9 +4,6 @@ import { Certifications as Component } from '@/components/certifications';
 const meta = {
   title: 'Components/Certifications',
   component: Component,
-  parameters: {
-    layout: 'padded',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Component>;
 

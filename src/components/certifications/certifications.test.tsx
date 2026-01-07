@@ -5,7 +5,7 @@ import * as stories from '@/components/certifications/certifications.stories';
 
 const { Default, CustomOrder } = composeStories(stories);
 
-describe('Button Snapshot', () => {
+describe('Certifications Snapshot', () => {
   it('Default', async () => {
     const { container } = render(<Default />);
     expect(container).toMatchSnapshot();

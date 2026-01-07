@@ -7,72 +7,7 @@ import cn from '@/components/control/components/input/input.module.css';
 const meta = {
   title: 'Components/Control/Input',
   component: Input,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
-  argTypes: {
-    id: {
-      type: {
-        name: 'string',
-        required: true,
-      },
-      description: '<b>id</b> for input field',
-    },
-    value: {
-      type: {
-        name: 'string',
-        required: true,
-      },
-      description: '<b>value</b> for input field',
-    },
-    disabled: {
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-      },
-      description: 'Whether input is disabled',
-    },
-    type: {
-      control: 'radio',
-      options: ['text', 'password', 'email'],
-      table: {
-        type: { summary: 'HTMLInputTypeAttribute' },
-      },
-      description: 'The HTML input type',
-    },
-    onAutofill: {
-      type: {
-        name: 'function',
-      },
-      description: 'On browser autofill the input',
-    },
-    onAutofillCancel: {
-      type: {
-        name: 'function',
-      },
-      description: 'On browser autofill is canceled',
-    },
-    onChange: {
-      type: {
-        name: 'function',
-        required: true,
-      },
-      description: 'On input value changes',
-    },
-    onFocus: {
-      type: {
-        name: 'function',
-      },
-      description: 'On input is focused',
-    },
-    onBlur: {
-      type: {
-        name: 'function',
-      },
-      description: 'On input is blurred',
-    },
-  },
   args: {
     id: 'input-default',
     value: '',
@@ -83,6 +18,14 @@ const meta = {
     onBlur: fn(),
     onAutofill: fn(),
     onAutofillCancel: fn(),
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+    },
+    disabled: {
+      control: 'boolean',
+    },
   },
   render: (args) => {
     const [value, setValue] = useState<string>(args.value);
@@ -119,10 +62,6 @@ export const Default: Story = {
     await expect(args.onChange).toHaveBeenCalledTimes(TEXT.length);
     await expect(args.onChange).toHaveBeenNthCalledWith(TEXT.length, TEXT, args.id, 'keyboard');
     await expect(input).toHaveValue(TEXT);
-    await expect(input).toHaveAttribute('id', args.id);
-    await expect(input).toHaveAttribute('name', args.id);
-    await expect(input).toHaveAttribute('type', 'text');
-    await expect(input).toHaveClass(cn.Input);
     await expect(input).not.toBeDisabled();
   },
 };
@@ -158,10 +97,6 @@ export const Disabled: Story = {
 export const Password: Story = {
   args: {
     type: 'password',
-  },
-  play: async ({ canvas }) => {
-    const input = canvas.getByTestId('input');
-    await expect(input).toHaveAttribute('type', 'password');
   },
 };
 

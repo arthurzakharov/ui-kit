@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, fireEvent } from 'storybook/test';
 import { HiddenInput } from './hidden-input.component';
-import cn from '@/components/control/components/hidden-input/hidden-input.module.css';
 
 const meta = {
   title: 'Components/Control/HiddenInput',
   component: HiddenInput,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
   argTypes: {
     id: {
@@ -92,10 +88,6 @@ export const Default: Story = {
   play: async ({ args, canvas, userEvent }) => {
     const hiddenInput = canvas.getByTestId('hidden-input');
     await expect(hiddenInput).not.toBeDisabled();
-    await expect(hiddenInput).toHaveAttribute('id', args.id);
-    await expect(hiddenInput).toHaveAttribute('name', args.name);
-    await expect(hiddenInput).toHaveAttribute('value', args.value);
-    await expect(hiddenInput).toHaveClass(cn.HiddenInput);
 
     await userEvent.tab();
     await expect(hiddenInput).toHaveFocus();
@@ -115,19 +107,11 @@ export const Radio: Story = {
   args: {
     type: 'radio',
   },
-  play: async ({ canvas }) => {
-    const hiddenInput = canvas.getByTestId('hidden-input');
-    await expect(hiddenInput).toHaveAttribute('type', 'radio');
-  },
 };
 
 export const Checkbox: Story = {
   args: {
     type: 'checkbox',
-  },
-  play: async ({ canvas }) => {
-    const hiddenInput = canvas.getByTestId('hidden-input');
-    await expect(hiddenInput).toHaveAttribute('type', 'checkbox');
   },
 };
 
@@ -135,19 +119,11 @@ export const Checked: Story = {
   args: {
     checked: true,
   },
-  play: async ({ canvas }) => {
-    const hiddenInput = canvas.getByTestId('hidden-input');
-    await expect(hiddenInput).toHaveAttribute('checked');
-  },
 };
 
 export const NotChecked: Story = {
   args: {
     checked: false,
-  },
-  play: async ({ canvas }) => {
-    const hiddenInput = canvas.getByTestId('hidden-input');
-    await expect(hiddenInput).not.toHaveAttribute('checked');
   },
 };
 

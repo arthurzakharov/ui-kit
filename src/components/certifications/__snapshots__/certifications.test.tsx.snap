@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button Snapshot > CustomOrder 1`] = `
+exports[`Certifications Snapshot > CustomOrder 1`] = `
 <div>
   <div
     class="_Certifications_0926e4"
@@ -29,7 +29,7 @@ exports[`Button Snapshot > CustomOrder 1`] = `
 </div>
 `;
 
-exports[`Button Snapshot > Default 1`] = `
+exports[`Certifications Snapshot > Default 1`] = `
 <div>
   <div
     class="_Certifications_0926e4"
