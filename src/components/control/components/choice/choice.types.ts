@@ -1,10 +1,8 @@
-import type { State } from '../../types';
-
 export interface ChoiceProps {
   type: 'radio' | 'checkbox';
   checked: boolean;
+  state?: 'idle' | 'error' | 'success';
   focused?: boolean;
   hovered?: boolean;
-  state?: State;
   disabled?: boolean;
 }

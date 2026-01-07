@@ -1,4 +1,4 @@
-.control-choice {
+.Choice {
   margin: 1px;
   position: relative;
   background-color: var(--rm-ui-card-background);
@@ -21,46 +21,46 @@
 
 /* States */
 
-.control-choice--focused:not(.control-choice--disabled) {
+.ChoiceFocused:not(.ChoiceDisabled) {
   outline-color: var(--rm-ui-color-focus);
 }
 
-.control-choice--hovered.control-choice--idle {
+.ChoiceHovered.ChoiceStateIdle {
   background-color: var(--rm-ui-grey-300);
 }
 
-.control-choice--disabled {
+.ChoiceDisabled {
   opacity: 0.33;
 }
 
-.control-choice--idle {
+.ChoiceStateIdle {
   border-color: var(--rm-ui-grey-300);
 }
 
-.control-choice--success {
+.ChoiceStateSuccess {
   border-color: var(--rm-ui-color-action);
 }
 
-.control-choice--error {
+.ChoiceStateError {
   border-color: var(--rm-ui-color-error);
 }
 
 /* Radio styles */
 
-.control-choice--radio {
+.ChoiceTypeRadio {
   border-radius: 100%;
 }
 
-.control-choice--radio.control-choice--checked.control-choice--idle,
-.control-choice--radio.control-choice--checked.control-choice--success {
+.ChoiceTypeRadio.ChoiceChecked.ChoiceStateIdle,
+.ChoiceTypeRadio.ChoiceChecked.ChoiceStateSuccess {
   background-color: var(--rm-ui-color-action);
 }
 
-.control-choice--radio.control-choice--checked.control-choice--error {
+.ChoiceTypeRadio.ChoiceChecked.ChoiceStateError {
   background-color: var(--rm-ui-color-error);
 }
 
-.control-choice--radio .control-choice__mark {
+.ChoiceTypeRadio .ChoiceMark {
   content: '';
   position: absolute;
   top: 50%;
@@ -72,27 +72,27 @@
   background-color: transparent;
 }
 
-.control-choice--radio.control-choice--checked .control-choice__mark,
-.control-choice--radio.control-choice--hovered .control-choice__mark {
+.ChoiceTypeRadio.ChoiceChecked .ChoiceMark,
+.ChoiceTypeRadio.ChoiceHovered .ChoiceMark {
   background-color: var(--rm-ui-card-background);
 }
 
 /* Checkbox styles */
 
-.control-choice--checkbox {
+.ChoiceTypeCheckbox {
   border-radius: 4px;
 }
 
-.control-choice--checkbox.control-choice--checked.control-choice--idle,
-.control-choice--checkbox.control-choice--checked.control-choice--success {
+.ChoiceTypeCheckbox.ChoiceChecked.ChoiceStateIdle,
+.ChoiceTypeCheckbox.ChoiceChecked.ChoiceStateSuccess {
   background-color: var(--rm-ui-color-action);
 }
 
-.control-choice--checkbox.control-choice--checked.control-choice--error {
+.ChoiceTypeCheckbox.ChoiceChecked.ChoiceStateError {
   background-color: var(--rm-ui-color-error);
 }
 
-.control-choice--checkbox .control-choice__mark {
+.ChoiceTypeCheckbox .ChoiceMark {
   position: absolute;
   content: '';
   top: 50%;
@@ -105,7 +105,7 @@
   stroke: transparent;
 }
 
-.control-choice--checkbox.control-choice--checked .control-choice__mark,
-.control-choice--checkbox.control-choice--hovered .control-choice__mark {
+.ChoiceTypeCheckbox.ChoiceChecked .ChoiceMark,
+.ChoiceTypeCheckbox.ChoiceHovered .ChoiceMark {
   stroke: var(--rm-ui-card-background);
 }

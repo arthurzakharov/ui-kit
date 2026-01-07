@@ -1,30 +1,27 @@
-import type { ChoiceProps } from './choice.types';
+import type { ChoiceProps } from '@/components/control/components/choice/choice.types';
 import { Check } from 'lucide-react';
 import clsx from 'clsx';
-import './choice.css';
+import cn from '@/components/control/components/choice/choice.module.css';
 
-export const Choice = ({
-  type,
-  checked,
-  focused = false,
-  hovered = false,
-  state = 'idle',
-  disabled = false,
-}: ChoiceProps) => (
-  <div
-    className={clsx('control-choice', {
-      'control-choice--checked': checked,
-      'control-choice--focused': focused,
-      'control-choice--hovered': hovered,
-      'control-choice--disabled': disabled,
-      'control-choice--radio': type === 'radio',
-      'control-choice--checkbox': type === 'checkbox',
-      'control-choice--idle': state === 'idle',
-      'control-choice--error': state === 'error',
-      'control-choice--success': state === 'success' || checked,
-    })}
-  >
-    {type === 'radio' && <div className="control-choice__mark" />}
-    {type === 'checkbox' && <Check className="control-choice__mark" />}
-  </div>
-);
+export const Choice = (props: ChoiceProps) => {
+  const { type, checked, state = 'idle', focused = false, hovered = false, disabled = false } = props;
+
+  return (
+    <div
+      className={clsx(cn.Choice, {
+        [cn.ChoiceChecked]: checked,
+        [cn.ChoiceFocused]: focused,
+        [cn.ChoiceHovered]: hovered,
+        [cn.ChoiceDisabled]: disabled,
+        [cn.ChoiceTypeRadio]: type === 'radio',
+        [cn.ChoiceTypeCheckbox]: type === 'checkbox',
+        [cn.ChoiceStateIdle]: state === 'idle',
+        [cn.ChoiceStateError]: state === 'error',
+        [cn.ChoiceStateSuccess]: state === 'success' || checked,
+      })}
+    >
+      {type === 'radio' && <div className={cn.ChoiceMark} />}
+      {type === 'checkbox' && <Check className={cn.ChoiceMark} />}
+    </div>
+  );
+};
