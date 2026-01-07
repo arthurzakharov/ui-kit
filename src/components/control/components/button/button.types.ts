@@ -1,9 +1,15 @@
 import type { PropsWithChildren } from 'react';
 
+type ButtonColor = 'next' | 'previous';
+
+type ButtonSize = 'sm' | 'md' | 'lg';
+
+type ButtonType = 'submit' | 'reset' | 'button';
+
 export interface ButtonProps extends PropsWithChildren {
-  color: 'next' | 'previous';
-  size: 'sm' | 'md' | 'lg';
-  type: 'submit' | 'reset' | 'button';
+  color: ButtonColor;
+  size: ButtonSize;
+  type: ButtonType;
   disabled?: boolean;
   info?: string;
   fullWidth?: boolean;
