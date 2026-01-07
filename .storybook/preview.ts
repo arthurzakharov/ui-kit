@@ -2,17 +2,6 @@ import type { Preview } from '@storybook/react-vite';
 import '../src/styles/variables.css';
 
 const preview: Preview = {
-  argTypes: {
-    children: {
-      type: {
-        name: 'function',
-        required: true,
-      },
-      table: {
-        type: { summary: 'ReactNode' },
-      },
-    },
-  },
   parameters: {
     controls: {
       matchers: {

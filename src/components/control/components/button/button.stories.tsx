@@ -44,6 +44,15 @@ const meta = {
     fullWidth: {
       control: 'boolean',
     },
+    children: {
+      type: {
+        name: 'function',
+        required: true,
+      },
+      table: {
+        type: { summary: 'ReactNode' },
+      },
+    },
   },
 } satisfies Meta<typeof Button>;
 

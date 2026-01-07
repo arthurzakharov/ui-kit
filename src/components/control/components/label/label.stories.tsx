@@ -25,6 +25,15 @@ const meta = {
     position: {
       control: 'select',
     },
+    children: {
+      type: {
+        name: 'function',
+        required: true,
+      },
+      table: {
+        type: { summary: 'ReactNode' },
+      },
+    },
   },
 } satisfies Meta<typeof Label>;
 
