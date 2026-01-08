@@ -1,67 +1,65 @@
-import type { CardImageProps } from './card-image.types';
-import { Box } from '../box';
-import { Choice } from '../choice';
-import { HiddenInput } from '../hidden-input';
-import { RadioLabel } from '../radio-label';
-import { RadioText } from '../radio-text';
-import { useChoice } from '../../hooks/useChoice';
-import { choiceId } from '../../utils';
-import './card-image.css';
+import type { CardImageProps } from '@/components/control/components/card-image/card-image.types';
+import { Control } from '@/components/control';
+import { useChoice } from '@/components/control/hooks';
+import { getChoiceId } from '@/components/control/utils';
+import cn from '@/components/control/components/card-image/card-image.module.css';
 
 export const CardImage = (props: CardImageProps) => {
-  const { type, onChange } = useChoice(props.value, props.id, props.onChange);
+  // TODO: onFocus and onBlur are not used even though they can be passed
+  const { sprite, choices, state = 'idle', id, value, disabled, onChange } = props;
+  const { type, onChoiceChange } = useChoice(value, id, onChange);
 
   return (
-    <div className="control-card-image">
-      {props.choices.map((choice, index, choices) => {
-        const id = choiceId(props.id, choice.value, index);
+    <div className={cn.CardImage}>
+      {choices.map((choice, index, choices) => {
+        const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel
-            key={id}
-            id={id}
-            value={props.value}
-            state={props.state || 'idle'}
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
             choice={choice}
             choices={choices}
           >
             {({ focused, hovered, checked, state }) => (
-              <Box state={state} checked={checked} focused={focused}>
-                <div className="control-card-image__content">
-                  <HiddenInput
+              <Control.Box state={state} checked={checked} focused={focused}>
+                <div className={cn.CardImageContent}>
+                  <Control.HiddenInput
                     type={type}
-                    id={id}
-                    name={props.id}
+                    id={choiceId}
+                    name={id}
                     value={choice.value}
                     checked={checked}
-                    disabled={props.disabled}
-                    onChange={() => onChange(choice.value)}
+                    disabled={disabled}
+                    onChange={() => onChoiceChange(choice.value)}
                   />
-                  <div className="control-card-image__top">
+                  <div className={cn.CardImageTop}>
                     <div
                       data-image={choice.icon}
-                      style={{ backgroundImage: `url(${props.sprite})` }}
-                      className="control-card-image__image"
+                      style={{ backgroundImage: `url(${sprite})` }}
+                      className={cn.CardImageWrap}
                     />
                   </div>
-                  <div className="control-card-image__bottom">
+                  <div className={cn.CardImageBottom}>
                     <div>
-                      <Choice
+                      <Control.Choice
                         type={type}
                         state={state}
                         checked={checked}
                         focused={focused}
                         hovered={hovered}
-                        disabled={props.disabled}
+                        disabled={disabled}
                       />
                     </div>
-                    <RadioText size="md" checked={checked}>
+                    <Control.RadioText size="md" checked={checked}>
                       {choice.label}
-                    </RadioText>
+                    </Control.RadioText>
                   </div>
                 </div>
-              </Box>
+              </Control.Box>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

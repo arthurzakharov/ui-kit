@@ -4,7 +4,7 @@ import { Choice } from '../choice';
 import { HiddenInput } from '../hidden-input';
 import { RadioLabel } from '../radio-label';
 import { RadioText } from '../radio-text';
-import { choiceId } from '../../utils';
+import { getChoiceId } from '../../utils';
 import './radio.css';
 
 export const Radio = (props: RadioProps) => {
@@ -16,7 +16,7 @@ export const Radio = (props: RadioProps) => {
   return (
     <div className={radioCn}>
       {props.choices.map((choice, index, choices) => {
-        const id = choiceId(props.id, choice.value, index);
+        const id = getChoiceId(props.id, choice.value, index);
         return (
           <RadioLabel key={id} id={id} value={props.value} state={props.state} choice={choice} choices={choices}>
             {({ focused, hovered, checked, state }) => (

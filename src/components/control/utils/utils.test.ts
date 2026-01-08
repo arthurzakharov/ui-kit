@@ -1,18 +1,18 @@
 import { describe, expect, it, vi } from 'vitest';
-import { choiceId, clickHasNode, containsHtml } from './utils';
+import { getChoiceId, clickHasNode, containsHtml } from './utils';
 
 describe('Control Utils', () => {
-  describe('choiceId', () => {
+  describe('getChoiceId', () => {
     it('should generate correct ID format', () => {
-      expect(choiceId('my-id', 'value', 0)).toBe('my-id-0-value');
+      expect(getChoiceId('my-id', 'value', 0)).toBe('my-id-0-value');
     });
 
     it('should replace spaces with hyphens in value', () => {
-      expect(choiceId('my-id', 'some value', 1)).toBe('my-id-1-some-value');
+      expect(getChoiceId('my-id', 'some value', 1)).toBe('my-id-1-some-value');
     });
 
     it('should handle multiple spaces correctly', () => {
-      expect(choiceId('test', 'a  b   c', 2)).toBe('test-2-a-b-c');
+      expect(getChoiceId('test', 'a  b   c', 2)).toBe('test-2-a-b-c');
     });
   });
 

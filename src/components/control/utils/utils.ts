@@ -1,6 +1,6 @@
 import type { RefObject } from 'react';
 
-export const choiceId = (id: string, value: string, index: number) => {
+export const getChoiceId = (id: string, value: string, index: number) => {
   return [id, index, value.replace(/\s+/g, '-')].join('-');
 };
 

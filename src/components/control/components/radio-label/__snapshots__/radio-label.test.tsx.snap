@@ -1,0 +1,417 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RadioLabel Snapshot > CheckedValueIsArray 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        true
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > CheckedValueIsString 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        true
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > DefaultValue 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > Focused 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > Hovered 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > MultiChoiceErrorState 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        true
+      </div>
+      <div>
+        State: 
+        error
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > NotCheckedValueIsArray 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > NotCheckedValueIsString 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > StateErrorCheckedSingleChoice 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        true
+      </div>
+      <div>
+        State: 
+        error
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > StateErrorNotCheckedError 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        error
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > StateErrorNotCheckedIdleSingleChoice 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > StateIdle 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioLabel Snapshot > StateSuccess 1`] = `
+<div>
+  <label
+    class="_RadioLabel_121793"
+    data-testid="radio-label"
+    for="radio"
+  >
+    <div
+      data-testid="children-renderer"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border-width: 1px; border-style: solid; border-color: rgb(212, 212, 212); border-radius: 10px; min-width: 200px;"
+    >
+      <div>
+        Focused: 
+        false
+      </div>
+      <div>
+        Hovered: 
+        false
+      </div>
+      <div>
+        Checked: 
+        false
+      </div>
+      <div>
+        State: 
+        idle
+      </div>
+    </div>
+  </label>
+</div>
+`;

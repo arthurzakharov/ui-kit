@@ -1,4 +1,4 @@
-import type { Interactive, RadioChoice, ChoiceValue, State } from '../../types';
+import type { Interactive, RadioChoice, ChoiceValue, State } from '@/components/control/types';
 
 export interface CardImageProps extends Interactive<ChoiceValue> {
   sprite: string;

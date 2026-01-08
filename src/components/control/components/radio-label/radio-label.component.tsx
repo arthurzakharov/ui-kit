@@ -1,7 +1,7 @@
 import type { ChoiceValue } from '@/components/control/types';
 import type { RadioLabelProps } from '@/components/control/components/radio-label/radio-label.types';
 import { useToggle } from 'usehooks-ts';
-import '@/components/control/components/radio-label/radio-label.css';
+import cn from '@/components/control/components/radio-label/radio-label.module.css';
 
 export const RadioLabel = <T extends ChoiceValue>(props: RadioLabelProps<T>) => {
   const { children, id, value, choice, choices = [], state = 'idle' } = props;
@@ -10,8 +10,9 @@ export const RadioLabel = <T extends ChoiceValue>(props: RadioLabelProps<T>) => 
 
   return (
     <label
+      data-testid="radio-label"
       htmlFor={id}
-      className="control-radio-label"
+      className={cn.RadioLabel}
       onFocus={() => toggleFocused()}
       onBlur={() => toggleFocused()}
       onMouseEnter={() => toggleHovered()}

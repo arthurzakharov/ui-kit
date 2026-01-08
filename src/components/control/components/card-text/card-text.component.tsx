@@ -1,58 +1,56 @@
-import { RadioText } from '../radio-text';
-import type { CardTextProps } from './card-text.types';
-import { Box } from '../box';
-import { Choice } from '../choice';
-import { HiddenInput } from '../hidden-input';
-import { RadioLabel } from '../radio-label';
+import type { CardTextProps } from '@/components/control/components/card-text/card-text.types';
+import { Control } from '@/components/control';
 import { useChoice } from '@/components/control/hooks';
-import { choiceId } from '../../utils';
-import './card-text.css';
+import { getChoiceId } from '@/components/control/utils';
+import cn from '@/components/control/components/card-text/card-text.module.css';
 
 export const CardText = (props: CardTextProps) => {
-  const { type, onChange } = useChoice(props.value, props.id, props.onChange);
+  // TODO: onFocus and onBlur are not used even though they can be passed
+  const { choices, state = 'idle', id, value, disabled = false, onChange } = props;
+  const { type, onChoiceChange } = useChoice(value, id, onChange);
 
   return (
-    <div className="control-card-text">
-      {props.choices.map((choice, index, choices) => {
-        const id = choiceId(props.id, choice.value, index);
+    <div className={cn.CardText}>
+      {choices.map((choice, index, choices) => {
+        const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel
-            key={id}
-            id={id}
-            value={props.value}
-            state={props.state || 'idle'}
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
             choice={choice}
             choices={choices}
           >
             {({ focused, hovered, checked, state }) => (
-              <Box state={state} checked={checked} focused={focused}>
-                <div className="control-card-text__label">
-                  <HiddenInput
+              <Control.Box state={state} checked={checked} focused={focused}>
+                <div className={cn.CardTextLabel}>
+                  <Control.HiddenInput
                     type={type}
-                    id={id}
-                    name={props.id}
+                    id={choiceId}
+                    name={id}
                     value={choice.value}
                     checked={checked}
-                    disabled={props.disabled}
-                    onChange={(_e, source) => onChange(choice.value, source)}
+                    disabled={disabled}
+                    onChange={(_e, source) => onChoiceChange(choice.value, source)}
                   />
-                  <div className="control-card-text__choice">
-                    <Choice
+                  <div className={cn.CardTextChoice}>
+                    <Control.Choice
                       type={type}
                       state={state}
                       checked={checked}
                       focused={focused}
                       hovered={hovered}
-                      disabled={props.disabled}
+                      disabled={disabled}
                     />
                   </div>
-                  <RadioText size="lg" checked={checked}>
+                  <Control.RadioText size="lg" checked={checked}>
                     {choice.label}
-                  </RadioText>
+                  </Control.RadioText>
                 </div>
-              </Box>
+              </Control.Box>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

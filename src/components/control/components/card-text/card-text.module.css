@@ -1,4 +1,4 @@
-.control-card-text {
+.CardText {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -6,7 +6,7 @@
   gap: var(--rm-ui-padding-sm);
 }
 
-.control-card-text__label {
+.CardTextLabel {
   position: relative;
   padding: var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
   flex-basis: 100%;
@@ -17,11 +17,11 @@
   gap: var(--rm-ui-padding-xs);
 }
 
-.control-card-text__label:hover {
+.CardTextLabel:hover {
   cursor: pointer;
 }
 
-.control-card-text__choice {
+.CardTextChoice {
   display: flex;
   flex-direction: row;
   align-items: center;

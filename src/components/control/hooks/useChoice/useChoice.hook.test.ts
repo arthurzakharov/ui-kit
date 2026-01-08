@@ -13,15 +13,15 @@ describe('useChoice', () => {
 
     it('should call callback with new value, with source specified', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice('option1', id, cb);
-      onChange('option2', 'mouse');
+      const { onChoiceChange } = useChoice('option1', id, cb);
+      onChoiceChange('option2', 'mouse');
       expect(cb).toHaveBeenCalledWith('option2', id, 'mouse');
     });
 
     it('should call callback with new value, without source specified', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice('option1', id, cb);
-      onChange('option2');
+      const { onChoiceChange } = useChoice('option1', id, cb);
+      onChoiceChange('option2');
       expect(cb).toHaveBeenCalledWith('option2', id, undefined);
     });
   });
@@ -35,29 +35,29 @@ describe('useChoice', () => {
 
     it('should add value when not present', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice(['option1'], id, cb);
-      onChange('option2', 'keyboard');
+      const { onChoiceChange } = useChoice(['option1'], id, cb);
+      onChoiceChange('option2', 'keyboard');
       expect(cb).toHaveBeenCalledWith(['option1', 'option2'], id, 'keyboard');
     });
 
     it('should remove value when present', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice(['option1', 'option2'], id, cb);
-      onChange('option1', 'keyboard');
+      const { onChoiceChange } = useChoice(['option1', 'option2'], id, cb);
+      onChoiceChange('option1', 'keyboard');
       expect(cb).toHaveBeenCalledWith(['option2'], id, 'keyboard');
     });
 
     it('should filter out empty values', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice(['option1'], id, cb);
-      onChange('', 'mouse');
+      const { onChoiceChange } = useChoice(['option1'], id, cb);
+      onChoiceChange('', 'mouse');
       expect(cb).toHaveBeenCalledWith(['option1'], id, 'mouse');
     });
 
     it('should call callback with new value, without source specified', () => {
       const cb = vi.fn();
-      const { onChange } = useChoice(['option1'], id, cb);
-      onChange('option2');
+      const { onChoiceChange } = useChoice(['option1'], id, cb);
+      onChoiceChange('option2');
       expect(cb).toHaveBeenCalledWith(['option1', 'option2'], id, undefined);
     });
   });

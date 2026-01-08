@@ -1,4 +1,4 @@
-.control-card-image {
+.CardImage {
   --font-size: 12px;
   --line-height: 14px;
   --img-size: 110px;
@@ -10,7 +10,7 @@
   gap: var(--rm-ui-padding-xs);
 }
 
-.control-card-image__content {
+.CardImageContent {
   width: 135px;
   height: 130px;
   padding: 6px;
@@ -20,16 +20,16 @@
   align-items: stretch;
 }
 
-.control-card-image__content:hover {
+.CardImageContent:hover {
   cursor: pointer;
 }
 
-.control-card-image__top {
+.CardImageTop {
   position: relative;
   flex-grow: 1;
 }
 
-.control-card-image__image {
+.CardImageWrap {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,7 +40,7 @@
   background-size: 700%;
 }
 
-.control-card-image__bottom {
+.CardImageBottom {
   flex-basis: calc(var(--line-height) * 2);
   display: flex;
   flex-direction: row;

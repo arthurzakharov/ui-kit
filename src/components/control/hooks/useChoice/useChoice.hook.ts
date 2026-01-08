@@ -5,7 +5,7 @@ export const useChoice = (value: ChoiceValue, id: string, cb: Interactive<Choice
 
   return {
     type,
-    onChange: (newValue: string, source?: InputChangeSource) => {
+    onChoiceChange: (newValue: string, source?: InputChangeSource) => {
       if (typeof value === 'string') {
         cb(newValue, id, source);
       } else {

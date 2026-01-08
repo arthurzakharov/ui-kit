@@ -1,0 +1,1293 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CardImage Snapshot > Checkbox 1`] = `
+<div>
+  <div
+    style="width: 500px;"
+  >
+    <div
+      class="_CardImage_e982b4"
+    >
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-0-v1"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-0-v1"
+              name="card-image"
+              type="checkbox"
+              value="v1"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Geschwindig­keitsverstoß"
+                >
+                  Geschwindig­keitsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-1-v2"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-1-v2"
+              name="card-image"
+              type="checkbox"
+              value="v2"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Rotlichtverstoß"
+                >
+                  Rotlichtverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-2-v3"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-2-v3"
+              name="card-image"
+              type="checkbox"
+              value="v3"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Abstandsverstoß"
+                >
+                  Abstandsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-3-v4"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-3-v4"
+              name="card-image"
+              type="checkbox"
+              value="v4"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Handyverstoß"
+                >
+                  Handyverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-4-v5"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-4-v5"
+              name="card-image"
+              type="checkbox"
+              value="v5"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Alkoholverstoß"
+                >
+                  Alkoholverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-5-v6"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-5-v6"
+              name="card-image"
+              type="checkbox"
+              value="v6"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Park- / Halteverstoß"
+                >
+                  Park- / Halteverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-6-v7"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-6-v7"
+              name="card-image"
+              type="checkbox"
+              value="v7"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-check _ChoiceMark_8d554d"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6 9 17l-5-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Anderer Tatvorwurf"
+                >
+                  Anderer Tatvorwurf
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CardImage Snapshot > DefaultValues 1`] = `
+<div>
+  <div
+    style="width: 500px;"
+  >
+    <div
+      class="_CardImage_e982b4"
+    >
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-0-v1"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-0-v1"
+              name="card-image"
+              type="radio"
+              value="v1"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Geschwindig­keitsverstoß"
+                >
+                  Geschwindig­keitsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-1-v2"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-1-v2"
+              name="card-image"
+              type="radio"
+              value="v2"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Rotlichtverstoß"
+                >
+                  Rotlichtverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-2-v3"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-2-v3"
+              name="card-image"
+              type="radio"
+              value="v3"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Abstandsverstoß"
+                >
+                  Abstandsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-3-v4"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-3-v4"
+              name="card-image"
+              type="radio"
+              value="v4"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Handyverstoß"
+                >
+                  Handyverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-4-v5"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-4-v5"
+              name="card-image"
+              type="radio"
+              value="v5"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Alkoholverstoß"
+                >
+                  Alkoholverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-5-v6"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-5-v6"
+              name="card-image"
+              type="radio"
+              value="v6"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Park- / Halteverstoß"
+                >
+                  Park- / Halteverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-6-v7"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-6-v7"
+              name="card-image"
+              type="radio"
+              value="v7"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Anderer Tatvorwurf"
+                >
+                  Anderer Tatvorwurf
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CardImage Snapshot > Radio 1`] = `
+<div>
+  <div
+    style="width: 500px;"
+  >
+    <div
+      class="_CardImage_e982b4"
+    >
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-0-v1"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-0-v1"
+              name="card-image"
+              type="radio"
+              value="v1"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Geschwindig­keitsverstoß"
+                >
+                  Geschwindig­keitsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-1-v2"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-1-v2"
+              name="card-image"
+              type="radio"
+              value="v2"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Rotlichtverstoß"
+                >
+                  Rotlichtverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-2-v3"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-2-v3"
+              name="card-image"
+              type="radio"
+              value="v3"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Abstandsverstoß"
+                >
+                  Abstandsverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-3-v4"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-3-v4"
+              name="card-image"
+              type="radio"
+              value="v4"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Handyverstoß"
+                >
+                  Handyverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-4-v5"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-4-v5"
+              name="card-image"
+              type="radio"
+              value="v5"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Alkoholverstoß"
+                >
+                  Alkoholverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-5-v6"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-5-v6"
+              name="card-image"
+              type="radio"
+              value="v6"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Park- / Halteverstoß"
+                >
+                  Park- / Halteverstoß
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_RadioLabel_121793"
+        data-testid="radio-label"
+        for="card-image-6-v7"
+      >
+        <div
+          class="_Box_a85640 _BoxStateIdle_a85640"
+          data-testid="box"
+        >
+          <div
+            class="_CardImageContent_e982b4"
+          >
+            <input
+              class="_HiddenInput_1ed008"
+              data-testid="hidden-input"
+              id="card-image-6-v7"
+              name="card-image"
+              type="radio"
+              value="v7"
+            />
+            <div
+              class="_CardImageTop_e982b4"
+            >
+              <div
+                class="_CardImageWrap_e982b4"
+                style="background-image: url("./card-sprite.svg");"
+              />
+            </div>
+            <div
+              class="_CardImageBottom_e982b4"
+            >
+              <div>
+                <div
+                  class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                >
+                  <div
+                    class="_ChoiceMark_8d554d"
+                  />
+                </div>
+              </div>
+              <div
+                class="_RadioText_7c88c7 _RadioTextSizeMd_7c88c7"
+              >
+                <span
+                  class="_RadioTextContent_7c88c7"
+                  data-checked="false"
+                  data-text="Anderer Tatvorwurf"
+                >
+                  Anderer Tatvorwurf
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;

@@ -1,1 +1,1 @@
-export { choiceId, containsHtml, clickHasNode } from './utils';
+export { getChoiceId, containsHtml, clickHasNode } from './utils';
