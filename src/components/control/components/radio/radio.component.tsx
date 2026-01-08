@@ -1,49 +1,56 @@
-import type { RadioProps } from './radio.types';
+import type { RadioProps } from '@/components/control/components/radio/radio.types';
 import clsx from 'clsx';
-import { Choice } from '../choice';
-import { HiddenInput } from '../hidden-input';
-import { RadioLabel } from '../radio-label';
-import { RadioText } from '../radio-text';
-import { getChoiceId } from '../../utils';
-import './radio.css';
+import { Control } from '@/components/control';
+import { getChoiceId } from '@/components/control/utils';
+import cn from '@/components/control/components/radio/radio.module.css';
 
 export const Radio = (props: RadioProps) => {
-  const radioCn = clsx('control-radio', {
-    'control-radio--horizontal': props.orientation === 'horizontal',
-    'control-radio--vertical': props.orientation === 'vertical',
-  });
+  // TODO: onFocus, onBlur can be declared but are not used
+  const { orientation, choices, state = 'idle', id, value, disabled = false, onChange } = props;
 
   return (
-    <div className={radioCn}>
-      {props.choices.map((choice, index, choices) => {
-        const id = getChoiceId(props.id, choice.value, index);
+    <div
+      className={clsx(cn.Radio, {
+        [cn.RadioOrientationHorizontal]: orientation === 'horizontal',
+        [cn.RadioOrientationVertical]: orientation === 'vertical',
+      })}
+    >
+      {choices.map((choice, index, choices) => {
+        const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel key={id} id={id} value={props.value} state={props.state} choice={choice} choices={choices}>
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
+            choice={choice}
+            choices={choices}
+          >
             {({ focused, hovered, checked, state }) => (
-              <div className="control-radio__label">
-                <Choice
+              <div className={cn.RadioLabel}>
+                <Control.Choice
                   type="radio"
                   state={state}
                   checked={checked}
                   focused={focused}
                   hovered={hovered}
-                  disabled={props.disabled}
+                  disabled={disabled}
                 />
-                <HiddenInput
+                <Control.HiddenInput
                   type="radio"
-                  id={id}
+                  id={choiceId}
                   value={choice.value}
-                  name={props.id}
+                  name={id}
                   checked={checked}
-                  disabled={props.disabled}
-                  onChange={() => props.onChange(choice.value, props.id)}
+                  disabled={disabled}
+                  onChange={() => onChange(choice.value, id)}
                 />
-                <RadioText size="lg" checked={checked}>
+                <Control.RadioText size="lg" checked={checked}>
                   {choice.label}
-                </RadioText>
+                </Control.RadioText>
               </div>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

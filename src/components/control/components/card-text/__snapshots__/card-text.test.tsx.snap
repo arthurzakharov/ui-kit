@@ -33,6 +33,7 @@ exports[`CardText Snapshot > Checkbox 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <svg
                   aria-hidden="true"
@@ -92,6 +93,7 @@ exports[`CardText Snapshot > Checkbox 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <svg
                   aria-hidden="true"
@@ -151,6 +153,7 @@ exports[`CardText Snapshot > Checkbox 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <svg
                   aria-hidden="true"
@@ -210,6 +213,7 @@ exports[`CardText Snapshot > Checkbox 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <svg
                   aria-hidden="true"
@@ -269,6 +273,7 @@ exports[`CardText Snapshot > Checkbox 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <svg
                   aria-hidden="true"
@@ -341,6 +346,7 @@ exports[`CardText Snapshot > DefaultValues 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -386,6 +392,7 @@ exports[`CardText Snapshot > DefaultValues 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -431,6 +438,7 @@ exports[`CardText Snapshot > DefaultValues 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -476,6 +484,7 @@ exports[`CardText Snapshot > DefaultValues 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -521,6 +530,7 @@ exports[`CardText Snapshot > DefaultValues 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -579,6 +589,7 @@ exports[`CardText Snapshot > Radio 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -624,6 +635,7 @@ exports[`CardText Snapshot > Radio 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -669,6 +681,7 @@ exports[`CardText Snapshot > Radio 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -714,6 +727,7 @@ exports[`CardText Snapshot > Radio 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"
@@ -759,6 +773,7 @@ exports[`CardText Snapshot > Radio 1`] = `
             >
               <div
                 class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+                data-testid="choice"
               >
                 <div
                   class="_ChoiceMark_8d554d"

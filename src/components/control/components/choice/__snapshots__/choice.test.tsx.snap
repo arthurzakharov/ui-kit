@@ -4,6 +4,7 @@ exports[`Choice Snapshot > Checked 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceChecked_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d _ChoiceStateSuccess_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -16,6 +17,7 @@ exports[`Choice Snapshot > DefaultValues 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -28,6 +30,7 @@ exports[`Choice Snapshot > Disabled 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceDisabled_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -40,6 +43,7 @@ exports[`Choice Snapshot > Focused 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceFocused_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -52,6 +56,7 @@ exports[`Choice Snapshot > Hovered 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceHovered_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -64,6 +69,7 @@ exports[`Choice Snapshot > StateError 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateError_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -76,6 +82,7 @@ exports[`Choice Snapshot > StateIdle 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -88,6 +95,7 @@ exports[`Choice Snapshot > StateSuccess 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateSuccess_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"
@@ -100,6 +108,7 @@ exports[`Choice Snapshot > TypeCheckbox 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeCheckbox_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <svg
       aria-hidden="true"
@@ -126,6 +135,7 @@ exports[`Choice Snapshot > TypeRadio 1`] = `
 <div>
   <div
     class="_Choice_8d554d _ChoiceTypeRadio_8d554d _ChoiceStateIdle_8d554d"
+    data-testid="choice"
   >
     <div
       class="_ChoiceMark_8d554d"

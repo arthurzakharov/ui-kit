@@ -1,9 +1,7 @@
-import type { Interactive, RadioChoice, State } from '../../types';
-
-type Orientation = 'horizontal' | 'vertical';
+import type { Interactive, RadioChoice, State } from '@/components/control/types';
 
 export interface RadioProps extends Interactive<string> {
-  orientation: Orientation;
+  orientation: 'horizontal' | 'vertical';
   choices: RadioChoice[];
   state?: State;
 }

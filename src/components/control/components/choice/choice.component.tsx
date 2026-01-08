@@ -8,6 +8,7 @@ export const Choice = (props: ChoiceProps) => {
 
   return (
     <div
+      data-testid="choice"
       className={clsx(cn.Choice, {
         [cn.ChoiceChecked]: checked,
         [cn.ChoiceFocused]: focused,

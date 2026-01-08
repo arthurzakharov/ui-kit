@@ -1,18 +1,18 @@
-.control-radio {
+.Radio {
   display: inline-flex;
 }
 
-.control-radio--horizontal {
+.RadioOrientationHorizontal {
   flex-direction: row;
   gap: var(--rm-ui-padding-lg);
 }
 
-.control-radio--vertical {
+.RadioOrientationVertical {
   flex-direction: column;
   gap: var(--rm-ui-padding-xxs);
 }
 
-.control-radio__label {
+.RadioLabel {
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -21,6 +21,6 @@
   gap: var(--rm-ui-padding-xs);
 }
 
-.control-radio__label:hover {
+.RadioLabel:hover {
   cursor: pointer;
 }
