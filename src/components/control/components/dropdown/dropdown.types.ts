@@ -1,4 +1,4 @@
-import type { QuestionChoice } from '../../types';
+import type { QuestionChoice } from '@/components/control/types';
 
 export interface DropdownProps {
   choices: QuestionChoice[];

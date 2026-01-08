@@ -1,69 +1,70 @@
 import type { ChangeEvent, MouseEvent } from 'react';
-import type { CheckboxProps } from './checkbox.types';
+import type { CheckboxProps } from '@/components/control/components/checkbox/checkbox.types';
 import { useToggle } from 'usehooks-ts';
-import { Choice } from '../choice';
-import { HiddenInput } from '../hidden-input';
-import { Converter } from '../../../../utils/converter';
-import './checkbox.css';
+import { Control } from '@/components/control';
+import { Converter } from '@/utils';
+import cn from '@/components/control/components/checkbox/checkbox.module.css';
 
 export const Checkbox = (props: CheckboxProps) => {
+  const { children, state = 'idle', id, value, disabled = false, onChange, onFocus, onBlur } = props;
+
   const [focused, toggleFocused] = useToggle(false);
   const [hovered, toggleHovered] = useToggle(false);
 
   const onLabelClick = (e: MouseEvent<HTMLLabelElement>) => {
-    if (props.disabled || focused) return;
+    if (disabled || focused) return;
     e.preventDefault();
-    props.onChange(!props.value, props.id);
+    onChange(!value, id);
   };
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (props.disabled) return;
+    if (disabled) return;
     e.stopPropagation();
-    props.onChange(!props.value, props.id);
+    onChange(!value, id);
   };
 
   const onInputFocus = () => {
-    if (props.disabled) return;
+    if (disabled) return;
     toggleFocused();
-    props.onFocus?.call(null, props.id);
+    onFocus?.call(null, id);
   };
 
   const onInputBlur = () => {
-    if (props.disabled) return;
+    if (disabled) return;
     toggleFocused();
-    props.onBlur?.call(null, props.id);
+    onBlur?.call(null, id);
   };
 
   return (
     <label
-      htmlFor={props.id}
-      className="control-checkbox"
+      htmlFor={id}
+      className={cn.Checkbox}
       onClick={onLabelClick}
       onFocus={onInputFocus}
       onBlur={onInputBlur}
       onMouseEnter={() => toggleHovered()}
       onMouseLeave={() => toggleHovered()}
     >
-      <HiddenInput
+      <Control.HiddenInput
         type="checkbox"
-        id={props.id}
-        name={props.id}
-        value={Converter.Boolean.ToBooleanString(props.value)}
-        checked={props.value}
-        disabled={props.disabled}
+        id={id}
+        name={id}
+        value={Converter.Boolean.ToBooleanString(value)}
+        checked={value}
+        disabled={disabled}
         onChange={onInputChange}
       />
-      <div className="control-checkbox__choice">
-        <Choice
+      <div className={cn.CheckboxChoice}>
+        <Control.Choice
           type="checkbox"
-          state={props.state}
-          checked={props.value}
+          state={state}
+          checked={value}
           focused={focused}
           hovered={hovered}
-          disabled={props.disabled}
+          disabled={disabled}
         />
       </div>
-      <div className="control-checkbox__content">{props.children}</div>
+      <div className={cn.CheckboxContent}>{children}</div>
     </label>
   );
 };

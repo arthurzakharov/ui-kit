@@ -1,4 +1,4 @@
-.control-checkbox {
+.Checkbox {
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -7,24 +7,24 @@
   gap: var(--rm-ui-padding-xs);
 }
 
-.control-checkbox:hover {
+.Checkbox:hover {
   cursor: pointer;
 }
 
-.control-checkbox__choice {
+.CheckboxChoice {
   position: relative;
   left: 0;
   top: 3px;
 }
 
-.control-checkbox__content {
+.CheckboxContent {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
   color: var(--rm-ui-color-primary);
 }
 
-.control-checkbox__content button {
+.CheckboxContent button {
   background-color: transparent;
   border: none;
   padding: 0;
@@ -34,7 +34,7 @@
   color: var(--rm-ui-color-action);
 }
 
-.control-checkbox__content button:hover {
+.CheckboxContent button:hover {
   cursor: pointer;
   text-decoration: underline;
 }

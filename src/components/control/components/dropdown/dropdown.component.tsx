@@ -1,13 +1,13 @@
-import type { QuestionChoice, Size } from '../../types';
-import type { DropdownProps } from './dropdown.types';
+import type { DropdownProps } from '@/components/control/components/dropdown/dropdown.types';
+import type { QuestionChoice, Size } from '@/components/control/types';
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { useBoolean, useOnClickOutside, useResizeObserver } from 'usehooks-ts';
 import { ChevronDown, Search } from 'lucide-react';
 import clsx from 'clsx';
-import { Control } from '../../index';
-import { clickHasNode } from '../../utils';
-import { Converter } from '../../../../utils/converter';
-import './dropdown.css';
+import { Control } from '@/components/control';
+import { clickHasNode } from '@/components/control/utils';
+import { Converter } from '@/utils';
+import cn from '@/components/control/components/dropdown/dropdown.module.css';
 
 export const Dropdown = (props: DropdownProps) => {
   const { choices = [], value = [], isSearchHidden = false, multiple = false, onChange, onOpen, onClose } = props;
@@ -45,6 +45,7 @@ export const Dropdown = (props: DropdownProps) => {
     } else {
       onClose?.call(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, size]);
 
   const handleSelection = (newValue: string, newLabel: string) => {
@@ -65,43 +66,38 @@ export const Dropdown = (props: DropdownProps) => {
   );
 
   return (
-    <div className="control-dropdown">
+    <div className={cn.Dropdown}>
       <Control.Box ref={borderRef} onClick={toggleDropdown}>
-        <div className="control-dropdown__border">
-          <div className="control-dropdown__content">
+        <div className={cn.DropdownBorder}>
+          <div className={cn.DropdownContent}>
             <Control.Label position="active">{label}</Control.Label>
             <Control.RadioText size="lg" checked oneLine>
               {Converter.Answer.FromArrayToMultiple(selectedChoices.map(({ label }) => label)) || placeholder}
             </Control.RadioText>
           </div>
-          <div className="control-dropdown__chevron-wrap">
-            <ChevronDown data-open={isOpen} className="control-dropdown__chevron" />
+          <div className={cn.DropdownChevronWrap}>
+            <ChevronDown data-open={isOpen} className={cn.DropdownChevron} />
           </div>
         </div>
       </Control.Box>
-      <Control.Box ref={boxRef} className={isOpen ? 'control-dropdown__box--visible' : 'control-dropdown__box--hidden'}>
-        <div className="control-dropdown__box">
-          <div
-            className={clsx(
-              'control-dropdown__search',
-              isSearchHidden ? 'control-dropdown__search--hidden' : 'control-dropdown__search--visible',
-            )}
-          >
+      <Control.Box ref={boxRef} className={isOpen ? cn.DropdownBoxVisible : cn.DropdownBoxHidden}>
+        <div className={cn.DropdownBox}>
+          <div className={clsx(cn.DropdownSearch, isSearchHidden ? cn.DropdownSearchHidden : cn.DropdownSearchVisible)}>
             <input
               ref={inputRef}
               value={search}
               type="text"
-              className="control-dropdown__input"
+              className={cn.DropdownInput}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <Search className="control-dropdown__glass" />
+            <Search className={cn.DropdownGlass} />
           </div>
-          <ul className="control-dropdown__choices">
+          <ul className={cn.DropdownChoices}>
             {visibleChoices.length ? (
               visibleChoices.map(({ value, label }, i) => (
                 <li
                   key={value + i}
-                  className="control-dropdown__choice"
+                  className={cn.DropdownChoice}
                   onClick={() => {
                     if (multiple) {
                       handleSelection(value, label);
@@ -123,7 +119,7 @@ export const Dropdown = (props: DropdownProps) => {
                 </li>
               ))
             ) : (
-              <li className="control-dropdown__choice control-dropdown__choice--no-result">
+              <li className={clsx(cn.DropdownChoice, cn.DropdownChoiceNoResult)}>
                 <Control.RadioText size="lg" checked={false}>
                   {noResult}
                 </Control.RadioText>
@@ -131,7 +127,7 @@ export const Dropdown = (props: DropdownProps) => {
             )}
           </ul>
           {multiple && (
-            <div className="control-dropdown__close">
+            <div className={cn.DropdownClose}>
               <Control.Button color="next" size="sm" type="button" onClick={() => onCloseButtonClick()}>
                 {closeButton}
               </Control.Button>
