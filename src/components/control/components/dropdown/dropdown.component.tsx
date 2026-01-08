@@ -1,13 +1,30 @@
-import type { DropdownProps } from '@/components/control/components/dropdown/dropdown.types';
-import type { QuestionChoice, Size } from '@/components/control/types';
+import type { QuestionChoice, Size } from '../../types';
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { useBoolean, useOnClickOutside, useResizeObserver } from 'usehooks-ts';
 import { ChevronDown, Search } from 'lucide-react';
 import clsx from 'clsx';
-import { Control } from '@/components/control';
-import { clickHasNode } from '@/components/control/utils';
-import { Converter } from '@/utils';
-import cn from '@/components/control/components/dropdown/dropdown.module.css';
+import { Box } from '../box/box.component';
+import { Button } from '../button/button.component';
+import { Choice } from '../choice/choice.component';
+import { Label } from '../label/label.component';
+import { RadioText } from '../radio-text/radio-text.component';
+import { clickHasNode } from '../../utils/utils';
+import { Converter } from '../../../../utils/converter/converter';
+import cn from './dropdown.module.css';
+
+export interface DropdownProps {
+  choices: QuestionChoice[];
+  value: QuestionChoice[];
+  label?: string;
+  placeholder?: string;
+  noResult?: string;
+  isSearchHidden?: boolean;
+  multiple?: boolean;
+  closeButton?: string;
+  onChange: (values: QuestionChoice[]) => void;
+  onOpen?: (height: number, width: number) => void;
+  onClose?: () => void;
+}
 
 export const Dropdown = (props: DropdownProps) => {
   const { choices = [], value = [], isSearchHidden = false, multiple = false, onChange, onOpen, onClose } = props;
@@ -67,20 +84,20 @@ export const Dropdown = (props: DropdownProps) => {
 
   return (
     <div className={cn.Dropdown}>
-      <Control.Box ref={borderRef} onClick={toggleDropdown}>
+      <Box ref={borderRef} onClick={toggleDropdown}>
         <div className={cn.DropdownBorder}>
           <div className={cn.DropdownContent}>
-            <Control.Label position="active">{label}</Control.Label>
-            <Control.RadioText size="lg" checked oneLine>
+            <Label position="active">{label}</Label>
+            <RadioText size="lg" checked oneLine>
               {Converter.Answer.FromArrayToMultiple(selectedChoices.map(({ label }) => label)) || placeholder}
-            </Control.RadioText>
+            </RadioText>
           </div>
           <div className={cn.DropdownChevronWrap}>
             <ChevronDown data-open={isOpen} className={cn.DropdownChevron} />
           </div>
         </div>
-      </Control.Box>
-      <Control.Box ref={boxRef} className={isOpen ? cn.DropdownBoxVisible : cn.DropdownBoxHidden}>
+      </Box>
+      <Box ref={boxRef} className={isOpen ? cn.DropdownBoxVisible : cn.DropdownBoxHidden}>
         <div className={cn.DropdownBox}>
           <div className={clsx(cn.DropdownSearch, isSearchHidden ? cn.DropdownSearchHidden : cn.DropdownSearchVisible)}>
             <input
@@ -108,33 +125,33 @@ export const Dropdown = (props: DropdownProps) => {
                   }}
                 >
                   {multiple && (
-                    <Control.Choice
+                    <Choice
                       type="checkbox"
                       checked={selectedChoices.some((selectedChoice) => selectedChoice.value === value)}
                     />
                   )}
-                  <Control.RadioText size="lg" checked={false}>
+                  <RadioText size="lg" checked={false}>
                     {label}
-                  </Control.RadioText>
+                  </RadioText>
                 </li>
               ))
             ) : (
               <li className={clsx(cn.DropdownChoice, cn.DropdownChoiceNoResult)}>
-                <Control.RadioText size="lg" checked={false}>
+                <RadioText size="lg" checked={false}>
                   {noResult}
-                </Control.RadioText>
+                </RadioText>
               </li>
             )}
           </ul>
           {multiple && (
             <div className={cn.DropdownClose}>
-              <Control.Button color="next" size="sm" type="button" onClick={() => onCloseButtonClick()}>
+              <Button color="next" size="sm" type="button" onClick={() => onCloseButtonClick()}>
                 {closeButton}
-              </Control.Button>
+              </Button>
             </div>
           )}
         </div>
-      </Control.Box>
+      </Box>
     </div>
   );
 };

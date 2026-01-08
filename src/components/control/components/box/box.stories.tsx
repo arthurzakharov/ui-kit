@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn } from 'storybook/test';
-import { Box } from '@/components/control/components/box/box.component';
+import { Box } from './box.component';
 
 const meta: Meta<typeof Box> = {
   title: 'Components/Control/Box',

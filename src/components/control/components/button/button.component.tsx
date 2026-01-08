@@ -1,7 +1,19 @@
-import type { ButtonProps } from '@/components/control/components/button/button.types';
+import type { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { containsHtml } from '@/components/control/utils';
-import cn from '@/components/control/components/button/button.module.css';
+import { containsHtml } from '../../utils/utils';
+import cn from './button.module.css';
+
+export interface ButtonProps extends PropsWithChildren {
+  color: 'next' | 'previous';
+  size: 'sm' | 'md' | 'lg';
+  type: 'submit' | 'reset' | 'button';
+  disabled?: boolean;
+  info?: string;
+  fullWidth?: boolean;
+  onClick?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+}
 
 export const Button = (props: ButtonProps) => {
   const {

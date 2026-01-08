@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Certifications as Component } from '@/components/certifications';
+import { Certifications } from './certifications.component';
 
 const meta = {
   title: 'Components/Certifications',
-  component: Component,
+  component: Certifications,
   tags: ['autodocs'],
-} satisfies Meta<typeof Component>;
+} satisfies Meta<typeof Certifications>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

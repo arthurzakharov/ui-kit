@@ -1,7 +1,15 @@
-import type { BoxProps } from '@/components/control/components/box/box.types';
-import { forwardRef } from 'react';
+import type { State } from '../../types';
+import { forwardRef, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import cn from '@/components/control/components/box/box.module.css';
+import cn from './box.module.css';
+
+export interface BoxProps extends PropsWithChildren {
+  state?: State;
+  focused?: boolean;
+  checked?: boolean;
+  className?: string;
+  onClick?: () => void;
+}
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const { children, className, focused, checked = false, state = 'idle', onClick } = props;

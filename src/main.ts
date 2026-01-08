@@ -1,4 +1,4 @@
-import '@/styles/variables.css';
+import './styles/variables.css';
 
-export { Certifications } from '@/components/certifications';
-export { Control } from '@/components/control';
+export { Certifications } from './components/certifications/certifications.component';
+export { Control } from './components/control/control.component';

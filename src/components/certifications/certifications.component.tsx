@@ -1,5 +1,10 @@
-import type { CertificationsProps } from '@/components/certifications/certifications.types';
-import cn from '@/components/certifications/certifications.module.css';
+import cn from './certifications.module.css';
+
+type CertificationIcon = 'free' | 'gdpr' | 'ssl';
+
+type CertificationsProps = Readonly<{
+  icons?: CertificationIcon[];
+}>;
 
 const FreeIcon = () => (
   <svg data-icon="free" viewBox="208 7 174 55" fill="currentColor" className={cn.Icon}>

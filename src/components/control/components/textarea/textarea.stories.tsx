@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import { expect, fn, fireEvent, userEvent, waitFor, within } from 'storybook/test';
-import { Control } from '@/components/control';
-import cn from '@/components/control/components/textarea/textarea.module.css';
+import { Textarea } from './textarea.component';
+import cn from './textarea.module.css';
 
 const meta = {
   title: 'Components/Control/Textarea',
-  component: Control.Textarea,
+  component: Textarea,
   tags: ['autodocs'],
   args: {
     state: 'idle',
@@ -42,7 +42,7 @@ const meta = {
 
     return (
       <div style={{ maxWidth: 300 }}>
-        <Control.Textarea
+        <Textarea
           {...args}
           value={value}
           onChange={(value, id, source) => {
@@ -53,7 +53,7 @@ const meta = {
       </div>
     );
   },
-} satisfies Meta<typeof Control.Textarea>;
+} satisfies Meta<typeof Textarea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

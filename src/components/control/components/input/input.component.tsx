@@ -1,5 +1,12 @@
-import type { InputProps } from '@/components/control/components/input/input.types';
-import cn from '@/components/control/components/input/input.module.css';
+import type { HTMLInputTypeAttribute } from 'react';
+import type { Interactive } from '../../types';
+import cn from './input.module.css';
+
+export interface InputProps extends Interactive<string> {
+  type?: HTMLInputTypeAttribute;
+  onAutofill?: (id: string) => void;
+  onAutofillCancel?: (id: string) => void;
+}
 
 export const Input = ({
   id,

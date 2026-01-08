@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { ChoiceValue } from '@/components/control/types';
+import type { ChoiceValue } from '../../types';
 import { useEffect, useState } from 'react';
 import { expect, fn } from 'storybook/test';
-import { getChoiceId } from '@/components/control/utils';
-import { Control } from '@/components/control';
+import { getChoiceId } from '../../utils/utils';
+import { CardText } from './card-text.component';
 
 const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLElement => {
   return list.find((listItem, i) => listItem.getAttribute('for') === getChoiceId(id, radioId, i)) as HTMLElement;
@@ -11,7 +11,7 @@ const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLEl
 
 const meta = {
   title: 'Components/Control/CardText',
-  component: Control.CardText,
+  component: CardText,
   tags: ['autodocs'],
   args: {
     state: 'idle',
@@ -50,7 +50,7 @@ const meta = {
 
     return (
       <div style={{ maxWidth: 400 }}>
-        <Control.CardText
+        <CardText
           {...args}
           value={value}
           onChange={(value, id) => {
@@ -61,7 +61,7 @@ const meta = {
       </div>
     );
   },
-} satisfies Meta<typeof Control.CardText>;
+} satisfies Meta<typeof CardText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

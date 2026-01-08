@@ -1,8 +1,17 @@
-import type { RadioProps } from '@/components/control/components/radio/radio.types';
+import type { Interactive, RadioChoice, State } from '../../types';
 import clsx from 'clsx';
-import { Control } from '@/components/control';
-import { getChoiceId } from '@/components/control/utils';
-import cn from '@/components/control/components/radio/radio.module.css';
+import { Choice } from '../choice/choice.component';
+import { HiddenInput } from '../hidden-input/hidden-input.component';
+import { RadioLabel } from '../radio-label/radio-label.component';
+import { RadioText } from '../radio-text/radio-text.component';
+import { getChoiceId } from '../../utils/utils';
+import cn from './radio.module.css';
+
+export interface RadioProps extends Interactive<string> {
+  orientation: 'horizontal' | 'vertical';
+  choices: RadioChoice[];
+  state?: State;
+}
 
 export const Radio = (props: RadioProps) => {
   // TODO: onFocus, onBlur can be declared but are not used
@@ -18,17 +27,10 @@ export const Radio = (props: RadioProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <Control.RadioLabel
-            key={choiceId}
-            id={choiceId}
-            value={value}
-            state={state}
-            choice={choice}
-            choices={choices}
-          >
+          <RadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
             {({ focused, hovered, checked, state }) => (
               <div className={cn.RadioLabel}>
-                <Control.Choice
+                <Choice
                   type="radio"
                   state={state}
                   checked={checked}
@@ -36,7 +38,7 @@ export const Radio = (props: RadioProps) => {
                   hovered={hovered}
                   disabled={disabled}
                 />
-                <Control.HiddenInput
+                <HiddenInput
                   type="radio"
                   id={choiceId}
                   value={choice.value}
@@ -45,12 +47,12 @@ export const Radio = (props: RadioProps) => {
                   disabled={disabled}
                   onChange={() => onChange(choice.value, id)}
                 />
-                <Control.RadioText size="lg" checked={checked}>
+                <RadioText size="lg" checked={checked}>
                   {choice.label}
-                </Control.RadioText>
+                </RadioText>
               </div>
             )}
-          </Control.RadioLabel>
+          </RadioLabel>
         );
       })}
     </div>

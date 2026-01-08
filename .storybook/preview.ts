@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
-import '@/styles/variables.css';
+import '../src/styles/variables.css';
 
 const preview: Preview = {
   parameters: {

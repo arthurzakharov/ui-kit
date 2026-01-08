@@ -1,8 +1,17 @@
-import type { CardTextProps } from '@/components/control/components/card-text/card-text.types';
-import { Control } from '@/components/control';
-import { useChoice } from '@/components/control/hooks';
-import { getChoiceId } from '@/components/control/utils';
-import cn from '@/components/control/components/card-text/card-text.module.css';
+import type { Interactive, RadioChoice, ChoiceValue, State } from '../../types';
+import { Box } from '../box/box.component';
+import { Choice } from '../choice/choice.component';
+import { HiddenInput } from '../hidden-input/hidden-input.component';
+import { RadioLabel } from '../radio-label/radio-label.component';
+import { RadioText } from '../radio-text/radio-text.component';
+import { useChoice } from '../../hooks/useChoice/useChoice.hook';
+import { getChoiceId } from '../../utils/utils';
+import cn from './card-text.module.css';
+
+export interface CardTextProps extends Interactive<ChoiceValue> {
+  choices: RadioChoice[];
+  state?: State;
+}
 
 export const CardText = (props: CardTextProps) => {
   // TODO: onFocus and onBlur are not used even though they can be passed
@@ -14,18 +23,11 @@ export const CardText = (props: CardTextProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <Control.RadioLabel
-            key={choiceId}
-            id={choiceId}
-            value={value}
-            state={state}
-            choice={choice}
-            choices={choices}
-          >
+          <RadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
             {({ focused, hovered, checked, state }) => (
-              <Control.Box state={state} checked={checked} focused={focused}>
+              <Box state={state} checked={checked} focused={focused}>
                 <div className={cn.CardTextLabel}>
-                  <Control.HiddenInput
+                  <HiddenInput
                     type={type}
                     id={choiceId}
                     name={id}
@@ -35,7 +37,7 @@ export const CardText = (props: CardTextProps) => {
                     onChange={(_e, source) => onChoiceChange(choice.value, source)}
                   />
                   <div className={cn.CardTextChoice}>
-                    <Control.Choice
+                    <Choice
                       type={type}
                       state={state}
                       checked={checked}
@@ -44,13 +46,13 @@ export const CardText = (props: CardTextProps) => {
                       disabled={disabled}
                     />
                   </div>
-                  <Control.RadioText size="lg" checked={checked}>
+                  <RadioText size="lg" checked={checked}>
                     {choice.label}
-                  </Control.RadioText>
+                  </RadioText>
                 </div>
-              </Control.Box>
+              </Box>
             )}
-          </Control.RadioLabel>
+          </RadioLabel>
         );
       })}
     </div>

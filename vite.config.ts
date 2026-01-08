@@ -36,7 +36,7 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}', {
-            ignore: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx'],
+            ignore: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx', '**/types.ts'],
           })
           .map((file) => [
             path.relative('src', file.slice(0, file.length - path.extname(file).length)),
@@ -65,11 +65,5 @@ export default defineConfig({
         },
       },
     ],
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@story': path.resolve(__dirname, '.storybook'),
-    },
   },
 });

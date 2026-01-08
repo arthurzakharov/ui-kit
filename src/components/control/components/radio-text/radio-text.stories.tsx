@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RadioText } from '@/components/control/components/radio-text';
+import { RadioText } from './radio-text.component';
 
 const meta: Meta<typeof RadioText> = {
   title: 'Components/Control/RadioText',

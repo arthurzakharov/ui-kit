@@ -1,9 +1,14 @@
-import type { ChangeEvent, MouseEvent } from 'react';
-import type { CheckboxProps } from '@/components/control/components/checkbox/checkbox.types';
+import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
+import type { Interactive, State } from '../../types';
 import { useToggle } from 'usehooks-ts';
-import { Control } from '@/components/control';
-import { Converter } from '@/utils';
-import cn from '@/components/control/components/checkbox/checkbox.module.css';
+import { Choice } from '../choice/choice.component';
+import { HiddenInput } from '../hidden-input/hidden-input.component';
+import { Converter } from '../../../../utils/converter/converter';
+import cn from './checkbox.module.css';
+
+export interface CheckboxProps extends PropsWithChildren, Interactive<boolean> {
+  state?: State;
+}
 
 export const Checkbox = (props: CheckboxProps) => {
   const { children, state = 'idle', id, value, disabled = false, onChange, onFocus, onBlur } = props;
@@ -45,7 +50,7 @@ export const Checkbox = (props: CheckboxProps) => {
       onMouseEnter={() => toggleHovered()}
       onMouseLeave={() => toggleHovered()}
     >
-      <Control.HiddenInput
+      <HiddenInput
         type="checkbox"
         id={id}
         name={id}
@@ -55,14 +60,7 @@ export const Checkbox = (props: CheckboxProps) => {
         onChange={onInputChange}
       />
       <div className={cn.CheckboxChoice}>
-        <Control.Choice
-          type="checkbox"
-          state={state}
-          checked={value}
-          focused={focused}
-          hovered={hovered}
-          disabled={disabled}
-        />
+        <Choice type="checkbox" state={state} checked={value} focused={focused} hovered={hovered} disabled={disabled} />
       </div>
       <div className={cn.CheckboxContent}>{children}</div>
     </label>

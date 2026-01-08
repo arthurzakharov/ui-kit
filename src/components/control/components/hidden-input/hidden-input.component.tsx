@@ -1,6 +1,16 @@
 import type { ChangeEvent } from 'react';
-import type { HiddenInputProps } from '@/components/control/components/hidden-input/hidden-input.types';
-import cn from '@/components/control/components/hidden-input/hidden-input.module.css';
+import type { InputChangeSource } from '../../types';
+import cn from './hidden-input.module.css';
+
+export interface HiddenInputProps {
+  id: string;
+  value: string;
+  name: string;
+  type: 'radio' | 'checkbox';
+  checked: boolean;
+  disabled?: boolean;
+  onChange: (e: ChangeEvent<HTMLInputElement>, source?: InputChangeSource) => void;
+}
 
 export const HiddenInput = (props: HiddenInputProps) => {
   const { type, id, name, value, disabled = false, checked, onChange } = props;

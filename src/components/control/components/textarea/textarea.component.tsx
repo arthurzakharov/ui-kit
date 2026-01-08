@@ -1,8 +1,16 @@
+import type { Interactive, State } from '../../types';
 import type { AnimationEvent } from 'react';
-import type { TextareaProps } from '@/components/control/components/textarea/textarea.types';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Control } from '@/components/control';
-import cn from '@/components/control/components/textarea/textarea.module.css';
+import { Box } from '../box/box.component';
+import cn from './textarea.module.css';
+
+export interface TextareaProps extends Interactive<string> {
+  state?: State;
+  placeholder?: string;
+  rows?: number;
+  onAutofill?: (id: string) => void;
+  onAutofillCancel?: (id: string) => void;
+}
 
 export const Textarea = (props: TextareaProps) => {
   const { state = 'idle', placeholder = '', rows = 5, id, value, disabled = false, onChange, onFocus, onBlur } = props;
@@ -27,7 +35,7 @@ export const Textarea = (props: TextareaProps) => {
   };
 
   return (
-    <Control.Box state={state} focused={focused}>
+    <Box state={state} focused={focused}>
       <textarea
         data-testid="textarea"
         data-is-idle={isIdle}
@@ -42,6 +50,6 @@ export const Textarea = (props: TextareaProps) => {
         onFocus={() => onTextareaFocus(id)}
         onBlur={() => onTextareaBlur(id)}
       />
-    </Control.Box>
+    </Box>
   );
 };

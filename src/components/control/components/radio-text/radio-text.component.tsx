@@ -1,6 +1,12 @@
-import type { RadioTextProps } from '@/components/control/components/radio-text/radio-text.types';
 import clsx from 'clsx';
-import cn from '@/components/control/components/radio-text/radio-text.module.css';
+import cn from './radio-text.module.css';
+
+export interface RadioTextProps {
+  children: string;
+  size: 'md' | 'lg';
+  checked: boolean;
+  oneLine?: boolean;
+}
 
 export const RadioText = (props: RadioTextProps) => {
   const { children, size, checked, oneLine = false } = props;

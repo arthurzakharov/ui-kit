@@ -1,7 +1,23 @@
-import type { ChoiceValue } from '@/components/control/types';
-import type { RadioLabelProps } from '@/components/control/components/radio-label/radio-label.types';
+import type { ChoiceValue, RadioChoice, State } from '../../types';
+import type { ReactNode } from 'react';
 import { useToggle } from 'usehooks-ts';
-import cn from '@/components/control/components/radio-label/radio-label.module.css';
+import cn from './radio-label.module.css';
+
+export interface RadioLabelChild {
+  focused: boolean;
+  hovered: boolean;
+  checked: boolean;
+  state?: State;
+}
+
+export interface RadioLabelProps<T extends ChoiceValue> {
+  id: string;
+  value: T;
+  choice: RadioChoice;
+  choices?: RadioChoice[];
+  state?: State;
+  children: (props: RadioLabelChild) => ReactNode;
+}
 
 export const RadioLabel = <T extends ChoiceValue>(props: RadioLabelProps<T>) => {
   const { children, id, value, choice, choices = [], state = 'idle' } = props;

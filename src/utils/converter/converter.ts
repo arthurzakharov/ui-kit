@@ -1,5 +1,10 @@
-import type { MaskExplanation, DatePrecision } from '@/types';
-import { Time } from '@/utils';
+import { Time } from '../time/time';
+
+type DatePrecision = 'month' | 'day';
+
+type MaskExplanationKey = 'd' | 'm' | 'y';
+
+type MaskExplanation = [string, MaskExplanationKey, MaskExplanationKey, MaskExplanationKey?];
 
 export abstract class Converter {
   private static formatNumberWithLeadingZero(number: number): string {

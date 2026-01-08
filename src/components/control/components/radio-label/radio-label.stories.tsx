@@ -1,15 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
-import type { ChoiceValue, State } from '@/components/control/types';
-import type { RadioLabelProps } from '@/components/control/components/radio-label/radio-label.types';
-import { RadioLabel } from './radio-label.component';
+import type { State } from '../../types';
+import { RadioLabel, type RadioLabelChild } from './radio-label.component';
 
 const focused = (value: boolean) => 'Focused: ' + value;
 const hovered = (value: boolean) => 'Hovered: ' + value;
 const checked = (value: boolean) => 'Checked: ' + value;
 const state = (value: State) => 'State: ' + value;
 
-const ChildrenRenderer = <T extends ChoiceValue>(props: Parameters<RadioLabelProps<T>['children']>[0]) => (
+const ChildrenRenderer = (props: RadioLabelChild) => (
   <div
     data-testid="children-renderer"
     style={{

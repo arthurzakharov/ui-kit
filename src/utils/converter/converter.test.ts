@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { MONTH } from '@/enums';
-import { Converter } from '@/utils';
+import { Converter } from './converter';
 
 describe('Converter', () => {
   describe('mask', () => {
@@ -80,7 +79,7 @@ describe('Converter', () => {
         const result = Converter.DateSting.ToDate(dateStr);
         expect(result).toBeInstanceOf(Date);
         expect(result?.getDate()).toEqual(15);
-        expect(result?.getMonth()).toEqual(MONTH.JANUARY);
+        expect(result?.getMonth()).toEqual(0);
         expect(result?.getFullYear()).toEqual(2022);
       });
 
@@ -146,7 +145,7 @@ describe('Converter', () => {
   describe('DateRelative', () => {
     beforeEach(() => {
       vi.useFakeTimers();
-      vi.setSystemTime(new Date(2022, MONTH.JUNE, 15, 12, 0, 0));
+      vi.setSystemTime(new Date(2022, 5, 15, 12, 0, 0));
     });
 
     afterEach(() => {
@@ -176,57 +175,57 @@ describe('Converter', () => {
     it('should handle relative days', () => {
       const start = Converter.DateRelative.ToDate('20 day', true);
       expect(start.getDate()).toBe(26);
-      expect(start.getMonth()).toBe(MONTH.MAY);
+      expect(start.getMonth()).toBe(4);
       expect(start.getFullYear()).toBe(2022);
 
       const end = Converter.DateRelative.ToDate('20 day', false);
       expect(end.getDate()).toBe(5);
-      expect(end.getMonth()).toBe(MONTH.JULY);
+      expect(end.getMonth()).toBe(6);
       expect(end.getFullYear()).toBe(2022);
     });
 
     it('should handle relative month', () => {
       const start = Converter.DateRelative.ToDate('10 month', true);
       expect(start.getDate()).toBe(15);
-      expect(start.getMonth()).toBe(MONTH.AUGUST);
+      expect(start.getMonth()).toBe(7);
       expect(start.getFullYear()).toBe(2021);
 
       const end = Converter.DateRelative.ToDate('10 month', false);
       expect(end.getDate()).toBe(15);
-      expect(end.getMonth()).toBe(MONTH.APRIL);
+      expect(end.getMonth()).toBe(3);
       expect(end.getFullYear()).toBe(2023);
     });
 
     it('should handle relative year', () => {
       const start = Converter.DateRelative.ToDate('10 year', true);
       expect(start.getDate()).toBe(15);
-      expect(start.getMonth()).toBe(MONTH.JUNE);
+      expect(start.getMonth()).toBe(5);
       expect(start.getFullYear()).toBe(2012);
 
       const end = Converter.DateRelative.ToDate('10 year', false);
       expect(end.getDate()).toBe(15);
-      expect(end.getMonth()).toBe(MONTH.JUNE);
+      expect(end.getMonth()).toBe(5);
       expect(end.getFullYear()).toBe(2032);
     });
 
     it('should handle specific date', () => {
       const result = Converter.DateRelative.ToDate('20/01/2023 date', true);
       expect(result.getDate()).toBe(20);
-      expect(result.getMonth()).toBe(MONTH.JANUARY);
+      expect(result.getMonth()).toBe(0);
       expect(result.getFullYear()).toBe(2023);
     });
 
     it('should return today date if specific date can not be parsed', () => {
       const result = Converter.DateRelative.ToDate('invalid');
       expect(result.getDate()).toBe(15);
-      expect(result.getMonth()).toBe(MONTH.JUNE);
+      expect(result.getMonth()).toBe(5);
       expect(result.getFullYear()).toBe(2022);
     });
   });
 
   describe('Date', () => {
     it('ToDateString', () => {
-      const date = new Date(2022, MONTH.JANUARY, 5);
+      const date = new Date(2022, 0, 5);
       expect(Converter.Date.ToDateString(date)).toBe('05/01/2022');
     });
   });

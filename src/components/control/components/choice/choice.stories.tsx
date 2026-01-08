@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Choice } from '@/components/control/components/choice';
+import { Choice } from './choice.component';
 
 const meta = {
   title: 'Components/Control/Choice',

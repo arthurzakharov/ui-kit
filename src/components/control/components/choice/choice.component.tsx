@@ -1,7 +1,15 @@
-import type { ChoiceProps } from '@/components/control/components/choice/choice.types';
 import { Check } from 'lucide-react';
 import clsx from 'clsx';
-import cn from '@/components/control/components/choice/choice.module.css';
+import cn from './choice.module.css';
+
+export interface ChoiceProps {
+  type: 'radio' | 'checkbox';
+  checked: boolean;
+  state?: 'idle' | 'error' | 'success';
+  focused?: boolean;
+  hovered?: boolean;
+  disabled?: boolean;
+}
 
 export const Choice = (props: ChoiceProps) => {
   const { type, checked, state = 'idle', focused = false, hovered = false, disabled = false } = props;

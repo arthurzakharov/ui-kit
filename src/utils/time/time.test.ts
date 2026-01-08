@@ -1,12 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { MONTH } from '@/enums';
-import { Time } from '@/utils';
+import { Time } from './time';
 
 describe('Time', () => {
   describe('date', () => {
     it('should create a date object at the start of the day (UTC) when endDayTime is false or not provided', () => {
       const day = 10;
-      const month = MONTH.JANUARY;
+      const month = 0;
       const year = 2022;
       const date1 = Time.date(day, month, year);
       const date2 = Time.date(day, month, year, false);
@@ -22,7 +21,7 @@ describe('Time', () => {
 
     it('should create a date object at the end of the day (UTC) when endDayTime is true', () => {
       const day = 10;
-      const month = MONTH.JANUARY;
+      const month = 0;
       const year = 2022;
       const date = Time.date(day, month, year, true);
 

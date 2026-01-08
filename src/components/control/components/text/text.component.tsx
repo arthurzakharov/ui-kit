@@ -1,8 +1,15 @@
-import type { TextProps } from '@/components/control/components/text/text.types';
+import type { State } from '../../types';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Control } from '@/components/control';
-import cn from '@/components/control/components/text/text.module.css';
+import { Input, type InputProps } from '../input/input.component';
+import { Label } from '../label/label.component';
+import { Box } from '../box/box.component';
+import cn from './text.module.css';
+
+export interface TextProps extends InputProps {
+  label: string;
+  state?: State;
+}
 
 export const Text = (props: TextProps) => {
   // TODO: onAutofill onAutofillCancel are passed but are not used anywhere
@@ -32,17 +39,17 @@ export const Text = (props: TextProps) => {
   };
 
   return (
-    <Control.Box state={state} focused={focused}>
+    <Box state={state} focused={focused}>
       <label htmlFor={id} className={cn.Text}>
         <div
           data-testid="text-label"
           className={clsx(cn.TextLabel, !isIdle || value ? cn.TextLabelActive : cn.TextLabelIdle)}
         >
-          <Control.Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
+          <Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
             {label}
-          </Control.Label>
+          </Label>
         </div>
-        <Control.Input
+        <Input
           disabled={disabled}
           type={type}
           id={id}
@@ -54,6 +61,6 @@ export const Text = (props: TextProps) => {
           onBlur={onInputBlur}
         />
       </label>
-    </Control.Box>
+    </Box>
   );
 };
