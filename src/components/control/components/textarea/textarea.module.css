@@ -1,4 +1,4 @@
-.control-textarea {
+.Textarea {
   resize: none;
   outline: none;
   box-sizing: border-box;
@@ -12,34 +12,34 @@
   color: var(--rm-ui-color-primary);
 }
 
-.control-textarea:hover {
+.Textarea:hover {
   cursor: pointer;
 }
 
-.control-textarea:disabled {
+.Textarea:disabled {
   opacity: 0.33;
 }
 
-.control-textarea:disabled,
-.control-textarea:-webkit-autofill,
-.control-textarea:-webkit-autofill:hover,
-.control-textarea:-webkit-autofill:focus,
-.control-textarea:-webkit-autofill:active,
-.control-textarea:autofill,
-.control-textarea:autofill:hover,
-.control-textarea:autofill:focus,
-.control-textarea:autofill:active {
+.Textarea:disabled,
+.Textarea:-webkit-autofill,
+.Textarea:-webkit-autofill:hover,
+.Textarea:-webkit-autofill:focus,
+.Textarea:-webkit-autofill:active,
+.Textarea:autofill,
+.Textarea:autofill:hover,
+.Textarea:autofill:focus,
+.Textarea:autofill:active {
   background: transparent;
   transition: background 7200s ease-in-out 0s;
 }
 
-.control-textarea:-webkit-autofill {
+.Textarea:-webkit-autofill {
   animation-name: autofill-start;
   animation-duration: 0.1s;
   -webkit-text-fill-color: var(--rm-ui-grey-500);
 }
 
-.control-textarea:not(:-webkit-autofill) {
+.Textarea:not(:-webkit-autofill) {
   animation-name: autofill-cancel;
   animation-duration: 0.1s;
 }

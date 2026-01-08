@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import cn from '@/components/control/components/box/box.module.css';
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
-  const { children, className, focused = false, checked = false, state = 'idle', onClick } = props;
+  const { children, className, focused, checked = false, state = 'idle', onClick } = props;
 
   return (
     <div

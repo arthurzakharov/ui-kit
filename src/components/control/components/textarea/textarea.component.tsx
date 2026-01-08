@@ -1,43 +1,46 @@
 import type { AnimationEvent } from 'react';
-import type { TextareaProps } from './textarea.types';
+import type { TextareaProps } from '@/components/control/components/textarea/textarea.types';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Control } from '../../index';
-import './textarea.css';
+import { Control } from '@/components/control';
+import cn from '@/components/control/components/textarea/textarea.module.css';
 
 export const Textarea = (props: TextareaProps) => {
-  const { setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
-  const [focused, toggleFocused] = useToggle();
+  const { state = 'idle', placeholder = '', rows = 5, id, value, disabled = false, onChange, onFocus, onBlur } = props;
+  const { value: isIdle, setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
+  const [focused, toggleFocused] = useToggle(false);
 
   const onAnimationStart = (e: AnimationEvent) => {
-    if (e.animationName === 'autofill-start') makeActive();
-    if (e.animationName === 'autofill-cancel' && !props.value) makeIdle();
+    if (e.animationName === cn['autofill-start']) makeActive();
+    if (e.animationName === cn['autofill-cancel'] && !value) makeIdle();
   };
 
-  const onFocus = (id: string) => {
-    if (!props.value) makeActive();
+  const onTextareaFocus = (id: string) => {
+    if (!value) makeActive();
     toggleFocused();
-    props.onFocus?.call(null, id);
+    onFocus?.call(null, id);
   };
 
-  const onBlur = (id: string) => {
-    if (!props.value) makeIdle();
+  const onTextareaBlur = (id: string) => {
+    if (!value) makeIdle();
     toggleFocused();
-    props.onBlur?.call(null, id);
+    onBlur?.call(null, id);
   };
 
   return (
-    <Control.Box state={props.state} focused={focused}>
+    <Control.Box state={state} focused={focused}>
       <textarea
-        disabled={props.disabled}
-        id={props.id}
-        rows={props.rows || 5}
-        placeholder={props.placeholder}
-        value={props.value}
-        className="control-textarea"
-        onChange={(e) => props.onChange(e.target.value, props.id, 'keyboard')}
+        data-testid="textarea"
+        data-is-idle={isIdle}
+        disabled={disabled}
+        id={id}
+        rows={rows}
+        placeholder={placeholder}
+        value={value}
+        className={cn.Textarea}
+        onChange={(e) => onChange(e.target.value, id, 'keyboard')}
         onAnimationStart={onAnimationStart}
-        onFocus={() => onFocus(props.id)}
-        onBlur={() => onBlur(props.id)}
+        onFocus={() => onTextareaFocus(id)}
+        onBlur={() => onTextareaBlur(id)}
       />
     </Control.Box>
   );

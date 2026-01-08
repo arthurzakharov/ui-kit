@@ -1,4 +1,4 @@
-import type { Interactive, State } from '../../types';
+import type { Interactive, State } from '@/components/control/types';
 
 export interface TextareaProps extends Interactive<string> {
   state?: State;

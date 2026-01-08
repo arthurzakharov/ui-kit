@@ -1,0 +1,190 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Textarea Snapshot > DefaultValues 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder=""
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > Disabled 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        disabled=""
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > Enabled 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > Interactive 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > StateError 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateError_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > StateIdle 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > StateSuccess 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateSuccess_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      >
+        Some value
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea Snapshot > WithoutValue 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <textarea
+        class="_Textarea_93bb05"
+        data-is-idle="true"
+        data-testid="textarea"
+        id="textarea"
+        placeholder="Textarea placeholder"
+        rows="5"
+      />
+    </div>
+  </div>
+</div>
+`;
