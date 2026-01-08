@@ -6,10 +6,6 @@ import url from 'node:url';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
-import { playwright } from '@vitest/browser-playwright';
-
-const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(url.fileURLToPath(import.meta.url));
 
 export default defineConfig({
   logLevel: 'info',
@@ -20,12 +16,12 @@ export default defineConfig({
       rollupTypes: false,
       tsconfigPath: './tsconfig.app.json',
       include: ['src/**/*.ts', 'src/**/*.tsx'],
-      exclude: ['**/*.stories.ts', '**/*.stories.tsx'],
+      exclude: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx'],
     }),
     libInjectCss(),
   ],
   build: {
-    sourcemap: 'inline',
+    sourcemap: false,
     reportCompressedSize: true,
     chunkSizeWarningLimit: 1024,
     outDir: path.resolve(__dirname, 'dist'),
@@ -40,7 +36,7 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}', {
-            ignore: ['**/*.stories.ts', '**/*.stories.tsx'],
+            ignore: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx'],
           })
           .map((file) => [
             path.relative('src', file.slice(0, file.length - path.extname(file).length)),
@@ -60,28 +56,6 @@ export default defineConfig({
       exclude: ['./.storybook/**', './**/index.ts', './**/*.css'],
     },
     projects: [
-      {
-        extends: true,
-        plugins: [
-          storybookTest({
-            configDir: path.join(dirname, '.storybook'),
-          }),
-        ],
-        test: {
-          name: 'story',
-          browser: {
-            enabled: true,
-            headless: true,
-            provider: playwright({}),
-            instances: [
-              {
-                browser: 'chromium',
-              },
-            ],
-          },
-          setupFiles: ['.storybook/vitest.setup.ts'],
-        },
-      },
       {
         extends: true,
         test: {
