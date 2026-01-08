@@ -1,12 +1,12 @@
-import type { TextProps } from './text.types';
+import type { TextProps } from '@/components/control/components/text/text.types';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Box } from '../box';
-import { Input } from '../input';
-import { Label } from '../label';
-import './text.css';
+import { Control } from '@/components/control';
+import cn from '@/components/control/components/text/text.module.css';
 
 export const Text = (props: TextProps) => {
+  // TODO: onAutofill onAutofillCancel are passed but are not used anywhere
+  const { label, state = 'idle', type = 'text', id, value, disabled = false, onChange, onFocus, onBlur } = props;
   const { value: isIdle, setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
   const [focused, toggleFocused] = useToggle();
 
@@ -15,47 +15,45 @@ export const Text = (props: TextProps) => {
   };
 
   const onAutofillCancel = () => {
-    if (props.value) return;
+    if (value) return;
     makeIdle();
   };
 
-  const onFocus = (id: string) => {
-    if (!props.value) makeActive();
+  const onInputFocus = (id: string) => {
+    if (!value) makeActive();
     toggleFocused();
-    props.onFocus?.call(null, id);
+    onFocus?.call(null, id);
   };
 
-  const onBlur = (id: string) => {
-    if (!props.value) makeIdle();
+  const onInputBlur = (id: string) => {
+    if (!value) makeIdle();
     toggleFocused();
-    props.onBlur?.call(null, id);
+    onBlur?.call(null, id);
   };
 
   return (
-    <Box state={props.state} focused={focused}>
-      <label htmlFor={props.id} className="control-text">
+    <Control.Box state={state} focused={focused}>
+      <label htmlFor={id} className={cn.Text}>
         <div
-          className={clsx(
-            'control-text__label',
-            !isIdle || props.value ? 'control-text__label--active' : 'control-text__label--idle',
-          )}
+          data-testid="text-label"
+          className={clsx(cn.TextLabel, !isIdle || value ? cn.TextLabelActive : cn.TextLabelIdle)}
         >
-          <Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : props.state}>
-            {props.label}
-          </Label>
+          <Control.Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
+            {label}
+          </Control.Label>
         </div>
-        <Input
-          disabled={props.disabled}
-          type={props.type}
-          id={props.id}
-          value={props.value}
-          onChange={props.onChange}
+        <Control.Input
+          disabled={disabled}
+          type={type}
+          id={id}
+          value={value}
+          onChange={onChange}
           onAutofill={onAutofill}
           onAutofillCancel={onAutofillCancel}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={onInputFocus}
+          onBlur={onInputBlur}
         />
       </label>
-    </Box>
+    </Control.Box>
   );
 };

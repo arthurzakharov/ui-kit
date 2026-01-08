@@ -1,0 +1,298 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Text Snapshot > DefaultValues 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > Disabled 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          disabled=""
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > Enabled 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > Interactive 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelIdle_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > StateError 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateError_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > StateIdle 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > StateSuccess 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateSuccess_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelActive_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value="Some value"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Snapshot > WithoutValue 1`] = `
+<div>
+  <div
+    style="max-width: 300px;"
+  >
+    <div
+      class="_Box_a85640 _BoxStateIdle_a85640"
+      data-testid="box"
+    >
+      <label
+        class="_Text_fde20a"
+        for="text-input"
+      >
+        <div
+          class="_TextLabel_fde20a _TextLabelIdle_fde20a"
+          data-testid="text-label"
+        >
+          <span
+            class="_Label_6bb612 _LabelPositionIdle_6bb612 _LabelStateIdle_6bb612"
+          >
+            Text label
+          </span>
+        </div>
+        <input
+          class="_Input_b6cbf5"
+          data-testid="input"
+          id="text-input"
+          name="text-input"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
