@@ -9,7 +9,7 @@
   font-family: var(--rm-ui-font-family-medium), sans-serif;
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .Textarea:hover {

@@ -47,7 +47,7 @@
 }
 
 .ButtonColorPrevious .ButtonText {
-  color: var(--rm-ui-color-secondary);
+  color: var(--rm-ui-color-text-secondary);
 }
 
 .Button:hover {

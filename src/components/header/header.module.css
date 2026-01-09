@@ -1,0 +1,86 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HeaderInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.HeaderLogo {
+  height: var(--rm-ui-header-logo-height);
+  pointer-events: none;
+}
+
+.HeaderLogoPlaceholder {
+  display: flex;
+  width: var(--rm-ui-header-logo-height);
+  height: var(--rm-ui-header-logo-height);
+}
+
+.HeaderPhoneButton {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--rm-ui-padding-xs);
+  outline-offset: 2px;
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.HeaderPhoneButtonIcon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--rm-ui-color-theme-primary);
+  stroke-width: 3px;
+}
+
+.HeaderPhoneButtonNumber,
+.HeaderDescriptions {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .HeaderPhoneButtonNumber {
+    display: flex;
+    font-family: var(--rm-ui-font-family-bold), sans-serif;
+    font-size: var(--rm-ui-font-size-body);
+    line-height: var(--rm-ui-line-height-body);
+    letter-spacing: 0.1px;
+    color: var(--rm-ui-color-theme-primary);
+  }
+
+  .HeaderDescriptions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--rm-ui-padding-xxs);
+    font-family: var(--rm-ui-font-family-light), sans-serif;
+    font-size: var( --rm-ui-font-size-body-extra-small);
+    line-height: var( --rm-ui-line-height-body-extra-small);
+    color: var(--rm-ui-color-theme-primary);
+  }
+
+  .HeaderDescriptionsIcon {
+    stroke: var(--rm-ui-color-theme-primary);
+    stroke-width: 3px;
+  }
+
+  .HeaderDescriptionsIconSm {
+    width: 10px;
+    height: 10px;
+  }
+
+  .HeaderDescriptionsIconMd {
+    width: 12px;
+    height: 12px;
+  }
+}

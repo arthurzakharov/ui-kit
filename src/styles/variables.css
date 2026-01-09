@@ -14,6 +14,8 @@
   --rm-ui-border-radius-lg: 16px;
   --rm-ui-border-radius-xl: 24px;
   /* Font Size | Line Height */
+  --rm-ui-font-size-body-extra-small: 12px;
+  --rm-ui-line-height-body-extra-small: 16px;
   --rm-ui-font-size-body-small: 14px;
   --rm-ui-line-height-body-small: 20px;
   --rm-ui-font-size-body: 16px;
@@ -52,9 +54,12 @@
   --rm-ui-grey-100: #f5f5f5;
   --rm-ui-grey-50: #fafafa;
   /* Colors */
-  --rm-ui-color-primary: var(--rm-ui-grey-800);
-  --rm-ui-color-secondary: var(--rm-ui-grey-500);
+  --rm-ui-color-text-primary: var(--rm-ui-grey-800);
+  --rm-ui-color-text-secondary: var(--rm-ui-grey-500);
   --rm-ui-color-accent-primary: #23bf96;
+  --rm-ui-color-accent-secondary: #23bf96;
+  --rm-ui-color-theme-primary: #302677;
+  --rm-ui-color-theme-secondary: #302677;
   --rm-ui-color-action: #006cff;
   --rm-ui-color-inverted: #ffffff;
   --rm-ui-color-error: #dc2626;
@@ -67,4 +72,5 @@
   --rm-ui-card-background: #ffffff;
   --rm-ui-next-btn-bg: #23bf96;
   --rm-ui-next-btn-bg-hover: #3adbb1;
+  --rm-ui-header-logo-height: 30px;
 }

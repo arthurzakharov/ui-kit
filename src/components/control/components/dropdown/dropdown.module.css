@@ -6,7 +6,7 @@
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
-  color: var(--rm-ui-color-primary);
+  color: var(--rm-ui-color-text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +113,7 @@
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-primary);
+  color: var(--rm-ui-color-text-primary);
   outline-color: var(--rm-ui-color-accent-primary);
 }
 

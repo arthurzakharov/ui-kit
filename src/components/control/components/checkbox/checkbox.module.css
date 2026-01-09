@@ -21,7 +21,7 @@
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
-  color: var(--rm-ui-color-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .CheckboxContent button {

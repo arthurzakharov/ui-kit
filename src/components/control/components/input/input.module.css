@@ -7,7 +7,7 @@
   font-family: var(--rm-ui-font-family-medium), sans-serif;
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .Input:hover {
@@ -34,7 +34,7 @@
 .Input:-webkit-autofill {
   animation-name: autofill-start;
   animation-duration: 0.1s;
-  -webkit-text-fill-color: var(--rm-ui-color-primary);
+  -webkit-text-fill-color: var(--rm-ui-color-text-primary);
 }
 
 .Input:not(:-webkit-autofill) {

@@ -1,4 +1,5 @@
 import './styles/variables.css';
 
-export { Certifications } from './components/certifications/certifications.component';
+export { Certifications, type CertificationsProps } from './components/certifications/certifications.component';
 export { Control } from './components/control/control.component';
+export { Header, type HeaderProps } from './components/header/header.component';

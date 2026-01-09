@@ -14,7 +14,7 @@
 }
 
 .LabelStateIdle {
-  color: var(--rm-ui-color-secondary);
+  color: var(--rm-ui-color-text-secondary);
 }
 
 .LabelStateError {

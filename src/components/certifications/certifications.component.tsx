@@ -1,10 +1,8 @@
 import cn from './certifications.module.css';
 
-type CertificationIcon = 'free' | 'gdpr' | 'ssl';
-
-type CertificationsProps = Readonly<{
-  icons?: CertificationIcon[];
-}>;
+export interface CertificationsProps {
+  icons?: ('free' | 'gdpr' | 'ssl')[];
+}
 
 const FreeIcon = () => (
   <svg data-icon="free" viewBox="208 7 174 55" fill="currentColor" className={cn.Icon}>
@@ -24,17 +22,21 @@ const SslIcon = () => (
   </svg>
 );
 
-export const Certifications = ({ icons = ['free', 'gdpr', 'ssl'] }: CertificationsProps) => (
-  <div className={cn.Certifications}>
-    {icons.map((icon) => {
-      switch (icon) {
-        case 'free':
-          return <FreeIcon key={icon} />;
-        case 'gdpr':
-          return <GdprIcon key={icon} />;
-        case 'ssl':
-          return <SslIcon key={icon} />;
-      }
-    })}
-  </div>
-);
+export const Certifications = (props: CertificationsProps) => {
+  const { icons = ['free', 'gdpr', 'ssl'] } = props;
+
+  return (
+    <div className={cn.Certifications}>
+      {icons.map((icon) => {
+        switch (icon) {
+          case 'free':
+            return <FreeIcon key={icon} />;
+          case 'gdpr':
+            return <GdprIcon key={icon} />;
+          case 'ssl':
+            return <SslIcon key={icon} />;
+        }
+      })}
+    </div>
+  );
+};
