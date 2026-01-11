@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { WithSidebar } from './with-sidebar.component';
+import { Layout } from './layout.component';
 
 const Header = () => <div style={{ height: 40, background: 'var(--rm-ui-grey-300)' }} />;
 
@@ -10,21 +10,30 @@ const Aside = () => <div style={{ height: 412, background: 'var(--rm-ui-grey-500
 const Footer = () => <div style={{ height: 30, background: 'var(--rm-ui-grey-300)' }} />;
 
 const meta = {
-  title: 'Components/Layouts/WithSidebar',
-  component: WithSidebar,
+  title: 'Components/Layout',
+  component: Layout,
   parameters: {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
+} satisfies Meta<typeof Layout>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const WithSidebar: Story = {
   args: {
     header: <Header />,
     main: <Main />,
     aside: <Aside />,
     footer: <Footer />,
   },
-} satisfies Meta<typeof WithSidebar>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+export const WithoutSidebar: Story = {
+  args: {
+    header: <Header />,
+    main: <Main />,
+    footer: <Footer />,
+  },
+};

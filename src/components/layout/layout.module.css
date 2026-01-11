@@ -1,0 +1,123 @@
+body {
+  background-color: var(--rm-ui-body-color);
+}
+
+.Layout {
+  --layout-max-width: 1100px;
+  --layout-margin: 0;
+  --layout-padding: 0;
+  --layout-content-border: 0;
+  --layout-content-padding: var(--rm-ui-padding-lg);
+  --layout-header-padding: var(--rm-ui-padding-lg) var(--rm-ui-padding-lg) var(--rm-ui-padding-md);
+  --layout-footer-pading: var(--rm-ui-padding-xxl);
+  --layout-transition-speed: 500ms;
+  max-width: var(--layout-max-width);
+  margin: var(--layout-margin);
+  padding: var(--layout-padding);
+  transition:
+    padding ease-in-out var(--layout-transition-speed),
+    margin ease-in-out var(--layout-transition-speed),
+    max-width ease-in-out var(--layout-transition-speed);
+}
+
+.Layout.LayoutWithSidebar {
+  --layout-content-gap: var(--rm-ui-padding-sm);
+  --layout-aside-width: 275px;
+  --layout-main-width: 100%;
+}
+
+.Layout.LayoutWithoutSidebar {
+  --layout-content-gap: 0;
+  --layout-main-width: 100%;
+}
+
+.LayoutContent {
+  display: block;
+  border-radius: var(--layout-content-border);
+  padding: var(--layout-content-padding);
+  background-color: #ffffff;
+  box-shadow: none;
+  transition:
+    gap ease-in-out var(--layout-transition-speed),
+    border-radius ease-in-out var(--layout-transition-speed),
+    padding ease-in-out var(--layout-transition-speed);
+}
+
+.LayoutMain {
+  flex-basis: var(--layout-main-width);
+  display: block;
+  transition: flex-basis ease-in-out var(--layout-transition-speed);
+}
+
+.LayoutHeader {
+  padding: var(--layout-header-padding);
+  transition: padding ease-in-out var(--layout-transition-speed);
+}
+
+.LayoutAside {
+  flex-basis: var(--layout-aside-width);
+  display: none;
+  transition: flex-basis ease-in-out var(--layout-transition-speed);
+}
+
+.LayoutFooter {
+  padding: var(--layout-footer-pading);
+  transition: padding ease-in-out var(--layout-transition-speed);
+}
+
+@media screen and (min-width: 768px) {
+  .Layout {
+    --layout-padding: 0 var(--rm-ui-padding-sm);
+    --layout-content-border: var(--rm-ui-border-radius-sm);
+    --layout-content-padding: var(--rm-ui-padding-md);
+    --layout-header-padding: var(--rm-ui-padding-sm) 0;
+    --layout-footer-pading: var(--rm-ui-padding-md) var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
+  }
+
+  .Layout.LayoutWithSidebar {
+    --layout-main-width: calc(100% -  var(--layout-aside-width) - var(--layout-content-gap));
+  }
+
+  .LayoutContent {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--layout-content-gap);
+    box-shadow: 4px 4px 24px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .LayoutAside {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Layout {
+    --layout-padding: 0 var(--rm-ui-padding-md);
+    --layout-content-padding: var(--rm-ui-padding-xl);
+    --layout-header-padding: var(--rm-ui-padding-md) 0;
+    --layout-footer-pading: var(--rm-ui-padding-xl) var(--rm-ui-padding-xl) var(--rm-ui-padding-md);
+  }
+
+  .Layout.LayoutWithSidebar {
+    --layout-content-gap: var(--rm-ui-padding-md);
+    --layout-aside-width: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Layout {
+    --layout-margin: 0 auto;
+    --layout-padding: 0;
+    --layout-content-padding: var(--rm-ui-padding-xxl);
+    --layout-header-padding: var(--rm-ui-padding-lg) 0;
+    --layout-footer-pading: var(--rm-ui-padding-xxl) var(--rm-ui-padding-xxl) var(--rm-ui-padding-md);
+  }
+
+  .Layout.LayoutWithSidebar {
+    --layout-content-gap: 80px;
+    --layout-aside-width: 350px;
+  }
+}
