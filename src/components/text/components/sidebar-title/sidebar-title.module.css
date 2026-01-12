@@ -1,0 +1,8 @@
+.SidebarTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--rm-ui-font-family-bold), sans-serif;
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
+  color: var(--rm-ui-color-text-primary);
+}
