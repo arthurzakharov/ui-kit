@@ -74,4 +74,5 @@
   --rm-ui-next-btn-bg: #23bf96;
   --rm-ui-next-btn-bg-hover: #3adbb1;
   --rm-ui-header-logo-height: 30px;
+  --rm-ui-info-panel-bg: var(--rm-ui-body-color);
 }

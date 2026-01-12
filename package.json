@@ -1,7 +1,7 @@
 {
   "name": "@arthurzakharov/ui-kit",
   "private": false,
-  "version": "1.0.16",
+  "version": "1.0.33",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -31,6 +31,7 @@
   "peerDependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
+    "motion": "^12.26.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "usehooks-ts": "^3.1.1"
@@ -54,6 +55,7 @@
     "globals": "^17.0.0",
     "jsdom": "^27.4.0",
     "lucide-react": "^0.562.0",
+    "motion": "^12.26.1",
     "prettier": "^3.7.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

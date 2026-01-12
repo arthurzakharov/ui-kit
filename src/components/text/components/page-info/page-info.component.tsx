@@ -1,8 +1,12 @@
-import type { PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import cn from './page-info.module.css';
 
 export const PageInfo = (props: PropsWithChildren) => {
   const { children } = props;
 
-  return <p className={cn.PageInfo}>{children}</p>;
+  return typeof children === 'string' ? (
+    <p className={cn.PageInfo} dangerouslySetInnerHTML={{ __html: children }} />
+  ) : (
+    <p className={cn.PageInfo}>{children}</p>
+  );
 };

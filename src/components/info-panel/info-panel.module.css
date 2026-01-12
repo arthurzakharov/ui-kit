@@ -1,0 +1,67 @@
+.InfoPanel {
+  position: relative;
+  padding: var(--rm-ui-padding-md) 0;
+  background-color: var(--rm-ui-info-panel-bg);
+}
+
+.InfoPanel:before,
+.InfoPanel:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--rm-ui-info-panel-bg);
+}
+
+.InfoPanel:before {
+  left: 0;
+}
+
+.InfoPanel:after {
+  right: 0;
+}
+
+.InfoPanelList {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.InfoPanelItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.InfoPanelKey {
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-font-size-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.InfoPanelValue {
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-font-size-body-small);
+  color: var(--rm-ui-color-text-primary);
+}
+
+@media screen and (min-width: 480px) {
+  .InfoPanelItem {
+    justify-content: flex-start;
+    gap: var(--rm-ui-padding-xxs);
+  }
+}

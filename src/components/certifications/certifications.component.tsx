@@ -1,7 +1,9 @@
 import cn from './certifications.module.css';
 
+export type CertificationsIcon = 'free' | 'gdpr' | 'ssl';
+
 export interface CertificationsProps {
-  icons?: ('free' | 'gdpr' | 'ssl')[];
+  icons?: CertificationsIcon[];
 }
 
 const FreeIcon = () => (
