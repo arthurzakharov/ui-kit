@@ -21,7 +21,7 @@ body {
 }
 
 .Layout.LayoutWithSidebar {
-  --layout-content-gap: var(--rm-ui-padding-sm);
+  --layout-content-gap: var(--rm-ui-padding-lg);
   --layout-aside-width: 275px;
   --layout-main-width: 100%;
 }
@@ -69,7 +69,7 @@ body {
   .Layout {
     --layout-padding: 0 var(--rm-ui-padding-sm);
     --layout-content-border: var(--rm-ui-border-radius-sm);
-    --layout-content-padding: var(--rm-ui-padding-md);
+    --layout-content-padding: var(--rm-ui-padding-lg);
     --layout-header-padding: var(--rm-ui-padding-sm) 0;
     --layout-footer-pading: var(--rm-ui-padding-md) var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
   }
@@ -102,7 +102,7 @@ body {
   }
 
   .Layout.LayoutWithSidebar {
-    --layout-content-gap: var(--rm-ui-padding-md);
+    --layout-content-gap: var(--rm-ui-padding-xl);
     --layout-aside-width: 300px;
   }
 }

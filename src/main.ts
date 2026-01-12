@@ -11,4 +11,5 @@ export { Footer, type FooterProps } from './components/footer/footer.component';
 export { Header, type HeaderProps } from './components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from './components/info-panel/info-panel.component';
 export { Layout, type LayoutProps } from './components/layout/layout.component';
+export { Sidebar, type SidebarProps } from './components/sidebar/sidebar.component';
 export { Text } from './components/text/text.component';
