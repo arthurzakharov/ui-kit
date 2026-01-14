@@ -53,7 +53,6 @@
 @media screen and (min-width: 768px) {
   .HeaderPhoneButtonNumber {
     display: flex;
-    font-family: var(--rm-ui-font-family-bold), sans-serif;
     font-weight: var(--rm-ui-font-weight-bold);
     font-size: var(--rm-ui-font-size-body);
     line-height: var(--rm-ui-line-height-body);
@@ -67,7 +66,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--rm-ui-padding-xxs);
-    font-family: var(--rm-ui-font-family-light), sans-serif;
     font-weight: var(--rm-ui-font-weight-light);
     font-size: var( --rm-ui-font-size-body-extra-small);
     line-height: var( --rm-ui-line-height-body-extra-small);

@@ -14,7 +14,6 @@
 }
 
 .ButtonSizeSm .ButtonText {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
@@ -65,12 +64,10 @@
 }
 
 .ButtonText {
-  font-family: var(--rm-ui-font-family-medium), sans-serif;
   font-weight: var(--rm-ui-font-weight-medium);
 }
 
 .ButtonInfo {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: calc(var(--rm-ui-line-height-body-small) - 2px);

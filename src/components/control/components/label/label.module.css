@@ -1,5 +1,4 @@
 .Label {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   transition: color 0.15s ease-out;
 }

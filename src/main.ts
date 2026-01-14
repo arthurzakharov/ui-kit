@@ -1,3 +1,4 @@
+import './styles/styles.css';
 import './styles/variables.css';
 
 export { Animation, type FadeScaleProps, type FadeSlideProps } from './components/animation/animation.component';

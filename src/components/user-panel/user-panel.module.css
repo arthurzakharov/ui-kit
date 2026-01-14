@@ -15,7 +15,6 @@
 }
 
 .UserTitle {
-  font-family: var(--rm-ui-font-family-medium), sans-serif;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -40,7 +39,6 @@
 }
 
 .UserButtonText {
-  font-family: var(--rm-ui-font-family-medium), sans-serif;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -55,10 +53,6 @@
 }
 
 .UserInfo {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
   display: inline-flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -67,7 +61,6 @@
 }
 
 .UserInfoRaw {
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);

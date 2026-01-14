@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--rm-ui-body-bg);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.125rem;
+  outline: 2px solid transparent;
+}
+
+button,
+*[role='button'] {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  outline: 2px solid transparent;
+}
+
+a:hover,
+button:hover,
+*[role='button']:hover {
+  cursor: pointer;
+}
+
+a:focus-visible:not(:active),
+button:focus-visible:not(:active),
+*[role='button']:focus-visible:not(:active) {
+  outline-color: var(--rm-ui-color-focus);
+  outline-offset: 0;
+  transition: outline-color var(--rm-ui-amimation-speed-primary) ease-in-out;
+  transition-delay: calc(var(--rm-ui-amimation-speed-primary) / 2);
+}

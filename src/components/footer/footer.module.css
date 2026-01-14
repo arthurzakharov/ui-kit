@@ -9,7 +9,6 @@
 }
 
 .FooterCopyright {
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
@@ -17,9 +16,6 @@
 }
 
 .FooterLinks {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,11 +31,6 @@
 
 
 .FooterButton {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);

@@ -1,7 +1,6 @@
 .NotFound {
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
   background-color: transparent;
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -9,27 +8,21 @@
 }
 
 .NotFoundH1 {
-  margin-top: 0;
   margin-bottom: var(--rm-ui-padding-lg);
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-hl2);
   line-height: var(--rm-ui-line-height-hl2);
 }
 
 .NotFoundH2 {
-  margin-top: 0;
   margin-bottom: var(--rm-ui-padding-md);
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-hl3);
   line-height: var(--rm-ui-line-height-hl3);
 }
 
 .NotFoundH3 {
-  margin-top: 0;
   margin-bottom: var(--rm-ui-padding-md);
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-hl4);
   line-height: var(--rm-ui-line-height-hl4);
@@ -52,12 +45,10 @@
 
 .NotFoundTh {
   text-align: left;
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
 }
 
 .NotFoundTd {
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
 }
 

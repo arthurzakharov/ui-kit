@@ -83,4 +83,7 @@
   --rm-ui-sidebar-bg: #f6f6f6;
   --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);
   --rm-ui-loading-screen-height: 400px;
+  --rm-ui-body-bg: #f0faff;
+  --rm-ui-amimation-speed-primary: 200ms;
+  --rm-ui-amimation-speed-secondary: 300ms;
 }

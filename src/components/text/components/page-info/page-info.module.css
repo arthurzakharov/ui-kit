@@ -1,7 +1,4 @@
 .PageInfo {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: var(--rm-ui-font-family-light), sans-serif;
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);

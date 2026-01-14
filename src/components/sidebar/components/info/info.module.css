@@ -1,8 +1,4 @@
 .InfoPanel {
-  list-style: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -18,7 +14,6 @@
 }
 
 .InfoPanelKey {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-font-size-body-small);
@@ -26,7 +21,6 @@
 }
 
 .InfoPanelValue {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-font-size-body-small);

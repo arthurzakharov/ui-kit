@@ -3,7 +3,6 @@
   --under-chevron: linear-gradient(90deg, rgba(255, 255, 255, 0) -10%, rgba(255, 255, 255, 0.5411764706) 25%, #fff 50%);
   --border-radius: 3px;
   position: relative;
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
@@ -111,7 +110,6 @@
     var(--rm-ui-padding-sm);
   border: 1px var(--rm-ui-grey-300) solid;
   box-sizing: border-box;
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -131,9 +129,6 @@
 }
 
 .DropdownChoices {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   max-height: 228px;
   overflow-y: scroll;
   border-radius: 10px;
