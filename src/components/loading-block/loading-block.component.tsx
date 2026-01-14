@@ -4,7 +4,7 @@ import cn from './loading-block.module.css';
 export const LoadingBlock = () => {
   return (
     <div className={cn.LoadingBlock}>
-      <Loader color="primary" />
+      <Loader color="primary" size={48} />
     </div>
   );
 };

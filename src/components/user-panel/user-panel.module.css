@@ -15,8 +15,8 @@
 }
 
 .UserTitle {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
-  font-weight: var(--rm-ui-font-weight-regular);
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   color: var(--rm-ui-color-text-primary);
@@ -40,17 +40,17 @@
 }
 
 .UserButtonText {
-  font-family: var(--rm-ui-font-family-regular), sans-serif;
-  font-weight: var(--rm-ui-font-weight-regular);
+  font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   color: var(--rm-ui-color-text-primary);
 }
 
 .UserButtonIcon {
-  width: 14px;
-  height: 14px;
-  stroke-width: 2;
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
   stroke: var(--rm-ui-color-text-primary);
 }
 

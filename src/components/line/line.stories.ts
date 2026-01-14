@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Line } from './line.component';
 
 const meta = {
-  title: 'Components/Sidebar/Line',
+  title: 'Components/Line',
   component: Line,
   tags: ['autodocs'],
 } satisfies Meta<typeof Line>;

@@ -1,12 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import { Animation } from '../animation/animation.component';
+import { Line } from '../line/line.component';
 import { Text } from '../text/text.component';
+import { UserPanel, type UserPanelProps } from '../user-panel/user-panel.component';
 import { Certifications, type CertificationsProps } from '../certifications/certifications.component';
 import { Board } from './components/board/board.component';
 import { Info, type InfoProps } from './components/info/info.component';
-import { Line } from './components/line/line.component';
 import { Steps, type StepsProps } from './components/steps/steps.component';
-import { User, type UserProps } from './components/user/user.component';
 import cn from './sidebar.module.css';
 
 export interface SidebarProps extends PropsWithChildren {
@@ -15,7 +15,7 @@ export interface SidebarProps extends PropsWithChildren {
   title: string;
   steps: StepsProps['data'];
   info: InfoProps['data'];
-  user: UserProps;
+  user: UserPanelProps;
   certifications: CertificationsProps['icons'];
 }
 
@@ -41,7 +41,7 @@ export const Sidebar = (props: SidebarProps) => {
       <Info data={info} />
       <Line />
       <Animation.FadeScale name="user" condition={isUserOpen}>
-        <User title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
+        <UserPanel title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
         <Line />
       </Animation.FadeScale>
       <Animation.FadeScale name="button" condition={isButtonVisible} duration={0.2} delay={0.1}>

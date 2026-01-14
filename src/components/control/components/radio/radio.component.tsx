@@ -11,12 +11,12 @@ export interface RadioProps extends Interactive<string> {
   orientation: 'horizontal' | 'vertical';
   choices: RadioChoice[];
   state?: State;
-  size?: ChoiceProps['size'];
+  icon?: ChoiceProps['size'];
 }
 
 export const Radio = (props: RadioProps) => {
   // TODO: onFocus, onBlur can be declared but are not used
-  const { orientation, choices, state = 'idle', size = 'md', id, value, disabled = false, onChange } = props;
+  const { orientation, choices, state = 'idle', icon = 'md', id, value, disabled = false, onChange } = props;
 
   return (
     <div
@@ -33,7 +33,7 @@ export const Radio = (props: RadioProps) => {
               <div className={cn.RadioLabel}>
                 <Choice
                   type="radio"
-                  size={size}
+                  size={icon}
                   state={state}
                   checked={checked}
                   focused={focused}

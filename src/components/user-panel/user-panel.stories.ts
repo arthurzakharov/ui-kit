@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { User } from './user.component';
+import { UserPanel } from './user-panel.component';
 
 const meta = {
-  title: 'Components/Sidebar/User',
-  component: User,
+  title: 'Components/UserPanel',
+  component: UserPanel,
   tags: ['autodocs'],
-} satisfies Meta<typeof User>;
+} satisfies Meta<typeof UserPanel>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  name: 'User',
+  name: 'User Panel',
   args: {
     title: 'Ihre Angaben',
-    button: 'ändern',
-    data: ['Tester Testman', 'Blaustraße 7, 01061 Dresden'],
+    button: 'Ändern',
+    data: ['Maximilian Mustermann', 'Geb 11/11/1999 in Musterland', 'Haupstr. 123, 12345 Berlin'],
     onClick: fn(),
   },
 };

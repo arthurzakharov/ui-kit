@@ -20,8 +20,6 @@
 .CheckboxContent {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
   font-weight: var(--rm-ui-font-weight-regular);
-  font-size: var(--rm-ui-font-size-body-small);
-  line-height: var(--rm-ui-line-height-body-small);
   color: var(--rm-ui-color-text-primary);
 }
 
@@ -33,15 +31,25 @@
   font-weight: inherit;
   font-size: inherit;
   line-height: inherit;
-  color: var(--rm-ui-color-text-primary);
-  text-decoration: underline;
+  color: var(--rm-ui-color-link);
+  outline-offset: 2px;
 }
 
 .CheckboxContent button:hover {
   cursor: pointer;
-  outline-offset: 2px;
+  text-decoration: underline;
 }
 
 .CheckboxContent button:focus-visible {
   outline-color: var(--rm-ui-color-focus);
+}
+
+.CheckboxContentTextBody {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.CheckboxContentTextBodySmall {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
 }

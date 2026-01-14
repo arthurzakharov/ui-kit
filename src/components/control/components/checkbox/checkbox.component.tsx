@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
 import type { Interactive, State } from '../../types';
 import { useToggle } from 'usehooks-ts';
@@ -8,11 +9,23 @@ import cn from './checkbox.module.css';
 
 export interface CheckboxProps extends PropsWithChildren, Interactive<boolean> {
   state?: State;
-  size?: ChoiceProps['size'];
+  icon?: ChoiceProps['size'];
+  text?: 'body' | 'body-small';
 }
 
 export const Checkbox = (props: CheckboxProps) => {
-  const { children, state = 'idle', size = 'md', id, value, disabled = false, onChange, onFocus, onBlur } = props;
+  const {
+    children,
+    state = 'idle',
+    icon = 'md',
+    text = 'body-small',
+    id,
+    value,
+    disabled = false,
+    onChange,
+    onFocus,
+    onBlur,
+  } = props;
 
   const [focused, toggleFocused] = useToggle(false);
   const [hovered, toggleHovered] = useToggle(false);
@@ -63,7 +76,7 @@ export const Checkbox = (props: CheckboxProps) => {
       <div className={cn.CheckboxChoice}>
         <Choice
           type="checkbox"
-          size={size}
+          size={icon}
           state={state}
           checked={value}
           focused={focused}
@@ -71,7 +84,14 @@ export const Checkbox = (props: CheckboxProps) => {
           disabled={disabled}
         />
       </div>
-      <div className={cn.CheckboxContent}>{children}</div>
+      <div
+        className={clsx(cn.CheckboxContent, {
+          [cn.CheckboxContentTextBody]: text === 'body',
+          [cn.CheckboxContentTextBodySmall]: text === 'body-small',
+        })}
+      >
+        {children}
+      </div>
     </label>
   );
 };

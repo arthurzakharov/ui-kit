@@ -1,16 +1,16 @@
 import type { MouseEvent } from 'react';
 import { Pencil } from 'lucide-react';
-import cn from './user.module.css';
+import cn from './user-panel.module.css';
 
-export interface UserProps {
+export interface UserPanelProps {
   title?: string;
   button?: string;
   data?: string[];
   onClick: () => void;
 }
 
-export const User = (props: UserProps) => {
-  const { title = 'Ihre Angaben', button = 'ändern', data = [], onClick } = props;
+export const UserPanel = (props: UserPanelProps) => {
+  const { title = 'Ihre Angaben', button = 'Ändern', data = [], onClick } = props;
 
   const onButtonClick = (e: MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
