@@ -35,12 +35,16 @@
   /* Font Family */
   --rm-ui-font-family-light: 'Lato Light', sans-serif;
   --rm-ui-font-family-light-i: 'Lato Light Italic', sans-serif;
+  --rm-ui-font-weight-light: 300;
   --rm-ui-font-family-regular: 'Lato Regular', sans-serif;
   --rm-ui-font-family-regular-i: 'Lato Regular Italic', sans-serif;
+  --rm-ui-font-weight-regular: 400;
   --rm-ui-font-family-medium: 'Lato Bold', sans-serif;
   --rm-ui-font-family-medium-i: 'Lato Bold Italic', sans-serif;
+  --rm-ui-font-weight-medium: 700;
   --rm-ui-font-family-bold: 'Lato Black', sans-serif;
   --rm-ui-font-family-bold-i: 'Lato Black Italic', sans-serif;
+  --rm-ui-font-weight-bold: 900;
   /* Grey */
   --rm-ui-grey-950: #0a0a0a;
   --rm-ui-grey-900: #171717;
@@ -78,4 +82,5 @@
   --rm-ui-step-idle-color: #82868f;
   --rm-ui-sidebar-bg: #f6f6f6;
   --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);
+  --rm-ui-loading-screen-height: 400px;
 }

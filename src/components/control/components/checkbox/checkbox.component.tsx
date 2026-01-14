@@ -1,17 +1,18 @@
 import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
 import type { Interactive, State } from '../../types';
 import { useToggle } from 'usehooks-ts';
-import { Choice } from '../choice/choice.component';
+import { Choice, type ChoiceProps } from '../choice/choice.component';
 import { HiddenInput } from '../hidden-input/hidden-input.component';
 import { Converter } from '../../../../utils/converter/converter';
 import cn from './checkbox.module.css';
 
 export interface CheckboxProps extends PropsWithChildren, Interactive<boolean> {
   state?: State;
+  size?: ChoiceProps['size'];
 }
 
 export const Checkbox = (props: CheckboxProps) => {
-  const { children, state = 'idle', id, value, disabled = false, onChange, onFocus, onBlur } = props;
+  const { children, state = 'idle', size = 'md', id, value, disabled = false, onChange, onFocus, onBlur } = props;
 
   const [focused, toggleFocused] = useToggle(false);
   const [hovered, toggleHovered] = useToggle(false);
@@ -60,7 +61,15 @@ export const Checkbox = (props: CheckboxProps) => {
         onChange={onInputChange}
       />
       <div className={cn.CheckboxChoice}>
-        <Choice type="checkbox" state={state} checked={value} focused={focused} hovered={hovered} disabled={disabled} />
+        <Choice
+          type="checkbox"
+          size={size}
+          state={state}
+          checked={value}
+          focused={focused}
+          hovered={hovered}
+          disabled={disabled}
+        />
       </div>
       <div className={cn.CheckboxContent}>{children}</div>
     </label>

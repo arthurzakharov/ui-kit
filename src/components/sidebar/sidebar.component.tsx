@@ -3,9 +3,8 @@ import { Animation } from '../animation/animation.component';
 import { Text } from '../text/text.component';
 import { Certifications, type CertificationsProps } from '../certifications/certifications.component';
 import { Board } from './components/board/board.component';
-import { DataBoard } from './components/data-board/data-board.component';
-import { Line } from './components/line/line.component';
 import { Info, type InfoProps } from './components/info/info.component';
+import { Line } from './components/line/line.component';
 import { Steps, type StepsProps } from './components/steps/steps.component';
 import { User, type UserProps } from './components/user/user.component';
 import cn from './sidebar.module.css';
@@ -39,12 +38,12 @@ export const Sidebar = (props: SidebarProps) => {
       </div>
       <Steps data={steps} />
       <Line />
-      <DataBoard
-        isUserOpen={isUserOpen}
-        user={<User title={user.title} button={user.button} data={user.data} onClick={user.onClick} />}
-        info={<Info data={info} />}
-      />
+      <Info data={info} />
       <Line />
+      <Animation.FadeScale name="user" condition={isUserOpen}>
+        <User title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
+        <Line />
+      </Animation.FadeScale>
       <Animation.FadeScale name="button" condition={isButtonVisible} duration={0.2} delay={0.1}>
         <div className={cn.SidebarButton}>{children}</div>
       </Animation.FadeScale>

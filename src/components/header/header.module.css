@@ -54,6 +54,7 @@
   .HeaderPhoneButtonNumber {
     display: flex;
     font-family: var(--rm-ui-font-family-bold), sans-serif;
+    font-weight: var(--rm-ui-font-weight-bold);
     font-size: var(--rm-ui-font-size-body);
     line-height: var(--rm-ui-line-height-body);
     letter-spacing: 0.1px;
@@ -67,6 +68,7 @@
     justify-content: flex-start;
     gap: var(--rm-ui-padding-xxs);
     font-family: var(--rm-ui-font-family-light), sans-serif;
+    font-weight: var(--rm-ui-font-weight-light);
     font-size: var( --rm-ui-font-size-body-extra-small);
     line-height: var( --rm-ui-line-height-body-extra-small);
     color: var(--rm-ui-color-theme-primary);

@@ -11,6 +11,7 @@ const meta = {
     focused: false,
     hovered: false,
     state: 'idle',
+    size: 'md',
     disabled: false,
   },
   argTypes: {
@@ -21,6 +22,9 @@ const meta = {
       control: 'boolean',
     },
     state: {
+      control: 'select',
+    },
+    size: {
       control: 'select',
     },
     focused: {

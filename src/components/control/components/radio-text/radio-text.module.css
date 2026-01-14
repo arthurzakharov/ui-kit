@@ -31,8 +31,10 @@
 
 .RadioTextContent[data-checked='false'] {
   font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-weight: var(--rm-ui-font-weight-regular);
 }
 
 .RadioTextContent[data-checked='true'] {
   font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-weight: var(--rm-ui-font-weight-medium);
 }

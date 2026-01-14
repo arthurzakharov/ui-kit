@@ -60,9 +60,16 @@ export const Default: Story = {
   args: {
     disabled: undefined,
     fullWidth: undefined,
+    loading: undefined,
     onClick: undefined,
     onFocus: undefined,
     onBlur: undefined,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true,
   },
 };
 

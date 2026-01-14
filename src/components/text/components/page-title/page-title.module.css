@@ -2,6 +2,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-family: var(--rm-ui-font-family-medium), sans-serif;
+  font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-hl2);
   line-height: var(--rm-ui-line-height-hl2);
   color: var(--rm-ui-color-text-primary);

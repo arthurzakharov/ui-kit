@@ -1,0 +1,95 @@
+.NotFound {
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
+  background-color: transparent;
+  font-family: var(--rm-ui-font-family-light), sans-serif;
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.NotFoundH1 {
+  margin-top: 0;
+  margin-bottom: var(--rm-ui-padding-lg);
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-hl2);
+  line-height: var(--rm-ui-line-height-hl2);
+}
+
+.NotFoundH2 {
+  margin-top: 0;
+  margin-bottom: var(--rm-ui-padding-md);
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
+}
+
+.NotFoundH3 {
+  margin-top: 0;
+  margin-bottom: var(--rm-ui-padding-md);
+  font-family: var(--rm-ui-font-family-light), sans-serif;
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}
+
+.NotFoundTable {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.NotFoundTh,
+.NotFoundTd {
+  padding: var(--rm-ui-padding-xs);
+  vertical-align: top;
+  border-top: 1px solid var(--rm-ui-grey-300);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.NotFoundTh {
+  text-align: left;
+  font-family: var(--rm-ui-font-family-regular), sans-serif;
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.NotFoundTd {
+  font-family: var(--rm-ui-font-family-light), sans-serif;
+  font-weight: var(--rm-ui-font-weight-light);
+}
+
+@media screen and (min-width: 1024px) {
+  .NotFound {
+    padding: var(--rm-ui-padding-md) var(--rm-ui-padding-lg) var(--rm-ui-padding-md);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .NotFound {
+    padding: var(--rm-ui-padding-lg);
+  }
+
+  .NotFoundH1 {
+    font-size: var(--rm-ui-font-size-hl1);
+    line-height: var(--rm-ui-line-height-hl1);
+  }
+
+  .NotFoundH2 {
+    font-size: var(--rm-ui-font-size-hl2);
+    line-height: var(--rm-ui-line-height-hl2);
+  }
+
+  .NotFoundH3 {
+    font-size: var(--rm-ui-font-size-hl3);
+    line-height: var(--rm-ui-line-height-hl3);
+  }
+
+  .NotFoundTh,
+  .NotFoundTd {
+    font-size: var(--rm-ui-font-size-body);
+    line-height: var(--rm-ui-line-height-body);
+  }
+}

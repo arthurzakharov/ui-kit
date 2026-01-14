@@ -10,6 +10,7 @@
 
 .FooterCopyright {
   font-family: var(--rm-ui-font-family-light), sans-serif;
+  font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
   color: var(--rm-ui-color-text-secondary);
@@ -39,6 +40,7 @@
   background-color: transparent;
   padding: 0;
   font-family: var(--rm-ui-font-family-light), sans-serif;
+  font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
   color: var(--rm-ui-color-text-secondary);
