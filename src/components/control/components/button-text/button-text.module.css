@@ -1,0 +1,42 @@
+.ButtonText {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xs);
+  border-radius: var(--rm-ui-border-radius-sm);
+  padding: var(--rm-ui-padding-xxs);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.ButtonTextSizeSm .ButtonTextIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.ButtonTextSizeMd .ButtonTextIcon,
+.ButtonTextSizeLg .ButtonTextIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.ButtonTextSizeSm .ButtonTextContent {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.ButtonTextSizeMd .ButtonTextContent {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.ButtonTextSizeLg .ButtonTextContent {
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}
+
+.ButtonTextContent {
+  font-weight: var(--rm-ui-font-weight-medium);
+  text-decoration: underline;
+}

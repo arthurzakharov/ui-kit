@@ -1,10 +1,13 @@
 import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
+import clsx from 'clsx';
+import cn from './fade-slide.module.css';
 
 export interface FadeSlideProps extends PropsWithChildren {
   name: string;
   condition: boolean;
+  flex?: boolean;
   direction?: 'ltr' | 'rtl';
   className?: string;
   type?: AnimationGeneratorType;
@@ -19,6 +22,7 @@ export const FadeSlide = (props: FadeSlideProps) => {
     children,
     name,
     condition,
+    flex = false,
     direction = 'ltr',
     ease = 'easeInOut',
     type = 'tween',
@@ -45,7 +49,13 @@ export const FadeSlide = (props: FadeSlideProps) => {
         initial={initial}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease, duration, delay, type }}
-        className={className}
+        className={
+          className || flex
+            ? clsx(className, {
+                [cn.Flex]: flex,
+              })
+            : undefined
+        }
       >
         {children}
       </motion.div>

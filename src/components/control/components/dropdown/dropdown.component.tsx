@@ -145,7 +145,7 @@ export const Dropdown = (props: DropdownProps) => {
           </ul>
           {multiple && (
             <div className={cn.DropdownClose}>
-              <Button color="next" size="sm" type="button" onClick={() => onCloseButtonClick()}>
+              <Button color="primary" size="sm" type="button" onClick={() => onCloseButtonClick()}>
                 {closeButton}
               </Button>
             </div>

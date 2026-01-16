@@ -1,10 +1,13 @@
 import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
+import clsx from 'clsx';
+import cn from './fade-scale.module.css';
 
 export interface FadeScaleProps extends PropsWithChildren {
   name: string;
   condition: boolean;
+  flex?: boolean;
   className?: string;
   type?: AnimationGeneratorType;
   ease?: Easing | Easing[];
@@ -18,6 +21,7 @@ export const FadeScale = (props: FadeScaleProps) => {
     children,
     name,
     condition,
+    flex = false,
     ease = 'easeInOut',
     type = 'tween',
     className = '',
@@ -42,7 +46,13 @@ export const FadeScale = (props: FadeScaleProps) => {
       initial={initial}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ ease, duration, delay, type }}
-      className={className}
+      className={
+        className || flex
+          ? clsx(className, {
+              [cn.Flex]: flex,
+            })
+          : undefined
+      }
     >
       {children}
     </motion.div>

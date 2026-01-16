@@ -13,16 +13,32 @@
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
 }
 
+.ButtonSizeLg.ButtonColorTertiary {
+  padding: calc(var(--rm-ui-padding-xs) - 1px) calc(var(--rm-ui-padding-sm) - 1px);
+}
+
 .ButtonSizeSm .ButtonText {
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.ButtonSizeMd,
+.ButtonSizeMd {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
+}
+
+.ButtonSizeMd.ButtonColorTertiary {
+  padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
+}
+
 .ButtonSizeLg {
   border-radius: var(--rm-ui-border-radius-md);
-  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md);
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
+}
+
+.ButtonSizeLg.ButtonColorTertiary {
+  padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
 }
 
 .ButtonSizeMd .ButtonText {
@@ -35,20 +51,29 @@
   line-height: var(--rm-ui-line-height-body-large);
 }
 
-.ButtonColorNext {
+.ButtonColorPrimary {
   background-color: var(--rm-ui-next-btn-bg);
 }
 
-.ButtonColorNext .ButtonText {
+.ButtonColorPrimary .ButtonText {
   color: #ffffff;
 }
 
-.ButtonColorPrevious {
+.ButtonColorSecondary {
   background-color: transparent;
 }
 
-.ButtonColorPrevious .ButtonText {
+.ButtonColorSecondary .ButtonText {
   color: var(--rm-ui-color-text-secondary);
+}
+
+.ButtonColorTertiary {
+  border: 1px solid var(--rm-ui-grey-300);
+  background-color: transparent;
+}
+
+.ButtonColorTertiary .ButtonText {
+  color: var(--rm-ui-color-text-primary);
 }
 
 .Button:not(.ButtonLoading):not(:disabled):hover {

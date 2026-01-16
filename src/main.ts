@@ -15,6 +15,7 @@ export { Layout, type LayoutProps } from './components/layout/layout.component';
 export { Line } from './components/line/line.component';
 export { Loader, type LoaderProps } from './components/loader/loader.component';
 export { LoadingBlock } from './components/loading-block/loading-block.component';
+export { Message, type MessageProps } from './components/message/message.component';
 export { NotFound, type NotFoundProps } from './components/not-found/not-found.component';
 export { Sidebar, type SidebarProps } from './components/sidebar/sidebar.component';
 export { Text } from './components/text/text.component';

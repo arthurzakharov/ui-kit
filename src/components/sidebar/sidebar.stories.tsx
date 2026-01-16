@@ -39,7 +39,7 @@ const meta = {
   },
   render: (args) => (
     <Sidebar {...args}>
-      <Control.Button color="next" size="md" type="button">
+      <Control.Button color="primary" size="md" type="button">
         Submit form
       </Control.Button>
     </Sidebar>

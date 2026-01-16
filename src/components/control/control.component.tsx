@@ -1,5 +1,6 @@
 import { Box } from './components/box/box.component';
 import { Button } from './components/button/button.component';
+import { ButtonText } from './components/button-text/button-text.component';
 import { CardImage } from './components/card-image/card-image.component';
 import { CardText } from './components/card-text/card-text.component';
 import { Checkbox } from './components/checkbox/checkbox.component';
@@ -17,6 +18,7 @@ import { Textarea } from './components/textarea/textarea.component';
 export const Control = {
   Box,
   Button,
+  ButtonText,
   CardImage,
   CardText,
   Checkbox,

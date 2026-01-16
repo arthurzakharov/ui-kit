@@ -7,12 +7,14 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   args: {
-    color: 'next',
+    color: 'primary',
     size: 'md',
     type: 'button',
     disabled: false,
     info: '',
     fullWidth: false,
+    preventDefault: false,
+    blurAfterCLick: false,
     children: (
       <>
         Custom button with or without <b>info</b>
@@ -75,7 +77,7 @@ export const Loading: Story = {
 
 export const CustomColor: Story = {
   args: {
-    color: 'previous',
+    color: 'primary',
   },
 };
 
