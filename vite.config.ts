@@ -16,7 +16,7 @@ export default defineConfig({
       rollupTypes: false,
       tsconfigPath: './tsconfig.app.json',
       include: ['src/**/*.ts', 'src/**/*.tsx'],
-      exclude: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx'],
+      exclude: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx', './src/storybook/**/*'],
     }),
     libInjectCss(),
   ],
@@ -36,7 +36,14 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}', {
-            ignore: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx', '**/types.ts'],
+            ignore: [
+              '**/*.stories.ts',
+              '**/*.stories.tsx',
+              '**/*.test.ts',
+              '**/*.test.tsx',
+              '**/types.ts',
+              './src/storybook/**/*',
+            ],
           })
           .map((file) => [
             path.relative('src', file.slice(0, file.length - path.extname(file).length)),
@@ -53,7 +60,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',
-      exclude: ['./.storybook/**', './**/index.ts', './**/*.css'],
+      exclude: ['./.storybook/**', './**/index.ts', './**/*.css', './src/storybook/**/*'],
     },
     projects: [
       {

@@ -20,3 +20,4 @@ export { NotFound, type NotFoundProps } from './components/not-found/not-found.c
 export { Sidebar, type SidebarProps } from './components/sidebar/sidebar.component';
 export { Text } from './components/text/text.component';
 export { UserPanel, type UserPanelProps } from './components/user-panel/user-panel.component';
+export { Warranty, type WarrantyProps } from './components/warranty/warranty.component';

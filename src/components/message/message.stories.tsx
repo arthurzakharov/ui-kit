@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { MaxWidth } from '../../storybook/decorators/max-width';
 import { Message } from './message.component';
 
 const meta = {
   title: 'Components/Message',
   component: Message,
   tags: ['autodocs'],
+  decorators: [MaxWidth(590)],
   args: {
     type: 'info',
-    title: 'Das ist ein Headline',
-    text: 'Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. ',
+    title: () => <>Das ist ein Headline</>,
+    text: () => <>Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. </>,
   },
   argTypes: {
     type: {
@@ -41,17 +43,5 @@ export const Error: Story = {
 export const Info: Story = {
   args: {
     type: 'info',
-  },
-};
-
-export const NoTitle: Story = {
-  args: {
-    title: '',
-  },
-};
-
-export const NoText: Story = {
-  args: {
-    text: '',
   },
 };

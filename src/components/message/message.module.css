@@ -1,7 +1,6 @@
 .Message {
   --message-icon-size: 24px;
-  border-radius: var(--rm-ui-padding-sm);
-
+  border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-md);
   display: flex;
   flex-direction: row;

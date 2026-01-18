@@ -5,8 +5,8 @@ import cn from './message.module.css';
 
 export interface MessageProps {
   type: 'success' | 'question' | 'error' | 'info';
-  title?: string;
-  text?: string;
+  title: () => ReactNode;
+  text: () => ReactNode;
 }
 
 export const Message = (props: MessageProps) => {
@@ -36,8 +36,8 @@ export const Message = (props: MessageProps) => {
     >
       {icon()}
       <div className={clsx(cn.MessageContent)}>
-        {title ? <div className={cn.MessageTitle} dangerouslySetInnerHTML={{ __html: title }} /> : null}
-        {text ? <div className={cn.MessageText} dangerouslySetInnerHTML={{ __html: text }} /> : null}
+        {title ? <div className={cn.MessageTitle}>{title()}</div> : null}
+        {text ? <div className={cn.MessageText}>{text()}</div> : null}
       </div>
     </div>
   );

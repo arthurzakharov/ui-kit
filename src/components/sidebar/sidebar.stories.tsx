@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
+import { MaxWidth } from '../../storybook/decorators/max-width';
 import { Control } from '../control/control.component';
 import { Sidebar } from './sidebar.component';
 
@@ -7,6 +8,7 @@ const meta = {
   title: 'Components/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
+  decorators: [MaxWidth(350)],
   args: {
     isButtonVisible: true,
     isUserOpen: true,
@@ -26,8 +28,8 @@ const meta = {
       },
     ],
     info: [
-      ['Key One', 'Some information'],
-      ['Key Two', 'Some other information'],
+      ['Absicht:', 'Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis'],
+      ['Absicht:', 'Unbefristetes Aufenthaltsrecht'],
     ],
     certifications: ['free', 'gdpr', 'ssl'],
     user: {

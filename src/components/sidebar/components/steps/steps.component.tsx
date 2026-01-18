@@ -11,7 +11,7 @@ export const Steps = (props: StepsProps) => {
   return (
     <ul className={cn.Steps}>
       {data.map(({ state, text }) => (
-        <li>
+        <li key={text}>
           <Step state={state} text={text} />
         </li>
       ))}
