@@ -1,11 +1,12 @@
+import { type MouseEvent, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { type MouseEvent, type PropsWithChildren, type ReactElement, cloneElement, isValidElement } from 'react';
+import { Svg, type SvgProps } from '../../../../main';
 import cn from './button-text.module.css';
 
 export interface ButtonTextProps extends PropsWithChildren {
   size?: 'sm' | 'md' | 'lg';
   type?: 'submit' | 'reset' | 'button';
-  icon?: ReactElement<SVGElement>;
+  icon?: SvgProps['icon'];
   disabled?: boolean;
   preventDefault?: boolean;
   blurAfterCLick?: boolean;
@@ -45,11 +46,7 @@ export const ButtonText = (props: ButtonTextProps) => {
       onFocus={() => onFocus?.call(null)}
       onBlur={() => onBlur?.call(null)}
     >
-      {isValidElement(icon)
-        ? cloneElement<SVGElement>(icon, {
-            className: cn.ButtonTextIcon,
-          })
-        : icon}
+      <Svg icon={icon} className={cn.ButtonTextIcon} />
       <span className={cn.ButtonTextContent}>{children}</span>
     </button>
   );

@@ -5,9 +5,17 @@
   justify-content: center;
 }
 
+.RadioTextColorPrimary .RadioTextContent {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.RadioTextColorSecondary .RadioTextContent {
+  color: var(--rm-ui-color-text-secondary);
+}
+
 .RadioTextSizeMd {
-  font-size: 12px;
-  line-height: 14px;
+  font-size: var(--rm-ui-font-size-body-extra-small);
+  line-height: var(--rm-ui-font-size-body-extra-small);
 }
 
 .RadioTextSizeLg {
@@ -21,10 +29,11 @@
 }
 
 .RadioTextContent {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: var(--rm-ui-color-text-primary);
+  position: relative;
+  transition: color var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary);
+}
+
+.RadioTextContent {
   text-align: left;
   white-space: pre-wrap;
 }

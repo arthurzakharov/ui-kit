@@ -3,5 +3,7 @@
 }
 
 .LineElement {
-  border: 1px solid var(--rm-ui-sidebar-line-color);
+  height: 1px;
+  border: none;
+  background-color: var(--rm-ui-sidebar-line-color);
 }

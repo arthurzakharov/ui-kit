@@ -1,0 +1,15 @@
+.MainAttachment {
+  display: block;
+  background-color: transparent;
+}
+.MainAttachmentTitle {
+  margin-bottom: var(--rm-ui-padding-lg);
+}
+
+.MainAttachmentTitleWithSubtitle {
+  margin-bottom: var(--rm-ui-padding-xs);
+}
+
+.MainAttachmentSubtitle {
+  margin-bottom: var(--rm-ui-padding-lg);
+}

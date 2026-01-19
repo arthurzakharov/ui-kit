@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RefreshCcw } from 'lucide-react';
 import { fn } from 'storybook/test';
-import { ButtonText } from './button-text.component';
+import { Control } from '../../../../main';
 
 const meta = {
   title: 'Components/Control/ButtonText',
-  component: ButtonText,
+  component: Control.ButtonText,
   tags: ['autodocs'],
   args: {
     size: 'md',
@@ -43,7 +43,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof ButtonText>;
+} satisfies Meta<typeof Control.ButtonText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

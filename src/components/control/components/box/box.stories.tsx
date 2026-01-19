@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn } from 'storybook/test';
-import { Box } from './box.component';
+import { Control } from '../../../../main';
 
-const meta: Meta<typeof Box> = {
+const meta = {
   title: 'Components/Control/Box',
-  component: Box,
+  component: Control.Box,
   tags: ['autodocs'],
   args: {
     children: <div style={{ width: 200, height: 50 }} />,
@@ -37,10 +37,10 @@ const meta: Meta<typeof Box> = {
       },
     },
   },
-};
+} satisfies Meta<typeof Control.Box>;
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Control.Box>;
 
 export const Default: Story = {
   args: {

@@ -1,0 +1,32 @@
+.DataProtectedLabel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.DataProtectedLabelAlignLeft {
+  justify-content: flex-start;
+}
+
+.DataProtectedLabelAlignCenter {
+  justify-content: center;
+}
+
+.DataProtectedLabelAlignRight {
+  justify-content: flex-end;
+}
+
+.DataProtectedLabelIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--rm-ui-data-protected-label-icon);
+}
+
+.DataProtectedLabelText {
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-data-protected-label-text);
+}

@@ -1,0 +1,49 @@
+.Expenses {
+  display: block;
+}
+
+.ExpensesTitle {
+  margin-bottom: var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.ExpensesContent {
+  margin-bottom: var(--rm-ui-padding-md);
+}
+
+.ExpensesContent,
+.ExpensesSubContent {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.ExpensesContent > *[data-color='accent'],
+.ExpensesSubContent > *[data-color='accent'] {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.ExpensesContent > *[role='button'],
+.ExpensesSubContent > *[role='button'],
+.ExpensesContent > button,
+.ExpensesSubContent > button {
+  color: var(--rm-ui-color-link);
+}
+
+.ExpensesSubContent {
+  display: block;
+  margin-top: var(--rm-ui-padding-md);
+}
+
+.ExpensesAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-theme-primary);
+}

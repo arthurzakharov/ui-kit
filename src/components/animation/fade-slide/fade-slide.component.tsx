@@ -6,7 +6,7 @@ import cn from './fade-slide.module.css';
 
 export interface FadeSlideProps extends PropsWithChildren {
   name: string;
-  condition: boolean;
+  condition?: boolean;
   flex?: boolean;
   direction?: 'ltr' | 'rtl';
   className?: string;
@@ -21,7 +21,7 @@ export const FadeSlide = (props: FadeSlideProps) => {
   const {
     children,
     name,
-    condition,
+    condition = false,
     flex = false,
     direction = 'ltr',
     ease = 'easeInOut',

@@ -1,0 +1,60 @@
+.MessageBlock {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-lg);
+}
+
+.MessageBlockEmoji {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.MessageBlockHeader {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.MessageBlockTitle {
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl2);
+  line-height: var(--rm-ui-line-height-hl2);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.MessageBlockSubtitle {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.MessageBlockContent {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.MessageBlockContent h1,
+.MessageBlockContent h2 {
+  margin-bottom: var(--rm-ui-padding-sm);
+}
+
+.MessageBlockContent h3,
+.MessageBlockContent h4,
+.MessageBlockContent h5,
+.MessageBlockContent h6 {
+  margin-bottom: var(--rm-ui-padding-xs);
+}
+
+.MessageBlockContent p:not(:last-child):not(:last-of-type),
+.MessageBlockContent div:not(:last-child):not(:last-of-type) {
+  margin-bottom: var(--rm-ui-padding-sm);
+}

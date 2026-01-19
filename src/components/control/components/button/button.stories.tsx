@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn } from 'storybook/test';
-import { Button } from './button.component';
+import { Control } from '../../../../main';
 
 const meta = {
   title: 'Components/Control/Button',
-  component: Button,
+  component: Control.Button,
   tags: ['autodocs'],
   args: {
     color: 'primary',
@@ -53,7 +53,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Control.Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

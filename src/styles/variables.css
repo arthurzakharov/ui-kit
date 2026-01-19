@@ -64,20 +64,16 @@
   --rm-ui-color-link: #ff8206;
   --rm-ui-body-color: #f0faff;
   /* Components */
+  /* Header */
+  --rm-ui-header-logo-height: 30px;
+  --rm-ui-header-phone: #ff9900;
+  --rm-ui-header-phone-size: 22px;
+  --rm-ui-header-text: var(--rm-ui-color-text-primary);
+  --rm-ui-header-check-icon: var(--rm-ui-color-text-primary);
+  /* Certifications */
   --rm-ui-certifications-color: #b1b4c7;
   --rm-ui-certifications-size: 20px;
-  --rm-ui-card-background: #ffffff;
-  --rm-ui-next-btn-bg: #23bf96;
-  --rm-ui-next-btn-bg-hover: #3adbb1;
-  --rm-ui-header-logo-height: 30px;
-  --rm-ui-info-panel-bg: var(--rm-ui-body-color);
-  --rm-ui-step-idle-color: #82868f;
-  --rm-ui-sidebar-bg: #f6f6f6;
-  --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);
-  --rm-ui-loading-screen-height: 400px;
-  --rm-ui-body-bg: #ffffff;
-  --rm-ui-amimation-speed-primary: 200ms;
-  --rm-ui-amimation-speed-secondary: 300ms;
+  /* Message */
   --rm-ui-message-success-primary: #29c667;
   --rm-ui-message-success-secondary: #f1fdf4;
   --rm-ui-message-question-primary: #a76000;
@@ -86,5 +82,31 @@
   --rm-ui-message-error-secondary: #fef3f3;
   --rm-ui-message-info-primary: #3289c4;
   --rm-ui-message-info-secondary: #f3f7fe;
+  /* Payment */
+  --rm-ui-payment-sidebar-bg: #f8fcff;
+  --rm-ui-payment-text-blocks-gap: var(--rm-ui-padding-lg);
+  /* DataProtectedLabel */
+  --rm-ui-data-protected-label-icon: var(--rm-ui-next-btn-bg);
+  --rm-ui-data-protected-label-text: var(--rm-ui-color-text-primary);
+  /* Status */
+  --rm-ui-status-idle-color: #82868f;
+  --rm-ui-status-success-color: var(--rm-ui-color-accent-primary);
+  --rm-ui-status-error-color: var(--rm-ui-color-error);
+  /* Other */
+  --rm-ui-card-background: #ffffff;
+  --rm-ui-next-btn-bg: #23bf96;
+  --rm-ui-next-btn-bg-hover: #3adbb1;
+  --rm-ui-info-panel-bg: var(--rm-ui-body-color);
+  --rm-ui-sidebar-bg: #f6f6f6;
+  --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);
+  --rm-ui-loading-screen-height: 400px;
+  --rm-ui-body-bg: #ffffff;
+  --rm-ui-content-bg: #ffffff;
+  --rm-ui-amimation-speed-primary: 150ms;
+  --rm-ui-amimation-speed-secondary: 300ms;
+  --rm-ui-amimation-speed-tertiary: 400ms;
+  --rm-ui-amimation-cubic-primary: cubic-bezier(0.3, 0, 0, 1);
+  --rm-ui-amimation-cubic-secondary: cubic-bezier(0.65, 0, 0.35, 1);
+  --rm-ui-amimation-cubic-tertiary: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --rm-ui-warranty-bg: #f9fcff;
 }

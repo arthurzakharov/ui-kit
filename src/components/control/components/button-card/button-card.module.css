@@ -1,0 +1,43 @@
+.ButtonCard {
+  --icon-size: 24px;
+  flex-basis: 100%;
+  padding: var(--rm-ui-padding-md);
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ButtonCard:disabled .ButtonCardIcon {
+  stroke: var(--rm-ui-color-text-secondary);
+}
+
+.ButtonCardIconTop {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.ButtonCardIconTop .ButtonCardText {
+  flex-basis: 100%;
+}
+
+.ButtonCardIconLeft {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.ButtonCardIconLeft .ButtonCardText {
+  flex-basis: calc(100% - var(--rm-ui-padding-sm) - var(--icon-size));
+  justify-content: flex-start;
+}
+
+.ButtonCardIcon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--rm-ui-color-text-primary);
+  transition: stroke var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary);
+}
+

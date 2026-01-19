@@ -1,60 +1,9 @@
 .Step {
-  --step-animation: 200ms;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: var(--rm-ui-padding-xs);
-}
-
-.StepIcon {
-  position: relative;
-  display: inline-flex;
-}
-
-.StepCircle {
-  stroke-width: 2px;
-  transition: stroke var(--step-animation) ease-in-out, fill var(--step-animation) ease-in-out, fill-opacity var(--step-animation) ease-in-out;
-}
-
-.StepCircleIdle {
-  stroke: var(--rm-ui-step-idle-color);
-  fill: var(--rm-ui-step-idle-color);
-  fill-opacity: 0.1;
-}
-
-.StepCircleSuccess {
-  stroke: var(--rm-ui-color-accent-primary);
-  fill: var(--rm-ui-color-accent-primary);
-  fill-opacity: 1;
-}
-
-.StepCircleError {
-  stroke: var(--rm-ui-color-error);
-  fill: var(--rm-ui-color-error);
-  fill-opacity: 1;
-}
-
-.StepIconContent {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.StepIconAnimate {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.StepCheck,
-.StepX {
-  stroke-width: 2.5;
-  stroke: #ffffff;
 }
 
 .StepText {

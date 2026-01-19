@@ -6,7 +6,7 @@ import cn from './fade-scale.module.css';
 
 export interface FadeScaleProps extends PropsWithChildren {
   name: string;
-  condition: boolean;
+  condition?: boolean;
   flex?: boolean;
   className?: string;
   type?: AnimationGeneratorType;
@@ -20,12 +20,12 @@ export const FadeScale = (props: FadeScaleProps) => {
   const {
     children,
     name,
-    condition,
+    condition = false,
     flex = false,
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.125,
+    duration = 0.15,
     delay = 0,
     animateOnStart = false,
   } = props;

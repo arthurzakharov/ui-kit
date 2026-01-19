@@ -10,5 +10,15 @@ export interface ParagraphProps<T extends keyof HTMLElementTagNameMap>
 export function Paragraph<T extends keyof HTMLElementTagNameMap>(props: ParagraphProps<T>) {
   const { tag = 'p', children, className, ...rest } = props;
 
-  return createElement(tag, { children, className: clsx(cn.Paragraph, className), ...rest });
+  return typeof children === 'string'
+    ? createElement(tag, {
+        className: clsx(cn.Paragraph, className),
+        dangerouslySetInnerHTML: { __html: children },
+        ...rest,
+      })
+    : createElement(tag, {
+        className: clsx(cn.Paragraph, className),
+        children,
+        ...rest,
+      });
 }

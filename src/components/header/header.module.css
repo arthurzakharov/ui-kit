@@ -39,10 +39,10 @@
 }
 
 .HeaderPhoneButtonIcon {
-  width: 22px;
-  height: 22px;
-  stroke: var(--rm-ui-color-theme-primary);
-  stroke-width: 3px;
+  width: var(--rm-ui-header-phone-size);
+  height: var(--rm-ui-header-phone-size);
+  stroke: var(--rm-ui-header-phone);
+  stroke-width: 2px;
 }
 
 .HeaderPhoneButtonNumber,
@@ -57,7 +57,7 @@
     font-size: var(--rm-ui-font-size-body);
     line-height: var(--rm-ui-line-height-body);
     letter-spacing: 0.1px;
-    color: var(--rm-ui-color-theme-primary);
+    color: var(--rm-ui-header-text);
   }
 
   .HeaderDescriptions {
@@ -69,11 +69,11 @@
     font-weight: var(--rm-ui-font-weight-light);
     font-size: var( --rm-ui-font-size-body-extra-small);
     line-height: var( --rm-ui-line-height-body-extra-small);
-    color: var(--rm-ui-color-theme-primary);
+    color: var(--rm-ui-header-text);
   }
 
   .HeaderDescriptionsIcon {
-    stroke: var(--rm-ui-color-theme-primary);
+    stroke: var(--rm-ui-header-check-icon);
     stroke-width: 3px;
   }
 
