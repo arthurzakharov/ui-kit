@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import { expect, fn, fireEvent, userEvent, waitFor, within } from 'storybook/test';
-import { Control } from '../../../../main';
-import cn from './textarea.module.css';
+import { Control } from '@components/control/control.component';
+import cn from '@components/control/components/textarea/textarea.module.css';
 
 const meta = {
   title: 'Components/Control/Textarea',

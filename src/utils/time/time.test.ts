@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Time } from './time';
+import { Time } from '@utils/time/time.util';
 
 describe('Time', () => {
   describe('date', () => {

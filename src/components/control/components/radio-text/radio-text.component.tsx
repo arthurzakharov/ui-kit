@@ -1,6 +1,6 @@
-import clsx from 'clsx';
 import type { PropsWithChildren } from 'react';
-import cn from './radio-text.module.css';
+import clsx from 'clsx';
+import cn from '@components/control/components/radio-text/radio-text.module.css';
 
 export interface RadioTextProps extends PropsWithChildren {
   size: 'md' | 'lg';

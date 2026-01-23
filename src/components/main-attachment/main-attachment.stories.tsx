@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MainAttachment } from '../../main';
+import { MainAttachment } from '@components/main-attachment/main-attachment.component';
 
 const meta = {
   title: 'Components/MainAttachment',

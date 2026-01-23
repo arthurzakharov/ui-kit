@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './step-title.module.css';
+import cn from '@components/text/components/step-title/step-title.module.css';
 
 export const StepTitle = (props: PropsWithChildren) => {
   const { children } = props;

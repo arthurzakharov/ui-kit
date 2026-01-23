@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Check, CircleQuestionMark, X, CircleAlert } from 'lucide-react';
 import clsx from 'clsx';
-import cn from './message.module.css';
+import cn from '@components/message/message.module.css';
 
 export interface MessageProps {
   type: 'success' | 'question' | 'error' | 'info';

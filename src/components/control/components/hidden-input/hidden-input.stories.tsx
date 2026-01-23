@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, fireEvent } from 'storybook/test';
-import { Control } from '../../../../main';
+import { Control } from '@components/control/control.component';
 
 const meta = {
   title: 'Components/Control/HiddenInput',

@@ -1,7 +1,7 @@
-import type { ChoiceValue, RadioChoice, State } from '../../types';
 import type { ReactNode } from 'react';
 import { useToggle } from 'usehooks-ts';
-import cn from './radio-label.module.css';
+import type { ChoiceValue, RadioChoice, State } from '@components/control/control.types';
+import cn from '@components/control/components/radio-label/radio-label.module.css';
 
 export interface RadioLabelChild {
   focused: boolean;

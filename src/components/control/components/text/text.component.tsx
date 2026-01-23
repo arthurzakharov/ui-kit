@@ -1,8 +1,8 @@
-import type { State } from '../../types';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Control, type InputProps } from '../../../../main';
-import cn from './text.module.css';
+import type { State } from '@components/control/control.types';
+import { Control, type InputProps } from '@components/control/control.component';
+import cn from '@components/control/components/text/text.module.css';
 
 export interface TextProps extends InputProps {
   label: string;

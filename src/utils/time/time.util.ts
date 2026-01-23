@@ -1,4 +1,4 @@
-type TimeFormat = 'utc' | 'local';
+export type TimeFormat = 'utc' | 'local';
 
 export abstract class Time {
   public static date(day: number, month: number, year: number, endDayTime: boolean = false): Date {

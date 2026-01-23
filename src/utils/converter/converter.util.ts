@@ -1,4 +1,4 @@
-import { Time } from '../time/time';
+import { Time } from '@utils/time/time.util';
 
 type DatePrecision = 'month' | 'day';
 

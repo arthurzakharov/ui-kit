@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { useChoice } from './useChoice.hook';
+import { useChoice } from '@components/control/hooks/useChoice/useChoice.hook';
 
 describe('useChoice', () => {
   const id = 'test-id';

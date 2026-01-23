@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DataProtectedLabel } from '../../main';
+import { DataProtectedLabel } from '@components/data-protected-label/data-protected-label.component';
 
 const meta = {
   title: 'Components/DataProtectedLabel',

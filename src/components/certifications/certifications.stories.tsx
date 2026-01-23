@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Certifications } from '../../main';
+import { Certifications } from '@components/certifications/certifications.component';
 
 const meta = {
   title: 'Components/Certifications',

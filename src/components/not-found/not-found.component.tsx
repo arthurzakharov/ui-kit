@@ -1,4 +1,4 @@
-import cn from './not-found.module.css';
+import cn from '@components/not-found/not-found.module.css';
 
 export interface NotFoundProps {
   title: string;

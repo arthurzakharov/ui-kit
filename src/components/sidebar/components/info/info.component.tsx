@@ -1,4 +1,4 @@
-import cn from './info.module.css';
+import cn from '@components/sidebar/components/info/info.module.css';
 
 export interface InfoProps {
   data: [string, string][];

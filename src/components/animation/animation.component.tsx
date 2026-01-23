@@ -1,8 +1,8 @@
-import { FadeScale } from './fade-scale/fade-scale.component';
-import { FadeSlide } from './fade-slide/fade-slide.component';
+import { FadeScale } from '@components/animation/fade-scale/fade-scale.component';
+import { FadeSlide } from '@components/animation/fade-slide/fade-slide.component';
 
-export type { FadeScaleProps } from './fade-scale/fade-scale.component';
-export type { FadeSlideProps } from './fade-slide/fade-slide.component';
+export type { FadeScaleProps } from '@components/animation/fade-scale/fade-scale.component';
+export type { FadeSlideProps } from '@components/animation/fade-slide/fade-slide.component';
 
 export const Animation = {
   FadeScale,

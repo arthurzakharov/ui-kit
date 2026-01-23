@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './block.module.css';
+import cn from '@components/payment/components/block/block.module.css';
 
 export interface BlockProps extends PropsWithChildren {
   title: string;

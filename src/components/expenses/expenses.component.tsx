@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import cn from './expenses.module.css';
+import cn from '@components/expenses/expenses.module.css';
 
 export interface ExpensesProps {
   title: () => ReactNode;

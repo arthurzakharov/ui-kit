@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './sidebar-title.module.css';
+import cn from '@components/text/components/sidebar-title/sidebar-title.module.css';
 
 export const SidebarTitle = (props: PropsWithChildren) => {
   const { children } = props;

@@ -1,4 +1,4 @@
-import cn from './certifications.module.css';
+import cn from '@components/certifications/certifications.module.css';
 
 export type CertificationsIcon = 'free' | 'gdpr' | 'ssl';
 

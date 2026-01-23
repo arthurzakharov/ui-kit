@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Block } from './block.component';
+import { Block } from '@components/payment/components/block/block.component';
 
 const Content = () => (
   <div

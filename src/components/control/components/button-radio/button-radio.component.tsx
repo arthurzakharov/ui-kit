@@ -1,7 +1,7 @@
 import { type PropsWithChildren, type MouseEvent, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
-import { Control } from '../../../../main';
-import cn from './button-radio.module.css';
+import { Control } from '@components/control/control.component';
+import cn from '@components/control/components/button-radio/button-radio.module.css';
 
 export interface ButtonRadioInfo {
   text?: string;

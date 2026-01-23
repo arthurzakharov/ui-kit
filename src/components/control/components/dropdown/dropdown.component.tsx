@@ -1,12 +1,12 @@
-import type { QuestionChoice, Size } from '../../types';
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { useBoolean, useOnClickOutside, useResizeObserver } from 'usehooks-ts';
 import { ChevronDown, Search } from 'lucide-react';
 import clsx from 'clsx';
-import { Control } from '../../../../main';
-import { clickHasNode } from '../../utils/utils';
-import { Converter } from '../../../../utils/converter/converter';
-import cn from './dropdown.module.css';
+import type { QuestionChoice, Size } from '@components/control/control.types';
+import { Control } from '@components/control/control.component';
+import { clickHasNode } from '@components/control/utils/functions/functions.util';
+import { Converter } from '@utils/converter/converter.util';
+import cn from '@components/control/components/dropdown/dropdown.module.css';
 
 export interface DropdownProps {
   choices: QuestionChoice[];

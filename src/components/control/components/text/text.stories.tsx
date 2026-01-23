@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useEffect, useState } from 'react';
 import { expect, fn, fireEvent, waitFor } from 'storybook/test';
-import { Control } from '../../../../main';
-import cn from '../text/text.module.css';
-import inputCn from '../input/input.module.css';
+import { useEffect, useState } from 'react';
+import { Control } from '@components/control/control.component';
+import cn from '@components/control/components/text/text.module.css';
+import inputCn from '@components/control/components/input/input.module.css';
 
 const meta = {
   title: 'Components/Control/Text',

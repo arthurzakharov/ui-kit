@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { MaxWidth } from '../../../../storybook/decorators/max-width';
-import { Control } from '../../../../main';
+import { MaxWidth } from '@story/decorators/max-width';
+import { Control } from '@components/control/control.component';
 
 const meta = {
   title: 'Components/Control/ButtonRadio',

@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import clsx from 'clsx';
 import { useOnClickOutside, useScrollLock } from 'usehooks-ts';
 import { AnimatePresence, motion } from 'motion/react';
-import cn from './dialog.module.css';
+import cn from '@components/dialog/dialog.module.css';
 
 /**
  * TODO: Improvement for later:

@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import { Pencil } from 'lucide-react';
-import cn from './user-panel.module.css';
+import cn from '@components/user-panel/user-panel.module.css';
 
 export interface UserPanelProps {
   title?: string;

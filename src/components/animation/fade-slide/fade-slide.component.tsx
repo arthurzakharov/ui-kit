@@ -2,7 +2,7 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from './fade-slide.module.css';
+import cn from '@components/animation/fade-slide/fade-slide.module.css';
 
 export interface FadeSlideProps extends PropsWithChildren {
   name: string;

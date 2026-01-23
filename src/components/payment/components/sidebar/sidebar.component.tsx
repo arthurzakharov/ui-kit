@@ -1,7 +1,7 @@
-import { TextBlocks, type TextBlockItem } from '../text-blocks/text-blocks.component';
-import whatsAppSrc from './assets/whatsapp.svg';
-import phoneSrc from './assets/phone.svg';
-import cn from './sidebar.module.css';
+import { TextBlocks, type TextBlockItem } from '@components/payment/components/text-blocks/text-blocks.component';
+import whatsAppSrc from '@components/payment/components/sidebar/assets/whatsapp.svg';
+import phoneSrc from '@components/payment/components/sidebar/assets/phone.svg';
+import cn from '@components/payment/components/sidebar/sidebar.module.css';
 
 export interface SidebarProps {
   info: TextBlockItem[];

@@ -1,8 +1,8 @@
-import type { Interactive, RadioChoice, State } from '../../types';
 import clsx from 'clsx';
-import { Control, type ChoiceProps } from '../../../../main';
-import { getChoiceId } from '../../utils/utils';
-import cn from './radio.module.css';
+import type { Interactive, RadioChoice, State } from '@components/control/control.types';
+import { Control, type ChoiceProps } from '@components/control/control.component';
+import { getChoiceId } from '@components/control/utils/functions/functions.util';
+import cn from '@components/control/components/radio/radio.module.css';
 
 export interface RadioProps extends Interactive<string> {
   orientation: 'horizontal' | 'vertical';

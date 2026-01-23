@@ -1,6 +1,6 @@
 import type { HTMLInputTypeAttribute } from 'react';
-import type { Interactive } from '../../types';
-import cn from './input.module.css';
+import type { Interactive } from '@components/control/control.types';
+import cn from '@components/control/components/input/input.module.css';
 
 export interface InputProps extends Interactive<string> {
   type?: HTMLInputTypeAttribute;

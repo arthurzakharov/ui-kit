@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './message-block.module.css';
+import cn from '@components/message-block/message-block.module.css';
 
 export interface MessageBlockProps extends PropsWithChildren {
   emoji?: string;

@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import type { PropsWithChildren } from 'react';
-import { Animation, Text } from '../../main';
-import cn from './main-attachment.module.css';
+import { Animation } from '@components/animation/animation.component';
+import { Text } from '@components/text/text.component';
+import cn from '@components/main-attachment/main-attachment.module.css';
 
 export interface MainAttachmentProps extends PropsWithChildren {
   title?: string;

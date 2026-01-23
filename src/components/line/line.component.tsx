@@ -1,4 +1,4 @@
-import cn from './line.module.css';
+import cn from '@components/line/line.module.css';
 
 export const Line = () => {
   return (

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextBlocks } from './text-blocks.component';
+import { TextBlocks } from '@components/payment/components/text-blocks/text-blocks.component';
 
 const meta = {
   title: 'Components/Payment/TextBlocks',

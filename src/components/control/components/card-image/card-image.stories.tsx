@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useEffect, useState } from 'react';
-import type { ChoiceValue } from '../../types';
-import { getChoiceId } from '../../utils/utils';
 import { expect, fn } from 'storybook/test';
-import { Control } from '../../../../main';
+import { useEffect, useState } from 'react';
+import type { ChoiceValue } from '@components/control/control.types';
+import { getChoiceId } from '@components/control/utils/functions/functions.util';
+import { Control } from '@components/control/control.component';
 
 const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLElement => {
   return list.find((listItem, i) => listItem.getAttribute('for') === getChoiceId(id, radioId, i)) as HTMLElement;
@@ -14,7 +14,7 @@ const meta = {
   tags: ['autodocs'],
   component: Control.CardImage,
   args: {
-    sprite: './card-sprite.svg',
+    sprite: 'card-sprite.svg',
     state: 'idle',
     choices: [
       {

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Label } from './label.component';
+import { Control } from '@components/control/control.component';
 
 const meta = {
   title: 'Components/Control/Label',
-  component: Label,
+  component: Control.Label,
   tags: ['autodocs'],
   args: {
     state: 'idle',
@@ -32,7 +32,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Label>;
+} satisfies Meta<typeof Control.Label>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

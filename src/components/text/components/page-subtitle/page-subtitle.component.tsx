@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './page-subtitle.module.css';
+import cn from '@components/text/components/page-subtitle/page-subtitle.module.css';
 
 export const PageSubtitle = (props: PropsWithChildren) => {
   const { children } = props;

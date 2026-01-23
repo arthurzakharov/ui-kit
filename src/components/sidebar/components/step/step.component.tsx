@@ -1,7 +1,7 @@
-import { Control } from '../../../../main';
-import type { State } from '../../../control/types';
+import { Control } from '@components/control/control.component';
+import type { State } from '@components/control/control.types';
 import clsx from 'clsx';
-import cn from './step.module.css';
+import cn from '@components/sidebar/components/steps/steps.module.css';
 
 export interface StepProps {
   state: State;

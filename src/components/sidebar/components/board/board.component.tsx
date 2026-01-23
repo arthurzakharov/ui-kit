@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './board.module.css';
+import cn from '@components/sidebar/components/board/board.module.css';
 
 export const Board = (props: PropsWithChildren) => {
   const { children } = props;

@@ -22,7 +22,16 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Aliases */
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@story/*": ["src/storybook/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src", ".storybook/**/*.ts"]
 }

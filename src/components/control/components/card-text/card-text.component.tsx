@@ -1,8 +1,8 @@
-import type { Interactive, RadioChoice, ChoiceValue, State } from '../../types';
-import { Control } from '../../../../main';
-import { useChoice } from '../../hooks/useChoice/useChoice.hook';
-import { getChoiceId } from '../../utils/utils';
-import cn from './card-text.module.css';
+import type { Interactive, RadioChoice, ChoiceValue, State } from '@components/control/control.types';
+import { Control } from '@components/control/control.component';
+import { useChoice } from '@components/control/hooks/useChoice/useChoice.hook';
+import { getChoiceId } from '@components/control/utils/functions/functions.util';
+import cn from '@components/control/components/card-text/card-text.module.css';
 
 export interface CardTextProps extends Interactive<ChoiceValue> {
   choices: RadioChoice[];

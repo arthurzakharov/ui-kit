@@ -1,4 +1,4 @@
-import cn from './footer.module.css';
+import cn from '@components/footer/footer.module.css';
 
 export interface FooterLink {
   text: string;

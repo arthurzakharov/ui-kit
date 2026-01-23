@@ -1,7 +1,7 @@
-import type { State } from '../../types';
 import { forwardRef, type PropsWithChildren } from 'react';
+import type { State } from '@components/control/control.types';
 import clsx from 'clsx';
-import cn from './box.module.css';
+import cn from '@components/control/components/box/box.module.css';
 
 export interface BoxProps extends PropsWithChildren {
   state?: State;

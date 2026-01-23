@@ -1,10 +1,10 @@
-import clsx from 'clsx';
 import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
-import type { Interactive, State } from '../../types';
 import { useToggle } from 'usehooks-ts';
-import { Control, type ChoiceProps } from '../../../../main';
-import { Converter } from '../../../../utils/converter/converter';
-import cn from './checkbox.module.css';
+import clsx from 'clsx';
+import type { Interactive, State } from '@components/control/control.types';
+import { Control, type ChoiceProps } from '@components/control/control.component';
+import { Converter } from '@utils/converter/converter.util';
+import cn from '@components/control/components/checkbox/checkbox.module.css';
 
 export interface CheckboxProps extends PropsWithChildren, Interactive<boolean> {
   state?: State;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
-import type { State } from '../../types';
-import { Control, type RadioLabelChild } from '../../../../main';
+import type { State } from '@components/control/control.types';
+import { Control, type RadioLabelChild } from '@components/control/control.component';
 
 const focused = (value: boolean) => 'Focused: ' + value;
 const hovered = (value: boolean) => 'Hovered: ' + value;

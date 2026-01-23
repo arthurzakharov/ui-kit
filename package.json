@@ -25,6 +25,7 @@
     "prettier:fix": "prettier --write --log-level=log .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
     "test:once": "vitest run",
     "test:watch": "vitest --watch"
   },
@@ -38,8 +39,10 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.2.0",
+    "@storybook/addon-docs": "^10.2.0",
     "@storybook/addon-vitest": "^10.2.0",
     "@storybook/react-vite": "^10.2.0",
+    "@storybook/test-runner": "^0.24.2",
     "@testing-library/react": "^15.0.7",
     "@types/node": "^24.1.0",
     "@types/react": "^18.3.27",

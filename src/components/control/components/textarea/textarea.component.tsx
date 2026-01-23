@@ -1,8 +1,8 @@
-import type { Interactive, State } from '../../types';
+import type { Interactive, State } from '@components/control/control.types';
 import type { AnimationEvent } from 'react';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Control } from '../../../../main';
-import cn from './textarea.module.css';
+import { Control } from '@components/control/control.component';
+import cn from '@components/control/components/textarea/textarea.module.css';
 
 export interface TextareaProps extends Interactive<string> {
   state?: State;

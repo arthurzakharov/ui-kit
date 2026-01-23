@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MaxWidth } from '../../storybook/decorators/max-width';
-import { Warranty } from '../../main';
+import { MaxWidth, SIZE } from '@story/decorators/max-width';
+import { Warranty } from '@components/warranty/warranty.component';
 
 const meta = {
   component: Warranty,
   title: 'Components/Warranty',
   tags: ['autodocs'],
-  decorators: [MaxWidth(590)],
+  decorators: [MaxWidth(SIZE.PC_CONTENT)],
   args: {
     title: () => <>EINBÜRGERUNGSGARANTIE</>,
     text: () => (

@@ -1,8 +1,8 @@
 import { CircleCheck, Phone } from 'lucide-react';
 import clsx from 'clsx';
-import cn from './header.module.css';
+import cn from '@components/header/header.module.css';
 
-interface DescriptionType {
+export interface HeaderDescription {
   size: 's' | 'm';
   value: string;
 }
@@ -11,7 +11,7 @@ export interface HeaderProps {
   logo: string;
   logoCondition?: () => string;
   tel?: string;
-  descriptions?: DescriptionType[];
+  descriptions?: HeaderDescription[];
 }
 
 export const Header = (props: HeaderProps) => {

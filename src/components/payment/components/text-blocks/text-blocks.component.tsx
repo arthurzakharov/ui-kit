@@ -1,5 +1,5 @@
-import { Text } from '../../../text/text.component';
-import cn from './text-blocks.module.css';
+import { Text } from '@components/text/text.component';
+import cn from '@components/payment/components/text-blocks/text-blocks.module.css';
 
 export interface TextBlockItem {
   title: string;

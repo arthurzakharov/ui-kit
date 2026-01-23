@@ -1,5 +1,5 @@
-import { Loader } from '../loader/loader.component';
-import cn from './loading-block.module.css';
+import { Loader } from '@components/loader/loader.component';
+import cn from '@components/loading-block/loading-block.module.css';
 
 export const LoadingBlock = () => {
   return (

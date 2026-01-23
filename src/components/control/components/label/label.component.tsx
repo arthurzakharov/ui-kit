@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
-import type { State } from '../../types';
 import clsx from 'clsx';
-import cn from './label.module.css';
+import type { State } from '@components/control/control.types';
+import cn from '@components/control/components/label/label.module.css';
 
 export interface LabelProps extends PropsWithChildren {
   state?: State;

@@ -1,8 +1,8 @@
 import { Check, Circle, X } from 'lucide-react';
 import clsx from 'clsx';
-import type { State } from '../../types';
-import { Animation } from '../../../../main';
-import cn from './status.module.css';
+import type { State } from '@components/control/control.types';
+import { Animation } from '@components/animation/animation.component';
+import cn from '@components/control/components/status/status.module.css';
 
 export interface StatusProps {
   state: State;

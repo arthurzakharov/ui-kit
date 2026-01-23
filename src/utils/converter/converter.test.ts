@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { Converter } from './converter';
+import { Converter } from '@utils/converter/converter.util';
 
 describe('Converter', () => {
   describe('mask', () => {

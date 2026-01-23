@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import cn from './layout.module.css';
+import cn from '@components/layout/layout.module.css';
 
 export interface LayoutProps {
   sidebarAlwaysVisible?: boolean;

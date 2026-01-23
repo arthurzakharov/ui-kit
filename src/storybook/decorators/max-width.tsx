@@ -1,6 +1,13 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-export const MaxWidth = (maxWidth = 600, style?: CSSProperties) => {
+export const SIZE = {
+  MAX_APP_WIDTH: 1110,
+  SIDEBAR: 350,
+  PC_CONTENT: 600,
+  MOBILE_CONTENT: 375,
+} as const;
+
+export const MaxWidth = (maxWidth = SIZE.PC_CONTENT, style?: CSSProperties) => {
   return (storyFn: () => ReactNode) => {
     return (
       <div

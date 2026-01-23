@@ -1,8 +1,9 @@
 import { type MouseEvent, type PropsWithChildren, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
 import clsx from 'clsx';
-import { Control, Svg, type SvgProps } from '../../../../main';
-import cn from './button-card.module.css';
+import { Control } from '@components/control/control.component';
+import { Svg, type SvgProps } from '@components/svg/svg.component';
+import cn from '@components//control/components/button-card/button-card.module.css';
 
 export interface ButtonCardProps extends PropsWithChildren {
   icon?: SvgProps['icon'];

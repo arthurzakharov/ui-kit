@@ -1,4 +1,4 @@
-import cn from './info-panel.module.css';
+import cn from '@components/info-panel/info-panel.module.css';
 
 export interface InfoPanelProps {
   data: [string, string][];

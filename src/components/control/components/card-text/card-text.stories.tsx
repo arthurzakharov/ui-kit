@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { ChoiceValue } from '../../types';
-import { useEffect, useState } from 'react';
 import { expect, fn } from 'storybook/test';
-import { getChoiceId } from '../../utils/utils';
-import { Control } from '../../../../main';
+import { useEffect, useState } from 'react';
+import type { ChoiceValue } from '@components/control/control.types';
+import { getChoiceId } from '@components/control/utils/functions/functions.util';
+import { Control } from '@components/control/control.component';
 
 const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLElement => {
   return list.find((listItem, i) => listItem.getAttribute('for') === getChoiceId(id, radioId, i)) as HTMLElement;

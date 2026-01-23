@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import cn from './page-title.module.css';
+import cn from '@components/text/components/page-title/page-title.module.css';
 
 export const PageTitle = (props: PropsWithChildren) => {
   const { children } = props;

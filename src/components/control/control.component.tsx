@@ -1,41 +1,47 @@
-import { Box } from './components/box/box.component';
-import { Button } from './components/button/button.component';
-import { ButtonCard } from './components/button-card/button-card.component';
-import { ButtonRadio } from './components/button-radio/button-radio.component';
-import { ButtonText } from './components/button-text/button-text.component';
-import { CardImage } from './components/card-image/card-image.component';
-import { CardText } from './components/card-text/card-text.component';
-import { Checkbox } from './components/checkbox/checkbox.component';
-import { Choice } from './components/choice/choice.component';
-import { Dropdown } from './components/dropdown/dropdown.component';
-import { HiddenInput } from './components/hidden-input/hidden-input.component';
-import { Input } from './components/input/input.component';
-import { Label } from './components/label/label.component';
-import { Radio } from './components/radio/radio.component';
-import { RadioLabel } from './components/radio-label/radio-label.component';
-import { RadioText } from './components/radio-text/radio-text.component';
-import { Status } from './components/status/status.component';
-import { Text } from './components/text/text.component';
-import { Textarea } from './components/textarea/textarea.component';
+import { Box } from '@components/control/components/box/box.component';
+import { Button } from '@components/control/components/button/button.component';
+import { ButtonCard } from '@components/control/components/button-card/button-card.component';
+import { ButtonRadio } from '@components/control/components/button-radio/button-radio.component';
+import { ButtonText } from '@components/control/components/button-text/button-text.component';
+import { CardImage } from '@components/control/components/card-image/card-image.component';
+import { CardText } from '@components/control/components/card-text/card-text.component';
+import { Checkbox } from '@components/control/components/checkbox/checkbox.component';
+import { Choice } from '@components/control/components/choice/choice.component';
+import { Dropdown } from '@components/control/components/dropdown/dropdown.component';
+import { HiddenInput } from '@components/control/components/hidden-input/hidden-input.component';
+import { Input } from '@components/control/components/input/input.component';
+import { Label } from '@components/control/components/label/label.component';
+import { Radio } from '@components/control/components/radio/radio.component';
+import { RadioLabel } from '@components/control/components/radio-label/radio-label.component';
+import { RadioText } from '@components/control/components/radio-text/radio-text.component';
+import { Status } from '@components/control/components/status/status.component';
+import { Text } from '@components/control/components/text/text.component';
+import { Textarea } from '@components/control/components/textarea/textarea.component';
 
-export type { BoxProps } from './components/box/box.component';
-export type { ButtonProps } from './components/button/button.component';
-export type { ButtonCardProps } from './components/button-card/button-card.component';
-export type { ButtonRadioProps, ButtonRadioInfo } from './components/button-radio/button-radio.component';
-export type { ButtonTextProps } from './components/button-text/button-text.component';
-export type { CardImageProps } from './components/card-image/card-image.component';
-export type { CardTextProps } from './components/card-text/card-text.component';
-export type { CheckboxProps } from './components/checkbox/checkbox.component';
-export type { ChoiceProps } from './components/choice/choice.component';
-export type { DropdownProps } from './components/dropdown/dropdown.component';
-export type { HiddenInputProps } from './components/hidden-input/hidden-input.component';
-export type { InputProps } from './components/input/input.component';
-export type { LabelProps } from './components/label/label.component';
-export type { RadioLabelProps, RadioLabelChild } from './components/radio-label/radio-label.component';
-export type { RadioTextProps } from './components/radio-text/radio-text.component';
-export type { StatusProps } from './components/status/status.component';
-export type { TextProps } from './components/text/text.component';
-export type { TextareaProps } from './components/textarea/textarea.component';
+export type { BoxProps } from '@components/control/components/box/box.component';
+export type { ButtonProps } from '@components/control/components/button/button.component';
+export type { ButtonCardProps } from '@components/control/components/button-card/button-card.component';
+export type {
+  ButtonRadioProps,
+  ButtonRadioInfo,
+} from '@components/control/components/button-radio/button-radio.component';
+export type { ButtonTextProps } from '@components/control/components/button-text/button-text.component';
+export type { CardImageProps } from '@components/control/components/card-image/card-image.component';
+export type { CardTextProps } from '@components/control/components/card-text/card-text.component';
+export type { CheckboxProps } from '@components/control/components/checkbox/checkbox.component';
+export type { ChoiceProps } from '@components/control/components/choice/choice.component';
+export type { DropdownProps } from '@components/control/components/dropdown/dropdown.component';
+export type { HiddenInputProps } from '@components/control/components/hidden-input/hidden-input.component';
+export type { InputProps } from '@components/control/components/input/input.component';
+export type { LabelProps } from '@components/control/components/label/label.component';
+export type {
+  RadioLabelProps,
+  RadioLabelChild,
+} from '@components/control/components/radio-label/radio-label.component';
+export type { RadioTextProps } from '@components/control/components/radio-text/radio-text.component';
+export type { StatusProps } from '@components/control/components/status/status.component';
+export type { TextProps } from '@components/control/components/text/text.component';
+export type { TextareaProps } from '@components/control/components/textarea/textarea.component';
 
 export const Control = {
   Box,

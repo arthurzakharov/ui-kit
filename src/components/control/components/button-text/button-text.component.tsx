@@ -1,7 +1,7 @@
 import { type MouseEvent, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { Svg, type SvgProps } from '../../../../main';
-import cn from './button-text.module.css';
+import { Svg, type SvgProps } from '@components/svg/svg.component';
+import cn from '@components/control/components/button-text/button-text.module.css';
 
 export interface ButtonTextProps extends PropsWithChildren {
   size?: 'sm' | 'md' | 'lg';

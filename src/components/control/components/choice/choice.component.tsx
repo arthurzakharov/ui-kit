@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 import clsx from 'clsx';
-import cn from './choice.module.css';
+import cn from '@components/control/components/choice/choice.module.css';
 
 export interface ChoiceProps {
   type: 'radio' | 'checkbox';

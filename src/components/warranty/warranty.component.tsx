@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import css from './warranty.module.css';
+import css from '@components/warranty/warranty.module.css';
 
-const Icon = () => (
+const WarrantyIcon = () => (
   <svg
     focusable="false"
     role="img"
@@ -35,7 +35,7 @@ export interface WarrantyProps {
 
 export const Warranty = ({ title, text }: WarrantyProps) => (
   <div className={css.Warranty}>
-    <Icon />
+    <WarrantyIcon />
     <div className={css.WarrantyMain}>
       <div className={css.WarrantyTitle}>{title()}</div>
       <div className={css.WarrantyText}>{text()}</div>

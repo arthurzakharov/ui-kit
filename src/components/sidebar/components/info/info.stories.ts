@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Info } from './info.component';
+import { Info } from '@components/sidebar/components/info/info.component';
 
 const meta = {
   title: 'Components/Sidebar/Info',

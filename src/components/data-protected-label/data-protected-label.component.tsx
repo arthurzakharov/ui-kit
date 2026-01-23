@@ -1,6 +1,6 @@
 import { LockKeyhole } from 'lucide-react';
 import clsx from 'clsx';
-import cn from './data-protected-label.module.css';
+import cn from '@components/data-protected-label/data-protected-label.module.css';
 
 export interface DataProtectedLabelProps {
   text?: string;

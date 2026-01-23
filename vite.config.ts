@@ -41,7 +41,7 @@ export default defineConfig({
               '**/*.stories.tsx',
               '**/*.test.ts',
               '**/*.test.tsx',
-              '**/types.ts',
+              '**/control.types.ts',
               './src/storybook/**/*',
             ],
           })
@@ -72,5 +72,13 @@ export default defineConfig({
         },
       },
     ],
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, './src/components'),
+      '@story': path.resolve(__dirname, './src/storybook'),
+      '@styles': path.resolve(__dirname, './src/styles'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+    },
   },
 });

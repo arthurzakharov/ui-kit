@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn } from 'storybook/test';
-import { Footer } from '../../main';
+import { Footer } from '@components/footer/footer.component';
 
 const dataPrivacyFn = fn();
 

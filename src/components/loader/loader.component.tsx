@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Loader as LoaderIcon } from 'lucide-react';
-import cn from './loader.module.css';
+import cn from '@components/loader/loader.module.css';
 
 export interface LoaderProps {
   size?: number;

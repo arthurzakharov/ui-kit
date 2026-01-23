@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getChoiceId, clickHasNode, containsHtml } from './utils';
+import { getChoiceId, clickHasNode, containsHtml } from '@components/control/utils/functions/functions.util';
 
 describe('Control Utils', () => {
   describe('getChoiceId', () => {

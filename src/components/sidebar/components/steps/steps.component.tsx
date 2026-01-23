@@ -1,5 +1,5 @@
-import { Step, type StepProps } from '../step/step.component';
-import cn from './steps.module.css';
+import { Step, type StepProps } from '@components/sidebar/components/step/step.component';
+import cn from '@components/sidebar/components/steps/steps.module.css';
 
 export interface StepsProps {
   data: StepProps[];

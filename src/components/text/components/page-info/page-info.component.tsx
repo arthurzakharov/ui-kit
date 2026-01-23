@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'react';
-import cn from './page-info.module.css';
+import cn from '@components/text/components/page-info/page-info.module.css';
 
 export const PageInfo = (props: PropsWithChildren) => {
   const { children } = props;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RefreshCcw } from 'lucide-react';
 import { fn } from 'storybook/test';
-import { Control } from '../../../../main';
+import { Control } from '@components/control/control.component';
 
 const meta = {
   title: 'Components/Control/ButtonText',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Board } from './board.component';
+import { Board } from '@components/sidebar/components/board/board.component';
 
 const meta = {
   title: 'Components/Sidebar/Board',

@@ -1,17 +1,13 @@
 import type { PropsWithChildren } from 'react';
-import {
-  Animation,
-  Certifications,
-  Line,
-  Text,
-  UserPanel,
-  type UserPanelProps,
-  type CertificationsProps,
-} from '../../main';
-import { Board } from './components/board/board.component';
-import { Info, type InfoProps } from './components/info/info.component';
-import { Steps, type StepsProps } from './components/steps/steps.component';
-import cn from './sidebar.module.css';
+import { Animation } from '@components/animation/animation.component';
+import { Certifications, type CertificationsProps } from '@components/certifications/certifications.component';
+import { Line } from '@components/line/line.component';
+import { Text } from '@components/text/text.component';
+import { UserPanel, type UserPanelProps } from '@components/user-panel/user-panel.component';
+import { Board } from '@components/sidebar/components/board/board.component';
+import { Info, type InfoProps } from '@components/sidebar/components/info/info.component';
+import { Steps, type StepsProps } from '@components/sidebar/components/steps/steps.component';
+import cn from '@components/sidebar/sidebar.module.css';
 
 export interface SidebarProps extends PropsWithChildren {
   isButtonVisible: boolean;

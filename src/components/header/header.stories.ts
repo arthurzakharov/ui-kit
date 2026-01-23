@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Header } from '../../main';
+import { Header } from '@components/header/header.component';
 
 const meta = {
   title: 'Components/Header',
   component: Header,
   tags: ['autodocs'],
   args: {
-    logo: './passexperten.svg',
+    logo: 'passexperten.svg',
     logoCondition: () => '',
     tel: '0421 33 10 03 11',
     descriptions: [{ size: 's', value: 'Kostenlose Erstberatung' }],
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const WithConditionedLogo: Story = {
   args: {
-    logoCondition: () => './rightmart.svg',
+    logoCondition: () => 'rightmart.svg',
   },
 };
 

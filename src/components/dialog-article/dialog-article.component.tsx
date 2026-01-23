@@ -1,16 +1,16 @@
 import { type PropsWithChildren, useRef, useState } from 'react';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
-import { Control } from '../../main';
-import cn from './dialog-article.module.css';
+import { Control } from '@components/control/control.component';
+import cn from '@components/dialog-article/dialog-article.module.css';
 
-interface ActionButton {
+export interface DialogActionButton {
   text: string;
   fn: () => void;
 }
 
 export interface DialogArticleProps extends PropsWithChildren {
-  cancel?: ActionButton;
-  confirm?: ActionButton;
+  cancel?: DialogActionButton;
+  confirm?: DialogActionButton;
 }
 
 export const DialogArticle = (props: DialogArticleProps) => {

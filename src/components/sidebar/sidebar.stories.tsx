@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { MaxWidth } from '../../storybook/decorators/max-width';
-import { Control } from '../control/control.component';
-import { Sidebar } from './sidebar.component';
+import { MaxWidth } from '@story/decorators/max-width';
+import { Control } from '@components/control/control.component';
+import { Sidebar } from '@components/sidebar/sidebar.component';
 
 const meta = {
   title: 'Components/Sidebar',

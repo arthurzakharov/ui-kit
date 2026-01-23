@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MaxWidth } from '../../../../storybook/decorators/max-width';
-import { Sidebar } from './sidebar.component';
+import { MaxWidth } from '@story/decorators/max-width';
+import { Sidebar } from '@components/payment/components/sidebar/sidebar.component';
 
 const meta = {
   title: 'Components/Payment/Sidebar',
