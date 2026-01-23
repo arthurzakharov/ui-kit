@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { MaxWidth } from '../../storybook/decorators/max-width';
-import { Warranty } from './warranty.component';
+import { Warranty } from '../../main';
 
 const meta = {
   component: Warranty,

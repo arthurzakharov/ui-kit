@@ -2,8 +2,7 @@ import clsx from 'clsx';
 import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
 import type { Interactive, State } from '../../types';
 import { useToggle } from 'usehooks-ts';
-import { Choice, type ChoiceProps } from '../choice/choice.component';
-import { HiddenInput } from '../hidden-input/hidden-input.component';
+import { Control, type ChoiceProps } from '../../../../main';
 import { Converter } from '../../../../utils/converter/converter';
 import cn from './checkbox.module.css';
 
@@ -64,7 +63,7 @@ export const Checkbox = (props: CheckboxProps) => {
       onMouseEnter={() => toggleHovered()}
       onMouseLeave={() => toggleHovered()}
     >
-      <HiddenInput
+      <Control.HiddenInput
         type="checkbox"
         id={id}
         name={id}
@@ -74,7 +73,7 @@ export const Checkbox = (props: CheckboxProps) => {
         onChange={onInputChange}
       />
       <div className={cn.CheckboxChoice}>
-        <Choice
+        <Control.Choice
           type="checkbox"
           size={icon}
           state={state}

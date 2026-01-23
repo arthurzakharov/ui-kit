@@ -1,9 +1,5 @@
 import type { Interactive, RadioChoice, ChoiceValue, State } from '../../types';
-import { Box } from '../box/box.component';
-import { Choice } from '../choice/choice.component';
-import { HiddenInput } from '../hidden-input/hidden-input.component';
-import { RadioLabel } from '../radio-label/radio-label.component';
-import { RadioText } from '../radio-text/radio-text.component';
+import { Control } from '../../../../main';
 import { useChoice } from '../../hooks/useChoice/useChoice.hook';
 import { getChoiceId } from '../../utils/utils';
 import cn from './card-text.module.css';
@@ -23,11 +19,18 @@ export const CardText = (props: CardTextProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
+            choice={choice}
+            choices={choices}
+          >
             {({ focused, hovered, checked, state }) => (
-              <Box state={state} checked={checked} focused={focused}>
+              <Control.Box state={state} checked={checked} focused={focused}>
                 <div className={cn.CardTextLabel}>
-                  <HiddenInput
+                  <Control.HiddenInput
                     type={type}
                     id={choiceId}
                     name={id}
@@ -37,7 +40,7 @@ export const CardText = (props: CardTextProps) => {
                     onChange={(_e, source) => onChoiceChange(choice.value, source)}
                   />
                   <div className={cn.CardTextChoice}>
-                    <Choice
+                    <Control.Choice
                       type={type}
                       state={state}
                       checked={checked}
@@ -46,13 +49,13 @@ export const CardText = (props: CardTextProps) => {
                       disabled={disabled}
                     />
                   </div>
-                  <RadioText size="lg" checked={checked}>
+                  <Control.RadioText size="lg" checked={checked}>
                     {choice.label}
-                  </RadioText>
+                  </Control.RadioText>
                 </div>
-              </Box>
+              </Control.Box>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

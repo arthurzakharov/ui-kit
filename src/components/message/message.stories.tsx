@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { MaxWidth } from '../../storybook/decorators/max-width';
-import { Message } from './message.component';
+import { Message } from '../../main';
 
 const meta = {
   title: 'Components/Message',

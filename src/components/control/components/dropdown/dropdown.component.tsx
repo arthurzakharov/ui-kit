@@ -3,11 +3,7 @@ import { useState, useRef, useMemo, useEffect } from 'react';
 import { useBoolean, useOnClickOutside, useResizeObserver } from 'usehooks-ts';
 import { ChevronDown, Search } from 'lucide-react';
 import clsx from 'clsx';
-import { Box } from '../box/box.component';
-import { Button } from '../button/button.component';
-import { Choice } from '../choice/choice.component';
-import { Label } from '../label/label.component';
-import { RadioText } from '../radio-text/radio-text.component';
+import { Control } from '../../../../main';
 import { clickHasNode } from '../../utils/utils';
 import { Converter } from '../../../../utils/converter/converter';
 import cn from './dropdown.module.css';
@@ -84,20 +80,20 @@ export const Dropdown = (props: DropdownProps) => {
 
   return (
     <div className={cn.Dropdown}>
-      <Box ref={borderRef} onClick={toggleDropdown}>
+      <Control.Box ref={borderRef} onClick={toggleDropdown}>
         <div className={cn.DropdownBorder}>
           <div className={cn.DropdownContent}>
-            <Label position="active">{label}</Label>
-            <RadioText size="lg" checked oneLine>
+            <Control.Label position="active">{label}</Control.Label>
+            <Control.RadioText size="lg" checked oneLine>
               {Converter.Answer.FromArrayToMultiple(selectedChoices.map(({ label }) => label)) || placeholder}
-            </RadioText>
+            </Control.RadioText>
           </div>
           <div className={cn.DropdownChevronWrap}>
             <ChevronDown data-open={isOpen} className={cn.DropdownChevron} />
           </div>
         </div>
-      </Box>
-      <Box ref={boxRef} className={isOpen ? cn.DropdownBoxVisible : cn.DropdownBoxHidden}>
+      </Control.Box>
+      <Control.Box ref={boxRef} className={isOpen ? cn.DropdownBoxVisible : cn.DropdownBoxHidden}>
         <div className={cn.DropdownBox}>
           <div className={clsx(cn.DropdownSearch, isSearchHidden ? cn.DropdownSearchHidden : cn.DropdownSearchVisible)}>
             <input
@@ -125,33 +121,33 @@ export const Dropdown = (props: DropdownProps) => {
                   }}
                 >
                   {multiple && (
-                    <Choice
+                    <Control.Choice
                       type="checkbox"
                       checked={selectedChoices.some((selectedChoice) => selectedChoice.value === value)}
                     />
                   )}
-                  <RadioText size="lg" checked={false}>
+                  <Control.RadioText size="lg" checked={false}>
                     {label}
-                  </RadioText>
+                  </Control.RadioText>
                 </li>
               ))
             ) : (
               <li className={clsx(cn.DropdownChoice, cn.DropdownChoiceNoResult)}>
-                <RadioText size="lg" checked={false}>
+                <Control.RadioText size="lg" checked={false}>
                   {noResult}
-                </RadioText>
+                </Control.RadioText>
               </li>
             )}
           </ul>
           {multiple && (
             <div className={cn.DropdownClose}>
-              <Button color="primary" size="sm" type="button" onClick={() => onCloseButtonClick()}>
+              <Control.Button color="primary" size="sm" type="button" onClick={() => onCloseButtonClick()}>
                 {closeButton}
-              </Button>
+              </Control.Button>
             </div>
           )}
         </div>
-      </Box>
+      </Control.Box>
     </div>
   );
 };

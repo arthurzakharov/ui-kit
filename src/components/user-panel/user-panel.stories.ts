@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { UserPanel } from './user-panel.component';
+import { UserPanel } from '../../main';
 
 const meta = {
   title: 'Components/UserPanel',

@@ -7,7 +7,29 @@ export {
   type CertificationsProps,
   type CertificationsIcon,
 } from './components/certifications/certifications.component';
-export { Control } from './components/control/control.component';
+export {
+  Control,
+  type BoxProps,
+  type ButtonProps,
+  type ButtonCardProps,
+  type ButtonRadioProps,
+  type ButtonRadioInfo,
+  type ButtonTextProps,
+  type CardImageProps,
+  type CardTextProps,
+  type CheckboxProps,
+  type ChoiceProps,
+  type DropdownProps,
+  type HiddenInputProps,
+  type InputProps,
+  type LabelProps,
+  type RadioLabelProps,
+  type RadioLabelChild,
+  type RadioTextProps,
+  type StatusProps,
+  type TextProps,
+  type TextareaProps,
+} from './components/control/control.component';
 export {
   DataProtectedLabel,
   type DataProtectedLabelProps,

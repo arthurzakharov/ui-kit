@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, fireEvent } from 'storybook/test';
-import { HiddenInput } from './hidden-input.component';
+import { Control } from '../../../../main';
 
 const meta = {
   title: 'Components/Control/HiddenInput',
-  component: HiddenInput,
+  component: Control.HiddenInput,
   tags: ['autodocs'],
   argTypes: {
     id: {
@@ -76,7 +76,7 @@ const meta = {
     disabled: false,
     onChange: fn(),
   },
-} satisfies Meta<typeof HiddenInput>;
+} satisfies Meta<typeof Control.HiddenInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

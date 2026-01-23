@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Status } from './status.component';
+import { Control } from '../../../../main';
 
-const meta: Meta<typeof Status> = {
+const meta = {
   title: 'Components/Control/Status',
-  component: Status,
+  component: Control.Status,
   tags: ['autodocs'],
   args: {
     className: '',
   },
-};
+} satisfies Meta<typeof Control.Status>;
 
 export default meta;
-type Story = StoryObj<typeof Status>;
+type Story = StoryObj<typeof Control.Status>;
 
 export const StateIdle: Story = {
   args: {

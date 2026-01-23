@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { LoadingBlock } from './loading-block.component';
+import { LoadingBlock } from '../../main';
 
 const meta = {
   title: 'Components/LoadingBlock',

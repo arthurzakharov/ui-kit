@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { DialogArticle } from '../dialog-article/dialog-article.component';
-import { Dialog } from './dialog.component';
+import { Dialog, DialogArticle } from '../../main';
 
 const meta = {
   title: 'Components/Dialog',

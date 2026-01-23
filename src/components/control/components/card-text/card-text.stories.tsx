@@ -3,7 +3,7 @@ import type { ChoiceValue } from '../../types';
 import { useEffect, useState } from 'react';
 import { expect, fn } from 'storybook/test';
 import { getChoiceId } from '../../utils/utils';
-import { CardText } from './card-text.component';
+import { Control } from '../../../../main';
 
 const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLElement => {
   return list.find((listItem, i) => listItem.getAttribute('for') === getChoiceId(id, radioId, i)) as HTMLElement;
@@ -11,7 +11,7 @@ const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLEl
 
 const meta = {
   title: 'Components/Control/CardText',
-  component: CardText,
+  component: Control.CardText,
   tags: ['autodocs'],
   args: {
     state: 'idle',
@@ -50,7 +50,7 @@ const meta = {
 
     return (
       <div style={{ maxWidth: 400 }}>
-        <CardText
+        <Control.CardText
           {...args}
           value={value}
           onChange={(value, id) => {
@@ -61,7 +61,7 @@ const meta = {
       </div>
     );
   },
-} satisfies Meta<typeof CardText>;
+} satisfies Meta<typeof Control.CardText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

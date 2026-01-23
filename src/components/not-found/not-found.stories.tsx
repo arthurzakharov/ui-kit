@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { NotFound } from './not-found.component';
+import { NotFound } from '../../main';
 
 const meta = {
   title: 'Components/NotFound',

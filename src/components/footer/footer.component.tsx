@@ -1,6 +1,6 @@
 import cn from './footer.module.css';
 
-interface FooterLink {
+export interface FooterLink {
   text: string;
   onClick: () => void;
 }

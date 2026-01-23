@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MainAttachment } from './main-attachment.component';
+import { MainAttachment } from '../../main';
 
 const meta = {
   title: 'Components/MainAttachment',
@@ -19,6 +19,5 @@ export const Default: Story = {
   args: {
     title: 'Mandat für Bußgeld - und Strafsachen',
     subtitle: 'Lorem ipsum dolor sit amet',
-    isContentVisible: true,
   },
 };

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Choice } from './choice.component';
+import { Control } from '../../../../main';
 
 const meta = {
   title: 'Components/Control/Choice',
-  component: Choice,
+  component: Control.Choice,
   tags: ['autodocs'],
   args: {
     type: 'radio',
@@ -37,7 +37,7 @@ const meta = {
       control: 'boolean',
     },
   },
-} satisfies Meta<typeof Choice>;
+} satisfies Meta<typeof Control.Choice>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

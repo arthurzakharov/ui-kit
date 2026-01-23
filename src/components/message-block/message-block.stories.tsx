@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MessageBlock } from './message-block.component';
+import { MessageBlock } from '../../main';
 
 const meta = {
   title: 'Components/MessageBlock',

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useEffect, useState } from 'react';
 import type { ChoiceValue } from '../../types';
 import { getChoiceId } from '../../utils/utils';
-import { useEffect, useState } from 'react';
 import { expect, fn } from 'storybook/test';
-import { CardImage } from './card-image.component';
+import { Control } from '../../../../main';
 
 const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLElement => {
   return list.find((listItem, i) => listItem.getAttribute('for') === getChoiceId(id, radioId, i)) as HTMLElement;
@@ -12,7 +12,7 @@ const getRadioLabel = (list: HTMLElement[], id: string, radioId: string): HTMLEl
 const meta = {
   title: 'Components/Control/CardImage',
   tags: ['autodocs'],
-  component: CardImage,
+  component: Control.CardImage,
   args: {
     sprite: './card-sprite.svg',
     state: 'idle',
@@ -59,7 +59,7 @@ const meta = {
 
     return (
       <div style={{ width: 500 }}>
-        <CardImage
+        <Control.CardImage
           {...args}
           value={value}
           onChange={(value, id) => {
@@ -70,7 +70,7 @@ const meta = {
       </div>
     );
   },
-} satisfies Meta<typeof CardImage>;
+} satisfies Meta<typeof Control.CardImage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

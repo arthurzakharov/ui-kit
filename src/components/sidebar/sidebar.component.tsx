@@ -1,9 +1,13 @@
 import type { PropsWithChildren } from 'react';
-import { Animation } from '../animation/animation.component';
-import { Line } from '../line/line.component';
-import { Text } from '../text/text.component';
-import { UserPanel, type UserPanelProps } from '../user-panel/user-panel.component';
-import { Certifications, type CertificationsProps } from '../certifications/certifications.component';
+import {
+  Animation,
+  Certifications,
+  Line,
+  Text,
+  UserPanel,
+  type UserPanelProps,
+  type CertificationsProps,
+} from '../../main';
 import { Board } from './components/board/board.component';
 import { Info, type InfoProps } from './components/info/info.component';
 import { Steps, type StepsProps } from './components/steps/steps.component';

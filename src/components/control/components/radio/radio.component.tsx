@@ -1,9 +1,6 @@
 import type { Interactive, RadioChoice, State } from '../../types';
 import clsx from 'clsx';
-import { Choice, type ChoiceProps } from '../choice/choice.component';
-import { HiddenInput } from '../hidden-input/hidden-input.component';
-import { RadioLabel } from '../radio-label/radio-label.component';
-import { RadioText } from '../radio-text/radio-text.component';
+import { Control, type ChoiceProps } from '../../../../main';
 import { getChoiceId } from '../../utils/utils';
 import cn from './radio.module.css';
 
@@ -28,10 +25,17 @@ export const Radio = (props: RadioProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
+            choice={choice}
+            choices={choices}
+          >
             {({ focused, hovered, checked, state }) => (
               <div className={cn.RadioLabel}>
-                <Choice
+                <Control.Choice
                   type="radio"
                   size={icon}
                   state={state}
@@ -40,7 +44,7 @@ export const Radio = (props: RadioProps) => {
                   hovered={hovered}
                   disabled={disabled}
                 />
-                <HiddenInput
+                <Control.HiddenInput
                   type="radio"
                   id={choiceId}
                   value={choice.value}
@@ -49,12 +53,12 @@ export const Radio = (props: RadioProps) => {
                   disabled={disabled}
                   onChange={() => onChange(choice.value, id)}
                 />
-                <RadioText size="lg" checked={checked}>
+                <Control.RadioText size="lg" checked={checked}>
                   {choice.label}
-                </RadioText>
+                </Control.RadioText>
               </div>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

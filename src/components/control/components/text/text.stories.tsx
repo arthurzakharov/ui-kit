@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import { expect, fn, fireEvent, waitFor } from 'storybook/test';
-import { Text } from './text.component';
+import { Control } from '../../../../main';
 import cn from '../text/text.module.css';
 import inputCn from '../input/input.module.css';
 
 const meta = {
   title: 'Components/Control/Text',
-  component: Text,
+  component: Control.Text,
   tags: ['autodocs'],
   args: {
     label: 'Text label',
@@ -41,7 +41,7 @@ const meta = {
 
     return (
       <div style={{ maxWidth: 300 }}>
-        <Text
+        <Control.Text
           {...args}
           value={value}
           onChange={(value, id, source) => {
@@ -52,7 +52,7 @@ const meta = {
       </div>
     );
   },
-} satisfies Meta<typeof Text>;
+} satisfies Meta<typeof Control.Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

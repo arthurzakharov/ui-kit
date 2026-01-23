@@ -1,4 +1,4 @@
-import { Control } from '../../../control/control.component';
+import { Control } from '../../../../main';
 import type { State } from '../../../control/types';
 import clsx from 'clsx';
 import cn from './step.module.css';

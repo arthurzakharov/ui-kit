@@ -1,9 +1,5 @@
 import type { Interactive, RadioChoice, ChoiceValue, State } from '../../types';
-import { Box } from '../box/box.component';
-import { Choice } from '../choice/choice.component';
-import { HiddenInput } from '../hidden-input/hidden-input.component';
-import { RadioLabel } from '../radio-label/radio-label.component';
-import { RadioText } from '../radio-text/radio-text.component';
+import { Control } from '../../../../main';
 import { useChoice } from '../../hooks/useChoice/useChoice.hook';
 import { getChoiceId } from '../../utils/utils';
 import cn from './card-image.module.css';
@@ -24,11 +20,18 @@ export const CardImage = (props: CardImageProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <RadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
+          <Control.RadioLabel
+            key={choiceId}
+            id={choiceId}
+            value={value}
+            state={state}
+            choice={choice}
+            choices={choices}
+          >
             {({ focused, hovered, checked, state }) => (
-              <Box state={state} checked={checked} focused={focused}>
+              <Control.Box state={state} checked={checked} focused={focused}>
                 <div className={cn.CardImageContent}>
-                  <HiddenInput
+                  <Control.HiddenInput
                     type={type}
                     id={choiceId}
                     name={id}
@@ -46,7 +49,7 @@ export const CardImage = (props: CardImageProps) => {
                   </div>
                   <div className={cn.CardImageBottom}>
                     <div>
-                      <Choice
+                      <Control.Choice
                         type={type}
                         state={state}
                         checked={checked}
@@ -55,14 +58,14 @@ export const CardImage = (props: CardImageProps) => {
                         disabled={disabled}
                       />
                     </div>
-                    <RadioText size="md" checked={checked}>
+                    <Control.RadioText size="md" checked={checked}>
                       {choice.label}
-                    </RadioText>
+                    </Control.RadioText>
                   </div>
                 </div>
-              </Box>
+              </Control.Box>
             )}
-          </RadioLabel>
+          </Control.RadioLabel>
         );
       })}
     </div>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { MaxWidth } from '../../storybook/decorators/max-width';
-import { Expenses } from './expenses.component';
+import { Expenses } from '../../main';
 
 const meta = {
   component: Expenses,

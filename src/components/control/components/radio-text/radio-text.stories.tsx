@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RadioText } from './radio-text.component';
+import { Control } from '../../../../main';
 
-const meta: Meta<typeof RadioText> = {
+const meta = {
   title: 'Components/Control/RadioText',
-  component: RadioText,
+  component: Control.RadioText,
   tags: ['autodocs'],
   args: {
     children: 'Radio text content',
@@ -23,10 +23,10 @@ const meta: Meta<typeof RadioText> = {
       control: 'boolean',
     },
   },
-};
+} satisfies Meta<typeof Control.RadioText>;
 
 export default meta;
-type Story = StoryObj<typeof RadioText>;
+type Story = StoryObj<typeof Control.RadioText>;
 
 export const DefaultValues: Story = {
   args: {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
 import type { State } from '../../types';
-import { RadioLabel, type RadioLabelChild } from './radio-label.component';
+import { Control, type RadioLabelChild } from '../../../../main';
 
 const focused = (value: boolean) => 'Focused: ' + value;
 const hovered = (value: boolean) => 'Hovered: ' + value;
@@ -30,9 +30,9 @@ const ChildrenRenderer = (props: RadioLabelChild) => (
   </div>
 );
 
-const meta: Meta<typeof RadioLabel> = {
+const meta = {
   title: 'Components/Control/RadioLabel',
-  component: RadioLabel,
+  component: Control.RadioLabel,
   tags: ['autodocs'],
   args: {
     id: 'radio',
@@ -66,10 +66,10 @@ const meta: Meta<typeof RadioLabel> = {
       },
     },
   },
-};
+} satisfies Meta<typeof Control.RadioLabel>;
 
 export default meta;
-type Story = StoryObj<typeof RadioLabel>;
+type Story = StoryObj<typeof Control.RadioLabel>;
 
 export const DefaultValue: Story = {
   args: {

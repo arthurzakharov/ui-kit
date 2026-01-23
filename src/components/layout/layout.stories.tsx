@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Layout } from './layout.component';
+import { Layout } from '../../main';
 
 const Header = () => (
   <div

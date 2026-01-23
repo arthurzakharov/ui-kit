@@ -1,9 +1,7 @@
 import type { State } from '../../types';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
-import { Input, type InputProps } from '../input/input.component';
-import { Label } from '../label/label.component';
-import { Box } from '../box/box.component';
+import { Control, type InputProps } from '../../../../main';
 import cn from './text.module.css';
 
 export interface TextProps extends InputProps {
@@ -39,17 +37,17 @@ export const Text = (props: TextProps) => {
   };
 
   return (
-    <Box state={state} focused={focused}>
+    <Control.Box state={state} focused={focused}>
       <label htmlFor={id} className={cn.Text}>
         <div
           data-testid="text-label"
           className={clsx(cn.TextLabel, !isIdle || value ? cn.TextLabelActive : cn.TextLabelIdle)}
         >
-          <Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
+          <Control.Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
             {label}
-          </Label>
+          </Control.Label>
         </div>
-        <Input
+        <Control.Input
           disabled={disabled}
           type={type}
           id={id}
@@ -61,6 +59,6 @@ export const Text = (props: TextProps) => {
           onBlur={onInputBlur}
         />
       </label>
-    </Box>
+    </Control.Box>
   );
 };

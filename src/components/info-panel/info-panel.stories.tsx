@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { InfoPanel } from './info-panel.component';
+import { InfoPanel } from '../../main';
 
 const meta = {
   title: 'Components/InfoPanel',

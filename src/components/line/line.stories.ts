@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Line } from './line.component';
+import { Line } from '../../main';
 
 const meta = {
   title: 'Components/Line',

@@ -1,6 +1,6 @@
 import { type PropsWithChildren, useRef, useState } from 'react';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
-import { Control } from '../control/control.component';
+import { Control } from '../../main';
 import cn from './dialog-article.module.css';
 
 interface ActionButton {

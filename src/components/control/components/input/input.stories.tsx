@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, fn } from 'storybook/test';
-import { Input } from './input.component';
+import { Control } from '../../../../main';
 import cn from './input.module.css';
 
 const meta = {
   title: 'Components/Control/Input',
-  component: Input,
+  component: Control.Input,
   tags: ['autodocs'],
   args: {
     id: 'input-default',
@@ -31,7 +31,7 @@ const meta = {
     const [value, setValue] = useState<string>(args.value);
 
     return (
-      <Input
+      <Control.Input
         {...args}
         value={value}
         onChange={(...props) => {
@@ -41,7 +41,7 @@ const meta = {
       />
     );
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Control.Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
