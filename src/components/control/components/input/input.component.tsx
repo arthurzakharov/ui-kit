@@ -30,7 +30,10 @@ export const Input = ({
     onChange={(e) => onChange(e.target.value, id, 'keyboard')}
     onAnimationStart={(e) => {
       if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
-      if (e.animationName === cn['autofill-cancel']) onAutofillCancel?.call(null, id);
+      if (e.animationName === cn['autofill-cancel']) {
+        e.currentTarget.blur();
+        onAutofillCancel?.call(null, id);
+      }
     }}
     onFocus={() => onFocus?.call(null, id)}
     onBlur={() => onBlur?.call(null, id)}

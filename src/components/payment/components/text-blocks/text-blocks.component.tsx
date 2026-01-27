@@ -55,7 +55,7 @@ export const TextBlocks = (props: TextBlocksProps) => {
       {blocks.map(applyPlaceholders).map(({ title, text }, i) => (
         <div key={i} className={cn.TextBlocksContent}>
           <h6 className={cn.TextBlocksTitle}>{title}</h6>
-          <Text.Paragraph>{text}</Text.Paragraph>
+          <Text.Tag>{text}</Text.Tag>
         </div>
       ))}
     </div>

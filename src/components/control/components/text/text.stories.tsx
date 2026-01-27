@@ -10,6 +10,7 @@ const meta = {
   component: Control.Text,
   tags: ['autodocs'],
   args: {
+    placeholder: '',
     label: 'Text label',
     state: 'idle',
     type: 'text',
@@ -59,6 +60,7 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultValues: Story = {
   args: {
+    placeholder: undefined,
     state: undefined,
     type: undefined,
     onAutofill: undefined,
@@ -72,6 +74,21 @@ export const DefaultValues: Story = {
 export const WithoutValue: Story = {
   args: {
     value: '',
+  },
+};
+
+export const WithPlaceholder: Story = {
+  args: {
+    value: '',
+    placeholder: 'Placeholder',
+  },
+};
+
+export const WithErrorMessage: Story = {
+  args: {
+    value: '',
+    state: 'error',
+    message: 'Field is required',
   },
 };
 

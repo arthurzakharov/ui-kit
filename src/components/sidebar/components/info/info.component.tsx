@@ -1,4 +1,5 @@
-import cn from '@components/sidebar/components/info/info.module.css';
+import { Flex } from '@components/flex/flex.component';
+import { Text } from '@components/text/text.component';
 
 export interface InfoProps {
   data: [string, string][];
@@ -8,13 +9,17 @@ export const Info = (props: InfoProps) => {
   const { data = [] } = props;
 
   return (
-    <ul className={cn.InfoPanel}>
+    <Flex direction="column" justify="start" gap="sm">
       {data.map(([key, value]) => (
-        <li key={key} className={cn.InfoPanelRow}>
-          <span className={cn.InfoPanelKey}>{key}</span>
-          <span className={cn.InfoPanelValue} dangerouslySetInnerHTML={{ __html: value }} />
-        </li>
+        <Flex key={key} direction="row" gap="xs" align="center" justify="space-between">
+          <Text.Tag tag="span" weight="regular" size="small" color="secondary">
+            {key}
+          </Text.Tag>
+          <Text.Tag tag="span" weight="regular" size="small" color="primary" align="right">
+            {value}
+          </Text.Tag>
+        </Flex>
       ))}
-    </ul>
+    </Flex>
   );
 };

@@ -1,3 +1,4 @@
+import { Animation } from '@components/animation/animation.component';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
 import type { State } from '@components/control/control.types';
@@ -6,59 +7,85 @@ import cn from '@components/control/components/text/text.module.css';
 
 export interface TextProps extends InputProps {
   label: string;
+  message?: string;
+  placeholder?: string;
   state?: State;
 }
 
 export const Text = (props: TextProps) => {
   // TODO: onAutofill onAutofillCancel are passed but are not used anywhere
-  const { label, state = 'idle', type = 'text', id, value, disabled = false, onChange, onFocus, onBlur } = props;
+  const {
+    label,
+    message = '',
+    placeholder = '',
+    state = 'idle',
+    type = 'text',
+    id,
+    value,
+    disabled = false,
+    onChange,
+    onFocus,
+    onBlur,
+  } = props;
   const { value: isIdle, setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
+  const { value: isInAutofillState, setTrue: markAutofillState, setFalse: unmarkAutofillState } = useBoolean(true);
   const [focused, toggleFocused] = useToggle();
 
-  const onAutofill = () => {
+  const isLabelActive = !isIdle || !!value;
+  const withPlaceholder = !!placeholder && !isIdle && !value && !isInAutofillState;
+  const withErrorMessage = !!message && state === 'error';
+
+  const onAutofill = (): void => {
+    markAutofillState();
     makeActive();
   };
 
-  const onAutofillCancel = () => {
+  const onAutofillCancel = (): void => {
     if (value) return;
+    unmarkAutofillState();
     makeIdle();
   };
 
-  const onInputFocus = (id: string) => {
+  const onInputFocus = (id: string): void => {
     if (!value) makeActive();
     toggleFocused();
     onFocus?.call(null, id);
   };
 
-  const onInputBlur = (id: string) => {
+  const onInputBlur = (id: string): void => {
     if (!value) makeIdle();
     toggleFocused();
     onBlur?.call(null, id);
   };
 
   return (
-    <Control.Box state={state} focused={focused}>
-      <label htmlFor={id} className={cn.Text}>
-        <div
-          data-testid="text-label"
-          className={clsx(cn.TextLabel, !isIdle || value ? cn.TextLabelActive : cn.TextLabelIdle)}
-        >
-          <Control.Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
-            {label}
-          </Control.Label>
-        </div>
-        <Control.Input
-          disabled={disabled}
-          type={type}
-          id={id}
-          value={value}
-          onChange={onChange}
-          onAutofill={onAutofill}
-          onAutofillCancel={onAutofillCancel}
-          onFocus={onInputFocus}
-          onBlur={onInputBlur}
-        />
-      </label>
-    </Control.Box>
+    <div className={cn.Text}>
+      <Control.Box state={state} focused={focused}>
+        <label htmlFor={id} className={cn.TextContent}>
+          <div className={clsx(cn.TextLabel, isLabelActive ? cn.TextLabelActive : cn.TextLabelIdle)}>
+            <Control.Label position={isIdle ? 'idle' : 'active'} state={isIdle ? 'idle' : state}>
+              {label}
+            </Control.Label>
+          </div>
+          <Animation.FadeScale name="text-placeholder" condition={withPlaceholder} className={cn.TextPlaceholder}>
+            <span className={cn.TextPlaceholderText}>{placeholder}</span>
+          </Animation.FadeScale>
+          <Control.Input
+            disabled={disabled}
+            type={type}
+            id={id}
+            value={value}
+            onChange={onChange}
+            onAutofill={onAutofill}
+            onAutofillCancel={onAutofillCancel}
+            onFocus={onInputFocus}
+            onBlur={onInputBlur}
+          />
+        </label>
+      </Control.Box>
+      <Animation.FadeSlide flex name="text-message" condition={withErrorMessage}>
+        <span className={cn.TextErrorMessage}>{message}</span>
+      </Animation.FadeSlide>
+    </div>
   );
 };

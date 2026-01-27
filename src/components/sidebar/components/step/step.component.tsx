@@ -1,7 +1,7 @@
 import { Control } from '@components/control/control.component';
 import type { State } from '@components/control/control.types';
-import clsx from 'clsx';
-import cn from '@components/sidebar/components/steps/steps.module.css';
+import { Flex } from '@components/flex/flex.component';
+import { Text } from '@components/text/text.component';
 
 export interface StepProps {
   state: State;
@@ -12,15 +12,11 @@ export const Step = (props: StepProps) => {
   const { state = 'idle', text = '' } = props;
 
   return (
-    <div className={cn.Step}>
+    <Flex direction="row" align="center" justify="start" gap="xs">
       <Control.Status state={state} />
-      <span
-        className={clsx(cn.StepText, {
-          [cn.StepTextIdle]: state === 'idle',
-          [cn.StepTextActive]: state === 'success' || state === 'error',
-        })}
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
-    </div>
+      <Text.Tag tag="span" weight="medium" size="small" color={state === 'idle' ? 'secondary' : 'primary'}>
+        {text}
+      </Text.Tag>
+    </Flex>
   );
 };

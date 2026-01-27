@@ -2,6 +2,7 @@ import '@styles/styles.css';
 import '@styles/variables.css';
 
 export { Animation, type FadeScaleProps, type FadeSlideProps } from '@components/animation/animation.component';
+export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
 export {
   Certifications,
   type CertificationsProps,
@@ -41,9 +42,11 @@ export {
   type DialogActionButton,
 } from '@components/dialog-article/dialog-article.component';
 export { Expenses, type ExpensesProps } from '@components/expenses/expenses.component';
+export { Flex, type FlexProps } from '@components/flex/flex.component';
 export { Footer, type FooterProps, type FooterLink } from '@components/footer/footer.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from '@components/info-panel/info-panel.component';
+export { Information, type InformationProps } from '@components/information/information.component';
 export { Layout, type LayoutProps } from '@components/layout/layout.component';
 export { Line } from '@components/line/line.component';
 export { Loader, type LoaderProps } from '@components/loader/loader.component';

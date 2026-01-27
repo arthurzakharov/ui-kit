@@ -1,0 +1,62 @@
+.TagLined {
+  text-decoration: underline;
+}
+
+.TagAlignLeft {
+  text-align: left;
+}
+
+.TagAlignCenter {
+  text-align: center;
+}
+
+.TagAlignRight {
+  text-align: right;
+}
+
+.TagWeightLight {
+  font-weight: var(--rm-ui-font-weight-light);
+}
+
+.TagWeightRegular {
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.TagWeightMedium {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.TagWeightBold {
+  font-weight: var(--rm-ui-font-weight-bold);
+}
+
+.TagSizeRegular {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.TagSizeSmall {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.TagSizeExtraSmall {
+  font-size: var(--rm-ui-font-size-body-extra-small);
+  line-height: var(--rm-ui-line-height-body-extra-small);
+}
+
+.TagColorPrimary {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.TagColorSecondary {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.TagColorAccentPrimary {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.TagColorAccentSecondary {
+  color: var(--rm-ui-color-accent-secondary);
+}

@@ -1,5 +1,5 @@
+import { Flex } from '@components/flex/flex.component';
 import { Step, type StepProps } from '@components/sidebar/components/step/step.component';
-import cn from '@components/sidebar/components/steps/steps.module.css';
 
 export interface StepsProps {
   data: StepProps[];
@@ -9,12 +9,10 @@ export const Steps = (props: StepsProps) => {
   const { data } = props;
 
   return (
-    <ul className={cn.Steps}>
+    <Flex direction="column" justify="start" gap="sm">
       {data.map(({ state, text }) => (
-        <li key={text}>
-          <Step state={state} text={text} />
-        </li>
+        <Step key={text} state={state} text={text} />
       ))}
-    </ul>
+    </Flex>
   );
 };

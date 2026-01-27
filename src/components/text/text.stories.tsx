@@ -17,8 +17,8 @@ export const PageTitle: Story = {
   render: () => <Text.PageTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</Text.PageTitle>,
 };
 
-export const Paragraph: Story = {
-  render: () => <Text.Paragraph tag="div">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</Text.Paragraph>,
+export const Tag: Story = {
+  render: () => <Text.Tag tag="div">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</Text.Tag>,
 };
 
 export const SidebarTitle: Story = {

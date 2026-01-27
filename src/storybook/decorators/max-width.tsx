@@ -7,7 +7,9 @@ export const SIZE = {
   MOBILE_CONTENT: 375,
 } as const;
 
-export const MaxWidth = (maxWidth = SIZE.PC_CONTENT, style?: CSSProperties) => {
+export type Size = (typeof SIZE)[keyof typeof SIZE];
+
+export const MaxWidth = (maxWidth: Size = SIZE.PC_CONTENT, style?: CSSProperties) => {
   return (storyFn: () => ReactNode) => {
     return (
       <div

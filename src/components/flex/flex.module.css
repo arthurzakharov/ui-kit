@@ -1,0 +1,122 @@
+.Flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: initial;
+}
+
+.FlexGapXxs {
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.FlexGapXs {
+  gap: var(--rm-ui-padding-xs);
+}
+
+.FlexGapSm {
+  gap: var(--rm-ui-padding-sm);
+}
+
+.FlexGapMd {
+  gap: var(--rm-ui-padding-md);
+}
+
+.FlexGapLg {
+  gap: var(--rm-ui-padding-lg);
+}
+
+.FlexGapXl {
+  gap: var(--rm-ui-padding-xl);
+}
+
+.FlexGapXxl {
+  gap: var(--rm-ui-padding-xxl);
+}
+
+.FlexGapXxxl {
+  gap: var(--rm-ui-padding-xxxl);
+}
+
+.FlexMarginTopSm {
+  margin-top: var(--rm-ui-padding-sm);
+}
+
+.FlexMarginTopMd {
+  margin-top: var(--rm-ui-padding-md);
+}
+
+.FlexMarginBottomSm {
+  margin-bottom: var(--rm-ui-padding-sm);
+}
+
+.FlexMarginBottomMd {
+  margin-bottom: var(--rm-ui-padding-md);
+}
+
+.FlexDirectionRow {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.FlexDirectionColumn {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.FlexAlignCenter {
+  align-items: center;
+}
+
+.FlexAlignStart {
+  align-items: flex-start;
+}
+
+.FlexAlignEnd {
+  align-items: flex-end;
+}
+
+.FlexJustifyCenter {
+  justify-content: center;
+}
+
+.FlexJustifyStart {
+  justify-content: flex-start;
+}
+
+.FlexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.FlexJustifySpaceBetween {
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .FlexDirectionRow.FlexChangeDirectionAfterTabletSize {
+    flex-direction: column;
+  }
+
+  .FlexDirectionColumn.FlexChangeDirectionAfterTabletSize {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .FlexDirectionRow.FlexChangeDirectionAfterLaptopSize {
+    flex-direction: column;
+  }
+
+  .FlexDirectionColumn.FlexChangeDirectionAfterLaptopSize {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .FlexDirectionRow.FlexChangeDirectionAfterPcSize {
+    flex-direction: column;
+  }
+
+  .FlexDirectionColumn.FlexChangeDirectionAfterPcSize {
+    flex-direction: row;
+  }
+}

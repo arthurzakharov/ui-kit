@@ -1,7 +1,0 @@
-.Steps {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: var(--rm-ui-padding-sm);
-}
