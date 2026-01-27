@@ -41,20 +41,6 @@
   justify-content: space-between;
 }
 
-.InfoPanelKey {
-  font-weight: var(--rm-ui-font-weight-regular);
-  font-size: var(--rm-ui-font-size-body-small);
-  line-height: var(--rm-ui-font-size-body-small);
-  color: var(--rm-ui-color-text-secondary);
-}
-
-.InfoPanelValue {
-  font-weight: var(--rm-ui-font-weight-regular);
-  font-size: var(--rm-ui-font-size-body-small);
-  line-height: var(--rm-ui-font-size-body-small);
-  color: var(--rm-ui-color-text-primary);
-}
-
 @media screen and (min-width: 480px) {
   .InfoPanelItem {
     justify-content: flex-start;

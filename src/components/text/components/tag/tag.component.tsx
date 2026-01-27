@@ -9,7 +9,7 @@ export interface TagProps extends PropsWithChildren, HTMLAttributes<HTMLElementT
   lined?: boolean;
   align?: 'left' | 'center' | 'right';
   weight?: 'light' | 'regular' | 'medium' | 'bold';
-  size?: 'regular' | 'small' | 'extra-small';
+  size?: 'regular' | 'small' | 'extra-small' | 'hl1' | 'hl2' | 'hl3' | 'hl4' | 'hl5';
   color?: 'primary' | 'secondary' | 'accent-primary' | 'accent-secondary';
 }
 
@@ -38,6 +38,11 @@ export const Tag = (props: TagProps) => {
     [cn.TagSizeRegular]: size === 'regular',
     [cn.TagSizeSmall]: size === 'small',
     [cn.TagSizeExtraSmall]: size === 'extra-small',
+    [cn.TagSizeHL1]: size === 'hl1',
+    [cn.TagSizeHL2]: size === 'hl2',
+    [cn.TagSizeHL3]: size === 'hl3',
+    [cn.TagSizeHL4]: size === 'hl4',
+    [cn.TagSizeHL5]: size === 'hl5',
     [cn.TagColorPrimary]: color === 'primary',
     [cn.TagColorSecondary]: color === 'secondary',
     [cn.TagColorAccentPrimary]: color === 'accent-primary',

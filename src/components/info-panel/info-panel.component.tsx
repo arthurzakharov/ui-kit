@@ -1,3 +1,4 @@
+import { Text } from '@components/text/text.component';
 import cn from '@components/info-panel/info-panel.module.css';
 
 export interface InfoPanelProps {
@@ -12,8 +13,12 @@ export const InfoPanel = (props: InfoPanelProps) => {
       <ul className={cn.InfoPanelList}>
         {data.map(([key, value]) => (
           <li key={key} className={cn.InfoPanelItem}>
-            <span className={cn.InfoPanelKey}>{key}</span>
-            <span className={cn.InfoPanelValue} dangerouslySetInnerHTML={{ __html: value }} />
+            <Text.Tag tag="span" weight="regular" size="small" color="secondary">
+              {key}
+            </Text.Tag>
+            <Text.Tag tag="span" weight="regular" size="small" color="primary">
+              {value}
+            </Text.Tag>
           </li>
         ))}
       </ul>

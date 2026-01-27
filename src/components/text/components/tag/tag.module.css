@@ -45,6 +45,31 @@
   line-height: var(--rm-ui-line-height-body-extra-small);
 }
 
+.TagSizeHL1 {
+  font-size: var(--rm-ui-font-size-hl1);
+  line-height: var(--rm-ui-line-height-hl1);
+}
+
+.TagSizeHL2 {
+  font-size: var(--rm-ui-font-size-hl2);
+  line-height: var(--rm-ui-line-height-hl2);
+}
+
+.TagSizeHL3 {
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
+}
+
+.TagSizeHL4 {
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}
+
+.TagSizeHL5 {
+  font-size: var(--rm-ui-font-size-hl5);
+  line-height: var(--rm-ui-line-height-hl5);
+}
+
 .TagColorPrimary {
   color: var(--rm-ui-color-text-primary);
 }

@@ -1,8 +1,9 @@
-import { Children, isValidElement, type PropsWithChildren } from 'react';
+import { Children, createElement, isValidElement, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import cn from '@components/flex/flex.module.css';
 
 export interface FlexProps extends PropsWithChildren {
+  tag?: keyof HTMLElementTagNameMap;
   gap?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
   basis?: string | number;
   grow?: 'content' | 'equal';
@@ -20,6 +21,7 @@ export interface FlexProps extends PropsWithChildren {
 export const Flex = (props: FlexProps) => {
   const {
     children,
+    tag = 'div',
     gap,
     basis,
     grow,
@@ -34,10 +36,10 @@ export const Flex = (props: FlexProps) => {
     changeDirectionAfterPcSize = false,
   } = props;
 
-  return (
-    <div
-      style={typeof basis !== 'undefined' ? { flexBasis: typeof basis === 'number' ? `${basis}%` : basis } : undefined}
-      className={clsx(cn.Flex, className, {
+  return createElement(tag, {
+    style: typeof basis !== 'undefined' ? { flexBasis: typeof basis === 'number' ? `${basis}%` : basis } : undefined,
+    className: clsx(
+      clsx(cn.Flex, className, {
         [cn.FlexChangeDirectionAfterTabletSize]: changeDirectionAfterTabletSize,
         [cn.FlexChangeDirectionAfterLaptopSize]: changeDirectionAfterLaptopSize,
         [cn.FlexChangeDirectionAfterPcSize]: changeDirectionAfterPcSize,
@@ -62,15 +64,14 @@ export const Flex = (props: FlexProps) => {
         [cn.FlexJustifyStart]: justify === 'start',
         [cn.FlexJustifyEnd]: justify === 'end',
         [cn.FlexJustifySpaceBetween]: justify === 'space-between',
-      })}
-    >
-      {Children.map(children, (child) =>
-        isValidElement(child) && grow === 'equal' ? (
-          <div style={{ flexBasis: `${Math.floor((100 / Children.count(children)) * 100) / 100}%` }}>{child}</div>
-        ) : (
-          child
-        ),
-      )}
-    </div>
-  );
+      }),
+    ),
+    children: Children.map(children, (child) =>
+      isValidElement(child) && grow === 'equal' ? (
+        <div style={{ flexBasis: `${Math.floor((100 / Children.count(children)) * 100) / 100}%` }}>{child}</div>
+      ) : (
+        child
+      ),
+    ),
+  });
 };
