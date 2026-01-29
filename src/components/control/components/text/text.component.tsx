@@ -9,6 +9,8 @@ export interface TextProps extends InputProps {
   label: string;
   message?: string;
   placeholder?: string;
+  dateMask?: boolean;
+  maxLength?: number;
   state?: State;
 }
 
@@ -18,6 +20,8 @@ export const Text = (props: TextProps) => {
     label,
     message = '',
     placeholder = '',
+    dateMask = false,
+    maxLength,
     state = 'idle',
     type = 'text',
     id,
@@ -71,6 +75,8 @@ export const Text = (props: TextProps) => {
             <span className={cn.TextPlaceholderText}>{placeholder}</span>
           </Animation.FadeScale>
           <Control.Input
+            dateMask={dateMask}
+            maxLength={maxLength}
             disabled={disabled}
             type={type}
             id={id}

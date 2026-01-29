@@ -17,6 +17,7 @@ const meta = {
     id: 'text-input',
     value: 'Some value',
     disabled: false,
+    dateMask: false,
     onChange: fn(),
     onFocus: fn(),
     onBlur: fn(),
@@ -89,6 +90,14 @@ export const WithErrorMessage: Story = {
     value: '',
     state: 'error',
     message: 'Field is required',
+  },
+};
+
+export const WithDateMask: Story = {
+  args: {
+    label: 'Date of birth',
+    value: '',
+    dateMask: true,
   },
 };
 

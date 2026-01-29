@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { cloneElement, isValidElement, type ReactElement } from 'react';
 
 export interface SvgProps {
@@ -8,5 +9,7 @@ export interface SvgProps {
 export const Svg = (props: SvgProps) => {
   const { icon = null, className = '' } = props;
 
-  return isValidElement(icon) ? cloneElement<SVGElement>(icon, { className }) : icon;
+  return isValidElement(icon)
+    ? cloneElement<SVGElement>(icon, { className: clsx(className, icon.props.className) })
+    : icon;
 };

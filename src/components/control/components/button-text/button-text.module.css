@@ -1,13 +1,47 @@
 .ButtonText {
   display: inline-flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: var(--rm-ui-padding-xs);
   border-radius: var(--rm-ui-border-radius-sm);
   padding: var(--rm-ui-padding-xxs);
+}
+
+.ButtonTextColorPrimary {
   color: var(--rm-ui-color-text-primary);
+}
+
+.ButtonTextColorSecondary {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.ButtonTextColorAccentPrimary {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.ButtonTextColorAccentSecondary {
+  color: var(--rm-ui-color-accent-secondary);
+}
+
+.ButtonTextColorThemePrimary {
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.ButtonTextColorThemeSecondary {
+  color: var(--rm-ui-color-theme-secondary);
+}
+
+.ButtonTextIconPositionLeft {
+  flex-direction: row;
+}
+
+.ButtonTextIconPositionRight {
+  flex-direction: row-reverse;
+}
+
+.ButtonTextIcon {
+  stroke-width: 1.5;
 }
 
 .ButtonTextSizeSm .ButtonTextIcon {
@@ -15,7 +49,11 @@
   height: 20px;
 }
 
-.ButtonTextSizeMd .ButtonTextIcon,
+.ButtonTextSizeMd .ButtonTextIcon {
+  width: 22px;
+  height: 22px;
+}
+
 .ButtonTextSizeLg .ButtonTextIcon {
   width: 24px;
   height: 24px;
@@ -37,6 +75,25 @@
 }
 
 .ButtonTextContent {
+  text-decoration: none;
+}
+
+.ButtonTextContentWeightLight {
+  font-weight: var(--rm-ui-font-weight-light);
+}
+
+.ButtonTextContentWeightRegular {
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.ButtonTextContentWeightMedium {
   font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.ButtonTextContentWeightBold {
+  font-weight: var(--rm-ui-font-weight-bold);
+}
+
+.ButtonTextContentUnderlined {
   text-decoration: underline;
 }

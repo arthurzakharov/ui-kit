@@ -11,8 +11,10 @@ const meta = {
     size: 'md',
     type: 'button',
     disabled: false,
+    underlined: true,
     preventDefault: false,
     blurAfterClick: false,
+    iconPosition: 'left',
     icon: <RefreshCcw />,
     children: (
       <>

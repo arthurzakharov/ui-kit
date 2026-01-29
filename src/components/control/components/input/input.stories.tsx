@@ -12,6 +12,7 @@ const meta = {
     id: 'input-default',
     value: '',
     disabled: false,
+    maxLength: 20,
     type: 'text',
     onChange: fn(),
     onFocus: fn(),
@@ -91,6 +92,12 @@ export const Disabled: Story = {
     await expect(args.onFocus).not.toHaveBeenCalled();
     await expect(args.onBlur).not.toHaveBeenCalled();
     await expect(input).toBeDisabled();
+  },
+};
+
+export const DateMask: Story = {
+  args: {
+    dateMask: true,
   },
 };
 

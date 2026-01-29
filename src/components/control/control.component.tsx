@@ -34,6 +34,7 @@ export type { DropdownProps } from '@components/control/components/dropdown/drop
 export type { HiddenInputProps } from '@components/control/components/hidden-input/hidden-input.component';
 export type { InputProps } from '@components/control/components/input/input.component';
 export type { LabelProps } from '@components/control/components/label/label.component';
+export type { RadioProps } from '@components/control/components/radio/radio.component';
 export type {
   RadioLabelProps,
   RadioLabelChild,
