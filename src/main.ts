@@ -32,6 +32,15 @@ export {
   type StatusProps,
   type TextProps,
   type TextareaProps,
+  type InputChangeSource,
+  type Interactive,
+  type RadioChoice,
+  type ChoiceType,
+  type ChoiceValue,
+  type State,
+  type QuestionPath,
+  type QuestionChoice,
+  type Size,
 } from '@components/control/control.component';
 export {
   DataProtectedLabel,

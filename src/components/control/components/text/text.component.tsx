@@ -9,8 +9,6 @@ export interface TextProps extends InputProps {
   label: string;
   message?: string;
   placeholder?: string;
-  dateMask?: boolean;
-  maxLength?: number;
   state?: State;
 }
 

@@ -44,6 +44,18 @@ export type { StatusProps } from '@components/control/components/status/status.c
 export type { TextProps } from '@components/control/components/text/text.component';
 export type { TextareaProps } from '@components/control/components/textarea/textarea.component';
 
+export type {
+  InputChangeSource,
+  Interactive,
+  RadioChoice,
+  ChoiceType,
+  ChoiceValue,
+  State,
+  QuestionPath,
+  QuestionChoice,
+  Size,
+} from '@components/control/control.types';
+
 export const Control = {
   Box,
   Button,
