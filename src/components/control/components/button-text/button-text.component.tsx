@@ -9,7 +9,7 @@ export interface ButtonTextProps extends PropsWithChildren {
   icon?: SvgProps['icon'];
   disabled?: boolean;
   preventDefault?: boolean;
-  blurAfterCLick?: boolean;
+  blurAfterClick?: boolean;
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -23,7 +23,7 @@ export const ButtonText = (props: ButtonTextProps) => {
     icon = null,
     disabled = false,
     preventDefault = false,
-    blurAfterCLick = false,
+    blurAfterClick = false,
     onClick,
     onFocus,
     onBlur,
@@ -40,7 +40,7 @@ export const ButtonText = (props: ButtonTextProps) => {
       })}
       onClick={(e: MouseEvent<HTMLButtonElement>) => {
         if (preventDefault) e.preventDefault();
-        if (blurAfterCLick) e.currentTarget.blur();
+        if (blurAfterClick) e.currentTarget.blur();
         onClick?.call(null);
       }}
       onFocus={() => onFocus?.call(null)}

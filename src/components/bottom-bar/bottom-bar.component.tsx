@@ -114,13 +114,13 @@ export const BottomBar = (props: BottomBarProps) => {
         </Flex>
       </Flex>
       {message && (
-        <Flex justify="center" marginTop="sm" marginBottom="md">
+        <Flex justify="center" mt="sm" mb="md">
           <Text.Tag color="secondary" size="regular" weight="regular">
             {message}
           </Text.Tag>
         </Flex>
       )}
-      <Flex direction="row" marginTop="md">
+      <Flex direction="row" mt="md">
         <Control.Button
           fullWidth
           color="primary"

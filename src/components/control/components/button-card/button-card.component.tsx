@@ -11,7 +11,7 @@ export interface ButtonCardProps extends PropsWithChildren {
   active?: boolean;
   disabled?: boolean;
   preventDefault?: boolean;
-  blurAfterCLick?: boolean;
+  blurAfterClick?: boolean;
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -28,7 +28,7 @@ export const ButtonCard = (props: ButtonCardProps) => {
     active = false,
     disabled = false,
     preventDefault = false,
-    blurAfterCLick = false,
+    blurAfterClick = false,
   } = props;
   const btnRef = useRef<HTMLDivElement>(null);
   const isHover = useHover(btnRef);
@@ -45,7 +45,7 @@ export const ButtonCard = (props: ButtonCardProps) => {
         })}
         onClick={(e: MouseEvent<HTMLButtonElement>) => {
           if (preventDefault) e.preventDefault();
-          if (blurAfterCLick) e.currentTarget.blur();
+          if (blurAfterClick) e.currentTarget.blur();
           onClick?.call(null);
         }}
         onFocus={() => {

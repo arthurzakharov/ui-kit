@@ -12,7 +12,7 @@ const meta = {
     active: false,
     disabled: false,
     preventDefault: false,
-    blurAfterCLick: false,
+    blurAfterClick: false,
     info: {
       text: 'Info text',
       hintLeft: 'Left hint',

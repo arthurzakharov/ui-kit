@@ -32,12 +32,12 @@ export const DialogArticle = (props: DialogArticleProps) => {
           {children}
           <div ref={buttonsRef} className={cn.DialogArticleButtons}>
             {cancel ? (
-              <Control.Button blurAfterCLick preventDefault color="tertiary" size="md" onClick={cancel.fn}>
+              <Control.Button blurAfterClick preventDefault color="tertiary" size="md" onClick={cancel.fn}>
                 {cancel.text}
               </Control.Button>
             ) : null}
             {confirm ? (
-              <Control.Button blurAfterCLick preventDefault color="primary" size="md" onClick={confirm.fn}>
+              <Control.Button blurAfterClick preventDefault color="primary" size="md" onClick={confirm.fn}>
                 {confirm.text}
               </Control.Button>
             ) : null}

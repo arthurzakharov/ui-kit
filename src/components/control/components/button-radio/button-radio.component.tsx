@@ -13,7 +13,7 @@ export interface ButtonRadioProps extends PropsWithChildren {
   active?: boolean;
   disabled?: boolean;
   preventDefault?: boolean;
-  blurAfterCLick?: boolean;
+  blurAfterClick?: boolean;
   info?: ButtonRadioInfo;
   onClick?: () => void;
   onFocus?: () => void;
@@ -30,7 +30,7 @@ export const ButtonRadio = (props: ButtonRadioProps) => {
     active = false,
     disabled = false,
     preventDefault = false,
-    blurAfterCLick = false,
+    blurAfterClick = false,
   } = props;
   const btnRef = useRef<HTMLDivElement>(null);
   const isHover = useHover(btnRef);
@@ -44,7 +44,7 @@ export const ButtonRadio = (props: ButtonRadioProps) => {
         className={cn.ButtonRadio}
         onClick={(e: MouseEvent<HTMLButtonElement>) => {
           if (preventDefault) e.preventDefault();
-          if (blurAfterCLick) e.currentTarget.blur();
+          if (blurAfterClick) e.currentTarget.blur();
           onClick?.call(null);
         }}
         onFocus={() => {

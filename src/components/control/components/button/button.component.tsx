@@ -14,7 +14,7 @@ export interface ButtonProps extends PropsWithChildren {
   fullWidth?: boolean;
   loading?: boolean;
   preventDefault?: boolean;
-  blurAfterCLick?: boolean;
+  blurAfterClick?: boolean;
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -31,7 +31,7 @@ export const Button = (props: ButtonProps) => {
     fullWidth = false,
     loading = false,
     preventDefault = false,
-    blurAfterCLick = false,
+    blurAfterClick = false,
     onClick,
     onFocus,
     onBlur,
@@ -54,7 +54,7 @@ export const Button = (props: ButtonProps) => {
       })}
       onClick={(e: MouseEvent<HTMLButtonElement>) => {
         if (preventDefault) e.preventDefault();
-        if (blurAfterCLick) e.currentTarget.blur();
+        if (blurAfterClick) e.currentTarget.blur();
         onClick?.call(null);
       }}
       onFocus={() => onFocus?.call(null)}

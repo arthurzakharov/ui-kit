@@ -12,7 +12,7 @@ const meta = {
     type: 'button',
     disabled: false,
     preventDefault: false,
-    blurAfterCLick: false,
+    blurAfterClick: false,
     icon: <RefreshCcw />,
     children: (
       <>

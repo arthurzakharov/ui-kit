@@ -14,7 +14,7 @@ const meta = {
     info: '',
     fullWidth: false,
     preventDefault: false,
-    blurAfterCLick: false,
+    blurAfterClick: false,
     children: (
       <>
         Custom button with or without <b>info</b>

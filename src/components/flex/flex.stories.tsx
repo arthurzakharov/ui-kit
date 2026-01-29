@@ -81,11 +81,13 @@ type Story = StoryObj<typeof meta>;
 export const DirectionRow: Story = {
   args: {
     direction: 'row',
+    changeDirectionAfter: 'laptop',
   },
 };
 
 export const DirectionColumn: Story = {
   args: {
     direction: 'column',
+    align: 'center',
   },
 };

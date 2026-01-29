@@ -14,7 +14,7 @@ const meta = {
     active: false,
     disabled: false,
     preventDefault: false,
-    blurAfterCLick: false,
+    blurAfterClick: false,
     onClick: fn(),
     onFocus: fn(),
     onBlur: fn(),

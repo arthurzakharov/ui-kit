@@ -1,21 +1,41 @@
-import { Children, createElement, isValidElement, type PropsWithChildren } from 'react';
+import { Children, createElement, type HTMLAttributes, isValidElement, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import cn from '@components/flex/flex.module.css';
 
-export interface FlexProps extends PropsWithChildren {
-  tag?: keyof HTMLElementTagNameMap;
-  gap?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+type TagNames = keyof HTMLElementTagNameMap;
+
+type Position = 'relative' | 'absolute' | 'fixed' | 'static' | 'sticky';
+
+type Grow = 'content' | 'equal';
+
+type Direction = 'row' | 'column';
+
+type Padding = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+
+type Align = 'center' | 'start' | 'end' | 'stretch';
+
+type Justify = 'center' | 'start' | 'end' | 'space-between';
+
+type ScreeSize = 'tablet' | 'laptop' | 'desktop';
+
+export interface FlexProps extends PropsWithChildren, HTMLAttributes<HTMLElementTagNameMap[TagNames]> {
+  tag?: TagNames;
+  gap?: Padding;
+  pos?: Position;
   basis?: string | number;
-  grow?: 'content' | 'equal';
-  direction?: 'column' | 'row';
-  align?: 'center' | 'start' | 'end';
-  justify?: 'center' | 'start' | 'end' | 'space-between';
-  marginTop?: 'sm' | 'md';
-  marginBottom?: 'sm' | 'md';
-  className?: string;
-  changeDirectionAfterTabletSize?: boolean;
-  changeDirectionAfterLaptopSize?: boolean;
-  changeDirectionAfterPcSize?: boolean;
+  grow?: Grow;
+  direction?: Direction;
+  wrap?: boolean;
+  align?: Align;
+  justify?: Justify;
+  mt?: Padding;
+  mb?: Padding;
+  ml?: Padding;
+  mr?: Padding;
+  mx?: Padding;
+  my?: Padding;
+  m?: Padding;
+  changeDirectionAfter?: ScreeSize;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -23,49 +43,42 @@ export const Flex = (props: FlexProps) => {
     children,
     tag = 'div',
     gap,
+    pos,
     basis,
     grow,
     direction = 'row',
+    wrap,
     align,
     justify,
-    marginTop,
-    marginBottom,
-    className = '',
-    changeDirectionAfterTabletSize = false,
-    changeDirectionAfterLaptopSize = false,
-    changeDirectionAfterPcSize = false,
+    mt,
+    mb,
+    ml,
+    mr,
+    mx,
+    my,
+    m,
+    changeDirectionAfter,
+    className,
+    ...rest
   } = props;
 
   return createElement(tag, {
+    className: clsx(cn.Flex, className),
+    'data-fd': direction,
+    'data-fd-change-after': changeDirectionAfter,
+    'data-fxw': wrap ? 'wrap' : 'nowrap',
+    'data-gap': gap,
+    'data-ai': align || (direction === 'column' ? 'stretch' : 'start'),
+    'data-jc': justify || 'start',
+    'data-mt': mt,
+    'data-mb': mb,
+    'data-ml': ml,
+    'data-mr': mr,
+    'data-mx': mx,
+    'data-my': my,
+    'data-m': m,
+    'data-pos': pos,
     style: typeof basis !== 'undefined' ? { flexBasis: typeof basis === 'number' ? `${basis}%` : basis } : undefined,
-    className: clsx(
-      clsx(cn.Flex, className, {
-        [cn.FlexChangeDirectionAfterTabletSize]: changeDirectionAfterTabletSize,
-        [cn.FlexChangeDirectionAfterLaptopSize]: changeDirectionAfterLaptopSize,
-        [cn.FlexChangeDirectionAfterPcSize]: changeDirectionAfterPcSize,
-        [cn.FlexDirectionColumn]: direction === 'column',
-        [cn.FlexDirectionRow]: direction === 'row',
-        [cn.FlexGapXxs]: gap === 'xxs',
-        [cn.FlexGapXs]: gap === 'xs',
-        [cn.FlexGapSm]: gap === 'sm',
-        [cn.FlexGapMd]: gap === 'md',
-        [cn.FlexGapLg]: gap === 'lg',
-        [cn.FlexGapXl]: gap === 'xl',
-        [cn.FlexGapXxl]: gap === 'xxl',
-        [cn.FlexGapXxxl]: gap === 'xxxl',
-        [cn.FlexMarginTopSm]: marginTop === 'sm',
-        [cn.FlexMarginTopMd]: marginTop === 'md',
-        [cn.FlexMarginBottomSm]: marginBottom === 'sm',
-        [cn.FlexMarginBottomMd]: marginBottom === 'md',
-        [cn.FlexAlignCenter]: align === 'center',
-        [cn.FlexAlignStart]: align === 'start',
-        [cn.FlexAlignEnd]: align === 'end',
-        [cn.FlexJustifyCenter]: justify === 'center',
-        [cn.FlexJustifyStart]: justify === 'start',
-        [cn.FlexJustifyEnd]: justify === 'end',
-        [cn.FlexJustifySpaceBetween]: justify === 'space-between',
-      }),
-    ),
     children: Children.map(children, (child) =>
       isValidElement(child) && grow === 'equal' ? (
         <div style={{ flexBasis: `${Math.floor((100 / Children.count(children)) * 100) / 100}%` }}>{child}</div>
@@ -73,5 +86,6 @@ export const Flex = (props: FlexProps) => {
         child
       ),
     ),
+    ...rest,
   });
 };
