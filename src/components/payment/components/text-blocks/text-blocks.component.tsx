@@ -1,17 +1,17 @@
 import { Text } from '@components/text/text.component';
 import cn from '@components/payment/components/text-blocks/text-blocks.module.css';
 
-export interface TextBlockItem {
+export interface PaymentTextBlockItem {
   title: string;
   text: string;
   placeholders?: Record<string, () => unknown>;
 }
 
-export interface TextBlocksProps {
-  blocks: TextBlockItem[];
+export interface PaymentTextBlocksProps {
+  blocks: PaymentTextBlockItem[];
 }
 
-export const TextBlocks = (props: TextBlocksProps) => {
+export const TextBlocks = (props: PaymentTextBlocksProps) => {
   const { blocks = [] } = props;
 
   /**
@@ -32,7 +32,7 @@ export const TextBlocks = (props: TextBlocksProps) => {
    * @returns {TextBlockItem} A new TextBlockItem object with placeholders in the title and text replaced
    * by their corresponding values.
    */
-  const applyPlaceholders = (block: TextBlockItem): TextBlockItem => {
+  const applyPlaceholders = (block: PaymentTextBlockItem): PaymentTextBlockItem => {
     let updatedTitle = block.title;
     let updatedText = block.text;
     if (block.placeholders) {

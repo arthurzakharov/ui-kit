@@ -1,15 +1,18 @@
-import { TextBlocks, type TextBlockItem } from '@components/payment/components/text-blocks/text-blocks.component';
+import {
+  TextBlocks,
+  type PaymentTextBlockItem,
+} from '@components/payment/components/text-blocks/text-blocks.component';
 import whatsAppSrc from '@components/payment/components/sidebar/assets/whatsapp.svg';
 import phoneSrc from '@components/payment/components/sidebar/assets/phone.svg';
 import cn from '@components/payment/components/sidebar/sidebar.module.css';
 
-export interface SidebarProps {
-  info: TextBlockItem[];
+export interface PaymentSidebarProps {
+  info: PaymentTextBlockItem[];
   whatsapp: string;
   tel: string;
 }
 
-export const Sidebar = (props: SidebarProps) => {
+export const Sidebar = (props: PaymentSidebarProps) => {
   const { info = [], whatsapp = '', tel = '' } = props;
 
   const getTelForLink = (tel: string): string => 'tel:+49' + tel.replace(/^0|[^0-9.]/g, '');

@@ -55,6 +55,7 @@ export {
 export { Expenses, type ExpensesProps } from '@components/expenses/expenses.component';
 export { Flex, type FlexProps } from '@components/flex/flex.component';
 export { Footer, type FooterProps, type FooterLink } from '@components/footer/footer.component';
+export { FormRow } from '@components/form-row/form-row.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from '@components/info-panel/info-panel.component';
 export { Information, type InformationProps } from '@components/information/information.component';
@@ -66,7 +67,14 @@ export { MainAttachment, type MainAttachmentProps } from '@components/main-attac
 export { Message, type MessageProps } from '@components/message/message.component';
 export { MessageBlock, type MessageBlockProps } from '@components/message-block/message-block.component';
 export { NotFound, type NotFoundProps } from '@components/not-found/not-found.component';
-export { Payment } from '@components/payment/payment.component';
+export {
+  Payment,
+  type PaymentBlockProps,
+  type PaymentGlassProps,
+  type PaymentSidebarProps,
+  type PaymentTextBlocksProps,
+  type PaymentTextBlockItem,
+} from '@components/payment/payment.component';
 export { Sidebar, type SidebarProps } from '@components/sidebar/sidebar.component';
 export { Svg, type SvgProps } from '@components/svg/svg.component';
 export { Text } from '@components/text/text.component';

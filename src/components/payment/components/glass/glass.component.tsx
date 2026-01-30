@@ -3,12 +3,12 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Loader } from '@components/loader/loader.component';
 import cn from '@components/payment/components/glass/glass.module.css';
 
-export interface GlassProps extends PropsWithChildren {
+export interface PaymentGlassProps extends PropsWithChildren {
   on: boolean;
   withLoader?: boolean;
 }
 
-export const Glass = (props: GlassProps) => {
+export const Glass = (props: PaymentGlassProps) => {
   const { children, on, withLoader = false } = props;
   return (
     <div className={cn.Glass}>

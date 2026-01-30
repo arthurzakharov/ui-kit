@@ -1,11 +1,11 @@
 import type { PropsWithChildren } from 'react';
 import cn from '@components/payment/components/block/block.module.css';
 
-export interface BlockProps extends PropsWithChildren {
+export interface PaymentBlockProps extends PropsWithChildren {
   title: string;
 }
 
-export const Block = (props: BlockProps) => {
+export const Block = (props: PaymentBlockProps) => {
   const { children, title } = props;
 
   return (
