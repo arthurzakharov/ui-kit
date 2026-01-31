@@ -1,5 +1,6 @@
 import { Children, createElement, type HTMLAttributes, isValidElement, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import type { Padding } from '@utils/types';
 import cn from '@components/flex/flex.module.css';
 
 type TagNames = keyof HTMLElementTagNameMap;
@@ -9,8 +10,6 @@ type Position = 'relative' | 'absolute' | 'fixed' | 'static' | 'sticky';
 type Grow = 'content' | 'equal';
 
 type Direction = 'row' | 'column';
-
-type Padding = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 
 type Align = 'center' | 'start' | 'end' | 'stretch';
 

@@ -55,7 +55,7 @@ export {
 export { Expenses, type ExpensesProps } from '@components/expenses/expenses.component';
 export { Flex, type FlexProps } from '@components/flex/flex.component';
 export { Footer, type FooterProps, type FooterLink } from '@components/footer/footer.component';
-export { FormRow } from '@components/form-row/form-row.component';
+export { FormRow, type FormRowProps } from '@components/form-row/form-row.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from '@components/info-panel/info-panel.component';
 export { Information, type InformationProps } from '@components/information/information.component';
