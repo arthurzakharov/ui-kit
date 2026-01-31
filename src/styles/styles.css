@@ -23,7 +23,14 @@ ol {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6, b, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
   font-weight: var(--rm-ui-font-weight-medium);
 }
 
@@ -47,7 +54,8 @@ h4 {
   line-height: var(--rm-ui-line-height-hl4);
 }
 
-h5, h6 {
+h5,
+h6 {
   font-size: var(--rm-ui-font-size-hl5);
   line-height: var(--rm-ui-line-height-hl5);
 }
@@ -83,7 +91,7 @@ button:hover,
 
 a:active,
 button:active,
-*[role='button']:active  {
+*[role='button']:active {
   outline: none;
 }
 
@@ -95,7 +103,6 @@ button:focus-visible,
   transition: outline-color var(--rm-ui-amimation-speed-primary) ease-in-out;
   transition-delay: calc(var(--rm-ui-amimation-speed-primary) / 2);
 }
-
 
 .text-primary {
   color: var(--rm-ui-color-text-primary);

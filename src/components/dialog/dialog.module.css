@@ -29,7 +29,7 @@
   justify-content: center;
 }
 
- .Dialog {
+.Dialog {
   flex-basis: 580px;
   position: relative;
   z-index: 1;
@@ -39,14 +39,14 @@
   padding: var(--rm-ui-padding-lg) var(--rm-ui-padding-lg);
 }
 
- .DialogContent {
+.DialogContent {
   overflow: auto;
   max-height: calc(100vh - var(--backdrop-padding) - var(--rm-ui-padding-xl) * 2);
   padding-right: 10px;
   margin-right: -10px;
 }
 
- .DialogCloseButton {
+.DialogCloseButton {
   position: absolute;
   z-index: 100;
   top: 12px;
@@ -58,15 +58,15 @@
   background-color: transparent;
 }
 
- .DialogCloseButton:hover {
+.DialogCloseButton:hover {
   cursor: pointer;
 }
 
- .DialogCloseButton:focus-visible {
+.DialogCloseButton:focus-visible {
   outline: 2px solid var(--rm-ui-color-focus);
 }
 
- .DialogCloseButtonIcon {
+.DialogCloseButtonIcon {
   width: 24px;
   height: 24px;
   stroke: var(--rm-ui-color-text-secondary);
@@ -97,19 +97,18 @@
     align-items: flex-start;
     padding-top: 115px;
     padding-bottom: 115px;
-
   }
 
-   .DialogContent {
+  .DialogContent {
     max-height: calc(100vh - var(--backdrop-padding) * 2 - var(--rm-ui-padding-xxl) * 2);
   }
 
-   .DialogCloseButton {
+  .DialogCloseButton {
     top: 26px;
     right: 18px;
   }
 
-   .Dialog {
+  .Dialog {
     border-radius: var(--rm-ui-border-radius-lg);
     padding: var(--rm-ui-padding-xxl);
   }

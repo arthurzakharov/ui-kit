@@ -67,8 +67,8 @@
     justify-content: flex-start;
     gap: var(--rm-ui-padding-xxs);
     font-weight: var(--rm-ui-font-weight-light);
-    font-size: var( --rm-ui-font-size-body-extra-small);
-    line-height: var( --rm-ui-line-height-body-extra-small);
+    font-size: var(--rm-ui-font-size-body-extra-small);
+    line-height: var(--rm-ui-line-height-body-extra-small);
     color: var(--rm-ui-header-text);
   }
 

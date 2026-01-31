@@ -8,6 +8,5 @@
    - `author`
 2. Reinitialize **Git** and attach correct remote repository. To start your library from scratch.
 3. Run `npm install` to install all dependencies.
-4. Run `npm run storybook` to star **Visual Tests** setup.
-5. Follow UI to register your project with [Chromatic](https://www.chromatic.com/).
-6. To publish on NPM add do not forget to make `npm login`.
+4. Follow UI to register your project with [Chromatic](https://www.chromatic.com/).
+5. To publish on NPM add do not forget to make `npm login`.

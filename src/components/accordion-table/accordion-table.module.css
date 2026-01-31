@@ -1,11 +1,11 @@
-.AccordionTable[id="accordion-table"] {
+.AccordionTable[id='accordion-table'] {
   font-weight: var(--rm-ui-font-weight-regular);
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableHeadCell {
+.AccordionTable[id='accordion-table'] .AccordionTableHeadCell {
   background-color: var(--rm-ui-grey-100);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
   font-size: var(--rm-ui-font-size-body);
@@ -17,7 +17,7 @@
   white-space: break-spaces;
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableBodyCell {
+.AccordionTable[id='accordion-table'] .AccordionTableBodyCell {
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -25,23 +25,23 @@
   color: var(--rm-ui-color-text-primary);
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableBodyHead {
+.AccordionTable[id='accordion-table'] .AccordionTableBodyHead {
   padding: var(--rm-ui-padding-xxs);
   text-align: left;
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableIcon {
+.AccordionTable[id='accordion-table'] .AccordionTableIcon {
   transition: all var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableIconOpened {
+.AccordionTable[id='accordion-table'] .AccordionTableIconOpened {
   transform: rotate(0deg);
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableIconClosed {
+.AccordionTable[id='accordion-table'] .AccordionTableIconClosed {
   transform: rotate(180deg);
 }
 
-.AccordionTable[id="accordion-table"] .AccordionTableBodyRow {
+.AccordionTable[id='accordion-table'] .AccordionTableBodyRow {
   border-bottom: 1px solid var(--rm-ui-grey-100);
 }

@@ -7,7 +7,7 @@
   --layout-header-padding: var(--rm-ui-padding-lg) var(--rm-ui-padding-lg) var(--rm-ui-padding-md);
   --layout-footer-padding: var(--rm-ui-padding-xxl);
   --layout-transition-speed: var(--rm-ui-amimation-speed-secondary);
-  --layout-transition-type: var( --rm-ui-amimation-cubic-primary);
+  --layout-transition-type: var(--rm-ui-amimation-cubic-primary);
   max-width: var(--layout-max-width);
   margin: var(--layout-margin);
   padding: var(--layout-padding);
