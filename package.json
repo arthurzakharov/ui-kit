@@ -24,7 +24,8 @@
     "prettier:check": "prettier --check --log-level=log .",
     "prettier:fix": "prettier --write --log-level=log .",
     "test:once": "vitest run",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "cy:open": "cypress open"
   },
   "peerDependencies": {
     "clsx": "^2.1.1",
@@ -45,6 +46,7 @@
     "@typescript-eslint/parser": "^8.52.0",
     "@vitejs/plugin-react": "^5.1.2",
     "clsx": "^2.1.1",
+    "cypress": "^15.9.0",
     "eslint": "^9.39.2",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.26",
