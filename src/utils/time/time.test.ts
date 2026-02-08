@@ -3,7 +3,7 @@ import { Time } from '@utils/time/time.util';
 
 describe('Time', () => {
   describe('date', () => {
-    it('should create a date object at the start of the day (UTC) when endDayTime is false or not provided', () => {
+    it('should tagCreate a date object at the start of the day (UTC) when endDayTime is false or not provided', () => {
       const day = 10;
       const month = 0;
       const year = 2022;
@@ -19,7 +19,7 @@ describe('Time', () => {
       expect([date1.getUTCMilliseconds(), date2.getUTCMilliseconds()]).toEqual([0, 0]);
     });
 
-    it('should create a date object at the end of the day (UTC) when endDayTime is true', () => {
+    it('should tagCreate a date object at the end of the day (UTC) when endDayTime is true', () => {
       const day = 10;
       const month = 0;
       const year = 2022;

@@ -1,0 +1,67 @@
+/* Light - 300 */
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  size-adjust: 100%;
+  src:
+    url('/fonts/lato/light/lato-latin-light-300.woff2') format('woff2'),
+    url('/fonts/lato/light/lato-light-300.woff2') format('woff2'),
+    url('/fonts/lato/light/lato-latin-light-300.woff') format('woff'),
+    url('/fonts/lato/light/lato-light-300.woff') format('woff'),
+    url('/fonts/lato/light/lato-latin-light-300.ttf') format('truetype'),
+    url('/fonts/lato/light/lato-light-300.ttf') format('truetype'),
+    url('/fonts/lato/light/lato-google-light-300.ttf') format('truetype');
+}
+
+/* Regular - 400 */
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  size-adjust: 100%;
+  src:
+    url('/fonts/lato/regular/lato-latin-regular-400.woff2') format('woff2'),
+    url('/fonts/lato/regular/lato-regular-400.woff2') format('woff2'),
+    url('/fonts/lato/regular/lato-latin-regular-400.woff') format('woff'),
+    url('/fonts/lato/regular/lato-regular-400.woff') format('woff'),
+    url('/fonts/lato/regular/lato-latin-regular-400.ttf') format('truetype'),
+    url('/fonts/lato/regular/lato-regular-400.ttf') format('truetype'),
+    url('/fonts/lato/regular/lato-google-regular-400.ttf') format('truetype');
+}
+
+/* Bold - 700 */
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  size-adjust: 100%;
+  src:
+    url('/fonts/lato/bold/lato-latin-bold-700.woff2') format('woff2'),
+    url('/fonts/lato/bold/lato-bold-700.woff2') format('woff2'),
+    url('/fonts/lato/bold/lato-latin-bold-700.woff') format('woff'),
+    url('/fonts/lato/bold/lato-bold-700.woff') format('woff'),
+    url('/fonts/lato/bold/lato-latin-bold-700.ttf') format('truetype'),
+    url('/fonts/lato/bold/lato-bold-700.ttf') format('truetype'),
+    url('/fonts/lato/bold/lato-google-bold-700.ttf') format('truetype');
+}
+
+/* Black - 900 */
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  size-adjust: 100%;
+  src:
+    url('/fonts/lato/black/lato-latin-black-900.woff2') format('woff2'),
+    url('/fonts/lato/black/lato-black-900.woff2') format('woff2'),
+    url('/fonts/lato/black/lato-latin-black-900.woff') format('woff'),
+    url('/fonts/lato/black/lato-black-900.woff') format('woff'),
+    url('/fonts/lato/black/lato-latin-black-900.ttf') format('truetype'),
+    url('/fonts/lato/black/lato-black-900.ttf') format('truetype'),
+    url('/fonts/lato/black/lato-google-black-900.ttf') format('truetype');
+}

@@ -1,60 +1,62 @@
 .NotFound {
-  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
-  background-color: transparent;
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-md);
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   color: var(--rm-ui-color-text-primary);
 }
 
-.NotFoundH1 {
+.Title {
   margin-bottom: var(--rm-ui-padding-lg);
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-hl2);
   line-height: var(--rm-ui-line-height-hl2);
 }
 
-.NotFoundH2 {
+.Subtitle {
   margin-bottom: var(--rm-ui-padding-md);
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-hl3);
   line-height: var(--rm-ui-line-height-hl3);
 }
 
-.NotFoundH3 {
+.TableTitle {
   margin-bottom: var(--rm-ui-padding-md);
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-hl4);
   line-height: var(--rm-ui-line-height-hl4);
 }
 
-.NotFoundTable {
+.Table {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-}
-
-.NotFoundTh,
-.NotFoundTd {
-  padding: var(--rm-ui-padding-xs);
-  vertical-align: top;
-  border-top: 1px solid var(--rm-ui-grey-300);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.NotFoundTh {
+.TableRow {
+  border-top: 1px solid var(--rm-ui-grey-300);
+}
+
+.CellHead,
+.CellData {
+  padding: var(--rm-ui-padding-xs);
+  vertical-align: top;
+}
+
+.CellHead {
   text-align: left;
   font-weight: var(--rm-ui-font-weight-regular);
 }
 
-.NotFoundTd {
+.CellData {
   font-weight: var(--rm-ui-font-weight-light);
 }
 
 @media screen and (min-width: 1024px) {
   .NotFound {
-    padding: var(--rm-ui-padding-md) var(--rm-ui-padding-lg) var(--rm-ui-padding-md);
+    padding: var(--rm-ui-padding-md) var(--rm-ui-padding-lg);
   }
 }
 
@@ -63,23 +65,22 @@
     padding: var(--rm-ui-padding-lg);
   }
 
-  .NotFoundH1 {
+  .Title {
     font-size: var(--rm-ui-font-size-hl1);
     line-height: var(--rm-ui-line-height-hl1);
   }
 
-  .NotFoundH2 {
+  .Subtitle {
     font-size: var(--rm-ui-font-size-hl2);
     line-height: var(--rm-ui-line-height-hl2);
   }
 
-  .NotFoundH3 {
+  .TableTitle {
     font-size: var(--rm-ui-font-size-hl3);
     line-height: var(--rm-ui-line-height-hl3);
   }
 
-  .NotFoundTh,
-  .NotFoundTd {
+  .Table  {
     font-size: var(--rm-ui-font-size-body);
     line-height: var(--rm-ui-line-height-body);
   }

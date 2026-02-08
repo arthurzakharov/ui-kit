@@ -16,7 +16,7 @@ export default defineConfig({
       rollupTypes: false,
       tsconfigPath: './tsconfig.app.json',
       include: ['src/**/*.ts', 'src/**/*.tsx'],
-      exclude: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx'],
+      exclude: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx', '**/*.cy.ts', '**/*.cy.tsx'],
     }),
     libInjectCss(),
   ],
@@ -36,7 +36,16 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}', {
-            ignore: ['**/*.stories.ts', '**/*.stories.tsx', '**/*.test.ts', '**/*.test.tsx', '**/control.types.ts'],
+            ignore: [
+              '**/*.stories.ts',
+              '**/*.stories.tsx',
+              '**/*.test.ts',
+              '**/*.test.tsx',
+              '**/*.cy.ts',
+              '**/*.cy.tsx',
+              '**/control.types.ts',
+              'src/utils/types.ts',
+            ],
           })
           .map((file) => [
             path.relative('src', file.slice(0, file.length - path.extname(file).length)),

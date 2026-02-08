@@ -10,7 +10,7 @@ export interface MessageBlockProps extends PropsWithChildren {
 }
 
 export const MessageBlock = (props: MessageBlockProps) => {
-  const { children, emoji, title = '', subtitle = '' } = props;
+  const { children, emoji = '', title = '', subtitle = '' } = props;
 
   return (
     <Flex direction="column" justify="start" gap="lg">

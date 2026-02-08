@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
+import './cypress-fonts.css';
 
 import { mount } from 'cypress/react';
 import '@styles/variables.css';
@@ -25,6 +26,7 @@ import '@styles/styles.css';
 // Alternatively, can be defined in cypress/support/component.d.ts
 // with a <reference path="./component" /> at the top of your spec.
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
       mount: typeof mount;
