@@ -1,34 +1,21 @@
+import type { FooterProps } from '@components/footer/footer.types';
 import cn from '@components/footer/footer.module.css';
 
-export interface FooterLink {
-  text: string;
-  onClick: () => void;
-}
-
-export interface FooterProps {
-  name: string;
-  links: () => FooterLink[];
-}
-
 export const Footer = (props: FooterProps) => {
-  const { name = '', links = () => [] } = props;
-
-  const copyright = (name: string): string => {
-    return name ? `© ${new Date().getFullYear()} ${name}` : '';
-  };
+  const copyright = () => (props.name ? `© ${new Date().getFullYear()} ${props.name}` : '');
 
   return (
     <footer className={cn.Footer}>
-      <span data-testid="footer-copyright" className={cn.FooterCopyright}>
-        {copyright(name)}
+      <span data-cy="footer-copyright" className={cn.Copyright}>
+        {copyright()}
       </span>
-      <ul className={cn.FooterLinks}>
-        {links().map((link) => (
-          <li key={link.text} className={cn.FooterLink}>
+      <ul className={cn.Links}>
+        {props.links.map((link) => (
+          <li key={link.text} data-cy="footer-link" className={cn.Link}>
             <button
-              data-testid="footer-button"
+              data-cy="footer-button"
               type="button"
-              className={cn.FooterButton}
+              className={cn.Button}
               onClick={(e) => {
                 e.currentTarget.blur();
                 link.onClick();
@@ -36,7 +23,7 @@ export const Footer = (props: FooterProps) => {
             >
               {link.text}
             </button>
-            <div className={cn.FooterSeparator} />
+            <div data-cy="footer-separator" className={cn.Separator} />
           </li>
         ))}
       </ul>

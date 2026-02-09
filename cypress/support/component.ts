@@ -15,7 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
-import './cypress-fonts.css';
+import './fonts-faces.css';
 
 import { mount } from 'cypress/react';
 import '@styles/variables.css';

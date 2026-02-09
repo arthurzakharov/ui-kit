@@ -1,5 +1,5 @@
-import { NotFound, type NotFoundProps } from '@components/not-found/not-found.component';
-import cn from '@components/not-found/not-found.module.css';
+import { NotFound } from '@components/not-found/not-found.component';
+import type { NotFoundProps } from '@components/not-found/not-found.types';
 
 const notFound = {
   title: 'Entschuldigung, da ist wohl etwas schief gelaufen!',
@@ -23,6 +23,7 @@ const notFound = {
       value: 'rightmart Rechtsanwaltsgesellschaft mbH<br>Clara-Jaschke-Straße 1<br>28199 Bremen',
     },
   ],
+  className: 'test-class',
 } satisfies NotFoundProps;
 
 describe('<NotFound />', () => {
@@ -30,20 +31,18 @@ describe('<NotFound />', () => {
     cy.viewport(1366, 1024);
     cy.mount(<NotFound {...notFound} />);
 
-    cy.contains('h1', notFound.title).should('be.visible');
-    cy.contains('h2', notFound.subtitle).should('be.visible');
-    cy.contains('h3', notFound.tableTitle).should('be.visible');
+    cy.get('[data-cy="not-found-title"]').should('have.text', notFound.title);
+    cy.get('[data-cy="not-found-subtitle"]').should('have.text', notFound.subtitle);
+    cy.get('[data-cy="not-found-table-title"]').should('have.text', notFound.tableTitle);
+    cy.get('[data-cy="not-found-row"]').should('have.length', notFound.tableRows.length);
 
-    cy.get('table tbody tr').should('have.length', notFound.tableRows.length);
+    notFound.tableRows.forEach(({ key, value }, index) => {
+      cy.get('[data-cy="not-found-cell-head"]').eq(index).should('have.text', key);
 
-    notFound.tableRows.forEach(({ key, value }) => {
-      cy.contains('th', key).should('be.visible');
-
-      const cell = cy.contains('th', key).parent('tr').find('td');
       if (value.includes('<')) {
-        cell.should('contain.html', value);
+        cy.get('[data-cy="not-found-cell-data"]').eq(index).should('contain.html', value);
       } else {
-        cell.should('have.text', value);
+        cy.get('[data-cy="not-found-cell-data"]').eq(index).should('have.text', value);
       }
     });
   });
@@ -52,22 +51,29 @@ describe('<NotFound />', () => {
     cy.viewport(430, 932);
     cy.mount(<NotFound {...notFound} />);
 
-    cy.get(`.${cn.NotFound}`).should('have.css', 'padding', '12px 16px');
-    cy.get(`.${cn.Title}`).should('have.css', 'font-size', '24px');
-    cy.get(`.${cn.Subtitle}`).should('have.css', 'font-size', '20px');
-    cy.get(`.${cn.TableTitle}`).should('have.css', 'font-size', '18px');
-    cy.get(`.${cn.Table}`).should('have.css', 'font-size', '14px');
+    cy.get("[data-cy='not-found']").should('have.css', 'padding', '12px 16px');
+    cy.get('[data-cy="not-found-title"]').should('have.css', 'font-size', '24px');
+    cy.get('[data-cy="not-found-subtitle"]').should('have.css', 'font-size', '20px');
+    cy.get('[data-cy="not-found-table-title"]').should('have.css', 'font-size', '18px');
+    cy.get('[data-cy="not-found-table"]').should('have.css', 'font-size', '14px');
 
     cy.viewport(1024, 768);
 
-    cy.get(`.${cn.NotFound}`).should('have.css', 'padding', '16px 24px');
+    cy.get("[data-cy='not-found']").should('have.css', 'padding', '16px 24px');
 
     cy.viewport(1366, 1024);
 
-    cy.get(`.${cn.NotFound}`).should('have.css', 'padding', '24px');
-    cy.get(`.${cn.Title}`).should('have.css', 'font-size', '28px');
-    cy.get(`.${cn.Subtitle}`).should('have.css', 'font-size', '24px');
-    cy.get(`.${cn.TableTitle}`).should('have.css', 'font-size', '20px');
-    cy.get(`.${cn.Table}`).should('have.css', 'font-size', '16px');
+    cy.get("[data-cy='not-found']").should('have.css', 'padding', '24px');
+    cy.get('[data-cy="not-found-title"]').should('have.css', 'font-size', '28px');
+    cy.get('[data-cy="not-found-subtitle"]').should('have.css', 'font-size', '24px');
+    cy.get('[data-cy="not-found-table-title"]').should('have.css', 'font-size', '20px');
+    cy.get('[data-cy="not-found-table"]').should('have.css', 'font-size', '16px');
+  });
+
+  it('merges a custom className on the wrapper', () => {
+    cy.viewport(1366, 1024);
+    cy.mount(<NotFound {...notFound} />);
+
+    cy.get('[data-cy="not-found"]').should('have.class', 'test-class');
   });
 });

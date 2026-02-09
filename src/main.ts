@@ -4,11 +4,7 @@ import '@styles/variables.css';
 export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
 export { Animation, type FadeScaleProps, type FadeSlideProps } from '@components/animation/animation.component';
 export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
-export {
-  Certifications,
-  type CertificationsProps,
-  type CertificationsIcon,
-} from '@components/certifications/certifications.component';
+export { Certifications, type CertificationsProps } from '@components/certifications';
 export {
   Control,
   type BoxProps,
@@ -54,7 +50,7 @@ export {
 } from '@components/dialog-article/dialog-article.component';
 export { Expenses, type ExpensesProps } from '@components/expenses/expenses.component';
 export { Flex, type FlexProps } from '@components/flex/flex.component';
-export { Footer, type FooterProps, type FooterLink } from '@components/footer/footer.component';
+export { Footer, type FooterProps } from '@components/footer';
 export { FormRow, type FormRowProps } from '@components/form-row/form-row.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from '@components/info-panel/info-panel.component';
@@ -66,7 +62,7 @@ export { LoadingBlock } from '@components/loading-block/loading-block.component'
 export { MainAttachment, type MainAttachmentProps } from '@components/main-attachment/main-attachment.component';
 export { Message, type MessageProps } from '@components/message/message.component';
 export { MessageBlock, type MessageBlockProps } from '@components/message-block/message-block.component';
-export { NotFound, type NotFoundProps } from '@components/not-found/not-found.component';
+export { NotFound, type NotFoundProps } from '@components/not-found';
 export {
   Payment,
   type PaymentBlockProps,
