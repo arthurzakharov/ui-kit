@@ -43,6 +43,6 @@ export const WithAdditionalClassName: Story = {
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const footer = canvas.getByTestId('footer');
-    await expect(footer).toHaveClass(args.className || '');
+    await expect(footer).toHaveClass(String(args.className));
   },
 };

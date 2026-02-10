@@ -60,7 +60,7 @@ export { Line } from '@components/line/line.component';
 export { Loader, type LoaderProps } from '@components/loader/loader.component';
 export { LoadingBlock } from '@components/loading-block/loading-block.component';
 export { MainAttachment, type MainAttachmentProps } from '@components/main-attachment/main-attachment.component';
-export { Message, type MessageProps } from '@components/message/message.component';
+export { Message, type MessageProps } from '@components/message';
 export { MessageBlock, type MessageBlockProps } from '@components/message-block/message-block.component';
 export { NotFound, type NotFoundProps } from '@components/not-found';
 export {

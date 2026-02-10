@@ -35,6 +35,6 @@ export const WithAdditionalClassName: Story = {
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const certifications = canvas.getByTestId('certifications');
-    await expect(certifications).toHaveClass(args.className || '');
+    await expect(certifications).toHaveClass(String(args.className));
   },
 };

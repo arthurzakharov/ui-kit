@@ -1,3 +1,7 @@
 .color-grey-950 {
   color: var(--rm-ui-grey-950) !important;
 }
+
+.bg-color-grey-300 {
+  background-color: var(--rm-ui-grey-300) !important;
+}

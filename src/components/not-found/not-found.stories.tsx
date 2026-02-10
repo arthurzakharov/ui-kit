@@ -54,6 +54,6 @@ export const WithAdditionalClassName: Story = {
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const notFound = canvas.getByTestId('not-found');
-    await expect(notFound).toHaveClass(args.className || '');
+    await expect(notFound).toHaveClass(String(args.className));
   },
 };

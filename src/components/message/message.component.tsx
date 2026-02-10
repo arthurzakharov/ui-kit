@@ -1,44 +1,33 @@
-import type { ReactNode } from 'react';
 import { Check, CircleQuestionMark, X, CircleAlert } from 'lucide-react';
 import clsx from 'clsx';
-import cn from '@components/message/message.module.css';
+import type { MessageProps } from './message.types';
+import cn from './message.module.css';
 
-export interface MessageProps {
-  type: 'success' | 'question' | 'error' | 'info';
-  title: () => ReactNode;
-  text: () => ReactNode;
-}
-
-export const Message = (props: MessageProps) => {
-  const { type = 'info', title = '', text = '' } = props;
-
-  const icon = (): ReactNode => {
-    switch (type) {
-      case 'success':
-        return <Check className={cn.MessageIcon} />;
-      case 'question':
-        return <CircleQuestionMark className={cn.MessageIcon} />;
-      case 'error':
-        return <X className={cn.MessageIcon} />;
-      case 'info':
-        return <CircleAlert className={cn.MessageIcon} />;
-    }
-  };
-
-  return (
-    <div
-      className={clsx(cn.Message, {
-        [cn.MessageTypeSuccess]: type === 'success',
-        [cn.MessageTypeQuestion]: type === 'question',
-        [cn.MessageTypeError]: type === 'error',
-        [cn.MessageTypeInfo]: type === 'info',
-      })}
-    >
-      {icon()}
-      <div className={clsx(cn.MessageContent)}>
-        {title ? <div className={cn.MessageTitle}>{title()}</div> : null}
-        {text ? <div className={cn.MessageText}>{text()}</div> : null}
-      </div>
+export const Message = ({ type, title, text, className = '' }: MessageProps) => (
+  <div
+    data-testid="message"
+    className={clsx(cn.Message, className, {
+      [cn.Success]: type === 'success',
+      [cn.Question]: type === 'question',
+      [cn.Error]: type === 'error',
+      [cn.Info]: type === 'info',
+    })}
+  >
+    {type === 'success' && <Check data-testid="success-icon" className={cn.Icon} />}
+    {type === 'question' && <CircleQuestionMark data-testid="question-icon" className={cn.Icon} />}
+    {type === 'error' && <X data-testid="error-icon" className={cn.Icon} />}
+    {type === 'info' && <CircleAlert data-testid="info-icon" className={cn.Icon} />}
+    <div className={cn.Content}>
+      {title && (
+        <div data-testid="message-title" className={cn.Title}>
+          {title}
+        </div>
+      )}
+      {text && (
+        <div data-testid="message-text" className={cn.Text}>
+          {text}
+        </div>
+      )}
     </div>
-  );
-};
+  </div>
+);

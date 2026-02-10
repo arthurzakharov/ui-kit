@@ -12,44 +12,44 @@
   line-height: var(--rm-ui-line-height-body);
 }
 
-.MessageTypeSuccess {
+.Success {
   background-color: var(--rm-ui-message-success-secondary);
 }
 
-.MessageTypeSuccess .MessageIcon {
+.Success .Icon {
   stroke: var(--rm-ui-message-success-primary);
 }
 
-.MessageTypeQuestion {
+.Question {
   background-color: var(--rm-ui-message-question-secondary);
 }
 
-.MessageTypeQuestion .MessageIcon {
+.Question .Icon {
   stroke: var(--rm-ui-message-question-primary);
 }
 
-.MessageTypeError {
+.Error {
   background-color: var(--rm-ui-message-error-secondary);
 }
 
-.MessageTypeError .MessageIcon {
+.Error .Icon {
   stroke: var(--rm-ui-message-error-primary);
 }
 
-.MessageTypeInfo {
+.Info {
   background-color: var(--rm-ui-message-info-secondary);
 }
 
-.MessageTypeInfo .MessageIcon {
+.Info .Icon {
   stroke: var(--rm-ui-message-info-primary);
 }
 
-.MessageIcon {
+.Icon {
   width: var(--message-icon-size);
   height: var(--message-icon-size);
 }
 
-.MessageContent {
+.Content {
   flex-basis: calc(100% - var(--message-icon-size) - var(--rm-ui-padding-xs));
   display: flex;
   flex-direction: column;
@@ -59,10 +59,10 @@
   gap: var(--rm-ui-padding-xxs);
 }
 
-.MessageTitle {
+.Title {
   font-weight: var(--rm-ui-font-weight-medium);
 }
 
-.MessageText {
+.Text {
   font-weight: var(--rm-ui-font-weight-regular);
 }
