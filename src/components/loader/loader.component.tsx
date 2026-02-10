@@ -1,23 +1,34 @@
 import clsx from 'clsx';
 import { Loader as LoaderIcon } from 'lucide-react';
-import cn from '@components/loader/loader.module.css';
+import type { LoaderProps } from './loader.types';
+import cn from './loader.module.css';
 
-export interface LoaderProps {
-  size?: number;
-  color?: 'white' | 'primary' | 'secondary';
-}
-
-export const Loader = (props: LoaderProps) => {
-  const { size = 24, color = 'white' } = props;
-
-  return (
-    <LoaderIcon
-      size={size}
-      className={clsx(cn.Loader, {
-        [cn.LoaderColorWhite]: color === 'white',
-        [cn.LoaderColorPrimary]: color === 'primary',
-        [cn.LoaderColorSecondary]: color === 'secondary',
-      })}
-    />
-  );
-};
+export const Loader = ({ size, color, className = '' }: LoaderProps) => (
+  <LoaderIcon
+    size={(() => {
+      switch (size) {
+        case 'xxs':
+          return 16;
+        case 'xs':
+          return 24;
+        case 'sm':
+          return 32;
+        case 'md':
+          return 40;
+        case 'lg':
+          return 48;
+        case 'xl':
+          return 56;
+        case 'xxl':
+          return 64;
+        case 'xxxl':
+          return 72;
+      }
+    })()}
+    className={clsx(cn.Loader, className, {
+      [cn.White]: color === 'white',
+      [cn.Primary]: color === 'primary',
+      [cn.Secondary]: color === 'secondary',
+    })}
+  />
+);

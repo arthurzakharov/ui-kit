@@ -3,15 +3,15 @@
   transform-origin: center;
 }
 
-.LoaderColorWhite {
+.White {
   stroke: #ffffff;
 }
 
-.LoaderColorPrimary {
+.Primary {
   stroke: var(--rm-ui-color-accent-primary);
 }
 
-.LoaderColorSecondary {
+.Secondary {
   stroke: var(--rm-ui-color-accent-secondary);
 }
 

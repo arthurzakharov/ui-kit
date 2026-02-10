@@ -1,7 +1,5 @@
-import type { BaseProps } from '@utils/types';
-
-type CertificationsIcon = 'free' | 'gdpr' | 'ssl';
+import type { BaseProps } from '../../utils/types';
 
 export interface CertificationsProps extends BaseProps {
-  icons: CertificationsIcon[];
+  icons: ('free' | 'gdpr' | 'ssl')[];
 }

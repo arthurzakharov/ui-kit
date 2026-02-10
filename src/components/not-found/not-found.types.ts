@@ -1,13 +1,11 @@
-import type { BaseProps } from '@utils/types';
-
-interface TableRow {
-  key: string;
-  value: string;
-}
+import type { BaseProps } from '../../utils/types';
 
 export interface NotFoundProps extends BaseProps {
   title: string;
   subtitle: string;
   tableTitle: string;
-  tableRows: TableRow[];
+  tableRows: {
+    key: string;
+    value: string;
+  }[];
 }

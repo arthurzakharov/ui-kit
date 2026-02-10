@@ -21,7 +21,7 @@ export const Glass = (props: PaymentGlassProps) => {
             transition={{ duration: 0.125 }}
             className={cn.Cover}
           >
-            {withLoader && <Loader color="primary" size={48} />}
+            {withLoader && <Loader size="lg" color="primary" />}
           </motion.div>
         )}
       </AnimatePresence>

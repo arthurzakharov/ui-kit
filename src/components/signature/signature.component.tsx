@@ -142,7 +142,7 @@ export const Signature = (props: SignatureProps) => {
               </Animation.FadeScale>
               <Animation.FadeScale flex name="signature" condition={valueAuto === ''}>
                 <div className={cn.SignatureAutoPanelLoader}>
-                  <Loader size={30} color="primary" />
+                  <Loader size="sm" color="primary" />
                 </div>
               </Animation.FadeScale>
               <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">

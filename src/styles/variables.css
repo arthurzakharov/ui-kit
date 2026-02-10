@@ -53,7 +53,7 @@
   --rm-ui-color-text-primary: var(--rm-ui-grey-800);
   --rm-ui-color-text-secondary: var(--rm-ui-grey-500);
   --rm-ui-color-accent-primary: #23bf96;
-  --rm-ui-color-accent-secondary: #23bf96;
+  --rm-ui-color-accent-secondary: #ff9900;
   --rm-ui-color-theme-primary: #302677;
   --rm-ui-color-theme-secondary: #302677;
   --rm-ui-color-action: #006cff;
@@ -92,6 +92,9 @@
   --rm-ui-status-idle-color: #82868f;
   --rm-ui-status-success-color: var(--rm-ui-color-accent-primary);
   --rm-ui-status-error-color: var(--rm-ui-color-error);
+  /* Not Found */
+  --rm-ui-not-found-color: var(--rm-ui-color-text-primary);
+  --rm-ui-not-found-border: var(--rm-ui-grey-300);
   /* Other */
   --rm-ui-card-background: #ffffff;
   --rm-ui-next-btn-bg: #23bf96;

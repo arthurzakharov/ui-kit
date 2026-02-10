@@ -3,7 +3,7 @@
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-text-primary);
+  color: var(--rm-ui-not-found-color);
 }
 
 .Title {
@@ -36,7 +36,7 @@
 }
 
 .TableRow {
-  border-top: 1px solid var(--rm-ui-grey-300);
+  border-top: 1px solid var(--rm-ui-not-found-border);
 }
 
 .CellHead,

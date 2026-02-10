@@ -15,7 +15,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Success: Story = {
-  name: 'Success',
   args: {
     type: 'success',
     title: (
@@ -29,7 +28,7 @@ export const Success: Story = {
       </>
     ),
   },
-  play: async ({ args, canvasElement }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByTestId('message-title')).toContainHTML('Alles <u>klar!</u>');
     await expect(canvas.getByTestId('message-text')).toContainHTML('Ihre Änderungen <b>wurden</b> gespeichert.');

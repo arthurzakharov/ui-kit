@@ -1,10 +1,8 @@
-import type { BaseProps } from '@utils/types';
 import type { ReactNode } from 'react';
-
-type MessageType = 'success' | 'question' | 'error' | 'info';
+import type { BaseProps } from '../../utils/types';
 
 export interface MessageProps extends BaseProps {
-  type: MessageType;
+  type: 'success' | 'question' | 'error' | 'info';
   title: ReactNode;
   text: ReactNode;
 }

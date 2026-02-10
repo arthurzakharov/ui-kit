@@ -1,11 +1,9 @@
-import type { BaseProps } from '@utils/types';
-
-interface FooterLink {
-  text: string;
-  onClick: () => void;
-}
+import type { BaseProps } from '../../utils/types';
 
 export interface FooterProps extends BaseProps {
   name: string;
-  links: FooterLink[];
+  links: {
+    text: string;
+    onClick: () => void;
+  }[];
 }

@@ -68,7 +68,7 @@ export const Button = (props: ButtonProps) => {
           delay={0.2}
           className={cn.ButtonLoaderAnimationWrap}
         >
-          <Loader size={24} color="white" />
+          <Loader size="xs" color="white" />
         </Animation.FadeScale>
       </div>
       <div className={clsx(cn.ButtonContent, loading ? cn.ButtonContentLoading : cn.ButtonContentIdle)}>
