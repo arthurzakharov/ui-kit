@@ -1,6 +1,8 @@
-import type { BaseProps } from '../../utils/types';
+import type { BaseProps, Size } from '@utils/types';
+
+type LoaderColor = 'white' | 'primary' | 'secondary';
 
 export interface LoaderProps extends BaseProps {
-  size: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-  color: 'white' | 'primary' | 'secondary';
+  size: Size;
+  color: LoaderColor
 }

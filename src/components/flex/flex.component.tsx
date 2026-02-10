@@ -1,6 +1,6 @@
 import { Children, createElement, type HTMLAttributes, isValidElement, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import type { Padding } from '@utils/types';
+import type { Size } from '@utils/types';
 import cn from '@components/flex/flex.module.css';
 
 type TagNames = keyof HTMLElementTagNameMap;
@@ -19,7 +19,7 @@ type ScreeSize = 'tablet' | 'laptop' | 'desktop';
 
 export interface FlexProps extends PropsWithChildren, HTMLAttributes<HTMLElementTagNameMap[TagNames]> {
   tag?: TagNames;
-  gap?: Padding;
+  gap?: Size;
   pos?: Position;
   basis?: string | number;
   grow?: Grow;
@@ -27,13 +27,13 @@ export interface FlexProps extends PropsWithChildren, HTMLAttributes<HTMLElement
   wrap?: boolean;
   align?: Align;
   justify?: Justify;
-  mt?: Padding;
-  mb?: Padding;
-  ml?: Padding;
-  mr?: Padding;
-  mx?: Padding;
-  my?: Padding;
-  m?: Padding;
+  mt?: Size;
+  mb?: Size;
+  ml?: Size;
+  mr?: Size;
+  mx?: Size;
+  my?: Size;
+  m?: Size;
   changeDirectionAfter?: ScreeSize;
 }
 

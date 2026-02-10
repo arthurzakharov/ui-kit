@@ -1,9 +1,9 @@
-import type { Padding } from '@utils/types';
+import type { Size } from '@utils/types';
 import { Children, type PropsWithChildren } from 'react';
 import { Flex } from '@components/flex/flex.component';
 
 export interface FormRowProps extends PropsWithChildren {
-  gap: Padding;
+  gap: Size;
 }
 
 export const FormRow = (props: FormRowProps) => {
