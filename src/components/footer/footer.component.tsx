@@ -1,6 +1,16 @@
 import clsx from 'clsx';
-import type { FooterProps } from './footer.types';
-import cn from './footer.module.css';
+import type { BaseProps } from '@utils/types';
+import cn from '@components/footer/footer.module.css';
+
+type FooterLink = {
+  text: string;
+  onClick: () => void;
+};
+
+export interface FooterProps extends BaseProps {
+  name: string;
+  links: FooterLink[];
+}
 
 export const Footer = ({ name, links, className = '' }: FooterProps) => (
   <footer data-testid="footer" className={clsx(cn.Footer, className)}>

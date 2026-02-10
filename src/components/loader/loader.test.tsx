@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import * as stories from './loader.stories';
+import * as stories from '@components/loader/loader.stories';
 
 const {
   ColorPrimary,

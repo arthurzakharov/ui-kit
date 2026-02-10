@@ -1,2 +1,1 @@
-export { Message } from './message.component';
-export type { MessageProps } from './message.types';
+export { Message, type MessageProps } from '@components/message/message.component';

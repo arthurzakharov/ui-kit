@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import * as stories from './footer.stories';
+import * as stories from '@components/footer/footer.stories';
 
 const { Default, WithAdditionalClassName } = composeStories(stories);
 

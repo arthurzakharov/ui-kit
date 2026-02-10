@@ -1,2 +1,1 @@
-export { Loader } from './loader.component';
-export type { LoaderProps } from './loader.types';
+export { Loader, type LoaderProps } from '@components/loader/loader.component';

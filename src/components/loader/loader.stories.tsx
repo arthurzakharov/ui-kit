@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
-import { Loader } from './loader.component';
+import { Loader } from '@components/loader/loader.component';
 
 const meta = {
   title: 'Loader',

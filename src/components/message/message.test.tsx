@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import * as stories from './message.stories';
+import * as stories from '@components/message/message.stories';
 
 const { Success, Question, Error, Info, WithAdditionalClassName } = composeStories(stories);
 

@@ -1,6 +1,18 @@
 import clsx from 'clsx';
-import type { NotFoundProps } from './not-found.types';
-import cn from './not-found.module.css';
+import type { BaseProps } from '@utils/types';
+import cn from '@components/not-found/not-found.module.css';
+
+type TableRow = {
+  key: string;
+  value: string;
+};
+
+export interface NotFoundProps extends BaseProps {
+  title: string;
+  subtitle: string;
+  tableTitle: string;
+  tableRows: TableRow[];
+}
 
 export const NotFound = ({ title, subtitle, tableTitle, tableRows, className = '' }: NotFoundProps) => (
   <section data-testid="not-found" className={clsx(cn.NotFound, className)}>

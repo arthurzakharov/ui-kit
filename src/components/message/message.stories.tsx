@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Message } from './message.component';
+import { Message } from '@components/message/message.component';
 
 const meta = {
   title: 'Message',

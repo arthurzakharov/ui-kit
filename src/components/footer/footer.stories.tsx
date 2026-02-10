@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, within } from 'storybook/test';
-import { Footer } from './footer.component';
+import { Footer } from '@components/footer/footer.component';
 
 const meta = {
   title: 'Footer',

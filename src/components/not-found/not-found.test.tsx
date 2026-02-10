@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import * as stories from './not-found.stories';
+import * as stories from '@components/not-found/not-found.stories';
 
 const { Default, WithAdditionalClassName } = composeStories(stories);
 

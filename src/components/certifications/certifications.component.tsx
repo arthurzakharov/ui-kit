@@ -1,6 +1,12 @@
 import clsx from 'clsx';
-import type { CertificationsProps } from './certifications.types';
-import cn from './certifications.module.css';
+import type { BaseProps } from '@utils/types';
+import cn from '@components/certifications/certifications.module.css';
+
+type CertificationsIcon = 'free' | 'gdpr' | 'ssl';
+
+export interface CertificationsProps extends BaseProps {
+  icons: CertificationsIcon[];
+}
 
 export const Certifications = ({ icons, className = '' }: CertificationsProps) => (
   <div data-testid="certifications" className={clsx(cn.Certifications, className)}>
