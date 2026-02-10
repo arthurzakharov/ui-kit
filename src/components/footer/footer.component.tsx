@@ -1,14 +1,14 @@
-import type { FooterProps } from '@components/footer/footer.types';
 import clsx from 'clsx';
-import cn from '@components/footer/footer.module.css';
+import type { FooterProps } from './footer.types';
+import cn from './footer.module.css';
 
-export const Footer = (props: FooterProps) => (
-  <footer data-testid="footer" className={clsx(cn.Footer, props.className)}>
+export const Footer = ({ name, links, className = '' }: FooterProps) => (
+  <footer data-testid="footer" className={clsx(cn.Footer, className)}>
     <span data-testid="footer-copyright" className={cn.Copyright}>
-      {props.name ? `© ${new Date().getFullYear()} ${props.name}` : ''}
+      &copy;&nbsp;{new Date().getFullYear()}&nbsp;{name}
     </span>
     <ul className={cn.Links}>
-      {props.links.map((link) => (
+      {links.map((link) => (
         <li key={link.text} data-testid="footer-link" className={cn.Link}>
           <button
             data-testid="footer-button"

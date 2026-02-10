@@ -1,2 +1,2 @@
-export { Certifications } from '@components/certifications/certifications.component';
-export type { CertificationsProps } from '@components/certifications/certifications.types';
+export { Certifications } from './certifications.component';
+export type { CertificationsProps } from './certifications.types';

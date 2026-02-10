@@ -6,7 +6,12 @@ import url from 'node:url';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import { fileURLToPath } from 'node:url';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import { playwright } from '@vitest/browser-playwright';
+const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
+// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   logLevel: 'info',
   plugins: [
@@ -57,6 +62,8 @@ export default defineConfig({
     },
   },
   test: {
+    resolveSnapshotPath: (testPath, snapExtension) =>
+      path.resolve(path.dirname(testPath), `${path.basename(testPath)}${snapExtension}`),
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',
@@ -71,10 +78,35 @@ export default defineConfig({
           include: ['src/**/*.test.{ts,tsx}'],
         },
       },
+      {
+        extends: true,
+        plugins: [
+          // The plugin will run tests for the stories defined in your Storybook config
+          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+          storybookTest({
+            configDir: path.join(dirname, '.storybook'),
+          }),
+        ],
+        test: {
+          name: 'storybook',
+          browser: {
+            enabled: true,
+            headless: true,
+            provider: playwright({}),
+            instances: [
+              {
+                browser: 'chromium',
+              },
+            ],
+          },
+          setupFiles: ['.storybook/vitest.setup.ts'],
+        },
+      },
     ],
   },
   resolve: {
     alias: {
+      '@story': path.resolve(__dirname, '.storybook'),
       '@components': path.resolve(__dirname, './src/components'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@utils': path.resolve(__dirname, './src/utils'),

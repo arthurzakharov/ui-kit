@@ -6,7 +6,8 @@
   --title-height: 40px;
   overflow: hidden;
   position: relative;
-  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md) calc(var(--rm-ui-padding-md) + var(--title-height));
+  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md)
+    calc(var(--rm-ui-padding-md) + var(--title-height));
   border: 1px solid var(--rm-ui-grey-300);
   border-radius: var(--rm-ui-border-radius-sm);
 }
@@ -16,7 +17,8 @@
 }
 
 .SignatureMainManual {
-  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md) calc(var(--rm-ui-padding-md) + var(--title-height));
+  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md)
+    calc(var(--rm-ui-padding-md) + var(--title-height));
 }
 
 /* Header */

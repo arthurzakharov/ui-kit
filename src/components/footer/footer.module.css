@@ -41,8 +41,13 @@
   outline-color: var(--rm-ui-color-focus);
 }
 
-.FooterSeparator {
+.Separator {
   display: none;
+  opacity: 0.66;
+  border-right: 1px solid var(--rm-ui-color-text-secondary);
+  margin-right: var(--rm-ui-padding-xs);
+  margin-left: var(--rm-ui-padding-xs);
+  height: var(--rm-ui-font-size-body-small);
 }
 
 @media screen and (min-width: 768px) {
@@ -55,15 +60,11 @@
     gap: 0;
   }
 
-  .Link:last-of-type .FooterSeparator {
+  .Link:last-of-type .Separator {
     display: none;
   }
 
-  .FooterSeparator {
+  .Separator {
     display: flex;
-    border-right: 1px solid var(--rm-ui-color-text-secondary);
-    margin-right: var(--rm-ui-padding-xs);
-    margin-left: var(--rm-ui-padding-xs);
-    height: 16px;
   }
 }
