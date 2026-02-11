@@ -76,4 +76,4 @@ export { Signature, type SignatureProps, type SignatureMode } from '@components/
 export { Svg, type SvgProps } from '@components/svg/svg.component';
 export { Text } from '@components/text/text.component';
 export { UserPanel, type UserPanelProps } from '@components/user-panel/user-panel.component';
-export { Warranty, type WarrantyProps } from '@components/warranty/warranty.component';
+export { Warranty, type WarrantyProps } from '@components/warranty';
