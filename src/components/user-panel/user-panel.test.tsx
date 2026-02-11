@@ -1,0 +1,17 @@
+import { composeStories } from '@storybook/react';
+import { describe, expect, it } from 'vitest';
+import * as stories from '@components/user-panel/user-panel.stories';
+
+const { Default, WithAdditionalClassName } = composeStories(stories);
+
+describe('UserPanel. Snapshots', () => {
+  it('Default ', async () => {
+    await Default.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('WithAdditionalClassName ', async () => {
+    await WithAdditionalClassName.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+});

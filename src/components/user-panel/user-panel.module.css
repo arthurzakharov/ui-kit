@@ -4,65 +4,28 @@
   align-items: stretch;
   justify-content: flex-start;
   gap: var(--rm-ui-padding-sm);
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-secondary);
 }
 
-.UserHead {
+.Head {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-}
-
-.UserTitle {
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   color: var(--rm-ui-color-text-primary);
 }
 
-.UserButton {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--rm-ui-padding-xs);
-}
-
-.UserButton:focus-visible {
-  outline-offset: 2px;
-  outline-color: var(--rm-ui-color-focus);
-}
-
-.UserButtonText {
-  font-weight: var(--rm-ui-font-weight-medium);
-  font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-text-primary);
-}
-
-.UserButtonIcon {
-  width: 24px;
-  height: 24px;
-  stroke-width: 2px;
-  stroke: var(--rm-ui-color-text-primary);
-}
-
-.UserInfo {
+.Info {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: flex-start;
-}
-
-.UserInfoRaw {
-  font-weight: var(--rm-ui-font-weight-light);
-  font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-text-secondary);
 }

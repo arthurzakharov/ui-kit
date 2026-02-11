@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { containsHtml, isHtmlString, isString } from '@utils/functions/functions.util';
+import { describe, it, expect, vi } from 'vitest';
+import { containsHtml, isHtmlString, isString, withControl } from '@utils/functions/functions.util';
 
 describe('isString', () => {
   it('returns true for string values', () => {
@@ -41,5 +41,53 @@ describe('isHtmlString', () => {
   it('returns false for non-string values', () => {
     expect(isHtmlString(123)).toBe(false);
     expect(isHtmlString(null)).toBe(false);
+  });
+});
+
+describe('withControl', () => {
+  it('calls handler with event when no actions provided', () => {
+    const handler = vi.fn();
+    const event = {
+      preventDefault: vi.fn(),
+      stopPropagation: vi.fn(),
+      currentTarget: {
+        blur: vi.fn(),
+      },
+    };
+
+    withControl(handler)(event as never);
+
+    expect(handler).toHaveBeenCalledWith(event);
+    expect(event.preventDefault).not.toHaveBeenCalled();
+    expect(event.stopPropagation).not.toHaveBeenCalled();
+    expect(event.currentTarget.blur).not.toHaveBeenCalled();
+  });
+
+  it('applies selected control actions before calling handler', () => {
+    const callOrder: string[] = [];
+    const handler = vi.fn(() => {
+      callOrder.push('handler');
+    });
+    const event = {
+      preventDefault: vi.fn(() => {
+        callOrder.push('prevent');
+      }),
+      stopPropagation: vi.fn(() => {
+        callOrder.push('stop');
+      }),
+      currentTarget: {
+        blur: vi.fn(() => {
+          callOrder.push('blur');
+        }),
+      },
+    };
+
+    withControl(handler, 'prevent', 'stop', 'blur')(event as never);
+
+    expect(event.preventDefault).toHaveBeenCalledTimes(1);
+    expect(event.stopPropagation).toHaveBeenCalledTimes(1);
+    expect(event.currentTarget.blur).toHaveBeenCalledTimes(1);
+    expect(handler).toHaveBeenCalledWith(event);
+    expect(callOrder).toEqual(['prevent', 'stop', 'blur', 'handler']);
   });
 });

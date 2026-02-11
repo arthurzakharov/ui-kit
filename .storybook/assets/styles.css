@@ -6,6 +6,14 @@
   color: var(--rm-ui-grey-950) !important;
 }
 
+.color-success {
+  color: var(--rm-ui-color-success) !important;
+}
+
+.color-theme-primary {
+  color: var(--rm-ui-color-theme-primary) !important;
+}
+
 .bg-color-grey-300 {
   background-color: var(--rm-ui-grey-300) !important;
 }

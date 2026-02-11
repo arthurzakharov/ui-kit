@@ -1,3 +1,5 @@
+import type { SyntheticEvent } from 'react';
+
 /**
  * Type guard: checks whether value is a string
  */
@@ -21,3 +23,18 @@ export function containsHtml(value: string): boolean {
 export function isHtmlString(value: unknown): value is string {
   return isString(value) && containsHtml(value);
 }
+
+type ControlAction = 'prevent' | 'stop' | 'blur';
+
+/**
+ * A higher-order function to wrap event handlers with common event control logic.
+ */
+export const withControl =
+  <E extends SyntheticEvent<HTMLElement>>(handler: (e: E) => void, ...actions: ControlAction[]) =>
+  (e: E): void => {
+    if (actions.includes('prevent')) e.preventDefault();
+    if (actions.includes('stop')) e.stopPropagation();
+    if (actions.includes('blur')) e.currentTarget.blur();
+
+    handler(e);
+  };
