@@ -3,7 +3,7 @@ import { expect, fn, userEvent, within } from 'storybook/test';
 import { UserPanel } from '@components/user-panel/user-panel.component';
 
 const meta = {
-  title: 'UserPanel',
+  title: 'Components/UserPanel',
   component: UserPanel,
   args: {
     title: 'Profil',

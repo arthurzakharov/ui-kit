@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test';
 import { Message } from '@components/message/message.component';
 
 const meta = {
-  title: 'Message',
+  title: 'Components/Message',
   component: Message,
   args: {
     className: '',

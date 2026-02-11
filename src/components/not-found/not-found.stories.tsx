@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test';
 import { NotFound } from '@components/not-found/not-found.component';
 
 const meta = {
-  title: 'NotFound',
+  title: 'Components/NotFound',
   component: NotFound,
   args: {
     title: 'Entschuldigung, da ist wohl etwas schief gelaufen!',

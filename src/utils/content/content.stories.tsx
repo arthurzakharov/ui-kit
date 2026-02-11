@@ -3,7 +3,7 @@ import { expect } from 'storybook/test';
 import { Content } from '@utils/content/content.component';
 
 const meta = {
-  title: 'Content',
+  title: 'Utils/Content',
   component: Content,
   args: {
     id: 'content',

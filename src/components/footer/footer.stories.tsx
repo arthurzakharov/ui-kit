@@ -3,7 +3,7 @@ import { expect, fn, userEvent, within } from 'storybook/test';
 import { Footer } from '@components/footer/footer.component';
 
 const meta = {
-  title: 'Footer',
+  title: 'Components/Footer',
   component: Footer,
   args: {
     name: 'rightmart',

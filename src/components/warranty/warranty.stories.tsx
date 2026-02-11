@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test';
 import { Warranty } from '@components/warranty/warranty.component';
 
 const meta = {
-  title: 'Warranty',
+  title: 'Components/Warranty',
   component: Warranty,
   args: {
     title: '2 Jahre Garantie',

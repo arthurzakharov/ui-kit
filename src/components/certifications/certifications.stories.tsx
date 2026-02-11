@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test';
 import { Certifications } from '@components/certifications/certifications.component';
 
 const meta = {
-  title: 'Certifications',
+  title: 'Components/Certifications',
   component: Certifications,
   args: {
     icons: ['free', 'gdpr', 'ssl'],

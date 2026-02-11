@@ -3,7 +3,7 @@ import { expect } from 'storybook/test';
 import { Loader } from '@components/loader/loader.component';
 
 const meta = {
-  title: 'Loader',
+  title: 'Components/Loader',
   component: Loader,
   args: {
     size: 'md',
