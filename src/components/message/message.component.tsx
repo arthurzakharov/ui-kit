@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Check, CircleQuestionMark, X, CircleAlert } from 'lucide-react';
 import clsx from 'clsx';
+import { Content } from '@utils/content';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/message/message.module.css';
 
@@ -27,16 +28,12 @@ export const Message = ({ type, title, text, className = '' }: MessageProps) => 
     {type === 'error' && <X data-testid="error-icon" className={cn.Icon} />}
     {type === 'info' && <CircleAlert data-testid="info-icon" className={cn.Icon} />}
     <div className={cn.Content}>
-      {title && (
-        <div data-testid="message-title" className={cn.Title}>
-          {title}
-        </div>
-      )}
-      {text && (
-        <div data-testid="message-text" className={cn.Text}>
-          {text}
-        </div>
-      )}
+      <Content data-testid="message-title" className={cn.Title}>
+        {title}
+      </Content>
+      <Content data-testid="message-text" className={cn.Text}>
+        {text}
+      </Content>
     </div>
   </div>
 );

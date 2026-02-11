@@ -25,6 +25,7 @@
     "prettier:fix": "prettier --write --log-level=log .",
     "test:unit:once": "vitest run --project unit",
     "test:unit:watch": "vitest --project unit --watch",
+    "test:unit:update": "vitest --project unit --update",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

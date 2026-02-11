@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Content. Snapshots > CustomTag  1`] = `
+<div>
+  <span
+    id="content-span"
+  >
+    Inline content
+  </span>
+</div>
+`;
+
+exports[`Content. Snapshots > Default  1`] = `
+<div>
+  <div
+    id="content"
+  >
+    Inline content
+  </div>
+</div>
+`;
+
+exports[`Content. Snapshots > HtmlString  1`] = `
+<div>
+  <div
+    id="content-html"
+  >
+    <b>
+      Bold
+    </b>
+     and 
+    <i>
+      italic
+    </i>
+     text
+  </div>
+</div>
+`;
