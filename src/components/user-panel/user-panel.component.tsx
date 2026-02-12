@@ -18,7 +18,7 @@ export const UserPanel = ({ title, button, data, onClick, className = '' }: User
       <Control.ButtonText
         preventDefault
         blurAfterClick
-        icon={<Pencil />}
+        icon={<Pencil className="XXX" />}
         iconPosition="right"
         size="md"
         color="primary"

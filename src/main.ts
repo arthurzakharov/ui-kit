@@ -72,7 +72,7 @@ export {
 } from '@components/payment/payment.component';
 export { Sidebar, type SidebarProps } from '@components/sidebar/sidebar.component';
 export { Signature, type SignatureProps, type SignatureMode } from '@components/signature/signature.component';
-export { Svg, type SvgProps } from '@components/svg/svg.component';
+export { Svg, type SvgProps } from '@utils/svg/svg.component';
 export { Text } from '@components/text/text.component';
 export { UserPanel, type UserPanelProps } from '@components/user-panel';
 export { Warranty, type WarrantyProps } from '@components/warranty';
