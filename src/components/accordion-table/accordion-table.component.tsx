@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, type CSSProperties, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { Animation } from '@components/animation/animation.component';
@@ -52,23 +52,24 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
   };
 
   return (
-    <table className={clsx(cn.AccordionTable, className)}>
-      <thead>
-        <tr>
-          {table.head.map((th, headIndex) => (
-            <th
-              key={`${th}-${headIndex}`}
-              className={cn.AccordionTableHeadCell}
-              dangerouslySetInnerHTML={{ __html: th }}
-            />
+    <div
+      className={clsx(cn.AccordionTable, className)}
+      style={{ '--accordion-columns': Math.max(table.head.length, 1) } as CSSProperties}
+    >
+      <div className={cn.Head}>
+        <div className={cn.HeadRow}>
+          {table.head.map((th) => (
+            <div key={th} className={cn.HeadCell} dangerouslySetInnerHTML={{ __html: th }} />
           ))}
-        </tr>
-      </thead>
-      <tbody>
+        </div>
+      </div>
+      <div className={cn.Body}>
         {table.body.map((tr, sectionIndex) => (
           <Fragment key={`${tr.title}-${sectionIndex}`}>
-            <tr className={cn.AccordionTableBodyRow}>
-              <td colSpan={table.head.length} className={clsx(cn.AccordionTableBodyCell, cn.AccordionTableBodyHead)}>
+            <div className={cn.BodyRow}>
+              <div
+                className={clsx(cn.BodyCell, cn.BodyHead, cn.BodyHeadCell)}
+              >
                 <Control.ButtonText
                   size="md"
                   weight="regular"
@@ -78,8 +79,8 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                     <ChevronDown
                       size={24}
                       className={clsx(
-                        cn.AccordionTableIcon,
-                        activeSectionIndex === sectionIndex ? cn.AccordionTableIconOpened : cn.AccordionTableIconClosed,
+                        cn.Icon,
+                        activeSectionIndex === sectionIndex ? cn.Opened : cn.Closed,
                       )}
                     />
                   }
@@ -87,22 +88,22 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                 >
                   {tr.title}
                 </Control.ButtonText>
-              </td>
-            </tr>
-            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex} duration={0.5}>
+              </div>
+            </div>
+            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex}>
               {tr.rows.map((row, rowIndex) => (
-                <tr key={`tr-${sectionIndex}-${rowIndex}`}>
+                <div key={`tr-${sectionIndex}-${rowIndex}`} className={cn.DataRow}>
                   {row.map((td, cellIndex) => (
-                    <td key={`tr-${sectionIndex}-${rowIndex}-${cellIndex}`} className={cn.AccordionTableBodyCell}>
+                    <div key={`tr-${sectionIndex}-${rowIndex}-${cellIndex}`} className={cn.BodyCell}>
                       {td}
-                    </td>
+                    </div>
                   ))}
-                </tr>
+                </div>
               ))}
             </Animation.FadeGrow>
           </Fragment>
         ))}
-      </tbody>
-    </table>
+      </div>
+    </div>
   );
 };

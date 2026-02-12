@@ -1,11 +1,21 @@
 .AccordionTable {
   font-weight: var(--rm-ui-font-weight-regular);
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+  display: block;
 }
 
-.AccordionTable .AccordionTableHeadCell {
+.Head,
+.Body {
+  display: block;
+}
+
+.HeadRow,
+.DataRow {
+  display: flex;
+  width: 100%;
+}
+
+.AccordionTable .HeadCell {
   background-color: var(--rm-ui-grey-100);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
   font-size: var(--rm-ui-font-size-body);
@@ -15,33 +25,44 @@
   vertical-align: top;
   color: var(--rm-ui-color-text-primary);
   white-space: break-spaces;
+  width: calc(100% / var(--accordion-columns));
+  flex: 0 1 calc(100% / var(--accordion-columns));
+  min-width: 0;
 }
 
-.AccordionTable .AccordionTableBodyCell {
+.AccordionTable .BodyCell {
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   font-weight: var(--rm-ui-font-weight-regular);
   color: var(--rm-ui-color-text-primary);
+  width: calc(100% / var(--accordion-columns));
+  flex: 0 1 calc(100% / var(--accordion-columns));
+  min-width: 0;
 }
 
-.AccordionTable .AccordionTableBodyHead {
+.AccordionTable .BodyHeadCell {
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.AccordionTable .BodyHead {
   padding: var(--rm-ui-padding-xxs);
   text-align: left;
 }
 
-.AccordionTable .AccordionTableIcon {
+.AccordionTable .Icon {
   transition: all var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
-.AccordionTable .AccordionTableIconOpened {
+.AccordionTable .Opened {
   transform: rotate(0deg);
 }
 
-.AccordionTable .AccordionTableIconClosed {
+.AccordionTable .Closed {
   transform: rotate(180deg);
 }
 
-.AccordionTable .AccordionTableBodyRow {
+.AccordionTable .BodyRow {
   border-bottom: 1px solid var(--rm-ui-grey-100);
 }
