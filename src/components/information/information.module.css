@@ -1,5 +1,6 @@
 .Information {
   --gap: var(--rm-ui-padding-sm);
+  --icon: 24px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -7,59 +8,29 @@
   justify-content: flex-start;
   gap: var(--gap);
   font-weight: var(--rm-ui-font-weight-light);
-}
-
-.InformationSizeRegular {
-  --icon: 24px;
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-}
-
-.InformationSizeSmall {
-  --icon: 20px;
-  font-size: var(--rm-ui-font-size-body-small);
-  line-height: var(--rm-ui-line-height-body-small);
-}
-
-.InformationSizeExtraSmall {
-  --icon: 16px;
-  font-size: var(--rm-ui-font-size-body-extra-small);
-  line-height: var(--rm-ui-line-height-body-extra-small);
-}
-
-.InformationColorPrimary {
   color: var(--rm-ui-color-text-primary);
 }
 
-.InformationColorSecondary {
-  color: var(--rm-ui-color-text-secondary);
-}
-
-.InformationColorAccentPrimary {
-  color: var(--rm-ui-color-accent-primary);
-}
-
-.InformationColorAccentSecondary {
-  color: var(--rm-ui-color-accent-secondary);
-}
-
-.InformationIcon {
+.Icon {
   position: relative;
   top: 2px;
   left: 0;
   width: var(--icon);
   height: var(--icon);
+  stroke-width: 1.5;
 }
 
-.InformationText {
+.Text {
   flex-basis: calc(100% - var(--icon) - var(--gap));
 }
 
-.InformationText b,
-.InformationText strong {
+.Text b,
+.Text strong {
   font-weight: var(--rm-ui-font-weight-regular);
 }
 
-.InformationText > p:not(:last-child) {
+.Text > p:not(:last-child) {
   margin-bottom: var(--rm-ui-padding-xs);
 }
