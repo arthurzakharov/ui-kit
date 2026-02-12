@@ -20,7 +20,7 @@ exports[`UserPanel. Snapshots > Default  1`] = `
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-pencil _ButtonTextIcon_3f3b2e"
+          class="lucide lucide-pencil _ButtonTextIcon_3f3b2e XXX"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -82,7 +82,7 @@ exports[`UserPanel. Snapshots > WithAdditionalClassName  1`] = `
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-pencil _ButtonTextIcon_3f3b2e"
+          class="lucide lucide-pencil _ButtonTextIcon_3f3b2e XXX"
           fill="none"
           height="24"
           stroke="currentColor"

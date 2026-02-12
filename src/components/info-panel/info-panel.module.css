@@ -2,6 +2,9 @@
   position: relative;
   padding: var(--rm-ui-padding-md) 0;
   background-color: var(--rm-ui-info-panel-bg);
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
 }
 
 .InfoPanel:before,
@@ -13,7 +16,7 @@
   z-index: 1;
   height: 100%;
   width: 100vw;
-  background-color: var(--rm-ui-info-panel-bg);
+  background-color: inherit;
 }
 
 .InfoPanel:before {
@@ -24,7 +27,7 @@
   right: 0;
 }
 
-.InfoPanelList {
+.List {
   position: relative;
   z-index: 2;
   display: flex;
@@ -34,15 +37,23 @@
   gap: var(--rm-ui-padding-xs);
 }
 
-.InfoPanelItem {
+.Item {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
+.Key {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.Value {
+  color: var(--rm-ui-color-text-primary);
+}
+
 @media screen and (min-width: 480px) {
-  .InfoPanelItem {
+  .Item {
     justify-content: flex-start;
     gap: var(--rm-ui-padding-xxs);
   }
