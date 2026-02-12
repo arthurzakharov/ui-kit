@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { Control } from '@components/control/control.component';
+import type { BaseProps } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';
 
 type TableRow = string[];
@@ -11,67 +12,46 @@ type TableSection = {
   rows: TableRow[];
 };
 
-export interface AccordionTableProps {
-  table: {
-    head?: string[];
-    body?: TableSection[];
-  };
-  activeSectionIndex?: number;
-  onActiveSectionChange?: (activeSectionIndex: number) => void;
+type Table = {
+  head: string[];
+  body: TableSection[];
+};
+
+export interface AccordionTableProps extends BaseProps {
+  table: Table;
+  active: number;
+  onClick: (active: number) => void;
 }
 
-export const AccordionTable = (props: AccordionTableProps) => {
-  const {
-    table: { head = [], body = [] },
-    activeSectionIndex = 0,
-    onActiveSectionChange,
-  } = props;
-  const [activeSection, setActiveSection] = useState<string>(body[activeSectionIndex].title);
+export const AccordionTable = ({ table, active = 0, onClick, className = '' }: AccordionTableProps) => {
+  const [activeSection, setActiveSection] = useState<string>(table.body[active].title);
 
-  const onBodyHeadClick = (row: string): void => {
-    setActiveSection(row !== activeSection ? row : '');
-  };
-
-  const getActiveSection = (body: TableSection[], activeSection: string): TableRow[] => {
-    const tableSection = body.find((tableSection: TableSection) => tableSection.title === activeSection);
+  const getActiveSection = (activeSection: string) => {
+    const tableSection = table.body.find((tableSection) => tableSection.title === activeSection);
     return tableSection ? tableSection.rows : [];
   };
 
-  const printSectionRows = (title: string, activeSection: string) => {
-    return title === activeSection
-      ? getActiveSection(body, activeSection).map((row: TableRow, rowIndex: number) => (
-          <tr key={`tr-${rowIndex}`}>
-            {row.map((td: string, cellIndex: number) => (
-              <td key={`tr-${rowIndex}-${cellIndex}`} className={cn.AccordionTableBodyCell}>
-                {td}
-              </td>
-            ))}
-          </tr>
-        ))
-      : null;
-  };
-
   useEffect(() => {
-    const activeSectionIndex = body.findIndex((section: TableSection): boolean => section.title === activeSection);
-    if (activeSectionIndex >= 0 && onActiveSectionChange) {
-      onActiveSectionChange(activeSectionIndex);
+    const active = table.body.findIndex((section) => section.title === activeSection);
+    if (active >= 0) {
+      onClick(active);
     }
-  }, [activeSection, body, onActiveSectionChange]);
+  }, [activeSection, table, onClick]);
 
   return (
-    <table id="accordion-table" className={cn.AccordionTable}>
+    <table className={clsx(cn.AccordionTable, className)}>
       <thead>
         <tr>
-          {head.map((th: string, headIndex: number) => (
+          {table.head.map((th, headIndex) => (
             <th key={headIndex} className={cn.AccordionTableHeadCell} dangerouslySetInnerHTML={{ __html: th }} />
           ))}
         </tr>
       </thead>
       <tbody>
-        {body.map((tr: TableSection, sectionIndex: number) => (
+        {table.body.map((tr, sectionIndex) => (
           <Fragment key={sectionIndex}>
             <tr className={cn.AccordionTableBodyRow}>
-              <td colSpan={head.length} className={clsx(cn.AccordionTableBodyCell, cn.AccordionTableBodyHead)}>
+              <td colSpan={table.head.length} className={clsx(cn.AccordionTableBodyCell, cn.AccordionTableBodyHead)}>
                 <Control.ButtonText
                   size="md"
                   weight="regular"
@@ -86,13 +66,22 @@ export const AccordionTable = (props: AccordionTableProps) => {
                       )}
                     />
                   }
-                  onClick={() => onBodyHeadClick(tr.title)}
+                  onClick={() => setActiveSection(tr.title !== activeSection ? tr.title : '')}
                 >
                   {tr.title}
                 </Control.ButtonText>
               </td>
             </tr>
-            {printSectionRows(tr.title, activeSection)}
+            {tr.title === activeSection &&
+              getActiveSection(activeSection).map((row, rowIndex) => (
+                <tr key={`tr-${rowIndex}`}>
+                  {row.map((td, cellIndex) => (
+                    <td key={`tr-${rowIndex}-${cellIndex}`} className={cn.AccordionTableBodyCell}>
+                      {td}
+                    </td>
+                  ))}
+                </tr>
+              ))}
           </Fragment>
         ))}
       </tbody>
