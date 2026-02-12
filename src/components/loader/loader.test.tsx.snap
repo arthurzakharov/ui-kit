@@ -2,98 +2,14 @@
 
 exports[`Loader. Snapshots > ColorPrimary  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="40"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="40"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
-</div>
-`;
-
-exports[`Loader. Snapshots > ColorSecondary  1`] = `
-<div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Secondary_454ed6"
-    fill="none"
-    height="40"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="40"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
-</div>
-`;
-
-exports[`Loader. Snapshots > ColorWhite  1`] = `
-<div>
   <div
-    style="background-color: var(--rm-ui-grey-950); padding: var(--rm-ui-padding-md); border-radius: var(--rm-ui-border-radius-md); display: inline-flex;"
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-loader _Loader_454ed6 _White_454ed6"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
       fill="none"
       height="40"
       stroke="currentColor"
@@ -129,393 +45,961 @@ exports[`Loader. Snapshots > ColorWhite  1`] = `
         d="m4.9 4.9 2.9 2.9"
       />
     </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > ColorSecondary  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Secondary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > ColorWhite  1`] = `
+<div>
+  <div
+    style="background-color: var(--rm-ui-grey-950); padding: var(--rm-ui-padding-md); border-radius: var(--rm-ui-border-radius-md); display: inline-flex;"
+  >
+    <div
+      class="_Loader_454ed6"
+      data-testid="loader"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-loader _Icon_454ed6 _White_454ed6"
+        data-testid="loader-icon"
+        fill="none"
+        height="40"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2v4"
+        />
+        <path
+          d="m16.2 7.8 2.9-2.9"
+        />
+        <path
+          d="M18 12h4"
+        />
+        <path
+          d="m16.2 16.2 2.9 2.9"
+        />
+        <path
+          d="M12 18v4"
+        />
+        <path
+          d="m4.9 19.1 2.9-2.9"
+        />
+        <path
+          d="M2 12h4"
+        />
+        <path
+          d="m4.9 4.9 2.9 2.9"
+        />
+      </svg>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingLG  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _LG_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingMD  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _MD_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingSM  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _SM_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingXL  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _XL_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingXS  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _XS_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingXXL  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _XXL_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingXXS  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _XXS_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
+</div>
+`;
+
+exports[`Loader. Snapshots > PaddingXXXL  1`] = `
+<div>
+  <div
+    class="_Loader_454ed6 _Padding_454ed6 _XXXL_454ed6"
+    data-testid="loader"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
   </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeLG  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="48"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="48"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="48"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeMD  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="40"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="40"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeSM  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="32"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="32"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeXL  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="56"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="56"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="56"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="56"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeXS 1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="24"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeXXL  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="64"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="64"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="64"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="64"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeXXS  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="16"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > SizeXXXL  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 _Primary_454ed6"
-    fill="none"
-    height="72"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="72"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="72"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="72"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;
 
 exports[`Loader. Snapshots > WithAdditionalClassName  1`] = `
 <div>
-  <svg
-    aria-hidden="true"
-    class="lucide lucide-loader _Loader_454ed6 stroke-grey-500 _Primary_454ed6"
-    fill="none"
-    height="40"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    width="40"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="_Loader_454ed6 stroke-grey-500"
+    data-testid="loader"
   >
-    <path
-      d="M12 2v4"
-    />
-    <path
-      d="m16.2 7.8 2.9-2.9"
-    />
-    <path
-      d="M18 12h4"
-    />
-    <path
-      d="m16.2 16.2 2.9 2.9"
-    />
-    <path
-      d="M12 18v4"
-    />
-    <path
-      d="m4.9 19.1 2.9-2.9"
-    />
-    <path
-      d="M2 12h4"
-    />
-    <path
-      d="m4.9 4.9 2.9 2.9"
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-loader _Icon_454ed6 _Primary_454ed6"
+      data-testid="loader-icon"
+      fill="none"
+      height="40"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2v4"
+      />
+      <path
+        d="m16.2 7.8 2.9-2.9"
+      />
+      <path
+        d="M18 12h4"
+      />
+      <path
+        d="m16.2 16.2 2.9 2.9"
+      />
+      <path
+        d="M12 18v4"
+      />
+      <path
+        d="m4.9 19.1 2.9-2.9"
+      />
+      <path
+        d="M2 12h4"
+      />
+      <path
+        d="m4.9 4.9 2.9 2.9"
+      />
+    </svg>
+     
+  </div>
 </div>
 `;

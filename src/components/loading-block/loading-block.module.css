@@ -1,7 +1,0 @@
-.LoadingBlock {
-  height: var(--rm-ui-loading-screen-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}

@@ -14,6 +14,14 @@ const {
   SizeXL,
   SizeXXL,
   SizeXXXL,
+  PaddingXXS,
+  PaddingXS,
+  PaddingSM,
+  PaddingMD,
+  PaddingLG,
+  PaddingXL,
+  PaddingXXL,
+  PaddingXXXL,
   WithAdditionalClassName,
 } = composeStories(stories);
 
@@ -70,6 +78,46 @@ describe('Loader. Snapshots', () => {
 
   it('SizeXXXL ', async () => {
     await SizeXXXL.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingXXS ', async () => {
+    await PaddingXXS.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingXS ', async () => {
+    await PaddingXS.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingSM ', async () => {
+    await PaddingSM.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingMD ', async () => {
+    await PaddingMD.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingLG ', async () => {
+    await PaddingLG.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingXL ', async () => {
+    await PaddingXL.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingXXL ', async () => {
+    await PaddingXXL.run();
+    expect(document.body.firstChild).toMatchSnapshot();
+  });
+
+  it('PaddingXXXL ', async () => {
+    await PaddingXXXL.run();
     expect(document.body.firstChild).toMatchSnapshot();
   });
 

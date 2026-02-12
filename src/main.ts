@@ -58,7 +58,6 @@ export { Information, type InformationProps } from '@components/information/info
 export { Layout, type LayoutProps } from '@components/layout/layout.component';
 export { Line } from '@components/line/line.component';
 export { Loader, type LoaderProps } from '@components/loader';
-export { LoadingBlock } from '@components/loading-block/loading-block.component';
 export { MainAttachment, type MainAttachmentProps } from '@components/main-attachment/main-attachment.component';
 export { Message, type MessageProps } from '@components/message';
 export { MessageBlock, type MessageBlockProps } from '@components/message-block/message-block.component';

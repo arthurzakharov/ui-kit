@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 import { Loader } from '@components/loader/loader.component';
+import cn from '@components/loader/loader.module.css';
 
 const meta = {
   title: 'Components/Loader',
@@ -16,12 +17,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const getSvg = (canvasElement: HTMLElement) => canvasElement.querySelector('svg');
-
 export const ColorPrimary: Story = {
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
+    await expect(svg).toHaveClass(cn.Primary);
   },
 };
 
@@ -42,8 +41,8 @@ export const ColorWhite: Story = {
     </div>
   ),
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
+    await expect(svg).toHaveClass(cn.White);
   },
 };
 
@@ -52,8 +51,8 @@ export const ColorSecondary: Story = {
     color: 'secondary',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
+    await expect(svg).toHaveClass(cn.Secondary);
   },
 };
 
@@ -62,8 +61,7 @@ export const SizeXXS: Story = {
     size: 'xxs',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '16');
     await expect(svg).toHaveAttribute('height', '16');
   },
@@ -74,8 +72,7 @@ export const SizeXS: Story = {
     size: 'xs',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '24');
     await expect(svg).toHaveAttribute('height', '24');
   },
@@ -86,8 +83,7 @@ export const SizeSM: Story = {
     size: 'sm',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '32');
     await expect(svg).toHaveAttribute('height', '32');
   },
@@ -98,8 +94,7 @@ export const SizeMD: Story = {
     size: 'md',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '40');
     await expect(svg).toHaveAttribute('height', '40');
   },
@@ -110,8 +105,7 @@ export const SizeLG: Story = {
     size: 'lg',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '48');
     await expect(svg).toHaveAttribute('height', '48');
   },
@@ -122,8 +116,7 @@ export const SizeXL: Story = {
     size: 'xl',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '56');
     await expect(svg).toHaveAttribute('height', '56');
   },
@@ -134,8 +127,7 @@ export const SizeXXL: Story = {
     size: 'xxl',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '64');
     await expect(svg).toHaveAttribute('height', '64');
   },
@@ -146,20 +138,91 @@ export const SizeXXXL: Story = {
     size: 'xxxl',
   },
   play: async ({ canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
+    const svg = within(canvasElement).getByTestId('loader-icon');
     await expect(svg).toHaveAttribute('width', '72');
     await expect(svg).toHaveAttribute('height', '72');
   },
 };
 
-export const WithAdditionalClassName: Story = {
+export const PaddingXXS: Story = {
   args: {
-    className: 'stroke-grey-500',
+    padding: 'xxs',
   },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.XXS);
+  },
+};
+
+export const PaddingXS: Story = {
+  args: { padding: 'xs' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.XS);
+  },
+};
+
+export const PaddingSM: Story = {
+  args: { padding: 'sm' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.SM);
+  },
+};
+
+export const PaddingMD: Story = {
+  args: { padding: 'md' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.MD);
+  },
+};
+
+export const PaddingLG: Story = {
+  args: { padding: 'lg' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.LG);
+  },
+};
+
+export const PaddingXL: Story = {
+  args: { padding: 'xl' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.XL);
+  },
+};
+
+export const PaddingXXL: Story = {
+  args: { padding: 'xxl' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.XXL);
+  },
+};
+
+export const PaddingXXXL: Story = {
+  args: { padding: 'xxxl' },
+  play: async ({ canvasElement }) => {
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(cn.XXXL);
+  },
+};
+
+export const WithAdditionalClassName: Story = {
+  args: { className: 'stroke-grey-500' },
   play: async ({ args, canvasElement }) => {
-    const svg = getSvg(canvasElement);
-    await expect(svg).toBeInTheDocument();
-    await expect(svg).toHaveClass(String(args.className));
+    const loader = within(canvasElement).getByTestId('loader');
+    await expect(loader).not.toHaveClass(cn.Padding);
+    await expect(loader).toHaveClass(String(args.className));
   },
 };
