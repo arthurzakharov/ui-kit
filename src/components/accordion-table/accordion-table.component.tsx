@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
+import { Animation } from '@components/animation/animation.component';
 import { Control } from '@components/control/control.component';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';
@@ -19,37 +20,53 @@ type Table = {
 
 export interface AccordionTableProps extends BaseProps {
   table: Table;
-  active: number;
-  onClick: (active: number) => void;
+  active?: number;
+  onClick?: (active: number) => void;
 }
 
-export const AccordionTable = ({ table, active = 0, onClick, className = '' }: AccordionTableProps) => {
-  const [activeSection, setActiveSection] = useState<string>(table.body[active].title);
-
-  const getActiveSection = (activeSection: string) => {
-    const tableSection = table.body.find((tableSection) => tableSection.title === activeSection);
-    return tableSection ? tableSection.rows : [];
+export const AccordionTable = ({ table, active, onClick, className = '' }: AccordionTableProps) => {
+  const getNormalizedActive = (sectionIndex: number, bodyLength: number) => {
+    return sectionIndex >= 0 && sectionIndex < bodyLength ? sectionIndex : null;
   };
 
-  useEffect(() => {
-    const active = table.body.findIndex((section) => section.title === activeSection);
-    if (active >= 0) {
-      onClick(active);
+  const [uncontrolledActiveSectionIndex, setUncontrolledActiveSectionIndex] = useState(
+    getNormalizedActive(active ?? 0, table.body.length),
+  );
+
+  const isControlled = active !== undefined;
+
+  const activeSectionIndex = getNormalizedActive(
+    isControlled ? active : (uncontrolledActiveSectionIndex ?? -1),
+    table.body.length,
+  );
+
+  const onSectionClick = (sectionIndex: number) => {
+    const nextActiveSectionIndex = sectionIndex !== activeSectionIndex ? sectionIndex : null;
+    if (!isControlled) {
+      setUncontrolledActiveSectionIndex(nextActiveSectionIndex);
     }
-  }, [activeSection, table, onClick]);
+
+    if (nextActiveSectionIndex !== null && onClick) {
+      onClick(nextActiveSectionIndex);
+    }
+  };
 
   return (
     <table className={clsx(cn.AccordionTable, className)}>
       <thead>
         <tr>
           {table.head.map((th, headIndex) => (
-            <th key={headIndex} className={cn.AccordionTableHeadCell} dangerouslySetInnerHTML={{ __html: th }} />
+            <th
+              key={`${th}-${headIndex}`}
+              className={cn.AccordionTableHeadCell}
+              dangerouslySetInnerHTML={{ __html: th }}
+            />
           ))}
         </tr>
       </thead>
       <tbody>
         {table.body.map((tr, sectionIndex) => (
-          <Fragment key={sectionIndex}>
+          <Fragment key={`${tr.title}-${sectionIndex}`}>
             <tr className={cn.AccordionTableBodyRow}>
               <td colSpan={table.head.length} className={clsx(cn.AccordionTableBodyCell, cn.AccordionTableBodyHead)}>
                 <Control.ButtonText
@@ -62,26 +79,27 @@ export const AccordionTable = ({ table, active = 0, onClick, className = '' }: A
                       size={24}
                       className={clsx(
                         cn.AccordionTableIcon,
-                        activeSection === tr.title ? cn.AccordionTableIconOpened : cn.AccordionTableIconClosed,
+                        activeSectionIndex === sectionIndex ? cn.AccordionTableIconOpened : cn.AccordionTableIconClosed,
                       )}
                     />
                   }
-                  onClick={() => setActiveSection(tr.title !== activeSection ? tr.title : '')}
+                  onClick={() => onSectionClick(sectionIndex)}
                 >
                   {tr.title}
                 </Control.ButtonText>
               </td>
             </tr>
-            {tr.title === activeSection &&
-              getActiveSection(activeSection).map((row, rowIndex) => (
-                <tr key={`tr-${rowIndex}`}>
+            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex} duration={0.5}>
+              {tr.rows.map((row, rowIndex) => (
+                <tr key={`tr-${sectionIndex}-${rowIndex}`}>
                   {row.map((td, cellIndex) => (
-                    <td key={`tr-${rowIndex}-${cellIndex}`} className={cn.AccordionTableBodyCell}>
+                    <td key={`tr-${sectionIndex}-${rowIndex}-${cellIndex}`} className={cn.AccordionTableBodyCell}>
                       {td}
                     </td>
                   ))}
                 </tr>
               ))}
+            </Animation.FadeGrow>
           </Fragment>
         ))}
       </tbody>
