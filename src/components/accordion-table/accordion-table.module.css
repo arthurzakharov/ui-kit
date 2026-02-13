@@ -4,6 +4,8 @@
   display: block;
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
+  font-weight: var(--rm-ui-font-weight-regular);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .Head {
@@ -34,11 +36,6 @@
   text-align: left;
   vertical-align: top;
   white-space: break-spaces;
-}
-
-.BodyCell {
-  font-weight: var(--rm-ui-font-weight-regular);
-  color: var(--rm-ui-color-text-primary);
 }
 
 .BodyHeadCell {

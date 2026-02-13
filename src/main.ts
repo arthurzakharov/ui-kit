@@ -8,7 +8,7 @@ export {
   type FadeScaleProps,
   type FadeSlideProps,
   type RotateProps,
-} from '@animation/animation.component';
+} from '@animations/animation.component';
 export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
 export { Certifications, type CertificationsProps } from '@components/certifications';
 export {
