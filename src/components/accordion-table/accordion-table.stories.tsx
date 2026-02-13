@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AccordionTable } from '@components/accordion-table/accordion-table.component';
-import { fn } from 'storybook/test';
-import { useState } from 'react';
 
 const meta = {
   title: 'Components/AccordionTable',
@@ -47,21 +45,7 @@ const meta = {
       ],
     },
     active: 0,
-    onClick: fn(),
     className: '',
-  },
-  render: (args) => {
-    const [active, setActive] = useState(args.active);
-    return (
-      <AccordionTable
-        {...args}
-        active={active}
-        onClick={(active) => {
-          args.onClick?.call(null, active);
-          setActive(active);
-        }}
-      />
-    );
   },
 } satisfies Meta<typeof AccordionTable>;
 

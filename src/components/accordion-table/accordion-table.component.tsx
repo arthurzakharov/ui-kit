@@ -21,35 +21,10 @@ type Table = {
 export interface AccordionTableProps extends BaseProps {
   table: Table;
   active?: number;
-  onClick?: (active: number) => void;
 }
 
-export const AccordionTable = ({ table, active, onClick, className = '' }: AccordionTableProps) => {
-  const getNormalizedActive = (sectionIndex: number, bodyLength: number) => {
-    return sectionIndex >= 0 && sectionIndex < bodyLength ? sectionIndex : null;
-  };
-
-  const [uncontrolledActiveSectionIndex, setUncontrolledActiveSectionIndex] = useState(
-    getNormalizedActive(active ?? 0, table.body.length),
-  );
-
-  const isControlled = active !== undefined;
-
-  const activeSectionIndex = getNormalizedActive(
-    isControlled ? active : (uncontrolledActiveSectionIndex ?? -1),
-    table.body.length,
-  );
-
-  const onSectionClick = (sectionIndex: number) => {
-    const nextActiveSectionIndex = sectionIndex !== activeSectionIndex ? sectionIndex : null;
-    if (!isControlled) {
-      setUncontrolledActiveSectionIndex(nextActiveSectionIndex);
-    }
-
-    if (nextActiveSectionIndex !== null && onClick) {
-      onClick(nextActiveSectionIndex);
-    }
-  };
+export const AccordionTable = ({ table, active = 0, className = '' }: AccordionTableProps) => {
+  const [activeSection, setActiveSection] = useState(active >= 0 && active < table.body.length ? active : null);
 
   return (
     <div
@@ -76,20 +51,20 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                   icon={
                     <Animation.Rotate
                       name="rotate-icon"
-                      condition={activeSectionIndex === sectionIndex}
+                      condition={activeSection === sectionIndex}
                       from="top"
                       to="bottom"
                     >
                       <ChevronDown size={24} />
                     </Animation.Rotate>
                   }
-                  onClick={() => onSectionClick(sectionIndex)}
+                  onClick={() => setActiveSection((prevState) => (sectionIndex !== prevState ? sectionIndex : null))}
                 >
                   {tr.title}
                 </Control.ButtonText>
               </div>
             </div>
-            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex}>
+            <Animation.FadeGrow name="visible-section" condition={activeSection === sectionIndex}>
               {tr.rows.map((row, rowIndex) => (
                 <div key={`tr-${sectionIndex}-${rowIndex}`} className={cn.DataRow}>
                   {row.map((td, cellIndex) => (
