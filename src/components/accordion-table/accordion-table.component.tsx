@@ -63,7 +63,7 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
           ))}
         </div>
       </div>
-      <div className={cn.Body}>
+      <div>
         {table.body.map((tr, sectionIndex) => (
           <Fragment key={`${tr.title}-${sectionIndex}`}>
             <div className={cn.BodyRow}>
@@ -74,10 +74,14 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                   color="theme-primary"
                   iconPosition="right"
                   icon={
-                    <ChevronDown
-                      size={24}
-                      className={clsx(cn.Icon, activeSectionIndex === sectionIndex ? cn.Opened : cn.Closed)}
-                    />
+                    <Animation.Rotate
+                      name="rotate-icon"
+                      condition={activeSectionIndex === sectionIndex}
+                      from="top"
+                      to="bottom"
+                    >
+                      <ChevronDown size={24} />
+                    </Animation.Rotate>
                   }
                   onClick={() => onSectionClick(sectionIndex)}
                 >
@@ -85,12 +89,7 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                 </Control.ButtonText>
               </div>
             </div>
-            <Animation.FadeGrow
-              name="visible-section"
-              condition={activeSectionIndex === sectionIndex}
-              duration={0.4}
-              delay={0.125}
-            >
+            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex}>
               {tr.rows.map((row, rowIndex) => (
                 <div key={`tr-${sectionIndex}-${rowIndex}`} className={cn.DataRow}>
                   {row.map((td, cellIndex) => (

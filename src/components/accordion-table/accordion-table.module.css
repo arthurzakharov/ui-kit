@@ -6,11 +6,6 @@
   line-height: var(--rm-ui-line-height-body);
 }
 
-.Head,
-.Body {
-  display: block;
-}
-
 .Head {
   background-color: var(--rm-ui-grey-100);
 }
@@ -54,16 +49,4 @@
 .BodyHead {
   padding: var(--rm-ui-padding-xxs);
   text-align: left;
-}
-
-.Icon {
-  transition: all var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
-}
-
-.Icon.Opened {
-  transform: rotate(0deg);
-}
-
-.Icon.Closed {
-  transform: rotate(180deg);
 }
