@@ -7,7 +7,7 @@ import { Animation } from '@animations/animation.component';
 import { Control } from '@components/control/control.component';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
-import { Loader } from '@components/loader';
+import { Loader } from '@components/loader/loader.component';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/signature/signature.module.css';
 
@@ -32,6 +32,14 @@ export const Signature = (props: SignatureProps) => {
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
   const [padState, setPadState] = useState<SignaturePadState>('auto-generated');
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
+
+  const normalizedPadState: SignaturePadState = isInAutoMode
+    ? 'auto-generated'
+    : padState === 'manual-drawn'
+      ? 'manual-drawn'
+      : valueManual
+        ? 'manual-stored'
+        : 'manual-blank';
 
   const drawSignatureToCanvas = useCallback(() => {
     if (pad && width && height && valueManual) {
@@ -88,7 +96,7 @@ export const Signature = (props: SignatureProps) => {
     drawSignatureToCanvas();
   }, [drawSignatureToCanvas]);
 
-  const isPadState = (states: SignaturePadState[]): boolean => states.includes(padState);
+  const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
   useEffect(() => {
     if (!modes.includes('auto') && isInAutoMode) {
