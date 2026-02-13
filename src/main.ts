@@ -77,7 +77,7 @@ export {
   type PaymentTextBlockItem,
 } from '@components/payment/payment.component';
 export { Sidebar, type SidebarProps } from '@components/sidebar/sidebar.component';
-export { Signature, type SignatureProps, type SignatureMode } from '@components/signature/signature.component';
+export { Signature, type SignatureProps } from '@components/signature';
 export { Svg, type SvgProps } from '@utils/svg/svg.component';
 export { Text } from '@components/text/text.component';
 export { UserPanel, type UserPanelProps } from '@components/user-panel';

@@ -1,19 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { useResizeObserver } from 'usehooks-ts';
-import { Check, Loader, RefreshCw } from 'lucide-react';
+import { Check, RefreshCw } from 'lucide-react';
 import clsx from 'clsx';
 import { Animation } from '@animations/animation.component';
 import { Control } from '@components/control/control.component';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
+import { Loader } from '@components/loader';
+import type { BaseProps } from '@utils/types';
 import cn from '@components/signature/signature.module.css';
 
 type SignaturePadState = 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
-export type SignatureMode = 'auto' | 'manual';
+type SignatureMode = 'auto' | 'manual';
 
-export interface SignatureProps {
+export interface SignatureProps extends BaseProps {
   modes: SignatureMode[];
   isInAutoMode: boolean;
   valueAuto: string;
@@ -24,7 +26,7 @@ export interface SignatureProps {
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { modes, isInAutoMode, valueAuto, valueManual, onUpdateAuto, onUpdateManual, onChange } = props;
+  const { modes, isInAutoMode, valueAuto, valueManual, onUpdateAuto, onUpdateManual, onChange, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
@@ -109,7 +111,7 @@ export const Signature = (props: SignatureProps) => {
   }, [isInAutoMode, valueAuto, valueManual, onChange]);
 
   return (
-    <div className={cn.Signature}>
+    <div className={clsx(cn.Signature, className)}>
       <div
         className={clsx(
           cn.SignatureMain,
