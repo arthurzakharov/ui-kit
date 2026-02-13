@@ -1,7 +1,7 @@
 import { Fragment, type CSSProperties, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import { Control } from '@components/control/control.component';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';

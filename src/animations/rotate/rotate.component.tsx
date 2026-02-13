@@ -2,7 +2,7 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@components/animation/rotate/rotate.module.css';
+import cn from '@animations/rotate/rotate.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
 

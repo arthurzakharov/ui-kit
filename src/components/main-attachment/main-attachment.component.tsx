@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import type { PropsWithChildren } from 'react';
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import { Text } from '@components/text/text.component';
 import cn from '@components/main-attachment/main-attachment.module.css';
 

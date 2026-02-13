@@ -2,12 +2,13 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@components/animation/fade-grow/fade-grow.module.css';
+import cn from '@animations/fade-slide/fade-slide.module.css';
 
-export interface FadeGrowProps extends PropsWithChildren {
+export interface FadeSlideProps extends PropsWithChildren {
   name: string;
   condition?: boolean;
   flex?: boolean;
+  direction?: 'ltr' | 'rtl';
   className?: string;
   type?: AnimationGeneratorType;
   ease?: Easing | Easing[];
@@ -16,16 +17,17 @@ export interface FadeGrowProps extends PropsWithChildren {
   animateOnStart?: boolean;
 }
 
-export const FadeGrow = (props: FadeGrowProps) => {
+export const FadeSlide = (props: FadeSlideProps) => {
   const {
     children,
     name,
     condition = false,
     flex = false,
+    direction = 'ltr',
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.2,
+    duration = 0.125,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -38,14 +40,14 @@ export const FadeGrow = (props: FadeGrowProps) => {
   if (!condition) return null;
 
   // eslint-disable-next-line react-hooks/refs
-  const initial = hasRendered.current ? { height: 0, opacity: 0 } : false;
+  const initial = hasRendered.current ? { x: direction === 'ltr' ? '-100%' : '100%', opacity: 0 } : false;
 
   return (
     <div style={{ overflow: 'hidden' }}>
       <motion.div
         key={name}
         initial={initial}
-        animate={{ height: 'auto', opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ ease, duration, delay, type }}
         className={
           className || flex

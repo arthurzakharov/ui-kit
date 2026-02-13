@@ -3,7 +3,7 @@ import SignatureCanvas from 'react-signature-canvas';
 import { useResizeObserver } from 'usehooks-ts';
 import { Check, Loader, RefreshCw } from 'lucide-react';
 import clsx from 'clsx';
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import { Control } from '@components/control/control.component';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';

@@ -2,7 +2,13 @@ import '@styles/styles.css';
 import '@styles/variables.css';
 
 export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
-export { Animation, type FadeGrowProps, type FadeScaleProps, type FadeSlideProps, type RotateProps } from '@components/animation/animation.component';
+export {
+  Animation,
+  type FadeGrowProps,
+  type FadeScaleProps,
+  type FadeSlideProps,
+  type RotateProps,
+} from '@animation/animation.component';
 export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
 export { Certifications, type CertificationsProps } from '@components/certifications';
 export {

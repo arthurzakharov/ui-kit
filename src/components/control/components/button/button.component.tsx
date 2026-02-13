@@ -1,6 +1,6 @@
 import type { PropsWithChildren, MouseEvent } from 'react';
 import clsx from 'clsx';
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import { Loader } from '@components/loader/loader.component';
 import { containsHtml } from '@components/control/utils/functions/functions.util';
 import cn from '@components/control/components/button/button.module.css';

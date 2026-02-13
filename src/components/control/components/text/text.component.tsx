@@ -1,4 +1,4 @@
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
 import type { State } from '@components/control/control.types';

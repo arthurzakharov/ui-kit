@@ -2,7 +2,7 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@components/animation/fade-scale/fade-scale.module.css';
+import cn from '@animations/fade-scale/fade-scale.module.css';
 
 export interface FadeScaleProps extends PropsWithChildren {
   name: string;

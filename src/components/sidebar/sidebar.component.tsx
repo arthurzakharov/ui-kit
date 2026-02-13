@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { Animation } from '@components/animation/animation.component';
+import { Animation } from '@animations/animation.component';
 import { Certifications, type CertificationsProps } from '@components/certifications';
 import { Line } from '@components/line/line.component';
 import { Text } from '@components/text/text.component';
