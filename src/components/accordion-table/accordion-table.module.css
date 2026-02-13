@@ -2,11 +2,17 @@
   font-weight: var(--rm-ui-font-weight-regular);
   width: 100%;
   display: block;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
 }
 
 .Head,
 .Body {
   display: block;
+}
+
+.Head {
+  background-color: var(--rm-ui-grey-100);
 }
 
 .HeadRow,
@@ -15,54 +21,49 @@
   width: 100%;
 }
 
-.AccordionTable .HeadCell {
-  background-color: var(--rm-ui-grey-100);
+.BodyRow {
+  border-bottom: 1px solid var(--rm-ui-grey-100);
+}
+
+.HeadCell,
+.BodyCell {
+  min-width: 0;
+  width: calc(100% / var(--accordion-columns));
+  flex: 0 1 calc(100% / var(--accordion-columns));
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
-  font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
+}
+
+.HeadCell {
   font-weight: var(--rm-ui-font-weight-medium);
+  color: var(--rm-ui-color-text-primary);
   text-align: left;
   vertical-align: top;
-  color: var(--rm-ui-color-text-primary);
   white-space: break-spaces;
-  width: calc(100% / var(--accordion-columns));
-  flex: 0 1 calc(100% / var(--accordion-columns));
-  min-width: 0;
 }
 
-.AccordionTable .BodyCell {
-  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
-  font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
+.BodyCell {
   font-weight: var(--rm-ui-font-weight-regular);
   color: var(--rm-ui-color-text-primary);
-  width: calc(100% / var(--accordion-columns));
-  flex: 0 1 calc(100% / var(--accordion-columns));
-  min-width: 0;
 }
 
-.AccordionTable .BodyHeadCell {
+.BodyHeadCell {
   width: 100%;
   flex: 1 1 100%;
 }
 
-.AccordionTable .BodyHead {
+.BodyHead {
   padding: var(--rm-ui-padding-xxs);
   text-align: left;
 }
 
-.AccordionTable .Icon {
+.Icon {
   transition: all var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
-.AccordionTable .Opened {
+.Icon.Opened {
   transform: rotate(0deg);
 }
 
-.AccordionTable .Closed {
+.Icon.Closed {
   transform: rotate(180deg);
-}
-
-.AccordionTable .BodyRow {
-  border-bottom: 1px solid var(--rm-ui-grey-100);
 }

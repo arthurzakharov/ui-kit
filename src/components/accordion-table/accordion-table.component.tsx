@@ -67,9 +67,7 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
         {table.body.map((tr, sectionIndex) => (
           <Fragment key={`${tr.title}-${sectionIndex}`}>
             <div className={cn.BodyRow}>
-              <div
-                className={clsx(cn.BodyCell, cn.BodyHead, cn.BodyHeadCell)}
-              >
+              <div className={clsx(cn.BodyCell, cn.BodyHead, cn.BodyHeadCell)}>
                 <Control.ButtonText
                   size="md"
                   weight="regular"
@@ -78,10 +76,7 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                   icon={
                     <ChevronDown
                       size={24}
-                      className={clsx(
-                        cn.Icon,
-                        activeSectionIndex === sectionIndex ? cn.Opened : cn.Closed,
-                      )}
+                      className={clsx(cn.Icon, activeSectionIndex === sectionIndex ? cn.Opened : cn.Closed)}
                     />
                   }
                   onClick={() => onSectionClick(sectionIndex)}
@@ -90,7 +85,12 @@ export const AccordionTable = ({ table, active, onClick, className = '' }: Accor
                 </Control.ButtonText>
               </div>
             </div>
-            <Animation.FadeGrow name="visible-section" condition={activeSectionIndex === sectionIndex}>
+            <Animation.FadeGrow
+              name="visible-section"
+              condition={activeSectionIndex === sectionIndex}
+              duration={0.4}
+              delay={0.125}
+            >
               {tr.rows.map((row, rowIndex) => (
                 <div key={`tr-${sectionIndex}-${rowIndex}`} className={cn.DataRow}>
                   {row.map((td, cellIndex) => (
