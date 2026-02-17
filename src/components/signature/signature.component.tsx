@@ -13,10 +13,7 @@ import cn from '@components/signature/signature.module.css';
 
 type SignaturePadState = 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
-type SignatureMode = 'auto' | 'manual';
-
 export interface SignatureProps extends BaseProps {
-  modes: SignatureMode[];
   isInAutoMode: boolean;
   valueAuto: string;
   valueManual: string;
@@ -26,7 +23,7 @@ export interface SignatureProps extends BaseProps {
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { modes, isInAutoMode, valueAuto, valueManual, onUpdateAuto, onUpdateManual, onChange, className = '' } = props;
+  const { isInAutoMode, valueAuto, valueManual, onUpdateAuto, onUpdateManual, onChange, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
@@ -99,12 +96,6 @@ export const Signature = (props: SignatureProps) => {
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
   useEffect(() => {
-    if (!modes.includes('auto') && isInAutoMode) {
-      onUpdateAuto(false);
-    }
-  }, [modes, isInAutoMode, onUpdateAuto]);
-
-  useEffect(() => {
     if (!isInAutoMode && valueManual && width && height) {
       drawSignatureToCanvas();
     }
@@ -161,13 +152,11 @@ export const Signature = (props: SignatureProps) => {
                   Diese Unterschrift ist ausreichend
                 </Text.Tag>
               </Flex>
-              <Animation.FadeScale flex name="signature" condition={modes.includes('manual')}>
-                <div className={cn.SignatureAutoPanelButton}>
-                  <Control.ButtonText blurAfterClick underlined onClick={toManual}>
-                    per Hand/Maus unterschreiben
-                  </Control.ButtonText>
-                </div>
-              </Animation.FadeScale>
+              <div className={cn.SignatureAutoPanelButton}>
+                <Control.ButtonText blurAfterClick underlined onClick={toManual}>
+                  per Hand/Maus unterschreiben
+                </Control.ButtonText>
+              </div>
             </Flex>
           ) : (
             <div className={cn.SignatureManualPanel}>
@@ -202,11 +191,9 @@ export const Signature = (props: SignatureProps) => {
       </div>
       <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
         <Flex direction="row" align="center" justify="space-between" gap="md" mt="md">
-          {modes.includes('auto') ? (
-            <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
-              Abbrechen
-            </Control.Button>
-          ) : null}
+          <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
+            Abbrechen
+          </Control.Button>
           <Control.Button fullWidth blurAfterClick color="primary" disabled={!valueManual} onClick={saveDrawnImage}>
             Speichern
           </Control.Button>

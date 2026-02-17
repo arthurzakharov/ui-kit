@@ -42,7 +42,6 @@ const meta = {
   tags: ['autodocs'],
   component: Signature,
   args: {
-    modes: ['auto', 'manual'],
     isInAutoMode: true,
     valueAuto: '',
     valueManual: '',
