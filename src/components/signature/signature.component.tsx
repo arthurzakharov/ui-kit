@@ -14,19 +14,18 @@ import cn from '@components/signature/signature.module.css';
 type SignaturePadState = 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
 export interface SignatureProps extends BaseProps {
-  isInAutoMode: boolean;
   valueAuto: string;
   valueManual: string;
-  onUpdateAuto: (autoMode: boolean) => void;
   onUpdateManual: (value: string) => void;
   onChange: (value: string) => void;
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { isInAutoMode, valueAuto, valueManual, onUpdateAuto, onUpdateManual, onChange, className = '' } = props;
+  const { valueAuto, valueManual, onUpdateManual, onChange, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
+  const [isInAutoMode, setIsInAutoMode] = useState<boolean>(() => !valueManual);
   const [padState, setPadState] = useState<SignaturePadState>('auto-generated');
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
 
@@ -65,13 +64,13 @@ export const Signature = (props: SignatureProps) => {
   }, [pad, onChange, onUpdateManual]);
 
   const toAuto = useCallback(() => {
-    onUpdateAuto(true);
+    setIsInAutoMode(true);
     setPadState('auto-generated');
     if (valueAuto) onChange(valueAuto);
-  }, [onUpdateAuto, valueAuto, onChange]);
+  }, [valueAuto, onChange]);
 
   const toManual = useCallback(() => {
-    onUpdateAuto(false);
+    setIsInAutoMode(false);
     setPadState(valueManual ? 'manual-stored' : 'manual-blank');
     if (valueManual) {
       onChange(valueManual);
@@ -79,14 +78,14 @@ export const Signature = (props: SignatureProps) => {
     } else {
       onChange('');
     }
-  }, [onUpdateAuto, valueManual, onChange, drawSignatureToCanvas]);
+  }, [valueManual, onChange, drawSignatureToCanvas]);
 
   const redraw = useCallback(() => {
-    onUpdateAuto(false);
+    setIsInAutoMode(false);
     setPadState('manual-blank');
     onUpdateManual('');
     onChange('');
-  }, [onUpdateAuto, onUpdateManual, onChange]);
+  }, [onUpdateManual, onChange]);
 
   const saveDrawnImage = useCallback(() => {
     setPadState('manual-stored');
@@ -94,6 +93,16 @@ export const Signature = (props: SignatureProps) => {
   }, [drawSignatureToCanvas]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
+
+  useEffect(() => {
+    if (valueManual) {
+      setIsInAutoMode(false);
+      return;
+    }
+    if (valueAuto && padState === 'auto-generated') {
+      setIsInAutoMode(true);
+    }
+  }, [valueAuto, valueManual, padState]);
 
   useEffect(() => {
     if (!isInAutoMode && valueManual && width && height) {
