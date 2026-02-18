@@ -28,6 +28,7 @@ export const Signature = (props: SignatureProps) => {
   const [valueManual, setValueManual] = useState('');
   const [padState, setPadState] = useState<SignaturePadState>('auto-generated');
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
+  const valueAutoDisplay = isInAutoMode && value ? value : valueAuto;
 
   const normalizedPadState: SignaturePadState = isInAutoMode
     ? 'auto-generated'
@@ -70,6 +71,9 @@ export const Signature = (props: SignatureProps) => {
   }, [valueAuto, onChange]);
 
   const toManual = useCallback(() => {
+    if (value && value !== valueManual) {
+      setValueAuto(value);
+    }
     setIsInAutoMode(false);
     setPadState(valueManual ? 'manual-stored' : 'manual-blank');
     if (valueManual) {
@@ -78,7 +82,7 @@ export const Signature = (props: SignatureProps) => {
     } else {
       onChange('');
     }
-  }, [valueManual, onChange, drawSignatureToCanvas]);
+  }, [value, valueManual, onChange, drawSignatureToCanvas]);
 
   const redraw = useCallback(() => {
     setIsInAutoMode(false);
@@ -93,11 +97,6 @@ export const Signature = (props: SignatureProps) => {
   }, [drawSignatureToCanvas]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
-
-  useEffect(() => {
-    if (!value || value === valueManual) return;
-    setValueAuto((current) => (current === value ? current : value));
-  }, [value, valueManual]);
 
   useEffect(() => {
     if (!isInAutoMode && valueManual && width && height) {
@@ -142,10 +141,10 @@ export const Signature = (props: SignatureProps) => {
         <Flex direction="row" align="end" justify="center">
           {isPadState(['auto-generated']) ? (
             <Flex direction="column" align="center" justify="start">
-              <Animation.FadeScale flex name="signature" condition={valueAuto !== ''}>
-                <img className={cn.SignatureAutoPanelImage} src={valueAuto} alt="signature" />
+              <Animation.FadeScale flex name="signature" condition={valueAutoDisplay !== ''}>
+                <img className={cn.SignatureAutoPanelImage} src={valueAutoDisplay} alt="signature" />
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="signature" condition={valueAuto === ''}>
+              <Animation.FadeScale flex name="signature" condition={valueAutoDisplay === ''}>
                 <div className={cn.SignatureAutoPanelLoader}>
                   <Loader size="sm" color="primary" />
                 </div>
