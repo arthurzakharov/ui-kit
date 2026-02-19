@@ -11,119 +11,124 @@ import { Loader } from '@components/loader/loader.component';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/signature/signature.module.css';
 
-type SignaturePadState = 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
+type SignaturePadState = 'auto-loading' | 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
 export interface SignatureProps extends BaseProps {
-  value: string;
-  onChange: (value: string) => void;
+  valueAuto: string;
+  valueManual: string;
+  isAutoLoadFailed?: boolean;
+  onChangeManual: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { value, onChange, className = '' } = props;
+  const { valueAuto, valueManual, isAutoLoadFailed = false, onChangeManual, onChange, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
-  const [isInAutoMode, setIsInAutoMode] = useState(true);
-  const [valueAuto, setValueAuto] = useState(value);
-  const [valueManual, setValueManual] = useState('');
-  const [padState, setPadState] = useState<SignaturePadState>('auto-generated');
+  const [mode, setMode] = useState<'auto' | 'manual'>(valueManual ? 'manual' : 'auto');
+  const [valueManualDrawn, setValueManualDrawn] = useState('');
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
-  const valueAutoDisplay = isInAutoMode && value ? value : valueAuto;
 
-  const normalizedPadState: SignaturePadState = isInAutoMode
-    ? 'auto-generated'
-    : padState === 'manual-drawn'
-      ? 'manual-drawn'
-      : valueManual
-        ? 'manual-stored'
-        : 'manual-blank';
+  const normalizedPadState: SignaturePadState =
+    mode === 'auto'
+      ? valueAuto
+        ? 'auto-generated'
+        : 'auto-loading'
+      : valueManualDrawn
+        ? 'manual-drawn'
+        : valueManual
+          ? 'manual-stored'
+          : 'manual-blank';
 
-  const drawSignatureToCanvas = useCallback(() => {
-    if (pad && width && height && valueManual) {
-      pad.fromDataURL(valueManual, {
+  const canSwitchToManual = valueAuto !== '' || isAutoLoadFailed;
+  const canSwitchToAuto = valueAuto !== '';
+  const manualStoredImage = valueManual || valueManualDrawn;
+
+  const drawSignatureToCanvas = useCallback(
+    (signatureImage: string) => {
+      if (!pad || !width || !height || !signatureImage) return;
+      pad.fromDataURL(signatureImage, {
         width: +width.toFixed(),
         height: +height.toFixed(),
       });
-    }
-  }, [pad, width, height, valueManual]);
+    },
+    [pad, width, height],
+  );
 
   const onSingPadDrawEnd = useCallback(() => {
-    if (pad) {
-      const drawnSignature = pad.getCanvas().toDataURL('image/png');
-      setPadState('manual-drawn');
-      setValueManual(drawnSignature);
-      onChange(drawnSignature);
-    }
-  }, [pad, onChange]);
+    if (!pad) return;
+    const drawnSignature = pad.getCanvas().toDataURL('image/png');
+    setValueManualDrawn(drawnSignature);
+    onChangeManual(drawnSignature);
+    onChange?.(drawnSignature);
+  }, [pad, onChangeManual, onChange]);
 
   const clearCanvas = useCallback(() => {
-    if (pad) {
-      pad.clear();
-      setValueManual('');
-      onChange('');
-    }
-  }, [pad, onChange]);
+    if (!pad) return;
+    pad.clear();
+    setValueManualDrawn('');
+    onChangeManual('');
+    onChange?.('');
+  }, [pad, onChangeManual, onChange]);
 
   const toAuto = useCallback(() => {
-    setIsInAutoMode(true);
-    setPadState('auto-generated');
-    if (valueAuto) onChange(valueAuto);
+    setMode('auto');
+    setValueManualDrawn('');
+    onChange?.(valueAuto || '');
   }, [valueAuto, onChange]);
 
   const toManual = useCallback(() => {
-    if (value && value !== valueManual) {
-      setValueAuto(value);
-    }
-    setIsInAutoMode(false);
-    setPadState(valueManual ? 'manual-stored' : 'manual-blank');
+    setMode('manual');
     if (valueManual) {
-      onChange(valueManual);
-      setTimeout(drawSignatureToCanvas, 0);
+      onChange?.(valueManual);
     } else {
-      onChange('');
+      onChange?.('');
     }
-  }, [value, valueManual, onChange, drawSignatureToCanvas]);
+  }, [valueManual, onChange]);
 
   const redraw = useCallback(() => {
-    setIsInAutoMode(false);
-    setPadState('manual-blank');
-    setValueManual('');
-    onChange('');
-  }, [onChange]);
+    setMode('manual');
+    setValueManualDrawn('');
+    onChangeManual('');
+    onChange?.('');
+  }, [onChangeManual, onChange]);
 
   const saveDrawnImage = useCallback(() => {
-    setPadState('manual-stored');
-    drawSignatureToCanvas();
-  }, [drawSignatureToCanvas]);
+    if (!valueManualDrawn) return;
+    setValueManualDrawn('');
+    if (valueManual !== valueManualDrawn) {
+      onChangeManual(valueManualDrawn);
+    }
+    onChange?.(valueManualDrawn);
+  }, [valueManual, valueManualDrawn, onChangeManual, onChange]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
   useEffect(() => {
-    if (!isInAutoMode && valueManual && width && height) {
-      drawSignatureToCanvas();
+    if (valueManual && mode === 'auto') {
+      setMode('manual');
     }
-  }, [isInAutoMode, valueManual, width, height, drawSignatureToCanvas]);
+  }, [valueManual, mode]);
 
   useEffect(() => {
-    if (isInAutoMode && valueAuto) {
-      onChange(valueAuto);
-    } else if (!isInAutoMode && !valueManual) {
-      onChange('');
+    if (mode === 'manual' && valueManualDrawn && width && height) {
+      drawSignatureToCanvas(valueManualDrawn);
     }
-  }, [isInAutoMode, valueAuto, valueManual, onChange]);
+  }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   return (
     <div className={clsx(cn.Signature, className)}>
       <div
         className={clsx(
           cn.SignatureMain,
-          isPadState(['auto-generated']) ? cn.SignatureMainAuto : cn.SignatureMainManual,
+          isPadState(['auto-generated', 'auto-loading']) ? cn.SignatureMainAuto : cn.SignatureMainManual,
         )}
         ref={ref}
       >
         <Flex direction="row" justify={isPadState(['manual-drawn']) ? 'end' : 'center'} className={cn.SignatureHeader}>
           <Text.Tag tag="h6" weight="medium" size="regular" color="primary" align="center">
-            <Animation.FadeScale name="generated-signature" condition={isPadState(['auto-generated'])}>
+            <Animation.FadeScale name="generated-signature" condition={isPadState(['auto-generated', 'auto-loading'])}>
               Wir haben eine digitale Signature Sie generiert.
             </Animation.FadeScale>
             <Animation.FadeScale flex name="create-signature" condition={isPadState(['manual-blank', 'manual-stored'])}>
@@ -139,33 +144,42 @@ export const Signature = (props: SignatureProps) => {
           </Animation.FadeSlide>
         </Flex>
         <Flex direction="row" align="end" justify="center">
-          {isPadState(['auto-generated']) ? (
+          {isPadState(['auto-generated', 'auto-loading']) ? (
             <Flex direction="column" align="center" justify="start">
-              <Animation.FadeScale flex name="signature" condition={valueAutoDisplay !== ''}>
-                <img className={cn.SignatureAutoPanelImage} src={valueAutoDisplay} alt="signature" />
+              <Animation.FadeScale flex name="signature" condition={valueAuto !== ''}>
+                <img className={cn.SignatureAutoPanelImage} src={valueAuto} alt="signature" />
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="signature" condition={valueAutoDisplay === ''}>
+              <Animation.FadeScale flex name="signature" condition={valueAuto === '' && !isAutoLoadFailed}>
                 <div className={cn.SignatureAutoPanelLoader}>
                   <Loader size="sm" color="primary" />
                 </div>
               </Animation.FadeScale>
-              <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
-                <Check size={24} className={cn.SignatureAutoPanelNoteIcon} />
+              <Animation.FadeScale flex name="auto-failed" condition={valueAuto === '' && isAutoLoadFailed}>
                 <Text.Tag weight="regular" size="small" color="secondary">
-                  Diese Unterschrift ist ausreichend
+                  Automatische Signatur konnte nicht geladen werden.
                 </Text.Tag>
-              </Flex>
-              <div className={cn.SignatureAutoPanelButton}>
-                <Control.ButtonText blurAfterClick underlined onClick={toManual}>
-                  per Hand/Maus unterschreiben
-                </Control.ButtonText>
-              </div>
+              </Animation.FadeScale>
+              <Animation.FadeScale flex name="auto-note" condition={valueAuto !== ''}>
+                <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
+                  <Check size={24} className={cn.SignatureAutoPanelNoteIcon} />
+                  <Text.Tag weight="regular" size="small" color="secondary">
+                    Diese Unterschrift ist ausreichend
+                  </Text.Tag>
+                </Flex>
+              </Animation.FadeScale>
+              <Animation.FadeScale flex name="manual-switch" condition={canSwitchToManual}>
+                <div className={cn.SignatureAutoPanelButton}>
+                  <Control.ButtonText blurAfterClick underlined onClick={toManual}>
+                    per Hand/Maus unterschreiben
+                  </Control.ButtonText>
+                </div>
+              </Animation.FadeScale>
             </Flex>
           ) : (
             <div className={cn.SignatureManualPanel}>
               <div className={cn.SignatureManualPanelPlaceholder} />
               {isPadState(['manual-stored']) ? (
-                <img width={width} height={height} alt="signature" src={valueManual} />
+                <img width={width} height={height} alt="signature" src={manualStoredImage} />
               ) : (
                 <SignatureCanvas
                   penColor="#262626"
@@ -194,10 +208,12 @@ export const Signature = (props: SignatureProps) => {
       </div>
       <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
         <Flex direction="row" align="center" justify="space-between" gap="md" mt="md">
-          <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
-            Abbrechen
-          </Control.Button>
-          <Control.Button fullWidth blurAfterClick color="primary" disabled={!valueManual} onClick={saveDrawnImage}>
+          <Animation.FadeScale flex name="to-auto" condition={canSwitchToAuto}>
+            <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
+              Abbrechen
+            </Control.Button>
+          </Animation.FadeScale>
+          <Control.Button fullWidth blurAfterClick color="primary" disabled={!valueManualDrawn} onClick={saveDrawnImage}>
             Speichern
           </Control.Button>
         </Flex>
