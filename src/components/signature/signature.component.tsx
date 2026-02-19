@@ -14,37 +14,37 @@ import cn from '@components/signature/signature.module.css';
 type SignaturePadState = 'auto-loading' | 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
 export interface SignatureProps extends BaseProps {
-  valueAuto: string;
-  valueManual: string;
+  auto: string;
+  manual: string;
   getSignature: () => Promise<{ signature: string }>;
   onChangeManual: (value: string) => void;
   onChangeAuto: (value: string) => void;
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { valueAuto, valueManual, getSignature, onChangeManual, onChangeAuto, className = '' } = props;
+  const { auto, manual, getSignature, onChangeManual, onChangeAuto, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const isAutoRequestedRef = useRef(false);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
-  const [mode, setMode] = useState<'auto' | 'manual'>(valueManual ? 'manual' : 'auto');
+  const [mode, setMode] = useState<'auto' | 'manual'>(manual ? 'manual' : 'auto');
   const [valueManualDrawn, setValueManualDrawn] = useState('');
   const [hasAutoLoadFailed, setHasAutoLoadFailed] = useState(false);
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
 
   const normalizedPadState: SignaturePadState =
     mode === 'auto'
-      ? valueAuto
+      ? auto
         ? 'auto-generated'
         : 'auto-loading'
       : valueManualDrawn
         ? 'manual-drawn'
-        : valueManual
+        : manual
           ? 'manual-stored'
           : 'manual-blank';
 
-  const canSwitchToManual = valueAuto !== '' || hasAutoLoadFailed;
-  const manualStoredImage = valueManual || valueManualDrawn;
+  const canSwitchToManual = auto !== '' || hasAutoLoadFailed;
+  const manualStoredImage = manual || valueManualDrawn;
 
   const drawSignatureToCanvas = useCallback(
     (signatureImage: string) => {
@@ -100,7 +100,7 @@ export const Signature = (props: SignatureProps) => {
   }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   useEffect(() => {
-    if (valueAuto) {
+    if (auto) {
       isAutoRequestedRef.current = false;
       return;
     }
@@ -117,7 +117,7 @@ export const Signature = (props: SignatureProps) => {
       .catch(() => {
         setHasAutoLoadFailed(true);
       });
-  }, [valueAuto, getSignature, onChangeAuto]);
+  }, [auto, getSignature, onChangeAuto]);
 
   const retryAutoFetch = useCallback(() => {
     setHasAutoLoadFailed(false);
@@ -163,15 +163,15 @@ export const Signature = (props: SignatureProps) => {
         <Flex direction="row" align="end" justify="center">
           {isPadState(['auto-generated', 'auto-loading']) ? (
             <Flex direction="column" align="center" justify="start">
-              <Animation.FadeScale flex name="signature" condition={valueAuto !== ''}>
-                <img className={cn.SignatureAutoPanelImage} src={valueAuto} alt="signature" />
+              <Animation.FadeScale flex name="signature" condition={auto !== ''}>
+                <img className={cn.SignatureAutoPanelImage} src={auto} alt="signature" />
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="signature" condition={valueAuto === '' && !hasAutoLoadFailed}>
+              <Animation.FadeScale flex name="signature" condition={auto === '' && !hasAutoLoadFailed}>
                 <div className={cn.SignatureAutoPanelLoader} style={{ height: 142 }}>
                   <Loader size="sm" color="primary" />
                 </div>
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="auto-failed" condition={valueAuto === '' && hasAutoLoadFailed}>
+              <Animation.FadeScale flex name="auto-failed" condition={auto === '' && hasAutoLoadFailed}>
                 <Flex direction="column" align="center" justify="center" style={{ height: 78 }} gap="xs">
                   <Text.Tag weight="regular" size="small" color="secondary">
                     Automatische Signatur konnte nicht geladen werden.
@@ -188,7 +188,7 @@ export const Signature = (props: SignatureProps) => {
                   </Control.ButtonText>
                 </Flex>
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="auto-note" condition={valueAuto !== ''}>
+              <Animation.FadeScale flex name="auto-note" condition={auto !== ''}>
                 <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
                   <Check size={24} className={cn.SignatureAutoPanelNoteIcon} />
                   <Text.Tag weight="regular" size="small" color="secondary">

@@ -11,20 +11,20 @@ const signatureManual =
   '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';
 
 const PlaygroundRender = (args: SignatureProps) => {
-  const [valueAuto, setValueAuto] = useState(args.valueAuto);
-  const [valueManual, setValueManual] = useState(args.valueManual);
+  const [auto, setAuto] = useState(args.auto);
+  const [manual, setManual] = useState(args.manual);
 
   return (
     <Signature
       {...args}
-      valueAuto={valueAuto}
-      valueManual={valueManual}
+      auto={auto}
+      manual={manual}
       onChangeManual={(value) => {
-        setValueManual(value);
+        setManual(value);
         args.onChangeManual(value);
       }}
       onChangeAuto={(value) => {
-        setValueAuto(value);
+        setAuto(value);
         args.onChangeAuto(value);
       }}
     />
@@ -32,8 +32,8 @@ const PlaygroundRender = (args: SignatureProps) => {
 };
 
 const DelayedLoadedRender = (args: SignatureProps) => {
-  const [valueAuto, setValueAuto] = useState(args.valueAuto);
-  const [valueManual, setValueManual] = useState(args.valueManual);
+  const [auto, setAuto] = useState(args.auto);
+  const [manual, setManual] = useState(args.manual);
 
   useEffect(() => {
     let cancelled = false;
@@ -41,7 +41,7 @@ const DelayedLoadedRender = (args: SignatureProps) => {
     const loadSignature = async () => {
       await delay(2000);
       if (cancelled) return;
-      setValueAuto('data:image/png;base64,' + signatureAuto);
+      setAuto('data:image/png;base64,' + signatureAuto);
     };
 
     void loadSignature();
@@ -54,14 +54,14 @@ const DelayedLoadedRender = (args: SignatureProps) => {
   return (
     <Signature
       {...args}
-      valueAuto={valueAuto}
-      valueManual={valueManual}
+      auto={auto}
+      manual={manual}
       onChangeManual={(nextValue) => {
-        setValueManual(nextValue);
+        setManual(nextValue);
         args.onChangeManual(nextValue);
       }}
       onChangeAuto={(nextValue) => {
-        setValueAuto(nextValue);
+        setAuto(nextValue);
         args.onChangeAuto(nextValue);
       }}
     />
@@ -73,8 +73,8 @@ const meta = {
   tags: ['autodocs'],
   component: Signature,
   args: {
-    valueAuto: '',
-    valueManual: '',
+    auto: '',
+    manual: '',
     getSignature: async () => {
       await delay(200);
       return { signature: signatureAuto };
@@ -90,29 +90,29 @@ type Story = StoryObj<typeof meta>;
 
 export const LoadedAutoOnly: Story = {
   args: {
-    valueAuto: 'data:image/png;base64,' + signatureAuto,
+    auto: 'data:image/png;base64,' + signatureAuto,
   },
 };
 
 export const LoadedManualOnly: Story = {
   args: {
-    valueAuto: '',
-    valueManual: 'data:image/png;base64,' + signatureManual,
+    auto: '',
+    manual: 'data:image/png;base64,' + signatureManual,
   },
 };
 
 export const LoadedManualAndAuto: Story = {
   args: {
-    valueAuto: 'data:image/png;base64,' + signatureAuto,
-    valueManual: 'data:image/png;base64,' + signatureManual,
+    auto: 'data:image/png;base64,' + signatureAuto,
+    manual: 'data:image/png;base64,' + signatureManual,
   },
 };
 
 export const LoadingSignature: Story = {
   name: 'Loading Signature (Default scenario)',
   args: {
-    valueAuto: '',
-    valueManual: '',
+    auto: '',
+    manual: '',
     getSignature: async () => {
       await delay(2000);
       return { signature: signatureAuto };
@@ -123,8 +123,8 @@ export const LoadingSignature: Story = {
 
 export const FailedToLoadAuto: Story = {
   args: {
-    valueAuto: '',
-    valueManual: '',
+    auto: '',
+    manual: '',
     getSignature: async () => {
       await delay(600);
       throw new Error('failed');
