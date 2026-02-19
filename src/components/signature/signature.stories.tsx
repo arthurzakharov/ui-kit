@@ -94,6 +94,20 @@ export const Loaded: Story = {
   },
 };
 
+export const LoadedWithManual: Story = {
+  args: {
+    valueAuto: 'data:image/png;base64,' + signatureAuto,
+    valueManual: 'data:image/png;base64,' + signatureManual,
+  },
+};
+
+export const LoadedManualOnly: Story = {
+  args: {
+    valueAuto: '',
+    valueManual: 'data:image/png;base64,' + signatureManual,
+  },
+};
+
 export const LoadedAfterDelay: Story = {
   args: {
     valueAuto: '',
