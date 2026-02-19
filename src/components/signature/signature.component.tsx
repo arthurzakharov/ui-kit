@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { useResizeObserver } from 'usehooks-ts';
-import { Check, RefreshCw } from 'lucide-react';
+import { Check, RefreshCw, RotateCcw } from 'lucide-react';
 import clsx from 'clsx';
 import { Animation } from '@animations/animation.component';
 import { Control } from '@components/control/control.component';
@@ -45,7 +45,6 @@ export const Signature = (props: SignatureProps) => {
           : 'manual-blank';
 
   const canSwitchToManual = valueAuto !== '' || hasAutoLoadFailed;
-  const canSwitchToAuto = valueAuto !== '';
   const manualStoredImage = valueManual || valueManualDrawn;
 
   const drawSignatureToCanvas = useCallback(
@@ -110,19 +109,31 @@ export const Signature = (props: SignatureProps) => {
     if (isAutoRequestedRef.current) return;
     isAutoRequestedRef.current = true;
 
-    const fetchSignature = async () => {
-      try {
-        const response = await getSignature();
+    void getSignature()
+      .then((response) => {
         const signatureBase64 = `data:image/png;base64,${response.signature}`;
         setHasAutoLoadFailed(false);
         onChangeAuto(signatureBase64);
-      } catch {
+      })
+      .catch(() => {
         setHasAutoLoadFailed(true);
-      }
-    };
-
-    void fetchSignature();
+      });
   }, [valueAuto, getSignature, onChangeAuto]);
+
+  const retryAutoFetch = useCallback(() => {
+    setHasAutoLoadFailed(false);
+    isAutoRequestedRef.current = true;
+
+    void getSignature()
+      .then((response) => {
+        const signatureBase64 = `data:image/png;base64,${response.signature}`;
+        setHasAutoLoadFailed(false);
+        onChangeAuto(signatureBase64);
+      })
+      .catch(() => {
+        setHasAutoLoadFailed(true);
+      });
+  }, [getSignature, onChangeAuto]);
 
   return (
     <div className={clsx(cn.Signature, className)}>
@@ -162,10 +173,20 @@ export const Signature = (props: SignatureProps) => {
                 </div>
               </Animation.FadeScale>
               <Animation.FadeScale flex name="auto-failed" condition={valueAuto === '' && hasAutoLoadFailed}>
-                <Flex direction="row" align="center" style={{ height: 78 }}>
+                <Flex direction="column" align="center" justify="center" style={{ height: 78 }} gap="xs">
                   <Text.Tag weight="regular" size="small" color="secondary">
                     Automatische Signatur konnte nicht geladen werden.
                   </Text.Tag>
+                  <Control.ButtonText
+                    blurAfterClick
+                    underlined
+                    size="sm"
+                    iconPosition="right"
+                    icon={<RotateCcw />}
+                    onClick={retryAutoFetch}
+                  >
+                    Erneut versuchen
+                  </Control.ButtonText>
                 </Flex>
               </Animation.FadeScale>
               <Animation.FadeScale flex name="auto-note" condition={valueAuto !== ''}>
@@ -217,11 +238,9 @@ export const Signature = (props: SignatureProps) => {
       </div>
       <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
         <Flex direction="row" grow="equal" align="center" justify="space-between" gap="md" mt="md">
-          <Animation.FadeScale flex name="to-auto" condition={canSwitchToAuto}>
-            <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
-              Abbrechen
-            </Control.Button>
-          </Animation.FadeScale>
+          <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
+            Abbrechen
+          </Control.Button>
           <Control.Button
             fullWidth
             blurAfterClick
