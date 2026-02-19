@@ -31,10 +31,9 @@ export const Signature = (props: SignatureProps) => {
   const [valueManualDrawn, setValueManualDrawn] = useState('');
   const [hasAutoLoadFailed, setHasAutoLoadFailed] = useState(false);
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
-  const effectiveMode: 'auto' | 'manual' = valueManual ? 'manual' : mode;
 
   const normalizedPadState: SignaturePadState =
-    effectiveMode === 'auto'
+    mode === 'auto'
       ? valueAuto
         ? 'auto-generated'
         : 'auto-loading'
@@ -95,10 +94,10 @@ export const Signature = (props: SignatureProps) => {
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
   useEffect(() => {
-    if (effectiveMode === 'manual' && valueManualDrawn && width && height) {
+    if (mode === 'manual' && valueManualDrawn && width && height) {
       drawSignatureToCanvas(valueManualDrawn);
     }
-  }, [effectiveMode, valueManualDrawn, width, height, drawSignatureToCanvas]);
+  }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   useEffect(() => {
     if (valueAuto) {

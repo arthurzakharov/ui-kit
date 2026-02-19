@@ -88,16 +88,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Loaded: Story = {
+export const LoadedAutoOnly: Story = {
   args: {
     valueAuto: 'data:image/png;base64,' + signatureAuto,
-  },
-};
-
-export const LoadedWithManual: Story = {
-  args: {
-    valueAuto: 'data:image/png;base64,' + signatureAuto,
-    valueManual: 'data:image/png;base64,' + signatureManual,
   },
 };
 
@@ -108,7 +101,15 @@ export const LoadedManualOnly: Story = {
   },
 };
 
-export const LoadedAfterDelay: Story = {
+export const LoadedManualAndAuto: Story = {
+  args: {
+    valueAuto: 'data:image/png;base64,' + signatureAuto,
+    valueManual: 'data:image/png;base64,' + signatureManual,
+  },
+};
+
+export const LoadingSignature: Story = {
+  name: 'Loading Signature (Default scenario)',
   args: {
     valueAuto: '',
     valueManual: '',
