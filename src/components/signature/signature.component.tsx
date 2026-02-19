@@ -31,9 +31,10 @@ export const Signature = (props: SignatureProps) => {
   const [valueManualDrawn, setValueManualDrawn] = useState('');
   const [hasAutoLoadFailed, setHasAutoLoadFailed] = useState(false);
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
+  const effectiveMode: 'auto' | 'manual' = valueManual ? 'manual' : mode;
 
   const normalizedPadState: SignaturePadState =
-    mode === 'auto'
+    effectiveMode === 'auto'
       ? valueAuto
         ? 'auto-generated'
         : 'auto-loading'
@@ -63,65 +64,45 @@ export const Signature = (props: SignatureProps) => {
     const drawnSignature = pad.getCanvas().toDataURL('image/png');
     setValueManualDrawn(drawnSignature);
     onChangeManual(drawnSignature);
-    onChangeAuto(drawnSignature);
-  }, [pad, onChangeManual, onChangeAuto]);
+  }, [pad, onChangeManual]);
 
   const clearCanvas = useCallback(() => {
     if (!pad) return;
     pad.clear();
     setValueManualDrawn('');
     onChangeManual('');
-    onChangeAuto('');
-  }, [pad, onChangeManual, onChangeAuto]);
+  }, [pad, onChangeManual]);
 
   const toAuto = useCallback(() => {
     setMode('auto');
     setValueManualDrawn('');
-    onChangeAuto(valueAuto || '');
-  }, [valueAuto, onChangeAuto]);
+  }, []);
 
   const toManual = useCallback(() => {
     setMode('manual');
-    if (valueManual) {
-      onChangeAuto(valueManual);
-    } else {
-      onChangeAuto('');
-    }
-  }, [valueManual, onChangeAuto]);
+  }, []);
 
   const redraw = useCallback(() => {
     setMode('manual');
     setValueManualDrawn('');
     onChangeManual('');
-    onChangeAuto('');
-  }, [onChangeManual, onChangeAuto]);
+  }, [onChangeManual]);
 
   const saveDrawnImage = useCallback(() => {
     if (!valueManualDrawn) return;
     setValueManualDrawn('');
-    if (valueManual !== valueManualDrawn) {
-      onChangeManual(valueManualDrawn);
-    }
-    onChangeAuto(valueManualDrawn);
-  }, [valueManual, valueManualDrawn, onChangeManual, onChangeAuto]);
+  }, [valueManualDrawn]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
   useEffect(() => {
-    if (valueManual && mode === 'auto') {
-      setMode('manual');
-    }
-  }, [valueManual, mode]);
-
-  useEffect(() => {
-    if (mode === 'manual' && valueManualDrawn && width && height) {
+    if (effectiveMode === 'manual' && valueManualDrawn && width && height) {
       drawSignatureToCanvas(valueManualDrawn);
     }
-  }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
+  }, [effectiveMode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   useEffect(() => {
     if (valueAuto) {
-      setHasAutoLoadFailed(false);
       isAutoRequestedRef.current = false;
       return;
     }
