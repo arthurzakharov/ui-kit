@@ -70,7 +70,9 @@
 }
 
 .SignatureAutoPanelLoader {
+  height: 142px;
   display: inline-flex;
+  align-items: center;
   padding: var(--rm-ui-padding-xs);
 }
 

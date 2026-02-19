@@ -16,18 +16,20 @@ type SignaturePadState = 'auto-loading' | 'auto-generated' | 'manual-blank' | 'm
 export interface SignatureProps extends BaseProps {
   valueAuto: string;
   valueManual: string;
-  isAutoLoadFailed?: boolean;
+  getSignature: () => Promise<{ signature: string }>;
   onChangeManual: (value: string) => void;
-  onChange?: (value: string) => void;
+  onChangeAuto: (value: string) => void;
 }
 
 export const Signature = (props: SignatureProps) => {
-  const { valueAuto, valueManual, isAutoLoadFailed = false, onChangeManual, onChange, className = '' } = props;
+  const { valueAuto, valueManual, getSignature, onChangeManual, onChangeAuto, className = '' } = props;
 
   const ref = useRef<HTMLDivElement>(null);
+  const isAutoRequestedRef = useRef(false);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
   const [mode, setMode] = useState<'auto' | 'manual'>(valueManual ? 'manual' : 'auto');
   const [valueManualDrawn, setValueManualDrawn] = useState('');
+  const [hasAutoLoadFailed, setHasAutoLoadFailed] = useState(false);
   const { width = 0, height = 0 } = useResizeObserver({ ref, box: 'border-box' });
 
   const normalizedPadState: SignaturePadState =
@@ -41,7 +43,7 @@ export const Signature = (props: SignatureProps) => {
           ? 'manual-stored'
           : 'manual-blank';
 
-  const canSwitchToManual = valueAuto !== '' || isAutoLoadFailed;
+  const canSwitchToManual = valueAuto !== '' || hasAutoLoadFailed;
   const canSwitchToAuto = valueAuto !== '';
   const manualStoredImage = valueManual || valueManualDrawn;
 
@@ -61,38 +63,38 @@ export const Signature = (props: SignatureProps) => {
     const drawnSignature = pad.getCanvas().toDataURL('image/png');
     setValueManualDrawn(drawnSignature);
     onChangeManual(drawnSignature);
-    onChange?.(drawnSignature);
-  }, [pad, onChangeManual, onChange]);
+    onChangeAuto(drawnSignature);
+  }, [pad, onChangeManual, onChangeAuto]);
 
   const clearCanvas = useCallback(() => {
     if (!pad) return;
     pad.clear();
     setValueManualDrawn('');
     onChangeManual('');
-    onChange?.('');
-  }, [pad, onChangeManual, onChange]);
+    onChangeAuto('');
+  }, [pad, onChangeManual, onChangeAuto]);
 
   const toAuto = useCallback(() => {
     setMode('auto');
     setValueManualDrawn('');
-    onChange?.(valueAuto || '');
-  }, [valueAuto, onChange]);
+    onChangeAuto(valueAuto || '');
+  }, [valueAuto, onChangeAuto]);
 
   const toManual = useCallback(() => {
     setMode('manual');
     if (valueManual) {
-      onChange?.(valueManual);
+      onChangeAuto(valueManual);
     } else {
-      onChange?.('');
+      onChangeAuto('');
     }
-  }, [valueManual, onChange]);
+  }, [valueManual, onChangeAuto]);
 
   const redraw = useCallback(() => {
     setMode('manual');
     setValueManualDrawn('');
     onChangeManual('');
-    onChange?.('');
-  }, [onChangeManual, onChange]);
+    onChangeAuto('');
+  }, [onChangeManual, onChangeAuto]);
 
   const saveDrawnImage = useCallback(() => {
     if (!valueManualDrawn) return;
@@ -100,8 +102,8 @@ export const Signature = (props: SignatureProps) => {
     if (valueManual !== valueManualDrawn) {
       onChangeManual(valueManualDrawn);
     }
-    onChange?.(valueManualDrawn);
-  }, [valueManual, valueManualDrawn, onChangeManual, onChange]);
+    onChangeAuto(valueManualDrawn);
+  }, [valueManual, valueManualDrawn, onChangeManual, onChangeAuto]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
@@ -116,6 +118,30 @@ export const Signature = (props: SignatureProps) => {
       drawSignatureToCanvas(valueManualDrawn);
     }
   }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
+
+  useEffect(() => {
+    if (valueAuto) {
+      setHasAutoLoadFailed(false);
+      isAutoRequestedRef.current = false;
+      return;
+    }
+
+    if (isAutoRequestedRef.current) return;
+    isAutoRequestedRef.current = true;
+
+    const fetchSignature = async () => {
+      try {
+        const response = await getSignature();
+        const signatureBase64 = `data:image/png;base64,${response.signature}`;
+        setHasAutoLoadFailed(false);
+        onChangeAuto(signatureBase64);
+      } catch {
+        setHasAutoLoadFailed(true);
+      }
+    };
+
+    void fetchSignature();
+  }, [valueAuto, getSignature, onChangeAuto]);
 
   return (
     <div className={clsx(cn.Signature, className)}>
@@ -149,15 +175,17 @@ export const Signature = (props: SignatureProps) => {
               <Animation.FadeScale flex name="signature" condition={valueAuto !== ''}>
                 <img className={cn.SignatureAutoPanelImage} src={valueAuto} alt="signature" />
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="signature" condition={valueAuto === '' && !isAutoLoadFailed}>
-                <div className={cn.SignatureAutoPanelLoader}>
+              <Animation.FadeScale flex name="signature" condition={valueAuto === '' && !hasAutoLoadFailed}>
+                <div className={cn.SignatureAutoPanelLoader} style={{ height: 142 }}>
                   <Loader size="sm" color="primary" />
                 </div>
               </Animation.FadeScale>
-              <Animation.FadeScale flex name="auto-failed" condition={valueAuto === '' && isAutoLoadFailed}>
-                <Text.Tag weight="regular" size="small" color="secondary">
-                  Automatische Signatur konnte nicht geladen werden.
-                </Text.Tag>
+              <Animation.FadeScale flex name="auto-failed" condition={valueAuto === '' && hasAutoLoadFailed}>
+                <Flex direction="row" align="center" style={{ height: 78 }}>
+                  <Text.Tag weight="regular" size="small" color="secondary">
+                    Automatische Signatur konnte nicht geladen werden.
+                  </Text.Tag>
+                </Flex>
               </Animation.FadeScale>
               <Animation.FadeScale flex name="auto-note" condition={valueAuto !== ''}>
                 <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
@@ -207,13 +235,19 @@ export const Signature = (props: SignatureProps) => {
         </Flex>
       </div>
       <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
-        <Flex direction="row" align="center" justify="space-between" gap="md" mt="md">
+        <Flex direction="row" grow="equal" align="center" justify="space-between" gap="md" mt="md">
           <Animation.FadeScale flex name="to-auto" condition={canSwitchToAuto}>
             <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
               Abbrechen
             </Control.Button>
           </Animation.FadeScale>
-          <Control.Button fullWidth blurAfterClick color="primary" disabled={!valueManualDrawn} onClick={saveDrawnImage}>
+          <Control.Button
+            fullWidth
+            blurAfterClick
+            color="primary"
+            disabled={!valueManualDrawn}
+            onClick={saveDrawnImage}
+          >
             Speichern
           </Control.Button>
         </Flex>
