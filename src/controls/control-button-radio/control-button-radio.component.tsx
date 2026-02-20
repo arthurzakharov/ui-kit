@@ -5,7 +5,7 @@ import { ControlRadioText } from '@controls/control-radio-text';
 import { ControlStatus } from '@controls/control-status';
 import cn from '@controls/control-button-radio/control-button-radio.module.css';
 
-export interface ControlButtonRadioInfo {
+interface ControlButtonRadioInfo {
   text?: string;
   hintLeft?: string;
   hintRight?: string;

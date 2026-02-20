@@ -2,13 +2,12 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@animations/fade-slide/fade-slide.module.css';
+import cn from '@animations/animation-fade-scale/animation-fade-scale.module.css';
 
-export interface FadeSlideProps extends PropsWithChildren {
+export interface AnimationFadeScaleProps extends PropsWithChildren {
   name: string;
   condition?: boolean;
   flex?: boolean;
-  direction?: 'ltr' | 'rtl';
   className?: string;
   type?: AnimationGeneratorType;
   ease?: Easing | Easing[];
@@ -17,17 +16,16 @@ export interface FadeSlideProps extends PropsWithChildren {
   animateOnStart?: boolean;
 }
 
-export const FadeSlide = (props: FadeSlideProps) => {
+export const AnimationFadeScale = (props: AnimationFadeScaleProps) => {
   const {
     children,
     name,
     condition = false,
     flex = false,
-    direction = 'ltr',
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.125,
+    duration = 0.15,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -40,25 +38,23 @@ export const FadeSlide = (props: FadeSlideProps) => {
   if (!condition) return null;
 
   // eslint-disable-next-line react-hooks/refs
-  const initial = hasRendered.current ? { x: direction === 'ltr' ? '-100%' : '100%', opacity: 0 } : false;
+  const initial = hasRendered.current ? { opacity: 0, scale: 0.95 } : false;
 
   return (
-    <div style={{ overflow: 'hidden' }}>
-      <motion.div
-        key={name}
-        initial={initial}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ ease, duration, delay, type }}
-        className={
-          className || flex
-            ? clsx(className, {
-                [cn.Flex]: flex,
-              })
-            : undefined
-        }
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      key={name}
+      initial={initial}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ ease, duration, delay, type }}
+      className={
+        className || flex
+          ? clsx(className, {
+              [cn.Flex]: flex,
+            })
+          : undefined
+      }
+    >
+      {children}
+    </motion.div>
   );
 };

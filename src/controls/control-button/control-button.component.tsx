@@ -1,6 +1,6 @@
 import type { PropsWithChildren, MouseEvent } from 'react';
 import clsx from 'clsx';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Loader } from '@components/loader/loader.component';
 import { containsHtml } from '@controls/utils/functions';
 import cn from '@controls/control-button/control-button.module.css';
@@ -61,7 +61,7 @@ export const ControlButton = (props: ControlButtonProps) => {
       onBlur={() => onBlur?.call(null)}
     >
       <div className={cn.ButtonLoaderWrap}>
-        <Animation.FadeScale
+        <AnimationFadeScale
           name="loader"
           condition={loading}
           duration={0.2}
@@ -69,7 +69,7 @@ export const ControlButton = (props: ControlButtonProps) => {
           className={cn.ButtonLoaderAnimationWrap}
         >
           <Loader size="xs" color="white" />
-        </Animation.FadeScale>
+        </AnimationFadeScale>
       </div>
       <div className={clsx(cn.ButtonContent, loading ? cn.ButtonContentLoading : cn.ButtonContentIdle)}>
         <span className={cn.ButtonText}>{children}</span>

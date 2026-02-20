@@ -3,7 +3,8 @@ import SignatureCanvas from 'react-signature-canvas';
 import { useResizeObserver } from 'usehooks-ts';
 import { Check, RefreshCw, RotateCcw } from 'lucide-react';
 import clsx from 'clsx';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
+import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 import { ControlButton } from '@controls/control-button';
 import { ControlButtonText } from '@controls/control-button-text';
 import { Flex } from '@components/flex/flex.component';
@@ -146,33 +147,33 @@ export const Signature = (props: SignatureProps) => {
       >
         <Flex direction="row" justify={isPadState(['manual-drawn']) ? 'end' : 'center'} className={cn.SignatureHeader}>
           <Text.Tag tag="h6" weight="medium" size="regular" color="primary" align="center">
-            <Animation.FadeScale name="generated-signature" condition={isPadState(['auto-generated', 'auto-loading'])}>
+            <AnimationFadeScale name="generated-signature" condition={isPadState(['auto-generated', 'auto-loading'])}>
               Wir haben eine digitale Signature Sie generiert.
-            </Animation.FadeScale>
-            <Animation.FadeScale flex name="create-signature" condition={isPadState(['manual-blank', 'manual-stored'])}>
+            </AnimationFadeScale>
+            <AnimationFadeScale flex name="create-signature" condition={isPadState(['manual-blank', 'manual-stored'])}>
               Ihre Signatur:
-            </Animation.FadeScale>
+            </AnimationFadeScale>
           </Text.Tag>
-          <Animation.FadeSlide flex name="reset" direction="rtl" condition={isPadState(['manual-drawn'])}>
+          <AnimationFadeSlide flex name="reset" direction="rtl" condition={isPadState(['manual-drawn'])}>
             <div className={cn.SignatureHeaderReset}>
               <ControlButtonText blurAfterClick underlined icon={<RefreshCw />} onClick={clearCanvas}>
                 Neu starten
               </ControlButtonText>
             </div>
-          </Animation.FadeSlide>
+          </AnimationFadeSlide>
         </Flex>
         <Flex direction="row" align="end" justify="center">
           {isPadState(['auto-generated', 'auto-loading']) ? (
             <Flex direction="column" align="center" justify="start">
-              <Animation.FadeScale flex name="signature" condition={auto !== ''}>
+              <AnimationFadeScale flex name="signature" condition={auto !== ''}>
                 <img className={cn.SignatureAutoPanelImage} src={auto} alt="signature" />
-              </Animation.FadeScale>
-              <Animation.FadeScale flex name="signature" condition={auto === '' && !hasAutoLoadFailed}>
+              </AnimationFadeScale>
+              <AnimationFadeScale flex name="signature" condition={auto === '' && !hasAutoLoadFailed}>
                 <div className={cn.SignatureAutoPanelLoader} style={{ height: 142 }}>
                   <Loader size="sm" color="primary" />
                 </div>
-              </Animation.FadeScale>
-              <Animation.FadeScale flex name="auto-failed" condition={auto === '' && hasAutoLoadFailed}>
+              </AnimationFadeScale>
+              <AnimationFadeScale flex name="auto-failed" condition={auto === '' && hasAutoLoadFailed}>
                 <Flex direction="column" align="center" justify="center" style={{ height: 78 }} gap="xs">
                   <Text.Tag weight="regular" size="small" color="secondary">
                     Automatische Signatur konnte nicht geladen werden.
@@ -188,22 +189,22 @@ export const Signature = (props: SignatureProps) => {
                     Erneut versuchen
                   </ControlButtonText>
                 </Flex>
-              </Animation.FadeScale>
-              <Animation.FadeScale flex name="auto-note" condition={auto !== ''}>
+              </AnimationFadeScale>
+              <AnimationFadeScale flex name="auto-note" condition={auto !== ''}>
                 <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
                   <Check size={24} className={cn.SignatureAutoPanelNoteIcon} />
                   <Text.Tag weight="regular" size="small" color="secondary">
                     Diese Unterschrift ist ausreichend
                   </Text.Tag>
                 </Flex>
-              </Animation.FadeScale>
-              <Animation.FadeScale flex name="manual-switch" condition={canSwitchToManual}>
+              </AnimationFadeScale>
+              <AnimationFadeScale flex name="manual-switch" condition={canSwitchToManual}>
                 <div className={cn.SignatureAutoPanelButton}>
                   <ControlButtonText blurAfterClick underlined onClick={toManual}>
                     per Hand/Maus unterschreiben
                   </ControlButtonText>
                 </div>
-              </Animation.FadeScale>
+              </AnimationFadeScale>
             </Flex>
           ) : (
             <div className={cn.SignatureManualPanel}>
@@ -223,7 +224,7 @@ export const Signature = (props: SignatureProps) => {
                   onEnd={onSingPadDrawEnd}
                 />
               )}
-              <Animation.FadeScale
+              <AnimationFadeScale
                 name="to-generated"
                 condition={isPadState(['manual-stored'])}
                 className={cn.SignatureManualPanelButton}
@@ -231,12 +232,12 @@ export const Signature = (props: SignatureProps) => {
                 <ControlButtonText blurAfterClick underlined onClick={redraw}>
                   Zurücksetzen
                 </ControlButtonText>
-              </Animation.FadeScale>
+              </AnimationFadeScale>
             </div>
           )}
         </Flex>
       </div>
-      <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
+      <AnimationFadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
         <Flex direction="row" grow="equal" align="center" justify="space-between" gap="md" mt="md">
           <ControlButton fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
             Abbrechen
@@ -251,7 +252,7 @@ export const Signature = (props: SignatureProps) => {
             Speichern
           </ControlButton>
         </Flex>
-      </Animation.FadeScale>
+      </AnimationFadeScale>
     </div>
   );
 };

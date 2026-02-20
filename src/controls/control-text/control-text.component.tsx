@@ -1,4 +1,5 @@
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
+import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
 import type { State } from '@controls/utils/types';
@@ -71,9 +72,9 @@ export const ControlText = (props: ControlTextProps) => {
               {label}
             </ControlLabel>
           </div>
-          <Animation.FadeScale name="text-placeholder" condition={withPlaceholder} className={cn.TextPlaceholder}>
+          <AnimationFadeScale name="text-placeholder" condition={withPlaceholder} className={cn.TextPlaceholder}>
             <span className={cn.TextPlaceholderText}>{placeholder}</span>
-          </Animation.FadeScale>
+          </AnimationFadeScale>
           <ControlInput
             dateMask={dateMask}
             maxLength={maxLength}
@@ -89,9 +90,9 @@ export const ControlText = (props: ControlTextProps) => {
           />
         </label>
       </ControlBox>
-      <Animation.FadeSlide flex name="text-message" condition={withErrorMessage}>
+      <AnimationFadeSlide flex name="text-message" condition={withErrorMessage}>
         <span className={cn.TextErrorMessage}>{message}</span>
-      </Animation.FadeSlide>
+      </AnimationFadeSlide>
     </div>
   );
 };

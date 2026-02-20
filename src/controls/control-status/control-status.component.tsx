@@ -1,7 +1,7 @@
 import { Check, Circle, X } from 'lucide-react';
 import clsx from 'clsx';
 import type { State } from '@controls/utils/types';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import cn from '@controls/control-status/control-status.module.css';
 
 export interface ControlStatusProps {
@@ -23,12 +23,12 @@ export const ControlStatus = (props: ControlStatusProps) => {
         })}
       />
       <div className={cn.StatusIconContent}>
-        <Animation.FadeScale name="icon-x" condition={state === 'error'} className={cn.StatusIconAnimate}>
+        <AnimationFadeScale name="icon-x" condition={state === 'error'} className={cn.StatusIconAnimate}>
           <X size={14} className={cn.StatusX} />
-        </Animation.FadeScale>
-        <Animation.FadeScale name="icon-check" condition={state === 'success'} className={cn.StatusIconAnimate}>
+        </AnimationFadeScale>
+        <AnimationFadeScale name="icon-check" condition={state === 'success'} className={cn.StatusIconAnimate}>
           <Check size={14} className={cn.StatusCheck} />
-        </Animation.FadeScale>
+        </AnimationFadeScale>
       </div>
     </div>
   );

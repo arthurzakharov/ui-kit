@@ -2,9 +2,9 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@animations/fade-scale/fade-scale.module.css';
+import cn from '@animations/animation-fade-grow/animation-fade-grow.module.css';
 
-export interface FadeScaleProps extends PropsWithChildren {
+export interface AnimationFadeGrowProps extends PropsWithChildren {
   name: string;
   condition?: boolean;
   flex?: boolean;
@@ -16,7 +16,7 @@ export interface FadeScaleProps extends PropsWithChildren {
   animateOnStart?: boolean;
 }
 
-export const FadeScale = (props: FadeScaleProps) => {
+export const AnimationFadeGrow = (props: AnimationFadeGrowProps) => {
   const {
     children,
     name,
@@ -25,7 +25,7 @@ export const FadeScale = (props: FadeScaleProps) => {
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.15,
+    duration = 0.2,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -38,23 +38,25 @@ export const FadeScale = (props: FadeScaleProps) => {
   if (!condition) return null;
 
   // eslint-disable-next-line react-hooks/refs
-  const initial = hasRendered.current ? { opacity: 0, scale: 0.95 } : false;
+  const initial = hasRendered.current ? { height: 0, opacity: 0 } : false;
 
   return (
-    <motion.div
-      key={name}
-      initial={initial}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ ease, duration, delay, type }}
-      className={
-        className || flex
-          ? clsx(className, {
-              [cn.Flex]: flex,
-            })
-          : undefined
-      }
-    >
-      {children}
-    </motion.div>
+    <div style={{ overflow: 'hidden' }}>
+      <motion.div
+        key={name}
+        initial={initial}
+        animate={{ height: 'auto', opacity: 1 }}
+        transition={{ ease, duration, delay, type }}
+        className={
+          className || flex
+            ? clsx(className, {
+                [cn.Flex]: flex,
+              })
+            : undefined
+        }
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 };

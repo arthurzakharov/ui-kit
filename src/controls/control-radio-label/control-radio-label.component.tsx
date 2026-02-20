@@ -3,7 +3,7 @@ import { useToggle } from 'usehooks-ts';
 import type { ChoiceValue, RadioChoice, State } from '@controls/utils/types';
 import cn from '@controls/control-radio-label/control-radio-label.module.css';
 
-export interface ControlRadioLabelChild {
+interface ControlRadioLabelChild {
   focused: boolean;
   hovered: boolean;
   checked: boolean;

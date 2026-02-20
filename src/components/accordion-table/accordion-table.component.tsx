@@ -1,7 +1,8 @@
 import { Fragment, type CSSProperties, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeGrow } from '@animations/animation-fade-grow';
+import { AnimationRotate } from '@animations/animation-rotate';
 import { ControlButtonText } from '@controls/control-button-text';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';
@@ -61,14 +62,14 @@ export const AccordionTable = ({ table, active = 0, className = '' }: AccordionT
                   color="theme-primary"
                   iconPosition="right"
                   icon={
-                    <Animation.Rotate
+                    <AnimationRotate
                       name="rotate-icon"
                       condition={activeSection === sectionIndex}
                       from="top"
                       to="bottom"
                     >
                       <ChevronDown size={24} />
-                    </Animation.Rotate>
+                    </AnimationRotate>
                   }
                   onClick={() => setActiveSection((prevState) => (sectionIndex !== prevState ? sectionIndex : null))}
                 >
@@ -76,7 +77,7 @@ export const AccordionTable = ({ table, active = 0, className = '' }: AccordionT
                 </ControlButtonText>
               </div>
             </div>
-            <Animation.FadeGrow name={`visible-section-${sectionIndex}`} condition={activeSection === sectionIndex}>
+            <AnimationFadeGrow name={`visible-section-${sectionIndex}`} condition={activeSection === sectionIndex}>
               <div data-testid={`accordion-table-section-content-${sectionIndex}`}>
                 {tr.rows.map((row, rowIndex) => (
                   <div
@@ -92,7 +93,7 @@ export const AccordionTable = ({ table, active = 0, className = '' }: AccordionT
                   </div>
                 ))}
               </div>
-            </Animation.FadeGrow>
+            </AnimationFadeGrow>
           </Fragment>
         ))}
       </div>

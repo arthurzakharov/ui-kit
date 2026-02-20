@@ -2,7 +2,7 @@ import type { AnimationGeneratorType, Easing } from 'motion';
 import { type PropsWithChildren } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import cn from '@animations/rotate/rotate.module.css';
+import cn from '@animations/animation-rotate/animation-rotate.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
 
@@ -13,7 +13,7 @@ const DEGREE_BY_DIRECTION: Record<RotateDirection, number> = {
   left: 270,
 };
 
-export interface RotateProps extends PropsWithChildren {
+export interface AnimationRotateProps extends PropsWithChildren {
   name: string;
   condition?: boolean;
   flex?: boolean;
@@ -27,7 +27,7 @@ export interface RotateProps extends PropsWithChildren {
   animateOnStart?: boolean;
 }
 
-export const Rotate = (props: RotateProps) => {
+export const AnimationRotate = (props: AnimationRotateProps) => {
   const {
     children,
     name,

@@ -1,16 +1,12 @@
 import '@styles/styles.css';
 import '@styles/variables.css';
 
-export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
-export {
-  Animation,
-  type FadeGrowProps,
-  type FadeScaleProps,
-  type FadeSlideProps,
-  type RotateProps,
-} from '@animations/animation.component';
-export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
-export { Certifications, type CertificationsProps } from '@components/certifications';
+// ANIMATIONS
+export { AnimationFadeGrow, type AnimationFadeGrowProps } from '@animations/animation-fade-grow';
+export { AnimationFadeScale, type AnimationFadeScaleProps } from '@animations/animation-fade-scale';
+export { AnimationFadeSlide, type AnimationFadeSlideProps } from '@animations/animation-fade-slide';
+export { AnimationRotate, type AnimationRotateProps } from '@animations/animation-rotate';
+// CONTROLS
 export {
   type InputChangeSource,
   type Interactive,
@@ -25,11 +21,7 @@ export {
 export { ControlBox, type ControlBoxProps } from '@controls/control-box';
 export { ControlButton, type ControlButtonProps } from '@controls/control-button';
 export { ControlButtonCard, type ControlButtonCardProps } from '@controls/control-button-card';
-export {
-  ControlButtonRadio,
-  type ControlButtonRadioProps,
-  type ControlButtonRadioInfo,
-} from '@controls/control-button-radio';
+export { ControlButtonRadio, type ControlButtonRadioProps } from '@controls/control-button-radio';
 export { ControlButtonText, type ControlButtonTextProps } from '@controls/control-button-text';
 export { ControlCardImage, type ControlCardImageProps } from '@controls/control-card-image';
 export { ControlCardText, type ControlCardTextProps } from '@controls/control-card-text';
@@ -40,15 +32,15 @@ export { ControlHiddenInput, type ControlHiddenInputProps } from '@controls/cont
 export { ControlInput, type ControlInputProps } from '@controls/control-input';
 export { ControlLabel, type ControlLabelProps } from '@controls/control-label';
 export { ControlRadio, type ControlRadioProps } from '@controls/control-radio';
-export {
-  ControlRadioLabel,
-  type ControlRadioLabelProps,
-  type ControlRadioLabelChild,
-} from '@controls/control-radio-label';
+export { ControlRadioLabel, type ControlRadioLabelProps } from '@controls/control-radio-label';
 export { ControlRadioText, type ControlRadioTextProps } from '@controls/control-radio-text';
 export { ControlStatus, type ControlStatusProps } from '@controls/control-status';
 export { ControlText, type ControlTextProps } from '@controls/control-text';
 export { ControlTextarea, type ControlTextareaProps } from '@controls/control-textarea';
+// COMPONENTS
+export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
+export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
+export { Certifications, type CertificationsProps } from '@components/certifications';
 export {
   DataProtectedLabel,
   type DataProtectedLabelProps,

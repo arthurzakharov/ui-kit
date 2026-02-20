@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Certifications, type CertificationsProps } from '@components/certifications';
 import { Line } from '@components/line/line.component';
 import { Text } from '@components/text/text.component';
@@ -40,13 +40,13 @@ export const Sidebar = (props: SidebarProps) => {
       <Line />
       <Info data={info} />
       <Line />
-      <Animation.FadeScale name="user" condition={isUserOpen}>
+      <AnimationFadeScale name="user" condition={isUserOpen}>
         <UserPanel title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
         <Line />
-      </Animation.FadeScale>
-      <Animation.FadeScale name="button" condition={isButtonVisible} duration={0.2} delay={0.1}>
+      </AnimationFadeScale>
+      <AnimationFadeScale name="button" condition={isButtonVisible} duration={0.2} delay={0.1}>
         <div className={cn.SidebarButton}>{children}</div>
-      </Animation.FadeScale>
+      </AnimationFadeScale>
       <Certifications icons={certifications} />
     </Board>
   );

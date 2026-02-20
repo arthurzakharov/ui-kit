@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import type { PropsWithChildren } from 'react';
-import { Animation } from '@animations/animation.component';
+import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Text } from '@components/text/text.component';
 import cn from '@components/main-attachment/main-attachment.module.css';
 
@@ -24,9 +24,9 @@ export const MainAttachment = (props: MainAttachmentProps) => {
           <Text.PageSubtitle>{subtitle}</Text.PageSubtitle>
         </div>
       ) : null}
-      <Animation.FadeScale name="attachment-main" condition animateOnStart duration={0.2} delay={0.1}>
+      <AnimationFadeScale name="attachment-main" condition animateOnStart duration={0.2} delay={0.1}>
         {children}
-      </Animation.FadeScale>
+      </AnimationFadeScale>
     </div>
   );
 };
