@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@utils/types';
+import type { BaseAnimationProps } from '@animations/utils/types';
+import { withBaseAnimationDefaults } from '@animations/utils';
 import cn from '@animations/animation-rotate/animation-rotate.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
@@ -18,34 +19,26 @@ const DEGREE_BY_DIRECTION: Record<RotateDirection, number> = {
 };
 
 export const AnimationRotate = (props: AnimationRotateProps) => {
-  const {
-    children,
-    name,
-    condition = false,
-    flex = false,
-    from = 'left',
-    to = 'top',
-    ease = 'easeInOut',
-    type = 'tween',
-    className = '',
-    duration = 0.2,
-    delay = 0,
-    animateOnStart = false,
-  } = props;
+  const defaultedProps = withBaseAnimationDefaults(props);
 
-  const fromRotate = `${DEGREE_BY_DIRECTION[from]}deg`;
-  const toRotate = `${DEGREE_BY_DIRECTION[to]}deg`;
-  const initial = animateOnStart ? { rotate: fromRotate } : false;
+  const fromRotate = `${DEGREE_BY_DIRECTION[defaultedProps.from ?? 'left']}deg`;
+  const toRotate = `${DEGREE_BY_DIRECTION[defaultedProps.to ?? 'top']}deg`;
+  const initial = defaultedProps.animateOnStart ? { rotate: fromRotate } : false;
 
   return (
     <motion.div
-      key={name}
+      key={defaultedProps.name}
       initial={initial}
-      animate={{ rotate: condition ? toRotate : fromRotate }}
-      transition={{ ease, duration, delay, type }}
-      className={clsx(className, flex && cn.Flex)}
+      animate={{ rotate: defaultedProps.condition ? toRotate : fromRotate }}
+      transition={{
+        ease: defaultedProps.ease,
+        duration: defaultedProps.duration,
+        delay: defaultedProps.delay,
+        type: defaultedProps.type,
+      }}
+      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
     >
-      {children}
+      {defaultedProps.children}
     </motion.div>
   );
 };

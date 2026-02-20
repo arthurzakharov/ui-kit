@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@utils/types';
+import type { BaseAnimationProps } from '@animations/utils/types';
+import { withBaseAnimationDefaults } from '@animations/utils';
 import cn from '@animations/animation-fade-slide/animation-fade-slide.module.css';
 
 type AnimationFadeSlideProps = BaseAnimationProps & {
@@ -9,40 +10,35 @@ type AnimationFadeSlideProps = BaseAnimationProps & {
 };
 
 export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
-  const {
-    children,
-    name,
-    condition = false,
-    flex = false,
-    direction = 'ltr',
-    ease = 'easeInOut',
-    type = 'tween',
-    className = '',
-    duration = 0.2,
-    delay = 0,
-    animateOnStart = false,
-  } = props;
-  const hasRendered = useRef(animateOnStart);
+  const defaultedProps = withBaseAnimationDefaults(props);
+  const hasRendered = useRef(defaultedProps.animateOnStart);
 
   useEffect(() => {
     hasRendered.current = true;
   }, []);
 
-  if (!condition) return null;
+  if (!defaultedProps.condition) return null;
 
   // eslint-disable-next-line react-hooks/refs
-  const initial = hasRendered.current ? { x: direction === 'ltr' ? '-100%' : '100%', opacity: 0 } : false;
+  const initial = hasRendered.current
+    ? { x: (defaultedProps.direction ?? 'ltr') === 'ltr' ? '-100%' : '100%', opacity: 0 }
+    : false;
 
   return (
     <div style={{ overflow: 'hidden' }}>
       <motion.div
-        key={name}
+        key={defaultedProps.name}
         initial={initial}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ ease, duration, delay, type }}
-        className={clsx(className, flex && cn.Flex)}
+        transition={{
+          ease: defaultedProps.ease,
+          duration: defaultedProps.duration,
+          delay: defaultedProps.delay,
+          type: defaultedProps.type,
+        }}
+        className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
       >
-        {children}
+        {defaultedProps.children}
       </motion.div>
     </div>
   );
