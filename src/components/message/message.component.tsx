@@ -2,12 +2,12 @@ import type { ReactNode } from 'react';
 import { Check, CircleQuestionMark, X, CircleAlert } from 'lucide-react';
 import clsx from 'clsx';
 import { Content } from '@utils/content';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/message/message.module.css';
 
 type MessageType = 'success' | 'question' | 'error' | 'info';
 
-export interface MessageProps extends BaseProps {
+export interface MessageProps extends Base {
   type: MessageType;
   title: ReactNode;
   text: ReactNode;

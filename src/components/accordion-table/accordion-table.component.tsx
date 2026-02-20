@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { AnimationFadeGrow } from '@animations/animation-fade-grow';
 import { AnimationRotate } from '@animations/animation-rotate';
 import { ControlButtonText } from '@controls/control-button-text';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';
 
 type TableRow = string[];
@@ -19,7 +19,7 @@ type Table = {
   body: TableSection[];
 };
 
-export interface AccordionTableProps extends BaseProps {
+export interface AccordionTableProps extends Base {
   table: Table;
   active?: number;
 }

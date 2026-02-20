@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/certifications/certifications.module.css';
 
 type CertificationsIcon = 'free' | 'gdpr' | 'ssl';
 
-export interface CertificationsProps extends BaseProps {
+export interface CertificationsProps extends Base {
   icons: CertificationsIcon[];
 }
 

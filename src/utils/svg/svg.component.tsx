@@ -1,8 +1,8 @@
 import { cloneElement, isValidElement, type ReactElement, type SVGProps } from 'react';
 import clsx from 'clsx';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 
-export interface SvgProps extends BaseProps {
+export interface SvgProps extends Base {
   icon?: ReactElement<SVGProps<SVGSVGElement>> | null;
 }
 

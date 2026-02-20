@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { Content } from '@utils/content';
 import { isHtmlString } from '@utils/functions';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import css from '@components/warranty/warranty.module.css';
 
 const WarrantyIcon = () => (
@@ -27,7 +27,7 @@ const WarrantyIcon = () => (
   </svg>
 );
 
-export interface WarrantyProps extends BaseProps {
+export interface WarrantyProps extends Base {
   title: ReactNode;
   text: ReactNode;
 }

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/footer/footer.module.css';
 
 type FooterLink = {
@@ -7,7 +7,7 @@ type FooterLink = {
   onClick: () => void;
 };
 
-export interface FooterProps extends BaseProps {
+export interface FooterProps extends Base {
   name: string;
   links: FooterLink[];
 }

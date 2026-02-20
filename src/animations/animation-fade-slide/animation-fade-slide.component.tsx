@@ -1,21 +1,21 @@
 import type { AnimationGeneratorType, Easing } from 'motion';
-import { type PropsWithChildren, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
+import type { BaseWithChildren } from '@utils/types';
 import cn from '@animations/animation-fade-slide/animation-fade-slide.module.css';
 
-export interface AnimationFadeSlideProps extends PropsWithChildren {
+export type AnimationFadeSlideProps = {
   name: string;
   condition?: boolean;
   flex?: boolean;
   direction?: 'ltr' | 'rtl';
-  className?: string;
   type?: AnimationGeneratorType;
   ease?: Easing | Easing[];
   duration?: number;
   delay?: number;
   animateOnStart?: boolean;
-}
+} & BaseWithChildren;
 
 export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   const {

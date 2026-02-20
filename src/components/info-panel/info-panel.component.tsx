@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/info-panel/info-panel.module.css';
 
-export interface InfoPanelProps extends BaseProps {
+export interface InfoPanelProps extends Base {
   data: [string, string][];
 }
 

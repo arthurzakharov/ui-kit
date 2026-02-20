@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/not-found/not-found.module.css';
 
 type TableRow = {
@@ -7,7 +7,7 @@ type TableRow = {
   value: string;
 };
 
-export interface NotFoundProps extends BaseProps {
+export interface NotFoundProps extends Base {
   title: string;
   subtitle: string;
   tableTitle: string;

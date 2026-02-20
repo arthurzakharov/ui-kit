@@ -1,10 +1,10 @@
 import { Pencil } from 'lucide-react';
 import clsx from 'clsx';
 import { ControlButtonText } from '@controls/control-button-text';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/user-panel/user-panel.module.css';
 
-export interface UserPanelProps extends BaseProps {
+export interface UserPanelProps extends Base {
   title: string;
   button: string;
   data: string[];

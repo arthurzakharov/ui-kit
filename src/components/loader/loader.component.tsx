@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { Loader as LoaderIcon } from 'lucide-react';
-import type { BaseProps, Size } from '@utils/types';
+import type { Base, Size } from '@utils/types';
 import cn from '@components/loader/loader.module.css';
 
 type LoaderColor = 'white' | 'primary' | 'secondary';
 
-export interface LoaderProps extends BaseProps {
+export interface LoaderProps extends Base {
   size: Size;
   color: LoaderColor;
   padding?: Size;

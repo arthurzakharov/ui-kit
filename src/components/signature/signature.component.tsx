@@ -10,12 +10,12 @@ import { ControlButtonText } from '@controls/control-button-text';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
 import { Loader } from '@components/loader/loader.component';
-import type { BaseProps } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/signature/signature.module.css';
 
 type SignaturePadState = 'auto-loading' | 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 
-export interface SignatureProps extends BaseProps {
+export interface SignatureProps extends Base {
   auto: string;
   manual: string;
   getSignature: () => Promise<{ signature: string }>;
@@ -242,13 +242,7 @@ export const Signature = (props: SignatureProps) => {
           <ControlButton fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
             Abbrechen
           </ControlButton>
-          <ControlButton
-            fullWidth
-            blurAfterClick
-            color="primary"
-            disabled={!valueManualDrawn}
-            onClick={saveDrawnImage}
-          >
+          <ControlButton fullWidth blurAfterClick color="primary" disabled={!valueManualDrawn} onClick={saveDrawnImage}>
             Speichern
           </ControlButton>
         </Flex>
