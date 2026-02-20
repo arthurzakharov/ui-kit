@@ -7,14 +7,19 @@ import cn from '@animations/animation-fade-grow/animation-fade-grow.module.css';
 export const AnimationFadeGrow = (props: BaseAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
 
+  const growInitialState = {
+    height: 0,
+    opacity: 0,
+  };
+
   return (
     <AnimatePresence initial={false}>
       {defaultedProps.condition && (
         <motion.div
           key={defaultedProps.name}
-          initial={{ height: 0, opacity: 0 }}
+          initial={growInitialState}
           animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
+          exit={growInitialState}
           transition={{
             ease: defaultedProps.ease,
             duration: defaultedProps.duration,

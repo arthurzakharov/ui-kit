@@ -7,14 +7,19 @@ import cn from '@animations/animation-fade-scale/animation-fade-scale.module.css
 export const AnimationFadeScale = (props: BaseAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
 
+  const scaleInitialState = {
+    opacity: 0,
+    scale: 0.95,
+  };
+
   return (
     <AnimatePresence initial={false}>
       {defaultedProps.condition && (
         <motion.div
           key={defaultedProps.name}
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={scaleInitialState}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
+          exit={scaleInitialState}
           transition={{
             ease: defaultedProps.ease,
             duration: defaultedProps.duration,

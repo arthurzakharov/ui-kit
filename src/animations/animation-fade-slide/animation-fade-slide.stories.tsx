@@ -9,15 +9,15 @@ const meta = {
   component: AnimationFadeSlide,
   tags: ['autodocs'],
   args: {
+    direction: 'ltr',
     name: 'animation-fade-slide',
     condition: true,
-    direction: 'ltr',
     ease: 'easeInOut',
     type: 'tween',
-    duration: 0.125,
+    duration: 0.2,
     delay: 0,
+    flex: false,
     className: '',
-    children: null,
   },
   argTypes: animationArgTypes,
   render: (args) => (
