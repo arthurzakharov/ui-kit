@@ -12,28 +12,6 @@ export {
 export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
 export { Certifications, type CertificationsProps } from '@components/certifications';
 export {
-  Control,
-  type BoxProps,
-  type ButtonProps,
-  type ButtonCardProps,
-  type ButtonRadioProps,
-  type ButtonRadioInfo,
-  type ButtonTextProps,
-  type CardImageProps,
-  type CardTextProps,
-  type CheckboxProps,
-  type ChoiceProps,
-  type DropdownProps,
-  type HiddenInputProps,
-  type InputProps,
-  type LabelProps,
-  type RadioProps,
-  type RadioLabelProps,
-  type RadioLabelChild,
-  type RadioTextProps,
-  type StatusProps,
-  type TextProps,
-  type TextareaProps,
   type InputChangeSource,
   type Interactive,
   type RadioChoice,
@@ -43,7 +21,34 @@ export {
   type QuestionPath,
   type QuestionChoice,
   type Size,
-} from '@components/control/control.component';
+} from '@controls/utils/types';
+export { ControlBox, type ControlBoxProps } from '@controls/control-box';
+export { ControlButton, type ControlButtonProps } from '@controls/control-button';
+export { ControlButtonCard, type ControlButtonCardProps } from '@controls/control-button-card';
+export {
+  ControlButtonRadio,
+  type ControlButtonRadioProps,
+  type ControlButtonRadioInfo,
+} from '@controls/control-button-radio';
+export { ControlButtonText, type ControlButtonTextProps } from '@controls/control-button-text';
+export { ControlCardImage, type ControlCardImageProps } from '@controls/control-card-image';
+export { ControlCardText, type ControlCardTextProps } from '@controls/control-card-text';
+export { ControlCheckbox, type ControlCheckboxProps } from '@controls/control-checkbox';
+export { ControlChoice, type ControlChoiceProps } from '@controls/control-choice';
+export { ControlDropdown, type ControlDropdownProps } from '@controls/control-dropdown';
+export { ControlHiddenInput, type ControlHiddenInputProps } from '@controls/control-hidden-input';
+export { ControlInput, type ControlInputProps } from '@controls/control-input';
+export { ControlLabel, type ControlLabelProps } from '@controls/control-label';
+export { ControlRadio, type ControlRadioProps } from '@controls/control-radio';
+export {
+  ControlRadioLabel,
+  type ControlRadioLabelProps,
+  type ControlRadioLabelChild,
+} from '@controls/control-radio-label';
+export { ControlRadioText, type ControlRadioTextProps } from '@controls/control-radio-text';
+export { ControlStatus, type ControlStatusProps } from '@controls/control-status';
+export { ControlText, type ControlTextProps } from '@controls/control-text';
+export { ControlTextarea, type ControlTextareaProps } from '@controls/control-textarea';
 export {
   DataProtectedLabel,
   type DataProtectedLabelProps,

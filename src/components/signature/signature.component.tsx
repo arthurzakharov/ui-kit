@@ -4,7 +4,8 @@ import { useResizeObserver } from 'usehooks-ts';
 import { Check, RefreshCw, RotateCcw } from 'lucide-react';
 import clsx from 'clsx';
 import { Animation } from '@animations/animation.component';
-import { Control } from '@components/control/control.component';
+import { ControlButton } from '@controls/control-button';
+import { ControlButtonText } from '@controls/control-button-text';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
 import { Loader } from '@components/loader/loader.component';
@@ -154,9 +155,9 @@ export const Signature = (props: SignatureProps) => {
           </Text.Tag>
           <Animation.FadeSlide flex name="reset" direction="rtl" condition={isPadState(['manual-drawn'])}>
             <div className={cn.SignatureHeaderReset}>
-              <Control.ButtonText blurAfterClick underlined icon={<RefreshCw />} onClick={clearCanvas}>
+              <ControlButtonText blurAfterClick underlined icon={<RefreshCw />} onClick={clearCanvas}>
                 Neu starten
-              </Control.ButtonText>
+              </ControlButtonText>
             </div>
           </Animation.FadeSlide>
         </Flex>
@@ -176,7 +177,7 @@ export const Signature = (props: SignatureProps) => {
                   <Text.Tag weight="regular" size="small" color="secondary">
                     Automatische Signatur konnte nicht geladen werden.
                   </Text.Tag>
-                  <Control.ButtonText
+                  <ControlButtonText
                     blurAfterClick
                     underlined
                     size="sm"
@@ -185,7 +186,7 @@ export const Signature = (props: SignatureProps) => {
                     onClick={retryAutoFetch}
                   >
                     Erneut versuchen
-                  </Control.ButtonText>
+                  </ControlButtonText>
                 </Flex>
               </Animation.FadeScale>
               <Animation.FadeScale flex name="auto-note" condition={auto !== ''}>
@@ -198,9 +199,9 @@ export const Signature = (props: SignatureProps) => {
               </Animation.FadeScale>
               <Animation.FadeScale flex name="manual-switch" condition={canSwitchToManual}>
                 <div className={cn.SignatureAutoPanelButton}>
-                  <Control.ButtonText blurAfterClick underlined onClick={toManual}>
+                  <ControlButtonText blurAfterClick underlined onClick={toManual}>
                     per Hand/Maus unterschreiben
-                  </Control.ButtonText>
+                  </ControlButtonText>
                 </div>
               </Animation.FadeScale>
             </Flex>
@@ -227,9 +228,9 @@ export const Signature = (props: SignatureProps) => {
                 condition={isPadState(['manual-stored'])}
                 className={cn.SignatureManualPanelButton}
               >
-                <Control.ButtonText blurAfterClick underlined onClick={redraw}>
+                <ControlButtonText blurAfterClick underlined onClick={redraw}>
                   Zurücksetzen
-                </Control.ButtonText>
+                </ControlButtonText>
               </Animation.FadeScale>
             </div>
           )}
@@ -237,10 +238,10 @@ export const Signature = (props: SignatureProps) => {
       </div>
       <Animation.FadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
         <Flex direction="row" grow="equal" align="center" justify="space-between" gap="md" mt="md">
-          <Control.Button fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
+          <ControlButton fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
             Abbrechen
-          </Control.Button>
-          <Control.Button
+          </ControlButton>
+          <ControlButton
             fullWidth
             blurAfterClick
             color="primary"
@@ -248,7 +249,7 @@ export const Signature = (props: SignatureProps) => {
             onClick={saveDrawnImage}
           >
             Speichern
-          </Control.Button>
+          </ControlButton>
         </Flex>
       </Animation.FadeScale>
     </div>

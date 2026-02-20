@@ -1,5 +1,5 @@
-import { Control } from '@components/control/control.component';
-import type { State } from '@components/control/control.types';
+import { ControlStatus } from '@controls/control-status';
+import type { State } from '@controls/utils/types';
 import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
 
@@ -13,7 +13,7 @@ export const Step = (props: StepProps) => {
 
   return (
     <Flex direction="row" align="center" justify="start" gap="xs">
-      <Control.Status state={state} />
+      <ControlStatus state={state} />
       <Text.Tag tag="span" weight="medium" size="small" color={state === 'idle' ? 'secondary' : 'primary'}>
         {text}
       </Text.Tag>

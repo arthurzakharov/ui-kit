@@ -2,7 +2,7 @@ import { Fragment, type CSSProperties, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { Animation } from '@animations/animation.component';
-import { Control } from '@components/control/control.component';
+import { ControlButtonText } from '@controls/control-button-text';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/accordion-table/accordion-table.module.css';
 
@@ -53,7 +53,7 @@ export const AccordionTable = ({ table, active = 0, className = '' }: AccordionT
           <Fragment key={`${tr.title}-${sectionIndex}`}>
             <div className={cn.BodyRow}>
               <div className={clsx(cn.BodyCell, cn.BodyHead, cn.BodyHeadCell)}>
-                <Control.ButtonText
+                <ControlButtonText
                   preventDefault
                   blurAfterClick
                   size="md"
@@ -73,7 +73,7 @@ export const AccordionTable = ({ table, active = 0, className = '' }: AccordionT
                   onClick={() => setActiveSection((prevState) => (sectionIndex !== prevState ? sectionIndex : null))}
                 >
                   {tr.title}
-                </Control.ButtonText>
+                </ControlButtonText>
               </div>
             </div>
             <Animation.FadeGrow name={`visible-section-${sectionIndex}`} condition={activeSection === sectionIndex}>

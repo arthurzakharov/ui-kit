@@ -1,7 +1,7 @@
 import { type ReactElement, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
-import { Control } from '@components/control/control.component';
+import { ControlButton } from '@controls/control-button';
 import { Flex } from '@components/flex/flex.component';
 import { Text, type TagProps } from '@components/text/text.component';
 import cn from '@components/bottom-bar/bottom-bar.module.css';
@@ -121,7 +121,7 @@ export const BottomBar = (props: BottomBarProps) => {
         </Flex>
       )}
       <Flex direction="row" mt="md">
-        <Control.Button
+        <ControlButton
           fullWidth
           color="primary"
           size="lg"
@@ -130,7 +130,7 @@ export const BottomBar = (props: BottomBarProps) => {
           onClick={button.onClick}
         >
           {button.text}
-        </Control.Button>
+        </ControlButton>
       </Flex>
     </div>
   );

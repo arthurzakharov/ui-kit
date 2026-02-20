@@ -1,6 +1,6 @@
 import { type PropsWithChildren, useRef, useState } from 'react';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
-import { Control } from '@components/control/control.component';
+import { ControlButton } from '@controls/control-button';
 import cn from '@components/dialog-article/dialog-article.module.css';
 
 export interface DialogActionButton {
@@ -32,14 +32,14 @@ export const DialogArticle = (props: DialogArticleProps) => {
           {children}
           <div ref={buttonsRef} className={cn.DialogArticleButtons}>
             {cancel ? (
-              <Control.Button blurAfterClick preventDefault color="tertiary" size="md" onClick={cancel.fn}>
+              <ControlButton blurAfterClick preventDefault color="tertiary" size="md" onClick={cancel.fn}>
                 {cancel.text}
-              </Control.Button>
+              </ControlButton>
             ) : null}
             {confirm ? (
-              <Control.Button blurAfterClick preventDefault color="primary" size="md" onClick={confirm.fn}>
+              <ControlButton blurAfterClick preventDefault color="primary" size="md" onClick={confirm.fn}>
                 {confirm.text}
-              </Control.Button>
+              </ControlButton>
             ) : null}
           </div>
         </>

@@ -1,6 +1,6 @@
 import { Pencil } from 'lucide-react';
 import clsx from 'clsx';
-import { Control } from '@components/control/control.component';
+import { ControlButtonText } from '@controls/control-button-text';
 import type { BaseProps } from '@utils/types';
 import cn from '@components/user-panel/user-panel.module.css';
 
@@ -15,7 +15,7 @@ export const UserPanel = ({ title, button, data, onClick, className = '' }: User
   <div data-testid="user-panel" className={clsx(cn.UserPanel, className)}>
     <div className={cn.Head}>
       <span data-testid="user-panel-title">{title}</span>
-      <Control.ButtonText
+      <ControlButtonText
         preventDefault
         blurAfterClick
         icon={<Pencil className="XXX" />}
@@ -25,7 +25,7 @@ export const UserPanel = ({ title, button, data, onClick, className = '' }: User
         onClick={onClick}
       >
         {button}
-      </Control.ButtonText>
+      </ControlButtonText>
     </div>
     <ul className={cn.Info}>
       {data.map((d, i) => (

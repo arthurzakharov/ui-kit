@@ -46,7 +46,7 @@ export default defineConfig({
               '**/*.stories.tsx',
               '**/*.test.ts',
               '**/*.test.tsx',
-              '**/control.types.ts',
+              'src/controls/utils/types.ts',
               'src/utils/types.ts',
             ],
           })
@@ -108,6 +108,7 @@ export default defineConfig({
     alias: {
       '@story': path.resolve(__dirname, '.storybook'),
       '@animations': path.resolve(__dirname, './src/animations'),
+      '@controls': path.resolve(__dirname, './src/controls'),
       '@components': path.resolve(__dirname, './src/components'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@utils': path.resolve(__dirname, './src/utils'),
