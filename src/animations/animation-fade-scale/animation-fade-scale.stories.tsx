@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
+import { animationArgTypes } from '@story/arg-types';
+import { GreyBox } from '@story/placeholders/grey-box.component';
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
-import { Text } from '@components/text/text.component';
 
 const meta = {
   title: 'Animations/AnimationFadeScale',
@@ -17,43 +18,10 @@ const meta = {
     className: '',
     children: null,
   },
-  argTypes: {
-    ease: {
-      control: 'select',
-      options: [
-        'linear',
-        'easeIn',
-        'easeOut',
-        'easeInOut',
-        'circIn',
-        'circOut',
-        'circInOut',
-        'backIn',
-        'backOut',
-        'backInOut',
-        'anticipate',
-      ],
-    },
-    type: { control: 'select', options: ['decay', 'spring', 'keyframes', 'tween', 'inertia'] },
-    duration: { control: { type: 'number', min: 0, step: 0.05 } },
-    delay: { control: { type: 'number', min: 0, step: 0.05 } },
-  },
+  argTypes: animationArgTypes,
   render: (args) => (
     <AnimationFadeScale {...args}>
-      <div
-        data-testid="animation-content"
-        style={{
-          height: '400px',
-          backgroundColor: 'var(--rm-ui-grey-700)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Text.Tag tag="h4" size="hl4" align="center" style={{ color: 'var(--rm-ui-grey-50)' }}>
-          Fade scale
-        </Text.Tag>
-      </div>
+      <GreyBox id="animation-content">Fade scale</GreyBox>
     </AnimationFadeScale>
   ),
 } satisfies Meta<typeof AnimationFadeScale>;
