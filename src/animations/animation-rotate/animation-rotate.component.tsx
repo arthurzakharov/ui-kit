@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@controls/utils/types';
+import type { BaseAnimationProps } from '@utils/types';
 import cn from '@animations/animation-rotate/animation-rotate.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
@@ -28,7 +28,7 @@ export const AnimationRotate = (props: AnimationRotateProps) => {
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.15,
+    duration = 0.2,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -43,13 +43,7 @@ export const AnimationRotate = (props: AnimationRotateProps) => {
       initial={initial}
       animate={{ rotate: condition ? toRotate : fromRotate }}
       transition={{ ease, duration, delay, type }}
-      className={
-        className || flex
-          ? clsx(className, {
-              [cn.Flex]: flex,
-            })
-          : undefined
-      }
+      className={clsx(className, flex && cn.Flex)}
     >
       {children}
     </motion.div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@controls/utils/types';
+import type { BaseAnimationProps } from '@utils/types';
 import cn from '@animations/animation-fade-scale/animation-fade-scale.module.css';
 
 export const AnimationFadeScale = (props: BaseAnimationProps) => {
@@ -13,7 +13,7 @@ export const AnimationFadeScale = (props: BaseAnimationProps) => {
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.15,
+    duration = 0.2,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -34,13 +34,7 @@ export const AnimationFadeScale = (props: BaseAnimationProps) => {
       initial={initial}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ ease, duration, delay, type }}
-      className={
-        className || flex
-          ? clsx(className, {
-              [cn.Flex]: flex,
-            })
-          : undefined
-      }
+      className={clsx(className, flex && cn.Flex)}
     >
       {children}
     </motion.div>

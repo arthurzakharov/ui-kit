@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@controls/utils/types';
+import type { BaseAnimationProps } from '@utils/types';
 import cn from '@animations/animation-fade-slide/animation-fade-slide.module.css';
 
 type AnimationFadeSlideProps = BaseAnimationProps & {
@@ -18,7 +18,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
     ease = 'easeInOut',
     type = 'tween',
     className = '',
-    duration = 0.125,
+    duration = 0.2,
     delay = 0,
     animateOnStart = false,
   } = props;
@@ -40,13 +40,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
         initial={initial}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease, duration, delay, type }}
-        className={
-          className || flex
-            ? clsx(className, {
-                [cn.Flex]: flex,
-              })
-            : undefined
-        }
+        className={clsx(className, flex && cn.Flex)}
       >
         {children}
       </motion.div>

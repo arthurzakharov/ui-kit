@@ -12,8 +12,33 @@ const meta = {
     condition: true,
     from: 'left',
     to: 'top',
+    ease: 'easeInOut',
+    type: 'tween',
+    duration: 0.15,
+    delay: 0,
     className: '',
     children: null,
+  },
+  argTypes: {
+    ease: {
+      control: 'select',
+      options: [
+        'linear',
+        'easeIn',
+        'easeOut',
+        'easeInOut',
+        'circIn',
+        'circOut',
+        'circInOut',
+        'backIn',
+        'backOut',
+        'backInOut',
+        'anticipate',
+      ],
+    },
+    type: { control: 'select', options: ['decay', 'spring', 'keyframes', 'tween', 'inertia'] },
+    duration: { control: { type: 'number', min: 0, step: 0.05 } },
+    delay: { control: { type: 'number', min: 0, step: 0.05 } },
   },
   render: (args) => (
     <AnimationRotate {...args}>

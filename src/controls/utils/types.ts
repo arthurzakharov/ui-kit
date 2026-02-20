@@ -1,6 +1,3 @@
-import type { AnimationGeneratorType, Easing } from 'motion';
-import type { BaseWithChildren } from '@utils/types';
-
 export type InputChangeSource = 'mouse' | 'keyboard';
 
 export interface Interactive<V> {
@@ -44,17 +41,3 @@ export type Size = {
   width: number;
   height: number;
 };
-
-export type BaseAnimationTransitionProps = {
-  type?: AnimationGeneratorType;
-  ease?: Easing | Easing[];
-  duration?: number;
-  delay?: number;
-};
-
-export type BaseAnimationProps = BaseWithChildren & {
-  name: string;
-  condition?: boolean;
-  flex?: boolean;
-  animateOnStart?: boolean;
-} & BaseAnimationTransitionProps;
