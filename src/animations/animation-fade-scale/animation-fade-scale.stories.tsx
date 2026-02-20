@@ -9,14 +9,14 @@ const meta = {
   component: AnimationFadeScale,
   tags: ['autodocs'],
   args: {
-    name: 'animation-fade-scale',
-    condition: true,
-    ease: 'easeInOut',
     type: 'tween',
+    ease: 'easeInOut',
     duration: 0.15,
     delay: 0,
+    name: 'animation-fade-scale',
+    condition: true,
+    flex: false,
     className: '',
-    children: null,
   },
   argTypes: animationArgTypes,
   render: (args) => (
