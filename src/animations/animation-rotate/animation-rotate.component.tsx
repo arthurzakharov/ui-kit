@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseAnimationProps } from '@animations/utils/types';
-import { withBaseAnimationDefaults } from '@animations/utils';
+import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import cn from '@animations/animation-rotate/animation-rotate.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
