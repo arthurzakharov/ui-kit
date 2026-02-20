@@ -1,22 +1,10 @@
-import type { AnimationGeneratorType, Easing } from 'motion';
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
-import type { BaseWithChildren } from '@utils/types';
+import type { BaseAnimationProps } from '@controls/utils/types';
 import cn from '@animations/animation-fade-scale/animation-fade-scale.module.css';
 
-export type AnimationFadeScaleProps = {
-  name: string;
-  condition?: boolean;
-  flex?: boolean;
-  type?: AnimationGeneratorType;
-  ease?: Easing | Easing[];
-  duration?: number;
-  delay?: number;
-  animateOnStart?: boolean;
-} & BaseWithChildren;
-
-export const AnimationFadeScale = (props: AnimationFadeScaleProps) => {
+export const AnimationFadeScale = (props: BaseAnimationProps) => {
   const {
     children,
     name,

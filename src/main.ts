@@ -2,10 +2,10 @@ import '@styles/styles.css';
 import '@styles/variables.css';
 
 // ANIMATIONS
-export { AnimationFadeGrow, type AnimationFadeGrowProps } from '@animations/animation-fade-grow';
-export { AnimationFadeScale, type AnimationFadeScaleProps } from '@animations/animation-fade-scale';
-export { AnimationFadeSlide, type AnimationFadeSlideProps } from '@animations/animation-fade-slide';
-export { AnimationRotate, type AnimationRotateProps } from '@animations/animation-rotate';
+export { AnimationFadeGrow } from '@animations/animation-fade-grow';
+export { AnimationFadeScale } from '@animations/animation-fade-scale';
+export { AnimationFadeSlide } from '@animations/animation-fade-slide';
+export { AnimationRotate } from '@animations/animation-rotate';
 // CONTROLS
 export {
   type InputChangeSource,
