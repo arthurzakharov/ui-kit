@@ -9,16 +9,17 @@ const meta = {
   component: AnimationRotate,
   tags: ['autodocs'],
   args: {
-    name: 'animation-rotate',
-    condition: true,
     from: 'left',
     to: 'top',
+    animateOnStart: false,
+    name: 'animation-rotate',
+    condition: true,
     ease: 'easeInOut',
     type: 'tween',
-    duration: 0.15,
+    duration: 0.75,
     delay: 0,
+    flex: false,
     className: '',
-    children: null,
   },
   argTypes: animationArgTypes,
   render: (args) => (
@@ -31,7 +32,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const DoNotAnimateOnStart: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId('animation-content')).toBeInTheDocument();
+  },
+};
+
+export const AnimateOnStart: Story = {
+  args: {
+    animateOnStart: true,
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByTestId('animation-content')).toBeInTheDocument();

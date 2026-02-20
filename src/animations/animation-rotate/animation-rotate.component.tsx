@@ -23,12 +23,11 @@ export const AnimationRotate = (props: AnimationRotateProps) => {
 
   const fromRotate = `${DEGREE_BY_DIRECTION[defaultedProps.from ?? 'left']}deg`;
   const toRotate = `${DEGREE_BY_DIRECTION[defaultedProps.to ?? 'top']}deg`;
-  const initial = defaultedProps.animateOnStart ? { rotate: fromRotate } : false;
 
   return (
     <motion.div
       key={defaultedProps.name}
-      initial={initial}
+      initial={defaultedProps.animateOnStart && { rotate: fromRotate }}
       animate={{ rotate: defaultedProps.condition ? toRotate : fromRotate }}
       transition={{
         ease: defaultedProps.ease,

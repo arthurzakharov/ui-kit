@@ -13,7 +13,7 @@ const meta = {
     condition: true,
     ease: 'easeInOut',
     type: 'tween',
-    duration: 0.2,
+    duration: 0.75,
     delay: 0,
     flex: false,
     className: '',

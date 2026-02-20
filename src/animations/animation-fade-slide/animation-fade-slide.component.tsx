@@ -30,7 +30,6 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
             delay: defaultedProps.delay,
             type: defaultedProps.type,
           }}
-          style={{ overflow: 'hidden' }}
           className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
         >
           {defaultedProps.children}
