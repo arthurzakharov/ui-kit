@@ -1,7 +1,8 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
-import cn from '@animations/animation-rotate/animation-rotate.module.css';
+import cn from '@animations/styles/animation.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
 
@@ -19,22 +20,40 @@ const DEGREE_BY_DIRECTION: Record<RotateDirection, number> = {
 
 export const AnimationRotate = (props: AnimationRotateProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
+  const prevConditionRef = useRef(defaultedProps.condition);
+  const [isActivated, setIsActivated] = useState(defaultedProps.animateOnStart);
 
   const fromRotate = `${DEGREE_BY_DIRECTION[defaultedProps.from ?? 'left']}deg`;
   const toRotate = `${DEGREE_BY_DIRECTION[defaultedProps.to ?? 'top']}deg`;
+  const effectiveCondition = isActivated ? defaultedProps.condition : false;
+  const animateRotate = effectiveCondition ? toRotate : fromRotate;
+
+  useEffect(() => {
+    if (prevConditionRef.current !== defaultedProps.condition) {
+      prevConditionRef.current = defaultedProps.condition;
+
+      if (!isActivated) {
+        const frameId = requestAnimationFrame(() => {
+          setIsActivated(true);
+        });
+
+        return () => cancelAnimationFrame(frameId);
+      }
+    }
+  }, [defaultedProps.condition, isActivated]);
 
   return (
     <motion.div
       key={defaultedProps.name}
-      initial={defaultedProps.animateOnStart && { rotate: fromRotate }}
-      animate={{ rotate: defaultedProps.condition ? toRotate : fromRotate }}
+      initial={{ rotate: fromRotate }}
+      animate={{ rotate: animateRotate }}
       transition={{
         ease: defaultedProps.ease,
         duration: defaultedProps.duration,
         delay: defaultedProps.delay,
         type: defaultedProps.type,
       }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex, defaultedProps.absolute && cn.Absolute)}
     >
       {defaultedProps.children}
     </motion.div>

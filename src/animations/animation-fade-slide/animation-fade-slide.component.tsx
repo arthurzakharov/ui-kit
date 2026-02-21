@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
-import cn from '@animations/animation-fade-slide/animation-fade-slide.module.css';
+import cn from '@animations/styles/animation.module.css';
 
 type AnimationFadeSlideProps = BaseAnimationProps & {
   direction?: 'ltr' | 'rtl';
@@ -12,9 +12,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
   const hasRendered = useRef(defaultedProps.animateOnStart);
   const conditionRef = useRef(defaultedProps.condition);
-  const [shouldRender, setShouldRender] = useState(
-    defaultedProps.condition || defaultedProps.animateOnStart,
-  );
+  const [shouldRender, setShouldRender] = useState(defaultedProps.condition || defaultedProps.animateOnStart);
   conditionRef.current = defaultedProps.condition;
 
   useEffect(() => {
@@ -33,11 +31,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   };
   const visibleState = { x: 0, opacity: 1 };
 
-  const initial = hasRendered.current
-    ? defaultedProps.condition
-      ? hiddenState
-      : visibleState
-    : false;
+  const initial = hasRendered.current ? (defaultedProps.condition ? hiddenState : visibleState) : false;
 
   if (!shouldRender) return null;
 
@@ -57,7 +51,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
           setShouldRender(false);
         }
       }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex, defaultedProps.absolute && cn.Absolute)}
     >
       {defaultedProps.children}
     </motion.div>
