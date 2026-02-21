@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
-import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
-import cn from '@animations/styles/animation.module.css';
 
 export const AnimationFadeScale = (props: BaseAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
@@ -31,7 +29,7 @@ export const AnimationFadeScale = (props: BaseAnimationProps) => {
         type: defaultedProps.type,
       }}
       onAnimationComplete={animation.onAnimationComplete}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={defaultedProps.className}
     >
       {defaultedProps.children}
     </motion.div>

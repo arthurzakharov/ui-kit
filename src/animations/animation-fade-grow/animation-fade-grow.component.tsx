@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
-import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
-import cn from '@animations/styles/animation.module.css';
 
 export const AnimationFadeGrow = (props: BaseAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
@@ -32,7 +30,7 @@ export const AnimationFadeGrow = (props: BaseAnimationProps) => {
       }}
       onAnimationComplete={animation.onAnimationComplete}
       style={{ overflow: 'hidden' }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={defaultedProps.className}
     >
       {defaultedProps.children}
     </motion.div>

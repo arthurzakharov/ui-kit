@@ -1,20 +1,11 @@
 import type { BaseAnimationProps } from '@animations/utils/types';
 
-type BaseAnimationDefaultKeys =
-  | 'condition'
-  | 'flex'
-  | 'ease'
-  | 'type'
-  | 'className'
-  | 'duration'
-  | 'delay'
-  | 'animateOnStart';
+type BaseAnimationDefaultKeys = 'condition' | 'ease' | 'type' | 'className' | 'duration' | 'delay' | 'animateOnStart';
 
 type BaseAnimationDefaults = Required<Pick<BaseAnimationProps, BaseAnimationDefaultKeys>>;
 
 export const BASE_ANIMATION_DEFAULT_PROPS: BaseAnimationDefaults = {
   condition: false,
-  flex: false,
   ease: 'easeInOut',
   type: 'tween',
   className: '',
@@ -26,7 +17,6 @@ export const BASE_ANIMATION_DEFAULT_PROPS: BaseAnimationDefaults = {
 export const withBaseAnimationDefaults = <T extends BaseAnimationProps>(props: T): T & BaseAnimationDefaults => ({
   ...props,
   condition: props.condition ?? BASE_ANIMATION_DEFAULT_PROPS.condition,
-  flex: props.flex ?? BASE_ANIMATION_DEFAULT_PROPS.flex,
   ease: props.ease ?? BASE_ANIMATION_DEFAULT_PROPS.ease,
   type: props.type ?? BASE_ANIMATION_DEFAULT_PROPS.type,
   className: props.className ?? BASE_ANIMATION_DEFAULT_PROPS.className,

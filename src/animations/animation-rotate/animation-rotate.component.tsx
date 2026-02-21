@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
-import cn from '@animations/styles/animation.module.css';
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
 
@@ -53,7 +51,7 @@ export const AnimationRotate = (props: AnimationRotateProps) => {
         delay: defaultedProps.delay,
         type: defaultedProps.type,
       }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={defaultedProps.className}
     >
       {defaultedProps.children}
     </motion.div>

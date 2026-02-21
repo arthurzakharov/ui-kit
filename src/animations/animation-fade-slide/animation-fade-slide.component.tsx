@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
-import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
-import cn from '@animations/styles/animation.module.css';
 
 type AnimationFadeSlideProps = BaseAnimationProps & {
   direction?: 'ltr' | 'rtl';
@@ -35,7 +33,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
         type: defaultedProps.type,
       }}
       onAnimationComplete={animation.onAnimationComplete}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
+      className={defaultedProps.className}
     >
       {defaultedProps.children}
     </motion.div>

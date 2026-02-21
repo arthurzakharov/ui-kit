@@ -17,7 +17,6 @@ const meta = {
     type: 'tween',
     duration: 0.2,
     delay: 0,
-    flex: false,
     className: '',
   },
   argTypes: animationArgTypes,
