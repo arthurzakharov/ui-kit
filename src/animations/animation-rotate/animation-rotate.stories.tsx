@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 import { animationArgTypes } from '@story/arg-types';
-import { GreyBox } from '@story/placeholders/grey-box.component';
 import { AnimationRotate } from '@animations/animation-rotate';
+import { ArrowBigUp } from 'lucide-react';
 
 const meta = {
   title: 'Animations/AnimationRotate',
   component: AnimationRotate,
   tags: ['autodocs'],
   args: {
-    from: 'left',
-    to: 'top',
+    from: 'top',
+    to: 'bottom',
     animateOnStart: false,
     name: 'animation-rotate',
     condition: true,
@@ -18,13 +18,13 @@ const meta = {
     type: 'tween',
     duration: 0.75,
     delay: 0,
-    flex: false,
+    flex: true,
     className: '',
   },
   argTypes: animationArgTypes,
   render: (args) => (
     <AnimationRotate {...args}>
-      <GreyBox id="animation-content">Rotate</GreyBox>
+      <ArrowBigUp data-testid="animation-content" size={64} />
     </AnimationRotate>
   ),
 } satisfies Meta<typeof AnimationRotate>;

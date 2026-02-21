@@ -11,6 +11,7 @@ const meta = {
   args: {
     direction: 'ltr',
     name: 'animation-fade-slide',
+    animateOnStart: false,
     condition: true,
     ease: 'easeInOut',
     type: 'tween',
@@ -30,7 +31,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const VisibleWhenConditionTrue: Story = {
+export const DoNotAnimateOnStart: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId('animation-content')).toBeInTheDocument();
+  },
+};
+
+export const AnimateOnStart: Story = {
+  args: {
+    animateOnStart: true,
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByTestId('animation-content')).toBeInTheDocument();
