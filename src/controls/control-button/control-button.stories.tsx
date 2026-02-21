@@ -43,6 +43,20 @@ export const Default: Story = {
     await userEvent.click(button);
     await expect(args.onFocus).toHaveBeenCalledOnce();
     await expect(args.onClick).toHaveBeenCalledOnce();
+    await expect(args.onBlur).not.toBeCalled();
+  },
+};
+
+export const WithBlurAfterClick: Story = {
+  args: {
+    blurAfterClick: true,
+    onBlur: fn(),
+    onFocus: fn(),
+  },
+  play: async ({ args, canvasElement, userEvent }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByTestId('control-button');
+    await userEvent.click(button);
     await expect(args.onBlur).toHaveBeenCalledOnce();
   },
 };

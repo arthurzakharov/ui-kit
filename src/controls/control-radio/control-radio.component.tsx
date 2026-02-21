@@ -7,24 +7,36 @@ import { ControlRadioText } from '@controls/control-radio-text';
 import { getChoiceId } from '@controls/utils/functions';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-radio/control-radio.module.css';
+import { AnimationFadeSlide } from '@animations/animation-fade-slide';
+import { ControlErrorMessage } from '@controls/control-error-message';
 
-export type ControlRadioProps = {
-  orientation: 'horizontal' | 'vertical';
+export interface ControlRadioProps extends Base, Interactive<string> {
+  orientation?: 'horizontal' | 'vertical';
   choices: RadioChoice[];
   state?: State;
-  icon?: ControlChoiceProps['size'];
-} & Interactive<string> &
-  Base;
+  size?: ControlChoiceProps['size'];
+  message?: string;
+}
 
-export const ControlRadio = (props: ControlRadioProps) => {
-  // TODO: onFocus, onBlur can be declared but are not used
-  const { orientation, choices, state = 'idle', icon = 'md', id, value, disabled = false, onChange, className } = props;
-
-  return (
+export const ControlRadio = ({
+  id,
+  value,
+  choices,
+  onChange,
+  orientation = 'horizontal',
+  state = 'idle',
+  size = 'md',
+  message = '',
+  disabled = false,
+  onBlur = () => {},
+  onFocus = () => {},
+  className = '',
+}: ControlRadioProps) => (
+  <div className={clsx(cn.Radio, className)}>
     <div
-      className={clsx(cn.Radio, className, {
-        [cn.RadioOrientationHorizontal]: orientation === 'horizontal',
-        [cn.RadioOrientationVertical]: orientation === 'vertical',
+      className={clsx(cn.Content, className, {
+        [cn.OrientationHorizontal]: orientation === 'horizontal',
+        [cn.OrientationVertical]: orientation === 'vertical',
       })}
     >
       {choices.map((choice, index, choices) => {
@@ -35,7 +47,7 @@ export const ControlRadio = (props: ControlRadioProps) => {
               <div className={cn.RadioLabel}>
                 <ControlChoice
                   type="radio"
-                  size={icon}
+                  size={size}
                   state={state}
                   checked={checked}
                   focused={focused}
@@ -50,6 +62,8 @@ export const ControlRadio = (props: ControlRadioProps) => {
                   checked={checked}
                   disabled={disabled}
                   onChange={() => onChange(choice.value, id)}
+                  onFocus={() => onFocus(id)}
+                  onBlur={() => onBlur(id)}
                 />
                 <ControlRadioText size="lg" checked={checked}>
                   {choice.label}
@@ -60,5 +74,8 @@ export const ControlRadio = (props: ControlRadioProps) => {
         );
       })}
     </div>
-  );
-};
+    <AnimationFadeSlide name="message" condition={state === 'error' && !!message}>
+      <ControlErrorMessage className={cn.ErrorMessage}>{message}</ControlErrorMessage>
+    </AnimationFadeSlide>
+  </div>
+);

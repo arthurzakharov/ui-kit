@@ -12,6 +12,11 @@ const meta = {
     size: 'md',
     className: '',
   },
+  argTypes: {
+    type: { control: 'select', options: ['radio', 'checkbox'] },
+    state: { control: 'select', options: ['idle', 'error', 'success'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+  },
 } satisfies Meta<typeof ControlChoice>;
 
 export default meta;

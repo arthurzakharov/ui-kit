@@ -13,40 +13,36 @@ export type ControlChoiceProps = {
   disabled?: boolean;
 } & Base;
 
-export const ControlChoice = (props: ControlChoiceProps) => {
-  const {
-    type,
-    checked,
-    state = 'idle',
-    size = 'md',
-    focused = false,
-    hovered = false,
-    disabled = false,
-    className,
-  } = props;
-
-  return (
-    <div
-      data-testid="choice"
-      className={clsx(cn.Choice, className, {
-        [cn.ChoiceChecked]: checked,
-        [cn.ChoiceFocused]: focused,
-        [cn.ChoiceHovered]: hovered,
-        [cn.ChoiceDisabled]: disabled,
-        [cn.ChoiceTypeRadio]: type === 'radio',
-        [cn.ChoiceTypeCheckbox]: type === 'checkbox',
-        [cn.ChoiceStateIdle]: state === 'idle',
-        [cn.ChoiceStateError]: state === 'error',
-        [cn.ChoiceStateSuccess]: state === 'success' || checked,
-        [cn.ChoiceSizeXs]: size === 'xs',
-        [cn.ChoiceSizeSm]: size === 'sm',
-        [cn.ChoiceSizeMd]: size === 'md',
-        [cn.ChoiceSizeLg]: size === 'lg',
-        [cn.ChoiceSizeXl]: size === 'xl',
-      })}
-    >
-      {type === 'radio' && <div className={cn.ChoiceMark} />}
-      {type === 'checkbox' && <Check className={cn.ChoiceMark} />}
-    </div>
-  );
-};
+export const ControlChoice = ({
+  type,
+  checked,
+  state = 'idle',
+  size = 'md',
+  focused = false,
+  hovered = false,
+  disabled = false,
+  className = '',
+}: ControlChoiceProps) => (
+  <div
+    data-testid="choice"
+    className={clsx(cn.Choice, className, {
+      [cn.ChoiceChecked]: checked,
+      [cn.ChoiceFocused]: focused,
+      [cn.ChoiceHovered]: hovered,
+      [cn.ChoiceDisabled]: disabled,
+      [cn.ChoiceTypeRadio]: type === 'radio',
+      [cn.ChoiceTypeCheckbox]: type === 'checkbox',
+      [cn.ChoiceStateIdle]: state === 'idle',
+      [cn.ChoiceStateError]: state === 'error',
+      [cn.ChoiceStateSuccess]: state === 'success' || checked,
+      [cn.ChoiceSizeXs]: size === 'xs',
+      [cn.ChoiceSizeSm]: size === 'sm',
+      [cn.ChoiceSizeMd]: size === 'md',
+      [cn.ChoiceSizeLg]: size === 'lg',
+      [cn.ChoiceSizeXl]: size === 'xl',
+    })}
+  >
+    {type === 'radio' && <div className={cn.ChoiceMark} />}
+    {type === 'checkbox' && <Check className={cn.ChoiceMark} />}
+  </div>
+);

@@ -1,13 +1,18 @@
 .Radio {
   display: inline-flex;
+  flex-direction: column;
 }
 
-.RadioOrientationHorizontal {
+.Content {
+  display: inline-flex;
+}
+
+.OrientationHorizontal {
   flex-direction: row;
   gap: var(--rm-ui-padding-lg);
 }
 
-.RadioOrientationVertical {
+.OrientationVertical {
   flex-direction: column;
   gap: var(--rm-ui-padding-xxs);
 }
@@ -23,4 +28,8 @@
 
 .RadioLabel:hover {
   cursor: pointer;
+}
+
+.ErrorMessage {
+  padding-top: var(--rm-ui-padding-xxs);
 }

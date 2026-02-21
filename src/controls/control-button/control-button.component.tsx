@@ -17,9 +17,9 @@ export type ControlButtonProps = {
   loading?: boolean;
   preventDefault?: boolean;
   blurAfterClick?: boolean;
-  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-  onFocus?: (e: FocusEvent<HTMLButtonElement>) => void;
-  onBlur?: (e: FocusEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 } & BaseWithChildren;
 
 export const ControlButton = (props: ControlButtonProps) => {
@@ -56,8 +56,8 @@ export const ControlButton = (props: ControlButtonProps) => {
         [cn.Loading]: loading,
       })}
       onClick={withControl(onClick, { prevent: preventDefault, blur: blurAfterClick })}
-      onFocus={onFocus}
-      onBlur={onBlur}
+      onFocus={() => onFocus()}
+      onBlur={() => onBlur()}
     >
       <AnimationFadeScale name="loader" condition={loading} className={cn.Loader}>
         <Loader size="xs" color="white" />

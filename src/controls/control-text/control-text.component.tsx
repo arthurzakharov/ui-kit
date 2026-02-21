@@ -1,13 +1,14 @@
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
-import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 import clsx from 'clsx';
 import { useBoolean, useToggle } from 'usehooks-ts';
 import type { State } from '@controls/utils/types';
 import { ControlBox } from '@controls/control-box';
 import { ControlInput, type ControlInputProps } from '@controls/control-input';
 import { ControlLabel } from '@controls/control-label';
+import { ControlErrorMessage } from '@controls/control-error-message';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-text/control-text.module.css';
+import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 
 export type ControlTextProps = {
   label: string;
@@ -18,7 +19,6 @@ export type ControlTextProps = {
   Base;
 
 export const ControlText = (props: ControlTextProps) => {
-  // TODO: onAutofill onAutofillCancel are passed but are not used anywhere
   const {
     label,
     message = '',
@@ -93,8 +93,8 @@ export const ControlText = (props: ControlTextProps) => {
           />
         </label>
       </ControlBox>
-      <AnimationFadeSlide flex name="text-message" condition={withErrorMessage}>
-        <span className={cn.TextErrorMessage}>{message}</span>
+      <AnimationFadeSlide name="text-message" condition={withErrorMessage}>
+        <ControlErrorMessage className={cn.ErrorMessage}>{message}</ControlErrorMessage>
       </AnimationFadeSlide>
     </div>
   );

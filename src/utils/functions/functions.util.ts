@@ -31,13 +31,18 @@ type WithControlConfig = {
   prevent?: boolean;
   stop?: boolean;
   blur?: boolean;
+  withEvent?: boolean;
 };
 export const withControl =
-  <E extends SyntheticEvent<HTMLElement>>(handler: (e: E) => void, config?: WithControlConfig) =>
+  <E extends SyntheticEvent<HTMLElement>>(handler: (e?: E) => void, config?: WithControlConfig) =>
   (e: E): void => {
     if (config?.prevent) e.preventDefault();
     if (config?.stop) e.stopPropagation();
     if (config?.blur) e.currentTarget.blur();
 
-    handler(e);
+    if (config?.withEvent) {
+      handler(e);
+    } else {
+      handler();
+    }
   };
