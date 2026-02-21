@@ -1,19 +1,18 @@
-import type { ChangeEvent, MouseEvent } from 'react';
+import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
 import { useToggle } from 'usehooks-ts';
 import clsx from 'clsx';
 import type { Interactive, State } from '@controls/utils/types';
 import { ControlChoice, type ControlChoiceProps } from '@controls/control-choice';
 import { ControlHiddenInput } from '@controls/control-hidden-input';
 import { Converter } from '@utils/converter/converter.util';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-checkbox/control-checkbox.module.css';
 
-export type ControlCheckboxProps = {
+export interface ControlCheckboxProps extends Base, PropsWithChildren, Interactive<boolean> {
   state?: State;
   icon?: ControlChoiceProps['size'];
   text?: 'body' | 'body-small';
-} & BaseWithChildren &
-  Interactive<boolean>;
+}
 
 export const ControlCheckbox = (props: ControlCheckboxProps) => {
   const {

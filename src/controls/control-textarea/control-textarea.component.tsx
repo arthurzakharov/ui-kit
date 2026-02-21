@@ -5,14 +5,13 @@ import { ControlBox } from '@controls/control-box';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-textarea/control-textarea.module.css';
 
-export type ControlTextareaProps = {
+export interface ControlTextareaProps extends Base, Interactive<string> {
   state?: State;
   placeholder?: string;
   rows?: number;
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
-} & Interactive<string> &
-  Base;
+}
 
 export const ControlTextarea = (props: ControlTextareaProps) => {
   const {

@@ -1,9 +1,9 @@
-import { type MouseEvent, useRef } from 'react';
+import { type MouseEvent, type PropsWithChildren, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
 import { ControlBox } from '@controls/control-box';
 import { ControlRadioText } from '@controls/control-radio-text';
 import { ControlStatus } from '@controls/control-status';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-button-radio/control-button-radio.module.css';
 
 type ControlButtonRadioInfo = {
@@ -12,7 +12,7 @@ type ControlButtonRadioInfo = {
   hintRight?: string;
 };
 
-export type ControlButtonRadioProps = {
+export interface ControlButtonRadioProps extends Base, PropsWithChildren {
   active?: boolean;
   disabled?: boolean;
   preventDefault?: boolean;
@@ -21,7 +21,7 @@ export type ControlButtonRadioProps = {
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-} & BaseWithChildren;
+}
 
 export const ControlButtonRadio = (props: ControlButtonRadioProps) => {
   const {

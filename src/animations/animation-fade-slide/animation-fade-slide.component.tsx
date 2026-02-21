@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import { type BaseFadeAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
 
-type AnimationFadeSlideProps = BaseFadeAnimationProps & {
+interface AnimationFadeSlideProps extends BaseFadeAnimationProps {
   direction?: 'ltr' | 'rtl';
-};
+}
 
 export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);

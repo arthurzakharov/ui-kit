@@ -1,13 +1,14 @@
+import type { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-radio-text/control-radio-text.module.css';
 
-export type ControlRadioTextProps = {
+export interface ControlRadioTextProps extends Base, PropsWithChildren {
   size: 'md' | 'lg';
   checked: boolean;
   oneLine?: boolean;
   color?: 'primary' | 'secondary';
-} & BaseWithChildren;
+}
 
 export const ControlRadioText = (props: ControlRadioTextProps) => {
   const { children, size, checked, oneLine = false, color = 'primary', className = '' } = props;

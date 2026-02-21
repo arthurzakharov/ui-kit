@@ -13,7 +13,7 @@ import { Converter } from '@utils/converter/converter.util';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-dropdown/control-dropdown.module.css';
 
-export type ControlDropdownProps = {
+export interface ControlDropdownProps extends Base {
   choices: QuestionChoice[];
   value: QuestionChoice[];
   label?: string;
@@ -25,7 +25,7 @@ export type ControlDropdownProps = {
   onChange: (values: QuestionChoice[]) => void;
   onOpen?: (height: number, width: number) => void;
   onClose?: () => void;
-} & Base;
+}
 
 export const ControlDropdown = (props: ControlDropdownProps) => {
   const {

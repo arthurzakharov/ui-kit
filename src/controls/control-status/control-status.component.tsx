@@ -5,9 +5,9 @@ import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-status/control-status.module.css';
 
-export type ControlStatusProps = {
+export interface ControlStatusProps extends Base {
   state: State;
-} & Base;
+}
 
 export const ControlStatus = (props: ControlStatusProps) => {
   const { className, state = 'idle' } = props;

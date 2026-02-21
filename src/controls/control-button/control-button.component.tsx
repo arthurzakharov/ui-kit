@@ -1,13 +1,13 @@
-import type { FocusEvent, MouseEvent, ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import clsx from 'clsx';
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Loader } from '@components/loader/loader.component';
 import { Content } from '@utils/content';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-button/control-button.module.css';
 import { withControl } from '@utils/functions';
 
-export type ControlButtonProps = {
+export interface ControlButtonProps extends Base, PropsWithChildren {
   color?: 'primary' | 'secondary' | 'tertiary';
   size?: 'sm' | 'md' | 'lg';
   type?: 'submit' | 'reset' | 'button';
@@ -20,7 +20,7 @@ export type ControlButtonProps = {
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-} & BaseWithChildren;
+}
 
 export const ControlButton = (props: ControlButtonProps) => {
   const {

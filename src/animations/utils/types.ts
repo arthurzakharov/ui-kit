@@ -1,7 +1,8 @@
+import type { PropsWithChildren } from 'react';
 import type { AnimationGeneratorName, EasingDefinition } from 'motion';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 
-export type BaseAnimationProps = {
+export interface BaseAnimationProps extends Base, PropsWithChildren {
   name: string;
   condition: boolean;
   animateOnStart?: boolean;
@@ -9,8 +10,8 @@ export type BaseAnimationProps = {
   ease?: EasingDefinition;
   duration?: number;
   delay?: number;
-} & BaseWithChildren;
+}
 
-export type BaseFadeAnimationProps = {
+export interface BaseFadeAnimationProps extends BaseAnimationProps {
   keepMount?: boolean;
-} & BaseAnimationProps;
+}

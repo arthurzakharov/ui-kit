@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-choice/control-choice.module.css';
 
-export type ControlChoiceProps = {
+export interface ControlChoiceProps extends Base {
   type: 'radio' | 'checkbox';
   checked: boolean;
   state?: 'idle' | 'error' | 'success';
@@ -11,7 +11,7 @@ export type ControlChoiceProps = {
   focused?: boolean;
   hovered?: boolean;
   disabled?: boolean;
-} & Base;
+}
 
 export const ControlChoice = ({
   type,

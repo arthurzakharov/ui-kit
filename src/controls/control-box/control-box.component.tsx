@@ -1,15 +1,15 @@
-import { forwardRef } from 'react';
+import { type PropsWithChildren, forwardRef } from 'react';
 import type { State } from '@controls/utils/types';
 import clsx from 'clsx';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-box/control-box.module.css';
 
-export type ControlBoxProps = {
+export interface ControlBoxProps extends Base, PropsWithChildren {
   state?: State;
   focused?: boolean;
   checked?: boolean;
   onClick?: () => void;
-} & BaseWithChildren;
+}
 
 export const ControlBox = forwardRef<HTMLDivElement, ControlBoxProps>((props, ref) => {
   const { children, className, focused, checked = false, state = 'idle', onClick } = props;

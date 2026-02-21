@@ -4,10 +4,10 @@ import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/
 
 type RotateDirection = 'top' | 'left' | 'bottom' | 'right';
 
-type AnimationRotateProps = BaseAnimationProps & {
+interface AnimationRotateProps extends BaseAnimationProps {
   from?: RotateDirection;
   to?: RotateDirection;
-};
+}
 
 const DEGREE_BY_DIRECTION: Record<RotateDirection, number> = {
   top: 0,

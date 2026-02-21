@@ -1,13 +1,13 @@
-import { type MouseEvent, useRef } from 'react';
+import { type MouseEvent, type PropsWithChildren, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
 import clsx from 'clsx';
 import { ControlBox } from '@controls/control-box';
 import { ControlRadioText } from '@controls/control-radio-text';
 import { Svg, type SvgProps } from '@utils/svg';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-button-card/control-button-card.module.css';
 
-export type ControlButtonCardProps = {
+export interface ControlButtonCardProps extends Base, PropsWithChildren {
   icon?: SvgProps['icon'];
   iconPosition?: 'top' | 'left';
   active?: boolean;
@@ -17,7 +17,7 @@ export type ControlButtonCardProps = {
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-} & BaseWithChildren;
+}
 
 export const ControlButtonCard = (props: ControlButtonCardProps) => {
   const {

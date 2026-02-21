@@ -8,14 +8,13 @@ import cn from '@controls/control-input/control-input.module.css';
 
 type RefMask = ReactInputMask & HTMLInputElement;
 
-export type ControlInputProps = {
+export interface ControlInputProps extends Base, Interactive<string> {
   type?: HTMLInputTypeAttribute;
   dateMask?: boolean;
   maxLength?: number;
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
-} & Interactive<string> &
-  Base;
+}
 
 export const ControlInput = ({
   id,

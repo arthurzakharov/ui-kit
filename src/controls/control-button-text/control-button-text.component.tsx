@@ -1,10 +1,10 @@
-import { type MouseEvent } from 'react';
+import { type MouseEvent, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import { Svg, type SvgProps } from '@utils/svg';
-import type { BaseWithChildren } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-button-text/control-button-text.module.css';
 
-export type ControlButtonTextProps = {
+export interface ControlButtonTextProps extends Base, PropsWithChildren {
   size?: 'sm' | 'md' | 'lg';
   color?: 'primary' | 'secondary' | 'accent-primary' | 'accent-secondary' | 'theme-primary' | 'theme-secondary';
   weight?: 'light' | 'regular' | 'medium' | 'bold';
@@ -18,7 +18,7 @@ export type ControlButtonTextProps = {
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-} & BaseWithChildren;
+}
 
 export const ControlButtonText = (props: ControlButtonTextProps) => {
   const {

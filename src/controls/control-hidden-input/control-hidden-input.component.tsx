@@ -4,7 +4,7 @@ import type { InputChangeSource } from '@controls/utils/types';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-hidden-input/control-hidden-input.module.css';
 
-export type ControlHiddenInputProps = {
+export interface ControlHiddenInputProps extends Base {
   id: string;
   value: string;
   name: string;
@@ -14,7 +14,7 @@ export type ControlHiddenInputProps = {
   onChange: (e: ChangeEvent<HTMLInputElement>, source?: InputChangeSource) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
-} & Base;
+}
 
 export const ControlHiddenInput = (props: ControlHiddenInputProps) => {
   const {

@@ -10,13 +10,12 @@ import type { Base } from '@utils/types';
 import cn from '@controls/control-text/control-text.module.css';
 import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 
-export type ControlTextProps = {
+export interface ControlTextProps extends Base, ControlInputProps {
   label: string;
   message?: string;
   placeholder?: string;
   state?: State;
-} & ControlInputProps &
-  Base;
+}
 
 export const ControlText = (props: ControlTextProps) => {
   const {

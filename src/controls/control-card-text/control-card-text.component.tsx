@@ -10,11 +10,10 @@ import { useChoice } from '@controls/hooks/use-choice';
 import { getChoiceId } from '@controls/utils/functions';
 import cn from '@controls/control-card-text/control-card-text.module.css';
 
-export type ControlCardTextProps = {
+export interface ControlCardTextProps extends Base, Interactive<ChoiceValue> {
   choices: RadioChoice[];
   state?: State;
-} & Interactive<ChoiceValue> &
-  Base;
+}
 
 export const ControlCardText = (props: ControlCardTextProps) => {
   // TODO: onFocus and onBlur are not used even though they can be passed
