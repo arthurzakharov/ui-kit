@@ -48,6 +48,17 @@ export const AnimateOnStart: Story = {
   },
 };
 
+export const HiddenButMountedWhenKeepMount: Story = {
+  args: {
+    condition: false,
+    keepMount: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByTestId('animation-content')).toBeInTheDocument();
+  },
+};
+
 export const HiddenWhenConditionFalse: Story = {
   args: {
     condition: false,

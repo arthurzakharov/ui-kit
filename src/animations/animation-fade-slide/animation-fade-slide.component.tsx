@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
-import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
+import { type BaseFadeAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
 
-type AnimationFadeSlideProps = BaseAnimationProps & {
+type AnimationFadeSlideProps = BaseFadeAnimationProps & {
   direction?: 'ltr' | 'rtl';
 };
 
@@ -19,7 +19,7 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   };
   const visibleState = { x: 0, opacity: 1 };
 
-  if (!animation.shouldRender) return null;
+  if (!animation.shouldRender && !defaultedProps.keepMount) return null;
 
   return (
     <motion.div

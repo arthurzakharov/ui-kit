@@ -1,4 +1,4 @@
-import type { FocusEvent, MouseEvent } from 'react';
+import type { FocusEvent, MouseEvent, ReactNode } from 'react';
 import clsx from 'clsx';
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Loader } from '@components/loader/loader.component';
@@ -8,11 +8,11 @@ import cn from '@controls/control-button/control-button.module.css';
 import { withControl } from '@utils/functions';
 
 export type ControlButtonProps = {
-  color: 'primary' | 'secondary' | 'tertiary';
+  color?: 'primary' | 'secondary' | 'tertiary';
   size?: 'sm' | 'md' | 'lg';
   type?: 'submit' | 'reset' | 'button';
   disabled?: boolean;
-  info?: string;
+  info?: ReactNode;
   fullWidth?: boolean;
   loading?: boolean;
   preventDefault?: boolean;
@@ -24,8 +24,7 @@ export type ControlButtonProps = {
 
 export const ControlButton = (props: ControlButtonProps) => {
   const {
-    children,
-    color,
+    color = 'primary',
     size = 'md',
     type = 'button',
     disabled = false,
@@ -37,12 +36,13 @@ export const ControlButton = (props: ControlButtonProps) => {
     onClick = () => {},
     onFocus = () => {},
     onBlur = () => {},
-    className,
+    className = '',
+    children,
   } = props;
 
   return (
     <button
-      data-testid="button"
+      data-testid="control-button"
       type={type}
       disabled={disabled || loading}
       className={clsx(cn.Button, className, {
@@ -59,13 +59,13 @@ export const ControlButton = (props: ControlButtonProps) => {
       onFocus={onFocus}
       onBlur={onBlur}
     >
-      <AnimationFadeScale name="loader" condition={loading} className={cn.LoaderAnimation}>
+      <AnimationFadeScale name="loader" condition={loading} className={cn.Loader}>
         <Loader size="xs" color="white" />
       </AnimationFadeScale>
-      <div data-loading={loading} className={cn.Content}>
+      <AnimationFadeScale name="content" keepMount condition={!loading} className={cn.Content}>
         <span className={cn.Text}>{children}</span>
         <Content className={cn.Info}>{info}</Content>
-      </div>
+      </AnimationFadeScale>
     </button>
   );
 };

@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
-import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
+import { type BaseFadeAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
 import { useAnimationLifecycle } from '@animations/hook';
 
-export const AnimationFadeGrow = (props: BaseAnimationProps) => {
+export const AnimationFadeGrow = (props: BaseFadeAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
   const animation = useAnimationLifecycle({
     condition: defaultedProps.condition,
@@ -15,7 +15,7 @@ export const AnimationFadeGrow = (props: BaseAnimationProps) => {
   };
   const visibleState = { height: 'auto', opacity: 1 };
 
-  if (!animation.shouldRender) return null;
+  if (!animation.shouldRender && !defaultedProps.keepMount) return null;
 
   return (
     <motion.div

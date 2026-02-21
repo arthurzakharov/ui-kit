@@ -10,3 +10,7 @@ export type BaseAnimationProps = {
   duration?: number;
   delay?: number;
 } & BaseWithChildren;
+
+export type BaseFadeAnimationProps = {
+  keepMount?: boolean;
+} & BaseAnimationProps;
