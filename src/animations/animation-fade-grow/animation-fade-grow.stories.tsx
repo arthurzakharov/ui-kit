@@ -10,13 +10,12 @@ const meta = {
   tags: ['autodocs'],
   args: {
     name: 'animation-fade-grow',
-    animateOnStart: false,
     condition: true,
-    ease: 'easeInOut',
+    animateOnStart: false,
     type: 'tween',
+    ease: 'easeInOut',
     duration: 0.2,
     delay: 0,
-    className: '',
   },
   argTypes: animationArgTypes,
   render: (args) => (

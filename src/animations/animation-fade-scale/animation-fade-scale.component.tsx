@@ -5,7 +5,7 @@ import { useAnimationLifecycle } from '@animations/hook';
 export const AnimationFadeScale = (props: BaseAnimationProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
   const animation = useAnimationLifecycle({
-    condition: defaultedProps.condition,
+    condition: props.condition,
     animateOnStart: defaultedProps.animateOnStart,
   });
 
@@ -29,7 +29,7 @@ export const AnimationFadeScale = (props: BaseAnimationProps) => {
         type: defaultedProps.type,
       }}
       onAnimationComplete={animation.onAnimationComplete}
-      className={defaultedProps.className}
+      className={props.className}
     >
       {defaultedProps.children}
     </motion.div>

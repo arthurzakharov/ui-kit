@@ -12,14 +12,13 @@ const meta = {
   args: {
     from: 'top',
     to: 'bottom',
-    animateOnStart: false,
     name: 'animation-rotate',
     condition: true,
+    animateOnStart: false,
     ease: 'easeInOut',
     type: 'tween',
     duration: 0.2,
     delay: 0,
-    className: '',
   },
   argTypes: animationArgTypes,
   render: (args) => (
