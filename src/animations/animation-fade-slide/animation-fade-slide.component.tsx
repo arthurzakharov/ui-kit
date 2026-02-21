@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import clsx from 'clsx';
 import { type BaseAnimationProps, withBaseAnimationDefaults } from '@animations/utils';
+import { useAnimationLifecycle } from '@animations/hook';
 import cn from '@animations/styles/animation.module.css';
 
 type AnimationFadeSlideProps = BaseAnimationProps & {
@@ -10,20 +10,10 @@ type AnimationFadeSlideProps = BaseAnimationProps & {
 
 export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   const defaultedProps = withBaseAnimationDefaults(props);
-  const hasRendered = useRef(defaultedProps.animateOnStart);
-  const conditionRef = useRef(defaultedProps.condition);
-  const [shouldRender, setShouldRender] = useState(defaultedProps.condition || defaultedProps.animateOnStart);
-  conditionRef.current = defaultedProps.condition;
-
-  useEffect(() => {
-    hasRendered.current = true;
-  }, []);
-
-  useEffect(() => {
-    if (defaultedProps.condition) {
-      setShouldRender(true);
-    }
-  }, [defaultedProps.condition]);
+  const animation = useAnimationLifecycle({
+    condition: defaultedProps.condition,
+    animateOnStart: defaultedProps.animateOnStart,
+  });
 
   const hiddenState = {
     x: (defaultedProps.direction ?? 'ltr') === 'ltr' ? '-100%' : '100%',
@@ -31,27 +21,21 @@ export const AnimationFadeSlide = (props: AnimationFadeSlideProps) => {
   };
   const visibleState = { x: 0, opacity: 1 };
 
-  const initial = hasRendered.current ? (defaultedProps.condition ? hiddenState : visibleState) : false;
-
-  if (!shouldRender) return null;
+  if (!animation.shouldRender) return null;
 
   return (
     <motion.div
       key={defaultedProps.name}
-      initial={initial}
-      animate={defaultedProps.condition ? visibleState : hiddenState}
+      initial={animation.getInitialState(hiddenState, visibleState)}
+      animate={animation.getAnimateState(hiddenState, visibleState)}
       transition={{
         ease: defaultedProps.ease,
         duration: defaultedProps.duration,
         delay: defaultedProps.delay,
         type: defaultedProps.type,
       }}
-      onAnimationComplete={() => {
-        if (!conditionRef.current) {
-          setShouldRender(false);
-        }
-      }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex, defaultedProps.absolute && cn.Absolute)}
+      onAnimationComplete={animation.onAnimationComplete}
+      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
     >
       {defaultedProps.children}
     </motion.div>

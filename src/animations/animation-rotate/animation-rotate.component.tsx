@@ -53,7 +53,7 @@ export const AnimationRotate = (props: AnimationRotateProps) => {
         delay: defaultedProps.delay,
         type: defaultedProps.type,
       }}
-      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex, defaultedProps.absolute && cn.Absolute)}
+      className={clsx(defaultedProps.className, defaultedProps.flex && cn.Flex)}
     >
       {defaultedProps.children}
     </motion.div>

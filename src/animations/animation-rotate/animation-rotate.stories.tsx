@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 import { animationArgTypes } from '@story/arg-types';
+import { SizeBox } from '@story/placeholders/size-box.component';
+import { GreyBox } from '@story/placeholders/grey-box.component';
 import { AnimationRotate } from '@animations/animation-rotate';
-import { ArrowBigUp } from 'lucide-react';
 
 const meta = {
   title: 'Animations/AnimationRotate',
@@ -13,19 +14,22 @@ const meta = {
     to: 'bottom',
     animateOnStart: false,
     name: 'animation-rotate',
-    condition: false,
+    condition: true,
     ease: 'easeInOut',
     type: 'tween',
-    duration: 0.75,
+    duration: 0.2,
     delay: 0,
-    absolute: true,
     className: '',
   },
   argTypes: animationArgTypes,
   render: (args) => (
-    <AnimationRotate {...args}>
-      <ArrowBigUp data-testid="animation-content" size={64} />
-    </AnimationRotate>
+    <SizeBox size={300}>
+      <AnimationRotate {...args}>
+        <GreyBox size={300} id="animation-content">
+          Rotate
+        </GreyBox>
+      </AnimationRotate>
+    </SizeBox>
   ),
 } satisfies Meta<typeof AnimationRotate>;
 

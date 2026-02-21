@@ -9,6 +9,5 @@ export type BaseAnimationProps = {
   name: string;
   condition?: boolean;
   flex?: boolean;
-  absolute?: boolean;
   animateOnStart?: boolean;
 } & BaseWithChildren;

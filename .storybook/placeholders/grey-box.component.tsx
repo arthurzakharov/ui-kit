@@ -3,13 +3,15 @@ import { Text } from '@components/text/text.component';
 
 type GreyBoxProps = {
   id: string;
+  size: number;
 } & PropsWithChildren;
 
-export const GreyBox = ({ id, children }: GreyBoxProps) => (
+export const GreyBox = ({ id, size, children }: GreyBoxProps) => (
   <div
     data-testid={id}
     style={{
-      height: '400px',
+      width: size,
+      height: size,
       backgroundColor: 'var(--rm-ui-grey-700)',
       display: 'flex',
       alignItems: 'center',

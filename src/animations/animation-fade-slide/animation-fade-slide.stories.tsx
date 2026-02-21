@@ -15,7 +15,7 @@ const meta = {
     condition: true,
     ease: 'easeInOut',
     type: 'tween',
-    duration: 0.75,
+    duration: 0.2,
     delay: 0,
     flex: false,
     className: '',
@@ -23,7 +23,9 @@ const meta = {
   argTypes: animationArgTypes,
   render: (args) => (
     <AnimationFadeSlide {...args}>
-      <GreyBox id="animation-content">Fade slide</GreyBox>
+      <GreyBox size={300} id="animation-content">
+        Fade slide
+      </GreyBox>
     </AnimationFadeSlide>
   ),
 } satisfies Meta<typeof AnimationFadeSlide>;
