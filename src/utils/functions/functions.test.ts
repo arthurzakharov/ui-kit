@@ -82,7 +82,7 @@ describe('withControl', () => {
       },
     };
 
-    withControl(handler, 'prevent', 'stop', 'blur')(event as never);
+    withControl(handler, { prevent: true, stop: true, blur: true })(event as never);
 
     expect(event.preventDefault).toHaveBeenCalledTimes(1);
     expect(event.stopPropagation).toHaveBeenCalledTimes(1);

@@ -24,17 +24,20 @@ export function isHtmlString(value: unknown): value is string {
   return isString(value) && containsHtml(value);
 }
 
-type ControlAction = 'prevent' | 'stop' | 'blur';
-
 /**
  * A higher-order function to wrap event handlers with common event control logic.
  */
+type WithControlConfig = {
+  prevent?: boolean;
+  stop?: boolean;
+  blur?: boolean;
+};
 export const withControl =
-  <E extends SyntheticEvent<HTMLElement>>(handler: (e: E) => void, ...actions: ControlAction[]) =>
+  <E extends SyntheticEvent<HTMLElement>>(handler: (e: E) => void, config?: WithControlConfig) =>
   (e: E): void => {
-    if (actions.includes('prevent')) e.preventDefault();
-    if (actions.includes('stop')) e.stopPropagation();
-    if (actions.includes('blur')) e.currentTarget.blur();
+    if (config?.prevent) e.preventDefault();
+    if (config?.stop) e.stopPropagation();
+    if (config?.blur) e.currentTarget.blur();
 
     handler(e);
   };

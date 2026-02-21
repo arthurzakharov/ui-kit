@@ -8,75 +8,75 @@
   justify-content: center;
 }
 
-.ButtonSizeSm {
+.SizeSm {
   border-radius: var(--rm-ui-border-radius-sm);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
 }
 
-.ButtonSizeLg.ButtonColorTertiary {
+.SizeLg.ColorTertiary {
   padding: calc(var(--rm-ui-padding-xs) - 1px) calc(var(--rm-ui-padding-sm) - 1px);
 }
 
-.ButtonSizeSm .ButtonText {
+.SizeSm .Text {
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.ButtonSizeMd {
+.SizeMd {
   border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
 }
 
-.ButtonSizeMd.ButtonColorTertiary {
+.SizeMd.ColorTertiary {
   padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
 }
 
-.ButtonSizeLg {
+.SizeLg {
   border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
 }
 
-.ButtonSizeLg.ButtonColorTertiary {
+.SizeLg.ColorTertiary {
   padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
 }
 
-.ButtonSizeMd .ButtonText {
+.SizeMd .Text {
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
 }
 
-.ButtonSizeLg .ButtonText {
+.SizeLg .Text {
   font-size: var(--rm-ui-font-size-body-large);
   line-height: var(--rm-ui-line-height-body-large);
 }
 
-.ButtonColorPrimary {
+.ColorPrimary {
   background-color: var(--rm-ui-next-btn-bg);
 }
 
-.ButtonColorPrimary .ButtonText {
+.ColorPrimary .Text {
   color: #ffffff;
 }
 
-.ButtonColorSecondary {
+.ColorSecondary {
   background-color: transparent;
 }
 
-.ButtonColorSecondary .ButtonText {
+.ColorSecondary .Text {
   color: var(--rm-ui-color-text-secondary);
 }
 
-.ButtonColorTertiary {
+.ColorTertiary {
   border: 1px solid var(--rm-ui-grey-300);
   background-color: transparent;
 }
 
-.ButtonColorTertiary .ButtonText {
+.ColorTertiary .Text {
   color: var(--rm-ui-color-text-primary);
 }
 
-.Button:not(.ButtonLoading):not(:disabled):hover {
+.Button:not(.Loading):not(:disabled):hover {
   cursor: pointer;
 }
 
@@ -84,41 +84,38 @@
   outline-color: var(--rm-ui-color-focus);
 }
 
-.ButtonFullWidth {
+.FullWidth {
   width: 100%;
 }
 
-.ButtonText {
-  font-weight: var(--rm-ui-font-weight-medium);
+.Content {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.ButtonInfo {
+.Content[data-loading='true'] {
+  opacity: 0;
+}
+
+.Content[data-loading='false'] {
+  opacity: 1;
+}
+
+.Info {
+  flex-basis: 100%;
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: calc(var(--rm-ui-line-height-body-small) - 2px);
   color: #ffffff;
 }
 
-.ButtonContent {
-  transition: opacity 0.2s ease-in-out 0.2s;
+.Text {
+  font-weight: var(--rm-ui-font-weight-medium);
 }
 
-.ButtonContentLoading {
-  opacity: 0;
-}
-
-.ButtonContentIdle {
-  opacity: 1;
-}
-
-.ButtonLoaderWrap {
+.LoaderAnimation {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.ButtonLoaderAnimationWrap {
   display: flex;
   flex-direction: column;
   align-items: center;

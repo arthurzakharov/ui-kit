@@ -1,17 +1,18 @@
-import { type PropsWithChildren, type MouseEvent, useRef } from 'react';
+import { type MouseEvent, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
 import { ControlBox } from '@controls/control-box';
 import { ControlRadioText } from '@controls/control-radio-text';
 import { ControlStatus } from '@controls/control-status';
+import type { BaseWithChildren } from '@utils/types';
 import cn from '@controls/control-button-radio/control-button-radio.module.css';
 
-interface ControlButtonRadioInfo {
+type ControlButtonRadioInfo = {
   text?: string;
   hintLeft?: string;
   hintRight?: string;
-}
+};
 
-export interface ControlButtonRadioProps extends PropsWithChildren {
+export type ControlButtonRadioProps = {
   active?: boolean;
   disabled?: boolean;
   preventDefault?: boolean;
@@ -20,7 +21,7 @@ export interface ControlButtonRadioProps extends PropsWithChildren {
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-}
+} & BaseWithChildren;
 
 export const ControlButtonRadio = (props: ControlButtonRadioProps) => {
   const {
@@ -33,13 +34,14 @@ export const ControlButtonRadio = (props: ControlButtonRadioProps) => {
     disabled = false,
     preventDefault = false,
     blurAfterClick = false,
+    className,
   } = props;
   const btnRef = useRef<HTMLDivElement>(null);
   const isHover = useHover(btnRef);
   const [focused, toggleFocused] = useToggle(false);
 
   return (
-    <ControlBox ref={btnRef} checked={active || isHover} state="idle" focused={focused}>
+    <ControlBox ref={btnRef} checked={active || isHover} state="idle" focused={focused} className={className}>
       <button
         type="button"
         disabled={disabled}

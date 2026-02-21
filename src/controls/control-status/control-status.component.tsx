@@ -2,12 +2,12 @@ import { Check, Circle, X } from 'lucide-react';
 import clsx from 'clsx';
 import type { State } from '@controls/utils/types';
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-status/control-status.module.css';
 
-export interface ControlStatusProps {
+export type ControlStatusProps = {
   state: State;
-  className?: string;
-}
+} & Base;
 
 export const ControlStatus = (props: ControlStatusProps) => {
   const { className, state = 'idle' } = props;

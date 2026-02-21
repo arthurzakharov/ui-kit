@@ -1,8 +1,9 @@
 import { Check } from 'lucide-react';
 import clsx from 'clsx';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-choice/control-choice.module.css';
 
-export interface ControlChoiceProps {
+export type ControlChoiceProps = {
   type: 'radio' | 'checkbox';
   checked: boolean;
   state?: 'idle' | 'error' | 'success';
@@ -10,15 +11,24 @@ export interface ControlChoiceProps {
   focused?: boolean;
   hovered?: boolean;
   disabled?: boolean;
-}
+} & Base;
 
 export const ControlChoice = (props: ControlChoiceProps) => {
-  const { type, checked, state = 'idle', size = 'md', focused = false, hovered = false, disabled = false } = props;
+  const {
+    type,
+    checked,
+    state = 'idle',
+    size = 'md',
+    focused = false,
+    hovered = false,
+    disabled = false,
+    className,
+  } = props;
 
   return (
     <div
       data-testid="choice"
-      className={clsx(cn.Choice, {
+      className={clsx(cn.Choice, className, {
         [cn.ChoiceChecked]: checked,
         [cn.ChoiceFocused]: focused,
         [cn.ChoiceHovered]: hovered,

@@ -2,18 +2,31 @@ import type { Interactive, State } from '@controls/utils/types';
 import type { AnimationEvent } from 'react';
 import { useBoolean, useToggle } from 'usehooks-ts';
 import { ControlBox } from '@controls/control-box';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-textarea/control-textarea.module.css';
 
-export interface ControlTextareaProps extends Interactive<string> {
+export type ControlTextareaProps = {
   state?: State;
   placeholder?: string;
   rows?: number;
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
-}
+} & Interactive<string> &
+  Base;
 
 export const ControlTextarea = (props: ControlTextareaProps) => {
-  const { state = 'idle', placeholder = '', rows = 5, id, value, disabled = false, onChange, onFocus, onBlur } = props;
+  const {
+    state = 'idle',
+    placeholder = '',
+    rows = 5,
+    id,
+    value,
+    disabled = false,
+    onChange,
+    onFocus,
+    onBlur,
+    className,
+  } = props;
   const { value: isIdle, setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
   const [focused, toggleFocused] = useToggle(false);
 
@@ -35,7 +48,7 @@ export const ControlTextarea = (props: ControlTextareaProps) => {
   };
 
   return (
-    <ControlBox state={state} focused={focused}>
+    <ControlBox state={state} focused={focused} className={className}>
       <textarea
         data-testid="textarea"
         data-is-idle={isIdle}

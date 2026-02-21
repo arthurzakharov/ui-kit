@@ -10,9 +10,10 @@ import { ControlLabel } from '@controls/control-label';
 import { ControlRadioText } from '@controls/control-radio-text';
 import { clickHasNode } from '@controls/utils/functions';
 import { Converter } from '@utils/converter/converter.util';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-dropdown/control-dropdown.module.css';
 
-export interface ControlDropdownProps {
+export type ControlDropdownProps = {
   choices: QuestionChoice[];
   value: QuestionChoice[];
   label?: string;
@@ -24,10 +25,19 @@ export interface ControlDropdownProps {
   onChange: (values: QuestionChoice[]) => void;
   onOpen?: (height: number, width: number) => void;
   onClose?: () => void;
-}
+} & Base;
 
 export const ControlDropdown = (props: ControlDropdownProps) => {
-  const { choices = [], value = [], isSearchHidden = false, multiple = false, onChange, onOpen, onClose } = props;
+  const {
+    choices = [],
+    value = [],
+    isSearchHidden = false,
+    multiple = false,
+    onChange,
+    onOpen,
+    onClose,
+    className,
+  } = props;
   const label = props.label || '';
   const placeholder = props.placeholder || 'Wählen Sie Ihre private Krankenversicherung...';
   const noResult = props.noResult || 'Keine Versicherung gefunden.';
@@ -83,7 +93,7 @@ export const ControlDropdown = (props: ControlDropdownProps) => {
   );
 
   return (
-    <div className={cn.Dropdown}>
+    <div className={clsx(cn.Dropdown, className)}>
       <ControlBox ref={borderRef} onClick={toggleDropdown}>
         <div className={cn.DropdownBorder}>
           <div className={cn.DropdownContent}>

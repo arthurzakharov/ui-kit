@@ -1,8 +1,10 @@
 import type { ChangeEvent } from 'react';
+import clsx from 'clsx';
 import type { InputChangeSource } from '@controls/utils/types';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-hidden-input/control-hidden-input.module.css';
 
-export interface ControlHiddenInputProps {
+export type ControlHiddenInputProps = {
   id: string;
   value: string;
   name: string;
@@ -10,10 +12,10 @@ export interface ControlHiddenInputProps {
   checked: boolean;
   disabled?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>, source?: InputChangeSource) => void;
-}
+} & Base;
 
 export const ControlHiddenInput = (props: ControlHiddenInputProps) => {
-  const { type, id, name, value, disabled = false, checked, onChange } = props;
+  const { type, id, name, value, disabled = false, checked, onChange, className } = props;
 
   return (
     <input
@@ -24,7 +26,7 @@ export const ControlHiddenInput = (props: ControlHiddenInputProps) => {
       value={value}
       checked={checked}
       disabled={disabled}
-      className={cn.HiddenInput}
+      className={clsx(cn.HiddenInput, className)}
       onChange={(e: ChangeEvent<HTMLInputElement>) => {
         if (disabled) return;
         e.preventDefault();

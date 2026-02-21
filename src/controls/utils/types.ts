@@ -1,13 +1,13 @@
 export type InputChangeSource = 'mouse' | 'keyboard';
 
-export interface Interactive<V> {
+export type Interactive<V> = {
   id: string;
   value: V;
   disabled?: boolean;
   onChange: (value: V, id: string, source?: InputChangeSource) => void;
   onFocus?: (id: string) => void;
   onBlur?: (id: string) => void;
-}
+};
 
 export type RadioChoice = {
   label: string;

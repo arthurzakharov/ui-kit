@@ -1,1 +1,1 @@
-export * from './useChoice';
+export * from './use-choice';

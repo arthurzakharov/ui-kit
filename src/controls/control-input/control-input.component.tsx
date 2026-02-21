@@ -1,18 +1,21 @@
 import { type HTMLInputTypeAttribute, type MouseEvent, type KeyboardEvent, useRef } from 'react';
 import InputMask, { type ReactInputMask } from 'react-input-mask';
 import type { Interactive } from '@controls/utils/types';
+import clsx from 'clsx';
+import type { Base } from '@utils/types';
 import { findEndIndex } from '@controls/utils/functions';
 import cn from '@controls/control-input/control-input.module.css';
 
-interface RefMask extends ReactInputMask, HTMLInputElement {}
+type RefMask = ReactInputMask & HTMLInputElement;
 
-export interface ControlInputProps extends Interactive<string> {
+export type ControlInputProps = {
   type?: HTMLInputTypeAttribute;
   dateMask?: boolean;
   maxLength?: number;
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
-}
+} & Interactive<string> &
+  Base;
 
 export const ControlInput = ({
   id,
@@ -26,6 +29,7 @@ export const ControlInput = ({
   onChange,
   onFocus,
   onBlur,
+  className,
 }: ControlInputProps) => {
   const ref = useRef<RefMask>(null);
 
@@ -70,7 +74,7 @@ export const ControlInput = ({
       ref={ref}
       value={value}
       id={id}
-      className={cn.Input}
+      className={clsx(cn.Input, className)}
       disabled={disabled}
       mask="99/99/9999"
       maskChar="_"
@@ -97,7 +101,7 @@ export const ControlInput = ({
       id={id}
       name={id}
       value={value}
-      className={cn.Input}
+      className={clsx(cn.Input, className)}
       onChange={(e) => onChange(e.target.value, id, 'keyboard')}
       onAnimationStart={(e) => {
         if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);

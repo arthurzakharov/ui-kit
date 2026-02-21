@@ -1,11 +1,13 @@
-import type { PropsWithChildren, MouseEvent } from 'react';
+import type { FocusEvent, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { Loader } from '@components/loader/loader.component';
-import { containsHtml } from '@controls/utils/functions';
+import { Content } from '@utils/content';
+import type { BaseWithChildren } from '@utils/types';
 import cn from '@controls/control-button/control-button.module.css';
+import { withControl } from '@utils/functions';
 
-export interface ControlButtonProps extends PropsWithChildren {
+export type ControlButtonProps = {
   color: 'primary' | 'secondary' | 'tertiary';
   size?: 'sm' | 'md' | 'lg';
   type?: 'submit' | 'reset' | 'button';
@@ -15,10 +17,10 @@ export interface ControlButtonProps extends PropsWithChildren {
   loading?: boolean;
   preventDefault?: boolean;
   blurAfterClick?: boolean;
-  onClick?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
-}
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onFocus?: (e: FocusEvent<HTMLButtonElement>) => void;
+  onBlur?: (e: FocusEvent<HTMLButtonElement>) => void;
+} & BaseWithChildren;
 
 export const ControlButton = (props: ControlButtonProps) => {
   const {
@@ -32,9 +34,10 @@ export const ControlButton = (props: ControlButtonProps) => {
     loading = false,
     preventDefault = false,
     blurAfterClick = false,
-    onClick,
-    onFocus,
-    onBlur,
+    onClick = () => {},
+    onFocus = () => {},
+    onBlur = () => {},
+    className,
   } = props;
 
   return (
@@ -42,42 +45,26 @@ export const ControlButton = (props: ControlButtonProps) => {
       data-testid="button"
       type={type}
       disabled={disabled || loading}
-      className={clsx(cn.Button, {
-        [cn.ButtonSizeSm]: size === 'sm',
-        [cn.ButtonSizeMd]: size === 'md',
-        [cn.ButtonSizeLg]: size === 'lg',
-        [cn.ButtonColorPrimary]: color === 'primary',
-        [cn.ButtonColorSecondary]: color === 'secondary',
-        [cn.ButtonColorTertiary]: color === 'tertiary',
-        [cn.ButtonFullWidth]: fullWidth,
-        [cn.ButtonLoading]: loading,
+      className={clsx(cn.Button, className, {
+        [cn.SizeSm]: size === 'sm',
+        [cn.SizeMd]: size === 'md',
+        [cn.SizeLg]: size === 'lg',
+        [cn.ColorPrimary]: color === 'primary',
+        [cn.ColorSecondary]: color === 'secondary',
+        [cn.ColorTertiary]: color === 'tertiary',
+        [cn.FullWidth]: fullWidth,
+        [cn.Loading]: loading,
       })}
-      onClick={(e: MouseEvent<HTMLButtonElement>) => {
-        if (preventDefault) e.preventDefault();
-        if (blurAfterClick) e.currentTarget.blur();
-        onClick?.call(null);
-      }}
-      onFocus={() => onFocus?.call(null)}
-      onBlur={() => onBlur?.call(null)}
+      onClick={withControl(onClick, { prevent: preventDefault, blur: blurAfterClick })}
+      onFocus={onFocus}
+      onBlur={onBlur}
     >
-      <div className={cn.ButtonLoaderWrap}>
-        <AnimationFadeScale
-          name="loader"
-          condition={loading}
-          duration={0.2}
-          delay={0.2}
-          className={cn.ButtonLoaderAnimationWrap}
-        >
-          <Loader size="xs" color="white" />
-        </AnimationFadeScale>
-      </div>
-      <div className={clsx(cn.ButtonContent, loading ? cn.ButtonContentLoading : cn.ButtonContentIdle)}>
-        <span className={cn.ButtonText}>{children}</span>
-        {containsHtml(info) && info ? (
-          <span className={cn.ButtonInfo} dangerouslySetInnerHTML={{ __html: info }} />
-        ) : (
-          <span className={cn.ButtonInfo}>{info}</span>
-        )}
+      <AnimationFadeScale name="loader" condition={loading} className={cn.LoaderAnimation}>
+        <Loader size="xs" color="white" />
+      </AnimationFadeScale>
+      <div data-loading={loading} className={cn.Content}>
+        <span className={cn.Text}>{children}</span>
+        <Content className={cn.Info}>{info}</Content>
       </div>
     </button>
   );

@@ -5,22 +5,24 @@ import { ControlHiddenInput } from '@controls/control-hidden-input';
 import { ControlRadioLabel } from '@controls/control-radio-label';
 import { ControlRadioText } from '@controls/control-radio-text';
 import { getChoiceId } from '@controls/utils/functions';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-radio/control-radio.module.css';
 
-export interface ControlRadioProps extends Interactive<string> {
+export type ControlRadioProps = {
   orientation: 'horizontal' | 'vertical';
   choices: RadioChoice[];
   state?: State;
   icon?: ControlChoiceProps['size'];
-}
+} & Interactive<string> &
+  Base;
 
 export const ControlRadio = (props: ControlRadioProps) => {
   // TODO: onFocus, onBlur can be declared but are not used
-  const { orientation, choices, state = 'idle', icon = 'md', id, value, disabled = false, onChange } = props;
+  const { orientation, choices, state = 'idle', icon = 'md', id, value, disabled = false, onChange, className } = props;
 
   return (
     <div
-      className={clsx(cn.Radio, {
+      className={clsx(cn.Radio, className, {
         [cn.RadioOrientationHorizontal]: orientation === 'horizontal',
         [cn.RadioOrientationVertical]: orientation === 'vertical',
       })}
@@ -28,14 +30,7 @@ export const ControlRadio = (props: ControlRadioProps) => {
       {choices.map((choice, index, choices) => {
         const choiceId = getChoiceId(id, choice.value, index);
         return (
-          <ControlRadioLabel
-            key={choiceId}
-            id={choiceId}
-            value={value}
-            state={state}
-            choice={choice}
-            choices={choices}
-          >
+          <ControlRadioLabel key={choiceId} id={choiceId} value={value} state={state} choice={choice} choices={choices}>
             {({ focused, hovered, checked, state }) => (
               <div className={cn.RadioLabel}>
                 <ControlChoice

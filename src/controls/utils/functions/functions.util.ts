@@ -4,7 +4,7 @@ export const getChoiceId = (id: string, value: string, index: number) => {
   return [id, index, value.replace(/\s+/g, '-')].join('-');
 };
 
-export const containsHtml = (str?: string): boolean => {
+export const containsHtml = (str?: string) => {
   return /<([a-z][a-z0-9]*)\b[^>]*>(.*?)<\/\1>|<([a-z][a-z0-9]*)\b[^>]*\/?>/i.test(str || '');
 };
 

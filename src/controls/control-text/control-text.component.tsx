@@ -6,14 +6,16 @@ import type { State } from '@controls/utils/types';
 import { ControlBox } from '@controls/control-box';
 import { ControlInput, type ControlInputProps } from '@controls/control-input';
 import { ControlLabel } from '@controls/control-label';
+import type { Base } from '@utils/types';
 import cn from '@controls/control-text/control-text.module.css';
 
-export interface ControlTextProps extends ControlInputProps {
+export type ControlTextProps = {
   label: string;
   message?: string;
   placeholder?: string;
   state?: State;
-}
+} & ControlInputProps &
+  Base;
 
 export const ControlText = (props: ControlTextProps) => {
   // TODO: onAutofill onAutofillCancel are passed but are not used anywhere
@@ -31,6 +33,7 @@ export const ControlText = (props: ControlTextProps) => {
     onChange,
     onFocus,
     onBlur,
+    className,
   } = props;
   const { value: isIdle, setTrue: makeIdle, setFalse: makeActive } = useBoolean(true);
   const { value: isInAutofillState, setTrue: markAutofillState, setFalse: unmarkAutofillState } = useBoolean(true);
@@ -64,7 +67,7 @@ export const ControlText = (props: ControlTextProps) => {
   };
 
   return (
-    <div className={cn.Text}>
+    <div className={clsx(cn.Text, className)}>
       <ControlBox state={state} focused={focused}>
         <label htmlFor={id} className={cn.TextContent}>
           <div className={clsx(cn.TextLabel, isLabelActive ? cn.TextLabelActive : cn.TextLabelIdle)}>

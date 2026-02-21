@@ -1,17 +1,19 @@
-import type { ChangeEvent, MouseEvent, PropsWithChildren } from 'react';
+import type { ChangeEvent, MouseEvent } from 'react';
 import { useToggle } from 'usehooks-ts';
 import clsx from 'clsx';
 import type { Interactive, State } from '@controls/utils/types';
 import { ControlChoice, type ControlChoiceProps } from '@controls/control-choice';
 import { ControlHiddenInput } from '@controls/control-hidden-input';
 import { Converter } from '@utils/converter/converter.util';
+import type { BaseWithChildren } from '@utils/types';
 import cn from '@controls/control-checkbox/control-checkbox.module.css';
 
-export interface ControlCheckboxProps extends PropsWithChildren, Interactive<boolean> {
+export type ControlCheckboxProps = {
   state?: State;
   icon?: ControlChoiceProps['size'];
   text?: 'body' | 'body-small';
-}
+} & BaseWithChildren &
+  Interactive<boolean>;
 
 export const ControlCheckbox = (props: ControlCheckboxProps) => {
   const {
@@ -25,6 +27,7 @@ export const ControlCheckbox = (props: ControlCheckboxProps) => {
     onChange,
     onFocus,
     onBlur,
+    className,
   } = props;
 
   const [focused, toggleFocused] = useToggle(false);
@@ -57,7 +60,7 @@ export const ControlCheckbox = (props: ControlCheckboxProps) => {
   return (
     <label
       htmlFor={id}
-      className={cn.Checkbox}
+      className={clsx(cn.Checkbox, className)}
       onClick={onLabelClick}
       onFocus={onInputFocus}
       onBlur={onInputBlur}
