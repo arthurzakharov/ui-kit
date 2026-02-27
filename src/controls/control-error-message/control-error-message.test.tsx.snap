@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlErrorMessage. Snapshots > Default 1`] = `
+<div>
+  <span
+    class="_ControlErrorMessage_a18c8c"
+    data-testid="control-error-message"
+  >
+    This field is required
+  </span>
+</div>
+`;

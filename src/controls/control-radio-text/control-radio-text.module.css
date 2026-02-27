@@ -1,0 +1,62 @@
+.ControlRadioText {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TextPrimary .Content {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.TextSecondary .Content {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.AccentPrimary .Content {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.AccentSecondary .Content {
+  color: var(--rm-ui-color-accent-secondary);
+}
+
+.BodyExtraSmall .Content {
+  font-size: var(--rm-ui-font-size-body-extra-small);
+  line-height: var(--rm-ui-font-size-body-extra-small);
+}
+
+.BodySmall .Content {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-font-size-body-small);
+}
+
+.Body .Content {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.BodyLarge .Content {
+  font-size: var(--rm-ui-font-size-body-large);
+  line-height: var(--rm-ui-line-height-body-large);
+}
+
+.OneLine,
+.OneLine .Content {
+  white-space: nowrap;
+}
+
+.Checked .Content {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.Content {
+  position: relative;
+  transition: color var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary);
+}
+
+.Content {
+  text-align: left;
+  white-space: pre-wrap;
+  font-weight: var(--rm-ui-font-weight-regular);
+}

@@ -1,0 +1,164 @@
+.ControlDropdown {
+  --transition-time: 200ms;
+  --under-chevron: linear-gradient(90deg, rgba(255, 255, 255, 0) -10%, rgba(255, 255, 255, 0.5411764706) 25%, #fff 50%);
+  --border-radius: 3px;
+  position: relative;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.Border {
+  position: relative;
+  min-height: 60px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  overflow: hidden;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.Border:hover {
+  cursor: pointer;
+}
+
+.Chevron {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-time) ease-out;
+}
+
+.Chevron[data-open='false'] {
+  transform: rotate(0deg);
+}
+
+.Chevron[data-open='true'] {
+  transform: rotate(180deg);
+}
+
+.ChevronWrap {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--under-chevron);
+  border-radius: 10px;
+  width: 80px;
+  height: 100%;
+  padding-right: var(--rm-ui-padding-sm);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Box {
+  flex-grow: 1;
+  border-radius: 10px;
+  background-color: var(--rm-ui-grey-50);
+}
+
+.BoxVisible {
+  display: block;
+}
+
+.BoxHidden {
+  display: none;
+}
+
+.Search {
+  position: relative;
+  border-bottom: 1px var(--rm-ui-grey-300) solid;
+  padding: var(--rm-ui-padding-sm);
+}
+
+.SearchVisible {
+  display: block;
+}
+
+.SearchHidden {
+  display: none;
+}
+
+.Close {
+  border-top: 1px var(--rm-ui-grey-300) solid;
+  padding: var(--rm-ui-padding-sm);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Input {
+  width: 100%;
+  border-radius: 10px;
+  padding: var(--rm-ui-padding-xs) calc(var(--rm-ui-padding-sm) * 2 + 12px) var(--rm-ui-padding-xs)
+    var(--rm-ui-padding-sm);
+  border: 1px var(--rm-ui-grey-300) solid;
+  box-sizing: border-box;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+  outline-color: var(--rm-ui-color-accent-primary);
+}
+
+.Glass {
+  position: absolute;
+  z-index: 1;
+  right: calc(var(--rm-ui-padding-sm) * 2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  color: var(--rm-ui-grey-300);
+}
+
+.Choices {
+  max-height: 228px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.Choice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+  padding: 6px var(--rm-ui-padding-sm);
+}
+
+.Choice:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.ChoiceNoResult {
+  color: var(--rm-ui-grey-600);
+  text-align: center;
+}
+
+html[dir='rtl'] .Glass {
+  left: 31px;
+  right: initial;
+}
+
+html[dir='rtl'] .ChevronWrap {
+  left: 19px;
+  right: initial;
+}

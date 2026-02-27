@@ -1,0 +1,36 @@
+.Warranty {
+  --icon-width: 48px;
+  --icon-height: 56px;
+  --gap: var(--rm-ui-padding-sm);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap);
+  padding: var(--rm-ui-padding-md);
+  border-radius: var(--rm-ui-border-radius-md);
+  background-color: var(--rm-ui-warranty-bg);
+}
+
+.Icon {
+  height: var(--icon-height);
+  width: var(--icon-width);
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.Main {
+  flex-basis: calc(100% - var(--icon-width) - var(--gap));
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.Title {
+  font-weight: var(--rm-ui-font-weight-medium);
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.Text {
+  color: var(--rm-ui-color-text-primary);
+}

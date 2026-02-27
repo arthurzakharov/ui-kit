@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlHiddenInput. Snapshots > Default 1`] = `
+<div>
+  <input
+    class="_ControlHiddenInput_f602d4"
+    data-testid="hidden-input"
+    id="hidden-input"
+    name="hidden-input"
+    type="radio"
+    value="value-a"
+  />
+</div>
+`;

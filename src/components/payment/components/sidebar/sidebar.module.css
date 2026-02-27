@@ -1,0 +1,75 @@
+.Sidebar {
+  padding: var(--rm-ui-padding-sm);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-lg);
+  background-color: var(--rm-ui-payment-sidebar-bg);
+}
+
+.SidebarContact {
+  --icon-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.SidebarLink {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.SidebarText {
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.SidebarPhone {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 32px;
+  border: 3px solid #ffffff;
+  background-color: #23bf96cc;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.SidebarPhoneImage {
+  width: 80%;
+  height: 80%;
+}
+
+.SidebarWhatsapp {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+@media screen and (min-width: 768px) {
+  .Sidebar {
+    border-radius: var(--rm-ui-border-radius-md);
+    padding: var(--rm-ui-padding-md);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Sidebar {
+    padding: var(--rm-ui-padding-lg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Sidebar {
+    padding: var(--rm-ui-padding-xxl);
+  }
+}

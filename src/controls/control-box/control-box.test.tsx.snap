@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlBox. Snapshots > Checked 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+    data-testid="control-box"
+  >
+    <div
+      style="width: 40px; height: 40px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlBox. Snapshots > Error 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Error_734004"
+    data-testid="control-box"
+  >
+    <div
+      style="width: 40px; height: 40px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlBox. Snapshots > Focused 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Focused_734004 _Idle_734004"
+    data-testid="control-box"
+  >
+    <div
+      style="width: 40px; height: 40px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlBox. Snapshots > Idle 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Idle_734004"
+    data-testid="control-box"
+  >
+    <div
+      style="width: 40px; height: 40px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlBox. Snapshots > Success 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Success_734004"
+    data-testid="control-box"
+  >
+    <div
+      style="width: 40px; height: 40px;"
+    />
+  </div>
+</div>
+`;

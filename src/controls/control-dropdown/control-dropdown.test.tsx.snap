@@ -1,0 +1,147 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlDropdown. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlDropdown_528c15"
+  >
+    <div
+      class="_ControlBox_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="_Border_528c15"
+      >
+        <div
+          class="_Content_528c15"
+        >
+          <span
+            class="_ControlLabel_380413 _Active_380413"
+            data-testid="control-label"
+          >
+            Versicherung
+          </span>
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _OneLine_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              AOK
+            </span>
+          </div>
+        </div>
+        <div
+          class="_ChevronWrap_528c15"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-chevron-down _Chevron_528c15"
+            data-open="false"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m6 9 6 6 6-6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_ControlBox_734004 _BoxHidden_528c15 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="_Box_528c15"
+      >
+        <div
+          class="_Search_528c15 _SearchVisible_528c15"
+        >
+          <input
+            class="_Input_528c15"
+            type="text"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-search _Glass_528c15"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m21 21-4.34-4.34"
+            />
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
+            />
+          </svg>
+        </div>
+        <ul
+          class="_Choices_528c15"
+        >
+          <li
+            class="_Choice_528c15"
+          >
+            <div
+              class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+              data-testid="control-radio-text"
+            >
+              <span
+                class="_Content_9559ac"
+              >
+                AOK
+              </span>
+            </div>
+          </li>
+          <li
+            class="_Choice_528c15"
+          >
+            <div
+              class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+              data-testid="control-radio-text"
+            >
+              <span
+                class="_Content_9559ac"
+              >
+                Techniker Krankenkasse
+              </span>
+            </div>
+          </li>
+          <li
+            class="_Choice_528c15"
+          >
+            <div
+              class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+              data-testid="control-radio-text"
+            >
+              <span
+                class="_Content_9559ac"
+              >
+                BARMER
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

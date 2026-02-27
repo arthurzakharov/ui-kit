@@ -1,0 +1,296 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlCheckbox. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlCheckbox_77b92a"
+    data-testid=""
+  >
+    <label
+      class="_Label_77b92a"
+      for="checkbox"
+    >
+      <input
+        class="_ControlHiddenInput_f602d4"
+        data-testid="hidden-input"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+        value="false"
+      />
+      <div
+        class="_Choice_77b92a"
+      >
+        <div
+          class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="_Content_77b92a _BodySmall_77b92a"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur tempora ex animi quia cum. Pariatur fugit sit reprehenderit eaque repellat doloribus deserunt magni quis molestiae, reiciendis iste repellendus culpa laboriosam rerum voluptatibus modi veritatis error at repudiandae? Illo blanditiis quo totam minus ea Laudantium, quis sequi. Culpa non dolor blanditiis optio provident? Totam vero suscipit repellat ipsa similique magnam, nisi delectus alias fuga quas ab quia minus ratione molestias cum culpa debitis maxime officia minima at est, blanditiis impedit adipisci sequi. Cum similique vel neque veniam nesciunt.
+        </p>
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`ControlCheckbox. Snapshots > StateError 1`] = `
+<div>
+  <div
+    class="_ControlCheckbox_77b92a"
+    data-testid=""
+  >
+    <label
+      class="_Label_77b92a"
+      for="checkbox"
+    >
+      <input
+        class="_ControlHiddenInput_f602d4"
+        data-testid="hidden-input"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+        value="false"
+      />
+      <div
+        class="_Choice_77b92a"
+      >
+        <div
+          class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Error_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="_Content_77b92a _BodySmall_77b92a"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur tempora ex animi quia cum. Pariatur fugit sit reprehenderit eaque repellat doloribus deserunt magni quis molestiae, reiciendis iste repellendus culpa laboriosam rerum voluptatibus modi veritatis error at repudiandae? Illo blanditiis quo totam minus ea Laudantium, quis sequi. Culpa non dolor blanditiis optio provident? Totam vero suscipit repellat ipsa similique magnam, nisi delectus alias fuga quas ab quia minus ratione molestias cum culpa debitis maxime officia minima at est, blanditiis impedit adipisci sequi. Cum similique vel neque veniam nesciunt.
+        </p>
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`ControlCheckbox. Snapshots > StateErrorWithMessage 1`] = `
+<div>
+  <div
+    class="_ControlCheckbox_77b92a"
+    data-testid=""
+  >
+    <label
+      class="_Label_77b92a"
+      for="checkbox"
+    >
+      <input
+        class="_ControlHiddenInput_f602d4"
+        data-testid="hidden-input"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+        value="false"
+      />
+      <div
+        class="_Choice_77b92a"
+      >
+        <div
+          class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Error_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="_Content_77b92a _BodySmall_77b92a"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur tempora ex animi quia cum. Pariatur fugit sit reprehenderit eaque repellat doloribus deserunt magni quis molestiae, reiciendis iste repellendus culpa laboriosam rerum voluptatibus modi veritatis error at repudiandae? Illo blanditiis quo totam minus ea Laudantium, quis sequi. Culpa non dolor blanditiis optio provident? Totam vero suscipit repellat ipsa similique magnam, nisi delectus alias fuga quas ab quia minus ratione molestias cum culpa debitis maxime officia minima at est, blanditiis impedit adipisci sequi. Cum similique vel neque veniam nesciunt.
+        </p>
+      </div>
+    </label>
+    <div
+      class="_Animation_700a30"
+      data-testid="animation-fade-slide"
+    >
+      <div
+        style="overflow: hidden; opacity: 1; transform: none;"
+      >
+        <span
+          class="_ControlErrorMessage_a18c8c _ErrorMessage_77b92a"
+          data-testid="control-error-message"
+        >
+          This field is required
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlCheckbox. Snapshots > StateIdle 1`] = `
+<div>
+  <div
+    class="_ControlCheckbox_77b92a"
+    data-testid=""
+  >
+    <label
+      class="_Label_77b92a"
+      for="checkbox"
+    >
+      <input
+        class="_ControlHiddenInput_f602d4"
+        data-testid="hidden-input"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+        value="false"
+      />
+      <div
+        class="_Choice_77b92a"
+      >
+        <div
+          class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="_Content_77b92a _BodySmall_77b92a"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur tempora ex animi quia cum. Pariatur fugit sit reprehenderit eaque repellat doloribus deserunt magni quis molestiae, reiciendis iste repellendus culpa laboriosam rerum voluptatibus modi veritatis error at repudiandae? Illo blanditiis quo totam minus ea Laudantium, quis sequi. Culpa non dolor blanditiis optio provident? Totam vero suscipit repellat ipsa similique magnam, nisi delectus alias fuga quas ab quia minus ratione molestias cum culpa debitis maxime officia minima at est, blanditiis impedit adipisci sequi. Cum similique vel neque veniam nesciunt.
+        </p>
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`ControlCheckbox. Snapshots > StateSuccess 1`] = `
+<div>
+  <div
+    class="_ControlCheckbox_77b92a"
+    data-testid=""
+  >
+    <label
+      class="_Label_77b92a"
+      for="checkbox"
+    >
+      <input
+        class="_ControlHiddenInput_f602d4"
+        data-testid="hidden-input"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+        value="false"
+      />
+      <div
+        class="_Choice_77b92a"
+      >
+        <div
+          class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="_Content_77b92a _BodySmall_77b92a"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur tempora ex animi quia cum. Pariatur fugit sit reprehenderit eaque repellat doloribus deserunt magni quis molestiae, reiciendis iste repellendus culpa laboriosam rerum voluptatibus modi veritatis error at repudiandae? Illo blanditiis quo totam minus ea Laudantium, quis sequi. Culpa non dolor blanditiis optio provident? Totam vero suscipit repellat ipsa similique magnam, nisi delectus alias fuga quas ab quia minus ratione molestias cum culpa debitis maxime officia minima at est, blanditiis impedit adipisci sequi. Cum similique vel neque veniam nesciunt.
+        </p>
+      </div>
+    </label>
+  </div>
+</div>
+`;

@@ -1,0 +1,34 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './expenses.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of Expenses
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Expenses } from '@components/expenses';
+
+    <Expenses
+      title="Expenses"
+      content="Total spending this month"
+      amountTitle="Amount:"
+      amountNumber={['€', '1,500.00']}
+      subContent="Last updated today"
+    />`
+
+}
+/>

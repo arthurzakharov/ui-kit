@@ -1,0 +1,170 @@
+import { Canvas, Controls, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-radio-text.stories';
+import { ControlRadioText } from './control-radio-text.component';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>📝 Text label for radio and checkbox options</Subtitle>
+
+`ControlRadioText` renders styled text labels for radio buttons and checkboxes. Use it to display option text with
+consistent sizing, coloring, and checked/unchecked states. Supports HTML content and optional single-line truncation.
+
+#### Params of <b>ControlRadioText</b>
+
+<Controls of={stories.SizeBody} />
+
+#### Interactive Example
+
+<Canvas of={stories.ColorPrimary} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlRadioText } from '@controls/control-radio-text';
+
+    <ControlRadioText
+      size="body"
+      color="text-primary"
+      checked={false}
+      oneLine={false}
+      className="custom-class-name"
+    >
+      Lorem ipsum dolor sit amet
+    </ControlRadioText>`
+
+}
+/>
+
+export const sizes = stories.default.argTypes.size.options;
+export const colors = stories.default.argTypes.color.options;
+
+export const SizeMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          <th scope="col">Unchecked</th>
+          <th scope="col">Checked</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr key={size}>
+            <th scope="row">
+              <code className="text-body">{size}</code>
+            </th>
+            <td>
+              <div className="py-1">
+                <ControlRadioText size={size} checked={false}>
+                  Lorem ipsum dolor sit amet
+                </ControlRadioText>
+              </div>
+            </td>
+            <td>
+              <div className="py-1">
+                <ControlRadioText size={size} checked={true}>
+                  Lorem ipsum dolor sit amet
+                </ControlRadioText>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export const ColorMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Color</th>
+          <th scope="col">Unchecked</th>
+          <th scope="col">Checked</th>
+        </tr>
+      </thead>
+      <tbody>
+        {colors.map((color) => (
+          <tr key={color}>
+            <th scope="row">
+              <code className="text-body">{color}</code>
+            </th>
+            <td>
+              <div className="py-1">
+                <ControlRadioText color={color} checked={false}>
+                  Lorem ipsum dolor sit amet
+                </ControlRadioText>
+              </div>
+            </td>
+            <td>
+              <div className="py-1">
+                <ControlRadioText color={color} checked={true}>
+                  Lorem ipsum dolor sit amet
+                </ControlRadioText>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### Size Matrix
+
+All available sizes with unchecked and checked states:
+
+<SizeMatrix />
+
+#### Color Matrix
+
+All available colors with unchecked and checked states:
+
+<ColorMatrix />
+
+#### One Line Truncation
+
+When `oneLine` is set to `true`, long text will be truncated with an ellipsis:
+
+<div className="table-responsive mb-4">
+  <table className="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col">OneLine</th>
+        <th scope="col">Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <code className="text-body">false</code>
+        </th>
+        <td style={{ maxWidth: '200px' }}>
+          <div className="py-1">
+            <ControlRadioText oneLine={false}>
+              This is a very long text that should wrap to multiple lines when the container is narrow
+            </ControlRadioText>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <code className="text-body">true</code>
+        </th>
+        <td style={{ maxWidth: '200px' }}>
+          <div className="py-1">
+            <ControlRadioText oneLine={true}>
+              This is a very long text that should be truncated with an ellipsis when oneLine is true
+            </ControlRadioText>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

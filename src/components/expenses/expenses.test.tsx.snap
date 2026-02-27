@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Expenses. Snapshots > Default  1`] = `
+<div>
+  <div
+    class="_Expenses_afc643"
+    data-testid="expenses"
+  >
+    <h6
+      class="_Title_afc643"
+      data-testid="expenses-title"
+    >
+      Expenses
+    </h6>
+    <p
+      class="_Content_afc643"
+      data-testid="expenses-content"
+    >
+      Total spending this month includes all purchases, subscriptions, utilities, and other expenses. Review your spending patterns and adjust your budget accordingly to meet your financial goals and maintain healthy finances.
+    </p>
+    <div
+      class="_Amount_afc643"
+      data-testid="expenses-amount"
+    >
+      <span>
+        Amount:
+      </span>
+      <span>
+        €1,500.00
+      </span>
+    </div>
+    <p
+      class="_SubContent_afc643"
+      data-testid="expenses-sub-content"
+    >
+      Last updated today
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Expenses. Snapshots > WithBaseBehavior  1`] = `
+<div>
+  <div
+    class="_Expenses_afc643 bg-color-grey-300"
+    data-testid="custom-test-id"
+  >
+    <h6
+      class="_Title_afc643"
+      data-testid="expenses-title"
+    >
+      Expenses
+    </h6>
+    <p
+      class="_Content_afc643"
+      data-testid="expenses-content"
+    >
+      Total spending this month includes all purchases, subscriptions, utilities, and other expenses. Review your spending patterns and adjust your budget accordingly to meet your financial goals and maintain healthy finances.
+    </p>
+    <div
+      class="_Amount_afc643"
+      data-testid="expenses-amount"
+    >
+      <span>
+        Amount:
+      </span>
+      <span>
+        €1,500.00
+      </span>
+    </div>
+    <p
+      class="_SubContent_afc643"
+      data-testid="expenses-sub-content"
+    >
+      Last updated today
+    </p>
+  </div>
+</div>
+`;

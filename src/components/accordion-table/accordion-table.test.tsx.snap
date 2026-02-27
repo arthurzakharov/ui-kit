@@ -1,0 +1,300 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AccordionTable. Snapshots > Default  1`] = `
+<div>
+  <div
+    class="_AccordionTable_971eb6"
+    data-testid="accordion-table"
+    style="--accordion-columns: 3;"
+  >
+    <div
+      class="_Head_971eb6"
+      data-testid="accordion-table-head"
+    >
+      <div
+        class="_HeadRow_971eb6"
+      >
+        <div
+          class="_HeadCell_971eb6"
+          data-testid="accordion-table-head-cell-0"
+        >
+          Gegen­stands­wert bis ein­schließ­lich
+        </div>
+        <div
+          class="_HeadCell_971eb6"
+          data-testid="accordion-table-head-cell-1"
+        >
+          Grund­gebühr
+        </div>
+        <div
+          class="_HeadCell_971eb6"
+          data-testid="accordion-table-head-cell-2"
+        >
+          Einigungs­gebühr
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="_BodyRow_971eb6"
+      >
+        <div
+          class="_BodyCell_971eb6 _BodyHead_971eb6 _BodyHeadCell_971eb6"
+        >
+          <button
+            class="_ControlButtonText_3f4280 _Right_3f4280 _MD_3f4280 _ThemePrimary_3f4280"
+            data-testid="accordion-table-button-0"
+            type="button"
+          >
+            <div
+              class="_Icon_3f4280"
+              data-testid="animation-rotate"
+              style="transform: none;"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-chevron-down"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </div>
+            <span
+              class="_Content_3f4280 _Regular_3f4280"
+            >
+              1-4 Forderungen
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="_Animation_700a30"
+        data-testid="animation-fade-grow"
+      >
+        <div
+          style="height: auto; opacity: 1;"
+        >
+          <div
+            data-testid="accordion-table-section-content-0"
+          >
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-0"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                4.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                454 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                496 €
+              </div>
+            </div>
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-1"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                5.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                540 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                596 €
+              </div>
+            </div>
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-2"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                6.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                627 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                696 €
+              </div>
+            </div>
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-3"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                7.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                714 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                796 €
+              </div>
+            </div>
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-4"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                8.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                800 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                896 €
+              </div>
+            </div>
+            <div
+              class="_DataRow_971eb6"
+              data-testid="accordion-table-data-row-0-5"
+            >
+              <div
+                class="_BodyCell_971eb6"
+              >
+                9.000 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                887 €
+              </div>
+              <div
+                class="_BodyCell_971eb6"
+              >
+                996 €
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_BodyRow_971eb6"
+      >
+        <div
+          class="_BodyCell_971eb6 _BodyHead_971eb6 _BodyHeadCell_971eb6"
+        >
+          <button
+            class="_ControlButtonText_3f4280 _Right_3f4280 _MD_3f4280 _ThemePrimary_3f4280"
+            data-testid="accordion-table-button-1"
+            type="button"
+          >
+            <div
+              class="_Icon_3f4280"
+              data-testid="animation-rotate"
+              style="transform: none;"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-chevron-down"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </div>
+            <span
+              class="_Content_3f4280 _Regular_3f4280"
+            >
+              5-9 Forderungen
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="_BodyRow_971eb6"
+      >
+        <div
+          class="_BodyCell_971eb6 _BodyHead_971eb6 _BodyHeadCell_971eb6"
+        >
+          <button
+            class="_ControlButtonText_3f4280 _Right_3f4280 _MD_3f4280 _ThemePrimary_3f4280"
+            data-testid="accordion-table-button-2"
+            type="button"
+          >
+            <div
+              class="_Icon_3f4280"
+              data-testid="animation-rotate"
+              style="transform: none;"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-chevron-down"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </div>
+            <span
+              class="_Content_3f4280 _Regular_3f4280"
+            >
+              10-14 Forderungen
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

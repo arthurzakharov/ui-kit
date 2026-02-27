@@ -1,0 +1,33 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './user-panel.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of UserPanel
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { UserPanel } from '@components/user-panel';
+
+    <UserPanel
+      title="Profil"
+      button="Bearbeiten"
+      data={['Max Mustermann', 'max@example.com', '+49 421 000000']}
+      onClick={() => console.log('Edit profile')}
+    />`
+
+}
+/>

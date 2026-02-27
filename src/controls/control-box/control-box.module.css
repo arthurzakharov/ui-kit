@@ -1,0 +1,36 @@
+.ControlBox {
+  flex-basis: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  transition: border-color 0.15s ease-out;
+}
+
+.Checked {
+  border-color: var(--rm-ui-color-action);
+  outline: 2px solid var(--rm-ui-color-action);
+  outline-offset: -2px;
+}
+
+.Idle {
+  border-color: var(--rm-ui-grey-300);
+}
+
+.Focused {
+  border-color: var(--rm-ui-color-focus);
+  border-color: -webkit-focus-ring-color;
+}
+
+.Error {
+  border-color: var(--rm-ui-color-error);
+}
+
+.Success {
+  border-color: var(--rm-ui-color-success);
+}

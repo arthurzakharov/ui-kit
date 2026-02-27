@@ -1,0 +1,79 @@
+import {Canvas, Controls, Description, Meta, Source, Subtitle, Title} from '@storybook/addon-docs/blocks';
+import { ControlLabel } from '@controls/control-label';
+import * as Stories from './control-label.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Subtitle>🏷️ Label text for form controls and fields</Subtitle>
+<Description />
+
+#### Params of ControlLabel
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlLabel } from '@controls/control-label';
+
+    <ControlLabel
+      position="active"
+      state="success"
+      className="custom-class-name"
+    >
+      Control Label
+    </ControlLabel>`
+  }
+/>
+
+export const positions = Stories.default.argTypes.position.options;
+export const states = Stories.default.argTypes.state.options;
+
+export const Matrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">Position \ State</th>
+          {states.map((state) => (
+            <th key={state} scope="col">
+              <code className="text-body">{state}</code>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {positions.map((position) => (
+          <tr key={position}>
+            <th scope="row">
+              <code className="text-body">{position}</code>
+            </th>
+            {states.map((state) => (
+              <td key={`${position}-${state}`}>
+                <div className="d-flex justify-content-center py-1">
+                  <ControlLabel position={position} state={state}>
+                    Control Label
+                  </ControlLabel>
+                </div>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### State Matrix
+
+All combinations of `position` and `state`:
+
+<Matrix />

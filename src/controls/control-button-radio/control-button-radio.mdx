@@ -1,0 +1,44 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-button-radio.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>🔘 Radio-style button with pricing info display</Subtitle>
+<Description>
+  `ControlButtonRadio` renders a radio-styled button with pricing details and hints. Use it for pricing plans or tariff
+  selection where you need to show detailed cost information alongside the option label.
+</Description>
+
+#### Params of <b>ControlButtonRadio</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlButtonRadio } from '@controls/control-button-radio';
+
+    <ControlButtonRadio
+      active={false}
+      disabled={false}
+      info={{
+        text: '19,90 EUR',
+        hintLeft: 'Monatlich',
+        hintRight: 'inkl. MwSt.',
+      }}
+      onClick={() => handleSelection()}
+      className="custom-class-name"
+    >
+      Tarif wählen
+    </ControlButtonRadio>`
+
+}
+/>

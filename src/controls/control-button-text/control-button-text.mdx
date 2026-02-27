@@ -1,0 +1,42 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-button-text.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>📝 Text-only button with flexible styling</Subtitle>
+<Description>
+  `ControlButtonText` renders a text button without background or heavy borders. Use it for secondary actions, links, or
+  navigation elements where a lighter visual weight is preferred. Supports size, color, weight, and underline variants.
+</Description>
+
+#### Params of <b>ControlButtonText</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlButtonText } from '@controls/control-button-text';
+
+    <ControlButtonText
+      size="md"
+      color="primary"
+      weight="medium"
+      underlined={false}
+      disabled={false}
+      onClick={() => handleClick()}
+      className="custom-class-name"
+    >
+      Mehr erfahren
+    </ControlButtonText>`
+
+}
+/>

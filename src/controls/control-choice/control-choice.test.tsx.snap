@@ -1,0 +1,94 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlChoice. Snapshots > TypeCheckboxChecked 1`] = `
+<div>
+  <div
+    class="_ControlChoice_f0ee5d _Checked_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+    data-testid="choice"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-check _ChoiceMark_f0ee5d"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 6 9 17l-5-5"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`ControlChoice. Snapshots > TypeCheckboxUnchecked 1`] = `
+<div>
+  <div
+    class="_ControlChoice_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+    data-testid="choice"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-check _ChoiceMark_f0ee5d"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 6 9 17l-5-5"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`ControlChoice. Snapshots > TypeRadioChecked 1`] = `
+<div>
+  <div
+    class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+    data-testid="choice"
+  >
+    <div
+      class="_ChoiceMark_f0ee5d"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlChoice. Snapshots > TypeRadioUnchecked 1`] = `
+<div>
+  <div
+    class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+    data-testid="choice"
+  >
+    <div
+      class="_ChoiceMark_f0ee5d"
+    />
+  </div>
+</div>
+`;
+
+exports[`ControlChoice. Snapshots > WithCustomClassName 1`] = `
+<div>
+  <div
+    class="_ControlChoice_f0ee5d custom-class-name _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+    data-testid="choice"
+  >
+    <div
+      class="_ChoiceMark_f0ee5d"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,111 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer. Snapshots > Default  1`] = `
+<div>
+  <footer
+    class="_Footer_021032"
+    data-testid="footer"
+  >
+    <span
+      class="_Copyright_021032"
+      data-testid="footer-copyright"
+    >
+      © 
+      2026
+       
+      rightmart
+    </span>
+    <ul
+      class="_Links_021032"
+    >
+      <li
+        class="_Link_021032"
+        data-testid="footer-link"
+      >
+        <button
+          class="_Button_021032"
+          data-testid="footer-button"
+          type="button"
+        >
+          Datenschutz
+        </button>
+        <div
+          class="_Separator_021032"
+          data-testid="footer-separator"
+        />
+      </li>
+      <li
+        class="_Link_021032"
+        data-testid="footer-link"
+      >
+        <button
+          class="_Button_021032"
+          data-testid="footer-button"
+          type="button"
+        >
+          Impressum
+        </button>
+        <div
+          class="_Separator_021032"
+          data-testid="footer-separator"
+        />
+      </li>
+    </ul>
+  </footer>
+</div>
+`;
+
+exports[`Footer. Snapshots > WithBaseBehavior  1`] = `
+<div>
+  <footer
+    class="_Footer_021032 color-grey-950"
+    data-testid="custom-test-id"
+  >
+    <span
+      class="_Copyright_021032"
+      data-testid="footer-copyright"
+    >
+      © 
+      2026
+       
+      rightmart
+    </span>
+    <ul
+      class="_Links_021032"
+    >
+      <li
+        class="_Link_021032"
+        data-testid="footer-link"
+      >
+        <button
+          class="_Button_021032"
+          data-testid="footer-button"
+          type="button"
+        >
+          Datenschutz
+        </button>
+        <div
+          class="_Separator_021032"
+          data-testid="footer-separator"
+        />
+      </li>
+      <li
+        class="_Link_021032"
+        data-testid="footer-link"
+      >
+        <button
+          class="_Button_021032"
+          data-testid="footer-button"
+          type="button"
+        >
+          Impressum
+        </button>
+        <div
+          class="_Separator_021032"
+          data-testid="footer-separator"
+        />
+      </li>
+    </ul>
+  </footer>
+</div>
+`;

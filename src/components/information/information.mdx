@@ -1,0 +1,31 @@
+import { Canvas, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './information.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Information } from '@components/information';
+
+    <Information>
+      <p>
+        Lorem ipsum dolor sit <b>amet consectetur</b> adipisicing elit.
+      </p>
+      <p>
+        Additional explanatory text can be rendered as children.
+      </p>
+    </Information>`
+
+}
+/>

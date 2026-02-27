@@ -1,0 +1,70 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: var(--rm-ui-padding-md);
+}
+
+.Copyright {
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.Links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--rm-ui-padding-md);
+}
+
+.Link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button {
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.Button:focus-visible {
+  outline-offset: 2px;
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.Separator {
+  display: none;
+  opacity: 0.66;
+  border-right: 1px solid var(--rm-ui-color-text-secondary);
+  margin-right: var(--rm-ui-padding-xs);
+  margin-left: var(--rm-ui-padding-xs);
+  height: var(--rm-ui-font-size-body-small);
+}
+
+@media screen and (min-width: 768px) {
+  .Footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .Links {
+    gap: 0;
+  }
+
+  .Link:last-of-type .Separator {
+    display: none;
+  }
+
+  .Separator {
+    display: flex;
+  }
+}

@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlButtonText. Snapshots > Default 1`] = `
+<div>
+  <button
+    class="_ControlButtonText_3f4280 _Left_3f4280 _MD_3f4280 _TextPrimary_3f4280"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-arrow-right _Icon_3f4280"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 12h14"
+      />
+      <path
+        d="m12 5 7 7-7 7"
+      />
+    </svg>
+    <span
+      class="_Content_3f4280 _Medium_3f4280"
+    >
+      Button Text
+    </span>
+  </button>
+</div>
+`;

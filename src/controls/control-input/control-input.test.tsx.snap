@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlInput. Snapshots > DateMask 1`] = `
+<div>
+  <input
+    class="_ControlInput_6aa66b"
+    data-testid="input-masked"
+    id="input"
+    value="12/12/2026"
+  />
+</div>
+`;
+
+exports[`ControlInput. Snapshots > Default 1`] = `
+<div>
+  <input
+    class="_ControlInput_6aa66b"
+    data-testid="input"
+    id="input"
+    name="input"
+    type="text"
+    value="Max Mustermann"
+  />
+</div>
+`;

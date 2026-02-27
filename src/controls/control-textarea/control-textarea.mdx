@@ -1,0 +1,106 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { ControlTextarea } from '@controls/control-textarea';
+import * as Stories from './control-textarea.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Subtitle>📝 Multi-line text input control with validation states</Subtitle>
+<Description />
+
+#### Params of ControlTextarea
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlTextarea } from '@controls/control-textarea';
+
+    <ControlTextarea
+      id="comment"
+      state="error"
+      placeholder="Kommentar"
+      rows={5}
+      value={value}
+      disabled={false}
+      message="This field is required"
+      onChange={(val, id) => setValue(val)}
+      onFocus={(id) => console.log('focused')}
+      onBlur={(id) => console.log('blurred')}
+      className="custom-class-name"
+    />`
+
+}
+/>
+
+export const states = Stories.default.argTypes.state.options;
+export const disabledValues = [false, true];
+export const valuesSamples = ['', 'Sample text content'];
+export const messageSamples = ['', 'Error message'];
+
+export const boolLabel = (value) => (value ? 'Yes' : 'No');
+
+export const Matrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Disabled</th>
+          <th scope="col">Has Value</th>
+          <th scope="col">Has Message</th>
+          <th scope="col">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {states.flatMap((state) =>
+          disabledValues.flatMap((disabled) =>
+            valuesSamples.flatMap((value, vIdx) =>
+              messageSamples.map((message, mIdx) => {
+                const key = `${state}-${disabled}-${vIdx}-${mIdx}`;
+                return (
+                  <tr key={key}>
+                    <td>
+                      <code className="text-body">{state}</code>
+                    </td>
+                    <td>{boolLabel(disabled)}</td>
+                    <td>{boolLabel(!!value)}</td>
+                    <td>{boolLabel(!!message)}</td>
+                    <td>
+                      <div className="d-flex justify-content-center py-2">
+                        <ControlTextarea
+                          id={`textarea-${key}`}
+                          state={state}
+                          disabled={disabled}
+                          value={value}
+                          message={message}
+                          placeholder="Kommentar"
+                          rows={3}
+                          onChange={() => {}}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                );
+              }),
+            ),
+          ),
+        )}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### All Versions
+
+All combinations of `state`, `disabled`, with/without value, and with/without error message:
+
+<Matrix />

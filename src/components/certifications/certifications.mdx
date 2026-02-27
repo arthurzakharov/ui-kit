@@ -1,0 +1,28 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './certifications.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of Certifications
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Certifications } from '@components/certifications';
+
+    <Certifications icons={['free', 'gdpr', 'ssl']} />`
+
+}
+/>

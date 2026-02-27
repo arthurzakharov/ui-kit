@@ -1,0 +1,86 @@
+.Signature {
+  background-color: transparent;
+}
+
+.SignatureMain {
+  --title-height: 40px;
+  overflow: hidden;
+  position: relative;
+  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md)
+    calc(var(--rm-ui-padding-md) + var(--title-height));
+  border: 1px solid var(--rm-ui-grey-300);
+  border-radius: var(--rm-ui-border-radius-sm);
+}
+
+.SignatureMainAuto {
+  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md) var(--rm-ui-padding-md);
+}
+
+.SignatureMainManual {
+  padding: calc(var(--rm-ui-padding-md) + var(--title-height)) var(--rm-ui-padding-md)
+    calc(var(--rm-ui-padding-md) + var(--title-height));
+}
+
+/* Header */
+
+.SignatureHeader {
+  position: absolute;
+  z-index: 1;
+  top: var(--rm-ui-padding-md);
+  left: var(--rm-ui-padding-md);
+  right: var(--rm-ui-padding-md);
+}
+
+.SignatureHeaderReset {
+  position: relative;
+  z-index: 1;
+}
+
+/* Manual Mode */
+
+.SignatureManualPanel > canvas,
+.SignatureManualPanel > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.SignatureManualPanelPlaceholder {
+  height: 104px;
+}
+
+.SignatureManualPanelButton {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--rm-ui-padding-md);
+  left: var(--rm-ui-padding-md);
+  right: var(--rm-ui-padding-md);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Auto Mode */
+
+.SignatureAutoPanelImage {
+  height: 46px;
+  max-width: 100%;
+}
+
+.SignatureAutoPanelLoader {
+  height: 142px;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--rm-ui-padding-xs);
+}
+
+.SignatureAutoPanelNoteIcon {
+  stroke: var(--rm-ui-color-success);
+}
+
+.SignatureAutoPanelButton {
+  margin-top: 20px;
+  margin-bottom: var(--rm-ui-padding-sm);
+}

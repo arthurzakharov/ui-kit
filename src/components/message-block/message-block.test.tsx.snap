@@ -1,0 +1,40 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MessageBlock. Snapshots > Default  1`] = `
+<div>
+  <div
+    class="_MessageBlock_e65dee"
+    data-testid="message-block"
+  >
+    <div
+      class="_Emoji_e65dee"
+      data-testid="message-block-emoji"
+    >
+      ✨
+    </div>
+    <div
+      class="_Titles_e65dee"
+      data-testid="message-block-titles"
+    >
+      <h2
+        class="_Left_a0e0af _Medium_a0e0af _HL2_a0e0af _TextPrimary_a0e0af"
+        data-testid="message-block-title"
+      >
+        Welcome
+      </h2>
+      <h6
+        class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+        data-testid="message-block-subtitle"
+      >
+        This is a message block component
+      </h6>
+    </div>
+    <div
+      class="_Content_e65dee _Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+      data-testid="message-block-content"
+    >
+      This is the content of the message block. It can contain any child elements.
+    </div>
+  </div>
+</div>
+`;

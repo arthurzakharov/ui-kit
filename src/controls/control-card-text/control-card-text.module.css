@@ -1,0 +1,29 @@
+.ControlCardText {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.Label {
+  position: relative;
+  padding: var(--rm-ui-padding-md) var(--rm-ui-padding-sm);
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.Label:hover {
+  cursor: pointer;
+}
+
+.Choice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

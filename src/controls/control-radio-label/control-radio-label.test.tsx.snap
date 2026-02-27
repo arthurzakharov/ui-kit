@@ -1,0 +1,325 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlRadioLabel. Snapshots > CheckboxError 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-multi-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Error_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-multi-a"
+          name="multiple-value-demo"
+          type="checkbox"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Checkbox_f0ee5d _Error_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`ControlRadioLabel. Snapshots > CheckboxIdle 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-multi-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-multi-a"
+          name="multiple-value-demo"
+          type="checkbox"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`ControlRadioLabel. Snapshots > CheckboxSuccess 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-multi-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-multi-a"
+          name="multiple-value-demo"
+          type="checkbox"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Checkbox_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-check _ChoiceMark_f0ee5d"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 6 9 17l-5-5"
+            />
+          </svg>
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`ControlRadioLabel. Snapshots > RadioError 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-single-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Error_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-single-a"
+          name="single-value-demo"
+          type="radio"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Error_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <div
+            class="_ChoiceMark_f0ee5d"
+          />
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`ControlRadioLabel. Snapshots > RadioIdle 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-single-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-single-a"
+          name="single-value-demo"
+          type="radio"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <div
+            class="_ChoiceMark_f0ee5d"
+          />
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`ControlRadioLabel. Snapshots > RadioSuccess 1`] = `
+<div>
+  <label
+    class="_ControlRadioLabel_021ed9"
+    data-testid="control-radio-label"
+    for="radio-single-a"
+  >
+    <div
+      class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <div
+        class="d-flex align-items-center gap-1 px-3 py-3"
+      >
+        <input
+          checked=""
+          class="_ControlHiddenInput_f602d4"
+          data-testid="hidden-input"
+          id="radio-single-a"
+          name="single-value-demo"
+          type="radio"
+          value="a"
+        />
+        <div
+          class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+          data-testid="choice"
+        >
+          <div
+            class="_ChoiceMark_f0ee5d"
+          />
+        </div>
+        <div
+          class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+          data-testid="control-radio-text"
+        >
+          <span
+            class="_Content_9559ac"
+          >
+            Option A
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;

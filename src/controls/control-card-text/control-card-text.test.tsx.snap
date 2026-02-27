@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlCardText. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlCardText_71d244"
+  >
+    <label
+      class="_ControlRadioLabel_021ed9"
+      data-testid="control-radio-label"
+      for="card-text-0-a"
+    >
+      <div
+        class="_ControlBox_734004 _Checked_734004 _Idle_734004"
+        data-testid="control-box"
+      >
+        <div
+          class="_Label_71d244"
+        >
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="card-text-0-a"
+            name="card-text"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_Choice_71d244"
+          >
+            <div
+              class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+              data-testid="choice"
+            >
+              <div
+                class="_ChoiceMark_f0ee5d"
+              />
+            </div>
+          </div>
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+    <label
+      class="_ControlRadioLabel_021ed9"
+      data-testid="control-radio-label"
+      for="card-text-1-b"
+    >
+      <div
+        class="_ControlBox_734004 _Idle_734004"
+        data-testid="control-box"
+      >
+        <div
+          class="_Label_71d244"
+        >
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="card-text-1-b"
+            name="card-text"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_Choice_71d244"
+          >
+            <div
+              class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+              data-testid="choice"
+            >
+              <div
+                class="_ChoiceMark_f0ee5d"
+              />
+            </div>
+          </div>
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+`;

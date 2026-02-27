@@ -1,0 +1,55 @@
+.ControlButtonRadio {
+  --icon-size: 24px;
+  --icon-gap: var(--rm-ui-padding-sm);
+  flex-basis: 100%;
+  padding: var(--rm-ui-padding-md);
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.Wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Content {
+  margin-left: var(--icon-gap);
+  flex-basis: calc(100% - var(--icon-size) - var(--icon-gap));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.Text {
+  font-weight: var(--rm-ui-font-weight-regular);
+  color: var(--rm-ui-color-accent-primary);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  text-align: left;
+}
+
+.Hint {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}

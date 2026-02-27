@@ -1,0 +1,17 @@
+.Board {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-lg);
+  background-color: var(--rm-ui-sidebar-bg);
+}
+
+@media screen and (min-width: 1024px) {
+  .Board {
+    padding: var(--rm-ui-padding-xl);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Board {
+    padding: var(--rm-ui-padding-xxl);
+  }
+}

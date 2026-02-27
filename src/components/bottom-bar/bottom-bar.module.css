@@ -1,0 +1,18 @@
+.BottomBar {
+  background-color: var(--rm-ui-content-bg);
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.BottomBar.BottomBarFixed {
+  position: fixed;
+  z-index: 8000000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--rm-ui-padding-md) var(--rm-ui-padding-xl) var(--rm-ui-padding-lg);
+}
+
+.BottomBar.BottomBarStatic {
+  position: static;
+}

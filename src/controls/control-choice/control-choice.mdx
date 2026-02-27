@@ -1,0 +1,134 @@
+import { Controls, Meta, Primary, Source, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-choice.stories';
+import { ControlChoice } from './control-choice.component';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>✅ Binary selection marker for radio and checkbox interactions</Subtitle>
+
+`ControlChoice` renders the visual checked/unchecked marker used by checkbox and radio controls. Use it to show
+selection state, sizing, and interaction feedback (hovered, focused, disabled) in a consistent way.
+
+#### Params of <b>ControlChoice</b>
+
+<Controls of={stories.TypeRadioChecked} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlChoice } from '@controls/control-choice';
+
+    <ControlChoice
+      type="checkbox"
+      checked={true}
+      size="md"
+      hovered={false}
+      focused={false}
+      disabled={false}
+      className="custom-class-name"
+    />`
+
+}
+/>
+
+export const sizes = stories.default.argTypes.size.options;
+
+export const variants = [
+  { hovered: false, focused: false, disabled: false },
+  { hovered: true, focused: false, disabled: false },
+  { hovered: false, focused: true, disabled: false },
+  { hovered: true, focused: true, disabled: false },
+  { hovered: false, focused: false, disabled: true },
+  { hovered: true, focused: false, disabled: true },
+  { hovered: false, focused: true, disabled: true },
+  { hovered: true, focused: true, disabled: true },
+];
+
+export const variantLabel = ({ hovered, focused, disabled }) =>
+  `H:${hovered ? 'Y' : 'N'} F:${focused ? 'Y' : 'N'} D:${disabled ? 'Y' : 'N'}`;
+
+export const variantReadableLabel = ({ hovered, focused, disabled }) => ({
+  hovered: hovered ? 'Yes' : 'No',
+  focused: focused ? 'Yes' : 'No',
+  disabled: disabled ? 'Yes' : 'No',
+});
+
+export const Matrix = ({ type, checked }) => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          {variants.map((variant) => (
+            <th scope="col" key={variantLabel(variant)}>
+              <div className="d-flex flex-column gap-1 fw-normal">
+                <div>
+                  <strong>Hovered:</strong> <span>{variantReadableLabel(variant).hovered}</span>
+                </div>
+                <div>
+                  <strong>Focused:</strong> <span>{variantReadableLabel(variant).focused}</span>
+                </div>
+                <div>
+                  <strong>Disabled:</strong> <span>{variantReadableLabel(variant).disabled}</span>
+                </div>
+              </div>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr key={size}>
+            <th scope="row">
+              <code className="text-body">{size.toUpperCase()}</code>
+            </th>
+            {variants.map((variant) => (
+              <td key={`${size}-${variantLabel(variant)}`}>
+                <div className="d-flex justify-content-center py-1">
+                  <ControlChoice
+                    type={type}
+                    checked={checked}
+                    size={size}
+                    hovered={variant.hovered}
+                    focused={variant.focused}
+                    disabled={variant.disabled}
+                    state="idle"
+                  />
+                </div>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### State Matrix
+
+The tables below show all requested combinations at `state="idle"`:
+
+- Types: `checkbox`, `radio`
+- Checked values: `false`, `true`
+- Sizes: `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`
+- Interaction flags: every combination of `hovered`, `focused`, `disabled`
+
+### Checkbox: Unchecked
+
+<Matrix type="checkbox" checked={false} />
+
+### Checkbox: Checked
+
+<Matrix type="checkbox" checked={true} />
+
+### Radio: Unchecked
+
+<Matrix type="radio" checked={false} />
+
+### Radio: Checked
+
+<Matrix type="radio" checked={true} />

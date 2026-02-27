@@ -1,0 +1,89 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HeaderInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.HeaderLogo {
+  height: var(--rm-ui-header-logo-height);
+  pointer-events: none;
+}
+
+.HeaderLogoPlaceholder {
+  display: flex;
+  width: var(--rm-ui-header-logo-height);
+  height: var(--rm-ui-header-logo-height);
+}
+
+.HeaderPhoneButton {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.HeaderPhoneButton:focus-visible {
+  outline-offset: 2px;
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.HeaderPhoneButtonIcon {
+  width: var(--rm-ui-header-phone-size);
+  height: var(--rm-ui-header-phone-size);
+  stroke: var(--rm-ui-header-phone);
+  stroke-width: 2px;
+}
+
+.HeaderPhoneButtonNumber,
+.HeaderDescriptions {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .HeaderPhoneButtonNumber {
+    display: flex;
+    font-weight: var(--rm-ui-font-weight-bold);
+    font-size: var(--rm-ui-font-size-body);
+    line-height: var(--rm-ui-line-height-body);
+    letter-spacing: 0.1px;
+    color: var(--rm-ui-header-text);
+  }
+
+  .HeaderDescriptions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--rm-ui-padding-xxs);
+    font-weight: var(--rm-ui-font-weight-light);
+    font-size: var(--rm-ui-font-size-body-extra-small);
+    line-height: var(--rm-ui-line-height-body-extra-small);
+    color: var(--rm-ui-header-text);
+  }
+
+  .HeaderDescriptionsIcon {
+    stroke: var(--rm-ui-header-check-icon);
+    stroke-width: 3px;
+  }
+
+  .HeaderDescriptionsIconSm {
+    width: 10px;
+    height: 10px;
+  }
+
+  .HeaderDescriptionsIconMd {
+    width: 12px;
+    height: 12px;
+  }
+}

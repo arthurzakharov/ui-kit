@@ -1,0 +1,39 @@
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './control-button-card.stories';
+
+<Meta of={Stories} />
+
+<Title of={Stories} />
+
+### 🎴 Card-style button with icon for option selection
+
+`ControlButtonCard` renders a selectable card button with optional icon. Use it for visual option pickers where
+each choice needs a distinct icon and label. Supports active states and icon positioning.
+
+#### Params of ControlButtonCard
+
+<ArgTypes of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  code={
+    `import { ControlButtonCard } from '@controls/control-button-card';
+
+    <ControlButtonCard
+      active={false}
+      disabled={false}
+      iconPosition="top"
+      onClick={() => handleClick()}
+      className="custom-class-name"
+    >
+      Option A
+    </ControlButtonCard>`
+
+}
+/>

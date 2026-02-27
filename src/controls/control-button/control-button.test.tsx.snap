@@ -1,0 +1,241 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlButton. Snapshots > Default 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+    data-testid="control-button"
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > Disabled 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+    data-testid="control-button"
+    disabled=""
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > FullWidth 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210 _FullWidth_ffa210"
+    data-testid="control-button"
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > Loading 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210 _Loading_ffa210"
+    data-testid="control-button"
+    disabled=""
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Loader_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <div
+          class="_Loader_454ed6"
+          data-testid="loader"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-loader _Icon_454ed6 _White_454ed6"
+            data-testid="loader-icon"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2v4"
+            />
+            <path
+              d="m16.2 7.8 2.9-2.9"
+            />
+            <path
+              d="M18 12h4"
+            />
+            <path
+              d="m16.2 16.2 2.9 2.9"
+            />
+            <path
+              d="M12 18v4"
+            />
+            <path
+              d="m4.9 19.1 2.9-2.9"
+            />
+            <path
+              d="M2 12h4"
+            />
+            <path
+              d="m4.9 4.9 2.9 2.9"
+            />
+          </svg>
+           
+        </div>
+      </div>
+    </div>
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 0; transform: scale(0.95);"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > WithBlurAfterClick 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+    data-testid="control-button"
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > WithCustomClassName 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 story-custom-class _MD_ffa210 _Primary_ffa210"
+    data-testid="control-button"
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ControlButton. Snapshots > WithInfo 1`] = `
+<div>
+  <button
+    class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+    data-testid="control-button"
+    type="button"
+  >
+    <div
+      class="_Animation_700a30 _Content_ffa210"
+      data-testid="animation-fade-scale"
+    >
+      <div
+        style="opacity: 1; transform: none;"
+      >
+        <span
+          class="_Text_ffa210"
+        >
+          Go next step
+        </span>
+        <div
+          class="_Info_ffa210"
+        >
+          get 
+          <u>
+            more
+          </u>
+           inormation
+        </div>
+      </div>
+    </div>
+  </button>
+</div>
+`;

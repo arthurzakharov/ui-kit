@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Content. Snapshots > EmptyString  1`] = `<div />`;
+
+exports[`Content. Snapshots > EmptyStringAlwaysRender  1`] = `
+<div>
+  <div
+    id="content-html"
+  />
+</div>
+`;
+
+exports[`Content. Snapshots > HtmlString  1`] = `
+<div>
+  <div
+    id="content-html"
+  >
+    <b>
+      Bold
+    </b>
+     and 
+    <i>
+      italic
+    </i>
+     text
+  </div>
+</div>
+`;
+
+exports[`Content. Snapshots > PlainString  1`] = `
+<div>
+  <div
+    id="content-html"
+  >
+    Bold and italic text
+  </div>
+</div>
+`;
+
+exports[`Content. Snapshots > ReactNode  1`] = `
+<div>
+  <div
+    id="content-html"
+  >
+    <span>
+      <b>
+        Bold
+      </b>
+       and 
+      <i>
+        italic
+      </i>
+       text
+    </span>
+  </div>
+</div>
+`;

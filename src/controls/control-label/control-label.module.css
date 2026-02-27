@@ -1,0 +1,23 @@
+.ControlLabel {
+  font-weight: var(--rm-ui-font-weight-regular);
+  color: var(--rm-ui-color-text-secondary);
+  transition: color 0.15s ease-out;
+}
+
+.Idle {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.Active {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.Error {
+  color: var(--rm-ui-color-error);
+}
+
+.Success {
+  color: var(--rm-ui-color-success);
+}

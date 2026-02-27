@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlTextarea. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_Container_7f441e"
+    data-testid="control-textarea"
+  >
+    <div
+      class="_ControlBox_734004 _Focused_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <textarea
+        class="_Input_7f441e"
+        data-is-idle="false"
+        data-testid="control-textarea-input"
+        id="control-textarea"
+        placeholder=""
+        rows="5"
+      >
+        Hello, world!
+      </textarea>
+    </div>
+  </div>
+</div>
+`;

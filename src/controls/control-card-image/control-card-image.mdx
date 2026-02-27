@@ -1,0 +1,43 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-card-image.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>🖼️ Icon-based card selector with sprite support</Subtitle>
+<Description>
+  `ControlCardImage` renders a group of selectable cards each with SVG sprite icons. Use it when you need a visual
+  choice selector where each option is represented by an icon from a sprite sheet.
+</Description>
+
+#### Params of <b>ControlCardImage</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlCardImage } from '@controls/control-card-image';
+
+    <ControlCardImage
+      id="insurance"
+      value="a"
+      state="idle"
+      sprite="/path/to/sprite.svg"
+      choices={[
+        { label: 'Option A', value: 'a', icon: '0 0 100 100' },
+        { label: 'Option B', value: 'b', icon: '0 0 100 100' },
+      ]}
+      onChange={(val, id) => handleChange(val, id)}
+      className="custom-class-name"
+    />`
+
+}
+/>

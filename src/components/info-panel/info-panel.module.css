@@ -1,0 +1,60 @@
+.InfoPanel {
+  position: relative;
+  padding: var(--rm-ui-padding-md) 0;
+  background-color: var(--rm-ui-info-panel-bg);
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.InfoPanel:before,
+.InfoPanel:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100vw;
+  background-color: inherit;
+}
+
+.InfoPanel:before {
+  left: 0;
+}
+
+.InfoPanel:after {
+  right: 0;
+}
+
+.List {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.Item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Key {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.Value {
+  color: var(--rm-ui-color-text-primary);
+}
+
+@media screen and (min-width: 480px) {
+  .Item {
+    justify-content: flex-start;
+    gap: var(--rm-ui-padding-xxs);
+  }
+}

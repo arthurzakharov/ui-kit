@@ -1,0 +1,49 @@
+.AccordionTable {
+  font-weight: var(--rm-ui-font-weight-regular);
+  width: 100%;
+  display: block;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  font-weight: var(--rm-ui-font-weight-regular);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Head {
+  background-color: var(--rm-ui-grey-100);
+}
+
+.HeadRow,
+.DataRow {
+  display: flex;
+  width: 100%;
+}
+
+.BodyRow {
+  border-bottom: 1px solid var(--rm-ui-grey-100);
+}
+
+.HeadCell,
+.BodyCell {
+  min-width: 0;
+  width: calc(100% / var(--accordion-columns));
+  flex: 0 1 calc(100% / var(--accordion-columns));
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+}
+
+.HeadCell {
+  font-weight: var(--rm-ui-font-weight-medium);
+  color: var(--rm-ui-color-text-primary);
+  text-align: left;
+  vertical-align: top;
+  white-space: break-spaces;
+}
+
+.BodyHeadCell {
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.BodyHead {
+  padding: var(--rm-ui-padding-xxs);
+  text-align: left;
+}

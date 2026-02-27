@@ -1,0 +1,67 @@
+import { Canvas, Controls, Description, Meta, Primary, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { ControlStatus } from '@controls/control-status';
+import * as Stories from './control-status.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Subtitle>🟢 Validation status indicator for form controls</Subtitle>
+<Description />
+
+#### Params of ControlStatus
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlStatus } from '@controls/control-status';
+
+    <ControlStatus
+      state="success"
+    />`
+
+}
+/>
+
+export const states = Stories.default.argTypes.state.options;
+
+export const StateMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          {states.map((state) => (
+            <th key={state} scope="col">
+              <code className="text-body">{state}</code>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {states.map((state) => (
+            <td key={state}>
+              <div className="d-flex justify-content-center py-2">
+                <ControlStatus state={state} />
+              </div>
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
+
+#### State Matrix
+
+All possible `ControlStatus` states:
+
+<StateMatrix />

@@ -1,0 +1,6 @@
+.ControlErrorMessage {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-extra-small);
+  line-height: var(--rm-ui-line-height-body-extra-small);
+  color: var(--rm-ui-color-error);
+}

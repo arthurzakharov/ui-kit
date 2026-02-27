@@ -1,0 +1,59 @@
+.ControlText {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.ControlText:hover {
+  cursor: pointer;
+}
+
+.Content {
+  box-sizing: border-box;
+  position: relative;
+  flex-grow: 1;
+  height: 58px;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-end;
+}
+
+.Label {
+  position: absolute;
+  left: var(--rm-ui-padding-sm);
+  transition: top var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
+}
+
+.LabelIdle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.LabelActive {
+  top: var(--rm-ui-padding-xs);
+  transform: translateY(0);
+}
+
+.Placeholder {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--rm-ui-padding-xs);
+  left: var(--rm-ui-padding-sm);
+}
+
+.PlaceholderText {
+  opacity: 0.75;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.ErrorMessage {
+  padding-left: var(--rm-ui-padding-sm);
+}

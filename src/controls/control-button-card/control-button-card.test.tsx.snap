@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlButtonCard. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Idle_734004"
+    data-testid="control-box"
+  >
+    <button
+      class="_ControlButtonCard_60a02e _IconTop_60a02e"
+      type="button"
+    >
+      <div
+        class="_ControlRadioText_9559ac _Text_60a02e _TextPrimary_9559ac _Body_9559ac _OneLine_9559ac"
+        data-testid="control-radio-text"
+      >
+        <span
+          class="_Content_9559ac"
+        >
+          Option A
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

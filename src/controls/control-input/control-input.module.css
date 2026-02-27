@@ -1,0 +1,48 @@
+.ControlInput {
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.ControlInput:hover {
+  cursor: pointer;
+}
+
+.ControlInput:disabled {
+  opacity: 0.33;
+}
+
+.ControlInput:disabled,
+.ControlInput:-webkit-autofill,
+.ControlInput:-webkit-autofill:hover,
+.ControlInput:-webkit-autofill:focus,
+.ControlInput:-webkit-autofill:active,
+.ControlInput:autofill,
+.ControlInput:autofill:hover,
+.ControlInput:autofill:focus,
+.ControlInput:autofill:active {
+  background: transparent;
+  transition: background 7200s ease-in-out 0s;
+}
+
+.ControlInput:-webkit-autofill {
+  animation-name: autofill-start;
+  animation-duration: 0.1s;
+  -webkit-text-fill-color: var(--rm-ui-color-text-primary);
+}
+
+.ControlInput:not(:-webkit-autofill) {
+  animation-name: autofill-cancel;
+  animation-duration: 0.1s;
+}
+
+@keyframes autofill-start {
+}
+
+@keyframes autofill-cancel {
+}

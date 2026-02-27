@@ -1,0 +1,134 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import { GreyBox } from '@story/placeholders/grey-box.component';
+import { Loader } from '@components/loader/loader.component';
+import * as Stories from './loader.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of <b>Loader</b>
+
+<Controls of={Stories.CustomColor} />
+
+#### Interactive Example
+
+<Canvas of={Stories.CustomColor} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Loader } from '@components/loader';
+
+    <Loader
+      size="md"
+      color="accent-primary"
+      padding="md"
+    />`
+
+}
+/>
+
+export const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
+export const colors = ['white', 'text-primary', 'text-secondary', 'accent-primary', 'accent-secondary'];
+export const paddingSizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
+
+export const ColorPreview = ({ color }) =>
+  color === 'white' ? (
+    <GreyBox>
+      <Loader size="md" color={color} />
+    </GreyBox>
+  ) : (
+    <Loader size="md" color={color} />
+  );
+
+export const SizeMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          <th scope="col">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr key={size}>
+            <td>
+              <code className="text-body">{size}</code>
+            </td>
+            <td>
+              <Loader size={size} color="accent-primary" />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export const ColorMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">Color</th>
+          <th scope="col">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {colors.map((color) => (
+          <tr key={color}>
+            <td>
+              <code className="text-body">{color}</code>
+            </td>
+            <td>
+              <ColorPreview color={color} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export const PaddingMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">Padding</th>
+          <th scope="col">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {paddingSizes.map((padding) => (
+          <tr key={padding}>
+            <td>
+              <code className="text-body">{padding}</code>
+            </td>
+            <td>
+              <Loader size="sm" color="accent-primary" padding={padding} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### Size Matrix
+
+<SizeMatrix />
+
+#### Color Matrix
+
+<ColorMatrix />
+
+#### Padding Matrix
+
+<PaddingMatrix />

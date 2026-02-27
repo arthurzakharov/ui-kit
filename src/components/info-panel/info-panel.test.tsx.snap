@@ -1,0 +1,127 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InfoPanel. Snapshots > Default  1`] = `
+<div>
+  <div
+    class="_InfoPanel_a2957e"
+    data-testid="info-panel"
+  >
+    <ul
+      class="_List_a2957e"
+      data-testid="info-panel-list"
+    >
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Material
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          100% Baumwolle
+        </span>
+      </li>
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Passform
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          Regular Fit
+        </span>
+      </li>
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Pflege
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          30 C Schonwaschgang
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`InfoPanel. Snapshots > WithBaseBehavior  1`] = `
+<div>
+  <div
+    class="_InfoPanel_a2957e bg-color-grey-300"
+    data-testid="custom-test-id"
+  >
+    <ul
+      class="_List_a2957e"
+      data-testid="info-panel-list"
+    >
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Material
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          100% Baumwolle
+        </span>
+      </li>
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Passform
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          Regular Fit
+        </span>
+      </li>
+      <li
+        class="_Item_a2957e"
+      >
+        <span
+          class="_Key_a2957e"
+          data-testid="info-panel-key"
+        >
+          Pflege
+        </span>
+        <span
+          class="_Value_a2957e"
+          data-testid="info-panel-value"
+        >
+          30 C Schonwaschgang
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

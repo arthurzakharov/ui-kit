@@ -1,0 +1,44 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-text.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>✏️ Labeled text input with validation states</Subtitle>
+<Description>
+  `ControlText` combines a text input with a floating label. The label animates between idle and active positions based
+  on focus/value state. Supports validation states and error messages. Use it for form inputs requiring clear field
+  labels.
+</Description>
+
+#### Params of <b>ControlText</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlText } from '@controls/control-text';
+
+    <ControlText
+      id="vorname"
+      label="Vorname"
+      value={value}
+      state="idle"
+      placeholder="Bitte eingeben"
+      message="Pflichtfeld"
+      onChange={(val, id) => setValue(val)}
+      onFocus={(id) => console.log('focused')}
+      onBlur={(id) => console.log('blurred')}
+      className="custom-class-name"
+    />`
+
+}
+/>

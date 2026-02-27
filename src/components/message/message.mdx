@@ -1,0 +1,58 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './message.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of <b>Message</b>
+
+<Controls of={Stories.Success} />
+
+#### Interactive Examples
+
+##### Type Success
+
+<Canvas of={Stories.Success} />
+
+##### Type Question
+
+<Canvas of={Stories.Question} />
+
+##### Type Error
+
+<Canvas of={Stories.Error} />
+
+##### Type Info
+
+<Canvas of={Stories.Info} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Message } from '@components/message';
+
+    <Message
+      type="success"
+      title="Alles klar!"
+      text="Ihre Änderungen wurden gespeichert."
+    />
+
+    <Message
+      type="error"
+      title="Fehler"
+      text="Etwas ist schief gelaufen."
+    />
+
+    <Message
+      type="info"
+      title="Hinweis"
+      text="Bitte beachten Sie die aktuellen Öffnungszeiten."
+    />`
+
+}
+/>

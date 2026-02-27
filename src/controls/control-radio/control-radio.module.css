@@ -1,0 +1,35 @@
+.ControlRadio {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.Content {
+  display: inline-flex;
+}
+
+.Horizontal {
+  flex-direction: row;
+  gap: var(--rm-ui-padding-lg);
+}
+
+.Vertical {
+  flex-direction: column;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.Label {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.Label:hover {
+  cursor: pointer;
+}
+
+.ErrorMessage {
+  padding-top: var(--rm-ui-padding-xxs);
+}

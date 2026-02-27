@@ -1,0 +1,15 @@
+.Block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-md);
+}
+
+.BlockTitle {
+  font-weight: var(--rm-ui-font-weight-medium);
+  color: var(--rm-ui-color-text-primary);
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}

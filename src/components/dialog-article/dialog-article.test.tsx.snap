@@ -1,0 +1,1106 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DialogArticle > Default 1`] = `
+<div>
+  <div
+    class="_DialogArticle_bc7d74"
+    data-testid="dialog-article"
+    style="padding-bottom: 0px;"
+  >
+    <h1>
+      Lorem ipsum dolor sit,
+    </h1>
+    <p>
+      amet 
+      <span
+        class="b"
+      >
+        consectetur adipisicing
+      </span>
+       elit. Laboriosam reprehenderit dolorum cum est ullam consequatur labore at molestias quaerat commodi atque 
+      <strong>
+        tenetur earum
+      </strong>
+       aut sapiente, distinctio sit? Quasi libero necessitatibus, mollitia nobis odit earum tenetur itaque sint 
+      <b>
+        quam cumque
+      </b>
+      , voluptate,
+      <span
+        class="strong"
+      >
+        enim acc
+      </span>
+      usamus aperiam nihil quidem?
+    </p>
+    <h2>
+      Adipisci quas dolor sit eum ipsam.
+    </h2>
+    <p>
+      Qui provident laboriosam, tempora sed maxime, quidem omnis veniam est aspernatur temporibus dolore fugit tenetur, sunt fugiat obcaecati? Quo impedit doloremque eligendi in vero temporibus ad eveniet fugiat provident delectus placeat est magni doloribus tenetur vel, facere explicabo, illum consectetur? Exercitationem, repellendus, fuga, voluptatem est et quibusdam aut eum itaque optio placeat accusamus molestias dignissimos adipisci.
+    </p>
+    <div
+      class="ol"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="h1"
+    >
+      Consequuntur porro commodi sit libero recusandae quod,
+    </div>
+    <p>
+      expedita, delectus nostrum quibusdam eos alias, 
+      <a
+        href="#"
+      >
+        obcaecati aliquid quaerat
+      </a>
+       laboriosam natus repellat sapiente. Vitae deleniti veritatis eligendi facilis illum quia expedita. Soluta ipsa officia maiores modi placeat perspiciatis ad nemo enim delectus error, minima architecto repellat dolorum fugiat nam harum quasi atque repudiandae?
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+          <th>
+            Header 3
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Row 1, Cell 1
+          </td>
+          <td>
+            Row 1, Cell 2
+          </td>
+          <td>
+            Row 1, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 2, Cell 1
+          </td>
+          <td>
+            Row 2, Cell 2
+          </td>
+          <td>
+            Row 2, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 3, Cell 1
+          </td>
+          <td>
+            Row 3, Cell 2
+          </td>
+          <td>
+            Row 3, Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ol>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ol>
+    <hr />
+    <p>
+      Debitis, mollitia amet quae culpa animi incidunt vel aliquam hic fugit, dolorum, repudiandae et eveniet esse vitae optio dolor quas nisi cum totam tempora. Ut suscipit id aut officiis accusantium quibusdam porro voluptates tenetur obcaecati ad natus nam optio totam dolorum perferendis, ipsum rerum dicta voluptas odit iste in pariatur quos? 
+      <span
+        class="a"
+      >
+        Veniam recusandae
+      </span>
+       corrupti id reprehenderit vitae quam quaerat, optio eum minima at vero voluptatem nam porro vel ullam incidunt ut aliquid natus praesentium repellat impedit provident inventore enim ipsa.
+    </p>
+    <div
+      class="ul"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="hr"
+    />
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ul>
+    <p>
+      Debitis, fugit necessitatibus iste, architecto quibusdam ut tempora officia doloremque dolore corrupti quam. Eius corrupti quidem beatae quos dolore eaque odio. Ducimus iusto alias quidem numquam fuga similique incidunt necessitatibus in laborum iste non omnis nobis nam doloremque temporibus quisquam voluptatibus, vero commodi! Iure accusamus doloribus hic culpa dicta perferendis eum quam veniam vero totam ratione saepe atque, porro incidunt.
+    </p>
+    <div
+      class="h2"
+    >
+      Earum tempora sed recusandae ea
+    </div>
+    <div
+      class="p"
+    >
+      ipsam voluptatibus doloremque voluptate, doloribus obcaecati delectus. Accusantium veritatis itaque ex et vitae ratione quibusdam quod mollitia, dolorum maxime expedita dolor nesciunt ullam deleniti doloribus consequuntur, fugit unde. Libero exercitationem quod cum. Quisquam veritatis omnis doloremque, eius, minus sit aut nisi aspernatur fuga ad, laudantium numquam beatae iste! Eveniet corporis voluptates consectetur quam et fugit dicta temporibus, eaque officia ab sint dignissimos officiis iure quas tenetur!
+    </div>
+    <div
+      class="_Buttons_bc7d74"
+      data-testid="dialog-article-buttons"
+    >
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Tertiary_ffa210"
+        data-testid="dialog-article-cancel"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Cancel
+            </span>
+          </div>
+        </div>
+      </button>
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+        data-testid="dialog-article-confirm"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Accept
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DialogArticle > OnlyCancel 1`] = `
+<div>
+  <div
+    class="_DialogArticle_bc7d74"
+    data-testid="dialog-article"
+    style="padding-bottom: 0px;"
+  >
+    <h1>
+      Lorem ipsum dolor sit,
+    </h1>
+    <p>
+      amet 
+      <span
+        class="b"
+      >
+        consectetur adipisicing
+      </span>
+       elit. Laboriosam reprehenderit dolorum cum est ullam consequatur labore at molestias quaerat commodi atque 
+      <strong>
+        tenetur earum
+      </strong>
+       aut sapiente, distinctio sit? Quasi libero necessitatibus, mollitia nobis odit earum tenetur itaque sint 
+      <b>
+        quam cumque
+      </b>
+      , voluptate,
+      <span
+        class="strong"
+      >
+        enim acc
+      </span>
+      usamus aperiam nihil quidem?
+    </p>
+    <h2>
+      Adipisci quas dolor sit eum ipsam.
+    </h2>
+    <p>
+      Qui provident laboriosam, tempora sed maxime, quidem omnis veniam est aspernatur temporibus dolore fugit tenetur, sunt fugiat obcaecati? Quo impedit doloremque eligendi in vero temporibus ad eveniet fugiat provident delectus placeat est magni doloribus tenetur vel, facere explicabo, illum consectetur? Exercitationem, repellendus, fuga, voluptatem est et quibusdam aut eum itaque optio placeat accusamus molestias dignissimos adipisci.
+    </p>
+    <div
+      class="ol"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="h1"
+    >
+      Consequuntur porro commodi sit libero recusandae quod,
+    </div>
+    <p>
+      expedita, delectus nostrum quibusdam eos alias, 
+      <a
+        href="#"
+      >
+        obcaecati aliquid quaerat
+      </a>
+       laboriosam natus repellat sapiente. Vitae deleniti veritatis eligendi facilis illum quia expedita. Soluta ipsa officia maiores modi placeat perspiciatis ad nemo enim delectus error, minima architecto repellat dolorum fugiat nam harum quasi atque repudiandae?
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+          <th>
+            Header 3
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Row 1, Cell 1
+          </td>
+          <td>
+            Row 1, Cell 2
+          </td>
+          <td>
+            Row 1, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 2, Cell 1
+          </td>
+          <td>
+            Row 2, Cell 2
+          </td>
+          <td>
+            Row 2, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 3, Cell 1
+          </td>
+          <td>
+            Row 3, Cell 2
+          </td>
+          <td>
+            Row 3, Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ol>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ol>
+    <hr />
+    <p>
+      Debitis, mollitia amet quae culpa animi incidunt vel aliquam hic fugit, dolorum, repudiandae et eveniet esse vitae optio dolor quas nisi cum totam tempora. Ut suscipit id aut officiis accusantium quibusdam porro voluptates tenetur obcaecati ad natus nam optio totam dolorum perferendis, ipsum rerum dicta voluptas odit iste in pariatur quos? 
+      <span
+        class="a"
+      >
+        Veniam recusandae
+      </span>
+       corrupti id reprehenderit vitae quam quaerat, optio eum minima at vero voluptatem nam porro vel ullam incidunt ut aliquid natus praesentium repellat impedit provident inventore enim ipsa.
+    </p>
+    <div
+      class="ul"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="hr"
+    />
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ul>
+    <p>
+      Debitis, fugit necessitatibus iste, architecto quibusdam ut tempora officia doloremque dolore corrupti quam. Eius corrupti quidem beatae quos dolore eaque odio. Ducimus iusto alias quidem numquam fuga similique incidunt necessitatibus in laborum iste non omnis nobis nam doloremque temporibus quisquam voluptatibus, vero commodi! Iure accusamus doloribus hic culpa dicta perferendis eum quam veniam vero totam ratione saepe atque, porro incidunt.
+    </p>
+    <div
+      class="h2"
+    >
+      Earum tempora sed recusandae ea
+    </div>
+    <div
+      class="p"
+    >
+      ipsam voluptatibus doloremque voluptate, doloribus obcaecati delectus. Accusantium veritatis itaque ex et vitae ratione quibusdam quod mollitia, dolorum maxime expedita dolor nesciunt ullam deleniti doloribus consequuntur, fugit unde. Libero exercitationem quod cum. Quisquam veritatis omnis doloremque, eius, minus sit aut nisi aspernatur fuga ad, laudantium numquam beatae iste! Eveniet corporis voluptates consectetur quam et fugit dicta temporibus, eaque officia ab sint dignissimos officiis iure quas tenetur!
+    </div>
+    <div
+      class="_Buttons_bc7d74"
+      data-testid="dialog-article-buttons"
+    >
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Tertiary_ffa210"
+        data-testid="dialog-article-cancel"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Go Back
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DialogArticle > OnlyConfirm 1`] = `
+<div>
+  <div
+    class="_DialogArticle_bc7d74"
+    data-testid="dialog-article"
+    style="padding-bottom: 0px;"
+  >
+    <h1>
+      Lorem ipsum dolor sit,
+    </h1>
+    <p>
+      amet 
+      <span
+        class="b"
+      >
+        consectetur adipisicing
+      </span>
+       elit. Laboriosam reprehenderit dolorum cum est ullam consequatur labore at molestias quaerat commodi atque 
+      <strong>
+        tenetur earum
+      </strong>
+       aut sapiente, distinctio sit? Quasi libero necessitatibus, mollitia nobis odit earum tenetur itaque sint 
+      <b>
+        quam cumque
+      </b>
+      , voluptate,
+      <span
+        class="strong"
+      >
+        enim acc
+      </span>
+      usamus aperiam nihil quidem?
+    </p>
+    <h2>
+      Adipisci quas dolor sit eum ipsam.
+    </h2>
+    <p>
+      Qui provident laboriosam, tempora sed maxime, quidem omnis veniam est aspernatur temporibus dolore fugit tenetur, sunt fugiat obcaecati? Quo impedit doloremque eligendi in vero temporibus ad eveniet fugiat provident delectus placeat est magni doloribus tenetur vel, facere explicabo, illum consectetur? Exercitationem, repellendus, fuga, voluptatem est et quibusdam aut eum itaque optio placeat accusamus molestias dignissimos adipisci.
+    </p>
+    <div
+      class="ol"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="h1"
+    >
+      Consequuntur porro commodi sit libero recusandae quod,
+    </div>
+    <p>
+      expedita, delectus nostrum quibusdam eos alias, 
+      <a
+        href="#"
+      >
+        obcaecati aliquid quaerat
+      </a>
+       laboriosam natus repellat sapiente. Vitae deleniti veritatis eligendi facilis illum quia expedita. Soluta ipsa officia maiores modi placeat perspiciatis ad nemo enim delectus error, minima architecto repellat dolorum fugiat nam harum quasi atque repudiandae?
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+          <th>
+            Header 3
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Row 1, Cell 1
+          </td>
+          <td>
+            Row 1, Cell 2
+          </td>
+          <td>
+            Row 1, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 2, Cell 1
+          </td>
+          <td>
+            Row 2, Cell 2
+          </td>
+          <td>
+            Row 2, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 3, Cell 1
+          </td>
+          <td>
+            Row 3, Cell 2
+          </td>
+          <td>
+            Row 3, Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ol>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ol>
+    <hr />
+    <p>
+      Debitis, mollitia amet quae culpa animi incidunt vel aliquam hic fugit, dolorum, repudiandae et eveniet esse vitae optio dolor quas nisi cum totam tempora. Ut suscipit id aut officiis accusantium quibusdam porro voluptates tenetur obcaecati ad natus nam optio totam dolorum perferendis, ipsum rerum dicta voluptas odit iste in pariatur quos? 
+      <span
+        class="a"
+      >
+        Veniam recusandae
+      </span>
+       corrupti id reprehenderit vitae quam quaerat, optio eum minima at vero voluptatem nam porro vel ullam incidunt ut aliquid natus praesentium repellat impedit provident inventore enim ipsa.
+    </p>
+    <div
+      class="ul"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="hr"
+    />
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ul>
+    <p>
+      Debitis, fugit necessitatibus iste, architecto quibusdam ut tempora officia doloremque dolore corrupti quam. Eius corrupti quidem beatae quos dolore eaque odio. Ducimus iusto alias quidem numquam fuga similique incidunt necessitatibus in laborum iste non omnis nobis nam doloremque temporibus quisquam voluptatibus, vero commodi! Iure accusamus doloribus hic culpa dicta perferendis eum quam veniam vero totam ratione saepe atque, porro incidunt.
+    </p>
+    <div
+      class="h2"
+    >
+      Earum tempora sed recusandae ea
+    </div>
+    <div
+      class="p"
+    >
+      ipsam voluptatibus doloremque voluptate, doloribus obcaecati delectus. Accusantium veritatis itaque ex et vitae ratione quibusdam quod mollitia, dolorum maxime expedita dolor nesciunt ullam deleniti doloribus consequuntur, fugit unde. Libero exercitationem quod cum. Quisquam veritatis omnis doloremque, eius, minus sit aut nisi aspernatur fuga ad, laudantium numquam beatae iste! Eveniet corporis voluptates consectetur quam et fugit dicta temporibus, eaque officia ab sint dignissimos officiis iure quas tenetur!
+    </div>
+    <div
+      class="_Buttons_bc7d74"
+      data-testid="dialog-article-buttons"
+    >
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+        data-testid="dialog-article-confirm"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Continue
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DialogArticle > WithBaseBehavior 1`] = `
+<div>
+  <div
+    class="_DialogArticle_bc7d74 bg-color-grey-300"
+    data-testid="custom-test-id"
+    style="padding-bottom: 0px;"
+  >
+    <h1>
+      Lorem ipsum dolor sit,
+    </h1>
+    <p>
+      amet 
+      <span
+        class="b"
+      >
+        consectetur adipisicing
+      </span>
+       elit. Laboriosam reprehenderit dolorum cum est ullam consequatur labore at molestias quaerat commodi atque 
+      <strong>
+        tenetur earum
+      </strong>
+       aut sapiente, distinctio sit? Quasi libero necessitatibus, mollitia nobis odit earum tenetur itaque sint 
+      <b>
+        quam cumque
+      </b>
+      , voluptate,
+      <span
+        class="strong"
+      >
+        enim acc
+      </span>
+      usamus aperiam nihil quidem?
+    </p>
+    <h2>
+      Adipisci quas dolor sit eum ipsam.
+    </h2>
+    <p>
+      Qui provident laboriosam, tempora sed maxime, quidem omnis veniam est aspernatur temporibus dolore fugit tenetur, sunt fugiat obcaecati? Quo impedit doloremque eligendi in vero temporibus ad eveniet fugiat provident delectus placeat est magni doloribus tenetur vel, facere explicabo, illum consectetur? Exercitationem, repellendus, fuga, voluptatem est et quibusdam aut eum itaque optio placeat accusamus molestias dignissimos adipisci.
+    </p>
+    <div
+      class="ol"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="h1"
+    >
+      Consequuntur porro commodi sit libero recusandae quod,
+    </div>
+    <p>
+      expedita, delectus nostrum quibusdam eos alias, 
+      <a
+        href="#"
+      >
+        obcaecati aliquid quaerat
+      </a>
+       laboriosam natus repellat sapiente. Vitae deleniti veritatis eligendi facilis illum quia expedita. Soluta ipsa officia maiores modi placeat perspiciatis ad nemo enim delectus error, minima architecto repellat dolorum fugiat nam harum quasi atque repudiandae?
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+          <th>
+            Header 3
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Row 1, Cell 1
+          </td>
+          <td>
+            Row 1, Cell 2
+          </td>
+          <td>
+            Row 1, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 2, Cell 1
+          </td>
+          <td>
+            Row 2, Cell 2
+          </td>
+          <td>
+            Row 2, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 3, Cell 1
+          </td>
+          <td>
+            Row 3, Cell 2
+          </td>
+          <td>
+            Row 3, Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ol>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ol>
+    <hr />
+    <p>
+      Debitis, mollitia amet quae culpa animi incidunt vel aliquam hic fugit, dolorum, repudiandae et eveniet esse vitae optio dolor quas nisi cum totam tempora. Ut suscipit id aut officiis accusantium quibusdam porro voluptates tenetur obcaecati ad natus nam optio totam dolorum perferendis, ipsum rerum dicta voluptas odit iste in pariatur quos? 
+      <span
+        class="a"
+      >
+        Veniam recusandae
+      </span>
+       corrupti id reprehenderit vitae quam quaerat, optio eum minima at vero voluptatem nam porro vel ullam incidunt ut aliquid natus praesentium repellat impedit provident inventore enim ipsa.
+    </p>
+    <div
+      class="ul"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="hr"
+    />
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ul>
+    <p>
+      Debitis, fugit necessitatibus iste, architecto quibusdam ut tempora officia doloremque dolore corrupti quam. Eius corrupti quidem beatae quos dolore eaque odio. Ducimus iusto alias quidem numquam fuga similique incidunt necessitatibus in laborum iste non omnis nobis nam doloremque temporibus quisquam voluptatibus, vero commodi! Iure accusamus doloribus hic culpa dicta perferendis eum quam veniam vero totam ratione saepe atque, porro incidunt.
+    </p>
+    <div
+      class="h2"
+    >
+      Earum tempora sed recusandae ea
+    </div>
+    <div
+      class="p"
+    >
+      ipsam voluptatibus doloremque voluptate, doloribus obcaecati delectus. Accusantium veritatis itaque ex et vitae ratione quibusdam quod mollitia, dolorum maxime expedita dolor nesciunt ullam deleniti doloribus consequuntur, fugit unde. Libero exercitationem quod cum. Quisquam veritatis omnis doloremque, eius, minus sit aut nisi aspernatur fuga ad, laudantium numquam beatae iste! Eveniet corporis voluptates consectetur quam et fugit dicta temporibus, eaque officia ab sint dignissimos officiis iure quas tenetur!
+    </div>
+    <div
+      class="_Buttons_bc7d74"
+      data-testid="dialog-article-buttons"
+    >
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Tertiary_ffa210"
+        data-testid="dialog-article-cancel"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Cancel
+            </span>
+          </div>
+        </div>
+      </button>
+      <button
+        class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
+        data-testid="dialog-article-confirm"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Accept
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DialogArticle > WithoutButtons 1`] = `
+<div>
+  <div
+    class="_DialogArticle_bc7d74"
+    data-testid="dialog-article"
+    style="padding-bottom: 0px;"
+  >
+    <h1>
+      Lorem ipsum dolor sit,
+    </h1>
+    <p>
+      amet 
+      <span
+        class="b"
+      >
+        consectetur adipisicing
+      </span>
+       elit. Laboriosam reprehenderit dolorum cum est ullam consequatur labore at molestias quaerat commodi atque 
+      <strong>
+        tenetur earum
+      </strong>
+       aut sapiente, distinctio sit? Quasi libero necessitatibus, mollitia nobis odit earum tenetur itaque sint 
+      <b>
+        quam cumque
+      </b>
+      , voluptate,
+      <span
+        class="strong"
+      >
+        enim acc
+      </span>
+      usamus aperiam nihil quidem?
+    </p>
+    <h2>
+      Adipisci quas dolor sit eum ipsam.
+    </h2>
+    <p>
+      Qui provident laboriosam, tempora sed maxime, quidem omnis veniam est aspernatur temporibus dolore fugit tenetur, sunt fugiat obcaecati? Quo impedit doloremque eligendi in vero temporibus ad eveniet fugiat provident delectus placeat est magni doloribus tenetur vel, facere explicabo, illum consectetur? Exercitationem, repellendus, fuga, voluptatem est et quibusdam aut eum itaque optio placeat accusamus molestias dignissimos adipisci.
+    </p>
+    <div
+      class="ol"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="h1"
+    >
+      Consequuntur porro commodi sit libero recusandae quod,
+    </div>
+    <p>
+      expedita, delectus nostrum quibusdam eos alias, 
+      <a
+        href="#"
+      >
+        obcaecati aliquid quaerat
+      </a>
+       laboriosam natus repellat sapiente. Vitae deleniti veritatis eligendi facilis illum quia expedita. Soluta ipsa officia maiores modi placeat perspiciatis ad nemo enim delectus error, minima architecto repellat dolorum fugiat nam harum quasi atque repudiandae?
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+          <th>
+            Header 3
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Row 1, Cell 1
+          </td>
+          <td>
+            Row 1, Cell 2
+          </td>
+          <td>
+            Row 1, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 2, Cell 1
+          </td>
+          <td>
+            Row 2, Cell 2
+          </td>
+          <td>
+            Row 2, Cell 3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Row 3, Cell 1
+          </td>
+          <td>
+            Row 3, Cell 2
+          </td>
+          <td>
+            Row 3, Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ol>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ol>
+    <hr />
+    <p>
+      Debitis, mollitia amet quae culpa animi incidunt vel aliquam hic fugit, dolorum, repudiandae et eveniet esse vitae optio dolor quas nisi cum totam tempora. Ut suscipit id aut officiis accusantium quibusdam porro voluptates tenetur obcaecati ad natus nam optio totam dolorum perferendis, ipsum rerum dicta voluptas odit iste in pariatur quos? 
+      <span
+        class="a"
+      >
+        Veniam recusandae
+      </span>
+       corrupti id reprehenderit vitae quam quaerat, optio eum minima at vero voluptatem nam porro vel ullam incidunt ut aliquid natus praesentium repellat impedit provident inventore enim ipsa.
+    </p>
+    <div
+      class="ul"
+    >
+      <div
+        class="li"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+      <div
+        class="li"
+      >
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </div>
+      <div
+        class="li"
+      >
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </div>
+    </div>
+    <div
+      class="hr"
+    />
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </li>
+      <li>
+        Ab nostrum, amet dolorum adipisci quaerat placeat dolore. Nihil ullam repudiandae corrupti.
+      </li>
+      <li>
+        Deleniti dolorum vel harum. Blanditiis temporibus iure quo facere nobis!
+      </li>
+    </ul>
+    <p>
+      Debitis, fugit necessitatibus iste, architecto quibusdam ut tempora officia doloremque dolore corrupti quam. Eius corrupti quidem beatae quos dolore eaque odio. Ducimus iusto alias quidem numquam fuga similique incidunt necessitatibus in laborum iste non omnis nobis nam doloremque temporibus quisquam voluptatibus, vero commodi! Iure accusamus doloribus hic culpa dicta perferendis eum quam veniam vero totam ratione saepe atque, porro incidunt.
+    </p>
+    <div
+      class="h2"
+    >
+      Earum tempora sed recusandae ea
+    </div>
+    <div
+      class="p"
+    >
+      ipsam voluptatibus doloremque voluptate, doloribus obcaecati delectus. Accusantium veritatis itaque ex et vitae ratione quibusdam quod mollitia, dolorum maxime expedita dolor nesciunt ullam deleniti doloribus consequuntur, fugit unde. Libero exercitationem quod cum. Quisquam veritatis omnis doloremque, eius, minus sit aut nisi aspernatur fuga ad, laudantium numquam beatae iste! Eveniet corporis voluptates consectetur quam et fugit dicta temporibus, eaque officia ab sint dignissimos officiis iure quas tenetur!
+    </div>
+  </div>
+</div>
+`;

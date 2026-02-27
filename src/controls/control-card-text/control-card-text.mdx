@@ -1,0 +1,42 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-card-text.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>📄 Text-based card selector</Subtitle>
+<Description>
+  `ControlCardText` renders a group of selectable text cards. Use it for option selection where each choice is
+  represented by text labels without icons. Supports validation states and keyboard navigation.
+</Description>
+
+#### Params of <b>ControlCardText</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlCardText } from '@controls/control-card-text';
+
+    <ControlCardText
+      id="option"
+      value="a"
+      state="idle"
+      choices={[
+        { label: 'Option A', value: 'a' },
+        { label: 'Option B', value: 'b' },
+      ]}
+      onChange={(val, id) => handleChange(val, id)}
+      className="custom-class-name"
+    />`
+
+}
+/>

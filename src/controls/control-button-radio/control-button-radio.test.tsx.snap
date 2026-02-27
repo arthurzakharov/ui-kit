@@ -1,0 +1,84 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlButtonRadio. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlBox_734004 _Idle_734004"
+    data-testid="control-box"
+  >
+    <button
+      class="_ControlButtonRadio_71fc4f"
+      type="button"
+    >
+      <div
+        class="_Wrap_71fc4f"
+      >
+        <div
+          class="_ControlStatus_3713ae"
+          data-testid="control-status"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-circle _Circle_3713ae _Idle_3713ae"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+          </svg>
+          <div
+            class="_IconContent_3713ae"
+          />
+        </div>
+        <div
+          class="_Content_71fc4f"
+        >
+          <div
+            class="_Row_71fc4f"
+          >
+            <div
+              class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _OneLine_9559ac"
+              data-testid="control-radio-text"
+            >
+              <span
+                class="_Content_9559ac"
+              >
+                Tarif wählen
+              </span>
+            </div>
+            <span
+              class="_Text_71fc4f"
+            >
+              19,90 EUR
+            </span>
+          </div>
+          <div
+            class="_Row_71fc4f"
+          >
+            <span
+              class="_Hint_71fc4f"
+            >
+              Monatlich
+            </span>
+            <span
+              class="_Hint_71fc4f"
+            >
+              inkl. MwSt.
+            </span>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;

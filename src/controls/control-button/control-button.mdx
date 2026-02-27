@@ -1,0 +1,201 @@
+import { Canvas, Controls, Meta, Primary, Source, Story, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-button.stories';
+import { ControlButton } from './control-button.component';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>🔘 Interactive button control for user actions</Subtitle>
+
+`ControlButton` renders a styled, accessible button with multiple color schemes, sizes, and states. Use it for form
+submissions, navigation, and interactive actions. Includes loading state with spinner, optional info text, and
+full-width layout option.
+
+#### Params of <b>ControlButton</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlButton } from '@controls/control-button';
+
+    <ControlButton
+      color="primary"
+      size="md"
+      type="button"
+      disabled={false}
+      loading={false}
+      fullWidth={false}
+      info="Optional info text"
+      onClick={() => console.log('clicked')}
+    >
+      Go next step
+    </ControlButton>`
+
+}
+/>
+
+export const sizes = stories.default.argTypes.size.options;
+export const colors = stories.default.argTypes.color.options;
+
+export const SizeMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Size</th>
+          <th scope="col">Normal</th>
+          <th scope="col">Disabled</th>
+          <th scope="col">Loading</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr key={size}>
+            <th scope="row">
+              <code className="text-body">{size.toUpperCase()}</code>
+            </th>
+            <td>
+              <div className="py-2">
+                <ControlButton size={size} color="primary">
+                  Button {size.toUpperCase()}
+                </ControlButton>
+              </div>
+            </td>
+            <td>
+              <div className="py-2">
+                <ControlButton size={size} color="primary" disabled>
+                  Button {size.toUpperCase()}
+                </ControlButton>
+              </div>
+            </td>
+            <td>
+              <div className="py-2">
+                <ControlButton size={size} color="primary" loading>
+                  Button {size.toUpperCase()}
+                </ControlButton>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export const ColorMatrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Color</th>
+          <th scope="col">Normal</th>
+          <th scope="col">Disabled</th>
+          <th scope="col">Loading</th>
+        </tr>
+      </thead>
+      <tbody>
+        {colors.map((color) => (
+          <tr key={color}>
+            <th scope="row">
+              <code className="text-body">{color}</code>
+            </th>
+            <td>
+              <div className="py-2">
+                <ControlButton color={color}>{color.charAt(0).toUpperCase() + color.slice(1)} Button</ControlButton>
+              </div>
+            </td>
+            <td>
+              <div className="py-2">
+                <ControlButton color={color} disabled>
+                  {color.charAt(0).toUpperCase() + color.slice(1)} Button
+                </ControlButton>
+              </div>
+            </td>
+            <td>
+              <div className="py-2">
+                <ControlButton color={color} loading>
+                  {color.charAt(0).toUpperCase() + color.slice(1)} Button
+                </ControlButton>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### Size Matrix
+
+All available sizes with normal, disabled, and loading states:
+
+<SizeMatrix />
+
+#### Color Matrix
+
+All available color schemes with normal, disabled, and loading states:
+
+<ColorMatrix />
+
+#### With Info Text
+
+Buttons can display additional information below the main text using the `info` prop (supports HTML):
+
+export const WithInfoText = () => (
+  <div className="d-flex gap-3 flex-wrap mb-4">
+    <ControlButton color="primary" info="Get more information">
+      Submit {4 + 4}
+    </ControlButton>
+    <ControlButton color="secondary" info="This action cannot be undone">
+      Delete
+    </ControlButton>
+    <ControlButton color="tertiary" info="Optional <u>action</u>">
+      Skip
+    </ControlButton>
+  </div>
+);
+
+<WithInfoText />
+
+#### Full Width
+
+Use `fullWidth` to make the button span the full width of its container:
+
+export const FullWidth = () => (
+  <div className="mb-4">
+    <ControlButton color="primary" fullWidth>
+      Full Width Button
+    </ControlButton>
+  </div>
+);
+
+<FullWidth />
+
+#### Button Types
+
+The `type` prop controls the button's HTML type attribute:
+
+export const ButtonTypes = () => (
+  <div className="d-flex gap-3 flex-wrap mb-4">
+    <ControlButton color="primary" type="button">
+      Button
+    </ControlButton>
+    <ControlButton color="secondary" type="submit">
+      Submit
+    </ControlButton>
+    <ControlButton color="tertiary" type="reset">
+      Reset
+    </ControlButton>
+  </div>
+);
+
+<ButtonTypes />

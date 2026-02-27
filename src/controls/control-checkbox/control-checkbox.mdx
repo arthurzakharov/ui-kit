@@ -1,0 +1,45 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-checkbox.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>☑️ Checkbox control with label and validation</Subtitle>
+<Description>
+  `ControlCheckbox` renders a checkbox input with associated label text. Supports validation states, focus feedback, and
+  optional error messages. Use it for binary toggle selections with descriptive text.
+</Description>
+
+#### Params of <b>ControlCheckbox</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlCheckbox } from '@controls/control-checkbox';
+
+    <ControlCheckbox
+      id="terms"
+      value={accepted}
+      state="idle"
+      iconSize="md"
+      textSize="body-small"
+      message="This field is required"
+      onChange={(val, id) => setAccepted(val)}
+      onFocus={(id) => console.log('focused')}
+      onBlur={(id) => console.log('blurred')}
+      className="custom-class-name"
+    >
+      I accept the terms and conditions
+    </ControlCheckbox>`
+
+}
+/>

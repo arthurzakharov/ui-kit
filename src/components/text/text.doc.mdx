@@ -1,0 +1,79 @@
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import { MdxTable } from '@story/components/mdx-table';
+import { Text } from '@components/text';
+import { FONT_COLOR, FONT_WEIGHT, FONT_SIZE, TEXT_PRESET } from '@utils/types';
+import * as Stories from './text.stories';
+
+<Meta of={Stories} />
+
+<Title of={Stories} />
+
+### 📝 Typography renderer with optional presets
+
+`Text` renders semantic HTML text with design-system typography tokens. You can configure `tag`, `weight`, `size`, `color`,
+and `align` directly, or use a `preset` to apply a predefined combination.
+
+#### Params of Text
+
+<ArgTypes of={Stories.Default} />
+
+#### Usage with `preset`
+
+<Source
+  language="tsx"
+  code={
+    `import { Text } from '@components/text';
+
+    <Text preset="page-title">
+      Wellcome to our page
+    </Text>`
+  }
+/>
+
+#### Usage without `preset`
+
+<Source
+  language="tsx"
+  code={
+    `import { Text } from '@components/text';
+
+    <Text
+      tag='h1'
+      lined
+      align='left'
+      weight='regular'
+      size='hl1'
+      color='success'
+    >
+      Wellcome to our page
+    </Text>`
+  }
+/>
+
+#### Preset Matrix
+
+All available `Text` presets:
+
+<MdxTable label="Preset" items={TEXT_PRESET} render={(preset) => <Text preset={preset}>Preview for {preset}</Text>} />
+
+#### Size Matrix
+
+All available `Text` sizes:
+
+<MdxTable label="Size" items={FONT_SIZE} render={(size) => <Text size={size}>Sample text in {size}</Text>} />
+
+#### Weight Matrix
+
+All available `Text` weights:
+
+<MdxTable
+  label="Weight"
+  items={FONT_WEIGHT}
+  render={(weight) => <Text weight={weight}>Sample text in {weight}</Text>}
+/>
+
+#### Color Matrix
+
+All available `Text` colors:
+
+<MdxTable label="Color" items={FONT_COLOR} render={(color) => <Text color={color}>Sample text in {color}</Text>} />

@@ -1,0 +1,32 @@
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './data-protected-label.stories';
+
+<Meta of={Stories} />
+
+<Title of={Stories} />
+
+Displays a data protection label with a lock icon and optional text, supporting alignment options.
+
+#### Params of DataProtectedLabel
+
+<ArgTypes of={Stories.Default} />
+
+#### Interactive Examples
+
+##### Center Alignment
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  code={
+    `import { DataProtectedLabel } from '@components/data-protected-label';
+
+    <DataProtectedLabel
+      align="center"
+    />`
+
+}
+/>

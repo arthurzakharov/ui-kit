@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlText. Snapshots > Default 1`] = `
+<div>
+  <div
+    class="_ControlText_e06f6c"
+  >
+    <div
+      class="_ControlBox_734004 _Idle_734004"
+      data-testid="control-box"
+    >
+      <label
+        class="_Content_e06f6c"
+        for="control-text"
+      >
+        <div
+          class="_Label_e06f6c _LabelIdle_e06f6c"
+        >
+          <span
+            class="_ControlLabel_380413 _Idle_380413"
+            data-testid="control-label"
+          >
+            Vorname
+          </span>
+        </div>
+        <input
+          class="_ControlInput_6aa66b"
+          data-testid="input"
+          id="control-text"
+          name="control-text"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlText. Snapshots > WithError 1`] = `
+<div>
+  <div
+    class="_ControlText_e06f6c"
+  >
+    <div
+      class="_ControlBox_734004 _Error_734004"
+      data-testid="control-box"
+    >
+      <label
+        class="_Content_e06f6c"
+        for="control-text"
+      >
+        <div
+          class="_Label_e06f6c _LabelIdle_e06f6c"
+        >
+          <span
+            class="_ControlLabel_380413 _Idle_380413"
+            data-testid="control-label"
+          >
+            Vorname
+          </span>
+        </div>
+        <input
+          class="_ControlInput_6aa66b"
+          data-testid="input"
+          id="control-text"
+          name="control-text"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="_Animation_700a30"
+      data-testid="animation-fade-slide"
+    >
+      <div
+        style="overflow: hidden; opacity: 1; transform: none;"
+      >
+        <span
+          class="_ControlErrorMessage_a18c8c _ErrorMessage_e06f6c"
+          data-testid="control-error-message"
+        >
+          Pflichtfeld
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

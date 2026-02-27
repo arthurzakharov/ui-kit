@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlLabel. Snapshots > Default 1`] = `
+<div>
+  <span
+    class="_ControlLabel_380413 _Idle_380413"
+    data-testid="control-label"
+  >
+    Control Label
+  </span>
+</div>
+`;

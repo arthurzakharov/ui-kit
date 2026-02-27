@@ -1,0 +1,51 @@
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './accordion-table.stories';
+
+<Meta of={Stories} />
+
+<Title of={Stories} />
+
+📊 A flexible table component with expandable sections. It renders a table header and a list of collapsible body sections,
+where each section can be toggled to reveal its rows with smooth animations. The component supports a default active section
+and dynamically adapts its column layout based on the provided header configuration. `AccordionTable` renders a table-like
+layout where body rows are grouped into collapsible sections. It is useful for showing structured fee/value data while
+keeping long content compact.
+
+#### Params of AccordionTable
+
+<ArgTypes of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  code={
+    `import { AccordionTable } from '@components/accordion-table';
+
+    const table = {
+      head: ['Column 1', 'Column 2', 'Column 3'],
+      body: [
+        {
+          title: 'Section A',
+          rows: [
+            ['A1', 'A2', 'A3'],
+            ['B1', 'B2', 'B3'],
+          ],
+        },
+        {
+          title: 'Section B',
+          rows: [['C1', 'C2', 'C3']],
+        },
+      ],
+    };
+
+    <AccordionTable
+      table={table}
+      active={0}
+    />`
+  }
+/>

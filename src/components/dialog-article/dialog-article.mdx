@@ -1,0 +1,40 @@
+import { Meta, Title, Subtitle, Description, Controls, Canvas, Source } from '@storybook/addon-docs/blocks';
+import * as DialogArticleStories from './dialog-article.stories';
+
+<Meta of={DialogArticleStories} />
+
+<Title />
+<Description />
+
+### Features
+
+- **Flexible Content**: Supports rich HTML content including headings, lists, tables, and links
+- **Optional Buttons**: Can display cancel button, confirm button, or both
+- **Responsive Design**: Automatically adjusts padding on mobile devices to prevent button overlap
+- **Customizable Actions**: Each button can trigger custom callback functions
+
+### Controls
+
+<Controls of={DialogArticleStories.Default} />
+
+### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={`
+    <DialogArticle
+      cancel={{ text: 'Cancel', fn: () => console.log('cancelled') }}
+      confirm={{ text: 'Confirm', fn: () => console.log('confirmed') }}
+    >
+      <h1>Dialog Title</h1>
+      <p>This is the dialog content with a simple message.</p>
+      <hr/>
+      <p>This is the dialog content with a simple message.</p>
+    </DialogArticle>
+  `}
+/>
+
+### Examples
+
+<Canvas of={DialogArticleStories.Default} />

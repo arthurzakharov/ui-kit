@@ -1,0 +1,48 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-dropdown.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>📋 Dropdown selector with search and multi-select</Subtitle>
+<Description>
+  `ControlDropdown` renders a dropdown control with optional search functionality and multi-select support. Use it for
+  selecting from long lists of options where filtering is helpful, such as insurance providers or country lists.
+</Description>
+
+#### Params of <b>ControlDropdown</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlDropdown } from '@controls/control-dropdown';
+
+    <ControlDropdown
+      label="Versicherung"
+      placeholder="Bitte wählen"
+      noResult="Keine Versicherung gefunden."
+      closeButton="Schließen"
+      choices={[
+        { value: 'aok', label: 'AOK' },
+        { value: 'tk', label: 'Techniker Krankenkasse' },
+      ]}
+      value={selected}
+      multiple={false}
+      isSearchHidden={false}
+      onChange={(values) => setSelected(values)}
+      onOpen={(height, width) => console.log('opened')}
+      onClose={() => console.log('closed')}
+      className="custom-class-name"
+    />`
+
+}
+/>

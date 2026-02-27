@@ -1,0 +1,42 @@
+.ControlButtonCard {
+  --icon-size: 24px;
+  flex-basis: 100%;
+  padding: var(--rm-ui-padding-md);
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ControlButtonCard:disabled .Icon {
+  stroke: var(--rm-ui-color-text-secondary);
+}
+
+.IconTop {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.IconTop .Text {
+  flex-basis: 100%;
+}
+
+.IconLeft {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.IconLeft .Text {
+  flex-basis: calc(100% - var(--rm-ui-padding-sm) - var(--icon-size));
+  justify-content: flex-start;
+}
+
+.Icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--rm-ui-color-text-primary);
+  transition: stroke var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary);
+}

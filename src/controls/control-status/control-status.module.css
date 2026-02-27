@@ -1,0 +1,52 @@
+.ControlStatus {
+  position: relative;
+  display: inline-flex;
+}
+
+.Circle {
+  stroke-width: 2px;
+  transition:
+    stroke var(--rm-ui-amimation-cubic-primary) var(--rm-ui-amimation-speed-primary),
+    fill var(--rm-ui-amimation-cubic-primary) var(--rm-ui-amimation-speed-primary),
+    fill-opacity var(--rm-ui-amimation-cubic-primary) var(--rm-ui-amimation-speed-primary);
+}
+
+.Idle {
+  stroke: var(--rm-ui-status-idle-color);
+  fill: var(--rm-ui-status-idle-color);
+  fill-opacity: 0.1;
+}
+
+.Success {
+  stroke: var(--rm-ui-status-success-color);
+  fill: var(--rm-ui-status-success-color);
+  fill-opacity: 1;
+}
+
+.Error {
+  stroke: var(--rm-ui-status-error-color);
+  fill: var(--rm-ui-status-error-color);
+  fill-opacity: 1;
+}
+
+.IconContent {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.IconAnimate {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Check,
+.X {
+  stroke-width: 2.5;
+  stroke: #ffffff;
+}

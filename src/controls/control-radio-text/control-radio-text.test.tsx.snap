@@ -1,0 +1,166 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlRadioText. Snapshots > Checked 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > ColorAccentPrimary 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _AccentPrimary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > ColorAccentSecondary 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _AccentSecondary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > ColorPrimary 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > ColorSecondary 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextSecondary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > OneLine 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _OneLine_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > SizeBody 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > SizeBodyExtraSmall 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _BodyExtraSmall_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > SizeBodyLarge 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _BodyLarge_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > SizeBodySmall 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac _TextPrimary_9559ac _BodySmall_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlRadioText. Snapshots > WithCustomClassName 1`] = `
+<div>
+  <div
+    class="_ControlRadioText_9559ac custom-class-name _TextPrimary_9559ac _Body_9559ac"
+    data-testid="control-radio-text"
+  >
+    <span
+      class="_Content_9559ac"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+  </div>
+</div>
+`;

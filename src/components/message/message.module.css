@@ -1,0 +1,68 @@
+.Message {
+  --message-icon-size: 24px;
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-md);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xs);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.Success {
+  background-color: var(--rm-ui-message-success-secondary);
+}
+
+.Success .Icon {
+  stroke: var(--rm-ui-message-success-primary);
+}
+
+.Question {
+  background-color: var(--rm-ui-message-question-secondary);
+}
+
+.Question .Icon {
+  stroke: var(--rm-ui-message-question-primary);
+}
+
+.Error {
+  background-color: var(--rm-ui-message-error-secondary);
+}
+
+.Error .Icon {
+  stroke: var(--rm-ui-message-error-primary);
+}
+
+.Info {
+  background-color: var(--rm-ui-message-info-secondary);
+}
+
+.Info .Icon {
+  stroke: var(--rm-ui-message-info-primary);
+}
+
+.Icon {
+  width: var(--message-icon-size);
+  height: var(--message-icon-size);
+}
+
+.Content {
+  flex-basis: calc(100% - var(--message-icon-size) - var(--rm-ui-padding-xs));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.Title {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.Text {
+  font-weight: var(--rm-ui-font-weight-regular);
+}

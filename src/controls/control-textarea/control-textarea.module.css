@@ -1,0 +1,60 @@
+.ControlTextarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Input:hover {
+  cursor: pointer;
+}
+
+.Input:disabled {
+  opacity: 0.33;
+}
+
+.Input:disabled,
+.Input:-webkit-autofill,
+.Input:-webkit-autofill:hover,
+.Input:-webkit-autofill:focus,
+.Input:-webkit-autofill:active,
+.Input:autofill,
+.Input:autofill:hover,
+.Input:autofill:focus,
+.Input:autofill:active {
+  background: transparent;
+  transition: background 7200s ease-in-out 0s;
+}
+
+.Input:-webkit-autofill {
+  animation-name: autofill-start;
+  animation-duration: 0.1s;
+  -webkit-text-fill-color: var(--rm-ui-grey-500);
+}
+
+.Input:not(:-webkit-autofill) {
+  animation-name: autofill-cancel;
+  animation-duration: 0.1s;
+}
+
+.ErrorMessage {
+  padding-top: var(--rm-ui-padding-xxs);
+}
+
+@keyframes autofill-start {
+}
+
+@keyframes autofill-cancel {
+}

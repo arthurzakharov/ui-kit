@@ -1,0 +1,34 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './info-panel.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of InfoPanel
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { InfoPanel } from '@components/info-panel';
+
+    <InfoPanel
+      data={[
+        ['Material', '100% Baumwolle'],
+        ['Passform', 'Regular Fit'],
+        ['Pflege', '30 C Schonwaschgang'],
+      ]}
+    />`
+
+}
+/>

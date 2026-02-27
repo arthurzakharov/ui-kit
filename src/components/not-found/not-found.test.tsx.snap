@@ -1,0 +1,215 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFound. Snapshots > Default  1`] = `
+<div>
+  <section
+    class="_NotFound_f0560f"
+    data-testid="not-found"
+  >
+    <h1
+      class="_Title_f0560f"
+      data-testid="not-found-title"
+    >
+      Entschuldigung, da ist wohl etwas schief gelaufen!
+    </h1>
+    <h2
+      class="_Subtitle_f0560f"
+      data-testid="not-found-subtitle"
+    >
+      Fehler 404
+    </h2>
+    <h3
+      class="_TableTitle_f0560f"
+      data-testid="not-found-table-title"
+    >
+      Bitte kontaktieren Sie uns doch per:
+    </h3>
+    <table
+      class="_Table_f0560f"
+      data-testid="not-found-table"
+    >
+      <tbody>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            E-Mail:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            info@rightmart.de
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Telefon:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            +49 (0)421 / 33 100 311
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Fax:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            +49 (0)421 / 33 100 380
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Post:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            rightmart Rechtsanwaltsgesellschaft mbH
+            <br />
+            Clara-Jaschke-Straße 1
+            <br />
+            28199 Bremen
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+`;
+
+exports[`NotFound. Snapshots > WithAdditionalClassName  1`] = `
+<div>
+  <section
+    class="_NotFound_f0560f color-grey-950"
+    data-testid="custom-test-id"
+  >
+    <h1
+      class="_Title_f0560f"
+      data-testid="not-found-title"
+    >
+      Entschuldigung, da ist wohl etwas schief gelaufen!
+    </h1>
+    <h2
+      class="_Subtitle_f0560f"
+      data-testid="not-found-subtitle"
+    >
+      Fehler 404
+    </h2>
+    <h3
+      class="_TableTitle_f0560f"
+      data-testid="not-found-table-title"
+    >
+      Bitte kontaktieren Sie uns doch per:
+    </h3>
+    <table
+      class="_Table_f0560f"
+      data-testid="not-found-table"
+    >
+      <tbody>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            E-Mail:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            info@rightmart.de
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Telefon:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            +49 (0)421 / 33 100 311
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Fax:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            +49 (0)421 / 33 100 380
+          </td>
+        </tr>
+        <tr
+          class="_TableRow_f0560f"
+          data-testid="not-found-row"
+        >
+          <th
+            class="_CellHead_f0560f"
+            data-testid="not-found-cell-head"
+          >
+            Post:
+          </th>
+          <td
+            class="_CellData_f0560f"
+            data-testid="not-found-cell-data"
+          >
+            rightmart Rechtsanwaltsgesellschaft mbH
+            <br />
+            Clara-Jaschke-Straße 1
+            <br />
+            28199 Bremen
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+`;

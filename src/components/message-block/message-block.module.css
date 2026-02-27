@@ -1,0 +1,33 @@
+.MessageBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rm-ui-padding-lg);
+}
+
+.Emoji {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.Titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.Content h1,
+.Content h2 {
+  margin-bottom: var(--rm-ui-padding-sm);
+}
+
+.Content h3,
+.Content h4,
+.Content h5,
+.Content h6 {
+  margin-bottom: var(--rm-ui-padding-xs);
+}
+
+.Content p:not(:last-child):not(:last-of-type),
+.Content div:not(:last-child):not(:last-of-type) {
+  margin-bottom: var(--rm-ui-padding-sm);
+}

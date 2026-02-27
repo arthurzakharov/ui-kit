@@ -1,0 +1,86 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './control-box.stories';
+import { ControlBox } from './control-box.component';
+
+<Meta of={Stories} />
+
+<Title />
+<Subtitle>🧱 Visual state container for custom form controls</Subtitle>
+<Description />
+
+#### Params of <b>ControlBox</b>
+
+<Controls of={Stories.Idle} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Idle} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlBox } from '@controls/control-box';
+
+    <ControlBox
+      state="success"
+      focused={false}
+      checked={true}
+      className="custom-class-name"
+    >
+      <div style={{ width: 40, height: 40 }} />
+    </ControlBox>`
+
+}
+/>
+
+export const states = Stories.default.argTypes.state.options;
+export const focusedValues = [false, true];
+export const checkedValues = [false, true];
+
+export const boolLabel = (value) => (value ? 'Yes' : 'No');
+
+export const Matrix = () => (
+  <div className="table-responsive mb-4">
+    <table className="table align-middle text-center">
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Focused</th>
+          <th scope="col">Checked</th>
+          <th scope="col">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {states.flatMap((state) =>
+          focusedValues.flatMap((focused) =>
+            checkedValues.map((checked) => (
+              <tr key={`${state}-${focused}-${checked}`}>
+                <td>
+                  <code className="text-body">{state}</code>
+                </td>
+                <td>{boolLabel(focused)}</td>
+                <td>{boolLabel(checked)}</td>
+                <td>
+                  <div className="d-flex justify-content-center py-1">
+                    <ControlBox state={state} focused={focused} checked={checked}>
+                      <div style={{ width: 40, height: 40 }} />
+                    </ControlBox>
+                  </div>
+                </td>
+              </tr>
+            )),
+          ),
+        )}
+      </tbody>
+    </table>
+  </div>
+);
+
+#### All Versions
+
+All combinations of `state`, `focused`, and `checked`:
+
+<Matrix />

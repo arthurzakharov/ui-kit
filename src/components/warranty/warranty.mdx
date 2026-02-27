@@ -1,0 +1,31 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './warranty.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of <b>Warranty</b>
+
+<Controls of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Warranty } from '@components/warranty';
+
+    <Warranty
+      title="2 Jahre Garantie"
+      text="Kostenloser Austausch innerhalb von 24 Monaten.<br>Keine Fragen gestellt."
+    />`
+
+}
+/>

@@ -1,0 +1,98 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './control-radio-label.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Subtitle>🏷️ Radio choice wrapper with render props pattern</Subtitle>
+<Description />
+
+<Controls of={Stories.RadioIdle} />
+
+#### Interactive Radio Example
+
+<Canvas of={Stories.RadioIdle} />
+
+#### Usage Radio
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlRadioLabel } from '@controls/control-radio-label';
+    import { ControlBox } from '@controls/control-box';
+    import { ControlChoice } from '@controls/control-choice';
+
+    const [value, setValue] = useState('a');
+
+    <ControlRadioLabel id="radio-single-a" value={value} choice={choice} choices={choices} state={state}>
+      {({ focused, hovered, checked, state }) => (
+        <ControlBox
+          state={state}
+          checked={checked}
+          focused={focused}
+          onClick={() => setValue((prev) => (prev === choice.value ? '' : choice.value))}
+        >
+          <div className="d-flex align-items-center gap-1 px-3 py-3">
+            <ControlHiddenInput
+              type="radio"
+              id="radio-single-a"
+              name="single-value-demo"
+              value={choice.value}
+              checked={checked}
+              onChange={() => setValue((prev) => (prev === choice.value ? '' : choice.value))}
+            />
+            <ControlChoice type="radio" checked={checked} state={state} focused={focused} hovered={hovered} />
+            <ControlRadioText checked={checked}>Option A</ControlRadioText>
+          </div>
+        </ControlBox>
+      )}
+    </ControlRadioLabel>
+    `
+
+}
+/>
+
+#### Interactive Checkbox Example
+
+<Canvas of={Stories.CheckboxIdle} />
+
+#### Usage Radio
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlRadioLabel } from '@controls/control-radio-label';
+    import { ControlBox } from '@controls/control-box';
+    import { ControlChoice } from '@controls/control-choice';
+
+    const [value, setValue] = useState(['a', 'b']);
+
+    <ControlRadioLabel id="radio-single-a" value={value} choice={choice} choices={choices} state={state}>
+      {({ focused, hovered, checked, state }) => (
+        <ControlBox
+          state={state}
+          checked={checked}
+          focused={focused}
+          onClick={() => setValue((prev) => (prev === choice.value ? '' : choice.value))}
+        >
+          <div className="d-flex align-items-center gap-1 px-3 py-3">
+            <ControlHiddenInput
+              type="checkbox"
+              id="radio-single-a"
+              name="single-value-demo"
+              value={choice.value}
+              checked={checked}
+              onChange={() => setValue((prev) => (prev === choice.value ? '' : choice.value))}
+            />
+            <ControlChoice type="radio" checked={checked} state={state} focused={focused} hovered={hovered} />
+            <ControlRadioText checked={checked}>Option A</ControlRadioText>
+          </div>
+        </ControlBox>
+      )}
+    </ControlRadioLabel>
+    `
+
+}
+/>

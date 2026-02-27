@@ -1,0 +1,49 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-radio.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>🔘 Radio button group with multiple choices</Subtitle>
+<Description>
+  `ControlRadio` renders a group of mutually exclusive radio options. Supports horizontal and vertical orientations,
+  validation states, and optional error messages. Use it for single-selection from a list of options.
+</Description>
+
+#### Params of <b>ControlRadio</b>
+
+<Controls of={stories.OrientationVertical} />
+
+#### Interactive Example
+
+<Canvas of={stories.OrientationVertical} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlRadio } from '@controls/control-radio';
+
+    <ControlRadio
+      id="option"
+      value={selected}
+      choices={[
+        { label: 'Option A', value: 'a' },
+        { label: 'Option B', value: 'b' },
+      ]}
+      orientation="vertical"
+      state="idle"
+      iconSize="md"
+      textSize="body"
+      message="Please select an option"
+      disabled={false}
+      onChange={(val, id) => setSelected(val)}
+      onFocus={(id) => console.log('focused')}
+      onBlur={(id) => console.log('blurred')}
+      className="custom-class-name"
+    />`
+
+}
+/>

@@ -1,0 +1,99 @@
+.ControlButtonText {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xs);
+  border-radius: var(--rm-ui-border-radius-sm);
+  padding: var(--rm-ui-padding-xxs);
+}
+
+.TextPrimary {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.TextSecondary {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.AccentPrimary {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.AccentSecondary {
+  color: var(--rm-ui-color-accent-secondary);
+}
+
+.ThemePrimary {
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.ThemeSecondary {
+  color: var(--rm-ui-color-theme-secondary);
+}
+
+.Left {
+  flex-direction: row;
+}
+
+.Right {
+  flex-direction: row-reverse;
+}
+
+.Icon {
+  stroke-width: 1.5;
+}
+
+.SM .Icon {
+  width: 20px;
+  height: 20px;
+}
+
+.MD .Icon {
+  width: 22px;
+  height: 22px;
+}
+
+.LG .Icon {
+  width: 24px;
+  height: 24px;
+}
+
+.SM .Content {
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.MD .Content {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.LG .Content {
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}
+
+.Content {
+  text-decoration: none;
+}
+
+.Light {
+  font-weight: var(--rm-ui-font-weight-light);
+}
+
+.Regular {
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.Medium {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.Bold {
+  font-weight: var(--rm-ui-font-weight-bold);
+}
+
+.Underlined {
+  text-decoration: underline;
+}

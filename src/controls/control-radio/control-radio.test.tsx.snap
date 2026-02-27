@@ -1,0 +1,446 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ControlRadio. Snapshots > ErrorState 1`] = `
+<div>
+  <div
+    class="_ControlRadio_b6f6ea"
+  >
+    <div
+      class="_Content_b6f6ea _Horizontal_b6f6ea"
+    >
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-0-a"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Error_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-0-a"
+            name="options-radio"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-1-b"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-1-b"
+            name="options-radio"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlRadio. Snapshots > ErrorStateWithMessage 1`] = `
+<div>
+  <div
+    class="_ControlRadio_b6f6ea"
+  >
+    <div
+      class="_Content_b6f6ea _Horizontal_b6f6ea"
+    >
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-0-a"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Error_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-0-a"
+            name="options-radio"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-1-b"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-1-b"
+            name="options-radio"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </label>
+    </div>
+    <div
+      class="_Animation_700a30"
+      data-testid="animation-fade-slide"
+    >
+      <div
+        style="overflow: hidden; opacity: 1; transform: none;"
+      >
+        <span
+          class="_ControlErrorMessage_a18c8c _ErrorMessage_b6f6ea"
+          data-testid="control-error-message"
+        >
+          This field has some error
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlRadio. Snapshots > OrientationHorizontal 1`] = `
+<div>
+  <div
+    class="_ControlRadio_b6f6ea"
+  >
+    <div
+      class="_Content_b6f6ea _Horizontal_b6f6ea"
+    >
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-0-a"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-0-a"
+            name="options-radio"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-1-b"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-1-b"
+            name="options-radio"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlRadio. Snapshots > OrientationVertical 1`] = `
+<div>
+  <div
+    class="_ControlRadio_b6f6ea"
+  >
+    <div
+      class="_Content_b6f6ea _Vertical_b6f6ea"
+    >
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-0-a"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-0-a"
+            name="options-radio"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-1-b"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-1-b"
+            name="options-radio"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlRadio. Snapshots > SuccessState 1`] = `
+<div>
+  <div
+    class="_ControlRadio_b6f6ea"
+  >
+    <div
+      class="_Content_b6f6ea _Horizontal_b6f6ea"
+    >
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-0-a"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Checked_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _Success_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            checked=""
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-0-a"
+            name="options-radio"
+            type="radio"
+            value="a"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac _Checked_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option A
+            </span>
+          </div>
+        </div>
+      </label>
+      <label
+        class="_ControlRadioLabel_021ed9"
+        data-testid="control-radio-label"
+        for="options-radio-1-b"
+      >
+        <div
+          class="_Label_b6f6ea"
+        >
+          <div
+            class="_ControlChoice_f0ee5d _Radio_f0ee5d _Idle_f0ee5d _MD_f0ee5d"
+            data-testid="choice"
+          >
+            <div
+              class="_ChoiceMark_f0ee5d"
+            />
+          </div>
+          <input
+            class="_ControlHiddenInput_f602d4"
+            data-testid="hidden-input"
+            id="options-radio-1-b"
+            name="options-radio"
+            type="radio"
+            value="b"
+          />
+          <div
+            class="_ControlRadioText_9559ac _TextPrimary_9559ac _Body_9559ac"
+            data-testid="control-radio-text"
+          >
+            <span
+              class="_Content_9559ac"
+            >
+              Option B
+            </span>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;

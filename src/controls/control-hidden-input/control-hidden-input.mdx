@@ -1,0 +1,42 @@
+import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as stories from './control-hidden-input.stories';
+
+<Meta of={stories} />
+
+<Title />
+<Subtitle>🫥 Hidden input for form state management</Subtitle>
+<Description>
+  `ControlHiddenInput` renders an invisible input element used internally by other controls. It ensures proper form
+  submission and accessibility while keeping the input visually hidden. Use it when building custom control components
+  that need native input behavior.
+</Description>
+
+#### Params of <b>ControlHiddenInput</b>
+
+<Controls of={stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { ControlHiddenInput } from '@controls/control-hidden-input';
+
+    <ControlHiddenInput
+      id="hidden-input"
+      name="hidden-input"
+      value="value-a"
+      type="radio"
+      checked={false}
+      disabled={false}
+      onChange={() => handleChange()}
+      className="custom-class-name"
+    />`
+
+}
+/>

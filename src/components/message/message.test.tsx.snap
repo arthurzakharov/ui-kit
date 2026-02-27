@@ -1,0 +1,267 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Message. Snapshots > Error  1`] = `
+<div>
+  <div
+    class="_Message_31f64a _Error_31f64a"
+    data-testid="message"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x _Icon_31f64a"
+      data-testid="error-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+    <div
+      class="_Content_31f64a"
+    >
+      <div
+        class="_Title_31f64a"
+        data-testid="message-title"
+      >
+        Fehler
+      </div>
+      <div
+        class="_Text_31f64a"
+        data-testid="message-text"
+      >
+        Etwas ist schief gelaufen.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message. Snapshots > Info  1`] = `
+<div>
+  <div
+    class="_Message_31f64a _Info_31f64a"
+    data-testid="message"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-circle-alert _Icon_31f64a"
+      data-testid="info-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="8"
+        y2="12"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="16"
+        y2="16"
+      />
+    </svg>
+    <div
+      class="_Content_31f64a"
+    >
+      <div
+        class="_Title_31f64a"
+        data-testid="message-title"
+      >
+        Hinweis
+      </div>
+      <div
+        class="_Text_31f64a"
+        data-testid="message-text"
+      >
+        Bitte beachten Sie die aktuellen Öffnungszeiten.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message. Snapshots > Question  1`] = `
+<div>
+  <div
+    class="_Message_31f64a _Question_31f64a"
+    data-testid="message"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-circle-question-mark _Icon_31f64a"
+      data-testid="question-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+      />
+      <path
+        d="M12 17h.01"
+      />
+    </svg>
+    <div
+      class="_Content_31f64a"
+    >
+      <div
+        class="_Title_31f64a"
+        data-testid="message-title"
+      >
+        Eine Frage
+      </div>
+      <div
+        class="_Text_31f64a"
+        data-testid="message-text"
+      >
+        Möchten Sie fortfahren?
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message. Snapshots > Success  1`] = `
+<div>
+  <div
+    class="_Message_31f64a _Success_31f64a"
+    data-testid="message"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-check _Icon_31f64a"
+      data-testid="success-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 6 9 17l-5-5"
+      />
+    </svg>
+    <div
+      class="_Content_31f64a"
+    >
+      <div
+        class="_Title_31f64a"
+        data-testid="message-title"
+      >
+        Alles 
+        <u>
+          klar!
+        </u>
+      </div>
+      <div
+        class="_Text_31f64a"
+        data-testid="message-text"
+      >
+        Ihre Änderungen 
+        <b>
+          wurden
+        </b>
+         gespeichert.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message. Snapshots > WithBaseBehavior  1`] = `
+<div>
+  <div
+    class="_Message_31f64a bg-color-grey-300 _Info_31f64a"
+    data-testid="custom-test-id"
+  >
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-circle-alert _Icon_31f64a"
+      data-testid="info-icon"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="8"
+        y2="12"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="16"
+        y2="16"
+      />
+    </svg>
+    <div
+      class="_Content_31f64a"
+    >
+      <div
+        class="_Title_31f64a"
+        data-testid="message-title"
+      >
+        Hinweis
+      </div>
+      <div
+        class="_Text_31f64a"
+        data-testid="message-text"
+      >
+        Bitte beachten Sie die aktuellen Öffnungszeiten.
+      </div>
+    </div>
+  </div>
+</div>
+`;

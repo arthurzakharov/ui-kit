@@ -1,0 +1,35 @@
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './message-block.stories';
+
+<Meta of={Stories} />
+
+<Title />
+
+Displays a message block with optional `emoji`, `title`, `subtitle`, and rich content (`children`).
+
+#### Params of MessageBlock
+
+<ArgTypes of={Stories.Default} />
+
+#### Interactive Example
+
+<Canvas of={Stories.Default} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { MessageBlock } from '@components/message-block';
+
+    <MessageBlock
+      emoji="✨"
+      title="Welcome"
+      subtitle="This is a message block component"
+    >
+      This is the content of the message block. It can contain any child elements.
+    </MessageBlock>`
+
+}
+/>

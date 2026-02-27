@@ -1,0 +1,27 @@
+.stroke-grey-500 {
+  stroke: var(--rm-ui-grey-500) !important;
+}
+
+.stroke-success {
+  stroke: var(--rm-ui-color-success) !important;
+}
+
+.color-grey-950 {
+  color: var(--rm-ui-grey-950) !important;
+}
+
+.color-success {
+  color: var(--rm-ui-color-success) !important;
+}
+
+.color-theme-primary {
+  color: var(--rm-ui-color-theme-primary) !important;
+}
+
+.bg-color-grey-300 {
+  background-color: var(--rm-ui-grey-300) !important;
+}
+
+.bg-color-grey-500 {
+  background-color: var(--rm-ui-grey-500) !important;
+}
