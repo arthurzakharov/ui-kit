@@ -45,7 +45,6 @@ export { DataProtectedLabel } from '@components/data-protected-label';
 export { Dialog, type DialogProps, type DialogSize, type DialogPosition } from '@components/dialog/dialog.component';
 export { DialogArticle } from '@components/dialog-article';
 export { Expenses, type ExpensesProps } from '@components/expenses';
-export { Flex, type FlexProps } from '@components/flex/flex.component';
 export { Footer } from '@components/footer';
 export { FormRow, type FormRowProps } from '@components/form-row/form-row.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
