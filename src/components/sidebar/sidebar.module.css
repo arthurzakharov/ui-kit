@@ -17,14 +17,18 @@
 .Info {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: flex-start;
   gap: var(--rm-ui-padding-sm);
 }
 
-.Step,
+.Step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rm-ui-padding-xs);
+}
+
 .InfoRow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--rm-ui-padding-xs);

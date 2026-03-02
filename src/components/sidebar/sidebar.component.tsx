@@ -11,10 +11,10 @@ import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';
 import cn from '@components/sidebar/sidebar.module.css';
 
-interface SidebarStep {
+type SidebarStep = {
   state: State;
   text: string;
-}
+};
 
 type SidebarInfo = [string, string];
 
@@ -80,7 +80,7 @@ export const Sidebar = ({
         <UserPanel title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
         <Line />
       </AnimationFadeScale>
-      <AnimationFadeScale name="button" condition={isButtonVisible} duration={0.2} delay={0.1}>
+      <AnimationFadeScale name="button" condition={isButtonVisible}>
         <div className={cn.SidebarButton}>{children}</div>
       </AnimationFadeScale>
       <Certifications icons={certifications} />

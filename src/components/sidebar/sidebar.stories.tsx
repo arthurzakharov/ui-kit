@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 import { Sidebar } from '@components/sidebar/sidebar.component';
+import { ControlButton } from '@controls/control-button';
 
 const meta = {
   title: 'Components/Sidebar',
@@ -15,7 +16,7 @@ const meta = {
       { state: 'idle', text: 'Bestätigung' },
     ],
     info: [
-      ['Laufzeit', '24 Monate'],
+      ['Absicht:', 'Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis'],
       ['Monatsrate', '39,99 €'],
     ],
     user: {
@@ -45,7 +46,7 @@ export const Default: Story = {
   name: 'Sidebar',
   render: (args) => (
     <Sidebar {...args}>
-      <button data-testid="sidebar-action" type="button">
+      <button data-testid="sidebar-action" type="button" color="primary">
         Weiter
       </button>
     </Sidebar>
@@ -94,9 +95,9 @@ export const WithActionArea: Story = {
   },
   render: (args) => (
     <Sidebar {...args}>
-      <button data-testid="sidebar-action" type="button">
+      <ControlButton data-testid="sidebar-action" type="button">
         Weiter
-      </button>
+      </ControlButton>
     </Sidebar>
   ),
   play: async ({ canvasElement, step }) => {
