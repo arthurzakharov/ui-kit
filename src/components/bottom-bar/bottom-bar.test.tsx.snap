@@ -1,0 +1,311 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BottomBar. Snapshots > Default  1`] = `
+<div>
+  <div
+    class="_BottomBar_8761ae _BottomBarStatic_8761ae"
+  >
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+    >
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="start"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="Monatliche Rate"
+          >
+            Monatliche Rate
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="Laufzeit"
+          >
+            Laufzeit
+          </p>
+        </div>
+      </div>
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="end"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="39,99 €"
+          >
+            39,99 €
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="24 Monate"
+          >
+            24 Monate
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+      data-mt="md"
+    >
+      <button
+        class="_Button_ffa210 _LG_ffa210 _Primary_ffa210 _FullWidth_ffa210"
+        data-testid="control-button"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Weiter
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BottomBar. Snapshots > WithCustomClassName  1`] = `
+<div>
+  <div
+    class="_BottomBar_8761ae custom-bottom-bar _BottomBarStatic_8761ae"
+  >
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+    >
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="start"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="Monatliche Rate"
+          >
+            Monatliche Rate
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="Laufzeit"
+          >
+            Laufzeit
+          </p>
+        </div>
+      </div>
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="end"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="39,99 €"
+          >
+            39,99 €
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="24 Monate"
+          >
+            24 Monate
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+      data-mt="md"
+    >
+      <button
+        class="_Button_ffa210 _LG_ffa210 _Primary_ffa210 _FullWidth_ffa210"
+        data-testid="control-button"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Weiter
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BottomBar. Snapshots > WithMessage  1`] = `
+<div>
+  <div
+    class="_BottomBar_8761ae _BottomBarStatic_8761ae"
+  >
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+    >
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="start"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="Monatliche Rate"
+          >
+            Monatliche Rate
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="Laufzeit"
+          >
+            Laufzeit
+          </p>
+        </div>
+      </div>
+      <div
+        style="flex-basis: 50%;"
+      >
+        <div
+          class="_Flex_07faab"
+          data-ai="end"
+          data-fd="column"
+          data-fxw="nowrap"
+          data-jc="start"
+        >
+          <p
+            class="_Left_a0e0af _Medium_a0e0af _Body_a0e0af _TextPrimary_a0e0af"
+            data-testid="content"
+            text="39,99 €"
+          >
+            39,99 €
+          </p>
+          <p
+            class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+            data-testid="content"
+            text="24 Monate"
+          >
+            24 Monate
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="center"
+      data-mb="md"
+      data-mt="sm"
+    >
+      <p
+        class="_Left_a0e0af _Regular_a0e0af _Body_a0e0af _TextSecondary_a0e0af"
+        data-testid="content"
+      >
+        Sie können den Vorgang jederzeit abbrechen.
+      </p>
+    </div>
+    <div
+      class="_Flex_07faab"
+      data-ai="start"
+      data-fd="row"
+      data-fxw="nowrap"
+      data-jc="start"
+      data-mt="md"
+    >
+      <button
+        class="_Button_ffa210 _LG_ffa210 _Primary_ffa210 _FullWidth_ffa210"
+        data-testid="control-button"
+        type="button"
+      >
+        <div
+          class="_Animation_700a30 _Content_ffa210"
+          data-testid="animation-fade-scale"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span
+              class="_Text_ffa210"
+            >
+              Weiter
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

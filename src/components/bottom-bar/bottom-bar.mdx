@@ -1,0 +1,46 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './bottom-bar.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of <b>BottomBar</b>
+
+<Controls of={Stories.Default} />
+
+#### Interactive Examples
+
+##### Default
+
+<Canvas of={Stories.Default} />
+
+##### With message
+
+<Canvas of={Stories.WithMessage} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { BottomBar } from '@components/bottom-bar';
+
+    <BottomBar
+      button={{
+        text: 'Weiter',
+        onClick: () => console.log('Next step'),
+      }}
+      info={{
+        topLeft: 'Monatliche Rate',
+        topRight: '39,99 €',
+        bottomLeft: 'Laufzeit',
+        bottomRight: '24 Monate',
+      }}
+      message="Sie können den Vorgang jederzeit abbrechen."
+    />`
+
+}
+/>

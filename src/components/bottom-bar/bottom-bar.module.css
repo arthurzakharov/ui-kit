@@ -4,7 +4,7 @@
   justify-content: stretch;
 }
 
-.BottomBar.BottomBarFixed {
+.Fixed {
   position: fixed;
   z-index: 8000000;
   bottom: 0;
@@ -13,6 +13,33 @@
   padding: var(--rm-ui-padding-md) var(--rm-ui-padding-xl) var(--rm-ui-padding-lg);
 }
 
-.BottomBar.BottomBarStatic {
+.Static {
   position: static;
+}
+
+.TopBlock {
+  display: flex;
+}
+
+.LeftBlock {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.RightBlock {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Message {
+  margin-top: var(--rm-ui-padding-sm);
+  margin-bottom: var(--rm-ui-padding-md);
+}
+
+.Button {
+  margin-top: var(--rm-ui-padding-md);
 }

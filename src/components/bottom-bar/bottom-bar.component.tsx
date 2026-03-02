@@ -2,35 +2,39 @@ import { type ReactElement, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
 import { ControlButton } from '@controls/control-button';
-import { Flex } from '@components/flex/flex.component';
-import { Text, type TagProps } from '@components/text/text.component';
+import { Text } from '@components/text/text.component';
+import type { Base, FontColor, FontSize, FontWeight } from '@utils/types';
 import cn from '@components/bottom-bar/bottom-bar.module.css';
+import { baseProps } from '@utils/functions';
 
 type FallbackText = string | ReactElement;
 
-interface BottomBarInfoItem<T> extends Pick<TagProps, 'lined' | 'weight' | 'size' | 'color'> {
+type BottomBarInfoItem<T> = {
+  lined?: boolean;
+  weight?: FontWeight;
+  size?: FontSize;
+  color?: FontColor;
   text: T;
-}
+};
 
-interface BottomBarButton {
+type BottomBarButton = {
   text: string;
   onClick: () => void;
   loading?: boolean;
   disabled?: boolean;
-}
+};
 
-interface BottomBarInfo {
+type BottomBarInfo = {
   topLeft?: BottomBarInfoItem<string> | string;
   topRight?: BottomBarInfoItem<string> | string;
   bottomLeft?: BottomBarInfoItem<string> | string;
   bottomRight?: BottomBarInfoItem<string> | string;
-}
+};
 
-export interface BottomBarProps {
+interface BottomBarProps extends Base {
   button: BottomBarButton;
   info: BottomBarInfo;
   message?: string;
-  className?: string;
   staticFrom?: number;
 }
 
@@ -65,9 +69,14 @@ const normalizeInfoItem = (
   };
 };
 
-export const BottomBar = (props: BottomBarProps) => {
-  const { button, info, message = '', className = '', staticFrom = 768 } = props;
-
+export const BottomBar = ({
+  button,
+  info,
+  message = '',
+  className = '',
+  staticFrom = 768,
+  ...base
+}: BottomBarProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { height } = useResizeObserver({
@@ -100,36 +109,36 @@ export const BottomBar = (props: BottomBarProps) => {
 
   return (
     <div
+      data-testid={baseProps(base, 'data-testid', 'bottom-bar')}
       ref={ref}
-      className={clsx(cn.BottomBar, className, width >= staticFrom ? cn.BottomBarStatic : cn.BottomBarFixed)}
+      className={clsx(cn.BottomBar, baseProps(base, 'className'), width >= staticFrom ? cn.Static : cn.Fixed)}
     >
-      <Flex direction="row" grow="equal">
-        <Flex direction="column" align="start">
+      <div className={cn.TopBlock}>
+        <div className={cn.LeftBlock}>
           <Text {...items.topLeft}>{items.topLeft.text}</Text>
           <Text {...items.bottomLeft}>{items.bottomLeft.text}</Text>
-        </Flex>
-        <Flex direction="column" align="end">
+        </div>
+        <div className={cn.RightBlock}>
           <Text {...items.topRight}>{items.topRight.text}</Text>
           <Text {...items.bottomRight}>{items.bottomRight.text}</Text>
-        </Flex>
-      </Flex>
+        </div>
+      </div>
       {message && (
-        <Flex justify="center" mt="sm" mb="md">
-          <Text color="text-secondary">{message}</Text>
-        </Flex>
+        <Text color="text-secondary" align="center" className={cn.Message}>
+          {message}
+        </Text>
       )}
-      <Flex direction="row" mt="md">
-        <ControlButton
-          fullWidth
-          color="primary"
-          size="lg"
-          loading={button.loading}
-          disabled={button.disabled}
-          onClick={button.onClick}
-        >
-          {button.text}
-        </ControlButton>
-      </Flex>
+      <ControlButton
+        fullWidth
+        color="primary"
+        size="lg"
+        loading={button.loading}
+        disabled={button.disabled}
+        className={cn.Button}
+        onClick={button.onClick}
+      >
+        {button.text}
+      </ControlButton>
     </div>
   );
 };

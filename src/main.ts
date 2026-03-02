@@ -39,7 +39,7 @@ export { ControlText, type ControlTextProps } from '@controls/control-text';
 export { ControlTextarea } from '@controls/control-textarea';
 // COMPONENTS
 export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
-export { BottomBar, type BottomBarProps } from '@components/bottom-bar/bottom-bar.component';
+export { BottomBar } from '@components/bottom-bar';
 export { Certifications, type CertificationsProps } from '@components/certifications';
 export { DataProtectedLabel } from '@components/data-protected-label';
 export { Dialog, type DialogProps, type DialogSize, type DialogPosition } from '@components/dialog/dialog.component';
