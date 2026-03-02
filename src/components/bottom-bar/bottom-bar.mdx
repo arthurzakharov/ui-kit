@@ -1,20 +1,20 @@
-import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
 import * as Stories from './bottom-bar.stories';
 
 <Meta of={Stories} />
 
 <Title />
-<Description />
 
-#### Params of <b>BottomBar</b>
+BottomBar is a fixed bottom action area that combines a primary button, optional summary
+information, and an optional helper message to guide users through the next step.
 
-<Controls of={Stories.Default} />
+#### Params of BottomBar
 
-#### Interactive Examples
+<ArgTypes of={Stories.WithoutMessage} />
 
 ##### Default
 
-<Canvas of={Stories.Default} />
+<Canvas of={Stories.WithoutMessage} />
 
 ##### With message
 

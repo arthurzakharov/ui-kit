@@ -32,7 +32,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const WithoutMessage: Story = {
   name: 'BottomBar',
   play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -65,16 +65,15 @@ export const WithMessage: Story = {
   },
 };
 
-export const WithCustomClassName: Story = {
+export const WithBaseBehavior: Story = {
   args: {
-    className: 'custom-bottom-bar',
+    'data-testid': 'custom-test-id',
+    className: 'custom-class-name',
   },
   play: async ({ args, canvasElement, step }) => {
-    const root = canvasElement.firstElementChild;
-
-    await step('Then the custom class name is applied to the root element', async () => {
-      await expect(root).toBeInTheDocument();
-      await expect(root).toHaveClass(String(args.className));
+    await step('Base interface is implemented correctly', async () => {
+      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toBeInTheDocument();
+      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toHaveClass(String(args.className));
     });
   },
 };

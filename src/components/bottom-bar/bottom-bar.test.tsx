@@ -2,21 +2,16 @@ import { composeStories } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
 import * as stories from '@components/bottom-bar/bottom-bar.stories';
 
-const { Default, WithMessage, WithCustomClassName } = composeStories(stories);
+const { WithoutMessage, WithMessage } = composeStories(stories);
 
 describe('BottomBar. Snapshots', () => {
-  it('Default ', async () => {
-    await Default.run();
+  it('WithoutMessage ', async () => {
+    await WithoutMessage.run();
     expect(document.body.firstChild).toMatchSnapshot();
   });
 
   it('WithMessage ', async () => {
     await WithMessage.run();
-    expect(document.body.firstChild).toMatchSnapshot();
-  });
-
-  it('WithCustomClassName ', async () => {
-    await WithCustomClassName.run();
     expect(document.body.firstChild).toMatchSnapshot();
   });
 });

@@ -7,6 +7,16 @@ import { GreyBox } from '@story/placeholders/grey-box.component';
 const meta = {
   title: 'Components/FormRow',
   component: FormRow,
+  render: (args) => (
+    <FormRow {...args}>
+      <GreyBox data-testid="child-0" asText>
+        Placeholder
+      </GreyBox>
+      <GreyBox data-testid="child-1" asText>
+        Placeholder
+      </GreyBox>
+    </FormRow>
+  ),
   args: {
     gap: 'sm',
   },
@@ -18,6 +28,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const NoChildren: Story = {
+  render: (args) => <FormRow {...args} />,
+  play: async ({ canvasElement, step }) => {
+    await step('No children should be rendered, so the container should be empty', async () => {
+      await expect(canvasElement).toBeEmptyDOMElement();
+    });
+  },
+};
+
 export const OneChild: Story = {
   render: (args) => (
     <FormRow {...args}>
@@ -26,10 +45,14 @@ export const OneChild: Story = {
       </GreyBox>
     </FormRow>
   ),
-  play: async ({ canvasElement }) => {
-    await expect(within(canvasElement).getByTestId('child-0')).toBeInTheDocument();
-    await expect(within(canvasElement).queryByTestId('child-1')).not.toBeInTheDocument();
-    await expect(within(canvasElement).queryByTestId('child-2')).not.toBeInTheDocument();
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('All children are rendered correctly', async () => {
+      await expect(canvas.getByTestId('child-0')).toBeInTheDocument();
+      await expect(canvas.queryByTestId('child-1')).not.toBeInTheDocument();
+      await expect(canvas.queryByTestId('child-2')).not.toBeInTheDocument();
+    });
   },
 };
 
@@ -44,10 +67,14 @@ export const TwoChildren: Story = {
       </GreyBox>
     </FormRow>
   ),
-  play: async ({ canvasElement }) => {
-    await expect(within(canvasElement).getByTestId('child-0')).toBeInTheDocument();
-    await expect(within(canvasElement).getByTestId('child-1')).toBeInTheDocument();
-    await expect(within(canvasElement).queryByTestId('child-2')).not.toBeInTheDocument();
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('All children are rendered correctly', async () => {
+      await expect(canvas.getByTestId('child-0')).toBeInTheDocument();
+      await expect(canvas.getByTestId('child-1')).toBeInTheDocument();
+      await expect(canvas.queryByTestId('child-2')).not.toBeInTheDocument();
+    });
   },
 };
 
@@ -65,10 +92,14 @@ export const ThreeChildren: Story = {
       </GreyBox>
     </FormRow>
   ),
-  play: async ({ canvasElement }) => {
-    await expect(within(canvasElement).getByTestId('child-0')).toBeInTheDocument();
-    await expect(within(canvasElement).getByTestId('child-1')).toBeInTheDocument();
-    await expect(within(canvasElement).getByTestId('child-2')).toBeInTheDocument();
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('All children are rendered correctly', async () => {
+      await expect(canvas.getByTestId('child-0')).toBeInTheDocument();
+      await expect(canvas.getByTestId('child-1')).toBeInTheDocument();
+      await expect(canvas.getByTestId('child-2')).toBeInTheDocument();
+    });
   },
 };
 
@@ -78,9 +109,10 @@ export const WithBaseBehavior: Story = {
     className: 'custom-class-name',
   },
   play: async ({ args, canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
     await step('Base interface is implemented correctly', async () => {
-      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toBeInTheDocument();
-      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toHaveClass(String(args.className));
+      await expect(canvas.getByTestId(String(args['data-testid']))).toHaveClass(String(args.className));
     });
   },
 };

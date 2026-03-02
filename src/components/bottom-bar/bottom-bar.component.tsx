@@ -69,14 +69,7 @@ const normalizeInfoItem = (
   };
 };
 
-export const BottomBar = ({
-  button,
-  info,
-  message = '',
-  className = '',
-  staticFrom = 768,
-  ...base
-}: BottomBarProps) => {
+export const BottomBar = ({ button, info, message = '', staticFrom = 768, ...base }: BottomBarProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { height } = useResizeObserver({
@@ -98,14 +91,15 @@ export const BottomBar = ({
     };
   }, [height]);
 
-  const items = useMemo(() => {
-    return {
+  const items = useMemo(
+    () => ({
       topLeft: normalizeInfoItem(info.topLeft, { weight: 'medium', color: 'text-primary' }),
       topRight: normalizeInfoItem(info.topRight, { weight: 'medium', color: 'text-primary' }),
       bottomLeft: normalizeInfoItem(info.bottomLeft, { weight: 'regular', color: 'text-secondary' }),
       bottomRight: normalizeInfoItem(info.bottomRight, { weight: 'regular', color: 'text-secondary' }),
-    };
-  }, [info]);
+    }),
+    [info],
+  );
 
   return (
     <div
@@ -129,6 +123,8 @@ export const BottomBar = ({
         </Text>
       )}
       <ControlButton
+        preventDefault
+        blurAfterClick
         fullWidth
         color="primary"
         size="lg"
