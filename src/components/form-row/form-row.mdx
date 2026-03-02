@@ -1,14 +1,17 @@
-import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Canvas, Meta, Source, Title } from '@storybook/addon-docs/blocks';
 import * as Stories from './form-row.stories';
 
 <Meta of={Stories} />
 
 <Title />
-<Description />
+
+`FormRow` arranges child elements in a responsive row layout with configurable spacing
+via the `gap` prop. On smaller screens it stacks content vertically and switches to a horizontal
+layout from tablet breakpoint.
 
 #### Params of <b>FormRow</b>
 
-<Controls of={Stories.OneChild} />
+<ArgTypes of={Stories.OneChild} />
 
 #### Interactive Examples
 
@@ -23,10 +26,6 @@ import * as Stories from './form-row.stories';
 ##### Three children
 
 <Canvas of={Stories.ThreeChildren} />
-
-##### Base behavior
-
-<Canvas of={Stories.WithBaseBehavior} />
 
 #### Usage
 
