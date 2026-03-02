@@ -1,0 +1,46 @@
+import { Canvas, Controls, Description, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './form-row.stories';
+
+<Meta of={Stories} />
+
+<Title />
+<Description />
+
+#### Params of <b>FormRow</b>
+
+<Controls of={Stories.OneChild} />
+
+#### Interactive Examples
+
+##### One child
+
+<Canvas of={Stories.OneChild} />
+
+##### Two children
+
+<Canvas of={Stories.TwoChildren} />
+
+##### Three children
+
+<Canvas of={Stories.ThreeChildren} />
+
+##### Base behavior
+
+<Canvas of={Stories.WithBaseBehavior} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { FormRow } from '@components/form-row';
+
+    <FormRow gap="sm">
+      <YourField />
+      <YourField />
+      <YourField />
+    </FormRow>`
+
+}
+/>

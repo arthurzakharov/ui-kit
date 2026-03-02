@@ -1,19 +1,44 @@
+import { Children, cloneElement, isValidElement, type PropsWithChildren } from 'react';
+import clsx from 'clsx';
+import { baseProps } from '@utils/functions';
 import type { Base, Size } from '@utils/types';
-import { Children, type PropsWithChildren } from 'react';
-import { Flex } from '@components/flex/flex.component';
+import cn from '@components/form-row/form-row.module.css';
 
 export interface FormRowProps extends PropsWithChildren<Base> {
   gap: Size;
 }
 
-export const FormRow = (props: FormRowProps) => {
-  const { children, gap = 'sm' } = props;
-
+export const FormRow = ({ children, gap = 'sm', ...base }: FormRowProps) => {
   if (Children.count(children) === 0) return null;
 
   return (
-    <Flex direction="column" align="stretch" grow="equal" gap={gap} changeDirectionAfter="tablet">
-      {children}
-    </Flex>
+    <div
+      data-testid={baseProps(base, 'data-testid', 'form-row')}
+      className={clsx(cn.FormRow, baseProps(base, 'className'), {
+        [cn.XXS]: gap === 'xxs',
+        [cn.XS]: gap === 'xs',
+        [cn.SM]: gap === 'sm',
+        [cn.MD]: gap === 'md',
+        [cn.LG]: gap === 'lg',
+        [cn.XL]: gap === 'xl',
+        [cn.XXL]: gap === 'xxl',
+        [cn.XXXL]: gap === 'xxxl',
+      })}
+    >
+      {Children.map(children, (child) => {
+        if (!isValidElement(child)) return null;
+
+        const { className, children } = child.props;
+
+        return cloneElement(
+          child,
+          {
+            ...child.props,
+            className: clsx(className, cn.Child),
+          },
+          children,
+        );
+      })}
+    </div>
   );
 };

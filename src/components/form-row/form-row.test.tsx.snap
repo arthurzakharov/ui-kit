@@ -1,0 +1,100 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormRow. Snapshots > OneChild 1`] = `
+<div>
+  <div
+    class="_Flex_07faab"
+    data-ai="stretch"
+    data-fd="column"
+    data-fd-change-after="tablet"
+    data-fxw="nowrap"
+    data-gap="sm"
+    data-jc="start"
+  >
+    <div
+      style="flex-basis: 100%;"
+    >
+      <div
+        data-testid="child-1"
+      >
+        First child
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormRow. Snapshots > ThreeChildren 1`] = `
+<div>
+  <div
+    class="_Flex_07faab"
+    data-ai="stretch"
+    data-fd="column"
+    data-fd-change-after="tablet"
+    data-fxw="nowrap"
+    data-gap="sm"
+    data-jc="start"
+  >
+    <div
+      style="flex-basis: 33.33%;"
+    >
+      <div
+        data-testid="child-1"
+      >
+        First child
+      </div>
+    </div>
+    <div
+      style="flex-basis: 33.33%;"
+    >
+      <div
+        data-testid="child-2"
+      >
+        Second child
+      </div>
+    </div>
+    <div
+      style="flex-basis: 33.33%;"
+    >
+      <div
+        data-testid="child-3"
+      >
+        Third child
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormRow. Snapshots > TwoChildren 1`] = `
+<div>
+  <div
+    class="_Flex_07faab"
+    data-ai="stretch"
+    data-fd="column"
+    data-fd-change-after="tablet"
+    data-fxw="nowrap"
+    data-gap="sm"
+    data-jc="start"
+  >
+    <div
+      style="flex-basis: 50%;"
+    >
+      <div
+        data-testid="child-1"
+      >
+        First child
+      </div>
+    </div>
+    <div
+      style="flex-basis: 50%;"
+    >
+      <div
+        data-testid="child-2"
+      >
+        Second child
+      </div>
+    </div>
+  </div>
+</div>
+`;
