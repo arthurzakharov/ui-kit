@@ -7,7 +7,6 @@ import { AnimationFadeScale } from '@animations/animation-fade-scale';
 import { AnimationFadeSlide } from '@animations/animation-fade-slide';
 import { ControlButton } from '@controls/control-button';
 import { ControlButtonText } from '@controls/control-button-text';
-import { Flex } from '@components/flex/flex.component';
 import { Text } from '@components/text/text.component';
 import { Loader } from '@components/loader/loader.component';
 import type { Base } from '@utils/types';
@@ -145,7 +144,7 @@ export const Signature = (props: SignatureProps) => {
         )}
         ref={ref}
       >
-        <Flex direction="row" justify={isPadState(['manual-drawn']) ? 'end' : 'center'} className={cn.SignatureHeader}>
+        <div className={clsx(cn.Header, isPadState(['manual-drawn']) ? cn.HeaderManualDraw : cn.HeaderNotManualDraw)}>
           <Text tag="h6" weight="medium" align="center">
             <AnimationFadeScale name="generated-signature" condition={isPadState(['auto-generated', 'auto-loading'])}>
               Wir haben eine digitale Signature Sie generiert.
@@ -161,10 +160,10 @@ export const Signature = (props: SignatureProps) => {
               </ControlButtonText>
             </div>
           </AnimationFadeSlide>
-        </Flex>
-        <Flex direction="row" align="end" justify="center">
+        </div>
+        <div className={cn.Content}>
           {isPadState(['auto-generated', 'auto-loading']) ? (
-            <Flex direction="column" align="center" justify="start">
+            <div className={cn.AutoContent}>
               <AnimationFadeScale name="signature" condition={auto !== ''}>
                 <img className={cn.SignatureAutoPanelImage} src={auto} alt="signature" />
               </AnimationFadeScale>
@@ -174,7 +173,7 @@ export const Signature = (props: SignatureProps) => {
                 </div>
               </AnimationFadeScale>
               <AnimationFadeScale name="auto-failed" condition={auto === '' && hasAutoLoadFailed}>
-                <Flex direction="column" align="center" justify="center" style={{ height: 78 }} gap="xs">
+                <div className={cn.SignatureErrorLoading}>
                   <Text tag="span" size="body-small" color="text-secondary">
                     Automatische Signatur konnte nicht geladen werden.
                   </Text>
@@ -188,15 +187,15 @@ export const Signature = (props: SignatureProps) => {
                   >
                     Erneut versuchen
                   </ControlButtonText>
-                </Flex>
+                </div>
               </AnimationFadeScale>
               <AnimationFadeScale name="auto-note" condition={auto !== ''}>
-                <Flex direction="row" align="center" justify="center" gap="xxs" mt="xs">
+                <div className={cn.SignatureAutoLabel}>
                   <Check size={24} className={cn.SignatureAutoPanelNoteIcon} />
                   <Text tag="span" size="body-small" color="text-secondary">
                     Diese Unterschrift ist ausreichend
                   </Text>
-                </Flex>
+                </div>
               </AnimationFadeScale>
               <AnimationFadeScale name="manual-switch" condition={canSwitchToManual}>
                 <div className={cn.SignatureAutoPanelButton}>
@@ -205,7 +204,7 @@ export const Signature = (props: SignatureProps) => {
                   </ControlButtonText>
                 </div>
               </AnimationFadeScale>
-            </Flex>
+            </div>
           ) : (
             <div className={cn.SignatureManualPanel}>
               <div className={cn.SignatureManualPanelPlaceholder} />
@@ -235,17 +234,17 @@ export const Signature = (props: SignatureProps) => {
               </AnimationFadeScale>
             </div>
           )}
-        </Flex>
+        </div>
       </div>
       <AnimationFadeScale name="footer" condition={isPadState(['manual-blank', 'manual-drawn'])}>
-        <Flex direction="row" grow="equal" align="center" justify="space-between" gap="md" mt="md">
+        <div className={cn.Buttons}>
           <ControlButton fullWidth blurAfterClick color="tertiary" onClick={toAuto}>
             Abbrechen
           </ControlButton>
           <ControlButton fullWidth blurAfterClick color="primary" disabled={!valueManualDrawn} onClick={saveDrawnImage}>
             Speichern
           </ControlButton>
-        </Flex>
+        </div>
       </AnimationFadeScale>
     </div>
   );

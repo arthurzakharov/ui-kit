@@ -21,14 +21,44 @@
     calc(var(--rm-ui-padding-md) + var(--title-height));
 }
 
+.Buttons {
+  margin-top: var(--rm-ui-padding-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rm-ui-padding-md);
+}
+
 /* Header */
 
-.SignatureHeader {
+.Header {
   position: absolute;
   z-index: 1;
   top: var(--rm-ui-padding-md);
   left: var(--rm-ui-padding-md);
   right: var(--rm-ui-padding-md);
+  display: flex;
+}
+
+.HeaderManualDraw {
+  justify-content: flex-end;
+}
+
+.HeaderNotManualDraw {
+  justify-content: center;
+}
+
+.Content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.AutoContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .SignatureHeaderReset {
@@ -46,7 +76,7 @@
 }
 
 .SignatureManualPanelPlaceholder {
-  height: 104px;
+  height: 94px;
 }
 
 .SignatureManualPanelButton {
@@ -67,6 +97,7 @@
 .SignatureAutoPanelImage {
   height: 46px;
   max-width: 100%;
+  display: block;
 }
 
 .SignatureAutoPanelLoader {
@@ -81,6 +112,23 @@
 }
 
 .SignatureAutoPanelButton {
-  margin-top: 20px;
-  margin-bottom: var(--rm-ui-padding-sm);
+  margin: 8px 0;
+}
+
+.SignatureAutoLabel {
+  margin: var(--rm-ui-padding-xs) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+/* Error load */
+.SignatureErrorLoading {
+  height: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xs);
 }
