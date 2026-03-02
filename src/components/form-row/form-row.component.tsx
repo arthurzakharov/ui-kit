@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement, type PropsWithChildren } from 'react';
+import { Children, isValidElement, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import { baseProps } from '@utils/functions';
 import type { Base, Size } from '@utils/types';
@@ -28,16 +28,7 @@ export const FormRow = ({ children, gap = 'sm', ...base }: FormRowProps) => {
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
 
-        const { className, children } = child.props;
-
-        return cloneElement(
-          child,
-          {
-            ...child.props,
-            className: clsx(className, cn.Child),
-          },
-          children,
-        );
+        return <div className={cn.Child}>{child}</div>;
       })}
     </div>
   );
