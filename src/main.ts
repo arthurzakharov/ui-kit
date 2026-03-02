@@ -65,7 +65,7 @@ export {
   type PaymentTextBlocksProps,
   type PaymentTextBlockItem,
 } from '@components/payment/payment.component';
-export { Sidebar, type SidebarProps } from '@components/sidebar/sidebar.component';
+export { Sidebar, type SidebarProps } from '@components/sidebar';
 export { Signature } from '@components/signature';
 export { Svg, type SvgProps } from '@utils/svg/svg.component';
 export { Text } from '@components/text';

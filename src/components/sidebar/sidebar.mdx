@@ -1,0 +1,61 @@
+import { Canvas, Controls, Meta, Source, Title } from '@storybook/addon-docs/blocks';
+import * as Stories from './sidebar.stories';
+
+<Meta of={Stories} />
+
+<Title />
+
+`Sidebar` renders a compact overview card with progress steps, key-value details, optional user section, and optional action area.
+
+#### Params of <b>Sidebar</b>
+
+<Controls of={Stories.Default} />
+
+#### Interactive Examples
+
+##### Default
+
+<Canvas of={Stories.Default} />
+
+##### With user panel
+
+<Canvas of={Stories.WithUserPanel} />
+
+##### With action area
+
+<Canvas of={Stories.WithActionArea} />
+
+#### Usage
+
+<Source
+  language="tsx"
+  dark
+  code={
+    `import { Sidebar } from '@components/sidebar';
+
+    <Sidebar
+      title="Ihre Übersicht"
+      isUserOpen={false}
+      isButtonVisible={true}
+      steps={[
+        { state: 'completed', text: 'Persönliche Daten' },
+        { state: 'active', text: 'Vertragsdetails' },
+        { state: 'idle', text: 'Bestätigung' },
+      ]}
+      info={[
+        ['Laufzeit', '24 Monate'],
+        ['Monatsrate', '39,99 €'],
+      ]}
+      user={{
+        title: 'Max Mustermann',
+        button: 'Bearbeiten',
+        data: ['max@example.com', '+49 123 456789'],
+        onClick: () => undefined,
+      }}
+      certifications={['free', 'gdpr', 'ssl']}
+    >
+      <button type="button">Weiter</button>
+    </Sidebar>`
+
+}
+/>

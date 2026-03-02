@@ -1,6 +1,33 @@
+.Sidebar {
+  display: block;
+}
+
+.Board {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-lg);
+  background-color: var(--rm-ui-sidebar-bg);
+}
+
 .SidebarTitle,
 .SidebarButton {
   padding-bottom: var(--rm-ui-padding-md);
+}
+
+.Steps,
+.Info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.Step,
+.InfoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rm-ui-padding-xs);
 }
 
 .SidebarButton {
@@ -10,7 +37,17 @@
   justify-content: flex-start;
 }
 
+@media screen and (min-width: 1024px) {
+  .Board {
+    padding: var(--rm-ui-padding-xl);
+  }
+}
+
 @media screen and (min-width: 1200px) {
+  .Board {
+    padding: var(--rm-ui-padding-xxl);
+  }
+
   .SidebarTitle,
   .SidebarButton {
     padding-bottom: var(--rm-ui-padding-lg);
