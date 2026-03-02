@@ -1,1 +1,1 @@
-export { Footer } from '@components/footer/footer.component';
+export { Footer, type FooterProps } from '@components/footer/footer.component';

@@ -8,7 +8,7 @@ type FooterLink = {
   onClick: () => void;
 };
 
-interface FooterProps extends Base {
+export interface FooterProps extends Base {
   name: string;
   links: FooterLink[];
 }
