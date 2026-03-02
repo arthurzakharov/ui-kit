@@ -20,6 +20,11 @@ describe('containsHtml', () => {
     expect(containsHtml('<span class="x">Test</span>')).toBe(true);
   });
 
+  it('returns true for strings containing HTML entities', () => {
+    expect(containsHtml('Aufenthalts&shy;angelegenheiten')).toBe(true);
+    expect(containsHtml('Tom &amp; Jerry')).toBe(true);
+  });
+
   it('returns false for plain text', () => {
     expect(containsHtml('Just a simple string')).toBe(false);
   });
@@ -32,6 +37,7 @@ describe('containsHtml', () => {
 describe('isHtmlString', () => {
   it('returns true only for strings containing HTML', () => {
     expect(isHtmlString('<p>Text</p>')).toBe(true);
+    expect(isHtmlString('Aufenthalts&shy;angelegenheiten')).toBe(true);
   });
 
   it('returns false for plain strings', () => {

@@ -210,13 +210,13 @@ exports[`Sidebar. Snapshots > Default  1`] = `
             class="_Left_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextSecondary_a0e0af"
             data-testid="content"
           >
-            Laufzeit
+            Absicht:
           </span>
           <span
             class="_Right_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextPrimary_a0e0af"
             data-testid="content"
           >
-            24 Monate
+            Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis
           </span>
         </div>
         <div
@@ -497,13 +497,13 @@ exports[`Sidebar. Snapshots > WithActionArea  1`] = `
             class="_Left_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextSecondary_a0e0af"
             data-testid="content"
           >
-            Laufzeit
+            Absicht:
           </span>
           <span
             class="_Right_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextPrimary_a0e0af"
             data-testid="content"
           >
-            24 Monate
+            Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis
           </span>
         </div>
         <div
@@ -542,10 +542,24 @@ exports[`Sidebar. Snapshots > WithActionArea  1`] = `
             class="_SidebarButton_6e6eb6"
           >
             <button
+              class="_Button_ffa210 _MD_ffa210 _Primary_ffa210"
               data-testid="sidebar-action"
               type="button"
             >
-              Weiter
+              <div
+                class="_Animation_700a30 _Content_ffa210"
+                data-testid="animation-fade-scale"
+              >
+                <div
+                  style="opacity: 1; transform: none;"
+                >
+                  <span
+                    class="_Text_ffa210"
+                  >
+                    Weiter
+                  </span>
+                </div>
+              </div>
             </button>
           </div>
         </div>
@@ -803,13 +817,13 @@ exports[`Sidebar. Snapshots > WithBaseBehavior  1`] = `
             class="_Left_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextSecondary_a0e0af"
             data-testid="content"
           >
-            Laufzeit
+            Absicht:
           </span>
           <span
             class="_Right_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextPrimary_a0e0af"
             data-testid="content"
           >
-            24 Monate
+            Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis
           </span>
         </div>
         <div
@@ -1090,13 +1104,13 @@ exports[`Sidebar. Snapshots > WithUserPanel  1`] = `
             class="_Left_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextSecondary_a0e0af"
             data-testid="content"
           >
-            Laufzeit
+            Absicht:
           </span>
           <span
             class="_Right_a0e0af _Regular_a0e0af _BodySmall_a0e0af _TextPrimary_a0e0af"
             data-testid="content"
           >
-            24 Monate
+            Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis
           </span>
         </div>
         <div

@@ -3,21 +3,23 @@
 exports[`FormRow. Snapshots > OneChild 1`] = `
 <div>
   <div
-    class="_Flex_07faab"
-    data-ai="stretch"
-    data-fd="column"
-    data-fd-change-after="tablet"
-    data-fxw="nowrap"
-    data-gap="sm"
-    data-jc="start"
+    class="_FormRow_aca8be _SM_aca8be"
+    data-testid="form-row"
   >
     <div
-      style="flex-basis: 100%;"
+      class="_Child_aca8be"
     >
       <div
-        data-testid="child-1"
+        data-testid="child-0"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
       >
-        First child
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
       </div>
     </div>
   </div>
@@ -27,39 +29,55 @@ exports[`FormRow. Snapshots > OneChild 1`] = `
 exports[`FormRow. Snapshots > ThreeChildren 1`] = `
 <div>
   <div
-    class="_Flex_07faab"
-    data-ai="stretch"
-    data-fd="column"
-    data-fd-change-after="tablet"
-    data-fxw="nowrap"
-    data-gap="sm"
-    data-jc="start"
+    class="_FormRow_aca8be _SM_aca8be"
+    data-testid="form-row"
   >
     <div
-      style="flex-basis: 33.33%;"
+      class="_Child_aca8be"
+    >
+      <div
+        data-testid="child-0"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
+      >
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
+      </div>
+    </div>
+    <div
+      class="_Child_aca8be"
     >
       <div
         data-testid="child-1"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
       >
-        First child
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
       </div>
     </div>
     <div
-      style="flex-basis: 33.33%;"
+      class="_Child_aca8be"
     >
       <div
         data-testid="child-2"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
       >
-        Second child
-      </div>
-    </div>
-    <div
-      style="flex-basis: 33.33%;"
-    >
-      <div
-        data-testid="child-3"
-      >
-        Third child
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
       </div>
     </div>
   </div>
@@ -69,30 +87,39 @@ exports[`FormRow. Snapshots > ThreeChildren 1`] = `
 exports[`FormRow. Snapshots > TwoChildren 1`] = `
 <div>
   <div
-    class="_Flex_07faab"
-    data-ai="stretch"
-    data-fd="column"
-    data-fd-change-after="tablet"
-    data-fxw="nowrap"
-    data-gap="sm"
-    data-jc="start"
+    class="_FormRow_aca8be _SM_aca8be"
+    data-testid="form-row"
   >
     <div
-      style="flex-basis: 50%;"
+      class="_Child_aca8be"
     >
       <div
-        data-testid="child-1"
+        data-testid="child-0"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
       >
-        First child
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
       </div>
     </div>
     <div
-      style="flex-basis: 50%;"
+      class="_Child_aca8be"
     >
       <div
-        data-testid="child-2"
+        data-testid="child-1"
+        style="background-color: var(--rm-ui-grey-700); border-radius: var(--rm-ui-border-radius-sm); padding: var(--rm-ui-padding-xs); display: flex; align-items: center; justify-content: center;"
       >
-        Second child
+        <p
+          class="_Center_a0e0af _Regular_a0e0af _HL4_a0e0af _Grey50_a0e0af"
+          data-testid="content"
+          style="margin: 0px;"
+        >
+          Placeholder
+        </p>
       </div>
     </div>
   </div>

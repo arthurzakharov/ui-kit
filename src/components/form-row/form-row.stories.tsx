@@ -21,25 +21,25 @@ type Story = StoryObj<typeof meta>;
 export const OneChild: Story = {
   render: (args) => (
     <FormRow {...args}>
-      <GreyBox key="0" data-testid="child-0" asText>
+      <GreyBox data-testid="child-0" asText>
         Placeholder
       </GreyBox>
     </FormRow>
   ),
   play: async ({ canvasElement }) => {
     await expect(within(canvasElement).getByTestId('child-0')).toBeInTheDocument();
-    await expect(within(canvasElement).queryByTestId('child-0')).not.toBeInTheDocument();
-    await expect(within(canvasElement).queryByTestId('child-0')).not.toBeInTheDocument();
+    await expect(within(canvasElement).queryByTestId('child-1')).not.toBeInTheDocument();
+    await expect(within(canvasElement).queryByTestId('child-2')).not.toBeInTheDocument();
   },
 };
 
 export const TwoChildren: Story = {
   render: (args) => (
     <FormRow {...args}>
-      <GreyBox key="0" data-testid="child-0" asText>
+      <GreyBox data-testid="child-0" asText>
         Placeholder
       </GreyBox>
-      <GreyBox key="1" data-testid="child-1" asText>
+      <GreyBox data-testid="child-1" asText>
         Placeholder
       </GreyBox>
     </FormRow>
@@ -54,13 +54,13 @@ export const TwoChildren: Story = {
 export const ThreeChildren: Story = {
   render: (args) => (
     <FormRow {...args}>
-      <GreyBox key="0" data-testid="child-0" asText>
+      <GreyBox data-testid="child-0" asText>
         Placeholder
       </GreyBox>
-      <GreyBox key="1" data-testid="child-1" asText>
+      <GreyBox data-testid="child-1" asText>
         Placeholder
       </GreyBox>
-      <GreyBox key="2" data-testid="child-2" asText>
+      <GreyBox data-testid="child-2" asText>
         Placeholder
       </GreyBox>
     </FormRow>

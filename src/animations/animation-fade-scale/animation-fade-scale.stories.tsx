@@ -23,7 +23,7 @@ const meta = {
   argTypes: animationArgTypes,
   render: (args) => (
     <AnimationFadeScale {...args}>
-      <GreyBox size={300} id="animation-content" asText>
+      <GreyBox size={300} data-testid="animation-content" asText>
         Fade scale
       </GreyBox>
     </AnimationFadeScale>

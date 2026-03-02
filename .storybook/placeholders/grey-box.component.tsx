@@ -1,17 +1,17 @@
 import type { PropsWithChildren } from 'react';
 import { Text } from '@components/text/text.component';
+import type { Base } from '@utils/types';
+import { baseProps } from '@utils/functions';
 
-interface GreyBoxProps extends PropsWithChildren {
-  className?: string;
+interface GreyBoxProps extends PropsWithChildren<Base> {
   inline?: boolean;
-  id?: string;
   size?: number;
   asText?: boolean;
 }
 
-export const GreyBox = ({ inline, id, size, asText, className, children }: GreyBoxProps) => (
+export const GreyBox = ({ children, inline, size, asText, ...base }: GreyBoxProps) => (
   <div
-    data-testid={id}
+    data-testid={baseProps(base, 'data-testid')}
     style={{
       width: size,
       height: size,
@@ -22,7 +22,7 @@ export const GreyBox = ({ inline, id, size, asText, className, children }: GreyB
       alignItems: 'center',
       justifyContent: 'center',
     }}
-    className={className}
+    className={baseProps(base, 'className')}
   >
     {asText ? (
       <Text size="hl4" align="center" color="grey-50" style={{ margin: 0 }}>

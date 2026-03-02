@@ -24,7 +24,7 @@ const meta = {
   render: (args) => (
     <SizeBox size={300}>
       <AnimationRotate {...args}>
-        <GreyBox size={300} id="animation-content" asText>
+        <GreyBox size={300} data-testid="animation-content" asText>
           Rotate
         </GreyBox>
       </AnimationRotate>

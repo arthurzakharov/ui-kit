@@ -13,8 +13,9 @@ export function isString(value: unknown): value is string {
  * (basic heuristic, not a full HTML parser)
  */
 export function containsHtml(value: string): boolean {
-  const htmlRegex = /<\/?[a-z][\s\S]*>/i;
-  return htmlRegex.test(value);
+  const htmlTagRegex = /<\/?[a-z][\s\S]*>/i;
+  const htmlEntityRegex = /&(?:[a-z][a-z0-9]+|#\d+|#x[\da-f]+);/i;
+  return htmlTagRegex.test(value) || htmlEntityRegex.test(value);
 }
 
 /**
