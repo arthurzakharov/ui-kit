@@ -12,9 +12,6 @@ export interface UserPanelProps extends Base {
   onClick: () => void;
 }
 
-/**
- * Displays a user panel with title, editable button, and user information data.
- */
 export const UserPanel = ({ title, button, data, onClick, ...base }: UserPanelProps) => (
   <div
     data-testid={baseProps(base, 'data-testid', 'user-panel')}

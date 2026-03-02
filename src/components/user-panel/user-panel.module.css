@@ -11,6 +11,7 @@
 }
 
 .Head {
+  margin-bottom: var(--rm-ui-padding-xs);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
