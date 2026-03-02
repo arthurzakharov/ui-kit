@@ -1,4 +1,4 @@
-import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Canvas, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import * as Stories from './control-box.stories';
 import { ControlBox } from './control-box.component';
 
@@ -6,11 +6,13 @@ import { ControlBox } from './control-box.component';
 
 <Title />
 <Subtitle>🧱 Visual state container for custom form controls</Subtitle>
-<Description />
 
-#### Params of <b>ControlBox</b>
+`ControlBox` provides a consistent frame for checkbox/radio-like controls. It handles
+visual states (`idle`, `error`, `success`) plus `focused` and `checked` modifiers.
 
-<Controls of={Stories.Idle} />
+#### Params of ControlBox
+
+<ArgTypes of={Stories.Idle} />
 
 #### Interactive Example
 

@@ -2,13 +2,17 @@ import type { FontSize, FontColor } from '@utils/types';
 
 export type InputChangeSource = 'mouse' | 'keyboard';
 
+export type ControlFocusHandler = (id: string) => void;
+
+export type ControlChangeHandler<V> = (value: V, id: string, source?: InputChangeSource) => void;
+
 export type Interactive<V> = {
   id: string;
   value: V;
   disabled?: boolean;
-  onChange: (value: V, id: string, source?: InputChangeSource) => void;
-  onFocus?: (id: string) => void;
-  onBlur?: (id: string) => void;
+  onChange: ControlChangeHandler<V>;
+  onFocus?: ControlFocusHandler;
+  onBlur?: ControlFocusHandler;
 };
 
 export type RadioChoice = {

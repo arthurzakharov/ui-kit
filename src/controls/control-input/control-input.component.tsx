@@ -1,6 +1,7 @@
 import { type HTMLInputTypeAttribute, type MouseEvent, type KeyboardEvent, useRef } from 'react';
 import InputMask, { type ReactInputMask } from 'react-input-mask';
 import type { Interactive } from '@controls/utils/types';
+import { useControlInteraction } from '@controls/hooks';
 import clsx from 'clsx';
 import type { Base } from '@utils/types';
 import { findEndIndex } from '@controls/utils/functions';
@@ -31,6 +32,13 @@ export const ControlInput = ({
   className,
 }: ControlInputProps) => {
   const ref = useRef<RefMask>(null);
+  const { emitChange, handleFocus, handleBlur } = useControlInteraction<string>({
+    id,
+    disabled,
+    onChange,
+    onFocus,
+    onBlur,
+  });
 
   const onDateClick = (e: MouseEvent<HTMLInputElement>): void => {
     const caretPosition = findEndIndex(value);
@@ -80,7 +88,7 @@ export const ControlInput = ({
       alwaysShowMask={false}
       onClick={onDateClick}
       onKeyDown={onDateKeyDown}
-      onChange={(e) => onChange(e.target.value, id, 'keyboard')}
+      onChange={(e) => emitChange(e.target.value, 'keyboard')}
       onAnimationStart={(e) => {
         if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
         if (e.animationName === cn['autofill-cancel']) {
@@ -88,8 +96,8 @@ export const ControlInput = ({
           onAutofillCancel?.call(null, id);
         }
       }}
-      onFocus={() => onFocus?.call(null, id)}
-      onBlur={() => onBlur?.call(null, id)}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
   ) : (
     <input
@@ -101,7 +109,7 @@ export const ControlInput = ({
       name={id}
       value={value}
       className={clsx(cn.ControlInput, className)}
-      onChange={(e) => onChange(e.target.value, id, 'keyboard')}
+      onChange={(e) => emitChange(e.target.value, 'keyboard')}
       onAnimationStart={(e) => {
         if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
         if (e.animationName === cn['autofill-cancel']) {
@@ -109,8 +117,8 @@ export const ControlInput = ({
           onAutofillCancel?.call(null, id);
         }
       }}
-      onFocus={() => onFocus?.call(null, id)}
-      onBlur={() => onBlur?.call(null, id)}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
   );
 };

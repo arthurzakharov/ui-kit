@@ -1,9 +1,10 @@
 import type { ChangeEvent, MouseEvent, PropsWithChildren, ReactNode } from 'react';
-import { useToggle } from 'usehooks-ts';
+import { useBoolean } from 'usehooks-ts';
 import clsx from 'clsx';
-import type { Interactive, State } from '@controls/utils/types';
+import type { InputChangeSource, Interactive, State } from '@controls/utils/types';
 import { ControlChoice, type ControlChoiceProps } from '@controls/control-choice';
 import { ControlHiddenInput } from '@controls/control-hidden-input';
+import { useControlInteraction } from '@controls/hooks';
 import { Converter } from '@utils/converter/converter.util';
 import type { Base, FontSize } from '@utils/types';
 import cn from '@controls/control-checkbox/control-checkbox.module.css';
@@ -34,31 +35,25 @@ export const ControlCheckbox = (props: ControlCheckboxProps) => {
     ...base
   } = props;
 
-  const [focused, toggleFocused] = useToggle(false);
-  const [hovered, toggleHovered] = useToggle(false);
+  const { value: hovered, setTrue: setHovered, setFalse: setNotHovered } = useBoolean(false);
+  const { focused, emitChange, handleFocus, handleBlur } = useControlInteraction<boolean>({
+    id,
+    disabled,
+    onChange,
+    onFocus,
+    onBlur,
+  });
 
   const onLabelClick = (e: MouseEvent<HTMLLabelElement>) => {
     if (disabled || focused) return;
     e.preventDefault();
-    onChange(!value, id);
+    emitChange(!value);
   };
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>, source?: InputChangeSource) => {
     if (disabled) return;
     e.stopPropagation();
-    onChange(!value, id);
-  };
-
-  const onInputFocus = () => {
-    if (disabled) return;
-    toggleFocused();
-    onFocus(id);
-  };
-
-  const onInputBlur = () => {
-    if (disabled) return;
-    toggleFocused();
-    onBlur(id);
+    emitChange(!value, source);
   };
 
   return (
@@ -67,10 +62,10 @@ export const ControlCheckbox = (props: ControlCheckboxProps) => {
         htmlFor={id}
         className={cn.Label}
         onClick={onLabelClick}
-        onFocus={onInputFocus}
-        onBlur={onInputBlur}
-        onMouseEnter={() => toggleHovered()}
-        onMouseLeave={() => toggleHovered()}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onMouseEnter={setHovered}
+        onMouseLeave={setNotHovered}
       >
         <ControlHiddenInput
           type="checkbox"
@@ -80,6 +75,8 @@ export const ControlCheckbox = (props: ControlCheckboxProps) => {
           checked={value}
           disabled={disabled}
           onChange={onInputChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
         <div className={cn.Choice}>
           <ControlChoice

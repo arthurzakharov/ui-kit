@@ -12,10 +12,6 @@ export interface ControlBoxProps extends PropsWithChildren<Base> {
   onClick?: () => void;
 }
 
-/**
- * `ControlBox` provides a consistent frame for checkbox/radio-like controls. It handles visual
- * states (`idle`, `error`, `success`) plus `focused` and `checked` modifiers.
- */
 export const ControlBox = forwardRef<HTMLDivElement, ControlBoxProps>(
   ({ children, focused = false, checked = false, state = 'idle', onClick = () => {}, ...base }, ref) => (
     <div

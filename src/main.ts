@@ -36,7 +36,7 @@ export { ControlRadioLabel } from '@controls/control-radio-label';
 export { ControlRadioText, type ControlRadioTextProps } from '@controls/control-radio-text';
 export { ControlStatus } from '@controls/control-status';
 export { ControlText, type ControlTextProps } from '@controls/control-text';
-export { ControlTextarea } from '@controls/control-textarea';
+export { ControlTextarea, type ControlTextareaProps } from '@controls/control-textarea';
 // COMPONENTS
 export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
 export { BottomBar } from '@components/bottom-bar';
