@@ -1,28 +1,26 @@
-import { Canvas, Controls, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Canvas, Controls, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import * as stories from './control-input.stories';
 
 <Meta of={stories} />
 
 <Title />
+
 <Subtitle>📥 Text input field with optional date masking</Subtitle>
-<Description>
-  `ControlInput` renders a single-line text input. Supports optional date masking (DD/MM/YYYY) and various input types.
-  Use it for short text entries like names, emails, or dates.
-</Description>
+
+`ControlInput` renders a single-line text input. Supports optional date masking (DD/MM/YYYY) and various input types. Use it for short text entries like names, emails, or dates.
 
 #### Params of <b>ControlInput</b>
 
-<Controls of={stories.Default} />
+<ArgTypes of={stories.Text} />
 
 #### Interactive Example
 
-<Canvas of={stories.Default} />
+<Canvas of={stories.Text} />
 
 #### Usage
 
 <Source
   language="tsx"
-  dark
   code={
     `import { ControlInput } from '@controls/control-input';
 
@@ -37,8 +35,7 @@ import * as stories from './control-input.stories';
       onFocus={(id) => console.log('focused')}
       onBlur={(id) => console.log('blurred')}
       onAutofill={(id) => console.log('autofilled')}
-      onAutofillCancel={(id) => console.log('autofill cancelled')}
-      className="custom-class-name"
+      onAutofillCancel={(id) => console.log('autofill cancelled')} d
     />`
 
 }
