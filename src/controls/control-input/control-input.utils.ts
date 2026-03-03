@@ -28,10 +28,6 @@ export const replaceCharByIndex = (str: string, index: number, newChar: string) 
   return str.slice(0, index) + newChar + str.slice(index + 1);
 };
 
-export const preventSelection = (ref: RefObject<HTMLInputElement>) => {
-  ref.current?.setSelectionRange(0, 0);
-};
-
 export const setCursorPosition = (ref: RefObject<HTMLInputElement>, position: number) => {
   setTimeout(() => ref.current?.setSelectionRange(position, position), 10);
 };

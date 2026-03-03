@@ -7,10 +7,6 @@
   gap: var(--rm-ui-padding-xxs);
 }
 
-.ControlText:hover {
-  cursor: pointer;
-}
-
 .Content {
   box-sizing: border-box;
   position: relative;
@@ -21,6 +17,10 @@
   flex-direction: row;
   justify-content: stretch;
   align-items: flex-end;
+}
+
+.Content:hover {
+  cursor: pointer;
 }
 
 .Label {
@@ -56,4 +56,12 @@
 
 .ErrorMessage {
   padding-left: var(--rm-ui-padding-sm);
+}
+
+.Input {
+  flex-grow: 1;
+}
+
+.MaskStart {
+  opacity: 0;
 }

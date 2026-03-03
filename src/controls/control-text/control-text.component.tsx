@@ -87,6 +87,9 @@ export const ControlText = (props: ControlTextProps) => {
             type={type}
             id={id}
             value={value}
+            className={clsx(cn.Input, {
+              [cn.MaskStart]: masked && value === '' && !isLabelActive,
+            })}
             onChange={onChange}
             onAutofill={onAutofill}
             onAutofillCancel={onAutofillCancel}

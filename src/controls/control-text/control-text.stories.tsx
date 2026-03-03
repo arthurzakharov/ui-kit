@@ -56,6 +56,7 @@ export const Date: Story = {
     placeholder: 'Bitte geben Sie Ihr Geburtsdatum ein',
     masked: true,
     mask: 'TT/MM/JJJJ',
+    value: '',
   },
 };
 

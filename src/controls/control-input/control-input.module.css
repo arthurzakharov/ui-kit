@@ -2,6 +2,7 @@
   outline: none;
   box-sizing: border-box;
   border: none;
+  display: inline-flex;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -43,6 +44,7 @@
 
 .Placeholder {
   color: var(--rm-ui-color-text-secondary);
+  font-weight: var(--rm-ui-font-weight-light);
 }
 
 @keyframes autofill-start {

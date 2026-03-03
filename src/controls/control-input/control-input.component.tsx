@@ -19,7 +19,6 @@ import {
   getPreviousChar,
   isDigit,
   isSeparator,
-  preventSelection,
   replaceCharByIndex,
   setCursorPosition,
 } from '@controls/control-input/control-input.utils';
@@ -139,7 +138,6 @@ export const ControlInput = ({
   const handleInputFocus = useCallback(
     (e: FocusEvent<HTMLInputElement>): void => {
       e.preventDefault();
-      preventSelection(inputRef);
       const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
       if (cursor !== inputValue.length) setCursorPosition(inputRef, cursor);
       handleFocus();
@@ -177,7 +175,7 @@ export const ControlInput = ({
       id={id}
       name={id}
       value={inputValue}
-      className={clsx(cn.ControlInput, baseProps(base, 'className'))}
+      className={clsx(cn.ControlInput, baseProps(base, 'className'), { [cn.Placeholder]: inputValue === mask })}
       onKeyDown={handleKeyStroke}
       onChange={handleInputChange}
       onClick={handleInputClick}
