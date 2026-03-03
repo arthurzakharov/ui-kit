@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlText } from '@controls/control-text';
 import { fn } from 'storybook/test';
+import { useState } from 'react';
 
 const meta = {
   title: 'Controls/ControlText',
@@ -13,6 +14,8 @@ const meta = {
     placeholder: 'Bitte eingeben',
     className: '',
     onChange: fn(),
+    onBlur: fn(),
+    onFocus: fn(),
   },
   argTypes: {
     state: {
@@ -20,12 +23,36 @@ const meta = {
       options: ['idle', 'error', 'success'],
     },
   },
+  render: (args) => {
+    const [value, setValue] = useState(args.value);
+
+    return (
+      <ControlText
+        {...args}
+        value={value}
+        onChange={(value, id, source) => {
+          setValue(value);
+          args.onChange(value, id, source);
+        }}
+      />
+    );
+  },
 } satisfies Meta<typeof ControlText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Text: Story = {
+  args: {
+    dateMask: false,
+  },
+};
+
+export const Date: Story = {
+  args: {
+    dateMask: true,
+  },
+};
 
 export const WithError: Story = {
   args: {

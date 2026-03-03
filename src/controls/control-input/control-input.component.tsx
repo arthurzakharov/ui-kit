@@ -152,6 +152,7 @@ export const ControlInput = ({
   }, []);
 
   useEffect(() => {
+    if (!dateMask) return;
     if (!isInternalUpdate.current) {
       emitChange(value || mask, 'keyboard');
     }
@@ -159,6 +160,7 @@ export const ControlInput = ({
   }, [value]);
 
   useEffect(() => {
+    if (!dateMask) return;
     if (isInternalUpdate.current) {
       emitChange(value !== mask ? value : '', 'keyboard');
     }

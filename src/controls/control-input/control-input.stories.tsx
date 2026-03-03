@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { ControlInput } from '@controls/control-input';
 
 const meta = {
@@ -12,7 +13,9 @@ const meta = {
     dateMask: false,
     disabled: false,
     className: '',
-    onChange: () => {},
+    onChange: fn(),
+    onFocus: fn(),
+    onBlur: fn(),
   },
   render: (args) => {
     const [value, setValue] = useState(args.value);
@@ -33,11 +36,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
-
-export const DateMask: Story = {
+export const Text: Story = {
   args: {
-    value: '12/12/2026',
+    value: '',
+    dateMask: false,
+  },
+};
+
+export const Date: Story = {
+  args: {
+    value: '',
     dateMask: true,
   },
 };
