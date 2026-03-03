@@ -11,16 +11,3 @@ export const containsHtml = (str?: string) => {
 export const clickHasNode = (event: MouseEvent | TouchEvent | FocusEvent, element: RefObject<HTMLElement>): boolean => {
   return Boolean(element.current && element.current.contains(event.target as Node));
 };
-
-export const findEndIndex = (inputString: string): number => {
-  let endIndex = -1;
-  for (let i = 0; i < inputString.length; i++) {
-    const char = inputString[i];
-    if (/\d|\//.test(char)) {
-      endIndex = i;
-    } else {
-      break;
-    }
-  }
-  return endIndex;
-};

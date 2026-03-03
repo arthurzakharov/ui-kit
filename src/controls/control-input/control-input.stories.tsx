@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlInput } from '@controls/control-input';
 
@@ -12,6 +13,20 @@ const meta = {
     disabled: false,
     className: '',
     onChange: () => {},
+  },
+  render: (args) => {
+    const [value, setValue] = useState(args.value);
+
+    return (
+      <ControlInput
+        {...args}
+        value={value}
+        onChange={(value, id, source) => {
+          setValue(value);
+          args.onChange(value, id, source);
+        }}
+      />
+    );
   },
 } satisfies Meta<typeof ControlInput>;
 

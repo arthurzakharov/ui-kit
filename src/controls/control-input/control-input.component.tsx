@@ -1,13 +1,30 @@
-import { type HTMLInputTypeAttribute, type MouseEvent, type KeyboardEvent, useRef } from 'react';
-import InputMask, { type ReactInputMask } from 'react-input-mask';
+import {
+  useCallback,
+  useRef,
+  type HTMLInputTypeAttribute,
+  type ChangeEvent,
+  type FocusEvent,
+  type KeyboardEvent,
+  type MouseEvent,
+  useEffect,
+} from 'react';
+import clsx from 'clsx';
 import type { Interactive } from '@controls/utils/types';
 import { useControlInteraction } from '@controls/hooks';
-import clsx from 'clsx';
+import {
+  applyMask,
+  getFirstNotEnteredCharIndex,
+  getNextChar,
+  getPreviousChar,
+  isDigit,
+  isSeparator,
+  preventSelection,
+  replaceCharByIndex,
+  setCursorPosition,
+} from '@controls/control-input/control-input.utils';
 import type { Base } from '@utils/types';
-import { findEndIndex } from '@controls/utils/functions';
 import cn from '@controls/control-input/control-input.module.css';
-
-type RefMask = ReactInputMask & HTMLInputElement;
+import { baseProps } from '@utils/functions';
 
 export interface ControlInputProps extends Base, Interactive<string> {
   type?: HTMLInputTypeAttribute;
@@ -16,6 +33,8 @@ export interface ControlInputProps extends Base, Interactive<string> {
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
 }
+
+const mask = 'TT/MM/JJJJ';
 
 export const ControlInput = ({
   id,
@@ -29,9 +48,9 @@ export const ControlInput = ({
   onChange,
   onFocus,
   onBlur,
-  className,
+  ...base
 }: ControlInputProps) => {
-  const ref = useRef<RefMask>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { emitChange, handleFocus, handleBlur } = useControlInteraction<string>({
     id,
     disabled,
@@ -40,75 +59,139 @@ export const ControlInput = ({
     onBlur,
   });
 
-  const onDateClick = (e: MouseEvent<HTMLInputElement>): void => {
-    const caretPosition = findEndIndex(value);
-    if (caretPosition < value.length - 1 && ref.current) {
-      e.preventDefault();
-      ref.current.setSelectionRange(caretPosition + 1, caretPosition + 1, 'none');
-    }
-  };
+  const isInternalUpdate = useRef(false);
 
-  const onDateKeyDown = (e: KeyboardEvent<HTMLInputElement>): void => {
-    if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+  const handleInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>): void => {
       e.preventDefault();
-    }
-    if (e.code === 'ArrowRight' && ref.current) {
-      const start = ref.current.selectionStart || 0;
-      const nextChar = value[start + 1] === '/' ? value[start + 2] : value[start + 1];
-      if (!/^\d+$/.test(nextChar)) {
-        e.preventDefault();
-      } else {
-        const correction = value[start + 1] === '/' ? 1 : 0;
-        ref.current.setSelectionRange(start + correction, start + correction, 'none');
+      if (!inputRef.current) return;
+
+      const firstNotEnteredCharIndex = getFirstNotEnteredCharIndex(value, mask);
+      const isCompleted = firstNotEnteredCharIndex === value.length;
+      const newChar = e.target.value.slice(firstNotEnteredCharIndex, firstNotEnteredCharIndex + 1);
+
+      if (isDigit(newChar)) {
+        const newInputValue = replaceCharByIndex(value, firstNotEnteredCharIndex, newChar);
+        const cursor = getFirstNotEnteredCharIndex(newInputValue, mask);
+
+        if (isCompleted) {
+          const currentCursor = inputRef.current.selectionEnd || 0;
+          const before = e.target.value.slice(0, currentCursor - 1);
+          const char = e.target.value.slice(currentCursor - 1, currentCursor);
+          const after = e.target.value.slice(currentCursor);
+          const updatedInputValue = replaceCharByIndex(before + after, currentCursor - 1, char);
+          const nextChar = getNextChar(before + after, currentCursor) || '';
+          emitChange(updatedInputValue, 'keyboard');
+          setCursorPosition(inputRef, isSeparator(nextChar, mask) && nextChar ? currentCursor + 1 : currentCursor);
+        } else {
+          emitChange(newInputValue, 'keyboard');
+          setCursorPosition(inputRef, cursor);
+        }
+        isInternalUpdate.current = true;
+        return;
       }
-    }
-    if (e.code === 'ArrowLeft' && ref.current) {
+
+      if (isSeparator(newChar, mask)) {
+        const cursor = getFirstNotEnteredCharIndex(value, mask) - 1;
+        const newChar = e.target.value.slice(cursor, cursor + 1);
+        if (isDigit(newChar)) {
+          emitChange(replaceCharByIndex(value, cursor + 1, newChar), 'keyboard');
+          setCursorPosition(inputRef, cursor + 2);
+        } else {
+          setCursorPosition(inputRef, firstNotEnteredCharIndex - 1);
+        }
+        isInternalUpdate.current = true;
+        return;
+      }
+
+      setCursorPosition(inputRef, firstNotEnteredCharIndex);
+    },
+    [value, mask],
+  );
+
+  const handleKeyStroke = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>): void => {
+      if (inputRef.current && e.code === 'Backspace') {
+        e.preventDefault();
+        const cursor = inputRef.current.selectionEnd || 0;
+        if (cursor) {
+          const newCursor = cursor - (isSeparator(getPreviousChar(value, cursor), mask) ? 2 : 1);
+          const newInputValue = applyMask(value, mask, cursor - 1);
+          emitChange(newInputValue, 'keyboard');
+          setCursorPosition(inputRef, newCursor);
+          isInternalUpdate.current = true;
+        }
+      }
+    },
+    [value, mask],
+  );
+
+  const handleInputClick = useCallback(
+    (e: MouseEvent<HTMLInputElement>): void => {
       e.preventDefault();
-      const start = ref.current.selectionStart || 0;
-      const prevChar = value[start - 1] === '/' ? value[start - 2] : value[start - 1];
-      if (!/^\d+$/.test(prevChar)) {
-        e.preventDefault();
-      } else {
-        const correction = value[start - 1] === '/' ? 2 : 1;
-        ref.current.setSelectionRange(start - correction, start - correction, 'none');
-      }
+      const cursor = getFirstNotEnteredCharIndex(value, mask);
+      if (cursor !== value.length) setCursorPosition(inputRef, cursor);
+    },
+    [value, mask],
+  );
+
+  const handleInputFocus = useCallback(
+    (e: FocusEvent<HTMLInputElement>): void => {
+      e.preventDefault();
+      preventSelection(inputRef);
+      const cursor = getFirstNotEnteredCharIndex(value, mask);
+      if (cursor !== value.length) setCursorPosition(inputRef, cursor);
+      handleFocus();
+    },
+    [value, mask],
+  );
+
+  const handleInputBlur = useCallback((e: FocusEvent<HTMLInputElement>): void => {
+    e.preventDefault();
+    handleBlur();
+  }, []);
+
+  useEffect(() => {
+    if (!isInternalUpdate.current) {
+      emitChange(value || mask, 'keyboard');
     }
-  };
+    isInternalUpdate.current = false;
+  }, [value]);
+
+  useEffect(() => {
+    if (isInternalUpdate.current) {
+      emitChange(value !== mask ? value : '', 'keyboard');
+    }
+  }, [value, id]);
 
   return dateMask ? (
-    <InputMask
-      data-testid="input-masked"
-      ref={ref}
-      value={value}
-      id={id}
-      className={clsx(cn.ControlInput, className)}
+    <input
+      ref={inputRef}
+      data-testid={baseProps(base, 'data-testid', 'input')}
       disabled={disabled}
-      mask="99/99/9999"
-      maskChar="_"
-      alwaysShowMask={false}
-      onClick={onDateClick}
-      onKeyDown={onDateKeyDown}
-      onChange={(e) => emitChange(e.target.value, 'keyboard')}
-      onAnimationStart={(e) => {
-        if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
-        if (e.animationName === cn['autofill-cancel']) {
-          e.currentTarget.blur();
-          onAutofillCancel?.call(null, id);
-        }
-      }}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      maxLength={mask.length}
+      type="text"
+      id={id}
+      name={id}
+      value={value}
+      className={clsx(cn.ControlInput, baseProps(base, 'className'), value === mask && cn.Placeholder)}
+      onKeyDown={handleKeyStroke}
+      onChange={handleInputChange}
+      onClick={handleInputClick}
+      onDoubleClick={handleInputClick}
+      onFocus={handleInputFocus}
+      onBlur={handleInputBlur}
     />
   ) : (
     <input
-      data-testid="input"
+      data-testid={baseProps(base, 'data-testid', 'input')}
       disabled={disabled}
       maxLength={maxLength}
       type={type}
       id={id}
       name={id}
       value={value}
-      className={clsx(cn.ControlInput, className)}
+      className={clsx(cn.ControlInput, baseProps(base, 'className'))}
       onChange={(e) => emitChange(e.target.value, 'keyboard')}
       onAnimationStart={(e) => {
         if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
