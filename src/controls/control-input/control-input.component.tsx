@@ -29,19 +29,19 @@ import { baseProps } from '@utils/functions';
 
 export interface ControlInputProps extends Base, Interactive<string> {
   type?: HTMLInputTypeAttribute;
-  dateMask?: boolean;
+  masked?: boolean;
+  mask?: string;
   maxLength?: number;
   onAutofill?: (id: string) => void;
   onAutofillCancel?: (id: string) => void;
 }
 
-const mask = 'TT/MM/JJJJ';
-
 export const ControlInput = ({
   id,
   value = '',
   disabled = false,
-  dateMask = false,
+  masked = false,
+  mask = 'DD/MM/YYYY',
   maxLength,
   type = 'text',
   onAutofill,
@@ -51,7 +51,6 @@ export const ControlInput = ({
   onBlur,
   ...base
 }: ControlInputProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
   const { emitChange, handleFocus, handleBlur } = useControlInteraction<string>({
     id,
     disabled,
@@ -59,193 +58,127 @@ export const ControlInput = ({
     onFocus,
     onBlur,
   });
+  const inputRef = useRef<HTMLInputElement>(null);
+  const isInternalUpdate = useRef(false);
+  const [inputValue, setInputValue] = useState<string>(value || mask);
 
-  const [localValue, setLocalValue] = useState(value || mask);
+  const handleInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>): void => {
+      e.preventDefault();
+      if (!inputRef.current) return;
 
-  const getMaskedDisplayValue = (val: string): string => {
-    if (!val) return mask;
+      const firstNotEnteredCharIndex = getFirstNotEnteredCharIndex(inputValue, mask);
+      const isCompleted = firstNotEnteredCharIndex === inputValue.length;
+      const newChar = e.target.value.slice(firstNotEnteredCharIndex, firstNotEnteredCharIndex + 1);
 
-    let result = '';
-    for (let i = 0; i < mask.length; i++) {
-      if (i < val.length && val[i] !== mask[i] && val[i] !== ' ') {
-        result += val[i];
-      } else {
-        result += mask[i];
-      }
-    }
-    return result;
-  };
+      if (isDigit(newChar)) {
+        const newInputValue = replaceCharByIndex(inputValue, firstNotEnteredCharIndex, newChar);
+        const cursor = getFirstNotEnteredCharIndex(newInputValue, mask);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (!inputRef.current || disabled) return;
-
-    const inputValue = e.target.value;
-    const oldValue = localValue;
-
-    // Find the position where the change occurred
-    let changedIndex = -1;
-    for (let i = 0; i < mask.length; i++) {
-      if (inputValue[i] !== oldValue[i]) {
-        changedIndex = i;
-        break;
-      }
-    }
-
-    if (changedIndex === -1) return;
-
-    const newChar = inputValue[changedIndex];
-
-    // Handle backspace/delete (empty character)
-    if (!newChar || newChar === ' ') {
-      const newValue = applyMask(oldValue, mask, changedIndex);
-      setLocalValue(newValue);
-      emitChange(newValue.replace(/[^0-9]/g, ''), 'keyboard');
-      setCursorPosition(inputRef, changedIndex);
-      return;
-    }
-
-    // Handle digit input
-    if (isDigit(newChar)) {
-      // Skip separators
-      let targetIndex = changedIndex;
-      while (targetIndex < mask.length && isSeparator(mask[targetIndex], mask)) {
-        targetIndex++;
-      }
-
-      if (targetIndex < mask.length) {
-        const newValue = replaceCharByIndex(oldValue, targetIndex, newChar);
-        setLocalValue(newValue);
-
-        // Calculate next position
-        let nextPos = targetIndex + 1;
-        while (nextPos < mask.length && isSeparator(mask[nextPos], mask)) {
-          nextPos++;
+        if (isCompleted) {
+          const currentCursor = inputRef.current.selectionEnd || 0;
+          const before = e.target.value.slice(0, currentCursor - 1);
+          const char = e.target.value.slice(currentCursor - 1, currentCursor);
+          const after = e.target.value.slice(currentCursor);
+          const updatedInputValue = replaceCharByIndex(before + after, currentCursor - 1, char);
+          const nextChar = getNextChar(before + after, currentCursor) || '';
+          setInputValue(updatedInputValue);
+          setCursorPosition(inputRef, isSeparator(nextChar, mask) && nextChar ? currentCursor + 1 : currentCursor);
+        } else {
+          setInputValue(newInputValue);
+          setCursorPosition(inputRef, cursor);
         }
-
-        emitChange(newValue.replace(/[^0-9]/g, ''), 'keyboard');
-        setCursorPosition(inputRef, nextPos);
+        isInternalUpdate.current = true;
+        return;
       }
-    }
-  };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (!inputRef.current || disabled) return;
+      if (isSeparator(newChar, mask)) {
+        const cursor = getFirstNotEnteredCharIndex(inputValue, mask) - 1;
+        const newChar = e.target.value.slice(cursor, cursor + 1);
+        if (isDigit(newChar)) {
+          setInputValue(replaceCharByIndex(inputValue, cursor + 1, newChar));
+          setCursorPosition(inputRef, cursor + 2);
+        } else {
+          setCursorPosition(inputRef, firstNotEnteredCharIndex - 1);
+        }
+        isInternalUpdate.current = true;
+        return;
+      }
 
-    const cursor = inputRef.current.selectionStart || 0;
+      setCursorPosition(inputRef, firstNotEnteredCharIndex);
+    },
+    [inputValue, mask],
+  );
 
-    if (e.key === 'Backspace') {
+  const handleKeyStroke = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>): void => {
+      if (inputRef.current && e.code === 'Backspace') {
+        e.preventDefault();
+        const cursor = inputRef.current.selectionEnd || 0;
+        if (cursor) {
+          const newCursor = cursor - (isSeparator(getPreviousChar(inputValue, cursor), mask) ? 2 : 1);
+          const newInputValue = applyMask(inputValue, mask, cursor - 1);
+          setInputValue(newInputValue);
+          setCursorPosition(inputRef, newCursor);
+          isInternalUpdate.current = true;
+        }
+      }
+    },
+    [inputValue, mask],
+  );
+
+  const handleInputClick = useCallback(
+    (e: MouseEvent<HTMLInputElement>): void => {
       e.preventDefault();
-
-      // Find previous editable position
-      let prevPos = cursor - 1;
-      while (prevPos >= 0 && isSeparator(mask[prevPos], mask)) {
-        prevPos--;
-      }
-
-      if (prevPos >= 0) {
-        const newValue = applyMask(localValue, mask, prevPos);
-        setLocalValue(newValue);
-        emitChange(newValue.replace(/[^0-9]/g, ''), 'keyboard');
-        setCursorPosition(inputRef, prevPos);
-      }
-    }
-
-    if (e.key === 'Delete') {
-      e.preventDefault();
-
-      // Find next editable position
-      let nextPos = cursor;
-      while (nextPos < mask.length && isSeparator(mask[nextPos], mask)) {
-        nextPos++;
-      }
-
-      if (nextPos < mask.length) {
-        const newValue = applyMask(localValue, mask, nextPos);
-        setLocalValue(newValue);
-        emitChange(newValue.replace(/[^0-9]/g, ''), 'keyboard');
-        setCursorPosition(inputRef, cursor);
-      }
-    }
-  };
-
-  const handleInputClick = () => {
-    if (!inputRef.current || disabled) return;
-
-    // Find first empty position
-    const cursor = inputRef.current.selectionStart || 0;
-    let targetPos = cursor;
-
-    // If clicked on separator, move to next editable position
-    if (isSeparator(mask[cursor], mask)) {
-      targetPos = cursor + 1;
-      while (targetPos < mask.length && isSeparator(mask[targetPos], mask)) {
-        targetPos++;
-      }
-    }
-
-    setCursorPosition(inputRef, targetPos);
-  };
+      const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
+      if (cursor !== inputValue.length) setCursorPosition(inputRef, cursor);
+    },
+    [inputValue, mask],
+  );
 
   const handleInputFocus = useCallback(
     (e: FocusEvent<HTMLInputElement>): void => {
-      if (disabled) return;
-
-      // Find first empty position
-      const firstEmptyIndex = getFirstNotEnteredCharIndex(localValue, mask);
-      if (firstEmptyIndex < mask.length) {
-        setCursorPosition(inputRef, firstEmptyIndex);
-      }
-
+      e.preventDefault();
+      preventSelection(inputRef);
+      const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
+      if (cursor !== inputValue.length) setCursorPosition(inputRef, cursor);
       handleFocus();
     },
-    [localValue, disabled, handleFocus],
+    [inputValue, mask, handleFocus],
   );
 
   const handleInputBlur = useCallback(
-    (_e: FocusEvent<HTMLInputElement>): void => {
+    (e: FocusEvent<HTMLInputElement>): void => {
+      e.preventDefault();
       handleBlur();
     },
     [handleBlur],
   );
 
-  // Update local value when prop value changes
   useEffect(() => {
-    if (dateMask) {
-      if (value) {
-        // Build masked value from raw value
-        let newValue = '';
-        let valueIndex = 0;
-        for (let i = 0; i < mask.length; i++) {
-          if (isSeparator(mask[i], mask)) {
-            newValue += mask[i];
-          } else if (valueIndex < value.length) {
-            newValue += value[valueIndex];
-            valueIndex++;
-          } else {
-            newValue += mask[i];
-          }
-        }
-        setLocalValue(newValue);
-      } else {
-        setLocalValue(mask);
-      }
+    if (!isInternalUpdate.current) {
+      setInputValue(value || mask);
     }
-  }, [value, dateMask]);
+    isInternalUpdate.current = false;
+  }, [value, mask]);
 
-  const displayValue = dateMask ? getMaskedDisplayValue(localValue) : value;
+  useEffect(() => {
+    if (isInternalUpdate.current) {
+      emitChange(inputValue !== mask ? inputValue : '', 'keyboard');
+    }
+  }, [inputValue, mask]);
 
-  return dateMask ? (
+  return masked ? (
     <input
       ref={inputRef}
       data-testid={baseProps(base, 'data-testid', 'input')}
       disabled={disabled}
-      maxLength={mask.length}
       type="text"
       id={id}
       name={id}
-      value={displayValue}
-      className={clsx(cn.ControlInput, baseProps(base, 'className'), displayValue === mask && cn.Placeholder)}
-      onKeyDown={handleKeyDown}
+      value={inputValue}
+      className={clsx(cn.ControlInput, baseProps(base, 'className'))}
+      onKeyDown={handleKeyStroke}
       onChange={handleInputChange}
       onClick={handleInputClick}
       onDoubleClick={handleInputClick}

@@ -1,12 +1,12 @@
 .ControlInput {
   outline: none;
   box-sizing: border-box;
-  width: 100%;
   border: none;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
   color: var(--rm-ui-color-text-primary);
+  background-color: transparent;
 }
 
 .ControlInput:hover {

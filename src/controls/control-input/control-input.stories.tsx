@@ -10,7 +10,7 @@ const meta = {
     id: 'input',
     value: 'Max Mustermann',
     type: 'text',
-    dateMask: false,
+    masked: false,
     disabled: false,
     className: '',
     onChange: fn(),
@@ -38,14 +38,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Text: Story = {
   args: {
-    value: '',
-    dateMask: false,
+    value: 'Max Mustermann',
+    masked: false,
   },
 };
 
 export const Date: Story = {
   args: {
-    value: '',
-    dateMask: true,
+    value: '21/12/2023',
+    masked: true,
   },
 };

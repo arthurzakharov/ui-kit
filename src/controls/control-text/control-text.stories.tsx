@@ -44,13 +44,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Text: Story = {
   args: {
-    dateMask: false,
+    label: 'Vorname',
+    placeholder: 'Bitte geben Sie Ihren Vornamen ein',
+    masked: false,
   },
 };
 
 export const Date: Story = {
   args: {
-    dateMask: true,
+    label: 'Geburtsdatum',
+    placeholder: 'Bitte geben Sie Ihr Geburtsdatum ein',
+    masked: true,
+    mask: 'TT/MM/JJJJ',
   },
 };
 

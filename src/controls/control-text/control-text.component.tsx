@@ -23,7 +23,8 @@ export const ControlText = (props: ControlTextProps) => {
     label,
     message = '',
     placeholder = '',
-    dateMask = false,
+    masked = false,
+    mask = 'TT/MM/JJJJ',
     maxLength,
     state = 'idle',
     type = 'text',
@@ -79,7 +80,8 @@ export const ControlText = (props: ControlTextProps) => {
             <span className={cn.PlaceholderText}>{placeholder}</span>
           </AnimationFadeScale>
           <ControlInput
-            dateMask={dateMask}
+            masked={masked}
+            mask={mask}
             maxLength={maxLength}
             disabled={disabled}
             type={type}
