@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 import { Loader } from '@components/loader/loader.component';
-import { LoaderColorArgType, SizeArgType } from '@story/arg-types';
+import { LoaderColorArgType, SizeArgType } from '@utils/story/arg-types';
 import cn from '@components/loader/loader.module.css';
 
 const meta = {

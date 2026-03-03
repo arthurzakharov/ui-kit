@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { CertificationsIconsArgType } from '@story/arg-types';
+import { CertificationsIconsArgType } from '@utils/story/arg-types';
 import { expect, within } from 'storybook/test';
 import { Certifications } from '@components/certifications/certifications.component';
 

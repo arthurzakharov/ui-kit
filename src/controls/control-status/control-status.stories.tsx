@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlStatus } from '@controls/control-status';
-import { StateArgType } from '@story/arg-types';
+import { StateArgType } from '@utils/story/arg-types';
 import { expect, within } from 'storybook/test';
 
 const meta = {

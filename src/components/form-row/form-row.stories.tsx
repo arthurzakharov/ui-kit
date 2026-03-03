@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { SizeArgType } from '@story/arg-types';
+import { SizeArgType } from '@utils/story/arg-types';
 import { FormRow } from '@components/form-row/form-row.component';
-import { GreyBox } from '@story/placeholders/grey-box.component';
+import { GreyBox } from '@utils/story/grey-box/grey-box.component';
 
 const meta = {
   title: 'Components/FormRow',

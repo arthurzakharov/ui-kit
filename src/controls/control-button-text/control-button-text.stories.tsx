@@ -6,7 +6,7 @@ import {
   ControlButtonColorArgType,
   ControlButtonSizeArgType,
   FontWeightArgType,
-} from '@story/arg-types';
+} from '@utils/story/arg-types';
 import { fn } from 'storybook/test';
 
 const meta = {

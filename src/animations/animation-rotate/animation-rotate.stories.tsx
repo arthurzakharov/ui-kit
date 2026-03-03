@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { animationArgTypes } from '@story/arg-types';
-import { SizeBox } from '@story/placeholders/size-box.component';
-import { GreyBox } from '@story/placeholders/grey-box.component';
+import { animationArgTypes } from '@utils/story/arg-types';
+import { SizeBox } from '@utils/story/size-box/size-box.component';
+import { GreyBox } from '@utils/story/grey-box/grey-box.component';
 import { AnimationRotate } from '@animations/animation-rotate';
 
 const meta = {

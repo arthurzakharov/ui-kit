@@ -6,7 +6,7 @@ import { ControlHiddenInput } from '@controls/control-hidden-input';
 import { ControlRadioLabel } from '@controls/control-radio-label';
 import { ControlRadioText } from '@controls/control-radio-text';
 import type { State } from '@controls/utils/types';
-import { StateArgType } from '@story/arg-types';
+import { StateArgType } from '@utils/story/arg-types';
 
 type DemoArgs = {
   state?: State;

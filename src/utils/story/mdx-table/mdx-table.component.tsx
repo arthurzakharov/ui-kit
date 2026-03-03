@@ -1,6 +1,6 @@
 import { Unstyled } from '@storybook/addon-docs/blocks';
 import type { ReactNode } from 'react';
-import cn from '@story/components/mdx-table/mdx-table.module.css';
+import cn from './mdx-table.module.css';
 
 type MdxTableProps = {
   label: string[];

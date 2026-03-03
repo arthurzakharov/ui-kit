@@ -65,7 +65,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@story': path.resolve(__dirname, '.storybook'),
       '@animations': path.resolve(__dirname, './src/animations'),
       '@controls': path.resolve(__dirname, './src/controls'),
       '@components': path.resolve(__dirname, './src/components'),

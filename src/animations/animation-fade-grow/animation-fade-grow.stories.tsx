@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { animationArgTypes } from '@story/arg-types';
-import { GreyBox } from '@story/placeholders/grey-box.component';
+import { animationArgTypes } from '@utils/story/arg-types';
+import { GreyBox } from '@utils/story/grey-box/grey-box.component';
 import { AnimationFadeGrow } from '@animations/animation-fade-grow';
 
 const meta = {

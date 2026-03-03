@@ -6,7 +6,7 @@ import {
   ControlButtonColorArgType,
   ControlButtonSizeArgType,
   ControlButtonTypeArgType,
-} from '@story/arg-types';
+} from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlButton',

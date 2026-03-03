@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SizeBox } from '@story/placeholders/size-box.component';
-import { BooleanType, StateArgType } from '@story/arg-types';
+import { SizeBox } from '@utils/story/size-box/size-box.component';
+import { BooleanType, StateArgType } from '@utils/story/arg-types';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { ControlBox } from '@controls/control-box';
 import cn from '@controls/control-box/control-box.module.css';

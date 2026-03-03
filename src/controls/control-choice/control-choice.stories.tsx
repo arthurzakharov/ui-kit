@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlChoice } from '@controls/control-choice';
-import { ChoiceTypeArgType, ClassNameArgType, SizeArgType, StateArgType } from '@story/arg-types';
+import { ChoiceTypeArgType, ClassNameArgType, SizeArgType, StateArgType } from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlChoice',

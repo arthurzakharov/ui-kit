@@ -7,7 +7,7 @@ import {
   FontWeightArgType,
   TagArgType,
   TextPresetArgType,
-} from '@story/arg-types';
+} from '@utils/story/arg-types';
 import { Text } from '@components/text/text.component';
 
 const meta = {

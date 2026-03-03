@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, within, userEvent, waitFor } from 'storybook/test';
+import { expect, fn, within, waitFor } from 'storybook/test';
 import { DialogArticle } from '@components/dialog-article';
 
 const meta: Meta<typeof DialogArticle> = {
@@ -133,7 +133,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   name: 'DialogArticle',
-  play: async ({ args, canvasElement, step }) => {
+  play: async ({ args, canvasElement, userEvent, step }) => {
     const canvas = within(canvasElement);
     const dialogArticle = canvas.getByTestId('dialog-article');
 
@@ -235,7 +235,7 @@ export const MobileSize: Story = {
     layout: 'fullscreen',
   },
   globals: {
-    viewport: { value: 'iphone14' },
+    viewport: { value: 'mobile2' },
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);

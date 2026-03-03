@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlLabel } from '@controls/control-label';
-import { ControlLabelPositionArgType, StateArgType } from '@story/arg-types';
+import { ControlLabelPositionArgType, StateArgType } from '@utils/story/arg-types';
 import { expect, within } from 'storybook/test';
 
 const meta = {

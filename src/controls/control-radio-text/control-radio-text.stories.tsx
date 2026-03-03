@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlRadioText } from '@controls/control-radio-text';
-import { ClassNameArgType, ControlRadioTextColorArgType, ControlRadioTextSizeArgType } from '@story/arg-types';
+import { ClassNameArgType, ControlRadioTextColorArgType, ControlRadioTextSizeArgType } from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlRadioText',

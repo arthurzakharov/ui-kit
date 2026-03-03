@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { StateArgType } from '@story/arg-types';
+import { StateArgType } from '@utils/story/arg-types';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { ControlTextarea } from '@controls/control-textarea';
 

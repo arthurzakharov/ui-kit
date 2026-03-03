@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlRadio } from '@controls/control-radio';
 import { fn } from 'storybook/test';
-import { ControlRadioTextSizeArgType, SizeArgType, StateArgType } from '@story/arg-types';
+import { ControlRadioTextSizeArgType, SizeArgType, StateArgType } from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlRadio',

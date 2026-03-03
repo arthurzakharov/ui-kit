@@ -8,13 +8,7 @@ const dir = typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)'],
-  staticDirs: ['./assets'],
-  addons: [
-    '@chromatic-com/storybook',
-    '@storybook/addon-a11y',
-    '@storybook/addon-docs',
-    '@storybook/addon-vitest'
-  ],
+  addons: ['@chromatic-com/storybook', '@storybook/addon-a11y', '@storybook/addon-docs', '@storybook/addon-vitest'],
   framework: '@storybook/react-vite',
   docs: {
     defaultName: 'Documentation',

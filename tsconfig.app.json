@@ -27,7 +27,6 @@
     /* Aliases */
     "baseUrl": "./",
     "paths": {
-      "@story/*": [".storybook/*"],
       "@animations/*": ["src/animations/*"],
       "@controls/*": ["src/controls/*"],
       "@components/*": ["src/components/*"],

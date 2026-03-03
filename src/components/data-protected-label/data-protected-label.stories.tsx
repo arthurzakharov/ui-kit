@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { FontAlignArgType } from '@story/arg-types';
+import { FontAlignArgType } from '@utils/story/arg-types';
 import { DataProtectedLabel } from '@components/data-protected-label/data-protected-label.component';
 
 const meta = {
