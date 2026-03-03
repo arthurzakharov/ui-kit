@@ -29,11 +29,18 @@ type ArgTypeParams = {
   description?: string;
 };
 
-export const BooleanType = (params: ArgTypeParams = {}) =>
+export const BooleanArgType = (params: ArgTypeParams = {}) =>
   ({
     description: params.description ?? 'Toggle the boolean state of the component.',
     defaultValue: params.defaultValue,
     control: 'boolean',
+  }) as const;
+
+export const CallbackArgType = (params: ArgTypeParams = {}) =>
+  ({
+    description: params.description ?? 'Callback function for the component.',
+    defaultValue: params.defaultValue,
+    control: false,
   }) as const;
 
 export const SizeArgType = (params: ArgTypeParams = {}) =>

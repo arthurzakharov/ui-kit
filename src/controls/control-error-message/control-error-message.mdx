@@ -1,13 +1,17 @@
-import { Canvas, Description, Meta, Source, Subtitle, Story, Title } from '@storybook/addon-docs/blocks';
+import { Canvas, Description, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import * as Stories from './control-error-message.stories';
 
 <Meta of={Stories} />
 
 <Title />
-<Subtitle>⚠️ Error text indicator for form validation</Subtitle>
-<Description />
 
-#### Interactive Example
+<Subtitle>⚠️ Error text indicator for form validation</Subtitle>
+
+##
+
+`ControlErrorMessage` renders validation feedback text in an error style. Use it below a control to communicate required fields, invalid input, or any form-level validation issue.
+
+#### Example
 
 <Canvas of={Stories.Default} />
 
@@ -15,12 +19,12 @@ import * as Stories from './control-error-message.stories';
 
 <Source
   language="tsx"
-  dark
   code={
     `import { ControlErrorMessage } from '@controls/control-error-message';
 
     <ControlErrorMessage>
       This field is required
     </ControlErrorMessage>`
-  }
+
+}
 />

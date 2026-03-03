@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SizeBox } from '@utils/story/size-box/size-box.component';
-import { BooleanType, StateArgType } from '@utils/story/arg-types';
+import { BooleanArgType, CallbackArgType, StateArgType } from '@utils/story/arg-types';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { ControlBox } from '@controls/control-box';
 import cn from '@controls/control-box/control-box.module.css';
@@ -15,9 +15,9 @@ const meta = {
   },
   argTypes: {
     state: StateArgType({ description: 'The visual state of the control' }),
-    focused: BooleanType({ description: 'Whether the control is focused' }),
-    checked: BooleanType({ description: 'Whether the control is checked' }),
-    onClick: { control: false, description: 'Click handler for the control' },
+    focused: BooleanArgType({ description: 'Whether the control is focused' }),
+    checked: BooleanArgType({ description: 'Whether the control is checked' }),
+    onClick: CallbackArgType({ description: 'Click event handler for the control' }),
   },
   render: (args) => (
     <ControlBox {...args}>
@@ -141,8 +141,11 @@ export const WithBaseBehavior: Story = {
     className: 'custom-class-name',
   },
   play: async ({ args, canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const controlBox = canvas.getByTestId(String(args['data-testid']));
+
     await step('Base interface is implemented correctly', async () => {
-      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toHaveClass(String(args.className));
+      await expect(controlBox).toHaveClass(String(args.className));
     });
   },
 };

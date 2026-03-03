@@ -86,6 +86,8 @@ export default defineConfig({
         'src/**/*.stories.tsx',
         'src/**/*.test.ts',
         'src/**/*.test.tsx',
+        'src/**/*.types.ts',
+        'src/**/index.ts',
         'src/**/*.mdx',
         '**/node_modules/**',
       ],
