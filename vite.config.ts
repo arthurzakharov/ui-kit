@@ -67,7 +67,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',
-      exclude: ['./**/index.ts', './**/*.css'],
+      exclude: ['./**/index.ts', './**/*.stories.ts', './**/*.stories.tsx', './**/*.css'],
     },
     projects: [
       {

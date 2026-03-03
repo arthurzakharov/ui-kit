@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SizeBox } from '@story/placeholders/size-box.component';
 import { BooleanType, StateArgType } from '@story/arg-types';
-import { expect, fn, within } from 'storybook/test';
+import { expect, fn, userEvent, within } from 'storybook/test';
 import { ControlBox } from '@controls/control-box';
 import cn from '@controls/control-box/control-box.module.css';
 
@@ -36,11 +36,11 @@ export const Idle: Story = {
     checked: false,
     onClick: fn(),
   },
-  play: async ({ args, canvasElement, userEvent, step }) => {
+  play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
     const controlBox = canvas.getByTestId('control-box');
 
-    await step('ControlBox is clickable when not disabled', async () => {
+    await step('ControlBox is clickable', async () => {
       await userEvent.click(controlBox);
       await expect(args.onClick).toHaveBeenCalledOnce();
     });
