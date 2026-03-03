@@ -1,10 +1,11 @@
-import { ArgTypes, Canvas, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Canvas, Controls, Meta, Source, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import * as Stories from './control-box.stories';
 import { ControlBox } from './control-box.component';
 
 <Meta of={Stories} />
 
 <Title />
+
 <Subtitle>🧱 Visual state container for custom form controls</Subtitle>
 
 `ControlBox` provides a consistent frame for checkbox/radio-like controls. It handles
@@ -16,13 +17,13 @@ visual states (`idle`, `error`, `success`) plus `focused` and `checked` modifier
 
 #### Interactive Example
 
+<Controls of={Stories.Idle} />
 <Canvas of={Stories.Idle} />
 
 #### Usage
 
 <Source
   language="tsx"
-  dark
   code={
     `import { ControlBox } from '@controls/control-box';
 
@@ -30,9 +31,8 @@ visual states (`idle`, `error`, `success`) plus `focused` and `checked` modifier
       state="success"
       focused={false}
       checked={true}
-      className="custom-class-name"
     >
-      <div style={{ width: 40, height: 40 }} />
+      <div />
     </ControlBox>`
 
 }

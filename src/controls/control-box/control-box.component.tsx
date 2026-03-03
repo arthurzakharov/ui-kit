@@ -9,11 +9,11 @@ export interface ControlBoxProps extends PropsWithChildren<Base> {
   state?: State;
   focused?: boolean;
   checked?: boolean;
-  onClick?: () => void;
+  onClick?: VoidFunction;
 }
 
 export const ControlBox = forwardRef<HTMLDivElement, ControlBoxProps>(
-  ({ children, focused = false, checked = false, state = 'idle', onClick = () => {}, ...base }, ref) => (
+  ({ children, state = 'idle', focused = false, checked = false, onClick, ...base }, ref) => (
     <div
       data-testid={baseProps(base, 'data-testid', 'control-box')}
       ref={ref}
@@ -24,7 +24,7 @@ export const ControlBox = forwardRef<HTMLDivElement, ControlBoxProps>(
         [cn.Error]: state === 'error',
         [cn.Success]: state === 'success',
       })}
-      onClick={() => onClick()}
+      onClick={() => onClick?.()}
     >
       {children}
     </div>

@@ -83,7 +83,6 @@ export const WithBaseBehavior: Story = {
   },
   play: async ({ args, canvasElement, step }) => {
     await step('Base interface is implemented correctly', async () => {
-      await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toBeInTheDocument();
       await expect(within(canvasElement).getByTestId(String(args['data-testid']))).toHaveClass(String(args.className));
     });
   },
