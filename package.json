@@ -25,7 +25,8 @@
     "prettier:fix": "prettier --write --log-level=log .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "vitest --project=storybook"
+    "test-storybook": "vitest run --project=storybook",
+    "test-storybook:coverage": "vitest run --project=storybook --coverage"
   },
   "peerDependencies": {
     "@types/react-signature-canvas": "^1.0.7",

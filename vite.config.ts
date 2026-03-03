@@ -73,6 +73,23 @@ export default defineConfig({
     },
   },
   test: {
+    pool: 'forks',
+    fileParallelism: false,
+    maxWorkers: 1,
+    coverage: {
+      provider: 'v8',
+      reporter: ['json-summary'],
+      reportsDirectory: './coverage/storybook',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/**/*.stories.ts',
+        'src/**/*.stories.tsx',
+        'src/**/*.test.ts',
+        'src/**/*.test.tsx',
+        'src/**/*.mdx',
+        '**/node_modules/**',
+      ],
+    },
     projects: [
       {
         extends: true,
