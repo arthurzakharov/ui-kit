@@ -6,6 +6,8 @@ import url from 'node:url';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
+
+// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
@@ -61,23 +63,18 @@ export default defineConfig({
       },
     },
   },
-  test: {
-    resolveSnapshotPath: (testPath, snapExtension) =>
-      path.resolve(path.dirname(testPath), `${path.basename(testPath)}${snapExtension}`),
-    coverage: {
-      provider: 'v8',
-      reportsDirectory: './coverage',
-      exclude: ['./**/index.ts', './**/*.stories.ts', './**/*.stories.tsx', './**/*.css'],
+  resolve: {
+    alias: {
+      '@story': path.resolve(__dirname, '.storybook'),
+      '@animations': path.resolve(__dirname, './src/animations'),
+      '@controls': path.resolve(__dirname, './src/controls'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@styles': path.resolve(__dirname, './src/styles'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     },
+  },
+  test: {
     projects: [
-      {
-        extends: true,
-        test: {
-          name: 'unit',
-          environment: 'jsdom',
-          include: ['src/**/*.test.{ts,tsx}'],
-        },
-      },
       {
         extends: true,
         plugins: [
@@ -103,15 +100,5 @@ export default defineConfig({
         },
       },
     ],
-  },
-  resolve: {
-    alias: {
-      '@story': path.resolve(__dirname, '.storybook'),
-      '@animations': path.resolve(__dirname, './src/animations'),
-      '@controls': path.resolve(__dirname, './src/controls'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@styles': path.resolve(__dirname, './src/styles'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-    },
   },
 });
