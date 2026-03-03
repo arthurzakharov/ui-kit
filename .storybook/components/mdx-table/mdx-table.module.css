@@ -38,8 +38,8 @@ table {
     sans-serif;
 }
 
-.Table thead th:first-of-type,
-.Table thead td:first-of-type {
+.Table thead th:not(:last-of-type),
+.Table thead td:not(:last-of-type) {
   width: 25%;
   padding-left: 20px;
 }
@@ -73,7 +73,7 @@ table {
   border-top: 1px solid rgba(38, 74, 115, 0.15);
 }
 
-.Table tbody > tr > td:first-of-type {
+.Table tbody > tr > td:not(:last-of-type) {
   padding-left: 20px;
   font-weight: bold;
 }

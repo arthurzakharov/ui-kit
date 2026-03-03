@@ -27,7 +27,8 @@ and `align` directly, or use a `preset` to apply a predefined combination.
     <Text preset="page-title">
       Wellcome to our page
     </Text>`
-  }
+
+}
 />
 
 #### Usage without `preset`
@@ -47,33 +48,46 @@ and `align` directly, or use a `preset` to apply a predefined combination.
     >
       Wellcome to our page
     </Text>`
-  }
+
+}
 />
 
 #### Preset Matrix
 
 All available `Text` presets:
 
-<MdxTable label="Preset" items={TEXT_PRESET} render={(preset) => <Text preset={preset}>Preview for {preset}</Text>} />
+<MdxTable
+  label={['Preset']}
+  items={TEXT_PRESET.map((preset) => [preset])}
+  render={([preset]) => <Text preset={preset}>Preview for {preset}</Text>}
+/>
 
 #### Size Matrix
 
 All available `Text` sizes:
 
-<MdxTable label="Size" items={FONT_SIZE} render={(size) => <Text size={size}>Sample text in {size}</Text>} />
+<MdxTable
+  label={['Size']}
+  items={FONT_SIZE.map((size) => [size])}
+  render={([size]) => <Text size={size}>Sample text in {size}</Text>}
+/>
 
 #### Weight Matrix
 
 All available `Text` weights:
 
 <MdxTable
-  label="Weight"
-  items={FONT_WEIGHT}
-  render={(weight) => <Text weight={weight}>Sample text in {weight}</Text>}
+  label={['Weight']}
+  items={FONT_WEIGHT.map((weight) => [weight])}
+  render={([weight]) => <Text weight={weight}>Sample text in {weight}</Text>}
 />
 
 #### Color Matrix
 
 All available `Text` colors:
 
-<MdxTable label="Color" items={FONT_COLOR} render={(color) => <Text color={color}>Sample text in {color}</Text>} />
+<MdxTable
+  label={['Color']}
+  items={FONT_COLOR.map((color) => [color])}
+  render={([color]) => <Text color={color}>Sample text in {color}</Text>}
+/>

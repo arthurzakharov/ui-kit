@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import cn from '@story/components/mdx-table/mdx-table.module.css';
 
 type MdxTableProps = {
-  label: string;
-  items: string[];
-  render: (item: string) => ReactNode;
+  label: string[];
+  items: string[][];
+  render: (item: string[]) => ReactNode;
 };
 
 export const MdxTable = ({ label, items, render }: MdxTableProps) => {
@@ -14,16 +14,20 @@ export const MdxTable = ({ label, items, render }: MdxTableProps) => {
       <table className={cn.Table}>
         <thead>
           <tr>
-            <th>{label}</th>
+            {label.map((header) => (
+              <th key={header}>{header}</th>
+            ))}
             <th>Preview</th>
           </tr>
         </thead>
         <tbody>
           {items.map((item) => (
-            <tr key={item}>
-              <td>
-                <span>{item}</span>
-              </td>
+            <tr key={item.join('|')}>
+              {item.map((cell, index) => (
+                <td key={`${cell}-${index}`}>
+                  <span>{cell}</span>
+                </td>
+              ))}
               <td>{render(item)}</td>
             </tr>
           ))}
