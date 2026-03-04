@@ -187,8 +187,6 @@ export const Date: Story = {
       await userEvent.keyboard('{ArrowLeft}');
       await userEvent.keyboard('{ArrowLeft}');
       await userEvent.keyboard('{Backspace}');
-      await expect(input).toHaveValue('01/01/2025');
-      await userEvent.keyboard('{Backspace}');
       await expect(input).toHaveValue('01/0M/2025');
       await userEvent.keyboard('2');
       await expect(input).toHaveValue('01/02/2025');

@@ -1,4 +1,4 @@
-import { type ChangeEvent, type KeyboardEvent, useCallback, useEffect, useState, useRef } from 'react';
+import { type ChangeEvent, type KeyboardEvent, useCallback, useEffect, useState, useRef, useLayoutEffect } from 'react';
 import clsx from 'clsx';
 import type { Interactive } from '@controls/utils/types';
 import { useControlInteraction } from '@controls/hooks';
@@ -10,7 +10,6 @@ import {
   isDigit,
   isSeparator,
   replaceCharByIndex,
-  setCursorPosition,
 } from '@controls/control-input/control-input.utils';
 import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';
@@ -47,6 +46,7 @@ export const ControlInput = ({
 
   const inputRef = useRef<HTMLInputElement>(null);
   const isInternalUpdate = useRef(false);
+  const pendingCursorPos = useRef<number | null>(null);
   const [inputValue, setInputValue] = useState<string>(value || mask);
 
   const handleDateChange = useCallback(
@@ -74,10 +74,10 @@ export const ControlInput = ({
           const nextChar = getNextChar(before + after, currentCursor) || '';
           setInputValue(updatedInputValue);
           // Skip over separators when moving the caret.
-          setCursorPosition(inputRef, isSeparator(nextChar, mask) && nextChar ? currentCursor + 1 : currentCursor);
+          pendingCursorPos.current = isSeparator(nextChar, mask) && nextChar ? currentCursor + 1 : currentCursor;
         } else {
           setInputValue(newInputValue);
-          setCursorPosition(inputRef, cursor);
+          pendingCursorPos.current = cursor;
         }
         // Mark as internal to trigger controlled emit flow.
         isInternalUpdate.current = true;
@@ -90,16 +90,16 @@ export const ControlInput = ({
         const newChar = e.target.value.slice(cursor, cursor + 1);
         if (isDigit(newChar)) {
           setInputValue(replaceCharByIndex(inputValue, cursor + 1, newChar));
-          setCursorPosition(inputRef, cursor + 2);
+          pendingCursorPos.current = cursor + 2;
         } else {
-          setCursorPosition(inputRef, firstNotEnteredCharIndex - 1);
+          pendingCursorPos.current = firstNotEnteredCharIndex - 1;
         }
         isInternalUpdate.current = true;
         return;
       }
 
       // Reject invalid input and restore caret.
-      setCursorPosition(inputRef, firstNotEnteredCharIndex);
+      pendingCursorPos.current = firstNotEnteredCharIndex;
     },
     [inputValue, mask],
   );
@@ -117,10 +117,24 @@ export const ControlInput = ({
           const newInputValue = applyMask(inputValue, mask, cursor - 1);
           setInputValue(newInputValue);
           // Reset caret after controlled value update.
-          setCursorPosition(inputRef, newCursor);
+          pendingCursorPos.current = newCursor;
           // Mark as internal to keep effect flow consistent.
           isInternalUpdate.current = true;
         }
+      }
+      if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
+        // We use a tiny timeout or requestAnimationFrame because we need
+        // the browser to finish moving the cursor before we check where it landed.
+        requestAnimationFrame(() => {
+          if (!inputRef.current) return;
+          const cursor = inputRef.current.selectionEnd || 0;
+          const charAtCursor = inputValue[e.code === 'ArrowLeft' ? cursor - 1 : cursor];
+
+          if (isSeparator(charAtCursor, mask)) {
+            const newPos = e.code === 'ArrowLeft' ? cursor - 1 : cursor + 1;
+            inputRef.current.setSelectionRange(newPos, newPos);
+          }
+        });
       }
     },
     [inputValue, mask],
@@ -129,8 +143,13 @@ export const ControlInput = ({
   const handleDateFocus = useCallback(() => {
     handleFocus();
     // If date is not complete, set cursor to the first not entered character
-    const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
-    if (cursor !== inputValue.length) setCursorPosition(inputRef, cursor);
+    requestAnimationFrame(() => {
+      if (!inputRef.current) return;
+      const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
+      if (cursor !== inputValue.length) {
+        inputRef.current.setSelectionRange(cursor, cursor);
+      }
+    });
   }, [inputValue, mask, handleFocus]);
 
   useEffect(() => {
@@ -145,6 +164,13 @@ export const ControlInput = ({
       emitChange(inputValue !== mask ? inputValue : '', 'keyboard');
     }
   }, [inputValue, mask]);
+
+  useLayoutEffect(() => {
+    if (pendingCursorPos.current !== null && inputRef.current) {
+      inputRef.current.setSelectionRange(pendingCursorPos.current, pendingCursorPos.current);
+      pendingCursorPos.current = null;
+    }
+  }, [inputValue]);
 
   return mask ? (
     <input
