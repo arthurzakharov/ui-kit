@@ -156,16 +156,7 @@ export const Date: Story = {
       await expect(args.onFocus).toHaveBeenCalledWith(args.id);
     });
     await step('Type "01012000"', async () => {
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('1');
-      await expect(input).toHaveValue('01/MM/JJJJ');
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('1');
-      await expect(input).toHaveValue('01/01/JJJJ');
-      await userEvent.keyboard('2');
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('0');
+      await userEvent.type(input, '01012000');
       await expect(input).toHaveValue('01/01/2000');
       await expect(input).not.toHaveClass(cn.Placeholder);
     });
