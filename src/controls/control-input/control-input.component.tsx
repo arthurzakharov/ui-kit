@@ -142,15 +142,18 @@ export const ControlInput = ({
 
   const handleDateFocus = useCallback(() => {
     handleFocus();
-    // If date is not complete, set cursor to the first not entered character
+    // If date is not complete, set cursor to the first not entered character.
+    // Use the live DOM value instead of captured state to avoid stale cursor jumps
+    // when typing starts immediately after focus.
     requestAnimationFrame(() => {
       if (!inputRef.current) return;
-      const cursor = getFirstNotEnteredCharIndex(inputValue, mask);
-      if (cursor !== inputValue.length) {
+      const currentValue = inputRef.current.value;
+      const cursor = getFirstNotEnteredCharIndex(currentValue, mask);
+      if (cursor !== currentValue.length) {
         inputRef.current.setSelectionRange(cursor, cursor);
       }
     });
-  }, [inputValue, mask, handleFocus]);
+  }, [mask, handleFocus]);
 
   useEffect(() => {
     if (!isInternalUpdate.current) {
