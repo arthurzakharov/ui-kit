@@ -5,19 +5,33 @@ import * as stories from './control-input.stories';
 
 <Title />
 
-<Subtitle>📥 Text input field with optional date masking</Subtitle>
+<Subtitle>📥 Text input field with optional date masking.</Subtitle>
 
-`ControlInput` renders a single-line text input. Supports optional date masking (DD/MM/YYYY) and various input types. Use it for short text entries like names, emails, or dates.
+#### Implements interfaces:
 
-#### Params of <b>ControlInput</b>
+- `Interactive<string>`: This interface includes `id`, `value`, `disabled`, `onChange`, `onFocus`, `onBlur`.
+- `Base`: This interface includes basic properties such as `className` and `data-testid`.
+
+#### Description
+
+`ControlInput` renders a single-line text input. Supports optional date masking `TT/MM/JJJJ` style or
+`text` input. This is a controlled component, so the value is managed by the parent component and passed
+down via props. This component is designed to be flexible and can be used in various contexts where user
+input is required.
+
+#### Params of ControlInput
 
 <ArgTypes of={stories.Text} />
 
-#### Interactive Example
+#### Interactive Example With Prefilled Value `Text` case
 
 <Canvas of={stories.Text} />
 
-#### Usage
+#### Interactive Example With Prefilled Value `Date Mask` case
+
+<Canvas of={stories.Date} />
+
+#### Usage for `Text` case
 
 <Source
   language="tsx"
@@ -25,17 +39,37 @@ import * as stories from './control-input.stories';
     `import { ControlInput } from '@controls/control-input';
 
     <ControlInput
-      id="name"
-      value={name}
-      type="text"
-      masked={false}
+      id="input-field"
+      value={value}
       disabled={false}
-      maxLength={50}
-      onChange={(val, id) => setName(val)}
-      onFocus={(id) => console.log('focused')}
-      onBlur={(id) => console.log('blurred')}
-      onAutofill={(id) => console.log('autofilled')}
-      onAutofillCancel={(id) => console.log('autofill cancelled')} d
+      onChange={(val, id, source) => {}}
+      onFocus={(id) => {}}
+      onBlur={(id) => {}}
+      maxLength={10}
+      onAutofill={(id) => {}}
+      onAutofillCancel={(id) => {}}
+    />`
+
+}
+/>
+
+#### Usage for `Date Mask` case
+
+<Source
+  language="tsx"
+  code={
+    `import { ControlInput } from '@controls/control-input';
+
+    <ControlInput
+      id="input-field"
+      value={value}
+      disabled={false}
+      onChange={(val, id, source) => {}}
+      onFocus={(id) => {}}
+      onBlur={(id) => {}}
+      mask="TT/MM/JJJJ"
+      onAutofill={(id) => {}}
+      onAutofillCancel={(id) => {}}
     />`
 
 }

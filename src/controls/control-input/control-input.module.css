@@ -27,18 +27,13 @@
 .ControlInput:autofill:hover,
 .ControlInput:autofill:focus,
 .ControlInput:autofill:active {
+  -webkit-text-fill-color: var(--rm-ui-color-text-primary);
   background: transparent;
   transition: background 7200s ease-in-out 0s;
 }
 
 .ControlInput:-webkit-autofill {
   animation-name: autofill-start;
-  animation-duration: 0.1s;
-  -webkit-text-fill-color: var(--rm-ui-color-text-primary);
-}
-
-.ControlInput:not(:-webkit-autofill) {
-  animation-name: autofill-cancel;
   animation-duration: 0.1s;
 }
 
@@ -48,7 +43,4 @@
 }
 
 @keyframes autofill-start {
-}
-
-@keyframes autofill-cancel {
 }

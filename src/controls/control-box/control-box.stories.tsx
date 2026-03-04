@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SizeBox } from '@utils/story/size-box/size-box.component';
-import { BooleanArgType, CallbackArgType, StateArgType } from '@utils/story/arg-types';
+import { BooleanArgType, FnArgType, StateArgType } from '@utils/story/arg-types';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { ControlBox } from '@controls/control-box';
 import cn from '@controls/control-box/control-box.module.css';
@@ -17,7 +17,7 @@ const meta = {
     state: StateArgType({ description: 'The visual state of the control' }),
     focused: BooleanArgType({ description: 'Whether the control is focused' }),
     checked: BooleanArgType({ description: 'Whether the control is checked' }),
-    onClick: CallbackArgType({ description: 'Click event handler for the control' }),
+    onClick: FnArgType({ description: 'Click event handler for the control' }),
   },
   render: (args) => (
     <ControlBox {...args}>

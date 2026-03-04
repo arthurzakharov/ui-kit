@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlRadioText } from '@controls/control-radio-text';
-import { ClassNameArgType, ControlRadioTextColorArgType, ControlRadioTextSizeArgType } from '@utils/story/arg-types';
+import { ControlRadioTextColorArgType, ControlRadioTextSizeArgType } from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlRadioText',
@@ -16,7 +16,6 @@ const meta = {
       control: 'boolean',
       description: 'Whether the text should be truncated to one line',
     },
-    className: ClassNameArgType({ defaultValue: '' }),
   },
   render: (args) => <ControlRadioText {...args}>Lorem ipsum dolor sit amet</ControlRadioText>,
 } satisfies Meta<typeof ControlRadioText>;

@@ -1,12 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlButton } from '@controls/control-button';
 import { expect, fn, within } from 'storybook/test';
-import {
-  ClassNameArgType,
-  ControlButtonColorArgType,
-  ControlButtonSizeArgType,
-  ControlButtonTypeArgType,
-} from '@utils/story/arg-types';
+import { ControlButtonColorArgType, ControlButtonSizeArgType, ControlButtonTypeArgType } from '@utils/story/arg-types';
 
 const meta = {
   title: 'Controls/ControlButton',
@@ -30,7 +25,6 @@ const meta = {
     onClick: { action: 'clicked', description: 'Function called when the button is clicked' },
     onFocus: { action: 'focused', description: 'Function called when the button is focused' },
     onBlur: { action: 'blurred', description: 'Function called when the button loses focus' },
-    className: ClassNameArgType({ defaultValue: '' }),
   },
   render: (args) => <ControlButton {...args}>Go next step</ControlButton>,
 } satisfies Meta<typeof ControlButton>;

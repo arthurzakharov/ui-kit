@@ -1,12 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlButtonText } from '@controls/control-button-text';
-import {
-  ClassNameArgType,
-  ControlButtonColorArgType,
-  ControlButtonSizeArgType,
-  FontWeightArgType,
-} from '@utils/story/arg-types';
+import { ControlButtonColorArgType, ControlButtonSizeArgType, FontWeightArgType } from '@utils/story/arg-types';
 import { fn } from 'storybook/test';
 
 const meta = {
@@ -46,7 +41,6 @@ const meta = {
     onClick: { action: 'clicked', description: 'Function called when the button is clicked' },
     onFocus: { action: 'focused', description: 'Function called when the button is focused' },
     onBlur: { action: 'blurred', description: 'Function called when the button loses focus' },
-    className: ClassNameArgType({ defaultValue: '' }),
   },
   render: (args) => <ControlButtonText {...args}>Button Text</ControlButtonText>,
 } satisfies Meta<typeof ControlButtonText>;

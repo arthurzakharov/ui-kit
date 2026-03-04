@@ -1,13 +1,5 @@
 import { useBoolean } from 'usehooks-ts';
-import type { InputChangeSource } from '@controls/utils/types';
-
-type UseControlInteractionParams<V> = {
-  id: string;
-  disabled?: boolean;
-  onChange: (value: V, id: string, source?: InputChangeSource) => void;
-  onFocus?: (id: string) => void;
-  onBlur?: (id: string) => void;
-};
+import type { InputChangeSource, Interactive } from '@controls/utils/types';
 
 export const useControlInteraction = <V>({
   id,
@@ -15,7 +7,7 @@ export const useControlInteraction = <V>({
   onChange,
   onFocus,
   onBlur,
-}: UseControlInteractionParams<V>) => {
+}: Pick<Interactive<V>, 'id' | 'disabled' | 'onChange' | 'onFocus' | 'onBlur'>) => {
   const { value: focused, setTrue: focus, setFalse: blur } = useBoolean(false);
 
   const emitChange = (value: V, source?: InputChangeSource) => {

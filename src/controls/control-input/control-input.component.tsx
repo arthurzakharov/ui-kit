@@ -1,13 +1,12 @@
 import {
-  useCallback,
-  useRef,
-  type HTMLInputTypeAttribute,
   type ChangeEvent,
   type FocusEvent,
   type KeyboardEvent,
   type MouseEvent,
+  useCallback,
   useEffect,
   useState,
+  useRef,
 } from 'react';
 import clsx from 'clsx';
 import type { Interactive } from '@controls/utils/types';
@@ -22,41 +21,39 @@ import {
   replaceCharByIndex,
   setCursorPosition,
 } from '@controls/control-input/control-input.utils';
+import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';
 import cn from '@controls/control-input/control-input.module.css';
-import { baseProps } from '@utils/functions';
 
-export interface ControlInputProps extends Base, Interactive<string> {
-  type?: HTMLInputTypeAttribute;
-  masked?: boolean;
+export interface ControlInputProps extends Interactive<string>, Base {
   mask?: string;
   maxLength?: number;
-  onAutofill?: (id: string) => void;
-  onAutofillCancel?: (id: string) => void;
+  onAnimationStart?: (id: string) => void;
 }
 
 export const ControlInput = ({
+  // Interactive props
   id,
   value = '',
   disabled = false,
-  masked = false,
-  mask = 'DD/MM/YYYY',
-  maxLength,
-  type = 'text',
-  onAutofill,
-  onAutofillCancel,
   onChange,
   onFocus,
   onBlur,
+  // ControlInput specific props
+  maxLength,
+  mask = '',
+  onAnimationStart,
+  // Base props
   ...base
 }: ControlInputProps) => {
-  const { emitChange, handleFocus, handleBlur } = useControlInteraction<string>({
+  const { emitChange, handleFocus, handleBlur } = useControlInteraction({
     id,
     disabled,
     onChange,
     onFocus,
     onBlur,
   });
+
   const inputRef = useRef<HTMLInputElement>(null);
   const isInternalUpdate = useRef(false);
   const [inputValue, setInputValue] = useState<string>(value || mask);
@@ -166,7 +163,7 @@ export const ControlInput = ({
     }
   }, [inputValue, mask]);
 
-  return masked ? (
+  return mask ? (
     <input
       ref={inputRef}
       data-testid={baseProps(base, 'data-testid', 'input')}
@@ -176,10 +173,11 @@ export const ControlInput = ({
       name={id}
       value={inputValue}
       className={clsx(cn.ControlInput, baseProps(base, 'className'), { [cn.Placeholder]: inputValue === mask })}
-      onKeyDown={handleKeyStroke}
-      onChange={handleInputChange}
       onClick={handleInputClick}
       onDoubleClick={handleInputClick}
+      onKeyDown={handleKeyStroke}
+      onChange={handleInputChange}
+      onAnimationStart={(e) => onAnimationStart?.(e.currentTarget.id)}
       onFocus={handleInputFocus}
       onBlur={handleInputBlur}
     />
@@ -188,19 +186,13 @@ export const ControlInput = ({
       data-testid={baseProps(base, 'data-testid', 'input')}
       disabled={disabled}
       maxLength={maxLength}
-      type={type}
+      type="text"
       id={id}
       name={id}
       value={value}
       className={clsx(cn.ControlInput, baseProps(base, 'className'))}
       onChange={(e) => emitChange(e.target.value, 'keyboard')}
-      onAnimationStart={(e) => {
-        if (e.animationName === cn['autofill-start']) onAutofill?.call(null, id);
-        if (e.animationName === cn['autofill-cancel']) {
-          e.currentTarget.blur();
-          onAutofillCancel?.call(null, id);
-        }
-      }}
+      onAnimationStart={(e) => onAnimationStart?.(e.currentTarget.id)}
       onFocus={handleFocus}
       onBlur={handleBlur}
     />
