@@ -1,5 +1,3 @@
-import type { RefObject } from 'react';
-
 export const isDigit = (char: string) => /\d/.test(char);
 
 export const isSeparator = (char: string, mask: string) => !!char.match(getSeparatorRegExp(mask));
