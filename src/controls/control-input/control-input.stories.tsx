@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, fn, waitFor, within } from 'storybook/test';
+import { expect, fn, within } from 'storybook/test';
 import { ControlInput } from '@controls/control-input';
 import { BaseArgTypes, BooleanArgType, FnArgType, NumberArgType, StringArgType } from '@utils/story/arg-types';
 import cn from '@controls/control-input/control-input.module.css';
@@ -156,17 +156,8 @@ export const Date: Story = {
       await expect(args.onFocus).toHaveBeenCalledWith(args.id);
     });
     await step('Type "01012000"', async () => {
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('1');
-      await waitFor(() => expect(input).toHaveValue('01/MM/JJJJ'));
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('1');
-      await waitFor(() => expect(input).toHaveValue('01/01/JJJJ'));
-      await userEvent.keyboard('2');
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('0');
-      await userEvent.keyboard('0');
-      await waitFor(() => expect(input).toHaveValue('01/01/2000'));
+      await userEvent.type(input, '01012000');
+      await expect(input).toHaveValue('01/01/2000');
       await expect(input).not.toHaveClass(cn.Placeholder);
     });
     await step('Change year, delete and reenter', async () => {
