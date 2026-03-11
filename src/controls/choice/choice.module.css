@@ -2,27 +2,23 @@
   margin: 1px;
   position: relative;
   background-color: var(--rm-ui-card-background);
-  outline-offset: 0;
-  outline: 1px solid transparent;
   box-sizing: border-box;
   border-width: 2px;
   border-style: solid;
-  width: 18px;
-  height: 18px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   transition:
-    outline-color 0.15s ease-out,
-    background-color 0.15s ease-out,
-    border-color 0.15s ease-out;
+    opacity var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary),
+    background-color var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary),
+    border-color var(--rm-ui-amimation-speed-secondary) var(--rm-ui-amimation-cubic-primary);
 }
 
 /* States */
 
 .Focused:not(.Disabled) {
-  outline-color: var(--rm-ui-color-focus);
+  border-color: var(--rm-ui-color-focus) !important;
 }
 
 .Hovered.Idle {
@@ -30,7 +26,7 @@
 }
 
 .Disabled {
-  opacity: 0.33;
+  opacity: 0.4;
 }
 
 .Idle {
@@ -45,6 +41,19 @@
   border-color: var(--rm-ui-color-error);
 }
 
+.Mark {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  transition-delay: var(--rm-ui-amimation-speed-primary);
+  transition-duration: var(--rm-ui-amimation-speed-secondary);
+  transition-timing-function: var(--rm-ui-amimation-cubic-primary);
+}
+
 /* Radio styles */
 
 .Radio {
@@ -53,6 +62,7 @@
 
 .Radio.Checked.Idle,
 .Radio.Checked.Success {
+  border-color: var(--rm-ui-color-action);
   background-color: var(--rm-ui-color-action);
 }
 
@@ -61,13 +71,7 @@
 }
 
 .Radio .Mark {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
+  transition-property: background-color;
 }
 
 .Radio.XXS .Mark {
@@ -123,6 +127,7 @@
 
 .Checkbox.Checked.Idle,
 .Checkbox.Checked.Success {
+  border-color: var(--rm-ui-color-action);
   background-color: var(--rm-ui-color-action);
 }
 
@@ -131,14 +136,9 @@
 }
 
 .Checkbox .Mark {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
   stroke-width: 3px;
   stroke: transparent;
+  transition-property: stroke;
 }
 
 .Checkbox.XXS .Mark {

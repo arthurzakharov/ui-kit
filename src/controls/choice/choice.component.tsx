@@ -16,6 +16,7 @@ export interface ChoiceProps extends Base {
 }
 
 export const Choice = ({
+  // Choice props
   type,
   checked,
   state = 'idle',
@@ -23,6 +24,7 @@ export const Choice = ({
   focused = false,
   hovered = false,
   disabled = false,
+  // Base props
   ...base
 }: ChoiceProps) => (
   <div
