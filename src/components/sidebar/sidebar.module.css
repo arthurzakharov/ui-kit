@@ -41,6 +41,10 @@
   justify-content: flex-start;
 }
 
+.NothingAbove {
+  margin-top: var(--rm-ui-padding-lg);
+}
+
 @media screen and (min-width: 1024px) {
   .Board {
     padding: var(--rm-ui-padding-xl);

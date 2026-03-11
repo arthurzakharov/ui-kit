@@ -29,6 +29,7 @@ export interface SidebarProps extends PropsWithChildren<Base> {
 }
 
 export const Sidebar = ({
+  // Sidebar props
   children,
   isButtonVisible = false,
   isUserOpen = false,
@@ -37,53 +38,75 @@ export const Sidebar = ({
   info = [],
   certifications = [],
   user,
+  // Base props
   ...base
-}: SidebarProps) => (
-  <div
-    data-testid={baseProps(base, 'data-testid', 'sidebar')}
-    className={clsx(cn.Sidebar, baseProps(base, 'className'))}
-  >
-    <div className={cn.Board}>
-      <Text preset="sidebar-title" className={cn.SidebarTitle}>
-        {title}
-      </Text>
-      <div className={cn.Steps} data-testid="sidebar-steps">
-        {steps.map(({ state, text }) => (
-          <div key={text} className={cn.Step} data-testid="sidebar-step">
-            <Status state={state} />
-            <Text
-              tag="span"
-              weight="medium"
-              size="body-small"
-              color={state === 'idle' ? 'text-secondary' : 'text-primary'}
-            >
-              {text}
-            </Text>
+}: SidebarProps) => {
+  const visibleInfo = info.filter(([, value]) => value.trim() !== '');
+  const isInfoVisible = visibleInfo.length > 0;
+
+  return (
+    <div
+      data-testid={baseProps(base, 'data-testid', 'sidebar')}
+      className={clsx(cn.Sidebar, baseProps(base, 'className'))}
+    >
+      <div className={cn.Board}>
+        <Text preset="sidebar-title" className={cn.SidebarTitle}>
+          {title}
+        </Text>
+        <div className={cn.Steps} data-testid="sidebar-steps">
+          {steps.map(({ state, text }) => (
+            <div key={text} className={cn.Step} data-testid="sidebar-step">
+              <Status state={state} />
+              <Text
+                tag="span"
+                weight="medium"
+                size="body-small"
+                color={state === 'idle' ? 'text-secondary' : 'text-primary'}
+              >
+                {text}
+              </Text>
+            </div>
+          ))}
+        </div>
+        {isInfoVisible && (
+          <>
+            <Line />
+            <div className={cn.Info} data-testid="sidebar-info">
+              {visibleInfo.map(([key, value], index) => (
+                <div key={`${key}-${index}`} className={cn.InfoRow} data-testid="sidebar-info-row">
+                  <Text tag="span" size="body-small" color="text-secondary">
+                    {key}
+                  </Text>
+                  <Text tag="span" size="body-small" align="right">
+                    {value}
+                  </Text>
+                </div>
+              ))}
+            </div>
+            <Line />
+          </>
+        )}
+        <FadeScale name="user" condition={isUserOpen}>
+          {!isInfoVisible && <Line />}
+          <UserPanel title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
+          <Line />
+        </FadeScale>
+        <FadeScale name="button" condition={isButtonVisible}>
+          <div
+            className={clsx(cn.SidebarButton, {
+              [cn.NothingAbove]: !isInfoVisible && !isUserOpen,
+            })}
+          >
+            {children}
           </div>
-        ))}
+        </FadeScale>
+        <Certifications
+          icons={certifications}
+          className={clsx({
+            [cn.NothingAbove]: !isInfoVisible && !isUserOpen && !isButtonVisible,
+          })}
+        />
       </div>
-      <Line />
-      <div className={cn.Info} data-testid="sidebar-info">
-        {info.map(([key, value], index) => (
-          <div key={`${key}-${index}`} className={cn.InfoRow} data-testid="sidebar-info-row">
-            <Text tag="span" size="body-small" color="text-secondary">
-              {key}
-            </Text>
-            <Text tag="span" size="body-small" align="right">
-              {value}
-            </Text>
-          </div>
-        ))}
-      </div>
-      <Line />
-      <FadeScale name="user" condition={isUserOpen}>
-        <UserPanel title={user.title} button={user.button} data={user.data} onClick={user.onClick} />
-        <Line />
-      </FadeScale>
-      <FadeScale name="button" condition={isButtonVisible}>
-        <div className={cn.SidebarButton}>{children}</div>
-      </FadeScale>
-      <Certifications icons={certifications} />
     </div>
-  </div>
-);
+  );
+};

@@ -16,8 +16,7 @@ const meta = {
       { state: 'idle', text: 'Bestätigung' },
     ],
     info: [
-      ['Absicht:', 'Unbefristetes Aufenthaltsrecht / Niederlassungserlaubnis'],
-      ['Monatsrate', '39,99 €'],
+      ['Monatsrate', '100 €'],
     ],
     user: {
       title: 'Max Mustermann',
