@@ -107,7 +107,7 @@
   --rm-ui-content-bg: #ffffff;
   --rm-ui-amimation-speed-primary: 150ms;
   --rm-ui-amimation-speed-secondary: 300ms;
-  --rm-ui-amimation-speed-tertiary: 400ms;
+  --rm-ui-amimation-speed-tertiary: 450ms;
   --rm-ui-amimation-cubic-primary: cubic-bezier(0.3, 0, 0, 1);
   --rm-ui-amimation-cubic-secondary: cubic-bezier(0.65, 0, 0.35, 1);
   --rm-ui-amimation-cubic-tertiary: cubic-bezier(0.68, -0.6, 0.32, 1.6);

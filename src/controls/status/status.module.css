@@ -1,6 +1,4 @@
 .Status {
-  --timing-function: cubic-bezier(0.2, 0.9, 0.25, 1.35);
-  --duration: 200ms;
   position: relative;
   display: inline-flex;
 }
@@ -28,20 +26,9 @@
   width: 24px;
   height: 24px;
   stroke-width: 2px;
-  transition:
-    stroke var(--timing-function) var(--duration),
-    fill var(--timing-function) var(--duration),
-    fill-opacity var(--timing-function) var(--duration);
-}
-
-.Success > .Check,
-.Error > .X {
-  animation-name: scaleFade;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-duration: calc(var(--duration) * 2);
-  animation-delay: calc(var(--duration) / 2);
-  animation-timing-function: var(--timing-function);
+  transition-duration: var(--rm-ui-amimation-speed-secondary);
+  transition-timing-function: var(--rm-ui-amimation-cubic-primary);
+  transition-property: stroke, fill;
 }
 
 .Check,
@@ -52,25 +39,19 @@
   opacity: 0;
   width: 14px;
   height: 14px;
-  stroke-width: 1;
-  transform: translate(-50%, -50%) scale(0.75);
-  stroke: #ffffff;
+  stroke-width: 3;
+  stroke: var(--rm-ui-status-idle-color);
+  stroke-opacity: 0.1;
+  transform: translate(-50%, -50%);
+  transition-duration: var(--rm-ui-amimation-speed-secondary);
+  transition-delay: var(--rm-ui-amimation-speed-primary);
+  transition-timing-function: var(--rm-ui-amimation-cubic-primary);
+  transition-property: stroke, opacity;
 }
 
-@keyframes scaleFade {
-  0% {
-    opacity: 0;
-    stroke-width: 1;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-  65% {
-    opacity: 0.65;
-    stroke-width: 1.65;
-    transform: translate(-50%, -50%) scale(1.25);
-  }
-  100% {
-    opacity: 1;
-    stroke-width: 2.5;
-    transform: translate(-50%, -50%) scale(1);
-  }
+.Success > .Check,
+.Error > .X {
+  opacity: 1;
+  stroke: var(--rm-ui-content-bg);
+  stroke-opacity: 1;
 }
