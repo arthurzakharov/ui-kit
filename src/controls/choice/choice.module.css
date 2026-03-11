@@ -1,0 +1,232 @@
+.Choice {
+  margin: 1px;
+  position: relative;
+  background-color: var(--rm-ui-card-background);
+  outline-offset: 0;
+  outline: 1px solid transparent;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition:
+    outline-color 0.15s ease-out,
+    background-color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+/* States */
+
+.Focused:not(.Disabled) {
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.Hovered.Idle {
+  background-color: var(--rm-ui-grey-300);
+}
+
+.Disabled {
+  opacity: 0.33;
+}
+
+.Idle {
+  border-color: var(--rm-ui-grey-300);
+}
+
+.Success {
+  border-color: var(--rm-ui-color-action);
+}
+
+.Error {
+  border-color: var(--rm-ui-color-error);
+}
+
+/* Radio styles */
+
+.Radio {
+  border-radius: 100%;
+}
+
+.Radio.Checked.Idle,
+.Radio.Checked.Success {
+  background-color: var(--rm-ui-color-action);
+}
+
+.Radio.Checked.Error {
+  background-color: var(--rm-ui-color-error);
+}
+
+.Radio .Mark {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.Radio.XXS .Mark {
+  width: 5px;
+  height: 5px;
+}
+
+.Radio.XS .Mark {
+  width: 6px;
+  height: 6px;
+}
+
+.Radio.SM .Mark {
+  width: 7px;
+  height: 7px;
+}
+
+.Radio.MD .Mark {
+  width: 8px;
+  height: 8px;
+}
+
+.Radio.LG .Mark {
+  width: 9px;
+  height: 9px;
+}
+
+.Radio.XL .Mark {
+  width: 10px;
+  height: 10px;
+}
+
+.Radio.XXL .Mark {
+  width: 11px;
+  height: 11px;
+}
+
+.Radio.XXXL .Mark {
+  width: 12px;
+  height: 12px;
+}
+
+.Radio.Checked .Mark,
+.Radio.Hovered .Mark {
+  background-color: var(--rm-ui-card-background);
+}
+
+/* Checkbox styles */
+
+.Checkbox {
+  border-radius: 4px;
+}
+
+.Checkbox.Checked.Idle,
+.Checkbox.Checked.Success {
+  background-color: var(--rm-ui-color-action);
+}
+
+.Checkbox.Checked.Error {
+  background-color: var(--rm-ui-color-error);
+}
+
+.Checkbox .Mark {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  stroke-width: 3px;
+  stroke: transparent;
+}
+
+.Checkbox.XXS .Mark {
+  width: 4px;
+  height: 4px;
+}
+
+.Checkbox.XS .Mark {
+  width: 6px;
+  height: 6px;
+}
+
+.Checkbox.XS .Mark {
+  width: 8px;
+  height: 8px;
+}
+
+.Checkbox.SM .Mark {
+  width: 10px;
+  height: 10px;
+}
+
+.Checkbox.MD .Mark {
+  width: 12px;
+  height: 12px;
+}
+
+.Checkbox.LG .Mark {
+  width: 14px;
+  height: 14px;
+}
+
+.Checkbox.XL .Mark {
+  width: 16px;
+  height: 16px;
+}
+
+.Checkbox.XXL .Mark {
+  width: 18px;
+  height: 18px;
+}
+
+.Checkbox.XXXL .Mark {
+  width: 20px;
+  height: 20px;
+}
+
+.Checkbox.Checked .Mark,
+.Checkbox.Hovered .Mark {
+  stroke: var(--rm-ui-card-background);
+}
+
+.XXS {
+  width: 12px;
+  height: 12px;
+}
+
+.XS {
+  width: 14px;
+  height: 14px;
+}
+
+.SM {
+  width: 16px;
+  height: 16px;
+}
+
+.MD {
+  width: 18px;
+  height: 18px;
+}
+
+.LG {
+  width: 20px;
+  height: 20px;
+}
+
+.XL {
+  width: 22px;
+  height: 22px;
+}
+
+.XXL {
+  width: 24px;
+  height: 24px;
+}
+
+.XXXL {
+  width: 26px;
+  height: 26px;
+}

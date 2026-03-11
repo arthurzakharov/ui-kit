@@ -1,0 +1,76 @@
+.Status {
+  --timing-function: cubic-bezier(0.2, 0.9, 0.25, 1.35);
+  --duration: 200ms;
+  position: relative;
+  display: inline-flex;
+}
+
+.Idle > .Circle {
+  stroke: var(--rm-ui-status-idle-color);
+  fill: var(--rm-ui-status-idle-color);
+  fill-opacity: 0.1;
+}
+
+.Success > .Circle {
+  stroke: var(--rm-ui-status-success-color);
+  fill: var(--rm-ui-status-success-color);
+  fill-opacity: 1;
+}
+
+.Error > .Circle {
+  stroke: var(--rm-ui-status-error-color);
+  fill: var(--rm-ui-status-error-color);
+  fill-opacity: 1;
+}
+
+.Circle {
+  flex-basis: 100%;
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  transition:
+    stroke var(--timing-function) var(--duration),
+    fill var(--timing-function) var(--duration),
+    fill-opacity var(--timing-function) var(--duration);
+}
+
+.Success > .Check,
+.Error > .X {
+  animation-name: scaleFade;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-duration: calc(var(--duration) * 2);
+  animation-delay: calc(var(--duration) / 2);
+  animation-timing-function: var(--timing-function);
+}
+
+.Check,
+.X {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  width: 14px;
+  height: 14px;
+  stroke-width: 1;
+  transform: translate(-50%, -50%) scale(0.75);
+  stroke: #ffffff;
+}
+
+@keyframes scaleFade {
+  0% {
+    opacity: 0;
+    stroke-width: 1;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  65% {
+    opacity: 0.65;
+    stroke-width: 1.65;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  100% {
+    opacity: 1;
+    stroke-width: 2.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

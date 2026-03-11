@@ -1,0 +1,47 @@
+.FormRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.XXS {
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.XS {
+  gap: var(--rm-ui-padding-xs);
+}
+
+.SM {
+  gap: var(--rm-ui-padding-sm);
+}
+
+.MD {
+  gap: var(--rm-ui-padding-md);
+}
+
+.LG {
+  gap: var(--rm-ui-padding-xl);
+}
+
+.XL {
+  gap: var(--rm-ui-padding-xl);
+}
+
+.XXL {
+  gap: var(--rm-ui-padding-xxl);
+}
+
+.XXXL {
+  gap: var(--rm-ui-padding-xxxl);
+}
+
+.Child {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .FormRow {
+    flex-direction: row;
+  }
+}

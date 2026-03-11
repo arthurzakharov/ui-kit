@@ -1,0 +1,139 @@
+.DialogArticle {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Buttons {
+  position: fixed;
+  bottom: var(--rm-ui-padding-lg);
+  left: var(--rm-ui-padding-lg);
+  right: var(--rm-ui-padding-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rm-ui-padding-sm);
+  background-color: var(--rm-ui-content-bg);
+}
+
+.DialogArticle *[class='h1'],
+.DialogArticle h1 {
+  margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl1);
+  line-height: var(--rm-ui-line-height-hl1);
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.DialogArticle *[class='h2'],
+.DialogArticle h2 {
+  margin: var(--rm-ui-padding-lg) 0 var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl2);
+  line-height: var(--rm-ui-line-height-hl2);
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.DialogArticle *[class='h3'],
+.DialogArticle h3,
+.DialogArticle *[class='h4'],
+.DialogArticle h4,
+.DialogArticle *[class='h5'],
+.DialogArticle h5,
+.DialogArticle *[class='h6'],
+.DialogArticle h6 {
+  margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.DialogArticle *[class='p'],
+.DialogArticle p {
+  margin: 0 0 var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.DialogArticle *[class='a'],
+.DialogArticle a {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-link);
+  text-decoration: none;
+}
+
+.DialogArticle *[class='a']:hover,
+.DialogArticle a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.DialogArticle *[class='b'],
+.DialogArticle b,
+.DialogArticle *[class='strong'],
+.DialogArticle strong {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.DialogArticle *[class='ul'],
+.DialogArticle ul,
+.DialogArticle *[class='ol'],
+.DialogArticle ol {
+  padding-left: var(--rm-ui-padding-xxl);
+  margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
+}
+
+.DialogArticle *[class='ul'],
+.DialogArticle ul {
+  list-style: disc;
+}
+
+.DialogArticle *[class='ol'],
+.DialogArticle ol {
+  list-style: decimal;
+}
+
+.DialogArticle *[class='li'],
+.DialogArticle li {
+  padding-bottom: var(--rm-ui-padding-xs);
+}
+
+.DialogArticle *[class='table'],
+.DialogArticle table {
+  margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
+  width: 100%;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.DialogArticle *[class='hr'],
+.DialogArticle hr {
+  margin: var(--rm-ui-padding-md) 0;
+  border-width: 1px;
+  border-color: var(--rm-ui-color-text-primary);
+  border-bottom: none;
+}
+
+.DialogArticle *[class='center'] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .Buttons {
+    position: initial;
+    bottom: initial;
+    left: initial;
+    right: initial;
+  }
+}

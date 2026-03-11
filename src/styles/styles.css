@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--rm-ui-body-bg);
+  font-family: Lato, sans-serif;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  hyphens: manual;
+  white-space: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+h1 {
+  font-size: var(--rm-ui-font-size-hl1);
+  line-height: var(--rm-ui-line-height-hl1);
+}
+
+h2 {
+  font-size: var(--rm-ui-font-size-hl2);
+  line-height: var(--rm-ui-line-height-hl2);
+}
+
+h3 {
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
+}
+
+h4 {
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+}
+
+h5,
+h6 {
+  font-size: var(--rm-ui-font-size-hl5);
+  line-height: var(--rm-ui-line-height-hl5);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--rm-ui-border-radius-sm);
+  outline: 2px solid transparent;
+}
+
+button,
+*[role='button'] {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  hyphens: inherit;
+  white-space: inherit;
+  outline-offset: -2px;
+  outline: 2px solid transparent;
+}
+
+a:hover,
+button:hover,
+*[role='button']:hover {
+  cursor: pointer;
+}
+
+a:active,
+button:active,
+*[role='button']:active {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+*[role='button']:focus-visible {
+  outline-color: var(--rm-ui-color-focus);
+  outline-offset: -2px;
+  transition: outline-color var(--rm-ui-amimation-speed-primary) ease-in-out;
+  transition-delay: calc(var(--rm-ui-amimation-speed-primary) / 2);
+}
+
+.text-primary {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.text-secondary {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.fw-light {
+  font-weight: var(--rm-ui-font-weight-light);
+}
+
+.fw-regular {
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.fw-medium {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.fw-bold {
+  font-weight: var(--rm-ui-font-weight-bold);
+}

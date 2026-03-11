@@ -1,0 +1,36 @@
+.Information {
+  --gap: var(--rm-ui-padding-sm);
+  --icon: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap);
+  font-weight: var(--rm-ui-font-weight-light);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Icon {
+  position: relative;
+  top: 2px;
+  left: 0;
+  width: var(--icon);
+  height: var(--icon);
+  stroke-width: 1.5;
+}
+
+.Text {
+  flex-basis: calc(100% - var(--icon) - var(--gap));
+}
+
+.Text b,
+.Text strong {
+  font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.Text > p:not(:last-child) {
+  margin-bottom: var(--rm-ui-padding-xs);
+}

@@ -1,0 +1,49 @@
+.Expenses {
+  display: block;
+}
+
+.Title {
+  margin-bottom: var(--rm-ui-padding-md);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-hl4);
+  line-height: var(--rm-ui-line-height-hl4);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Content {
+  margin-bottom: var(--rm-ui-padding-md);
+}
+
+.Content,
+.SubContent {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Content > *[data-color='accent'],
+.SubContent > *[data-color='accent'] {
+  color: var(--rm-ui-color-accent-primary);
+}
+
+.Content > *[role='button'],
+.SubContent > *[role='button'],
+.Content > button,
+.SubContent > button {
+  color: var(--rm-ui-color-link);
+}
+
+.SubContent {
+  display: block;
+  margin-top: var(--rm-ui-padding-md);
+}
+
+.Amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-theme-primary);
+}

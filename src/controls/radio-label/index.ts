@@ -1,0 +1,1 @@
+export { RadioLabel, type RadioLabelProps } from './radio-label.component';

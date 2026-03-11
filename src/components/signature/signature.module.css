@@ -1,0 +1,155 @@
+.Signature {
+  background-color: transparent;
+}
+
+/* Main section */
+
+.Main {
+  --title-height: 40px;
+  --top-padding: calc(var(--rm-ui-padding-md) + var(--title-height));
+  --horizontal-padding: var(--rm-ui-padding-md);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--rm-ui-grey-300);
+  border-radius: var(--rm-ui-border-radius-sm);
+}
+
+.MainAuto {
+  padding: var(--top-padding) var(--horizontal-padding) var(--rm-ui-padding-md);
+}
+
+.MainManual {
+  padding: var(--top-padding) var(--horizontal-padding) var(--top-padding);
+}
+
+/* Footer Buttons */
+
+.Footer {
+  margin-top: var(--rm-ui-padding-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rm-ui-padding-md);
+}
+
+/* Header */
+
+.Header {
+  position: absolute;
+  z-index: 1;
+  top: var(--rm-ui-padding-md);
+  left: var(--rm-ui-padding-md);
+  right: var(--rm-ui-padding-md);
+  display: flex;
+}
+
+.HeaderTitle {
+  font-weight: var(--rm-ui-font-weight-medium);
+  text-align: center;
+}
+
+.HeaderManualDraw {
+  justify-content: flex-end;
+}
+
+.HeaderNotManualDraw {
+  justify-content: center;
+}
+
+.HeaderReset {
+  position: relative;
+  z-index: 1;
+}
+
+.HeaderReset:hover {
+  cursor: pointer !important;
+}
+
+/* Manual Mode */
+
+.ManualPanel {
+  height: 94px;
+}
+
+.ManualPanel > canvas,
+.ManualPanel > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ManualPanelButton {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--rm-ui-padding-md);
+  left: var(--rm-ui-padding-md);
+  right: var(--rm-ui-padding-md);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Auto Mode */
+
+.AutoPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.AutoPanelImage {
+  height: 46px;
+  max-width: 100%;
+  display: block;
+}
+
+.AutoPanelLoader {
+  height: 134px;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--rm-ui-padding-xs);
+}
+
+.AutoPanelButton {
+  margin: 8px 0;
+}
+
+.AutoPanelLabel {
+  margin: var(--rm-ui-padding-xs) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xxs);
+}
+
+.AutoPanelLabelIcon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--rm-ui-color-success);
+}
+
+.AutoPanelLabelText {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.AutoPanelError {
+  height: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rm-ui-padding-xs);
+}
+
+.AutoPanelErrorTitle {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+  color: var(--rm-ui-color-text-secondary);
+}

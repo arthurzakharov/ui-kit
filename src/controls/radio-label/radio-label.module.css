@@ -1,0 +1,7 @@
+.RadioLabel {
+  display: flex;
+}
+
+.RadioLabel:hover {
+  cursor: pointer;
+}

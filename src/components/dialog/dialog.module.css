@@ -1,0 +1,115 @@
+.Backdrop {
+  --backdrop-padding: 115px;
+  position: fixed;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  padding-top: var(--backdrop-padding);
+}
+
+.BackdropSizeFull .Dialog {
+  flex-basis: 100%;
+}
+
+.BackdropSizeFull .DialogContent {
+  overflow: initial;
+  max-height: initial;
+  padding-right: initial;
+  margin-right: initial;
+}
+
+.BackdropPositionCenter,
+.BackdropPositionTopCenter {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.Dialog {
+  flex-basis: 580px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--rm-ui-content-bg);
+  border-top-left-radius: var(--rm-ui-border-radius-xl);
+  border-top-right-radius: var(--rm-ui-border-radius-xl);
+  padding: var(--rm-ui-padding-lg) var(--rm-ui-padding-lg);
+}
+
+.DialogContent {
+  overflow: auto;
+  max-height: calc(100vh - var(--backdrop-padding) - var(--rm-ui-padding-xl) * 2);
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
+.DialogCloseButton {
+  position: absolute;
+  z-index: 100;
+  top: 12px;
+  right: 10px;
+  display: flex;
+  border-radius: 4px;
+  border: none;
+  padding: 2px;
+  background-color: transparent;
+}
+
+.DialogCloseButton:hover {
+  cursor: pointer;
+}
+
+.DialogCloseButton:focus-visible {
+  outline: 2px solid var(--rm-ui-color-focus);
+}
+
+.DialogCloseButtonIcon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--rm-ui-color-text-secondary);
+}
+
+@media screen and (min-width: 768px) {
+  .BackdropSizeOneThird .Dialog {
+    flex-basis: 33.33%;
+  }
+
+  .BackdropSizeHalf .Dialog {
+    flex-basis: 50%;
+  }
+
+  .BackdropSizeTwoThird .Dialog {
+    flex-basis: 66.66%;
+  }
+
+  .BackdropSizeFull .Dialog {
+    flex-basis: initial;
+  }
+
+  .BackdropPositionCenter {
+    align-items: center;
+  }
+
+  .BackdropPositionTopCenter {
+    align-items: flex-start;
+    padding-top: 115px;
+    padding-bottom: 115px;
+  }
+
+  .DialogContent {
+    max-height: calc(100vh - var(--backdrop-padding) * 2 - var(--rm-ui-padding-xxl) * 2);
+  }
+
+  .DialogCloseButton {
+    top: 26px;
+    right: 18px;
+  }
+
+  .Dialog {
+    border-radius: var(--rm-ui-border-radius-lg);
+    padding: var(--rm-ui-padding-xxl);
+  }
+}

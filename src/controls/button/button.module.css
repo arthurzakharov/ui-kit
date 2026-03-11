@@ -1,0 +1,113 @@
+.Button {
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.SM {
+  border-radius: var(--rm-ui-border-radius-sm);
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+}
+
+.LG.Tertiary {
+  padding: calc(var(--rm-ui-padding-xs) - 1px) calc(var(--rm-ui-padding-sm) - 1px);
+}
+
+.SM .Text {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.MD {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
+}
+
+.MD.Tertiary {
+  padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
+}
+
+.LG {
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
+}
+
+.LG.Tertiary {
+  padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
+}
+
+.MD .Text {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+}
+
+.LG .Text {
+  font-size: var(--rm-ui-font-size-body-large);
+  line-height: var(--rm-ui-line-height-body-large);
+}
+
+.Primary {
+  background-color: var(--rm-ui-next-btn-bg);
+}
+
+.Primary .Text,
+.Primary .Info {
+  color: #ffffff;
+}
+
+.Secondary {
+  background-color: transparent;
+}
+
+.Secondary .Text,
+.Secondary .Info {
+  color: var(--rm-ui-color-text-secondary);
+}
+
+.Tertiary {
+  border: 1px solid var(--rm-ui-grey-300);
+  background-color: transparent;
+}
+
+.Tertiary .Text,
+.Tertiary .Info {
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Button:not(.Loading):not(:disabled):hover {
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline-color: var(--rm-ui-color-focus);
+}
+
+.FullWidth {
+  width: 100%;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+}
+
+.Info {
+  flex-basis: 100%;
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: calc(var(--rm-ui-line-height-body-small) - 2px);
+}
+
+.Text {
+  font-weight: var(--rm-ui-font-weight-medium);
+}
+
+.Loader {
+  position: absolute;
+  display: flex;
+}

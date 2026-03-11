@@ -1,0 +1,30 @@
+.TextArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  font-weight: var(--rm-ui-font-weight-medium);
+  font-size: var(--rm-ui-font-size-body);
+  line-height: var(--rm-ui-line-height-body);
+  color: var(--rm-ui-color-text-primary);
+}
+
+.Input:hover {
+  cursor: pointer;
+}
+
+.Input:disabled {
+  opacity: 0.33;
+}
+
+.ErrorMessage {
+  padding-top: var(--rm-ui-padding-xxs);
+}

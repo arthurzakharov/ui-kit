@@ -1,0 +1,115 @@
+:root {
+  /* Padding */
+  --rm-ui-padding-xxs: 4px;
+  --rm-ui-padding-xs: 8px;
+  --rm-ui-padding-sm: 12px;
+  --rm-ui-padding-md: 16px;
+  --rm-ui-padding-lg: 24px;
+  --rm-ui-padding-xl: 32px;
+  --rm-ui-padding-xxl: 40px;
+  --rm-ui-padding-xxxl: 48px;
+  /* Border Radius */
+  --rm-ui-border-radius-sm: 8px;
+  --rm-ui-border-radius-md: 12px;
+  --rm-ui-border-radius-lg: 16px;
+  --rm-ui-border-radius-xl: 24px;
+  /* Font Size | Line Height */
+  --rm-ui-font-size-body-extra-small: 12px;
+  --rm-ui-line-height-body-extra-small: 16px;
+  --rm-ui-font-size-body-small: 14px;
+  --rm-ui-line-height-body-small: 20px;
+  --rm-ui-font-size-body: 16px;
+  --rm-ui-line-height-body: 24px;
+  --rm-ui-font-size-body-large: 20px;
+  --rm-ui-line-height-body-large: 30px;
+  --rm-ui-font-size-hl5: 14px;
+  --rm-ui-line-height-hl5: 22px;
+  --rm-ui-font-size-hl4: 18px;
+  --rm-ui-line-height-hl4: 24px;
+  --rm-ui-font-size-hl3: 20px;
+  --rm-ui-line-height-hl3: 30px;
+  --rm-ui-font-size-hl2: 24px;
+  --rm-ui-line-height-hl2: 32px;
+  --rm-ui-font-size-hl1: 28px;
+  --rm-ui-line-height-hl1: 36px;
+  /* Font Family */
+  --rm-ui-font-weight-light: 300;
+  --rm-ui-font-weight-regular: 400;
+  --rm-ui-font-weight-medium: 700;
+  --rm-ui-font-weight-bold: 900;
+  /* Grey */
+  --rm-ui-grey-950: #0a0a0a;
+  --rm-ui-grey-900: #171717;
+  --rm-ui-grey-800: #262626;
+  --rm-ui-grey-700: #404040;
+  --rm-ui-grey-600: #525252;
+  --rm-ui-grey-500: #737373;
+  --rm-ui-grey-400: #a3a3a3;
+  --rm-ui-grey-300: #d4d4d4;
+  --rm-ui-grey-200: #e5e5e5;
+  --rm-ui-grey-100: #f5f5f5;
+  --rm-ui-grey-50: #fafafa;
+  /* Colors */
+  --rm-ui-color-text-primary: var(--rm-ui-grey-800);
+  --rm-ui-color-text-secondary: var(--rm-ui-grey-500);
+  --rm-ui-color-accent-primary: #23bf96;
+  --rm-ui-color-accent-secondary: #ff9900;
+  --rm-ui-color-theme-primary: #302677;
+  --rm-ui-color-theme-secondary: #302677;
+  --rm-ui-color-action: #006cff;
+  --rm-ui-color-inverted: #ffffff;
+  --rm-ui-color-error: #dc2626;
+  --rm-ui-color-success: #00b649;
+  --rm-ui-color-focus: #ff8d02;
+  --rm-ui-color-link: #ff8206;
+  --rm-ui-body-color: #f0faff;
+  /* Components */
+  /* Header */
+  --rm-ui-header-logo-height: 30px;
+  --rm-ui-header-phone: #ff9900;
+  --rm-ui-header-phone-size: 22px;
+  --rm-ui-header-text: var(--rm-ui-color-text-primary);
+  --rm-ui-header-check-icon: var(--rm-ui-color-text-primary);
+  /* Certifications */
+  --rm-ui-certifications-color: #b1b4c7;
+  --rm-ui-certifications-size: 20px;
+  /* Message */
+  --rm-ui-message-success-primary: #29c667;
+  --rm-ui-message-success-secondary: #f1fdf4;
+  --rm-ui-message-question-primary: #a76000;
+  --rm-ui-message-question-secondary: #fefce8;
+  --rm-ui-message-error-primary: var(--rm-ui-color-error);
+  --rm-ui-message-error-secondary: #fef3f3;
+  --rm-ui-message-info-primary: #3289c4;
+  --rm-ui-message-info-secondary: #f3f7fe;
+  /* Payment */
+  --rm-ui-payment-sidebar-bg: #f8fcff;
+  --rm-ui-payment-text-blocks-gap: var(--rm-ui-padding-lg);
+  /* DataProtectedLabel */
+  --rm-ui-data-protected-label-icon: var(--rm-ui-next-btn-bg);
+  --rm-ui-data-protected-label-text: var(--rm-ui-color-text-primary);
+  /* Status */
+  --rm-ui-status-idle-color: #82868f;
+  --rm-ui-status-success-color: var(--rm-ui-color-accent-primary);
+  --rm-ui-status-error-color: var(--rm-ui-color-error);
+  /* Not Found */
+  --rm-ui-not-found-color: var(--rm-ui-color-text-primary);
+  --rm-ui-not-found-border: var(--rm-ui-grey-300);
+  /* Other */
+  --rm-ui-card-background: #ffffff;
+  --rm-ui-next-btn-bg: #23bf96;
+  --rm-ui-next-btn-bg-hover: #3adbb1;
+  --rm-ui-info-panel-bg: var(--rm-ui-body-color);
+  --rm-ui-sidebar-bg: #f6f6f6;
+  --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);
+  --rm-ui-loading-screen-height: 400px;
+  --rm-ui-body-bg: #f9fcff;
+  --rm-ui-content-bg: #ffffff;
+  --rm-ui-amimation-speed-primary: 150ms;
+  --rm-ui-amimation-speed-secondary: 300ms;
+  --rm-ui-amimation-speed-tertiary: 400ms;
+  --rm-ui-amimation-cubic-primary: cubic-bezier(0.3, 0, 0, 1);
+  --rm-ui-amimation-cubic-secondary: cubic-bezier(0.65, 0, 0.35, 1);
+  --rm-ui-amimation-cubic-tertiary: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --rm-ui-warranty-bg: #f9fcff;
+}

@@ -1,0 +1,93 @@
+.Loader {
+  display: inline-flex;
+}
+
+.Padding {
+  display: flex;
+  justify-content: center;
+}
+
+.XXS {
+  padding: 32px;
+}
+
+.XS {
+  padding: 64px;
+}
+
+.SM {
+  padding: 96px;
+}
+
+.MD {
+  padding: 128px;
+}
+
+.LG {
+  padding: 160px;
+}
+
+.XL {
+  padding: 192px;
+}
+
+.XXL {
+  padding: 224px;
+}
+
+.XXXL {
+  padding: 256px;
+}
+
+.Icon {
+  animation: spinPulse 2s linear infinite;
+  transform-origin: center;
+}
+
+.White {
+  stroke: #ffffff;
+}
+
+.TextPrimary {
+  stroke: var(--rm-ui-color-text-primary);
+}
+
+.TextSecondary {
+  stroke: var(--rm-ui-color-text-secondary);
+}
+
+.AccentPrimary {
+  stroke: var(--rm-ui-color-accent-primary);
+}
+
+.AccentSecondary {
+  stroke: var(--rm-ui-color-accent-secondary);
+}
+
+.Icon > path {
+  animation: dash 2s linear infinite;
+}
+
+@keyframes spinPulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.25);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-opacity: 1;
+  }
+}
