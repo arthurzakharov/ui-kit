@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
 import { Input } from '@controls/interactives';
-import cn from '@controls/input/input.module.css';
+import cn from '@controls/interactives/input/input.module.css';
 
 const meta = {
   title: 'Controls/Interactives/Input',
