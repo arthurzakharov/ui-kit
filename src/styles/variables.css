@@ -64,6 +64,7 @@
   --rm-ui-color-link: #ff8206;
   --rm-ui-body-color: #f0faff;
   /* Components */
+  --rm-ui-box-border-radius: 10px; 
   /* Header */
   --rm-ui-header-logo-height: 30px;
   --rm-ui-header-phone: #ff9900;

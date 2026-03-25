@@ -19,7 +19,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       state = 'idle',
       focused = false,
       checked = false,
-      onClick,
+      onClick = () => {},
       // Base props
       ...base
     },
@@ -29,13 +29,13 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       data-testid={baseProps(base, 'data-testid', 'box')}
       ref={ref}
       className={clsx(cn.Box, baseProps(base, 'className'), {
+        [cn.Idle]: state === 'idle' && !focused && !checked,
+        [cn.Error]: state === 'error' && !focused && !checked,
+        [cn.Success]: state === 'success' && !focused && !checked,
         [cn.Focused]: focused,
         [cn.Checked]: checked,
-        [cn.Idle]: state === 'idle',
-        [cn.Error]: state === 'error',
-        [cn.Success]: state === 'success',
       })}
-      onClick={() => onClick?.()}
+      onClick={() => onClick()}
     >
       {children}
     </div>

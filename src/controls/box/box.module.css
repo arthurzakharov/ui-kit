@@ -5,17 +5,14 @@
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  border-radius: 10px;
-  border-width: 1px;
-  border-style: solid;
-  background-color: transparent;
+  border-radius: var(--rm-ui-box-border-radius);
+  border: 1px solid transparent;
+  background-color: var(--rm-ui-card-background);
   transition: border-color 0.15s ease-out;
 }
 
 .Checked {
   border-color: var(--rm-ui-color-action);
-  outline: 2px solid var(--rm-ui-color-action);
-  outline-offset: -2px;
 }
 
 .Idle {
