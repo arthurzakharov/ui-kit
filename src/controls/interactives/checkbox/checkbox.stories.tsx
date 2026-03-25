@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
 import { useState } from 'storybook/internal/preview-api';
-import { Checkbox } from '@controls/interactives/checkbox/checkbox.component';
+import { Checkbox } from '@controls/interactives';
 
 const meta = {
   title: 'Controls/Interactives/Checkbox',

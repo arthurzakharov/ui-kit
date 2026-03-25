@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { ErrorMessage } from '@controls/primitives/error-message/error-message.component';
+import { ErrorMessage } from '@controls/primitives';
 import cn from '@controls/primitives/error-message/error-message.module.css';
 
 const meta = {

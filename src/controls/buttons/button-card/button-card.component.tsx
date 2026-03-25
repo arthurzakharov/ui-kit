@@ -1,8 +1,7 @@
 import { type MouseEvent, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
 import clsx from 'clsx';
-import { Box } from '@controls/primitives/box';
-import { Caption } from '@controls/primitives/caption';
+import { Box, Caption } from '@controls/primitives';
 import { baseProps } from '@utils/functions';
 import { Svg, type SvgProps } from '@utils/svg';
 import type { Base, FontSize } from '@utils/types';

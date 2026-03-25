@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
-import { ButtonText } from '@controls/buttons/button-text/button-text.component';
+import { ButtonText } from '@controls/buttons';
 
 const meta = {
   title: 'Controls/Buttons/ButtonText',

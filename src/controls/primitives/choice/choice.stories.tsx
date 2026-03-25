@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Choice } from '@controls/primitives/choice/choice.component';
+import { Choice } from '@controls/primitives';
 import cn from '@controls/primitives/choice/choice.module.css';
 
 const meta = {

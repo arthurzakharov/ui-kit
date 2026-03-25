@@ -1,6 +1,6 @@
 import { Pencil } from 'lucide-react';
 import clsx from 'clsx';
-import { ButtonText } from '@controls/buttons/button-text';
+import { ButtonText } from '@controls/buttons';
 import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';
 import cn from '@components/user-panel/user-panel.module.css';

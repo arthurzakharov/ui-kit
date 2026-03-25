@@ -3,12 +3,11 @@ import SignatureCanvas from 'react-signature-canvas';
 import { useResizeObserver } from 'usehooks-ts';
 import { Check, RefreshCw, RotateCcw } from 'lucide-react';
 import clsx from 'clsx';
-import { Button } from '@controls/buttons/button';
-import { ButtonText } from '@controls/buttons/button-text';
-import { Loader } from '@components/loader/loader.component';
+import { Button, ButtonText } from '@controls/buttons';
+import { Loader } from '@components/loader';
 import type { Base } from '@utils/types';
-import cn from '@components/signature/signature.module.css';
 import { baseProps } from '@utils/functions';
+import cn from '@components/signature/signature.module.css';
 
 type SignaturePadState = 'auto-loading' | 'auto-generated' | 'manual-blank' | 'manual-drawn' | 'manual-stored';
 

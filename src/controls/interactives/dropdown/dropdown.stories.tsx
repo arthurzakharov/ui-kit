@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Dropdown } from '@controls/interactives/dropdown/dropdown.component';
+import { Dropdown } from '@controls/interactives';
 
 const meta = {
   title: 'Controls/Interactives/Dropdown',

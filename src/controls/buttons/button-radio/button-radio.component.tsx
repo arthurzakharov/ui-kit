@@ -1,8 +1,6 @@
 import { type MouseEvent, useRef } from 'react';
 import { useHover, useToggle } from 'usehooks-ts';
-import { Box } from '@controls/primitives/box';
-import { Caption } from '@controls/primitives/caption';
-import { Status } from '@controls/primitives/status';
+import { Box, Caption, Status } from '@controls/primitives';
 import { baseProps } from '@utils/functions';
 import type { Base, FontSize } from '@utils/types';
 import cn from '@controls/buttons/button-radio/button-radio.module.css';

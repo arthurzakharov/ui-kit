@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
-import { Radio } from '@controls/interactives/radio/radio.component';
+import { Radio } from '@controls/interactives';
 
 const meta = {
   title: 'Controls/Interactives/Radio',

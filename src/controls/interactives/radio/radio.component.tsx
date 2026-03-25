@@ -1,10 +1,14 @@
 import clsx from 'clsx';
 import { FadeSlide } from '@animations/fade-slide';
-import { Choice, type ChoiceProps } from '@controls/primitives/choice';
-import { Caption, type CaptionProps } from '@controls/primitives/caption';
-import { ErrorMessage } from '@controls/primitives/error-message';
-import { HiddenInput } from '@controls/primitives/hidden-input';
-import { RadioLabel } from '@controls/primitives/radio-label';
+import {
+  Choice,
+  type ChoiceProps,
+  Caption,
+  type CaptionProps,
+  ErrorMessage,
+  HiddenInput,
+  RadioLabel,
+} from '@controls/primitives';
 import {useControlInteraction, getChoiceId, type Interactive, type RadioChoice } from '@controls/utils';
 import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';

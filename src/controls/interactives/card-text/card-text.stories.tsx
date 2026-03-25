@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
-import { CardText } from '@controls/interactives/card-text/card-text.component';
+import { CardText } from '@controls/interactives';
 
 const meta = {
   title: 'Controls/Interactives/CardText',

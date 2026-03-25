@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
-import { Input } from '@controls/interactives/input/input.component';
+import { Input } from '@controls/interactives';
 import cn from '@controls/input/input.module.css';
 
 const meta = {

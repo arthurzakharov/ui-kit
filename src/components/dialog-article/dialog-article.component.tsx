@@ -1,7 +1,7 @@
 import { type PropsWithChildren, useRef, useState } from 'react';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
 import clsx from 'clsx';
-import { Button } from '@controls/buttons/button';
+import { Button } from '@controls/buttons';
 import { baseProps } from '@utils/functions';
 import { type Base } from '@utils/types';
 import cn from '@components/dialog-article/dialog-article.module.css';

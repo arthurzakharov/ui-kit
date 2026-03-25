@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Label } from '@controls/primitives/label/label.component';
+import { Label } from '@controls/primitives';
 import cn from '@controls/primitives/label/label.module.css';
 
 const meta = {

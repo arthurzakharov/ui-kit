@@ -1,11 +1,6 @@
 import clsx from 'clsx';
-import { Box } from '@controls/primitives/box';
-import { Caption } from '@controls/primitives/caption';
-import { Choice, type ChoiceProps } from '@controls/primitives/choice';
-import { HiddenInput } from '@controls/primitives/hidden-input';
-import { RadioLabel } from '@controls/primitives/radio-label';
-import { useChoice } from '@controls/utils';
-import { getChoiceId, type ChoiceValue, type Interactive, type RadioChoice } from '@controls/utils';
+import { Box, Caption, Choice, type ChoiceProps, HiddenInput, RadioLabel } from '@controls/primitives';
+import { useChoice, getChoiceId, type ChoiceValue, type Interactive, type RadioChoice } from '@controls/utils';
 import type { Base, FontSize } from '@utils/types';
 import { baseProps } from '@utils/functions';
 import cn from '@controls/interactives/card-image/card-image.module.css';

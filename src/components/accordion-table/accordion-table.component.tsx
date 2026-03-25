@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { FadeGrow } from '@animations/fade-grow';
 import { Rotate } from '@animations/rotate';
-import { ButtonText } from '@controls/buttons/button-text';
+import { ButtonText } from '@controls/buttons';
 import type { Base } from '@utils/types';
 import { baseProps } from '@utils/functions';
 import cn from '@components/accordion-table/accordion-table.module.css';

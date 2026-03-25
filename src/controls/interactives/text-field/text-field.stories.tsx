@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
-import { TextField } from '@controls/interactives/text-field/text-field.component';
-import cn from '@controls/text-field/text-field.module.css';
+import { TextField } from '@controls/interactives';
+import cn from '@controls/interactives/text-field/text-field.module.css';
 
 const meta = {
   title: 'Controls/Interactives/TextField',

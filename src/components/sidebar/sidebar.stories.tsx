@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Sidebar } from '@components/sidebar/sidebar.component';
-import { Button } from '@controls/buttons/button';
+import { Sidebar } from '@components/sidebar';
+import { Button } from '@controls/buttons';
 
 const meta = {
   title: 'Components/Sidebar',

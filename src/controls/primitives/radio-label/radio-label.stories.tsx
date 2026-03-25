@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { RadioLabel } from '@controls/primitives/radio-label/radio-label.component';
+import { RadioLabel } from '@controls/primitives';
 
 const meta = {
   title: 'Controls/Primitives/RadioLabel',

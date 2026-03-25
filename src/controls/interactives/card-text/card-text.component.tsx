@@ -1,9 +1,5 @@
 import clsx from 'clsx';
-import { Box } from '@controls/primitives/box';
-import { Caption } from '@controls/primitives/caption';
-import { Choice, type ChoiceProps } from '@controls/primitives/choice';
-import { HiddenInput } from '@controls/primitives/hidden-input';
-import { RadioLabel } from '@controls/primitives/radio-label';
+import { Box, Caption, Choice, type ChoiceProps, HiddenInput, RadioLabel } from '@controls/primitives';
 import { useChoice, getChoiceId, type ChoiceValue, type Interactive, type RadioChoice } from '@controls/utils';
 import { baseProps } from '@utils/functions';
 import type { Base, FontSize } from '@utils/types';

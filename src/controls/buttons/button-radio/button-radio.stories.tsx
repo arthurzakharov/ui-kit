@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
-import { ButtonRadio } from '@controls/buttons/button-radio/button-radio.component';
+import { ButtonRadio } from '@controls/buttons';
 
 const meta = {
   title: 'Controls/Buttons/ButtonRadio',

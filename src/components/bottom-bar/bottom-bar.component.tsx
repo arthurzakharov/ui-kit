@@ -2,7 +2,7 @@ import { type ReactElement, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
 import { Text } from '@components/text/text.component';
-import { Button } from '@controls/buttons/button';
+import { Button } from '@controls/buttons';
 import { baseProps } from '@utils/functions';
 import type { Base, FontColor, FontSize, FontWeight } from '@utils/types';
 import cn from '@components/bottom-bar/bottom-bar.module.css';

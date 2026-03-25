@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within } from 'storybook/test';
 import { CakeIcon } from 'lucide-react';
-import { ButtonCard } from '@controls/buttons/button-card/button-card.component';
+import { ButtonCard } from '@controls/buttons';
 
 const meta = {
   title: 'Controls/Buttons/ButtonCard',

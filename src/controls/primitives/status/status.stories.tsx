@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
-import { Status } from '@controls/primitives/status/status.component';
+import { Status } from '@controls/primitives';
 import cn from '@controls/primitives/status/status.module.css';
 
 const meta = {

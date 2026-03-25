@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SizeBox } from '@utils/story/size-box';
 import { expect, fn, userEvent, within } from 'storybook/test';
-import { Box } from '@controls/primitives/box/box.component';
+import { Box } from '@controls/primitives';
 import cn from '@controls/primitives/box/box.module.css';
 
 const meta = {

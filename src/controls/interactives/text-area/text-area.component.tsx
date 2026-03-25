@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { FadeSlide } from '@animations/fade-slide';
-import { Box } from '@controls/primitives/box';
-import { ErrorMessage } from '@controls/primitives/error-message';
+import { Box, ErrorMessage } from '@controls/primitives';
 import { useControlInteraction, type Interactive } from '@controls/utils';
 import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';
