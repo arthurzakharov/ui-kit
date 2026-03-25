@@ -5,7 +5,7 @@ import { Certifications, type CertificationsProps } from '@components/certificat
 import { Line } from '@components/line/line.component';
 import { Text } from '@components/text/text.component';
 import { UserPanel, type UserPanelProps } from '@components/user-panel';
-import { Status } from '@controls/status';
+import { Status } from '@controls/primitives/status';
 import type { State } from '@controls/utils';
 import { baseProps } from '@utils/functions';
 import type { Base } from '@utils/types';

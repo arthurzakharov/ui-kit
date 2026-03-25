@@ -18,26 +18,29 @@ export {
   type QuestionChoice,
   type Size,
 } from '@controls/utils';
-export { Box, type BoxProps } from '@controls/box';
-export { Button, type ButtonProps } from '@controls/button';
-export { ButtonCard, type ButtonCardProps } from '@controls/button-card';
-export { ButtonRadio, type ButtonRadioProps } from '@controls/button-radio';
-export { ButtonText, type ButtonTextProps } from '@controls/button-text';
-export { Caption, type CaptionProps } from '@controls/caption';
-export { CardImage, type CardImageProps } from '@controls/card-image';
-export { CardText, type CardTextProps } from '@controls/card-text';
-export { Checkbox, type CheckboxProps } from '@controls/checkbox';
-export { Choice, type ChoiceProps } from '@controls/choice';
-export { Dropdown, type DropdownProps } from '@controls/dropdown';
-export { ErrorMessage, type ErrorMessageProps } from '@controls/error-message';
-export { HiddenInput, type HiddenInputProps } from '@controls/hidden-input';
-export { Input, type InputProps } from '@controls/input';
-export { Label, type LabelProps } from '@controls/label';
-export { Radio, type RadioProps } from '@controls/radio';
-export { RadioLabel, type RadioLabelProps } from '@controls/radio-label';
-export { Status, type StatusProps } from '@controls/status';
-export { TextArea, type TextAreaProps } from '@controls/text-area';
-export { TextField, type TextFieldProps } from '@controls/text-field';
+// CONTROLS - BUTTONS
+export { Button, type ButtonProps } from '@controls/buttons/button';
+export { ButtonCard, type ButtonCardProps } from '@controls/buttons/button-card';
+export { ButtonRadio, type ButtonRadioProps } from '@controls/buttons/button-radio';
+export { ButtonText, type ButtonTextProps } from '@controls/buttons/button-text';
+// CONTROLS - INTERACTIVES
+export { CardImage, type CardImageProps } from '@controls/interactives/card-image';
+export { CardText, type CardTextProps } from '@controls/interactives/card-text';
+export { Checkbox, type CheckboxProps } from '@controls/interactives/checkbox';
+export { Dropdown, type DropdownProps } from '@controls/interactives/dropdown';
+export { Input, type InputProps } from '@controls/interactives/input';
+export { Radio, type RadioProps } from '@controls/interactives/radio';
+export { TextArea, type TextAreaProps } from '@controls/interactives/text-area';
+export { TextField, type TextFieldProps } from '@controls/interactives/text-field';
+// CONTROLS - PRIMITIVES
+export { Box, type BoxProps } from '@controls/primitives/box';
+export { Caption, type CaptionProps } from '@controls/primitives/caption';
+export { Choice, type ChoiceProps } from '@controls/primitives/choice';
+export { ErrorMessage, type ErrorMessageProps } from '@controls/primitives/error-message';
+export { HiddenInput, type HiddenInputProps } from '@controls/primitives/hidden-input';
+export { Label, type LabelProps } from '@controls/primitives/label';
+export { RadioLabel, type RadioLabelProps } from '@controls/primitives/radio-label';
+export { Status, type StatusProps } from '@controls/primitives/status';
 // COMPONENTS
 export { AccordionTable, type AccordionTableProps } from '@components/accordion-table/accordion-table.component';
 export { BottomBar } from '@components/bottom-bar';
