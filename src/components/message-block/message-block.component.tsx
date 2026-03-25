@@ -5,7 +5,7 @@ import type { Base } from '@utils/types';
 import { Text } from '@components/text/text.component';
 import cn from '@components/message-block/message-block.module.css';
 
-interface MessageBlockProps extends PropsWithChildren<Base> {
+export interface MessageBlockProps extends PropsWithChildren<Base> {
   emoji?: string;
   title?: string;
   subtitle?: string;

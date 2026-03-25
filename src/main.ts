@@ -59,7 +59,7 @@ export { Line } from '@components/line/line.component';
 export { Loader } from '@components/loader';
 export { MainAttachment, type MainAttachmentProps } from '@components/main-attachment/main-attachment.component';
 export { Message, type MessageProps } from '@components/message';
-export { MessageBlock } from '@components/message-block';
+export { MessageBlock, type MessageBlockProps } from '@components/message-block';
 export { NotFound, type NotFoundProps } from '@components/not-found';
 export {
   Payment,

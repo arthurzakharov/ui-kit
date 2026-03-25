@@ -1,1 +1,1 @@
-export { MessageBlock } from './message-block.component';
+export { MessageBlock, type MessageBlockProps } from './message-block.component';
