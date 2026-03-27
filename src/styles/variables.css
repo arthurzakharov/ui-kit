@@ -64,7 +64,7 @@
   --rm-ui-color-link: #ff8206;
   --rm-ui-body-color: #f0faff;
   /* Components */
-  --rm-ui-box-border-radius: 10px; 
+  --rm-ui-box-border-radius: 10px;
   /* Header */
   --rm-ui-header-logo-height: 30px;
   --rm-ui-header-phone: #ff9900;
@@ -98,8 +98,8 @@
   --rm-ui-not-found-border: var(--rm-ui-grey-300);
   /* Other */
   --rm-ui-card-background: #ffffff;
-  --rm-ui-next-btn-bg: #23bf96;
-  --rm-ui-next-btn-bg-hover: #3adbb1;
+  --rm-ui-next-btn-bg: rgba(35, 191, 150, 1);
+  --rm-ui-next-btn-bg-hover: rgba(35, 191, 150, 0.9);
   --rm-ui-info-panel-bg: var(--rm-ui-body-color);
   --rm-ui-sidebar-bg: #f6f6f6;
   --rm-ui-sidebar-line-color: var(--rm-ui-grey-200);

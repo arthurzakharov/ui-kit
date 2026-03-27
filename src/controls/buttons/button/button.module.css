@@ -6,6 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform:
+    border-color ease-in-out var(--rm-ui-amimation-speed-primary),
+    background-color ease-in-out var(--rm-ui-amimation-speed-primary);
 }
 
 .SM {
@@ -55,13 +58,27 @@
   background-color: var(--rm-ui-next-btn-bg);
 }
 
+.Primary:hover {
+  background-color: var(--rm-ui-next-btn-bg-hover);
+}
+
 .Primary .Text,
 .Primary .Info {
   color: #ffffff;
 }
 
 .Secondary {
+  border: 1px solid transparent;
   background-color: transparent;
+}
+
+.Secondary:hover {
+  border-color: var(--rm-ui-grey-400);
+}
+
+.Secondary:hover .Text {
+  color: var(--rm-ui-grey-400);
+  border-color: var(--rm-ui-grey-400);
 }
 
 .Secondary .Text,
@@ -72,6 +89,13 @@
 .Tertiary {
   border: 1px solid var(--rm-ui-grey-300);
   background-color: transparent;
+}
+
+.Tertiary:hover {
+  border-color: var(--rm-ui-grey-200);
+}
+.Tertiary:hover .Text {
+  color: var(--rm-ui-grey-700);
 }
 
 .Tertiary .Text,
@@ -105,6 +129,7 @@
 
 .Text {
   font-weight: var(--rm-ui-font-weight-medium);
+  transform: color ease-in-out var(--rm-ui-amimation-speed-primary);
 }
 
 .Loader {
