@@ -18,8 +18,6 @@ const meta = {
       bottomLeft: 'Laufzeit',
       bottomRight: '24 Monate',
     },
-    message: '',
-    staticFrom: 768,
   },
 } satisfies Meta<typeof BottomBar>;
 
@@ -48,7 +46,12 @@ export const WithoutMessage: Story = {
 
 export const WithMessage: Story = {
   args: {
-    message: 'Sie können den Vorgang jederzeit abbrechen.',
+    message: {
+      hidden: false,
+      text: 'Sie können den Vorgang jederzeit abbrechen.',
+      color: 'text-secondary',
+      align: 'center',
+    },
   },
   play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);

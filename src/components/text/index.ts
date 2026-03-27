@@ -1,1 +1,1 @@
-export { Text } from './text.component';
+export { Text, type TextProps } from './text.component';

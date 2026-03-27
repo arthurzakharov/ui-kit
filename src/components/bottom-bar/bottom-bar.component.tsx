@@ -1,7 +1,7 @@
 import { type ReactElement, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { useResizeObserver, useWindowSize } from 'usehooks-ts';
-import { Text } from '@components/text/text.component';
+import { Text, type TextProps } from '@components/text/text.component';
 import { Button } from '@controls/buttons';
 import { baseProps } from '@utils/functions';
 import type { Base, FontColor, FontSize, FontWeight } from '@utils/types';
@@ -31,10 +31,17 @@ type BottomBarInfo = {
   bottomRight?: BottomBarInfoItem<string> | string;
 };
 
+type BottomBarMessage = {
+  text: string;
+  hidden?: boolean;
+  color?: TextProps['color'];
+  align?: TextProps['align'];
+};
+
 interface BottomBarProps extends Base {
   button: BottomBarButton;
   info: BottomBarInfo;
-  message?: string;
+  message?: BottomBarMessage;
   staticFrom?: number;
 }
 
@@ -69,7 +76,7 @@ const normalizeInfoItem = (
   };
 };
 
-export const BottomBar = ({ button, info, message = '', staticFrom = 768, ...base }: BottomBarProps) => {
+export const BottomBar = ({ button, info, message, staticFrom = 768, ...base }: BottomBarProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { height } = useResizeObserver({
@@ -117,9 +124,9 @@ export const BottomBar = ({ button, info, message = '', staticFrom = 768, ...bas
           <Text {...items.bottomRight}>{items.bottomRight.text}</Text>
         </div>
       </div>
-      {message && (
-        <Text color="text-secondary" align="center" className={cn.Message}>
-          {message}
+      {message && !message.hidden && (
+        <Text color={message.color || 'text-secondary'} align={message.align || 'center'} className={cn.Message}>
+          {message.text}
         </Text>
       )}
       <Button

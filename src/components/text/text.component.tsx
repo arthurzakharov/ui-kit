@@ -4,7 +4,7 @@ import { Content } from '@utils/content';
 import type { Base, FontAlign, FontColor, FontSize, FontWeight, TagNames, TextPreset } from '@utils/types';
 import cn from '@components/text/text.module.css';
 
-interface TextFieldProps extends HTMLAttributes<HTMLElementTagNameMap>, PropsWithChildren<Base> {
+export interface TextProps extends HTMLAttributes<HTMLElementTagNameMap>, PropsWithChildren<Base> {
   preset?: TextPreset;
   tag?: TagNames;
   lined?: boolean;
@@ -14,7 +14,7 @@ interface TextFieldProps extends HTMLAttributes<HTMLElementTagNameMap>, PropsWit
   color?: FontColor;
 }
 
-const textPresetMap: Record<TextPreset, Pick<Required<TextFieldProps>, 'tag' | 'weight' | 'size' | 'color'>> = {
+const textPresetMap: Record<TextPreset, Pick<Required<TextProps>, 'tag' | 'weight' | 'size' | 'color'>> = {
   'page-info': { tag: 'p', weight: 'light', size: 'body', color: 'text-secondary' },
   'page-subtitle': { tag: 'h6', weight: 'regular', size: 'body', color: 'text-primary' },
   'page-title': { tag: 'h1', weight: 'medium', size: 'hl2', color: 'text-primary' },
@@ -33,7 +33,7 @@ export const Text = ({
   size = 'body',
   color = 'text-primary',
   ...rest
-}: TextFieldProps) => {
+}: TextProps) => {
   let resolvedTag = tag;
   let resolvedWeight = weight;
   let resolvedSize = size;
