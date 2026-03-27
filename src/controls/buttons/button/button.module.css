@@ -6,9 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform:
-    border-color ease-in-out var(--rm-ui-amimation-speed-primary),
-    background-color ease-in-out var(--rm-ui-amimation-speed-primary);
+  transition:
+    border-color var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary),
+    background-color var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
 .SM {
@@ -129,7 +129,7 @@
 
 .Text {
   font-weight: var(--rm-ui-font-weight-medium);
-  transform: color ease-in-out var(--rm-ui-amimation-speed-primary);
+  transition: color var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
 .Loader {
