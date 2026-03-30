@@ -3,8 +3,8 @@
   padding: var(--rm-ui-padding-md) 0;
   background-color: var(--rm-ui-info-panel-bg);
   font-weight: var(--rm-ui-font-weight-regular);
-  font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
 }
 
 .InfoPanel:before,
