@@ -86,7 +86,7 @@ export const Signature = ({
   }, []);
 
   const redraw = useCallback(() => {
-    setMode('manual');
+    setMode('auto');
     setValueManualDrawn('');
     onChangeManual('');
   }, [onChangeManual]);
