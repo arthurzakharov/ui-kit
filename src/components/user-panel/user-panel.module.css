@@ -1,9 +1,9 @@
-.User {
+.UserPanel {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  gap: var(--rm-ui-padding-sm);
+  gap: var(--rm-ui-padding-xs);
   font-weight: var(--rm-ui-font-weight-light);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
@@ -11,7 +11,6 @@
 }
 
 .Head {
-  margin-bottom: var(--rm-ui-padding-xs);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

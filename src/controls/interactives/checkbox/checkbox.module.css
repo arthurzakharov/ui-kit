@@ -27,17 +27,31 @@
   color: var(--rm-ui-color-text-primary);
 }
 
-.Content button {
+.Content button,
+.Content span[data-type='button'] {
   color: var(--rm-ui-color-link);
   outline-offset: 2px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  color: inherit; /* or your link color */
+  text-decoration: underline;
+  vertical-align: baseline;
+  cursor: pointer;
 }
 
-.Content button:hover {
+.Content button:hover,
+.Content span[data-type='button']:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.Content button:focus-visible {
+.Content button:focus-visible,
+.Content span[data-type='button']:focus-visible {
   outline-color: var(--rm-ui-color-focus);
 }
 

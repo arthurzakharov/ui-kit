@@ -5,7 +5,6 @@
   justify-content: center;
   gap: var(--rm-ui-padding-xs);
   border-radius: var(--rm-ui-border-radius-sm);
-  padding: var(--rm-ui-padding-xxs);
 }
 
 .TextPrimary {
@@ -50,28 +49,28 @@
 }
 
 .MD .Icon {
-  width: 22px;
-  height: 22px;
-}
-
-.LG .Icon {
   width: 24px;
   height: 24px;
 }
 
+.LG .Icon {
+  width: 26px;
+  height: 26px;
+}
+
 .SM .Content {
   font-size: var(--rm-ui-font-size-body-small);
-  line-height: var(--rm-ui-line-height-body-small);
+  line-height: calc(var(--rm-ui-line-height-body-small) - var(--rm-ui-padding-xxs) * 2);
 }
 
 .MD .Content {
   font-size: var(--rm-ui-font-size-body);
-  line-height: var(--rm-ui-line-height-body);
+  line-height: calc(var(--rm-ui-line-height-body) - var(--rm-ui-padding-xxs) * 2);
 }
 
 .LG .Content {
   font-size: var(--rm-ui-font-size-hl4);
-  line-height: var(--rm-ui-line-height-hl4);
+  line-height: calc(var(--rm-ui-line-height-hl4) - var(--rm-ui-padding-xxs) * 2);
 }
 
 .Content {
