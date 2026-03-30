@@ -28,7 +28,7 @@
 }
 
 .Content button,
-.Content span[data-type='button'] {
+.Content span[role='button'] {
   color: var(--rm-ui-color-link);
   outline-offset: 2px;
   display: inline;
@@ -45,13 +45,13 @@
 }
 
 .Content button:hover,
-.Content span[data-type='button']:hover {
+.Content span[role='button']:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 .Content button:focus-visible,
-.Content span[data-type='button']:focus-visible {
+.Content span[role='button']:focus-visible {
   outline-color: var(--rm-ui-color-focus);
 }
 
