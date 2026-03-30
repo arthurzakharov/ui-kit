@@ -45,6 +45,7 @@ export const ButtonText = ({
     type={type}
     disabled={disabled}
     className={clsx(cn.ButtonText, baseProps(base, 'className'), {
+      [cn.WithIcon]: !!icon,
       [cn.Left]: iconPosition === 'left',
       [cn.Right]: iconPosition === 'right',
       [cn.SM]: size === 'sm',

@@ -6,7 +6,7 @@
 
 .Main {
   --title-height: 40px;
-  --top-padding: calc(var(--rm-ui-padding-md) + var(--title-height));
+  --top-padding: var(--rm-ui-padding-md);
   --horizontal-padding: var(--rm-ui-padding-md);
   overflow: hidden;
   position: relative;
@@ -35,12 +35,13 @@
 /* Header */
 
 .Header {
-  position: absolute;
+  /* position: absolute;
   z-index: 1;
   top: var(--rm-ui-padding-md);
   left: var(--rm-ui-padding-md);
-  right: var(--rm-ui-padding-md);
+  right: var(--rm-ui-padding-md); */
   display: flex;
+  margin-bottom: 19px;
 }
 
 .HeaderTitle {
@@ -68,7 +69,7 @@
 /* Manual Mode */
 
 .ManualPanel {
-  height: 94px;
+  height: 134px;
 }
 
 .ManualPanel > canvas,
@@ -114,7 +115,7 @@
 }
 
 .AutoPanelButton {
-  margin: 8px 0;
+  margin: var(--rm-ui-padding-sm) 0 var(--rm-ui-padding-sm) 0;
 }
 
 .AutoPanelLabel {
