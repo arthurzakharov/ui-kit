@@ -30,18 +30,11 @@
 .Content button,
 .Content span[role='button'] {
   color: var(--rm-ui-color-link);
-  outline-offset: 2px;
   display: inline;
-  margin: 0;
-  padding: 0;
-  border: 0;
   background: none;
   font: inherit;
+  font-size: inherit;
   line-height: inherit;
-  color: inherit; /* or your link color */
-  text-decoration: underline;
-  vertical-align: baseline;
-  cursor: pointer;
 }
 
 .Content button:hover,

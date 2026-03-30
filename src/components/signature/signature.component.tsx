@@ -193,6 +193,7 @@ export const Signature = ({
             {canSwitchToManual && (
               <ButtonText
                 blurAfterClick
+                color="link"
                 text="Per Hand/Maus unterschreiben"
                 underlined
                 className={cn.AutoPanelButton}

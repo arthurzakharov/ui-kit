@@ -31,6 +31,10 @@
   color: var(--rm-ui-color-theme-secondary);
 }
 
+.Link {
+  color: var(--rm-ui-color-link);
+}
+
 .Left {
   flex-direction: row;
 }

@@ -41,7 +41,13 @@ export type ControlButtonColor = 'primary' | 'secondary' | 'tertiary';
 
 export type ControlButtonTypeColor = Extract<
   FontColor,
-  'text-primary' | 'text-secondary' | 'accent-primary' | 'accent-secondary' | 'theme-primary' | 'theme-secondary'
+  | 'text-primary'
+  | 'text-secondary'
+  | 'accent-primary'
+  | 'accent-secondary'
+  | 'theme-primary'
+  | 'theme-secondary'
+  | 'link'
 >;
 
 export type ControlButtonSize = 'sm' | 'md' | 'lg';

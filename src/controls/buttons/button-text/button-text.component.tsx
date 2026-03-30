@@ -56,6 +56,7 @@ export const ButtonText = ({
       [cn.AccentSecondary]: color === 'accent-secondary',
       [cn.ThemePrimary]: color === 'theme-primary',
       [cn.ThemeSecondary]: color === 'theme-secondary',
+      [cn.Link]: color === 'link',
     })}
     onClick={withControl(onClick, { prevent: preventDefault, blur: blurAfterClick })}
     onFocus={() => onFocus()}
