@@ -90,7 +90,7 @@
   --rm-ui-data-protected-label-icon: var(--rm-ui-next-btn-bg);
   --rm-ui-data-protected-label-text: var(--rm-ui-color-text-primary);
   /* Status */
-  --rm-ui-status-idle-color: #82868f;
+  --rm-ui-status-idle-color: var(--rm-ui-grey-800);
   --rm-ui-status-success-color: var(--rm-ui-color-accent-primary);
   --rm-ui-status-error-color: var(--rm-ui-color-error);
   /* Not Found */

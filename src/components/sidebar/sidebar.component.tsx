@@ -57,12 +57,7 @@ export const Sidebar = ({
           {steps.map(({ state, text }) => (
             <div key={text} className={cn.Step} data-testid="sidebar-step">
               <Status state={state} />
-              <Text
-                tag="span"
-                weight="medium"
-                size="body-small"
-                color={state === 'idle' ? 'text-secondary' : 'text-primary'}
-              >
+              <Text tag="span" weight="medium" size="body-small" color="text-primary">
                 {text}
               </Text>
             </div>

@@ -22,7 +22,7 @@
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-hl1);
   line-height: var(--rm-ui-line-height-hl1);
-  color: var(--rm-ui-color-theme-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .DialogArticle *[class='h2'],
@@ -31,7 +31,7 @@
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-hl2);
   line-height: var(--rm-ui-line-height-hl2);
-  color: var(--rm-ui-color-theme-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .DialogArticle *[class='h3'],
@@ -46,7 +46,7 @@
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-hl3);
   line-height: var(--rm-ui-line-height-hl3);
-  color: var(--rm-ui-color-theme-primary);
+  color: var(--rm-ui-color-text-primary);
 }
 
 .DialogArticle *[class='p'],

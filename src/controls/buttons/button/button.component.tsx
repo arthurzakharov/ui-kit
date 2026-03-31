@@ -58,7 +58,7 @@ export const Button = ({
     onFocus={() => onFocus?.()}
     onBlur={() => onBlur?.()}
   >
-    <FadeScale name="loader" condition={loading} className={cn.Loader}>
+    {loading && (
       <Loader
         size="xs"
         color={(() => {
@@ -71,8 +71,9 @@ export const Button = ({
               return 'text-primary';
           }
         })()}
+        className={cn.Loader}
       />
-    </FadeScale>
+    )}
     <FadeScale name="content" keepMount condition={!loading} className={cn.Content}>
       <span className={cn.Text}>{text}</span>
       <Content className={cn.Info}>{info}</Content>
