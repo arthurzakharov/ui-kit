@@ -4,7 +4,7 @@
 
 .Title {
   margin-bottom: var(--rm-ui-padding-md);
-  font-weight: var(--rm-ui-font-weight-medium);
+  font-weight: var(--rm-ui-font-weight-bold);
   font-size: var(--rm-ui-font-size-hl4);
   line-height: var(--rm-ui-line-height-hl4);
   color: var(--rm-ui-color-text-primary);
@@ -43,7 +43,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--rm-ui-color-theme-primary);
+}
+
+.AmountKey {
+  font-weight: var(--rm-ui-font-weight-regular);
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.AmountValue {
+  font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
-  color: var(--rm-ui-color-theme-primary);
 }

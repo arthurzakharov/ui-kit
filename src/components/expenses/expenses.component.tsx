@@ -27,8 +27,8 @@ export const Expenses = ({ title, content, subContent, amountTitle, amountNumber
       {content}
     </p>
     <div data-testid="expenses-amount" className={cn.Amount}>
-      <span>{amountTitle}</span>
-      <span>{amountNumber.join('')}</span>
+      <span className={cn.AmountKey}>{amountTitle}</span>
+      <span className={cn.AmountValue}>{amountNumber.join('')}</span>
     </div>
     {subContent && (
       <p data-testid="expenses-sub-content" className={cn.SubContent}>
