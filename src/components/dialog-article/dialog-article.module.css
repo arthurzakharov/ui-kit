@@ -19,7 +19,7 @@
 .DialogArticle *[class='h1'],
 .DialogArticle h1 {
   margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
-  font-weight: var(--rm-ui-font-weight-medium);
+  font-weight: var(--rm-ui-font-weight-bold);
   font-size: var(--rm-ui-font-size-hl1);
   line-height: var(--rm-ui-line-height-hl1);
   color: var(--rm-ui-color-text-primary);
@@ -28,7 +28,7 @@
 .DialogArticle *[class='h2'],
 .DialogArticle h2 {
   margin: var(--rm-ui-padding-lg) 0 var(--rm-ui-padding-md);
-  font-weight: var(--rm-ui-font-weight-medium);
+  font-weight: var(--rm-ui-font-weight-bold);
   font-size: var(--rm-ui-font-size-hl2);
   line-height: var(--rm-ui-line-height-hl2);
   color: var(--rm-ui-color-text-primary);
@@ -43,7 +43,7 @@
 .DialogArticle *[class='h6'],
 .DialogArticle h6 {
   margin: var(--rm-ui-padding-xs) 0 var(--rm-ui-padding-md);
-  font-weight: var(--rm-ui-font-weight-medium);
+  font-weight: var(--rm-ui-font-weight-bold);
   font-size: var(--rm-ui-font-size-hl3);
   line-height: var(--rm-ui-line-height-hl3);
   color: var(--rm-ui-color-text-primary);

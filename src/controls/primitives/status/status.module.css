@@ -5,7 +5,8 @@
 
 .Idle > .Circle {
   stroke: var(--rm-ui-status-idle-color);
-  fill: transparent;
+  fill: var(--rm-ui-status-idle-color);
+  fill-opacity: 0.1;
 }
 
 .Success > .Circle {
