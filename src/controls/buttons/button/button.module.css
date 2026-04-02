@@ -11,6 +11,11 @@
     background-color var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
 }
 
+.Button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
 .SM {
   border-radius: var(--rm-ui-border-radius-sm);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
