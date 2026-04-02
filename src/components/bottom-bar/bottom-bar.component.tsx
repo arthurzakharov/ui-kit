@@ -4,16 +4,17 @@ import { useResizeObserver, useWindowSize } from 'usehooks-ts';
 import { Text, type TextProps } from '@components/text/text.component';
 import { Button } from '@controls/buttons';
 import { baseProps } from '@utils/functions';
-import type { Base, FontColor, FontSize, FontWeight } from '@utils/types';
+import type { Base } from '@utils/types';
 import cn from '@components/bottom-bar/bottom-bar.module.css';
 
 type FallbackText = string | ReactElement;
 
 type BottomBarInfoItem<T> = {
   lined?: boolean;
-  weight?: FontWeight;
-  size?: FontSize;
-  color?: FontColor;
+  weight?: TextProps['weight'];
+  size?: TextProps['size'];
+  color?: TextProps['color'];
+  align?: TextProps['align'];
   text: T;
 };
 
@@ -56,6 +57,7 @@ const normalizeInfoItem = (
       weight: defaults.weight || 'regular',
       size: defaults.size || 'body',
       color: defaults.color || 'text-primary',
+      align: defaults.align || 'left',
     };
   }
   if (typeof item === 'string') {
@@ -65,6 +67,7 @@ const normalizeInfoItem = (
       weight: defaults.weight || 'regular',
       size: defaults.size || 'body',
       color: defaults.color || 'text-primary',
+      align: defaults.align || 'left',
     };
   }
   return {
@@ -73,6 +76,7 @@ const normalizeInfoItem = (
     weight: item.weight || defaults.weight || 'regular',
     size: item.size || defaults.size || 'body',
     color: item.color || defaults.color || 'text-primary',
+    align: item.align || defaults.align || 'left',
   };
 };
 
@@ -100,10 +104,10 @@ export const BottomBar = ({ button, info, message, staticFrom = 768, ...base }: 
 
   const items = useMemo(
     () => ({
-      topLeft: normalizeInfoItem(info.topLeft, { weight: 'medium', color: 'text-primary' }),
-      topRight: normalizeInfoItem(info.topRight, { weight: 'medium', color: 'text-primary' }),
-      bottomLeft: normalizeInfoItem(info.bottomLeft, { weight: 'regular', color: 'text-secondary' }),
-      bottomRight: normalizeInfoItem(info.bottomRight, { weight: 'regular', color: 'text-secondary' }),
+      topLeft: normalizeInfoItem(info.topLeft, { weight: 'medium', color: 'text-primary', align: 'left' }),
+      topRight: normalizeInfoItem(info.topRight, { weight: 'medium', color: 'text-primary', align: 'right' }),
+      bottomLeft: normalizeInfoItem(info.bottomLeft, { weight: 'regular', color: 'text-secondary', align: 'left' }),
+      bottomRight: normalizeInfoItem(info.bottomRight, { weight: 'regular', color: 'text-secondary', align: 'right' }),
     }),
     [info],
   );
@@ -125,7 +129,12 @@ export const BottomBar = ({ button, info, message, staticFrom = 768, ...base }: 
         </div>
       </div>
       {message && !message.hidden && (
-        <Text color={message.color || 'text-secondary'} align={message.align || 'center'} className={cn.Message}>
+        <Text
+          size="body-small"
+          color={message.color || 'text-secondary'}
+          align={message.align || 'center'}
+          className={cn.Message}
+        >
           {message.text}
         </Text>
       )}
