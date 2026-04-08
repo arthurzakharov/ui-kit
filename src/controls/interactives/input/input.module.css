@@ -3,6 +3,7 @@
   box-sizing: border-box;
   border: none;
   display: inline-flex;
+  font-family: 'Lato', sans-serif;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);

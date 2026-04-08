@@ -11,6 +11,7 @@
   border: none;
   border-radius: 10px;
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
+  font-family: 'Lato', sans-serif;
   font-weight: var(--rm-ui-font-weight-medium);
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
