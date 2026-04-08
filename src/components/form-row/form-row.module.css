@@ -40,6 +40,22 @@
   flex-grow: 1;
 }
 
+.Child[data-children-quantity='1'] {
+  width: calc(100% / 1);
+}
+
+.Child[data-children-quantity='2'] {
+  width: calc(100% / 2);
+}
+
+.Child[data-children-quantity='3'] {
+  width: calc(100% / 3);
+}
+
+.Child[data-children-quantity='4'] {
+  width: calc(100% / 4);
+}
+
 @media screen and (min-width: 768px) {
   .FormRow {
     flex-direction: row;

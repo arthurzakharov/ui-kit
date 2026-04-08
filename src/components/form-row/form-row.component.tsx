@@ -28,7 +28,11 @@ export const FormRow = ({ children, gap = 'sm', ...base }: FormRowProps) => {
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
 
-        return <div className={cn.Child}>{child}</div>;
+        return (
+          <div data-children-quantity={Children.count(children)} className={cn.Child}>
+            {child}
+          </div>
+        );
       })}
     </div>
   );
