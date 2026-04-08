@@ -1,11 +1,14 @@
 .TextField {
-  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: flex-start;
   gap: var(--rm-ui-padding-xxs);
+}
+
+.Box {
+  position: relative;
 }
 
 .Content {

@@ -57,7 +57,7 @@ export const TextField = ({
       data-testid={baseProps(base, 'data-testid', 'text-field')}
       className={clsx(cn.TextField, baseProps(base, 'className'))}
     >
-      <Box state={state} focused={focused}>
+      <Box state={state} focused={focused} className={cn.Box}>
         <Label
           data-testid="text-label"
           text={label}

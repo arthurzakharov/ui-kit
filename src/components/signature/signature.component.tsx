@@ -104,6 +104,7 @@ export const Signature = ({
   }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   useEffect(() => {
+    onChangeAuto('');
     void getSignature()
       .then((response) => {
         const signatureBase64 = `data:image/png;base64,${response.signature}`;
