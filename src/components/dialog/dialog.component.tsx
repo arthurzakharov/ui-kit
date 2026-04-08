@@ -17,7 +17,7 @@ import cn from '@components/dialog/dialog.module.css';
 
 export type DialogPosition = 'top-center' | 'center';
 
-export type DialogSize = '1/3' | '1/2' | '2/3' | '1/1';
+export type DialogSize = '1/3' | '1/2' | '2/3' | '1/1' | 'default';
 
 export interface DialogProps extends PropsWithChildren {
   rootSelector?: string;
@@ -38,7 +38,7 @@ export const Dialog = (props: DialogProps) => {
     on,
     onClose,
     position = 'top-center',
-    size = '1/2',
+    size = 'default',
     maxWidth = '',
     minWidth = '',
     withoutCloseButton,
@@ -74,6 +74,7 @@ export const Dialog = (props: DialogProps) => {
             [cn.BackdropSizeHalf]: size === '1/2',
             [cn.BackdropSizeTwoThird]: size === '2/3',
             [cn.BackdropSizeFull]: size === '1/1',
+            [cn.BackdropSizeDefault]: size === 'default',
           })}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0, type: 'spring', stiffness: 100, damping: 16 } }}

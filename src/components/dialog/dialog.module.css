@@ -89,6 +89,11 @@
     flex-basis: initial;
   }
 
+  .BackdropSizeDefault .Dialog {
+    flex-basis: 100%;
+    max-width: 750px;
+  }
+
   .BackdropPositionCenter {
     align-items: center;
   }

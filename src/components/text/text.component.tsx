@@ -18,7 +18,7 @@ const textPresetMap: Record<TextPreset, Pick<Required<TextProps>, 'tag' | 'weigh
   'page-info': { tag: 'p', weight: 'light', size: 'body', color: 'text-secondary' },
   'page-subtitle': { tag: 'h6', weight: 'regular', size: 'body', color: 'text-primary' },
   'page-title': { tag: 'h1', weight: 'bold', size: 'hl1', color: 'text-primary' },
-  'sidebar-title': { tag: 'h3', weight: 'medium', size: 'hl3', color: 'text-primary' },
+  'sidebar-title': { tag: 'h3', weight: 'bold', size: 'hl3', color: 'text-primary' },
   'step-title': { tag: 'h2', weight: 'bold', size: 'hl4', color: 'text-primary' },
 };
 
