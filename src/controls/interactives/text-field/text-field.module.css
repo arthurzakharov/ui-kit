@@ -1,4 +1,5 @@
 .TextField {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -27,6 +28,10 @@
   position: absolute;
   left: var(--rm-ui-padding-sm);
   transition: top var(--rm-ui-amimation-speed-primary) var(--rm-ui-amimation-cubic-primary);
+}
+
+.Label:hover {
+  cursor: pointer;
 }
 
 .Idle {

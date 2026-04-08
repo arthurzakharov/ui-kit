@@ -9,7 +9,7 @@ export interface LabelProps extends Base {
   text: string;
   state?: State;
   position?: ControlLabelPosition;
-} 
+}
 
 export const Label = ({
   // Label props
@@ -27,6 +27,9 @@ export const Label = ({
       [cn.Error]: state === 'error',
       [cn.Success]: state === 'success',
     })}
+    onClick={(e) => {
+      e.stopPropagation();
+    }}
   >
     {text}
   </Content>

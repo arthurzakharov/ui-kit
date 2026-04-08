@@ -58,20 +58,24 @@ export const TextField = ({
       className={clsx(cn.TextField, baseProps(base, 'className'))}
     >
       <Box state={state} focused={focused}>
+        <Label
+          data-testid="text-label"
+          text={label}
+          position={isLabelActive ? 'active' : 'idle'}
+          state={isLabelActive ? state : 'idle'}
+          className={clsx(cn.Label, isLabelActive ? cn.Active : cn.Idle)}
+        />
         <label
           htmlFor={id}
           className={cn.Content}
           onPointerDown={(e) => {
             if (focused) e.preventDefault();
+            const input = document.getElementById(id);
+            console.log('input', input);
+
+            input?.click();
           }}
         >
-          <Label
-            data-testid="text-label"
-            text={label}
-            position={isLabelActive ? 'active' : 'idle'}
-            state={isLabelActive ? state : 'idle'}
-            className={clsx(cn.Label, isLabelActive ? cn.Active : cn.Idle)}
-          />
           <FadeScale name="text-placeholder" condition={withPlaceholder} className={cn.Placeholder}>
             <span data-testid="text-placeholder" className={cn.PlaceholderText}>
               {placeholder}
