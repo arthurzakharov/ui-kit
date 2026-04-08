@@ -70,10 +70,6 @@ export const TextField = ({
           className={cn.Content}
           onPointerDown={(e) => {
             if (focused) e.preventDefault();
-            const input = document.getElementById(id);
-            console.log('input', input);
-
-            input?.click();
           }}
         >
           <FadeScale name="text-placeholder" condition={withPlaceholder} className={cn.Placeholder}>

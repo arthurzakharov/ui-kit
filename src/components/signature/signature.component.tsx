@@ -30,7 +30,6 @@ export const Signature = ({
   ...base
 }: SignatureProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isAutoRequestedRef = useRef(false);
   const [pad, setPad] = useState<SignatureCanvas | null>(null);
   const [mode, setMode] = useState<'auto' | 'manual'>(manual ? 'manual' : 'auto');
   const [valueManualDrawn, setValueManualDrawn] = useState('');
@@ -105,14 +104,6 @@ export const Signature = ({
   }, [mode, valueManualDrawn, width, height, drawSignatureToCanvas]);
 
   useEffect(() => {
-    if (auto) {
-      isAutoRequestedRef.current = false;
-      return;
-    }
-
-    if (isAutoRequestedRef.current) return;
-    isAutoRequestedRef.current = true;
-
     void getSignature()
       .then((response) => {
         const signatureBase64 = `data:image/png;base64,${response.signature}`;
@@ -122,11 +113,10 @@ export const Signature = ({
       .catch(() => {
         setHasAutoLoadFailed(true);
       });
-  }, [auto, getSignature, onChangeAuto]);
+  }, []);
 
   const retryAutoFetch = useCallback(() => {
     setHasAutoLoadFailed(false);
-    isAutoRequestedRef.current = true;
 
     void getSignature()
       .then((response) => {
