@@ -8,7 +8,7 @@
 }
 
 .BlockTitle {
-  font-weight: var(--rm-ui-font-weight-medium);
+  font-weight: var(--rm-ui-font-weight-bold);
   color: var(--rm-ui-color-text-primary);
   font-size: var(--rm-ui-font-size-hl4);
   line-height: var(--rm-ui-line-height-hl4);
