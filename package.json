@@ -1,7 +1,7 @@
 {
   "name": "@arthurzakharov/ui-kit",
   "private": false,
-  "version": "1.8.7",
+  "version": "1.8.8",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -29,7 +29,6 @@
     "test-storybook:coverage": "vitest --project=storybook --coverage"
   },
   "peerDependencies": {
-    "@types/react-signature-canvas": "^1.0.7",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "motion": "^12.26.1",
@@ -39,12 +38,12 @@
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^5.0.2",
+    "@chromatic-com/storybook": "^5.1.1",
     "@eslint/js": "^9.39.2",
-    "@storybook/addon-a11y": "^10.3.3",
-    "@storybook/addon-docs": "^10.3.3",
-    "@storybook/addon-vitest": "^10.3.3",
-    "@storybook/react-vite": "^10.3.3",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-vitest": "^10.3.5",
+    "@storybook/react-vite": "^10.3.5",
     "@testing-library/react": "^15.0.7",
     "@types/node": "^24.1.0",
     "@types/react": "^18.3.27",
@@ -60,7 +59,7 @@
     "eslint": "^9.39.2",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.26",
-    "eslint-plugin-storybook": "^10.3.3",
+    "eslint-plugin-storybook": "^10.3.5",
     "glob": "^13.0.6",
     "globals": "^17.0.0",
     "jsdom": "^27.4.0",
@@ -71,7 +70,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-signature-canvas": "^1.0.7",
-    "storybook": "^10.3.3",
+    "storybook": "^10.3.5",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.52.0",
     "usehooks-ts": "^3.1.1",

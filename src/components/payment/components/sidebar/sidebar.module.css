@@ -1,5 +1,5 @@
 .Sidebar {
-  padding: var(--rm-ui-padding-sm);
+  padding: var(--rm-ui-padding-lg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -58,13 +58,6 @@
 @media screen and (min-width: 768px) {
   .Sidebar {
     border-radius: var(--rm-ui-border-radius-md);
-    padding: var(--rm-ui-padding-md);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .Sidebar {
-    padding: var(--rm-ui-padding-lg);
   }
 }
 
