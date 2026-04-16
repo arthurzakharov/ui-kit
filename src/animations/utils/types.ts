@@ -10,6 +10,7 @@ export interface BaseAnimationProps extends PropsWithChildren<Base> {
   ease?: EasingDefinition;
   duration?: number;
   delay?: number;
+  onAnimationEnd?: (condition: boolean) => void;
 }
 
 export interface BaseFadeAnimationProps extends BaseAnimationProps {

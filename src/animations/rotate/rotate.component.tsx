@@ -53,6 +53,7 @@ export const Rotate = (props: RotateProps) => {
         type: defaultedProps.type,
       }}
       className={defaultedProps.className}
+      onAnimationComplete={() => defaultedProps.onAnimationEnd?.(defaultedProps.condition)}
     >
       {defaultedProps.children}
     </motion.div>

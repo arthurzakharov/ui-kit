@@ -3,11 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 type UseAnimationLifecycleOptions = {
   condition: boolean;
   animateOnStart: boolean;
+  onAnimationEnd?: (condition: boolean) => void;
 };
 
 type AnimationState<T, U> = T | U | false;
 
-export const useAnimationLifecycle = ({ condition, animateOnStart }: UseAnimationLifecycleOptions) => {
+export const useAnimationLifecycle = ({ condition, animateOnStart, onAnimationEnd }: UseAnimationLifecycleOptions) => {
   const [isReady, setIsReady] = useState(animateOnStart);
   const [shouldRender, setShouldRender] = useState(condition || animateOnStart);
   const conditionRef = useRef(condition);
@@ -45,6 +46,7 @@ export const useAnimationLifecycle = ({ condition, animateOnStart }: UseAnimatio
     if (!conditionRef.current) {
       setShouldRender(false);
     }
+    onAnimationEnd?.(conditionRef.current);
   };
 
   return {

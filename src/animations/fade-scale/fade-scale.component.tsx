@@ -9,6 +9,7 @@ export const FadeScale = (props: BaseFadeAnimationProps) => {
   const animation = useAnimationLifecycle({
     condition: props.condition,
     animateOnStart: defaultedProps.animateOnStart,
+    onAnimationEnd: defaultedProps.onAnimationEnd,
   });
 
   const hiddenState = {

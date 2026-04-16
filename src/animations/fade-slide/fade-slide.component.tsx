@@ -13,6 +13,7 @@ export const FadeSlide = (props: FadeSlideProps) => {
   const animation = useAnimationLifecycle({
     condition: defaultedProps.condition,
     animateOnStart: defaultedProps.animateOnStart,
+    onAnimationEnd: defaultedProps.onAnimationEnd,
   });
 
   const hiddenState = {
