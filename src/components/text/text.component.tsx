@@ -1,4 +1,4 @@
-import type { HTMLAttributes, PropsWithChildren } from 'react';
+import { forwardRef, type HTMLAttributes, type PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import { Content } from '@utils/content';
 import type { Base, FontAlign, FontColor, FontSize, FontWeight, TagNames, TextPreset } from '@utils/types';
@@ -22,7 +22,7 @@ const textPresetMap: Record<TextPreset, Pick<Required<TextProps>, 'tag' | 'weigh
   'step-title': { tag: 'h2', weight: 'bold', size: 'hl4', color: 'text-primary' },
 };
 
-export const Text = ({
+export const Text = forwardRef<HTMLElement, TextProps>(({
   children,
   className,
   preset,
@@ -33,7 +33,7 @@ export const Text = ({
   size = 'body',
   color = 'text-primary',
   ...rest
-}: TextProps) => {
+}, ref) => {
   let resolvedTag = tag;
   let resolvedWeight = weight;
   let resolvedSize = size;
@@ -116,6 +116,7 @@ export const Text = ({
 
   return (
     <Content
+      ref={ref}
       data-testid={rest['data-testid'] || 'content'}
       tag={resolvedTag}
       alwaysRender={false}
@@ -125,4 +126,6 @@ export const Text = ({
       {children}
     </Content>
   );
-};
+});
+
+Text.displayName = 'Text';
