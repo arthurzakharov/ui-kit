@@ -17,6 +17,9 @@ export interface SignatureProps extends Base {
   getSignature: () => Promise<{ signature: string }>;
   onChangeManual: (value: string) => void;
   onChangeAuto: (value: string) => void;
+  onSwitchToManual?: () => void;
+  onSwitchToAuto?: () => void;
+  onSwitchToPreview?: () => void;
 }
 
 export const Signature = ({
@@ -26,6 +29,9 @@ export const Signature = ({
   getSignature,
   onChangeManual,
   onChangeAuto,
+  onSwitchToManual,
+  onSwitchToAuto,
+  onSwitchToPreview,
   // Base props
   ...base
 }: SignatureProps) => {
@@ -78,22 +84,26 @@ export const Signature = ({
   const toAuto = useCallback(() => {
     setMode('auto');
     setValueManualDrawn('');
-  }, []);
+    onSwitchToAuto?.();
+  }, [onSwitchToAuto]);
 
   const toManual = useCallback(() => {
     setMode('manual');
-  }, []);
+    onSwitchToManual?.();
+  }, [onSwitchToManual]);
 
   const redraw = useCallback(() => {
     setMode('auto');
     setValueManualDrawn('');
     onChangeManual('');
-  }, [onChangeManual]);
+    onSwitchToAuto?.();
+  }, [onChangeManual, onSwitchToAuto]);
 
   const saveDrawnImage = useCallback(() => {
     if (!valueManualDrawn) return;
     setValueManualDrawn('');
-  }, [valueManualDrawn]);
+    onSwitchToPreview?.();
+  }, [valueManualDrawn, onSwitchToPreview]);
 
   const isPadState = (states: SignaturePadState[]): boolean => states.includes(normalizedPadState);
 
