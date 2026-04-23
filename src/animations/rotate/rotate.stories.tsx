@@ -20,7 +20,7 @@ const meta = {
     delay: 0,
   },
   render: (args) => (
-    <SizeBox size={300}>
+    <SizeBox size={[300, 300]}>
       <Rotate {...args}>
         <GreyBox size={300} data-testid="animation-content" asText>
           Rotate

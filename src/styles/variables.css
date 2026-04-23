@@ -54,6 +54,7 @@
   --rm-ui-color-text-secondary: var(--rm-ui-grey-500);
   --rm-ui-color-accent-primary: #23bf96;
   --rm-ui-color-accent-secondary: #ff9900;
+  --rm-ui-color-accent-tertiary: #f5a623;
   --rm-ui-color-theme-primary: #302677;
   --rm-ui-color-theme-secondary: #302677;
   --rm-ui-color-action: #006cff;
@@ -84,6 +85,7 @@
   --rm-ui-message-info-primary: #3289c4;
   --rm-ui-message-info-secondary: #f3f7fe;
   /* Payment */
+  --rm-ui-payment-info-bg: #edf9f6;
   --rm-ui-payment-sidebar-bg: #f8fcff;
   --rm-ui-payment-text-blocks-gap: var(--rm-ui-padding-lg);
   /* DataProtectedLabel */

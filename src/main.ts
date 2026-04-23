@@ -65,6 +65,7 @@ export {
   Payment,
   type PaymentBlockProps,
   type PaymentGlassProps,
+  type PaymentInfoProps,
   type PaymentSidebarProps,
   type PaymentTextBlocksProps,
   type PaymentTextBlockItem,

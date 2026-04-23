@@ -1,7 +1,9 @@
 import type { PropsWithChildren } from 'react';
 
 interface SizeBox extends PropsWithChildren {
-  size: number;
+  size: number[];
 }
 
-export const SizeBox = ({ children, size }: SizeBox) => <div style={{ width: size, height: size }}>{children}</div>;
+export const SizeBox = ({ children, size = [] }: SizeBox) => (
+  <div style={{ width: size[0] || 'initial', height: size[1] || 'initial' }}>{children}</div>
+);

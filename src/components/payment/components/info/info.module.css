@@ -1,0 +1,66 @@
+.Info {
+  --circle-size: 20px;
+  border-radius: var(--rm-ui-border-radius-md);
+  padding: var(--rm-ui-padding-lg);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-lg);
+  background-color: var(--rm-ui-payment-info-bg);
+}
+
+.Title {
+  font-weight: var(--rm-ui-font-weight-medium);
+  color: var(--rm-ui-color-accent-primary);
+  font-size: 11px;
+  line-height: var(--rm-ui-line-height-body-extra-small);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.Item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--rm-ui-padding-sm);
+}
+
+.Content {
+  width: calc(100% - var(--circle-size) - var(--rm-ui-padding-sm));
+  font-size: var(--rm-ui-font-size-body-small);
+  line-height: var(--rm-ui-line-height-body-small);
+}
+
+.Circle {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 100%;
+  padding: var(--rm-ui-padding-xxs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CircleCheck {
+  background-color: var(--rm-ui-color-accent-primary);
+}
+
+.CircleArrow {
+  background-color: var(--rm-ui-color-accent-tertiary);
+}
+
+.Icon {
+  stroke: #ffffff;
+  stroke-width: 3px;
+}

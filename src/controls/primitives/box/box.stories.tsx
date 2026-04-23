@@ -14,7 +14,7 @@ const meta = {
   },
   render: (args) => (
     <Box {...args}>
-      <SizeBox size={58} />
+      <SizeBox size={[58, 58]} />
     </Box>
   ),
 } satisfies Meta<typeof Box>;
@@ -146,4 +146,3 @@ export const WithBaseBehavior: Story = {
     });
   },
 };
-
