@@ -114,6 +114,7 @@ export const WithBaseBehavior: Story = {
 };
 
 export const WithWidthsHalfAndHalf: Story = {
+  name: 'With widths [1/2, 1/2]',
   args: {
     widths: ['1/2', '1/2'],
   },
@@ -142,6 +143,7 @@ export const WithWidthsHalfAndHalf: Story = {
 };
 
 export const WithWidthsSingleHalfChild: Story = {
+  name: 'With widths [1/2]',
   args: {
     widths: ['1/2'],
   },
@@ -164,6 +166,7 @@ export const WithWidthsSingleHalfChild: Story = {
 };
 
 export const WithWidthsThirds: Story = {
+  name: 'With widths [1/3, 1/3, 1/3]',
   args: {
     widths: ['1/3', '1/3', '1/3'],
   },
@@ -188,6 +191,7 @@ export const WithWidthsThirds: Story = {
 };
 
 export const WithWidthsAsymmetricThirds: Story = {
+  name: 'With widths [1/3, 2/3]',
   args: {
     widths: ['1/3', '2/3'],
   },
@@ -210,6 +214,7 @@ export const WithWidthsAsymmetricThirds: Story = {
 };
 
 export const WithWidthsThreeQuartersAndQuarter: Story = {
+  name: 'With widths [3/4, 1/4]',
   args: {
     widths: ['3/4', '1/4'],
   },
@@ -232,6 +237,7 @@ export const WithWidthsThreeQuartersAndQuarter: Story = {
 };
 
 export const WithWidthsQuartersMixed: Story = {
+  name: 'With widths [1/4, 2/4, 1/4]',
   args: {
     widths: ['1/4', '2/4', '1/4'],
   },
@@ -258,6 +264,7 @@ export const WithWidthsQuartersMixed: Story = {
 };
 
 export const WithWidthsTotalExceedsOne: Story = {
+  name: 'With widths [1/2, 1/2, 1/2] (total exceeds 1)',
   args: {
     widths: ['1/2', '1/2', '1/2'],
   },
@@ -286,6 +293,7 @@ export const WithWidthsTotalExceedsOne: Story = {
 };
 
 export const WithWidthsLengthMismatch: Story = {
+  name: 'With widths [1/2] (length mismatch with children)',
   args: {
     widths: ['1/2'],
   },
@@ -311,6 +319,7 @@ export const WithWidthsLengthMismatch: Story = {
 };
 
 export const WithWidthsUnknownValue: Story = {
+  name: 'With widths [1/2, 5/6] (unknown value)',
   // Cast forces the invalid value through the type-checker so we can exercise
   // the runtime guard. Real consumers can't reach this branch via the public type.
   args: {

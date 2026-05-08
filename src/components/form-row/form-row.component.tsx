@@ -8,26 +8,9 @@ export type FormRowWidth = '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | '1';
 
 export interface FormRowProps extends PropsWithChildren<Base> {
   gap: Size;
-  /**
-   * Force the desktop width of each child individually.
-   *
-   * Pass an array of fractions, one per valid child, in order. Supported values
-   * cover every valid fraction of a four-column grid:
-   * `'1/2'`, `'1/3'`, `'2/3'`, `'1/4'`, `'2/4'`, `'3/4'` and `'1'`.
-   *
-   * If the array length does not match the number of valid children, the array
-   * contains an unknown value, or the fractions sum to more than 1, a warning
-   * is logged and the prop is ignored — the row falls back to the default
-   * behaviour where all children share the row width equally.
-   *
-   * On mobile (< 768px) the row stacks vertically as usual; this prop only
-   * affects the desktop layout.
-   */
   widths?: FormRowWidth[];
 }
 
-// Each fraction expressed as twelfths so we can sum without floating-point error
-// (12 is the LCM of 1, 2, 3, 4).
 const WIDTH_TWELFTHS: Record<FormRowWidth, number> = {
   '1': 12,
   '1/2': 6,
@@ -45,7 +28,6 @@ export const FormRow = ({ children, gap = 'sm', widths, ...base }: FormRowProps)
 
   const validChildren = Children.toArray(children).filter(isValidElement);
 
-  // Decide whether to honour the `widths` prop.
   let useWidths = false;
   if (widths) {
     if (widths.length !== validChildren.length) {

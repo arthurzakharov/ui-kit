@@ -4,13 +4,6 @@
   align-items: stretch;
 }
 
-/*
- * Each gap modifier sets two things:
- *   `gap`                     — the actual flex gap between children
- *   `--rm-form-row-gap`       — surfaces the same value as a custom property
- *                               so the explicit-width rules below can subtract
- *                               each child's share of the gap from its width.
- */
 .XXS {
   gap: var(--rm-ui-padding-xxs);
   --rm-form-row-gap: var(--rm-ui-padding-xxs);
@@ -56,20 +49,6 @@
     flex-direction: row;
   }
 
-  /*
-   * `flex-grow: 1` only applies when the row has more than one child AND no
-   * explicit `data-width` is set. Otherwise:
-   *   - a single child with an explicit fractional width would stretch to
-   *     100%, defeating the purpose of `widths`;
-   *   - any child with an explicit width could be expanded past it when other
-   *     children leave leftover space (e.g. widths summing to less than 1).
-   */
-  .Child:not([data-children-quantity='1']):not([data-width]) {
-    flex-grow: 1;
-  }
-
-  /* Equal-distribution widths (no `widths` prop in effect). flex-shrink (default 1)
-     absorbs the row's gap proportionally, so no explicit gap math is needed. */
   .Child[data-children-quantity='1'] {
     width: 100%;
   }
@@ -86,54 +65,55 @@
     width: calc(100% / 4);
   }
 
-  /*
-   * Per-child portion of the row's gap, set as a custom property the explicit
-   * width rules below subtract from each fraction. With N children there are
-   * (N - 1) gaps, distributed across N children, so each loses (N - 1)/N · gap.
-   * Single-child rows have no gap, so no custom property is set (defaults to 0).
-   */
-  .Child[data-children-quantity='2'] {
-    --rm-form-row-gap-shrink: calc(var(--rm-form-row-gap) / 2);
-  }
-
-  .Child[data-children-quantity='3'] {
-    --rm-form-row-gap-shrink: calc(var(--rm-form-row-gap) * 2 / 3);
-  }
-
-  .Child[data-children-quantity='4'] {
-    --rm-form-row-gap-shrink: calc(var(--rm-form-row-gap) * 3 / 4);
-  }
-
-  /*
-   * Explicit widths via `data-width` override the equal-distribution rules.
-   * Each child subtracts its share of the gap so widths summing to 1 fit
-   * exactly inside the row alongside the FormRow's `gap`.
-   */
   .Child[data-width='1'] {
     width: 100%;
   }
 
   .Child[data-width='1/2'] {
-    width: calc(100% / 2 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(100% / 2);
+  }
+
+  .Child[data-width='1/2'][data-children-quantity='1'] {
+    width: calc((100% / 2) - (var(--rm-form-row-gap) / 2));
   }
 
   .Child[data-width='1/3'] {
-    width: calc(100% / 3 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(100% / 3);
+  }
+
+  .Child[data-width='1/3'][data-children-quantity='1'] {
+    width: calc((100% / 3) - (var(--rm-form-row-gap) / 2));
   }
 
   .Child[data-width='2/3'] {
-    width: calc(200% / 3 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(200% / 3);
+  }
+
+  .Child[data-width='2/3'][data-children-quantity='1'] {
+    width: calc((200% / 3) - (var(--rm-form-row-gap) / 2));
   }
 
   .Child[data-width='1/4'] {
-    width: calc(100% / 4 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(100% / 4);
+  }
+
+  .Child[data-width='1/4'][data-children-quantity='1'] {
+    width: calc((100% / 4) - (var(--rm-form-row-gap) / 2));
   }
 
   .Child[data-width='2/4'] {
-    width: calc(200% / 4 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(200% / 4);
+  }
+
+  .Child[data-width='2/4'][data-children-quantity='1'] {
+    width: calc((200% / 4) - (var(--rm-form-row-gap) / 2));
   }
 
   .Child[data-width='3/4'] {
-    width: calc(300% / 4 - var(--rm-form-row-gap-shrink, 0px));
+    width: calc(300% / 4);
+  }
+
+  .Child[data-width='3/4'][data-children-quantity='1'] {
+    width: calc((300% / 4) - (var(--rm-form-row-gap) / 2));
   }
 }
