@@ -50,7 +50,7 @@ export { Dialog, type DialogProps, type DialogSize, type DialogPosition } from '
 export { DialogArticle } from '@components/dialog-article';
 export { Expenses, type ExpensesProps } from '@components/expenses';
 export { Footer, type FooterProps } from '@components/footer';
-export { FormRow, type FormRowProps } from '@components/form-row/form-row.component';
+export { FormRow, type FormRowProps, type FormRowWidth } from '@components/form-row/form-row.component';
 export { Header, type HeaderProps, type HeaderDescription } from '@components/header/header.component';
 export { InfoPanel, type InfoPanelProps } from '@components/info-panel';
 export { Information } from '@components/information';

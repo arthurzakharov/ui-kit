@@ -60,4 +60,35 @@
   .Child[data-children-quantity='4'] {
     width: calc(100% / 4);
   }
+
+  /* When `widths` is in effect, `data-width` overrides the equal-distribution
+     rules. These come after the `data-children-quantity` ones so they win at
+     the same specificity. */
+  .Child[data-width='1'] {
+    width: 100%;
+  }
+
+  .Child[data-width='1/2'] {
+    width: calc(100% / 2);
+  }
+
+  .Child[data-width='1/3'] {
+    width: calc(100% / 3);
+  }
+
+  .Child[data-width='2/3'] {
+    width: calc(200% / 3);
+  }
+
+  .Child[data-width='1/4'] {
+    width: calc(100% / 4);
+  }
+
+  .Child[data-width='2/4'] {
+    width: calc(200% / 4);
+  }
+
+  .Child[data-width='3/4'] {
+    width: calc(300% / 4);
+  }
 }

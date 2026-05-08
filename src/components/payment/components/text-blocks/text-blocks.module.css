@@ -18,7 +18,7 @@
 
 .TextBlocksTitle {
   font-weight: var(--rm-ui-font-weight-bold);
-  font-size: var(--rm-ui-font-size-hl4);
-  line-height: var(--rm-ui-line-height-hl4);
+  font-size: var(--rm-ui-font-size-hl3);
+  line-height: var(--rm-ui-line-height-hl3);
   color: var(--rm-ui-color-text-primary);
 }
