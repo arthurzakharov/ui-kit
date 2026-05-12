@@ -56,7 +56,7 @@
 
 .Button.LG .Text {
   font-size: var(--rm-ui-font-size-body-large);
-  line-height: var(--rm-ui-line-height-body-large);
+  line-height: 1.2;
 }
 
 .Button.Primary {
@@ -130,19 +130,20 @@
   font-weight: var(--rm-ui-font-weight-regular);
 }
 
-.Info.SM {
+.Info.SM
+{
   font-size: var(--rm-ui-font-size-body-small);
-  line-height: calc(var(--rm-ui-line-height-body-small) - 2px);
+  line-height: 1.2;
 }
 
 .Info.MD {
   font-size: var(--rm-ui-font-size-body);
-  line-height: calc(var(--rm-ui-line-height-body) - 2px);
+  line-height: 1.2;
 }
 
 .Info.LG {
   font-size: var(--rm-ui-font-size-body-large);
-  line-height: calc(var(--rm-ui-line-height-body-large) - 2px);
+  line-height: 1.2;
 }
 
 .Text {

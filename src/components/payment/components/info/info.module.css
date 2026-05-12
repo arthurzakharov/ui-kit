@@ -1,13 +1,13 @@
 .Info {
   --circle-size: 20px;
   border-radius: var(--rm-ui-border-radius-md);
-  padding: var(--rm-ui-padding-md);
+  padding: var(--rm-ui-padding-lg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: flex-start;
-  gap: var(--rm-ui-padding-lg);
+  gap: var(--rm-ui-padding-md);
   background-color: var(--rm-ui-payment-info-bg);
 }
 
