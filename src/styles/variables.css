@@ -86,7 +86,7 @@
   --rm-ui-message-info-secondary: #f3f7fe;
   /* Payment */
   --rm-ui-payment-info-bg: #edf9f6;
-  --rm-ui-payment-sidebar-bg: #f8fcff;
+  --rm-ui-payment-sidebar-bg: #f6f6f6;
   --rm-ui-payment-text-blocks-gap: var(--rm-ui-padding-lg);
   /* DataProtectedLabel */
   --rm-ui-data-protected-label-icon: var(--rm-ui-next-btn-bg);

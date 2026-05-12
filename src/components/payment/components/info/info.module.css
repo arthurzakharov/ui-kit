@@ -1,7 +1,7 @@
 .Info {
   --circle-size: 20px;
   border-radius: var(--rm-ui-border-radius-md);
-  padding: var(--rm-ui-padding-lg);
+  padding: var(--rm-ui-padding-md);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -14,7 +14,7 @@
 .Title {
   font-weight: var(--rm-ui-font-weight-medium);
   color: var(--rm-ui-color-accent-primary);
-  font-size: 11px;
+  font-size: var(--rm-ui-font-size-body-extra-small);
   line-height: var(--rm-ui-line-height-body-extra-small);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -38,7 +38,7 @@
 
 .Content {
   width: calc(100% - var(--circle-size) - var(--rm-ui-padding-sm));
-  font-size: var(--rm-ui-font-size-body-small);
+  font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
