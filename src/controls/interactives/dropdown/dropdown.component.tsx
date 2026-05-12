@@ -153,9 +153,13 @@ export const Dropdown = ({
           </ul>
           {multiple && (
             <div className={cn.Close}>
-              <Button color="primary" size="sm" type="button" onClick={() => onCloseButtonClick()}>
-                {closeButton}
-              </Button>
+              <Button
+                color="primary"
+                textSize="sm"
+                type="button"
+                text={closeButton}
+                onClick={() => onCloseButtonClick()}
+              />
             </div>
           )}
         </div>

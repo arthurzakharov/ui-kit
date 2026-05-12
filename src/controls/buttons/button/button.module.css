@@ -128,8 +128,21 @@
 .Info {
   flex-basis: 100%;
   font-weight: var(--rm-ui-font-weight-regular);
+}
+
+.Info.SM {
   font-size: var(--rm-ui-font-size-body-small);
   line-height: calc(var(--rm-ui-line-height-body-small) - 2px);
+}
+
+.Info.MD {
+  font-size: var(--rm-ui-font-size-body);
+  line-height: calc(var(--rm-ui-line-height-body) - 2px);
+}
+
+.Info.LG {
+  font-size: var(--rm-ui-font-size-body-large);
+  line-height: calc(var(--rm-ui-line-height-body-large) - 2px);
 }
 
 .Text {

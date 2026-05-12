@@ -8,7 +8,8 @@ const meta = {
   args: {
     text: 'Go next step',
     color: 'primary',
-    size: 'md',
+    textSize: 'md',
+    infoSize: 'md',
     type: 'button',
     disabled: false,
     info: '',

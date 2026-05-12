@@ -11,7 +11,8 @@ import cn from '@controls/buttons/button/button.module.css';
 export interface ButtonProps extends Base {
   text: string;
   color?: ControlButtonColor;
-  size?: ControlButtonSize;
+  textSize?: ControlButtonSize;
+  infoSize?: ControlButtonSize;
   type?: ControlButtonType;
   disabled?: boolean;
   info?: ReactNode;
@@ -27,7 +28,8 @@ export interface ButtonProps extends Base {
 export const Button = ({
   text,
   color = 'primary',
-  size = 'md',
+  textSize = 'md',
+  infoSize = 'sm',
   type = 'button',
   disabled = false,
   info = '',
@@ -45,9 +47,9 @@ export const Button = ({
     type={type}
     disabled={disabled || loading}
     className={clsx(cn.Button, baseProps(base, 'className'), {
-      [cn.SM]: size === 'sm',
-      [cn.MD]: size === 'md',
-      [cn.LG]: size === 'lg',
+      [cn.SM]: textSize === 'sm',
+      [cn.MD]: textSize === 'md',
+      [cn.LG]: textSize === 'lg',
       [cn.Primary]: color === 'primary',
       [cn.Secondary]: color === 'secondary',
       [cn.Tertiary]: color === 'tertiary',
@@ -76,7 +78,15 @@ export const Button = ({
     )}
     <FadeScale name="content" keepMount condition={!loading} className={cn.Content}>
       <span className={cn.Text}>{text}</span>
-      <Content className={cn.Info}>{info}</Content>
+      <Content
+        className={clsx(cn.Info, {
+          [cn.SM]: infoSize === 'sm',
+          [cn.MD]: infoSize === 'md',
+          [cn.LG]: infoSize === 'lg',
+        })}
+      >
+        {info}
+      </Content>
     </FadeScale>
   </button>
 );

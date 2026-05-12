@@ -43,7 +43,7 @@ export const DialogArticle = (props: DialogArticleProps) => {
               preventDefault
               text={cancel.text}
               color="tertiary"
-              size="md"
+              textSize="md"
               onClick={cancel.fn}
             />
           )}
@@ -54,7 +54,7 @@ export const DialogArticle = (props: DialogArticleProps) => {
               preventDefault
               text={confirm.text}
               color="primary"
-              size="md"
+              textSize="md"
               onClick={confirm.fn}
             />
           )}

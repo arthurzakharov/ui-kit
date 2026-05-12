@@ -144,7 +144,7 @@ export const BottomBar = ({ button, info, message, staticFrom = 768, ...base }: 
         fullWidth
         text={button.text}
         color="primary"
-        size="lg"
+        textSize="lg"
         loading={button.loading}
         disabled={button.disabled}
         className={cn.Button}
