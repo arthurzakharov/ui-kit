@@ -16,95 +16,95 @@
   opacity: 0.33;
 }
 
-.SM {
+.Button.SM {
   border-radius: var(--rm-ui-border-radius-sm);
   padding: var(--rm-ui-padding-xs) var(--rm-ui-padding-sm);
 }
 
-.LG.Tertiary {
+.Button.LG.Tertiary {
   padding: calc(var(--rm-ui-padding-xs) - 1px) calc(var(--rm-ui-padding-sm) - 1px);
 }
 
-.SM .Text {
+.Button.SM .Text {
   font-weight: var(--rm-ui-font-weight-regular);
   font-size: var(--rm-ui-font-size-body-small);
   line-height: var(--rm-ui-line-height-body-small);
 }
 
-.MD {
+.Button.MD {
   border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
 }
 
-.MD.Tertiary {
+.Button.MD.Tertiary {
   padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
 }
 
-.LG {
+.Button.LG {
   border-radius: var(--rm-ui-border-radius-md);
   padding: var(--rm-ui-padding-sm) var(--rm-ui-padding-lg);
 }
 
-.LG.Tertiary {
+.Button.LG.Tertiary {
   padding: calc(var(--rm-ui-padding-sm) - 1px) calc(var(--rm-ui-padding-lg) - 1px);
 }
 
-.MD .Text {
+.Button.MD .Text {
   font-size: var(--rm-ui-font-size-body);
   line-height: var(--rm-ui-line-height-body);
 }
 
-.LG .Text {
+.Button.LG .Text {
   font-size: var(--rm-ui-font-size-body-large);
   line-height: var(--rm-ui-line-height-body-large);
 }
 
-.Primary {
+.Button.Primary {
   background-color: var(--rm-ui-next-btn-bg);
 }
 
-.Primary:hover {
+.Button.Primary:hover {
   background-color: var(--rm-ui-next-btn-bg-hover);
 }
 
-.Primary .Text,
-.Primary .Info {
+.Button.Primary .Text,
+.Button.Primary .Info {
   color: #ffffff;
 }
 
-.Secondary {
+.Button.Secondary {
   border: 1px solid transparent;
   background-color: transparent;
 }
 
-.Secondary:hover {
+.Button.Secondary:hover {
   border-color: var(--rm-ui-grey-400);
 }
 
-.Secondary:hover .Text {
+.Button.Secondary:hover .Text {
   color: var(--rm-ui-grey-400);
   border-color: var(--rm-ui-grey-400);
 }
 
-.Secondary .Text,
-.Secondary .Info {
+.Button.Secondary .Text,
+.Button.Secondary .Info {
   color: var(--rm-ui-color-text-secondary);
 }
 
-.Tertiary {
+.Button.Tertiary {
   border: 1px solid var(--rm-ui-grey-300);
   background-color: transparent;
 }
 
-.Tertiary:hover {
+.Button.Tertiary:hover {
   border-color: var(--rm-ui-grey-200);
 }
-.Tertiary:hover .Text {
+.Button.Tertiary:hover .Text {
   color: var(--rm-ui-grey-700);
 }
 
-.Tertiary .Text,
-.Tertiary .Info {
+.Button.Tertiary .Text,
+.Button.Tertiary .Info {
   color: var(--rm-ui-color-text-primary);
 }
 
@@ -116,7 +116,7 @@
   outline-color: var(--rm-ui-color-focus);
 }
 
-.FullWidth {
+.Button.FullWidth {
   width: 100%;
 }
 
